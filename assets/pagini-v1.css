@@ -38,6 +38,7 @@ h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.25rem,2.6vw,1.
 .card h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;line-height:1.25}
 .card h3 small{color:var(--cream-soft);font-family:'Inter';font-weight:400;font-size:.82rem}
 .cm{color:var(--cream-soft);font-size:.92rem;margin-top:.4rem}
+.cm b{color:var(--cream);font-weight:600}
 .cp{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;color:var(--gold);margin-top:.7rem}
 .cl{display:inline-block;font-size:.85rem;font-weight:600;letter-spacing:.06em;color:var(--cream);border-bottom:1px solid rgba(232,180,90,.6);margin-top:.7rem;padding-bottom:.1em}
 .specs{border-top:1px solid rgba(232,180,90,.28);margin:1rem 0 1.4rem}
