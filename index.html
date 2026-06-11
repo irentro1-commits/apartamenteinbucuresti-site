@@ -329,26 +329,56 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 
   // ===== ASSETS =====
   var canvas = document.getElementById('frame'), ctx = canvas.getContext('2d');
-  var clipFrames = new Array(NC), holdFrames = {}, loaded = 0, totalImgs = NC + HOLD_IMGS.length;
+  var clipFrames = new Array(NC), holdFrames = {}, loaded = 0;
   var dpr = Math.min(window.devicePixelRatio||1, 1.5);
   function pad(i){ return ('000'+i).slice(-3); }
-  function onAsset(){
+  // BOOT PROGRESIV: pornim cu criticul (holds + primul clip), restul curge in fundal.
+  // Coada cu concurenta limitata = nu inecam browserele in-app. Watchdog = pornim oricum dupa 9s.
+  var critTotal = HOLD_IMGS.length + FPC, critLoaded = 0, booted = false;
+  var QUEUE = [], ACTIVE = 0, CONC = 20;
+  function boot(){ if(booted) return; booted = true; start(); }
+  function onAsset(crit){
     loaded++;
-    document.getElementById('pct').textContent = 'se încarcă ' + Math.round(loaded/totalImgs*100) + '%';
-    if(loaded===totalImgs) start();
+    if(booted) return;
+    if(crit) critLoaded++;
+    var el = document.getElementById('pct');
+    if(el) el.textContent = 'se încarcă ' + Math.min(100, Math.round(critLoaded/critTotal*100)) + '%';
+    if(critLoaded >= critTotal) boot();
   }
-  for(var i=1;i<=NC;i++){(function(idx){
-    var img = new Image();
-    img.onload = img.onerror = onAsset;
-    img.src = PFX + 'c' + pad(idx) + '.webp';
-    clipFrames[idx-1] = img;
-  })(i);}
+  function pump(){
+    while(ACTIVE < CONC && QUEUE.length){
+      (function(j){
+        ACTIVE++;
+        var img = new Image();
+        img.onload = img.onerror = function(){ ACTIVE--; onAsset(j.crit); pump(); };
+        img.src = j.src;
+        j.put(img);
+      })(QUEUE.shift());
+    }
+  }
   HOLD_IMGS.forEach(function(h){
-    var img = new Image();
-    img.onload = img.onerror = onAsset;
-    img.src = PFX + h + '.webp';
-    holdFrames[h] = img;
+    QUEUE.push({src: PFX + h + '.webp', crit: true, put: function(im){ holdFrames[h] = im; }});
   });
+  for(var i=1;i<=NC;i++){(function(idx){
+    QUEUE.push({src: PFX + 'c' + pad(idx) + '.webp', crit: idx <= FPC, put: function(im){ clipFrames[idx-1] = im; }});
+  })(i);}
+  pump();
+  setTimeout(boot, 9000);
+  addEventListener('error', function(e){
+    if(!booted){
+      try{ document.getElementById('pct').textContent = 'eroare: ' + String(e.message||'js').slice(0,90); }catch(x){}
+    }
+  }, true);
+  // cadrul cel mai apropiat deja incarcat (scroll inaintea fundalului = fara negru)
+  function frameAt(fi){
+    var im = clipFrames[fi];
+    if(im && im.naturalWidth) return im;
+    for(var d=1; d<=14; d++){
+      im = clipFrames[fi-d]; if(im && im.naturalWidth) return im;
+      im = clipFrames[fi+d]; if(im && im.naturalWidth) return im;
+    }
+    return null;
+  }
   function imgOf(seg){
     if(seg.img === '@s2') return clipFrames[S2_FRAME];
     return holdFrames[seg.img];
@@ -560,8 +590,10 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     var fpos = s.from-1 + lt*(s.to-s.from);
     var i0 = Math.floor(fpos), frac = fpos - i0;
     var i1 = Math.min(s.to-1, i0+1);
-    var a = clipFrames[Math.max(0,Math.min(NC-1,i0))], b = clipFrames[Math.max(0,Math.min(NC-1,i1))];
-    if(!a || !a.naturalWidth) return;
+    var a = frameAt(Math.max(0,Math.min(NC-1,i0)));
+    var b = clipFrames[Math.max(0,Math.min(NC-1,i1))];
+    if(b && !b.naturalWidth) b = null;
+    if(!a) return;
     drawCam(a, cam, 1);
     if(b && b.naturalWidth && frac > 0.02){
       drawCam(b, cam, frac);
