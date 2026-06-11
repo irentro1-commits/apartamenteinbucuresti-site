@@ -154,11 +154,26 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   .pos-tl,.pos-tr,.pos-br,.pos-cl{left:0;right:0;top:auto;bottom:calc(clamp(4.5rem,14vh,8rem) + 2.6rem);text-align:left;transform:none}
   .tl{white-space:normal}
   .pos-tr .rule,.pos-br .rule{margin-left:0;transform-origin:left center}
+  /* AERISIT + INCADRAT pe telefon (motion locked, doar textul) */
+  .beat{padding:0 1.6rem;bottom:calc(clamp(4.5rem,14vh,8rem) + 3.1rem)}
+  .kicker{font-size:.82rem;letter-spacing:.26em;margin-bottom:1.2rem}
+  .beat h1{font-size:2.15rem;line-height:1.16}
+  .beat p.big{font-size:2rem;line-height:1.16}
+  .beat[data-seg="0"] h1{font-size:1.95rem}
+  .beat[data-seg="0"] .lead{font-size:1.1rem}
+  .tl{margin-bottom:.18em}
+  .rule{margin-top:1.3rem}
+  .lead,.beat .sub{margin-top:1.5rem;line-height:1.5}
+  .quote{margin-top:1.5rem;padding-left:1.2rem;border-left-width:3px;line-height:1.4}
+  .specs{margin-top:1.4rem}
+  .spec{flex-direction:column;align-items:flex-start;gap:.35rem;padding:1rem 0}
+  .stats{gap:1.5rem 2.2rem;margin-top:1.5rem;flex-wrap:wrap}
+  .note{margin-top:1.4rem}
+  .strip{flex-direction:column;gap:1.05rem;margin-top:1.5rem;align-items:center}
+  .pos-cc .btn{display:flex;justify-content:center;width:min(100%,21rem);margin-left:auto;margin-right:auto}
+  .pos-cc .btn.ghost{margin:.75rem auto 0}
   .beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before,.btn.ghost{backdrop-filter:none;-webkit-backdrop-filter:none}
   .beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before{background:rgba(16,12,7,.62)}
-  .spec{justify-content:flex-start;flex-wrap:wrap;gap:.5rem 1rem}
-  .stats{gap:1.6rem;flex-wrap:wrap}
-  .strip{gap:1.4rem 2rem;flex-wrap:wrap}
   .pos-cc{left:0;right:0;top:50%;bottom:auto;transform:translateY(-50%);text-align:center;width:auto;max-width:none}
   #scrim{background:linear-gradient(0deg,rgba(16,12,7,.74),rgba(16,12,7,.15) 55%)}
   #rail{right:.7rem;gap:11px}
