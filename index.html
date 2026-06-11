@@ -135,7 +135,38 @@ a,button{-webkit-tap-highlight-color:transparent}
 .pill{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-weight:600;font-size:clamp(.95rem,.95vw,1.05rem);color:var(--cream);text-decoration:none;border:1px solid rgba(232,180,90,.6);border-radius:999px;padding:.6em 1.1em;background:rgba(16,12,7,.55);transition:border-color .3s ease,transform .15s ease}
 .pill:hover{border-color:rgba(232,180,90,.95)}
 .pill:active{transform:scale(.96)}
+.pill.gold{background:var(--gold);color:#1a140c;border-color:var(--gold);cursor:pointer}
 .beat.on .plans .pill{pointer-events:auto}
+/* ===== overlay preturi (propunerea #1 aprobata): strat DOM separat peste film, canvas + fizica neatinse ===== */
+#ov{position:fixed;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(12,9,5,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;transition:opacity .35s ease}
+#ov.on{opacity:1}
+#ov[hidden]{display:none}
+.ov-panel{width:min(40rem,100%);max-height:88vh;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;background:#181209;border:1px solid rgba(232,180,90,.35);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:scale(.98);transition:transform .35s cubic-bezier(.22,.6,.2,1)}
+#ov.on .ov-panel{transform:none}
+.ov-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.4rem .9rem;background:linear-gradient(180deg,#181209 78%,rgba(24,18,9,0));z-index:1}
+.ov-title{font-family:'Fraunces',serif;font-weight:600;font-size:1.45rem;color:var(--cream)}
+.ov-x{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(232,180,90,.45);background:none;color:var(--cream);font-size:1.15rem;cursor:pointer;transition:border-color .3s ease,transform .15s ease}
+.ov-x:hover{border-color:rgba(232,180,90,.95)}
+.ov-x:active{transform:scale(.92)}
+.ov-body{padding:.2rem 1.4rem 1.5rem}
+.ov-note{font-family:'Inter';font-size:.92rem;color:var(--cream-soft);line-height:1.5;margin-bottom:.4rem}
+.ov-note b{color:var(--gold);font-weight:600}
+.ov-h{font-family:'Inter';font-weight:600;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:1.4rem 0 .3rem}
+.ov-row{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(232,180,90,.18)}
+.ov-row .d{font-family:'Inter';font-size:.98rem;color:var(--cream);line-height:1.4}
+.ov-row .d small{display:block;color:var(--cream-soft);font-size:.85rem;margin-top:.15rem}
+.ov-row .p{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--gold);white-space:nowrap}
+.ov-block{font-family:'Inter';font-size:.95rem;color:var(--cream);line-height:1.6;margin-top:.5rem}
+.ov-block b{color:var(--gold);font-weight:600}
+.ov-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.ov-cta .btn{margin-top:0}
+.ov-cta .btn.ghost{margin-left:0}
+@media (max-width:760px){
+  #ov{padding:0;align-items:flex-end;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(12,9,5,.9)}
+  .ov-panel{width:100%;max-height:92vh;border-radius:18px 18px 0 0;border-left:0;border-right:0;border-bottom:0}
+  .ov-cta .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion: reduce){ #ov,.ov-panel{transition:none} }
 /* micro-copy "ce urmeaza" (propunerea #3 aprobata, varianta B) */
 .after{font-family:'Inter';font-size:clamp(.92rem,.9vw,1rem);color:var(--cream-soft);margin-top:1.2rem;line-height:1.45;text-shadow:0 2px 18px rgba(0,0,0,.6)}
 .strip{display:flex;gap:clamp(2.2rem,6vw,5.5rem);justify-content:center;margin-top:1.8rem}
@@ -316,7 +347,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     <div class="stat"><div class="n">47–84</div><div class="c">mp utili</div></div>
   </div>
   <div class="note">Suprafața se compartimentează modular · detaliile, la vizionare.</div>
-  <div class="plans"><a class="pill" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20planul%20apartamentului%20de%202%20camere%20de%20pe%20Aleea%20Eprubetei.">Vreau planul de 2 camere</a><a class="pill" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20planul%20apartamentului%20de%203%20camere%20de%20pe%20Aleea%20Eprubetei.">Vreau planul de 3 camere</a></div>
+  <div class="plans"><button type="button" class="pill gold" id="openPrices">Vezi toate prețurile</button><a class="pill" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20planul%20apartamentului%20de%202%20camere%20de%20pe%20Aleea%20Eprubetei.">Vreau planul de 2 camere</a><a class="pill" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20planul%20apartamentului%20de%203%20camere%20de%20pe%20Aleea%20Eprubetei.">Vreau planul de 3 camere</a></div>
 </div>
 <div class="beat pos-cc" data-seg="6">
   <div class="kicker">Ultimul etaj · Aleea Eprubetei 7</div>
@@ -338,6 +369,23 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 <nav id="rail" aria-label="Capitole"></nav>
 <div id="hint">Derulează</div>
 
+<div id="ov" role="dialog" aria-modal="true" aria-label="Prețuri și disponibilitate" hidden>
+  <div class="ov-panel">
+    <div class="ov-head"><div class="ov-title">Prețuri și disponibilitate</div><button type="button" class="ov-x" id="ovClose" aria-label="Închide">×</button></div>
+    <div class="ov-body">
+      <div class="ov-note"><b>12 din 31</b> apartamente disponibile · finalizare decembrie 2026 · toate prețurile sunt finale și nu includ TVA</div>
+      <div class="ov-h">3 camere · 3 disponibile</div>
+      <div class="ov-row"><span class="d">Parter · ap. 3<small>57,3 mp utili + terasă 13,7 mp</small></span><span class="p">151.000 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 1 · ap. 4<small>56,1 mp utili + terasă 28,1 mp</small></span><span class="p">168.000 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 3 · ap. 12<small>56,4 mp utili + terasă 28,1 mp</small></span><span class="p">168.000 EUR + TVA</span></div>
+      <div class="ov-h">2 camere · 9 disponibile</div>
+      <div class="ov-row"><span class="d">Etaj 1 · ap. 7<small>39,5 mp utili + terasă 21,1 mp</small></span><span class="p">122.000 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 4 · ap. 19<small>39,7 mp utili + terasă 21,1 mp</small></span><span class="p">123.000 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 6 · ap. 25<small>44,2 mp utili + terasă 22,7 mp</small></span><span class="p">134.000 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 6 · ap. 26<small>40,1 mp utili + terasă 7,3 mp</small></span><span class="p">107.500 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 6 · ap. 27<small>39,8 mp utili + terasă 21,1 mp</small></span><span class="p">125.000 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 7 · ap. 28<small>46,1 mp utili + terasă 23,8 mp</small></span><span class="p">136.000 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 7 · ap. 29<small>45,5 mp utili + terasă 22,7 mp</small></span><span class="p">135.000 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 7 · ap. 30<small>47,9 mp utili + terasă 10,3 mp</small></span><span class="p">135.000 EUR + TVA</span></div><div class="ov-row"><span class="d">Etaj 7 · ap. 31<small>45,5 mp utili + terasă 22,7 mp</small></span><span class="p">136.500 EUR + TVA</span></div>
+      <div class="ov-h">Parcare</div>
+      <div class="ov-block">Parcare dublă tip Klauss, 2 locuri suprapuse: <b>25.000 EUR + TVA</b><br>Loc de parcare simplu: <b>20.000 EUR + TVA</b><br>Pentru primii 3 clienți: parcare de închiriat, de la <b>80 EUR + TVA</b> pe lună.</div>
+      <div class="ov-h">Rezervare</div>
+      <div class="ov-block">Rezervi cu <b>2.000 EUR + TVA</b>, apoi avansul minim e <b>30%</b>. Restul detaliilor, pe WhatsApp sau la vizionare.</div>
+      <div class="ov-cta"><a class="btn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a><a class="btn ghost" href="tel:+40726712899">Sau sună direct</a></div>
+    </div>
+  </div>
+</div>
 <div id="load"><div class="ring" id="ldring"><i class="sun"></i></div><div class="t">Ilioara <b>Residence</b></div><div class="p" id="pct">se încarcă 0%</div></div>
 <script>
 (function(){
@@ -515,6 +563,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   }
 
   addEventListener('wheel', function(e){
+    if(ovOpen) return; // overlay-ul scrolleaza nativ, filmul sta pe loc
     e.preventDefault();
     var dy = e.deltaY;
     if(e.deltaMode === 1) dy *= 33;
@@ -524,8 +573,9 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   }, {passive:false});
 
   var tY = null, tV = 0, tLast = 0;
-  addEventListener('touchstart', function(e){ tY = e.touches[0].clientY; tV = 0; tvel = 0; glide = null; }, {passive:true});
+  addEventListener('touchstart', function(e){ if(ovOpen) return; tY = e.touches[0].clientY; tV = 0; tvel = 0; glide = null; }, {passive:true});
   addEventListener('touchmove', function(e){
+    if(ovOpen) return; // touch-ul apartine overlay-ului
     e.preventDefault();
     if(tY === null) return;
     var y = e.touches[0].clientY, dy = (tY - y) * 2.0, now = performance.now();
@@ -546,6 +596,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   });
 
   addEventListener('keydown', function(e){
+    if(ovOpen){ if(e.key === 'Escape') closeOv(); return; }
     if(T === undefined) return;
     var k = e.key, hi = nearestHoldIdx(T);
     if(k==='ArrowDown'||k==='PageDown'||k===' '){ e.preventDefault(); goTo(Math.min(HOLDS.length-1, hi+1)); }
@@ -571,6 +622,29 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
       kick();
     }
   }
+
+  // ===== OVERLAY PRETURI (strat DOM separat; filmul si fizica raman neatinse, input-ul doar se intoarce) =====
+  var ov = document.getElementById('ov'), ovOpen = false, ovTrigger = null;
+  function openOv(){
+    ovOpen = true;
+    ov.hidden = false;
+    void ov.offsetWidth; // reflow sincron: tranzitia porneste din starea ascunsa, fara rAF (suspendat in tab inactiv)
+    ov.classList.add('on');
+    var x = document.getElementById('ovClose');
+    if(x) x.focus();
+  }
+  function closeOv(){
+    ovOpen = false;
+    ov.classList.remove('on');
+    setTimeout(function(){ if(!ovOpen) ov.hidden = true; }, 360);
+    if(ovTrigger) ovTrigger.focus();
+  }
+  (function(){
+    var opn = document.getElementById('openPrices');
+    if(opn) opn.addEventListener('click', function(){ ovTrigger = opn; openOv(); });
+    document.getElementById('ovClose').addEventListener('click', closeOv);
+    ov.addEventListener('click', function(e){ if(e.target === ov) closeOv(); });
+  })();
 
   // ===== CHAPTER RAIL =====
   var rail = document.getElementById('rail'), railBtns = [];
