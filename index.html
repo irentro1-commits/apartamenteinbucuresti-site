@@ -149,6 +149,15 @@ a,button{-webkit-tap-highlight-color:transparent}
 header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.4rem clamp(1.4rem,6vw,6rem);pointer-events:none}
 .brand{font-family:'Fraunces',serif;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:1.15rem;text-shadow:0 1px 14px rgba(0,0,0,.6)}
 .brand b{color:var(--gold)}
+/* CTA persistent desktop: apare dupa S1, dispare pe finalul cu CTA propriu (propunerea #0 aprobata) */
+#hcta{display:flex;align-items:center;gap:1.2rem;opacity:0;transform:translateY(-8px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+#hcta.show{opacity:1;transform:none;pointer-events:auto}
+#hcta .htel{font-family:'Inter';font-weight:600;font-size:1.02rem;color:var(--cream);text-decoration:none;letter-spacing:.05em;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease}
+#hcta .htel:hover{color:var(--gold)}
+#hcta .hwa{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border:1px solid rgba(232,180,90,.6);border-radius:999px;padding:.52em 1.05em;background:rgba(16,12,7,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:border-color .3s ease,transform .15s ease}
+#hcta .hwa:hover{border-color:rgba(232,180,90,.95)}
+#hcta .hwa:active{transform:scale(.96)}
+@media (max-width:900px){ #hcta .hwa{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(16,12,7,.78)} }
 #bar{position:fixed;top:0;left:0;height:3px;z-index:6;background:linear-gradient(90deg,var(--gold),#F4D9A6);width:0}
 
 #rail{position:fixed;right:clamp(1rem,3vw,2.6rem);top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:0;align-items:flex-end}
@@ -182,14 +191,18 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 .chip{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-size:.85rem;font-weight:500;color:var(--cream);background:rgba(18,13,8,.78);border:1px solid rgba(232,180,90,.5);border-radius:10px;padding:.45em .7em;box-shadow:0 6px 16px rgba(0,0,0,.32),inset 0 1px 0 rgba(245,240,225,.07);opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s cubic-bezier(.34,1.56,.64,1)}
 .chip.on{opacity:1;transform:none}
 .chip b{color:var(--gold);font-weight:700;font-size:.82em;letter-spacing:.08em;text-transform:uppercase}
-#mcta{position:fixed;left:0;right:0;bottom:0;z-index:7;display:none;padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(16,12,7,.92),rgba(16,12,7,.55) 70%,transparent);transform:translateY(110%);transition:transform .45s cubic-bezier(.22,.6,.2,1)}
+#mcta{position:fixed;left:0;right:0;bottom:0;z-index:7;display:none;gap:.6rem;align-items:stretch;padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(16,12,7,.92),rgba(16,12,7,.55) 70%,transparent);transform:translateY(110%);transition:transform .45s cubic-bezier(.22,.6,.2,1)}
 #mcta.show{transform:none}
+#mcta .mbtn{flex:1}
+.mtel{display:flex;align-items:center;justify-content:center;width:3.4rem;border-radius:14px;border:1.5px solid rgba(232,180,90,.65);color:var(--gold);background:rgba(16,12,7,.78);box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s ease}
+.mtel:active{transform:scale(.94)}
 .mbtn{display:block;text-align:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95em 1em;border-radius:14px;background:var(--gold);color:#1a140c;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s ease}
 .mbtn:active{transform:scale(.97)}
 .mbtn .wa{vertical-align:-4px;margin-right:.4em}
 @media (max-width:760px){
   #chips{display:flex}
-  #mcta{display:block}
+  #mcta{display:flex}
+  #hcta{display:none}
   #hint{display:none}
   #labels{display:none}
   .beat{left:0;right:0;padding:0 1.4rem;max-width:none;bottom:calc(clamp(4.5rem,14vh,8rem) + 2.6rem)}
@@ -249,6 +262,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 
 <header>
   <div class="brand">Ilioara <b>Residence</b></div>
+  <div id="hcta"><a class="hwa" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a><a class="htel" href="tel:+40726712899">+40 726 712 899</a></div>
 </header>
 
 <!-- beats per sectiune, fiecare cu identitatea ei (data-seg = index hold 0..6). COPY DRAFT pre voce-vie. -->
@@ -302,7 +316,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   <div class="strip">
     <div class="it"><div class="v">12 din 31</div><div class="l">disponibile</div></div>
     <div class="it"><div class="v">Dec 2026</div><div class="l">finalizare</div></div>
-    <div class="it"><div class="v">2.000 EUR</div><div class="l">rezervare</div></div>
+    <div class="it"><div class="v">2.000 EUR + TVA</div><div class="l">rezervare</div></div>
   </div>
   <div><a class="btn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a>
   <a class="btn ghost" href="tel:+40726712899">Sau sună direct</a></div>
@@ -310,7 +324,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 
 <div id="labels"></div>
 <div id="chips"></div>
-<div id="mcta"><a class="mbtn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a></div>
+<div id="mcta"><a class="mbtn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a><a class="mtel" href="tel:+40726712899" aria-label="Sună direct"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a></div>
 <nav id="rail" aria-label="Capitole"></nav>
 <div id="hint">Derulează</div>
 
@@ -831,6 +845,9 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     if(MOBILE){
       var mc = document.getElementById('mcta');
       mc.classList.toggle('show', cur > SEGS[1].a && cur < lastHold.a);
+    } else {
+      // CTA persistent in header (propunerea #0): aceeasi fereastra ca bara mobila
+      document.getElementById('hcta').classList.toggle('show', cur > SEGS[1].a && cur < lastHold.a);
     }
     if(!ambArmed && cur > lastClip.a) armAmbient();
     if(ambArmed && ambReady){
