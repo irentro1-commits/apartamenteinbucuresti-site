@@ -26,10 +26,18 @@
      CROSSFADE intre cadre consecutive = scrub fluid; magneti pe sectiuni + settle automat;
      coregrafie sosire + chapter rail + ambient final. GRAIN ELIMINAT (verdict Andy).
      COPY = voce-vie v1 (11 Iun), hook-uri Andy locked. Brand provizoriu. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="film2/m_h1.webp" media="(max-width:760px)">
+<link rel="preload" as="image" href="film2/h1.webp" media="(min-width:761px)">
+<link rel="preload" as="font" type="font/woff2" href="fonts/fraunces-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/fraunces-latin-ext.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin-ext.woff2" crossorigin>
 <style>
+/* fonturi self-host (variabile, subset latin + latin-ext pt diacritice RO): zero CSS extern render-blocking */
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/fraunces-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/fraunces-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none;background:var(--bg)}
@@ -407,12 +415,18 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     }
   }
   HOLD_IMGS.forEach(function(h){
-    QUEUE.push({src: PFX + h + '.webp', crit: true, put: function(im){ holdFrames[h] = im; }});
+    QUEUE.push({src: PFX + h + '.webp', crit: true, fi: 0, put: function(im){ holdFrames[h] = im; }});
   });
   for(var i=1;i<=NC;i++){(function(idx){
-    QUEUE.push({src: PFX + 'c' + pad(idx) + '.webp', crit: idx <= FPC, put: function(im){ clipFrames[idx-1] = im; }});
+    QUEUE.push({src: PFX + 'c' + pad(idx) + '.webp', crit: idx <= FPC, fi: idx, put: function(im){ clipFrames[idx-1] = im; }});
   })(i);}
   pump();
+  // la salt prin rail/taste, fundalul se rearanjeaza: cadrele zonei tinta se incarca primele
+  function prioritizeQueue(p){
+    if(QUEUE.length < 2) return;
+    var fi = Math.round(p * NC);
+    QUEUE.sort(function(a,b){ return Math.abs(a.fi - fi) - Math.abs(b.fi - fi); });
+  }
   setTimeout(boot, 9000);
   addEventListener('error', function(e){
     if(!booted){
@@ -459,9 +473,10 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   function startGlide(to){
     if(T === undefined) return;
     to = Math.min(1, Math.max(0, to));
-    if(RM){ T = cur = to; glide = null; return; }
+    if(RM){ T = cur = to; glide = null; kick(); return; }
     glide = { from: T, to: to, t0: performance.now(), dur: Math.min(3000, 600 + Math.abs(to-T)*18000) };
     tvel = 0;
+    kick();
   }
   function input(dy, gain){
     if(T === undefined) return;
@@ -472,6 +487,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     var d = dy * gain;
     if(holdIndexAt(T) >= 0) d *= HOLD_DAMP;
     T = Math.min(1, Math.max(0, T + d));
+    kick();
   }
 
   addEventListener('wheel', function(e){
@@ -501,6 +517,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
       tvel = Math.max(-0.006, Math.min(0.006, tV * 0.00012));
       lastDir = tV > 0 ? 1 : -1;
       lastInput = performance.now();
+      kick();
     }
   });
 
@@ -514,6 +531,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   });
   function goTo(i){
     document.getElementById('hint').classList.add('off');
+    prioritizeQueue(HOLDS[i].c);
     startGlide(HOLDS[i].c);
   }
   var rmAcc = 0, rmLock = 0;
@@ -526,6 +544,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
       var hi = nearestHoldIdx(T) + (rmAcc>0?1:-1);
       T = cur = HOLDS[Math.min(HOLDS.length-1, Math.max(0,hi))].c;
       rmAcc = 0; rmLock = now + 500;
+      kick();
     }
   }
 
@@ -753,7 +772,14 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   }
 
   // ===== LOOP =====
-  var prevT = 0;
+  // bucla nu mai ruleaza permanent: adoarme cand totul e asezat (baterie + INP), orice input o trezeste
+  var running = false, prevT = 0;
+  function kick(){
+    if(running) return;
+    running = true;
+    prevT = 0;
+    requestAnimationFrame(frame);
+  }
   function frame(t){
     var dt = prevT ? Math.min(50, t - prevT) : 16.7;
     prevT = t;
@@ -773,6 +799,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
         var hi = holdIndexAt(T);
         if(hi >= 0){
           T += (HOLDS[hi].c - T)*Math.min(1, MAGNET*f);
+          // snap numeric la capatul convergentei (~0.002% din film, invizibil): permite buclei sa adoarma
+          if(Math.abs(HOLDS[hi].c - T) < 0.00002) T = HOLDS[hi].c;
         } else {
           var k = segAt(T), sg = SEGS[k];
           var lt = (T - sg.a)/sg.len;
@@ -811,6 +839,12 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
       amb.style.opacity = inFinal ? 1 : 0;
     }
 
+    // somn: doar asezat fix pe centrul unui hold, fara glide/momentum si fara ambient in asteptare
+    var hs = holdIndexAt(T);
+    if(cur === T && !glide && Math.abs(tvel) <= 0.00001 && !(ambArmed && !ambReady) && hs >= 0 && HOLDS[hs].c === T){
+      running = false;
+      return;
+    }
     requestAnimationFrame(frame);
   }
 
@@ -818,8 +852,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     T = cur = HOLDS[0].c;
     document.getElementById('load').classList.add('hide');
     resize();
-    addEventListener('resize', resize, {passive:true});
-    requestAnimationFrame(frame);
+    addEventListener('resize', function(){ resize(); kick(); }, {passive:true});
+    kick();
   }
 })();
 </script>
