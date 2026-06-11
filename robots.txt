@@ -1,4 +1,54 @@
+# Ilioara Residence - apartamente noi in bloc nou construit, direct de la proprietari
+# Titan-Dristor, Sector 3, Bucuresti. Continut deschis pentru motoare de cautare si asistenti AI.
+# Rezumat structurat pentru AI: https://apartamenteinbucuresti.ro/llms.txt
+
 User-agent: *
+Allow: /
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google (AI / Gemini)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Microsoft (Bing / Copilot)
+User-agent: Bingbot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Amazon (Alexa / Rufus)
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://apartamenteinbucuresti.ro/sitemap.xml
