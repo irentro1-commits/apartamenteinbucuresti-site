@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apartamente noi Titan, 5 min de metrou | Ilioara Residence</title>
+<meta name="description" content="Bloc nou pe Aleea Eprubetei 7, stradă retrasă între case. Încălzire în pardoseală peste tot, 4 apartamente pe etaj, 47-84 mp utili. 12 disponibile, finalizare decembrie 2026.">
+<link rel="canonical" href="https://apartamenteinbucuresti.ro/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:site_name" content="Ilioara Residence">
+<meta property="og:title" content="Apartamente noi în Titan, la 5 minute de metrou">
+<meta property="og:description" content="Stradă retrasă, între case. Încălzire în pardoseală, 4 apartamente pe etaj, 47-84 mp utili. 12 disponibile din 31.">
+<meta property="og:url" content="https://apartamenteinbucuresti.ro/">
+<meta property="og:image" content="https://apartamenteinbucuresti.ro/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314100b'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%23E8B45A'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ApartmentComplex","name":"Ilioara Residence","url":"https://apartamenteinbucuresti.ro/","image":"https://apartamenteinbucuresti.ro/og.jpg","telephone":"+40726712899","address":{"@type":"PostalAddress","streetAddress":"Aleea Eprubetei 7-11","addressLocality":"București","addressRegion":"Sector 3","addressCountry":"RO"},"numberOfAvailableAccommodationUnits":{"@type":"QuantitativeValue","value":12}}
+</script>
+<!-- v5 DIRECT DRIVE: tinta scroll misca 1:1 cu inputul (usor, stil Lenis), cur lerp = unt;
+     CROSSFADE intre cadre consecutive = scrub fluid; magneti pe sectiuni + settle automat;
+     coregrafie sosire + chapter rail + ambient final. GRAIN ELIMINAT (verdict Andy).
+     COPY = voce-vie v1 (11 Iun), hook-uri Andy locked. Brand provizoriu. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b}
+html,body{height:100%;overflow:hidden;overscroll-behavior:none;background:var(--bg)}
+body{font-family:'Inter',sans-serif;color:var(--cream);touch-action:none}
+
+#stage{position:fixed;inset:0;z-index:0;background:var(--bg)}
+#frame{position:absolute;inset:0;width:100%;height:100%;display:block}
+#ambient{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease}
+#scrim{position:fixed;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(95deg, rgba(16,12,7,.62) 0%, rgba(16,12,7,.32) 32%, rgba(16,12,7,.03) 60%, transparent 100%),
+  linear-gradient(275deg, rgba(16,12,7,.42) 0%, rgba(16,12,7,.10) 30%, transparent 55%),
+  linear-gradient(0deg, rgba(16,12,7,.54) 0%, transparent 40%)}
+
+.beat{position:fixed;left:clamp(1.4rem,6vw,6rem);bottom:clamp(3rem,14vh,8.5rem);z-index:4;max-width:78rem;pointer-events:none}
+.beat .kicker,.beat .sub,.beat .rule,.beat .btn,.beat .lead,.beat .quote,.beat .spec,.beat .stat,.beat .note,.beat .strip{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,.6,.2,1),transform .6s cubic-bezier(.22,.6,.2,1)}
+.beat.on .kicker,.beat.on .sub,.beat.on .rule,.beat.on .btn,.beat.on .lead,.beat.on .quote,.beat.on .spec,.beat.on .stat,.beat.on .note,.beat.on .strip{opacity:1;transform:none}
+.beat .w{display:inline-block;opacity:0;transform:translateY(.75em);transition:opacity .65s cubic-bezier(.22,.6,.2,1),transform .65s cubic-bezier(.22,.6,.2,1)}
+.beat.on .w{opacity:1;transform:none}
+.kicker{font-size:clamp(1rem,.9vw + .35rem,1.3rem);font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-shadow:0 1px 12px rgba(0,0,0,.7)}
+.beat h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(3.4rem,8vw,8.5rem);line-height:1.04;letter-spacing:-.02em;text-shadow:0 2px 36px rgba(0,0,0,.55)}
+.beat p.big{font-family:'Fraunces',serif;font-size:clamp(3rem,7.4vw,8rem);line-height:1.05;letter-spacing:-.01em;text-shadow:0 2px 30px rgba(0,0,0,.55)}
+.rule{width:96px;height:3px;background:var(--gold);margin-top:1.1rem;transform-origin:left center}
+.beat .rule{transform:scaleX(0) translateY(0)}
+.beat.on .rule{transform:scaleX(1)}
+.beat .sub{font-family:'Inter';font-size:clamp(1.6rem,3.7vw,4rem);color:var(--cream-soft);margin-top:1.4rem;font-weight:400;text-shadow:0 2px 22px rgba(0,0,0,.65);line-height:1.32}
+.beat .sub b{color:var(--gold);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;font-weight:600;font-size:1.35rem;padding:1.15rem 2.3rem;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;position:relative;overflow:hidden}
+.beat.on .btn{pointer-events:auto}
+.btn::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .55s ease}
+.btn:hover::after{left:125%}
+.btn.ghost{border:1px solid rgba(232,180,90,.6);color:var(--cream);margin-left:.7rem}
+
+/* glass STRANS pe fiecare element de text (doar sub litere, fundal intact) */
+.beat .kicker,.beat h1,.beat p.big,.beat .lead,.beat .quote,.beat .spec,.beat .stat,.beat .note,.beat .strip{position:relative;width:fit-content;max-width:100%}
+.tl{display:block;width:fit-content;max-width:100%;position:relative;white-space:nowrap}
+.beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before{content:'';position:absolute;inset:-.04em -.2em;z-index:-1;background:rgba(16,12,7,.32);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:.24em;-webkit-mask-image:radial-gradient(ellipse 115% 125% at center,#000 76%,transparent 100%);mask-image:radial-gradient(ellipse 115% 125% at center,#000 76%,transparent 100%);opacity:0;transition:opacity .5s ease}
+.beat.on .kicker::before,.beat.on .tl::before,.beat.on .lead::before,.beat.on .quote::before,.beat.on .spec::before,.beat.on .stat::before,.beat.on .note::before,.beat.on .strip::before{opacity:1}
+.pos-tr .kicker,.pos-tr p.big,.pos-tr .spec,.pos-tr .tl,.pos-br .kicker,.pos-br p.big,.pos-br .tl{margin-left:auto}
+.pos-cc .kicker,.pos-cc p.big,.pos-cc .strip,.pos-cc .tl{margin-left:auto;margin-right:auto}
+.btn.ghost{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(16,12,7,.35)}
+
+/* S1: headingul se opreste inainte de blocul galben; lead = 1/2 din el */
+.beat[data-seg="0"] h1{font-size:clamp(2.6rem,5.9vw,6.3rem)}
+.beat[data-seg="0"] .lead{font-size:clamp(1.35rem,2.95vw,3.15rem)}
+
+/* pozitii text per sectiune (anti-monotonie) */
+.pos-tl{top:clamp(5.5rem,13vh,10rem);bottom:auto}
+.pos-tr{left:auto;right:clamp(1.4rem,7vw,7rem);top:clamp(5.5rem,13vh,10rem);bottom:auto;text-align:right}
+.pos-br{left:auto;right:clamp(1.4rem,7vw,7rem);text-align:right}
+.pos-cl{top:50%;bottom:auto;transform:translateY(-50%)}
+.pos-cc{left:50%;right:auto;top:50%;bottom:auto;transform:translate(-50%,-50%);text-align:center;width:max-content;max-width:92vw}
+.pos-tr .rule,.pos-br .rule{margin-left:auto;transform-origin:right center}
+.pos-cc .rule{margin-left:auto;margin-right:auto;transform-origin:center}
+
+/* accente + componente per sectiune */
+.g{color:var(--gold)}
+.lead{font-family:'Inter';font-size:clamp(1.7rem,4vw,4.2rem);color:var(--cream-soft);margin-top:1.4rem;line-height:1.25;text-shadow:0 2px 22px rgba(0,0,0,.65)}
+.lead b{color:var(--cream);font-weight:600}
+.quote{margin-top:1.6rem;border-left:4px solid var(--gold);padding-left:2rem;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.7rem,3.7vw,4rem);line-height:1.25;color:var(--cream-soft);text-shadow:0 2px 22px rgba(0,0,0,.65)}
+.quote .g{font-style:italic}
+.specs{margin-top:1.6rem}
+.spec{display:flex;gap:1.4rem;align-items:baseline;justify-content:flex-end;padding:1rem 0;border-bottom:1px solid rgba(232,180,90,.28)}
+.spec:first-child{border-top:1px solid rgba(232,180,90,.28)}
+.spec .k{font-family:'Inter';font-weight:600;font-size:clamp(1.05rem,1.4vw,1.6rem);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.spec .v{font-family:'Inter';font-size:clamp(1.6rem,3.7vw,4rem);color:var(--cream);text-shadow:0 2px 18px rgba(0,0,0,.6)}
+.spec .v b{color:var(--gold);font-weight:600}
+.stats{display:flex;gap:clamp(2rem,4vw,4rem);margin-top:1.6rem;align-items:flex-end}
+.stat .n{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.8rem,3.7vw,4.1rem);line-height:1;color:var(--gold);text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.stat .c{font-family:'Inter';font-size:clamp(1.3rem,1.85vw,2rem);color:var(--cream-soft);margin-top:.6rem;max-width:14ch;line-height:1.3}
+.note{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.4rem,1.85vw,2rem);color:var(--cream-soft);margin-top:1.5rem;opacity:.92}
+.strip{display:flex;gap:clamp(2.2rem,6vw,5.5rem);justify-content:center;margin-top:1.8rem}
+.strip .it .v{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,3.7vw,4rem);color:var(--cream);line-height:1.05}
+.strip .it .l{font-family:'Inter';font-weight:600;font-size:clamp(.95rem,1.2vw,1.4rem);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:.45rem}
+
+/* ===== POI labels (S2 aproape / S3 departe), proiectate pe imagine de engine ===== */
+#labels{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.poi{position:absolute;left:0;top:0;opacity:0;transform:translate(-50%,-100%) translateY(12px);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);will-change:left,top;pointer-events:none;text-align:center}
+.poi.on{opacity:1;transform:translate(-50%,-100%);pointer-events:auto}
+.poi .lab{display:inline-flex;align-items:center;gap:.85em;font-family:'Inter';font-size:clamp(1rem,.95vw + .35rem,1.35rem);font-weight:500;letter-spacing:.01em;background:rgba(18,13,8,.52);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(232,180,90,.55);box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(245,240,225,.09);padding:.62em 1.15em;border-radius:14px;white-space:nowrap;color:var(--cream);transition:transform .3s ease,border-color .3s ease}
+.poi .lab:hover{transform:translateY(-3px);border-color:rgba(232,180,90,.95)}
+.poi .lab b{color:var(--gold);font-weight:700;font-size:.82em;letter-spacing:.12em;text-transform:uppercase}
+.poi .dv{width:1px;height:1.1em;background:rgba(232,180,90,.5)}
+.poi .ln{display:block;width:1px;height:15px;margin:0 auto;background:linear-gradient(180deg,rgba(232,180,90,.75),rgba(232,180,90,0))}
+.poi .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);margin:0 auto;box-shadow:0 0 0 3px rgba(20,15,9,.6),0 0 0 4px rgba(232,180,90,.85),0 0 18px rgba(232,180,90,.45),0 4px 14px rgba(0,0,0,.5)}
+@media (max-width:760px){ .poi .lab{font-size:.85rem;padding:.5em .8em;gap:.6em;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(18,13,8,.8)} .poi .dot{width:7px;height:7px} .poi .ln{height:10px} }
+
+header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.4rem clamp(1.4rem,6vw,6rem);pointer-events:none}
+.brand{font-family:'Fraunces',serif;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:1.15rem;text-shadow:0 1px 14px rgba(0,0,0,.6)}
+.brand b{color:var(--gold)}
+#bar{position:fixed;top:0;left:0;height:3px;z-index:6;background:linear-gradient(90deg,var(--gold),#F4D9A6);width:0}
+
+#rail{position:fixed;right:clamp(1rem,3vw,2.6rem);top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+#rail button{display:flex;align-items:center;gap:10px;background:none;border:0;cursor:pointer;padding:4px 0}
+#rail .nm{font-family:'Inter';font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-soft);opacity:0;transform:translateX(6px);transition:opacity .4s ease,transform .4s ease;text-shadow:0 1px 10px rgba(0,0,0,.7)}
+#rail .tick{width:18px;height:2px;background:rgba(245,240,225,.38);transition:width .4s cubic-bezier(.22,.6,.2,1),background .4s ease}
+#rail button.act .tick{width:34px;background:var(--gold)}
+#rail button.act .nm{opacity:1;transform:none;color:var(--gold)}
+#rail button:hover .nm{opacity:1;transform:none}
+
+#hint{position:fixed;left:50%;transform:translateX(-50%);bottom:1.6rem;z-index:5;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--cream-soft);text-shadow:0 1px 12px rgba(0,0,0,.7);transition:opacity .5s ease;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+#hint.off{opacity:0!important;animation:none}
+
+#load{position:fixed;inset:0;z-index:10;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;transition:opacity .8s ease}
+#load.hide{opacity:0;pointer-events:none}
+#load .t{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--cream);letter-spacing:.06em}
+#load .t b{color:var(--gold)}
+#load .p{font-size:.85rem;color:var(--gold);letter-spacing:.12em}
+
+@media (max-width:760px){
+  .beat{left:0;right:0;padding:0 1.4rem;max-width:none;bottom:clamp(4.5rem,14vh,8rem)}
+  .pos-tl,.pos-tr,.pos-br,.pos-cl{left:0;right:0;top:auto;bottom:clamp(4.5rem,14vh,8rem);text-align:left;transform:none}
+  .tl{white-space:normal}
+  .pos-tr .rule,.pos-br .rule{margin-left:0;transform-origin:left center}
+  .beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before,.btn.ghost{backdrop-filter:none;-webkit-backdrop-filter:none}
+  .beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before{background:rgba(16,12,7,.62)}
+  .spec{justify-content:flex-start;flex-wrap:wrap;gap:.5rem 1rem}
+  .stats{gap:1.6rem;flex-wrap:wrap}
+  .strip{gap:1.4rem 2rem;flex-wrap:wrap}
+  .pos-cc{left:0;right:0;top:50%;bottom:auto;transform:translateY(-50%);text-align:center;width:auto;max-width:none}
+  #scrim{background:linear-gradient(0deg,rgba(16,12,7,.74),rgba(16,12,7,.15) 55%)}
+  #rail{right:.7rem;gap:11px}
+  #rail .nm{display:none}
+  .btn.ghost{margin-left:0;margin-top:.8rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .beat .w,.beat .kicker,.beat .sub,.beat .rule,.beat .btn{transition:none}
+  #hint{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<div id="stage"><canvas id="frame"></canvas><video id="ambient" muted loop playsinline preload="none"></video></div>
+<div id="scrim"></div>
+<div id="bar"></div>
+
+<header>
+  <div class="brand">Ilioara <b>Residence</b></div>
+</header>
+
+<!-- beats per sectiune, fiecare cu identitatea ei (data-seg = index hold 0..6). COPY DRAFT pre voce-vie. -->
+<div class="beat" data-seg="0">
+  <div class="kicker">Apartamente noi · Titan, la 5 minute de metrou</div>
+  <h1 class="split">Aici nu cumperi blocul.<br><span class="g">Cumperi locul.</span></h1>
+  <div class="rule"></div>
+  <div class="lead"><b>Stradă retrasă</b>, între case. Orașul rămâne <b>la minute</b>.</div>
+</div>
+<div class="beat" data-seg="1">
+  <div class="kicker">Pe jos, din ușa blocului</div>
+  <p class="big split">Totul e la <span class="g">minute</span>.</p>
+  <div class="rule"></div>
+</div>
+<div class="beat pos-br" data-seg="2">
+  <div class="kicker">Parc, mall, piață</div>
+  <p class="big split">Și orașul mare,<br>tot <span class="g">aproape</span>.</p>
+  <div class="rule"></div>
+</div>
+<div class="beat pos-cl" data-seg="3">
+  <div class="kicker">Aleea Eprubetei · stradă închisă</div>
+  <p class="big split"><span class="g">Liniște</span> și pace.</p>
+  <div class="rule"></div>
+  <div class="quote">Etajele de jos s-au vândut.<br>Sus e încă liber, <span class="g">partea cu vedere</span>.</div>
+</div>
+<div class="beat pos-tr" data-seg="4">
+  <div class="kicker">Ce primești în preț</div>
+  <p class="big split">Cald din <span class="g">pardoseală</span>.</p>
+  <div class="rule"></div>
+  <div class="specs">
+    <div class="spec"><span class="k">Încălzire</span><span class="v">În pardoseală peste tot, și pe balcon · <b>inclusă</b></span></div>
+    <div class="spec"><span class="k">Tâmplărie</span><span class="v">Tripan Salamander · 7 camere, ține frigul afară</span></div>
+    <div class="spec"><span class="k">Centrală</span><span class="v">Doar a ta · Ariston 24 kW</span></div>
+  </div>
+</div>
+<div class="beat" data-seg="5">
+  <div class="kicker">Un palier scurt, patru uși</div>
+  <p class="big split">4 apartamente <span class="g">pe etaj</span>.</p>
+  <div class="rule"></div>
+  <div class="stats">
+    <div class="stat"><div class="n">1</div><div class="c">apartament de 3 camere</div></div>
+    <div class="stat"><div class="n">3</div><div class="c">apartamente de 2 camere</div></div>
+    <div class="stat"><div class="n">47–84</div><div class="c">mp utili</div></div>
+  </div>
+  <div class="note">Suprafața se compartimentează modular · detaliile, la vizionare.</div>
+</div>
+<div class="beat pos-cc" data-seg="6">
+  <div class="kicker">Ultimul etaj · Aleea Eprubetei 7</div>
+  <p class="big split">Și asta e <span class="g">priveliștea</span>.</p>
+  <div class="rule"></div>
+  <div class="strip">
+    <div class="it"><div class="v">12 din 31</div><div class="l">disponibile</div></div>
+    <div class="it"><div class="v">Dec 2026</div><div class="l">finalizare</div></div>
+    <div class="it"><div class="v">2.000 EUR</div><div class="l">rezervare</div></div>
+  </div>
+  <div><a class="btn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei.">Scrie-ne pe WhatsApp</a>
+  <a class="btn ghost" href="tel:+40726712899">Sau sună direct</a></div>
+</div>
+
+<div id="labels"></div>
+<nav id="rail" aria-label="Capitole"></nav>
+<div id="hint">Derulează</div>
+
+<div id="load"><div class="t">Ilioara <b>Residence</b></div><div class="p" id="pct">se încarcă 0%</div></div>
+<script>
+(function(){
+  'use strict';
+  var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // camera: z = zoom peste cover-fit, cx/cy = punctul din imagine adus in centrul ecranului
+  var WIDE  = {z:1,   cx:0.50, cy:0.50};
+  var CLOSE = {z:1.5, cx:0.38, cy:0.52};   // clusterul: bloc + case + strada (de calibrat cu Andy)
+
+  var SEGS = [
+    {type:'hold', img:'h1',  w:0.30},
+    {type:'clip', from:1,   to:120, w:1.0},
+    {type:'zoom', a1:WIDE,  a2:CLOSE, w:0.5},
+    {type:'hold', img:'@s2', cam:CLOSE, w:0.34},
+    {type:'zoom', a1:CLOSE, a2:WIDE,  w:0.5},
+    {type:'hold', img:'@s2', cam:WIDE, w:0.34},
+    {type:'clip', from:121, to:240, w:1.0},
+    {type:'hold', img:'h3', w:0.30},
+    {type:'clip', from:241, to:360, w:1.0},
+    {type:'hold', img:'h4', w:0.30},
+    {type:'clip', from:361, to:480, w:1.0},
+    {type:'hold', img:'h5', w:0.30},
+    {type:'clip', from:481, to:600, w:1.0},
+    {type:'hold', img:'h6', w:0.42}
+  ];
+  var CH_NAMES = ['Locul','Minutele','Orașul','Liniștea','Confortul','Spațiul','Priveliștea'];
+  var NC = 600, HOLD_IMGS = ['h1','h3','h4','h5','h6'];
+  var S2_FRAME = 119; // c120 = ultimul cadru video1 (1536px) = imaginea locatiei
+
+  var totalW = SEGS.reduce(function(a,x){return a+x.w},0), acc = 0;
+  SEGS.forEach(function(s){ s.a = acc/totalW; acc += s.w; s.b = acc/totalW; s.len = s.b - s.a; s.c = (s.a+s.b)/2; });
+  var HOLDS = SEGS.filter(function(s){return s.type==='hold'});
+
+  // ===== POI (procente pe cadrul LARG, calibrate in prototip) — DRAFT pre voce-vie =====
+  // POZITII LOCKED 11 Iun (corectii rosii Andy + citire directa c120). Nu se muta fara desen nou de la Andy.
+  var W1 = [
+    {x:11, y:60, n:"Spălătorie auto",            m:"1 min"},
+    {x:34, y:55, n:"Benzinărie Lukoil non-stop", m:"2 min"},
+    {x:28, y:44, n:"Stație autobuz Ilioara",     m:"3 min"},
+    {x:23, y:37, n:"Tramvai 19 / 23 / 27",       m:"4 min"},
+    {x:15, y:30, n:"Mega Image + Piața M. Ambrozie", m:"6-7 min"},
+    {x:56, y:31, n:"Metrou N. Grigorescu",       m:"5 min"}
+  ];
+  var W2 = [
+    {x:21, y:23, n:"Parcul IOR",                  m:"9 min"},
+    {x:17, y:16, n:"ParkLake + World Class",      m:"15 min"},
+    {x:66, y:11, n:"Metrou Titan + Galeriile",    m:"18 min"},
+    {x:91, y:19, n:"Piața Titan",                 m:"9 min"},
+    {x:89, y:26, n:"Policlinica Titan",           m:"13 min"}
+  ];
+  var labelsRoot = document.getElementById('labels'), POIS = [];
+  function mkPoi(p, wave, i){
+    var el = document.createElement('div');
+    el.className = 'poi';
+    el.style.transitionDelay = (i*90) + 'ms';
+    el.innerHTML = '<div class="lab"><span>' + p.n + '</span><i class="dv"></i><b>' + p.m + '</b></div><i class="ln"></i><div class="dot"></div>';
+    labelsRoot.appendChild(el);
+    POIS.push({el: el, x: p.x/100, y: p.y/100, wave: wave});
+  }
+  W1.forEach(function(p,i){ mkPoi(p,1,i); });
+  W2.forEach(function(p,i){ mkPoi(p,2,i); });
+
+  // ===== ASSETS =====
+  var canvas = document.getElementById('frame'), ctx = canvas.getContext('2d');
+  var clipFrames = new Array(NC), holdFrames = {}, loaded = 0, totalImgs = NC + HOLD_IMGS.length;
+  var dpr = Math.min(window.devicePixelRatio||1, 1.5);
+  function pad(i){ return ('000'+i).slice(-3); }
+  function onAsset(){
+    loaded++;
+    document.getElementById('pct').textContent = 'se încarcă ' + Math.round(loaded/totalImgs*100) + '%';
+    if(loaded===totalImgs) start();
+  }
+  for(var i=1;i<=NC;i++){(function(idx){
+    var img = new Image();
+    img.onload = img.onerror = onAsset;
+    img.src = 'film2/c' + pad(idx) + '.webp';
+    clipFrames[idx-1] = img;
+  })(i);}
+  HOLD_IMGS.forEach(function(h){
+    var img = new Image();
+    img.onload = img.onerror = onAsset;
+    img.src = 'film2/' + h + '.webp';
+    holdFrames[h] = img;
+  });
+  function imgOf(seg){
+    if(seg.img === '@s2') return clipFrames[S2_FRAME];
+    return holdFrames[seg.img];
+  }
+
+  // ===== DRIVE DIRECT =====
+  var T, cur, tvel = 0, lastInput = 0, glide = null, lastDir = 1;
+  var GAIN_WHEEL = 0.00017, GAIN_TOUCH = 0.00013, LERP = 0.075;
+  var HOLD_DAMP = 0.55, MAGNET = 0.08, IDLE_MS = 260;
+
+  function segAt(p){
+    for(var k=0;k<SEGS.length;k++) if(p>=SEGS[k].a && p<=SEGS[k].b) return k;
+    return p<0 ? 0 : SEGS.length-1;
+  }
+  function holdIndexAt(p){
+    for(var k=0;k<HOLDS.length;k++) if(p>=HOLDS[k].a && p<=HOLDS[k].b) return k;
+    return -1;
+  }
+  function nearestHoldIdx(p){
+    var bi = 0, d = 9;
+    HOLDS.forEach(function(h,i){ if(Math.abs(h.c-p)<d){ d=Math.abs(h.c-p); bi=i; } });
+    return bi;
+  }
+  function easeIO(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+  function startGlide(to){
+    if(T === undefined) return;
+    to = Math.min(1, Math.max(0, to));
+    if(RM){ T = cur = to; glide = null; return; }
+    glide = { from: T, to: to, t0: performance.now(), dur: Math.min(3000, 600 + Math.abs(to-T)*18000) };
+    tvel = 0;
+  }
+  function input(dy, gain){
+    if(T === undefined) return;
+    lastInput = performance.now();
+    glide = null;
+    document.getElementById('hint').classList.add('off');
+    if(dy) lastDir = dy > 0 ? 1 : -1;
+    var d = dy * gain;
+    if(holdIndexAt(T) >= 0) d *= HOLD_DAMP;
+    T = Math.min(1, Math.max(0, T + d));
+  }
+
+  addEventListener('wheel', function(e){
+    e.preventDefault();
+    var dy = e.deltaY;
+    if(e.deltaMode === 1) dy *= 33;
+    if(RM){ rmStep(dy); return; }
+    tvel = 0;
+    input(dy, GAIN_WHEEL);
+  }, {passive:false});
+
+  var tY = null, tV = 0, tLast = 0;
+  addEventListener('touchstart', function(e){ tY = e.touches[0].clientY; tV = 0; tvel = 0; glide = null; }, {passive:true});
+  addEventListener('touchmove', function(e){
+    e.preventDefault();
+    if(tY === null) return;
+    var y = e.touches[0].clientY, dy = (tY - y) * 2.0, now = performance.now();
+    tV = dy / Math.max(1, now - tLast) * 16;
+    tLast = now;
+    tY = y;
+    if(RM){ rmStep(dy*4); return; }
+    input(dy, GAIN_TOUCH);
+  }, {passive:false});
+  addEventListener('touchend', function(){
+    tY = null;
+    if(!RM && Math.abs(tV) > 2){
+      tvel = Math.max(-0.006, Math.min(0.006, tV * 0.00012));
+      lastDir = tV > 0 ? 1 : -1;
+      lastInput = performance.now();
+    }
+  });
+
+  addEventListener('keydown', function(e){
+    if(T === undefined) return;
+    var k = e.key, hi = nearestHoldIdx(T);
+    if(k==='ArrowDown'||k==='PageDown'||k===' '){ e.preventDefault(); goTo(Math.min(HOLDS.length-1, hi+1)); }
+    else if(k==='ArrowUp'||k==='PageUp'){ e.preventDefault(); goTo(Math.max(0, hi-1)); }
+    else if(k==='Home'){ e.preventDefault(); goTo(0); }
+    else if(k==='End'){ e.preventDefault(); goTo(HOLDS.length-1); }
+  });
+  function goTo(i){
+    document.getElementById('hint').classList.add('off');
+    startGlide(HOLDS[i].c);
+  }
+  var rmAcc = 0, rmLock = 0;
+  function rmStep(dy){
+    if(T === undefined) return;
+    var now = performance.now();
+    if(now < rmLock) return;
+    rmAcc += dy;
+    if(Math.abs(rmAcc) > 120){
+      var hi = nearestHoldIdx(T) + (rmAcc>0?1:-1);
+      T = cur = HOLDS[Math.min(HOLDS.length-1, Math.max(0,hi))].c;
+      rmAcc = 0; rmLock = now + 500;
+    }
+  }
+
+  // ===== CHAPTER RAIL =====
+  var rail = document.getElementById('rail'), railBtns = [];
+  CH_NAMES.forEach(function(nm,i){
+    var b = document.createElement('button');
+    b.setAttribute('aria-label', 'Capitolul ' + (i+1) + ': ' + nm);
+    b.innerHTML = '<span class="nm">' + nm + '</span><span class="tick"></span>';
+    b.addEventListener('click', function(){ goTo(i); });
+    rail.appendChild(b);
+    railBtns.push(b);
+  });
+
+  // ===== SPLIT HEADLINES =====
+  function splitWords(root){
+    var wi = 0;
+    (function rec(el){
+      var nodes = [].slice.call(el.childNodes);
+      el.textContent = '';
+      nodes.forEach(function(n){
+        if(n.nodeType === 3){
+          n.textContent.split(/(\s+)/).forEach(function(tok){
+            if(!tok) return;
+            if(/^\s+$/.test(tok)){ el.appendChild(document.createTextNode(' ')); return; }
+            var sp = document.createElement('span');
+            sp.className = 'w';
+            sp.textContent = tok;
+            sp.style.transitionDelay = (wi*55) + 'ms';
+            el.appendChild(sp);
+            wi++;
+          });
+        } else if(n.nodeType === 1 && n.tagName !== 'BR'){
+          el.appendChild(n);
+          rec(n);
+        } else el.appendChild(n);
+      });
+    })(root);
+  }
+  document.querySelectorAll('.split').forEach(splitWords);
+  // fiecare rand din headline = placuta proprie de sticla, fix pe latimea literelor
+  document.querySelectorAll('.split').forEach(function(root){
+    var line = document.createElement('span'); line.className = 'tl';
+    var lines = [line];
+    [].slice.call(root.childNodes).forEach(function(n){
+      if(n.nodeType === 1 && n.tagName === 'BR'){
+        line = document.createElement('span'); line.className = 'tl'; lines.push(line);
+      } else line.appendChild(n);
+    });
+    root.textContent = '';
+    lines.forEach(function(l){ root.appendChild(l); });
+  });
+  document.querySelectorAll('.beat').forEach(function(b){
+    var words = b.querySelectorAll('.w').length;
+    var base = words*55 + 120;
+    var k = b.querySelector('.kicker'); if(k) k.style.transitionDelay = '0ms';
+    var seq = b.querySelectorAll('.rule,.lead,.quote,.spec,.stat,.note,.strip,.btn');
+    for(var i2=0;i2<seq.length;i2++) seq[i2].style.transitionDelay = (base + i2*110) + 'ms';
+  });
+
+  var beats = [].slice.call(document.querySelectorAll('.beat')), beatRanges = [];
+  (function(){
+    var hi = 0;
+    for(var k=0;k<SEGS.length;k++){
+      if(SEGS[k].type!=='hold') continue;
+      var a = SEGS[k].a, b = SEGS[k].b;
+      if(k>0) a -= SEGS[k-1].len*0.35;
+      if(k<SEGS.length-1) b += SEGS[k+1].len*0.22;
+      beatRanges[hi++] = [a,b];
+    }
+  })();
+
+  // ===== CAMERA + DESEN =====
+  function camAt(p){
+    var k = segAt(p), s = SEGS[k];
+    if(s.type==='zoom'){
+      var lt = easeIO((p - s.a)/s.len);
+      return { z: s.a1.z + (s.a2.z - s.a1.z)*lt,
+               cx: s.a1.cx + (s.a2.cx - s.a1.cx)*lt,
+               cy: s.a1.cy + (s.a2.cy - s.a1.cy)*lt, seg: k };
+    }
+    if(s.type==='hold' && s.cam) return { z: s.cam.z, cx: s.cam.cx, cy: s.cam.cy, seg: k };
+    return { z: 1, cx: 0.5, cy: 0.5, seg: k };
+  }
+  // intoarce si transformarea pentru proiectia etichetelor
+  var lastProj = null;
+  function drawCam(img, cam, alpha){
+    var cw=canvas.width, ch=canvas.height, iw=img.naturalWidth, ih=img.naturalHeight;
+    var S = Math.max(cw/iw, ch/ih) * cam.z;
+    var hwx = cw/(2*S*iw), hwy = ch/(2*S*ih);
+    var cx = Math.min(1-hwx, Math.max(hwx, cam.cx));
+    var cy = Math.min(1-hwy, Math.max(hwy, cam.cy));
+    ctx.globalAlpha = alpha;
+    ctx.drawImage(img, cw/2 - cx*iw*S, ch/2 - cy*ih*S, iw*S, ih*S);
+    return {S:S, cx:cx, cy:cy, iw:iw, ih:ih};
+  }
+  function draw(p, t){
+    var k = segAt(p), s = SEGS[k], cam = camAt(p);
+    ctx.imageSmoothingQuality = 'high';
+    lastProj = null;
+    if(s.type==='hold' || s.type==='zoom'){
+      var img = imgOf(s.type==='zoom' ? {img:'@s2'} : s);
+      if(!img || !img.naturalWidth) return;
+      lastProj = drawCam(img, cam, 1);
+      return;
+    }
+    var lt = easeIO((p - s.a)/s.len);
+    var fpos = s.from-1 + lt*(s.to-s.from);
+    var i0 = Math.floor(fpos), frac = fpos - i0;
+    var i1 = Math.min(s.to-1, i0+1);
+    var a = clipFrames[Math.max(0,Math.min(NC-1,i0))], b = clipFrames[Math.max(0,Math.min(NC-1,i1))];
+    if(!a || !a.naturalWidth) return;
+    drawCam(a, cam, 1);
+    if(b && b.naturalWidth && frac > 0.02){
+      drawCam(b, cam, frac);
+      ctx.globalAlpha = 1;
+    }
+  }
+  function resize(){
+    canvas.width = Math.round(innerWidth*dpr);
+    canvas.height = Math.round(innerHeight*dpr);
+    canvas.style.width = innerWidth+'px';
+    canvas.style.height = innerHeight+'px';
+  }
+
+  // ===== AMBIENT FINAL =====
+  var amb = document.getElementById('ambient'), ambArmed = false, ambReady = false;
+  amb.addEventListener('canplay', function(){ ambReady = true; });
+  function armAmbient(){
+    if(ambArmed) return;
+    ambArmed = true;
+    amb.src = 'film2/ambient_s7.mp4';
+    amb.load();
+  }
+  var lastClip = SEGS[SEGS.length-2], lastHold = SEGS[SEGS.length-1];
+
+  // etichetele: vizibile pe zoomin/h2a/zoomout (wave1) + h2b (wave1+wave2), proiectate pe imagine
+  var LBL_SEGS = {2:1, 3:1, 4:1, 5:2}; // seg index -> wave maxima vizibila
+  function updateLabels(seg){
+    var wmax = LBL_SEGS[seg] || 0;
+    var cw = canvas.width, ch = canvas.height;
+    for(var i=0;i<POIS.length;i++){
+      var P = POIS[i], on = wmax >= P.wave && lastProj;
+      if(on){
+        var x = (cw/2 + (P.x - lastProj.cx)*lastProj.iw*lastProj.S)/dpr;
+        var y = (ch/2 + (P.y - lastProj.cy)*lastProj.ih*lastProj.S)/dpr;
+        var hw = (P.el.offsetWidth||200)/2 + 10, hh = (P.el.offsetHeight||70) + 10;
+        if(x < hw || x > innerWidth - hw || y < hh || y > innerHeight - 20) on = false;
+        else { P.el.style.left = x+'px'; P.el.style.top = y+'px'; }
+      }
+      P.el.classList.toggle('on', !!on);
+    }
+  }
+
+  // ===== LOOP =====
+  var prevT = 0;
+  function frame(t){
+    var dt = prevT ? Math.min(50, t - prevT) : 16.7;
+    prevT = t;
+    var f = dt/16.667;
+
+    if(glide){
+      var gt = Math.min(1, (t - glide.t0)/glide.dur);
+      T = glide.from + (glide.to - glide.from)*easeIO(gt);
+      if(gt>=1) glide = null;
+    } else if(!RM){
+      if(Math.abs(tvel) > 0.00001){
+        T = Math.min(1, Math.max(0, T + tvel*f));
+        tvel *= Math.pow(0.94, f);
+      }
+      var idle = (t - lastInput) > IDLE_MS && Math.abs(tvel) < 0.00002;
+      if(idle){
+        var hi = holdIndexAt(T);
+        if(hi >= 0){
+          T += (HOLDS[hi].c - T)*Math.min(1, MAGNET*f);
+        } else {
+          var k = segAt(T), sg = SEGS[k];
+          var lt = (T - sg.a)/sg.len;
+          var tgt;
+          if(lt < 0.12) tgt = SEGS[k-1].c;
+          else if(lt > 0.88) tgt = SEGS[k+1].c;
+          else tgt = lastDir >= 0 ? SEGS[k+1].c : SEGS[k-1].c;
+          startGlide(tgt);
+        }
+      }
+    }
+
+    cur += (T - cur)*Math.min(1, LERP*f);
+    if(Math.abs(T-cur) < 0.00015) cur = T;
+
+    draw(cur, t);
+    var curSeg = segAt(cur);
+    updateLabels(curSeg);
+    document.getElementById('bar').style.width = (cur*100)+'%';
+
+    for(var k2=0;k2<beats.length;k2++){
+      var rg = beatRanges[parseInt(beats[k2].dataset.seg,10)];
+      beats[k2].classList.toggle('on', rg && cur>=rg[0] && cur<=rg[1]);
+    }
+    var act = nearestHoldIdx(cur);
+    for(var rbi=0;rbi<railBtns.length;rbi++) railBtns[rbi].classList.toggle('act', rbi===act);
+
+    if(!ambArmed && cur > lastClip.a) armAmbient();
+    if(ambArmed && ambReady){
+      var inFinal = cur >= lastHold.a - lastClip.len*0.1;
+      if(inFinal && amb.paused) amb.play().catch(function(){});
+      amb.style.opacity = inFinal ? 1 : 0;
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  function start(){
+    T = cur = HOLDS[0].c;
+    document.getElementById('load').classList.add('hide');
+    resize();
+    addEventListener('resize', resize, {passive:true});
+    requestAnimationFrame(frame);
+  }
+})();
+</script>
+</body>
+</html>
