@@ -138,9 +138,20 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 #load .t b{color:var(--gold)}
 #load .p{font-size:.85rem;color:var(--gold);letter-spacing:.12em}
 
+#chips{position:fixed;top:4.2rem;left:.8rem;right:.8rem;z-index:3;display:none;flex-wrap:wrap;gap:.45rem;pointer-events:none}
+.chip{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-size:.85rem;font-weight:500;color:var(--cream);background:rgba(18,13,8,.78);border:1px solid rgba(232,180,90,.5);border-radius:9px;padding:.45em .7em;opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s cubic-bezier(.34,1.56,.64,1)}
+.chip.on{opacity:1;transform:none}
+.chip b{color:var(--gold);font-weight:700;font-size:.82em;letter-spacing:.08em;text-transform:uppercase}
+#mcta{position:fixed;left:0;right:0;bottom:0;z-index:7;display:none;padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(16,12,7,.92),rgba(16,12,7,.55) 70%,transparent);transform:translateY(110%);transition:transform .45s cubic-bezier(.22,.6,.2,1)}
+#mcta.show{transform:none}
+.mbtn{display:block;text-align:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95em 1em;border-radius:14px;background:var(--gold);color:#1a140c;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45)}
 @media (max-width:760px){
-  .beat{left:0;right:0;padding:0 1.4rem;max-width:none;bottom:clamp(4.5rem,14vh,8rem)}
-  .pos-tl,.pos-tr,.pos-br,.pos-cl{left:0;right:0;top:auto;bottom:clamp(4.5rem,14vh,8rem);text-align:left;transform:none}
+  #chips{display:flex}
+  #mcta{display:block}
+  #hint{display:none}
+  #labels{display:none}
+  .beat{left:0;right:0;padding:0 1.4rem;max-width:none;bottom:calc(clamp(4.5rem,14vh,8rem) + 2.6rem)}
+  .pos-tl,.pos-tr,.pos-br,.pos-cl{left:0;right:0;top:auto;bottom:calc(clamp(4.5rem,14vh,8rem) + 2.6rem);text-align:left;transform:none}
   .tl{white-space:normal}
   .pos-tr .rule,.pos-br .rule{margin-left:0;transform-origin:left center}
   .beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before,.btn.ghost{backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -228,6 +239,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 </div>
 
 <div id="labels"></div>
+<div id="chips"></div>
+<div id="mcta"><a class="mbtn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei.">Scrie-ne pe WhatsApp</a></div>
 <nav id="rail" aria-label="Capitole"></nav>
 <div id="hint">Derulează</div>
 
@@ -236,30 +249,35 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 (function(){
   'use strict';
   var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var MOBILE = matchMedia('(max-width:760px)').matches;
+  var PFX = MOBILE ? 'film2/m_' : 'film2/';   // set dedicat telefonului: 12fps/820px, 7.9MB
+  var FPC = MOBILE ? 60 : 120;                // cadre per clip
 
   // camera: z = zoom peste cover-fit, cx/cy = punctul din imagine adus in centrul ecranului
   var WIDE  = {z:1,   cx:0.50, cy:0.50};
   var CLOSE = {z:1.5, cx:0.38, cy:0.52};   // clusterul: bloc + case + strada (de calibrat cu Andy)
 
+  // camerele mobile: focale masurate programatic pe cadre (bloc/fereastra/lift)
+  var CLOSE_M = {z:1.12, cx:0.47, cy:0.55}, WIDE_M = {z:1, cx:0.55, cy:0.5};
   var SEGS = [
-    {type:'hold', img:'h1',  w:0.30},
-    {type:'clip', from:1,   to:120, w:1.0},
-    {type:'zoom', a1:WIDE,  a2:CLOSE, w:0.5},
-    {type:'hold', img:'@s2', cam:CLOSE, w:0.34},
-    {type:'zoom', a1:CLOSE, a2:WIDE,  w:0.5},
-    {type:'hold', img:'@s2', cam:WIDE, w:0.34},
-    {type:'clip', from:121, to:240, w:1.0},
-    {type:'hold', img:'h3', w:0.30},
-    {type:'clip', from:241, to:360, w:1.0},
-    {type:'hold', img:'h4', w:0.30},
-    {type:'clip', from:361, to:480, w:1.0},
-    {type:'hold', img:'h5', w:0.30},
-    {type:'clip', from:481, to:600, w:1.0},
-    {type:'hold', img:'h6', w:0.42}
+    {type:'hold', img:'h1',  w:0.30, m:{cx:0.61, cy:0.42}},
+    {type:'clip', from:1,        to:FPC,   w:1.0, m1:{cx:0.61,cy:0.42}, m2:{cx:0.55,cy:0.5}},
+    {type:'zoom', a1:WIDE,  a2:CLOSE, a1m:WIDE_M, a2m:CLOSE_M, w:0.5},
+    {type:'hold', img:'@s2', cam:CLOSE, camm:CLOSE_M, w:0.34},
+    {type:'zoom', a1:CLOSE, a2:WIDE, a1m:CLOSE_M, a2m:WIDE_M, w:0.5},
+    {type:'hold', img:'@s2', cam:WIDE, camm:WIDE_M, w:0.34},
+    {type:'clip', from:FPC+1,    to:2*FPC, w:1.0, m1:{cx:0.55,cy:0.5},  m2:{cx:0.65,cy:0.40}},
+    {type:'hold', img:'h3', w:0.30, m:{cx:0.65, cy:0.40}},
+    {type:'clip', from:2*FPC+1,  to:3*FPC, w:1.0, m1:{cx:0.65,cy:0.40}, m2:{cx:0.66,cy:0.38}},
+    {type:'hold', img:'h4', w:0.30, m:{cx:0.66, cy:0.38}},
+    {type:'clip', from:3*FPC+1,  to:4*FPC, w:1.0, m1:{cx:0.66,cy:0.38}, m2:{cx:0.67,cy:0.52}},
+    {type:'hold', img:'h5', w:0.30, m:{cx:0.67, cy:0.52}},
+    {type:'clip', from:4*FPC+1,  to:5*FPC, w:1.0, m1:{cx:0.67,cy:0.52}, m2:{cx:0.38,cy:0.45}},
+    {type:'hold', img:'h6', w:0.42, m:{cx:0.38, cy:0.45}}
   ];
   var CH_NAMES = ['Locul','Minutele','Orașul','Liniștea','Confortul','Spațiul','Priveliștea'];
-  var NC = 600, HOLD_IMGS = ['h1','h3','h4','h5','h6'];
-  var S2_FRAME = 119; // c120 = ultimul cadru video1 (1536px) = imaginea locatiei
+  var NC = 5*FPC, HOLD_IMGS = ['h1','h3','h4','h5','h6'];
+  var S2_FRAME = FPC-1; // ultimul cadru video1 = imaginea locatiei
 
   var totalW = SEGS.reduce(function(a,x){return a+x.w},0), acc = 0;
   SEGS.forEach(function(s){ s.a = acc/totalW; acc += s.w; s.b = acc/totalW; s.len = s.b - s.a; s.c = (s.a+s.b)/2; });
@@ -307,13 +325,13 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   for(var i=1;i<=NC;i++){(function(idx){
     var img = new Image();
     img.onload = img.onerror = onAsset;
-    img.src = 'film2/c' + pad(idx) + '.webp';
+    img.src = PFX + 'c' + pad(idx) + '.webp';
     clipFrames[idx-1] = img;
   })(i);}
   HOLD_IMGS.forEach(function(h){
     var img = new Image();
     img.onload = img.onerror = onAsset;
-    img.src = 'film2/' + h + '.webp';
+    img.src = PFX + h + '.webp';
     holdFrames[h] = img;
   });
   function imgOf(seg){
@@ -486,12 +504,19 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   function camAt(p){
     var k = segAt(p), s = SEGS[k];
     if(s.type==='zoom'){
+      var A = MOBILE && s.a1m ? s.a1m : s.a1, B = MOBILE && s.a2m ? s.a2m : s.a2;
       var lt = easeIO((p - s.a)/s.len);
-      return { z: s.a1.z + (s.a2.z - s.a1.z)*lt,
-               cx: s.a1.cx + (s.a2.cx - s.a1.cx)*lt,
-               cy: s.a1.cy + (s.a2.cy - s.a1.cy)*lt, seg: k };
+      return { z: A.z + (B.z - A.z)*lt, cx: A.cx + (B.cx - A.cx)*lt, cy: A.cy + (B.cy - A.cy)*lt, seg: k };
     }
-    if(s.type==='hold' && s.cam) return { z: s.cam.z, cx: s.cam.cx, cy: s.cam.cy, seg: k };
+    if(s.type==='hold'){
+      if(MOBILE && (s.camm || s.m)){ var c = s.camm || s.m; return { z: c.z||1, cx: c.cx, cy: c.cy, seg: k }; }
+      if(s.cam) return { z: s.cam.z, cx: s.cam.cx, cy: s.cam.cy, seg: k };
+      return { z: 1, cx: 0.5, cy: 0.5, seg: k };
+    }
+    if(MOBILE && s.m1){   // tranzitie: panoramare lina intre focalele sectiunilor
+      var lt2 = easeIO((p - s.a)/s.len);
+      return { z: 1, cx: s.m1.cx + (s.m2.cx - s.m1.cx)*lt2, cy: s.m1.cy + (s.m2.cy - s.m1.cy)*lt2, seg: k };
+    }
     return { z: 1, cx: 0.5, cy: 0.5, seg: k };
   }
   // intoarce si transformarea pentru proiectia etichetelor
@@ -548,8 +573,23 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 
   // etichetele: vizibile pe zoomin/h2a/zoomout (wave1) + h2b (wave1+wave2), proiectate pe imagine
   var LBL_SEGS = {2:1, 3:1, 4:1, 5:2}; // seg index -> wave maxima vizibila
+  var chipsRoot = document.getElementById('chips'), CHIPS = [];
+  if(MOBILE){
+    W1.concat(W2).forEach(function(p, i){
+      var el = document.createElement('span');
+      el.className = 'chip';
+      el.style.transitionDelay = (i*60) + 'ms';
+      el.innerHTML = p.n + ' <b>' + p.m + '</b>';
+      chipsRoot.appendChild(el);
+      CHIPS.push({el: el, wave: i < W1.length ? 1 : 2});
+    });
+  }
   function updateLabels(seg){
     var wmax = LBL_SEGS[seg] || 0;
+    if(MOBILE){
+      for(var c=0;c<CHIPS.length;c++) CHIPS[c].el.classList.toggle('on', wmax >= CHIPS[c].wave);
+      return;
+    }
     var cw = canvas.width, ch = canvas.height;
     for(var i=0;i<POIS.length;i++){
       var P = POIS[i], on = wmax >= P.wave && lastProj;
@@ -612,6 +652,10 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     var act = nearestHoldIdx(cur);
     for(var rbi=0;rbi<railBtns.length;rbi++) railBtns[rbi].classList.toggle('act', rbi===act);
 
+    if(MOBILE){
+      var mc = document.getElementById('mcta');
+      mc.classList.toggle('show', cur > SEGS[1].a && cur < lastHold.a);
+    }
     if(!ambArmed && cur > lastClip.a) armAmbient();
     if(ambArmed && ambReady){
       var inFinal = cur >= lastHold.a - lastClip.len*0.1;
