@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#14100b">
-<title>Apartamente noi Dristor-Titan, bloc nou | Ilioara Residence</title>
-<meta name="description" content="Bloc nou pe Aleea Eprubetei 7, zona Dristor-Titan, la 5 minute de metrou. Stradă retrasă între case, încălzire în pardoseală, 4 apartamente pe etaj, 47-84 mp utili. 12 disponibile, finalizare decembrie 2026.">
+<title>Apartamente noi Dristor-Titan, direct de la proprietar</title>
+<meta name="description" content="Apartamente noi în bloc nou construit, direct de la proprietar, fără comision pentru cumpărător. Aleea Eprubetei 7, Dristor-Titan, la 5 minute de metrou. 12 disponibile, finalizare decembrie 2026.">
 <link rel="canonical" href="https://apartamenteinbucuresti.ro/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ro_RO">
 <meta property="og:site_name" content="Ilioara Residence">
-<meta property="og:title" content="Apartamente noi Dristor-Titan, bloc nou, la 5 minute de metrou">
-<meta property="og:description" content="Stradă retrasă, între case. Încălzire în pardoseală, 4 apartamente pe etaj, 47-84 mp utili. 12 disponibile din 31.">
+<meta property="og:title" content="Apartamente noi Dristor-Titan, direct de la proprietar, fără comision">
+<meta property="og:description" content="Cumperi direct de la proprietar, fără comision. Stradă retrasă, între case, încălzire în pardoseală. 12 disponibile din 31, finalizare decembrie 2026.">
 <meta property="og:url" content="https://apartamenteinbucuresti.ro/">
 <meta property="og:image" content="https://apartamenteinbucuresti.ro/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -55,8 +55,8 @@ a,button{-webkit-tap-highlight-color:transparent}
   linear-gradient(0deg, rgba(16,12,7,.54) 0%, transparent 40%)}
 
 .beat{position:fixed;left:clamp(1.4rem,6vw,6rem);bottom:clamp(3rem,14vh,8.5rem);z-index:4;max-width:78rem;pointer-events:none}
-.beat .kicker,.beat .sub,.beat .rule,.beat .btn,.beat .lead,.beat .quote,.beat .spec,.beat .stat,.beat .note,.beat .strip,.beat .plans,.beat .after{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,.6,.2,1),transform .6s cubic-bezier(.22,.6,.2,1)}
-.beat.on .kicker,.beat.on .sub,.beat.on .rule,.beat.on .btn,.beat.on .lead,.beat.on .quote,.beat.on .spec,.beat.on .stat,.beat.on .note,.beat.on .strip,.beat.on .plans,.beat.on .after{opacity:1;transform:none}
+.beat .kicker,.beat .sub,.beat .rule,.beat .btn,.beat .lead,.beat .quote,.beat .spec,.beat .stat,.beat .note,.beat .strip,.beat .plans,.beat .after,.beat .bdg{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,.6,.2,1),transform .6s cubic-bezier(.22,.6,.2,1)}
+.beat.on .kicker,.beat.on .sub,.beat.on .rule,.beat.on .btn,.beat.on .lead,.beat.on .quote,.beat.on .spec,.beat.on .stat,.beat.on .note,.beat.on .strip,.beat.on .plans,.beat.on .after,.beat.on .bdg{opacity:1;transform:none}
 .beat .w{display:inline-block;opacity:0;transform:translateY(.75em);transition:opacity .65s cubic-bezier(.22,.6,.2,1),transform .65s cubic-bezier(.22,.6,.2,1)}
 .beat.on .w{opacity:1;transform:none}
 /* ===== KINETIC PER SECTIUNE (trigger = .beat.on; doar transform/opacity/filter pe span-uri intregi, zero clip-mask) =====
@@ -118,6 +118,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .g{color:var(--gold)}
 .lead{font-family:'Inter';font-size:clamp(1.15rem,2vw,2.1rem);color:var(--cream-soft);margin-top:1.4rem;line-height:1.25;text-shadow:0 2px 22px rgba(0,0,0,.65)}
 .lead b{color:var(--cream);font-weight:600}
+.bdg{display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:.92rem;color:var(--gold);border:1px solid rgba(232,180,90,.55);border-radius:999px;padding:.45em .95em;background:rgba(16,12,7,.62);letter-spacing:.02em;margin-top:1.2rem}
 .quote{margin-top:1.6rem;border-left:4px solid var(--gold);padding-left:2rem;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.15rem,1.85vw,2rem);line-height:1.3;color:var(--cream-soft);text-shadow:0 2px 22px rgba(0,0,0,.65)}
 .quote .g{font-style:italic}
 .specs{margin-top:1.6rem}
@@ -294,7 +295,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   header{padding-top:.8rem}
 }
 @media (prefers-reduced-motion: reduce){
-  .beat .w,.beat .ch,.beat .tl,.beat .kicker,.beat .sub,.beat .rule,.beat .btn,.beat .lead,.beat .quote,.beat .spec,.beat .spec .v,.beat .stat,.beat .note,.beat .strip,.beat .strip .it,.beat .plans,.beat .after{transition:none}
+  .beat .w,.beat .ch,.beat .tl,.beat .kicker,.beat .sub,.beat .rule,.beat .btn,.beat .lead,.beat .quote,.beat .spec,.beat .spec .v,.beat .stat,.beat .note,.beat .strip,.beat .strip .it,.beat .plans,.beat .after,.beat .bdg{transition:none}
   #hint{animation:none}
   }
 </style>
@@ -316,6 +317,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   <h1 class="split">Aici nu cumperi blocul.<br><span class="g">Cumperi locul.</span></h1>
   <div class="rule"></div>
   <div class="lead"><b>Stradă retrasă</b>, între case. Orașul rămâne <b>la minute</b>.</div>
+  <div class="bdg">Direct de la proprietar · 0% comision pentru cumpărător</div>
 </div>
 <div class="beat" data-seg="1">
   <div class="kicker">Pe jos, din ușa blocului</div>
@@ -715,7 +717,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     for(var u=0;u<units.length;u++) units[u].style.transitionDelay = (u*stag)+'ms';
     var base = units.length*stag + (seg===3 ? 280 : 120);
     var k = b.querySelector('.kicker'); if(k) k.style.transitionDelay = '0ms';
-    var seq = b.querySelectorAll('.rule,.lead,.quote,.spec,.stat,.note,.strip,.plans,.btn,.after');
+    var seq = b.querySelectorAll('.rule,.lead,.quote,.spec,.stat,.note,.strip,.plans,.btn,.after,.bdg');
     for(var i2=0;i2<seq.length;i2++){
       var dl = (base + i2*110) + 'ms';
       // butoanele primesc delay-ul prin --d: la :active raspund INSTANT (delay-ul inline ar amana feedback-ul de tap)

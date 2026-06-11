@@ -32,6 +32,7 @@ h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.25rem,2.6vw,1.
 .lead{font-size:clamp(1.05rem,1.6vw,1.18rem);color:var(--cream-soft);max-width:46rem}
 .lead b,.pblock b{color:var(--gold);font-weight:600}
 .price{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--gold);margin:.2rem 0 1.4rem}
+.bdgp{display:inline-flex;align-items:center;font-weight:600;font-size:.92rem;color:var(--gold);border:1px solid rgba(232,180,90,.55);border-radius:999px;padding:.45em .95em;background:rgba(24,18,9,.6);letter-spacing:.02em;margin:.2rem 0 1rem}
 .price small{display:block;font-family:'Inter';font-weight:400;font-size:.9rem;color:var(--cream-soft);letter-spacing:.04em;margin-top:.3rem}
 .hero{margin:1.2rem 0 1.8rem;border-radius:16px;overflow:hidden;border:1px solid rgba(232,180,90,.25)}
 .hero img{display:block;width:100%;height:auto}

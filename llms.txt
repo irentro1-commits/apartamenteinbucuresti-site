@@ -9,3 +9,6 @@ Apartamente noi pe Aleea Eprubetei 7-11, Titan, Sector 3, Bucuresti. Strada retr
 - Fiecare apartament are pagina lui cu suprafete, pret si contact.
 - Parcare: dubla Klauss 25.000 EUR + TVA (2 locuri suprapuse), simpla 20.000 EUR + TVA.
 - Rezervare 2.000 EUR + TVA, avans minim 30%, finalizare decembrie 2026.
+
+## Model de vanzare
+- Apartamentele se vand DIRECT de la proprietar, fara comision pentru cumparator (comisionul e platit de proprietar).
