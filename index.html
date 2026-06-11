@@ -47,6 +47,22 @@ body{font-family:'Inter',sans-serif;color:var(--cream);touch-action:none}
 .beat.on .kicker,.beat.on .sub,.beat.on .rule,.beat.on .btn,.beat.on .lead,.beat.on .quote,.beat.on .spec,.beat.on .stat,.beat.on .note,.beat.on .strip{opacity:1;transform:none}
 .beat .w{display:inline-block;opacity:0;transform:translateY(.75em);transition:opacity .65s cubic-bezier(.22,.6,.2,1),transform .65s cubic-bezier(.22,.6,.2,1)}
 .beat.on .w{opacity:1;transform:none}
+/* ===== KINETIC PER SECTIUNE (trigger = .beat.on; doar transform/opacity/filter pe span-uri intregi, zero clip-mask) =====
+   S1 rise (semnatura) · S2 pop · S3 slide din dreapta · S4 blur-in litere · S5 cascada specs · S6 count-up · S7 scale-in */
+.beat[data-seg="1"] .w{transform:translateY(6px) scale(.92);transition:opacity .45s cubic-bezier(.34,1.56,.64,1),transform .45s cubic-bezier(.34,1.56,.64,1)}
+.beat[data-seg="2"] .w{transform:translateX(30px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.6,.2,1)}
+.beat[data-seg="3"] .w{opacity:1;transform:none;transition:none}
+.beat[data-seg="3"] .ch{display:inline-block;opacity:0;filter:blur(6px);transition:opacity .9s ease,filter .9s ease}
+.beat.on[data-seg="3"] .ch{opacity:1;filter:blur(0)}
+.beat[data-seg="4"] .w{transform:translateY(1em);transition:opacity .8s cubic-bezier(.22,.6,.2,1),transform .8s cubic-bezier(.22,.6,.2,1)}
+.beat[data-seg="4"] .spec{transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.34,1.56,.64,1)}
+.beat[data-seg="4"] .spec .v{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.22,.6,.2,1)}
+.beat.on[data-seg="4"] .spec .v{opacity:1;transform:none}
+.beat[data-seg="6"] .w{opacity:1;transform:none;transition:none}
+.beat[data-seg="6"] .tl{opacity:0;transform:scale(1.045);transition:opacity .85s ease,transform .85s cubic-bezier(.22,.6,.2,1)}
+.beat.on[data-seg="6"] .tl{opacity:1;transform:scale(1)}
+.beat[data-seg="6"] .strip .it{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,.6,.2,1)}
+.beat.on[data-seg="6"] .strip .it{opacity:1;transform:none}
 .kicker{font-size:clamp(1rem,.9vw + .35rem,1.3rem);font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-shadow:0 1px 12px rgba(0,0,0,.7)}
 .beat h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4vw,4.25rem);line-height:1.04;letter-spacing:-.02em;text-shadow:0 2px 36px rgba(0,0,0,.55)}
 .beat p.big{font-family:'Fraunces',serif;font-size:clamp(1.7rem,3.7vw,4rem);line-height:1.05;letter-spacing:-.01em;text-shadow:0 2px 30px rgba(0,0,0,.55)}
@@ -181,7 +197,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   .btn.ghost{margin-left:0;margin-top:.8rem}
 }
 @media (prefers-reduced-motion: reduce){
-  .beat .w,.beat .kicker,.beat .sub,.beat .rule,.beat .btn{transition:none}
+  .beat .w,.beat .ch,.beat .tl,.beat .kicker,.beat .sub,.beat .rule,.beat .btn,.beat .lead,.beat .quote,.beat .spec,.beat .spec .v,.beat .stat,.beat .note,.beat .strip,.beat .strip .it{transition:none}
   #hint{animation:none}
   }
 </style>
@@ -489,7 +505,6 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 
   // ===== SPLIT HEADLINES =====
   function splitWords(root){
-    var wi = 0;
     (function rec(el){
       var nodes = [].slice.call(el.childNodes);
       el.textContent = '';
@@ -501,9 +516,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
             var sp = document.createElement('span');
             sp.className = 'w';
             sp.textContent = tok;
-            sp.style.transitionDelay = (wi*55) + 'ms';
             el.appendChild(sp);
-            wi++;
           });
         } else if(n.nodeType === 1 && n.tagName !== 'BR'){
           el.appendChild(n);
@@ -525,13 +538,59 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     root.textContent = '';
     lines.forEach(function(l){ root.appendChild(l); });
   });
+  // S4 (seg 3): litere pentru blur-in; .w ramane intact => word-wrap si diacriticele nu se ating (zero clip-mask)
+  document.querySelectorAll('.beat[data-seg="3"] .w').forEach(function(w){
+    var txt = w.textContent; w.textContent = '';
+    Array.from(txt).forEach(function(c){
+      var s = document.createElement('span'); s.className = 'ch'; s.textContent = c; w.appendChild(s);
+    });
+  });
+  // stagger per sectiune: fiecare beat in ritmul efectului lui (S2 rapid, S4 lent pe litere, S7 pe randuri intregi)
+  var STAG = {0:55, 1:32, 2:46, 3:34, 4:55, 5:55, 6:0};
   document.querySelectorAll('.beat').forEach(function(b){
-    var words = b.querySelectorAll('.w').length;
-    var base = words*55 + 120;
+    var seg = parseInt(b.dataset.seg,10);
+    var stag = STAG[seg] !== undefined ? STAG[seg] : 55;
+    var units = b.querySelectorAll(seg===3 ? '.ch' : (seg===6 ? '.tl' : '.w'));
+    for(var u=0;u<units.length;u++) units[u].style.transitionDelay = (u*stag)+'ms';
+    var base = units.length*stag + (seg===3 ? 280 : 120);
     var k = b.querySelector('.kicker'); if(k) k.style.transitionDelay = '0ms';
     var seq = b.querySelectorAll('.rule,.lead,.quote,.spec,.stat,.note,.strip,.btn');
     for(var i2=0;i2<seq.length;i2++) seq[i2].style.transitionDelay = (base + i2*110) + 'ms';
+    if(seg === 4){ // valoarea intra dupa eticheta ei
+      var sps = b.querySelectorAll('.spec');
+      for(var sv=0;sv<sps.length;sv++){
+        var vv = sps[sv].querySelector('.v');
+        if(vv) vv.style.transitionDelay = (base + sv*110 + 130)+'ms';
+      }
+    }
+    if(seg === 6){ // strip-ul aterizeaza item cu item
+      var its = b.querySelectorAll('.strip .it');
+      for(var ii=0;ii<its.length;ii++) its[ii].style.transitionDelay = (base + 150 + ii*120)+'ms';
+    }
   });
+  // S6: count-up scurt pe cifre la intrarea beat-ului (singura exceptie JS; rAF ~600ms, pornit de .on prin observer)
+  (function(){
+    var b5 = document.querySelector('.beat[data-seg="5"]');
+    if(!b5 || RM) return;
+    var nums = [].slice.call(b5.querySelectorAll('.stat .n')).map(function(el){
+      return {el:el, txt:el.textContent, run:0};
+    });
+    var was = b5.classList.contains('on');
+    new MutationObserver(function(){
+      var is = b5.classList.contains('on');
+      if(is && !was) nums.forEach(function(o){
+        var id = ++o.run, t0 = performance.now(), parts = o.txt.split(/(\d+)/);
+        requestAnimationFrame(function tick(t){
+          if(id !== o.run) return;
+          var p = Math.min(1,(t-t0)/600), e = 1-Math.pow(1-p,3);
+          o.el.textContent = parts.map(function(s){return /^\d+$/.test(s)?String(Math.round(parseInt(s,10)*e)):s;}).join('');
+          if(p<1) requestAnimationFrame(tick); else o.el.textContent = o.txt;
+        });
+      });
+      if(!is && was) nums.forEach(function(o){ o.run++; o.el.textContent = o.txt; });
+      was = is;
+    }).observe(b5,{attributes:true,attributeFilter:['class']});
+  })();
 
   var beats = [].slice.call(document.querySelectorAll('.beat')), beatRanges = [];
   (function(){
