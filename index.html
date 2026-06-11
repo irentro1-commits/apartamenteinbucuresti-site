@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14100b">
 <title>Apartamente noi Dristor-Titan, bloc nou | Ilioara Residence</title>
 <meta name="description" content="Bloc nou pe Aleea Eprubetei 7, zona Dristor-Titan, la 5 minute de metrou. Stradă retrasă între case, încălzire în pardoseală, 4 apartamente pe etaj, 47-84 mp utili. 12 disponibile, finalizare decembrie 2026.">
 <link rel="canonical" href="https://apartamenteinbucuresti.ro/">
@@ -33,6 +34,9 @@
 :root{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none;background:var(--bg)}
 body{font-family:'Inter',sans-serif;color:var(--cream);touch-action:none}
+::selection{background:var(--gold);color:#1a140c}
+a,button{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
 
 #stage{position:fixed;inset:0;z-index:0;background:var(--bg)}
 #frame{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -75,6 +79,9 @@ body{font-family:'Inter',sans-serif;color:var(--cream);touch-action:none}
 .beat.on .btn{pointer-events:auto}
 .btn::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .55s ease}
 .btn:hover::after{left:125%}
+.beat .btn{transition-delay:var(--d,0ms)}
+.beat.on .btn:active{transform:scale(.965);transition:transform .12s ease;transition-delay:0ms}
+.btn .wa{vertical-align:-3px;margin-right:.1em}
 .btn.ghost{border:1px solid rgba(232,180,90,.6);color:var(--cream);margin-left:.7rem}
 
 /* glass STRANS pe fiecare element de text (doar sub litere, fundal intact) */
@@ -136,8 +143,9 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 .brand b{color:var(--gold)}
 #bar{position:fixed;top:0;left:0;height:3px;z-index:6;background:linear-gradient(90deg,var(--gold),#F4D9A6);width:0}
 
-#rail{position:fixed;right:clamp(1rem,3vw,2.6rem);top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:14px;align-items:flex-end}
-#rail button{display:flex;align-items:center;gap:10px;background:none;border:0;cursor:pointer;padding:4px 0}
+#rail{position:fixed;right:clamp(1rem,3vw,2.6rem);top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:0;align-items:flex-end}
+/* tinta de atingere 24px (WCAG 2.5.8) cu acelasi ritm vizual: padding-ul tine pasul, nu gap-ul */
+#rail button{display:flex;align-items:center;gap:10px;background:none;border:0;cursor:pointer;padding:11px 0}
 #rail .nm{font-family:'Inter';font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-soft);opacity:0;transform:translateX(6px);transition:opacity .4s ease,transform .4s ease;text-shadow:0 1px 10px rgba(0,0,0,.7)}
 #rail .tick{width:18px;height:2px;background:rgba(245,240,225,.38);transition:width .4s cubic-bezier(.22,.6,.2,1),background .4s ease}
 #rail button.act .tick{width:34px;background:var(--gold)}
@@ -148,19 +156,29 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
 #hint.off{opacity:0!important;animation:none}
 
-#load{position:fixed;inset:0;z-index:10;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;transition:opacity .8s ease}
+#load{position:fixed;inset:0;z-index:10;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.2rem;transition:opacity .8s ease}
 #load.hide{opacity:0;pointer-events:none}
 #load .t{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--cream);letter-spacing:.06em}
 #load .t b{color:var(--gold)}
-#load .p{font-size:.85rem;color:var(--gold);letter-spacing:.12em}
+#load .p{font-size:.85rem;color:var(--gold);letter-spacing:.12em;font-variant-numeric:tabular-nums}
+/* loaderul = piesa de brand: soarele din sigla, cu rasaritul ca inel de progres */
+@property --p{syntax:'<number>';inherits:false;initial-value:0}
+#load .ring{position:relative;width:72px;height:72px;border-radius:50%;background:conic-gradient(var(--gold) calc(var(--p)*1%),rgba(232,180,90,.16) 0);transition:--p .4s ease}
+#load .ring::before{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--bg)}
+#load .sun{position:absolute;inset:0;margin:auto;width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 22px rgba(232,180,90,.55);animation:sunbreathe 2.2s ease-in-out infinite}
+@keyframes sunbreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+#load.err .sun{animation:none;background:#c97a5a}
+@media (prefers-reduced-motion: reduce){ #load .sun{animation:none} #load .ring{transition:none} }
 
 #chips{position:fixed;top:4.2rem;left:.8rem;right:.8rem;z-index:3;display:none;flex-wrap:wrap;gap:.45rem;pointer-events:none}
-.chip{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-size:.85rem;font-weight:500;color:var(--cream);background:rgba(18,13,8,.78);border:1px solid rgba(232,180,90,.5);border-radius:9px;padding:.45em .7em;opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s cubic-bezier(.34,1.56,.64,1)}
+.chip{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-size:.85rem;font-weight:500;color:var(--cream);background:rgba(18,13,8,.78);border:1px solid rgba(232,180,90,.5);border-radius:10px;padding:.45em .7em;box-shadow:0 6px 16px rgba(0,0,0,.32),inset 0 1px 0 rgba(245,240,225,.07);opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s cubic-bezier(.34,1.56,.64,1)}
 .chip.on{opacity:1;transform:none}
 .chip b{color:var(--gold);font-weight:700;font-size:.82em;letter-spacing:.08em;text-transform:uppercase}
 #mcta{position:fixed;left:0;right:0;bottom:0;z-index:7;display:none;padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(16,12,7,.92),rgba(16,12,7,.55) 70%,transparent);transform:translateY(110%);transition:transform .45s cubic-bezier(.22,.6,.2,1)}
 #mcta.show{transform:none}
-.mbtn{display:block;text-align:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95em 1em;border-radius:14px;background:var(--gold);color:#1a140c;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45)}
+.mbtn{display:block;text-align:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95em 1em;border-radius:14px;background:var(--gold);color:#1a140c;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s ease}
+.mbtn:active{transform:scale(.97)}
+.mbtn .wa{vertical-align:-4px;margin-right:.4em}
 @media (max-width:760px){
   #chips{display:flex}
   #mcta{display:block}
@@ -192,9 +210,22 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   .beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before{background:rgba(16,12,7,.62)}
   .pos-cc{left:0;right:0;top:50%;bottom:auto;transform:translateY(-50%);text-align:center;width:auto;max-width:none}
   #scrim{background:linear-gradient(0deg,rgba(16,12,7,.74),rgba(16,12,7,.15) 55%)}
-  #rail{right:.7rem;gap:11px}
+  #rail{right:.7rem;gap:1px}
   #rail .nm{display:none}
   .btn.ghost{margin-left:0;margin-top:.8rem}
+}
+/* telefon rotit: totul ramane pe ecran, fara suprapuneri (doar compactare, motion neatins) */
+@media (orientation:landscape) and (max-height:520px){
+  .beat{bottom:1.3rem}
+  .pos-tl,.pos-tr{top:4.6rem}
+  .beat h1,.beat p.big{font-size:1.7rem;line-height:1.12}
+  .beat[data-seg="0"] h1{font-size:1.5rem}
+  .beat[data-seg="0"] .lead{font-size:1rem}
+  .kicker{margin-bottom:.55rem;font-size:.78rem}
+  .beat .sub,.lead,.quote,.specs,.stats,.note,.strip{margin-top:.7rem}
+  .spec{padding:.45rem 0}
+  .btn{margin-top:1rem;font-size:1.05rem;padding:.8rem 1.6rem}
+  header{padding-top:.8rem}
 }
 @media (prefers-reduced-motion: reduce){
   .beat .w,.beat .ch,.beat .tl,.beat .kicker,.beat .sub,.beat .rule,.beat .btn,.beat .lead,.beat .quote,.beat .spec,.beat .spec .v,.beat .stat,.beat .note,.beat .strip,.beat .strip .it{transition:none}
@@ -265,17 +296,17 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     <div class="it"><div class="v">Dec 2026</div><div class="l">finalizare</div></div>
     <div class="it"><div class="v">2.000 EUR</div><div class="l">rezervare</div></div>
   </div>
-  <div><a class="btn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei.">Scrie-ne pe WhatsApp</a>
+  <div><a class="btn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a>
   <a class="btn ghost" href="tel:+40726712899">Sau sună direct</a></div>
 </div>
 
 <div id="labels"></div>
 <div id="chips"></div>
-<div id="mcta"><a class="mbtn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei.">Scrie-ne pe WhatsApp</a></div>
+<div id="mcta"><a class="mbtn" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a></div>
 <nav id="rail" aria-label="Capitole"></nav>
 <div id="hint">Derulează</div>
 
-<div id="load"><div class="t">Ilioara <b>Residence</b></div><div class="p" id="pct">se încarcă 0%</div></div>
+<div id="load"><div class="ring" id="ldring"><i class="sun"></i></div><div class="t">Ilioara <b>Residence</b></div><div class="p" id="pct">se încarcă 0%</div></div>
 <script>
 (function(){
   'use strict';
@@ -314,7 +345,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   SEGS.forEach(function(s){ s.a = acc/totalW; acc += s.w; s.b = acc/totalW; s.len = s.b - s.a; s.c = (s.a+s.b)/2; });
   var HOLDS = SEGS.filter(function(s){return s.type==='hold'});
 
-  // ===== POI (procente pe cadrul LARG, calibrate in prototip) — DRAFT pre voce-vie =====
+  // ===== POI (procente pe cadrul LARG, calibrate in prototip) - DRAFT pre voce-vie =====
   // POZITII LOCKED 11 Iun (corectii rosii Andy + citire directa c120). Nu se muta fara desen nou de la Andy.
   var W1 = [
     {x:11, y:60, n:"Spălătorie auto",            m:"1 min"},
@@ -357,8 +388,11 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     loaded++;
     if(booted) return;
     if(crit) critLoaded++;
+    var pc = Math.min(100, Math.round(critLoaded/critTotal*100));
     var el = document.getElementById('pct');
-    if(el) el.textContent = 'se încarcă ' + Math.min(100, Math.round(critLoaded/critTotal*100)) + '%';
+    if(el) el.textContent = 'se încarcă ' + pc + '%';
+    var rg = document.getElementById('ldring');
+    if(rg) rg.style.setProperty('--p', pc);
     if(critLoaded >= critTotal) boot();
   }
   function pump(){
@@ -382,7 +416,10 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   setTimeout(boot, 9000);
   addEventListener('error', function(e){
     if(!booted){
-      try{ document.getElementById('pct').textContent = 'eroare: ' + String(e.message||'js').slice(0,90); }catch(x){}
+      try{
+        document.getElementById('pct').textContent = 'eroare: ' + String(e.message||'js').slice(0,90);
+        document.getElementById('load').classList.add('err');
+      }catch(x){}
     }
   }, true);
   // cadrul cel mai apropiat deja incarcat (scroll inaintea fundalului = fara negru)
@@ -555,7 +592,12 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
     var base = units.length*stag + (seg===3 ? 280 : 120);
     var k = b.querySelector('.kicker'); if(k) k.style.transitionDelay = '0ms';
     var seq = b.querySelectorAll('.rule,.lead,.quote,.spec,.stat,.note,.strip,.btn');
-    for(var i2=0;i2<seq.length;i2++) seq[i2].style.transitionDelay = (base + i2*110) + 'ms';
+    for(var i2=0;i2<seq.length;i2++){
+      var dl = (base + i2*110) + 'ms';
+      // butoanele primesc delay-ul prin --d: la :active raspund INSTANT (delay-ul inline ar amana feedback-ul de tap)
+      if(seq[i2].classList.contains('btn')) seq[i2].style.setProperty('--d', dl);
+      else seq[i2].style.transitionDelay = dl;
+    }
     if(seg === 4){ // valoarea intra dupa eticheta ei
       var sps = b.querySelectorAll('.spec');
       for(var sv=0;sv<sps.length;sv++){
