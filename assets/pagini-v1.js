@@ -1,3 +1,16 @@
+// meniul respira cu scrollul (cerinta Andy): in jos dispare, in sus apare; sus de tot e mereu vizibil
+(function(){
+  var h = document.querySelector('.ph');
+  if(!h) return;
+  var last = scrollY, acc = 0;
+  addEventListener('scroll', function(){
+    var y = scrollY, d = y - last; last = y;
+    if(y < 80){ h.classList.remove('hide'); acc = 0; return; }
+    acc = (d > 0) === (acc > 0) ? acc + d : d;
+    if(acc > 90) h.classList.add('hide');
+    else if(acc < -50) h.classList.remove('hide');
+  }, {passive:true});
+})();
 // reveal kinetic per element (IO per sectiune, P-K-03: nimic global, nimic pre-revelat sub fold)
 (function(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;

@@ -194,6 +194,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 /* CTA persistent desktop: apare dupa S1, dispare pe finalul cu CTA propriu (propunerea #0 aprobata) */
 #hcta{display:flex;align-items:center;gap:1.2rem;opacity:0;transform:translateY(-8px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
 #hcta.show{opacity:1;transform:none;pointer-events:auto}
+#hcta .hlink{font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(232,180,90,.5);padding-bottom:.1em;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease}
+#hcta .hlink:hover{color:var(--gold)}
 #hcta .htel{font-family:'Inter';font-weight:600;font-size:1.02rem;color:var(--cream);text-decoration:none;letter-spacing:.05em;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease}
 #hcta .htel:hover{color:var(--gold)}
 #hcta .hwa{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border:1px solid rgba(232,180,90,.6);border-radius:999px;padding:.52em 1.05em;background:rgba(16,12,7,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:border-color .3s ease,transform .15s ease}
@@ -232,6 +234,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 #chips{position:fixed;top:4.2rem;left:.8rem;right:.8rem;z-index:3;display:none;flex-wrap:wrap;gap:.45rem;pointer-events:none}
 .chip{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-size:.85rem;font-weight:500;color:var(--cream);background:rgba(18,13,8,.78);border:1px solid rgba(232,180,90,.5);border-radius:10px;padding:.45em .7em;box-shadow:0 6px 16px rgba(0,0,0,.32),inset 0 1px 0 rgba(245,240,225,.07);opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s cubic-bezier(.34,1.56,.64,1)}
 .chip.on{opacity:1;transform:none}
+.chip:not(.on){position:absolute;visibility:hidden;pointer-events:none}
 .chip b{color:var(--gold);font-weight:700;font-size:.82em;letter-spacing:.08em;text-transform:uppercase}
 #mcta{position:fixed;left:0;right:0;bottom:0;z-index:7;display:none;gap:.6rem;align-items:stretch;padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(16,12,7,.92),rgba(16,12,7,.55) 70%,transparent);transform:translateY(110%);transition:transform .45s cubic-bezier(.22,.6,.2,1)}
 #mcta.show{transform:none}
@@ -304,7 +307,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 
 <header>
   <div class="brand">Ilioara <b>Residence</b></div>
-  <div id="hcta"><a class="hwa" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a><a class="htel" href="tel:+40726712899">+40 726 712 899</a></div>
+  <div id="hcta"><a class="hlink" href="/apartamente/">Apartamente și prețuri</a><a class="hwa" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a><a class="htel" href="tel:+40726712899">+40 726 712 899</a></div>
 </header>
 
 <!-- beats per sectiune, fiecare cu identitatea ei (data-seg = index hold 0..6). COPY DRAFT pre voce-vie. -->
@@ -856,7 +859,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
   function updateLabels(seg){
     var wmax = LBL_SEGS[seg] || 0;
     if(MOBILE){
-      for(var c=0;c<CHIPS.length;c++) CHIPS[c].el.classList.toggle('on', wmax >= CHIPS[c].wave);
+      // doar wave-ul curent: la 'departe' dispar cele apropiate, deja vazute la sectiunea 2 (decizie Andy 12 Iun)
+      for(var c=0;c<CHIPS.length;c++) CHIPS[c].el.classList.toggle('on', wmax === CHIPS[c].wave);
       return;
     }
     var cw = canvas.width, ch = canvas.height;
