@@ -54,7 +54,8 @@ a,button{-webkit-tap-highlight-color:transparent}
   linear-gradient(275deg, rgba(16,12,7,.42) 0%, rgba(16,12,7,.10) 30%, transparent 55%),
   linear-gradient(0deg, rgba(16,12,7,.54) 0%, transparent 40%)}
 
-.beat{position:fixed;left:clamp(1.4rem,6vw,6rem);bottom:clamp(3rem,14vh,8.5rem);z-index:4;max-width:78rem;pointer-events:none}
+.beat{position:fixed;left:clamp(1.4rem,6vw,6rem);bottom:clamp(3rem,14vh,8.5rem);z-index:4;max-width:78rem;pointer-events:none;visibility:hidden;transition:visibility 0s .85s}
+.beat.on{visibility:visible;transition-delay:0s}
 .beat .kicker,.beat .sub,.beat .rule,.beat .btn,.beat .lead,.beat .quote,.beat .spec,.beat .stat,.beat .note,.beat .strip,.beat .plans,.beat .after,.beat .bdg{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,.6,.2,1),transform .6s cubic-bezier(.22,.6,.2,1)}
 .beat.on .kicker,.beat.on .sub,.beat.on .rule,.beat.on .btn,.beat.on .lead,.beat.on .quote,.beat.on .spec,.beat.on .stat,.beat.on .note,.beat.on .strip,.beat.on .plans,.beat.on .after,.beat.on .bdg{opacity:1;transform:none}
 .beat .w{display:inline-block;opacity:0;transform:translateY(.75em);transition:opacity .65s cubic-bezier(.22,.6,.2,1),transform .65s cubic-bezier(.22,.6,.2,1)}
