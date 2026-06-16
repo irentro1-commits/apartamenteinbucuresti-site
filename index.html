@@ -334,6 +334,51 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   .beat .w,.beat .ch,.beat .tl,.beat .kicker,.beat .sub,.beat .rule,.beat .btn,.beat .lead,.beat .quote,.beat .spec,.beat .spec .v,.beat .stat,.beat .note,.beat .strip,.beat .strip .it,.beat .plans,.beat .after,.beat .bdg{transition:none}
   #hint{animation:none}
   }
+
+/* ===== OBREA MOBIL REVIEW (17 Iun) ===== */
+.brand{display:flex;align-items:center;gap:.55rem}
+.brand .bword{display:none;font-family:'Fraunces',serif;font-weight:600;font-size:1rem;letter-spacing:.04em;color:var(--cream);text-shadow:0 1px 10px rgba(0,0,0,.7)}
+.brand .bword b{color:var(--gold)}
+.poi .lab{text-decoration:none}
+.chip{text-decoration:none}
+.chip.on{pointer-events:auto}
+/* S7: "Si asta e" inchis pe cer luminos, fara placa pe titlul final (Obrea) */
+.beat[data-seg="6"] .tl::before{display:none}
+.beat[data-seg="6"] .dk{color:#14100b}
+.beat[data-seg="6"] .tl{text-shadow:0 1px 10px rgba(245,240,225,.75),0 0 26px rgba(245,240,225,.45)}
+@media (max-width:760px){
+  /* logo full pe telefon ca sa se inteleaga (Obrea) */
+  .brand .bword{display:inline}
+  .brand .lg{width:30px;height:30px}
+  /* text mai mic + bloc mai scurt => blocul din imagine ramane vizibil sus (Obrea: text in 40% de jos) */
+  .kicker{font-size:.72rem;letter-spacing:.22em;margin-bottom:.8rem}
+  .beat h1{font-size:1.95rem;line-height:1.14}
+  .beat p.big{font-size:1.85rem;line-height:1.14}
+  .beat[data-seg="0"] h1{font-size:1.75rem}
+  .beat[data-seg="0"] .lead{font-size:1.02rem;margin-top:1rem}
+  .bdg{font-size:.8rem;margin-top:.9rem}
+  .rule{margin-top:1rem}
+  .lead,.beat .sub{margin-top:1rem}
+  .specs{margin-top:1rem}
+  .spec{padding:.7rem 0}
+  /* chips mai mici, nu acapareaza imaginea (Obrea) */
+  #chips{top:3.6rem;gap:.4rem}
+  .chip{font-size:.78rem;padding:.4em .6em;border-radius:10px}
+  .chip b{font-size:.78em}
+  /* S3 aliniat stanga + mai jos, langa butoane (Obrea) */
+  .pos-cl{text-align:left}
+  /* S6 butoane plan pe un rand compact (Obrea) */
+  .beat[data-seg="5"] .plans{flex-wrap:nowrap;gap:.4rem;margin-top:1rem}
+  .beat[data-seg="5"] .pill{font-size:.74rem;padding:.5em .55em;white-space:nowrap;flex:1 1 0;justify-content:center;text-align:center}
+  /* S7 strip compact 2 coloane (Obrea: 12/31 stanga, Dec 2026 dreapta, rezervare sub) */
+  .pos-cc .strip{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1rem;margin-top:1rem;justify-items:center}
+  .pos-cc .strip .it{text-align:center}
+  .pos-cc .strip .it:last-child{grid-column:1 / -1}
+  .pos-cc .strip .it .v{font-size:1.15rem}
+  /* S7 butoane mai mici jos (Obrea) */
+  .pos-cc .btn{font-size:1rem;padding:.8em 1.2em}
+  .pos-cc .after{font-size:.85rem;margin-top:.9rem}
+}
 </style>
 </head>
 <body>
@@ -343,7 +388,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
 <div id="bar"></div>
 
 <header>
-  <div class="brand" role="img" aria-label="Ilioara Residence"><svg class="lg" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="13" fill="none" stroke="#F5F0E1" stroke-width="5"/><rect class="lg-bar" x="14" y="17" width="13" height="30" rx="4" fill="#E8B45A"/><rect x="32" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="38" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="44" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="50" y="17" width="3.5" height="30" fill="#F5F0E1"/></svg></div>
+  <div class="brand" role="img" aria-label="Ilioara Residence"><svg class="lg" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="13" fill="none" stroke="#F5F0E1" stroke-width="5"/><rect class="lg-bar" x="14" y="17" width="13" height="30" rx="4" fill="#E8B45A"/><rect x="32" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="38" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="44" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="50" y="17" width="3.5" height="30" fill="#F5F0E1"/></svg><span class="bword"><b>Ilioara</b> Residence</span></div>
   <div id="hcta"><a class="hlink" href="/apartamente/">Apartamente și prețuri</a><a class="hwa" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a><a class="htel" href="tel:+40726712899">+40 726 712 899</a></div>
   <button type="button" id="mnBtn" class="mn-btn" aria-expanded="false" aria-label="Meniu"><span></span><span></span><span></span></button>
 </header>
@@ -357,12 +402,12 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   <div class="kicker">Apartamente noi · Dristor-Titan, la 5 minute de metrou</div>
   <h1 class="split">Aici nu cumperi blocul.<br><span class="g">Cumperi locul.</span></h1>
   <div class="rule"></div>
-  <div class="lead"><b>Stradă retrasă</b>, între case. Orașul rămâne <b>la minute</b>.</div>
-  <div class="bdg">Apartamente direct de la proprietari</div>
+  <div class="lead"><b>Stradă retrasă</b>, între case. Ești în oraș, dar nu-l auzi.</div>
+  <div class="bdg">Cumperi direct de la proprietari</div>
 </div>
 <div class="beat" data-seg="1">
   <div class="kicker">Pe jos, din ușa blocului</div>
-  <p class="big split">Totul e la <span class="g">minute</span>.</p>
+  <p class="big split">Totul, la câteva <span class="g">minute</span>.</p>
   <div class="rule"></div>
 </div>
 <div class="beat pos-br" data-seg="2">
@@ -374,7 +419,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   <div class="kicker">Aleea Eprubetei · stradă închisă</div>
   <p class="big split"><span class="g">Liniște</span> și pace.</p>
   <div class="rule"></div>
-  <div class="quote">Etajele de jos aproape s-au vândut.<br>Sus e încă liber, <span class="g">partea cu vedere</span>.</div>
+  <div class="quote">Etajele de jos aproape s-au dus.<br>Sus, unde e <span class="g">priveliștea</span>, mai prinzi loc.</div>
 </div>
 <div class="beat pos-tr" data-seg="4">
   <div class="kicker">Ce primești în preț</div>
@@ -382,8 +427,8 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   <div class="rule"></div>
   <div class="specs">
     <div class="spec"><span class="k">Încălzire</span><span class="v">În pardoseală peste tot, și pe balcon · <b>inclusă</b></span></div>
-    <div class="spec"><span class="k">Tâmplărie</span><span class="v">Tripan Salamander · 7 camere, ține frigul afară</span></div>
-    <div class="spec"><span class="k">Centrală</span><span class="v">Doar a ta · Ariston 24 kW</span></div>
+    <div class="spec"><span class="k">Tâmplărie</span><span class="v">Geam triplu cu 7 camere · ține frigul și zgomotul afară</span></div>
+    <div class="spec"><span class="k">Centrală</span><span class="v">Doar a ta · 24 kW</span></div>
   </div>
 </div>
 <div class="beat" data-seg="5">
@@ -396,11 +441,11 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
     <div class="stat"><div class="n">47–84</div><div class="c">mp utili</div></div>
   </div>
   <div class="note">Suprafața se compartimentează modular · detaliile, la vizionare.</div>
-  <div class="plans"><button type="button" class="pill gold" id="openPrices">Vezi toate prețurile</button><a class="pill" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20planul%20apartamentului%20de%202%20camere%20de%20pe%20Aleea%20Eprubetei.">Vreau planul de 2 camere</a><a class="pill" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20planul%20apartamentului%20de%203%20camere%20de%20pe%20Aleea%20Eprubetei.">Vreau planul de 3 camere</a></div>
+  <div class="plans"><button type="button" class="pill gold" id="openPrices">Toate prețurile</button><a class="pill" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20planul%20apartamentului%20de%202%20camere%20de%20pe%20Aleea%20Eprubetei.">Plan 2 camere</a><a class="pill" href="https://wa.me/40726712899?text=Bun%C4%83%20ziua!%20Vreau%20planul%20apartamentului%20de%203%20camere%20de%20pe%20Aleea%20Eprubetei.">Plan 3 camere</a></div>
 </div>
 <div class="beat pos-cc" data-seg="6">
+  <p class="big split"><span class="dk">Și asta e</span> <span class="g">priveliștea</span>.</p>
   <div class="kicker">Ultimul etaj · Aleea Eprubetei 7</div>
-  <p class="big split">Și asta e <span class="g">priveliștea</span>.</p>
   <div class="rule"></div>
   <div class="strip">
     <div class="it"><div class="v">12 din 31</div><div class="l">disponibile</div></div>
@@ -478,26 +523,26 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   // ===== POI (procente pe cadrul LARG, calibrate in prototip) - DRAFT pre voce-vie =====
   // POZITII LOCKED 11 Iun (corectii rosii Andy + citire directa c120). Nu se muta fara desen nou de la Andy.
   var W1 = [
-    {x:11, y:60, n:"Spălătorie auto",            m:"1 min"},
-    {x:34, y:55, n:"Benzinărie Lukoil non-stop", m:"2 min"},
-    {x:28, y:44, n:"Stație autobuz Ilioara",     m:"3 min"},
-    {x:23, y:37, n:"Tramvai 19 / 23 / 27",       m:"4 min"},
-    {x:15, y:30, n:"Mega Image + Piața M. Ambrozie", m:"6-7 min"},
-    {x:56, y:31, n:"Metrou N. Grigorescu",       m:"5 min"}
+    {x:56, y:31, n:"Metrou N. Grigorescu",       m:"5 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Metrou+Nicolae+Grigorescu+Bucuresti"},
+    {x:28, y:44, n:"Stație autobuz Ilioara",     m:"3 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Statie+autobuz+Ilioara+Bucuresti"},
+    {x:23, y:37, n:"Tramvai 19 / 23 / 27",       m:"4 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Statie+tramvai+Ilioara+Bucuresti"},
+    {x:15, y:30, n:"Mega Image + Piața M. Ambrozie", m:"6-7 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Piata+Mihail+Ambrozie+Bucuresti"},
+    {x:11, y:60, n:"Spălătorie auto",            m:"1 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Spalatorie+auto+Aleea+Eprubetei+Bucuresti"},
+    {x:34, y:55, n:"Benzinărie Lukoil non-stop", m:"2 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Lukoil+Theodor+Pallady+Bucuresti"}
   ];
   var W2 = [
-    {x:21, y:23, n:"Parcul IOR",                  m:"9 min"},
-    {x:17, y:16, n:"ParkLake + World Class",      m:"15 min"},
-    {x:66, y:11, n:"Metrou Titan + Galeriile",    m:"18 min"},
-    {x:91, y:19, n:"Piața Titan",                 m:"9 min"},
-    {x:89, y:26, n:"Policlinica Titan",           m:"13 min"}
+    {x:21, y:23, n:"Parcul IOR",                  m:"9 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Parcul+IOR+Bucuresti"},
+    {x:91, y:19, n:"Piața Titan",                 m:"9 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Piata+Titan+Bucuresti"},
+    {x:89, y:26, n:"Policlinica Titan",           m:"13 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Policlinica+Titan+Bucuresti"},
+    {x:17, y:16, n:"ParkLake + World Class",      m:"15 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=ParkLake+Bucuresti"},
+    {x:66, y:11, n:"Metrou Titan + Galeriile",    m:"18 min", g:"https://www.google.com/maps/dir/?api=1&origin=Aleea+Eprubetei+7+Bucuresti&travelmode=walking&destination=Metrou+Titan+Bucuresti"}
   ];
   var labelsRoot = document.getElementById('labels'), POIS = [];
   function mkPoi(p, wave, i){
     var el = document.createElement('div');
     el.className = 'poi';
     el.style.transitionDelay = (i*90) + 'ms';
-    el.innerHTML = '<div class="lab"><span>' + p.n + '</span><i class="dv"></i><b>' + p.m + '</b></div><i class="ln"></i><div class="dot"></div>';
+    el.innerHTML = '<a class="lab" href="'+p.g+'" target="_blank" rel="noopener"><span>' + p.n + '</span><i class="dv"></i><b>' + p.m + '</b></a><i class="ln"></i><div class="dot"></div>';
     labelsRoot.appendChild(el);
     POIS.push({el: el, x: p.x/100, y: p.y/100, wave: wave});
   }
@@ -906,8 +951,9 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   var chipsRoot = document.getElementById('chips'), CHIPS = [];
   if(MOBILE){
     W1.concat(W2).forEach(function(p, i){
-      var el = document.createElement('span');
+      var el = document.createElement('a');
       el.className = 'chip';
+      el.href = p.g; el.target = '_blank'; el.rel = 'noopener';
       el.style.transitionDelay = (i*60) + 'ms';
       el.innerHTML = p.n + ' <b>' + p.m + '</b>';
       chipsRoot.appendChild(el);
