@@ -515,7 +515,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   var CLOSE = {z:1.5, cx:0.38, cy:0.52};   // clusterul: bloc + case + strada (de calibrat cu Andy)
 
   // camerele mobile: focale masurate programatic pe cadre (bloc/fereastra/lift)
-  var CLOSE_M = {z:1.12, cx:0.47, cy:0.55}, WIDE_M = {z:1, cx:0.55, cy:0.5};
+  var CLOSE_M = {z:1.12, cx:0.54, cy:0.62}, WIDE_M = {z:1, cx:0.55, cy:0.5};
   var SEGS = [
     {type:'hold', img:'h1',  w:0.30, m:{cx:0.61, cy:0.42}},
     {type:'clip', from:1,        to:FPC,   w:1.0, m1:{cx:0.61,cy:0.42}, m2:{cx:0.55,cy:0.5}},
@@ -527,9 +527,9 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
     {type:'hold', img:'h3', w:0.30, m:{cx:0.65, cy:0.40}},
     {type:'clip', from:2*FPC+1,  to:3*FPC, w:1.0, m1:{cx:0.65,cy:0.40}, m2:{cx:0.66,cy:0.38}},
     {type:'hold', img:'h4', w:0.30, m:{cx:0.66, cy:0.38}},
-    {type:'clip', from:3*FPC+1,  to:4*FPC, w:1.0, m1:{cx:0.66,cy:0.38}, m2:{cx:0.67,cy:0.52}},
-    {type:'hold', img:'h5', w:0.30, m:{cx:0.67, cy:0.52}},
-    {type:'clip', from:4*FPC+1,  to:5*FPC, w:1.0, m1:{cx:0.67,cy:0.52}, m2:{cx:0.38,cy:0.45}},
+    {type:'clip', from:3*FPC+1,  to:4*FPC, w:1.0, m1:{cx:0.66,cy:0.38}, m2:{cx:0.67,cy:0.62}},
+    {type:'hold', img:'h5', w:0.30, m:{cx:0.67, cy:0.62}},
+    {type:'clip', from:4*FPC+1,  to:5*FPC, w:1.0, m1:{cx:0.67,cy:0.62}, m2:{cx:0.38,cy:0.45}},
     {type:'hold', img:'h6', w:0.42, m:{cx:0.38, cy:0.45}}
   ];
   var CH_NAMES = ['Locul','Minutele','Orașul','Liniștea','Confortul','Spațiul','Priveliștea'];
