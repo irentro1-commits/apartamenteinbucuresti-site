@@ -74,6 +74,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .beat[data-seg="3"] .ch{display:inline-block;opacity:0;filter:blur(6px);transition:opacity .9s ease,filter .9s ease}
 .beat.on[data-seg="3"] .ch{opacity:1;filter:blur(0)}
 .beat[data-seg="4"] .w{transform:translateY(1em);transition:opacity .8s cubic-bezier(.22,.6,.2,1),transform .8s cubic-bezier(.22,.6,.2,1)}
+.beat.on[data-seg="1"] .w,.beat.on[data-seg="2"] .w,.beat.on[data-seg="4"] .w{transform:none}
 .beat[data-seg="4"] .spec{transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.34,1.56,.64,1)}
 .beat[data-seg="4"] .spec .v{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.22,.6,.2,1)}
 .beat.on[data-seg="4"] .spec .v{opacity:1;transform:none}
@@ -114,6 +115,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .beat.on .kicker::before,.beat.on .tl::before,.beat.on .lead::before,.beat.on .quote::before,.beat.on .spec::before,.beat.on .stat::before,.beat.on .note::before,.beat.on .strip::before,.beat.on .after::before{opacity:1}
 .pos-tr .kicker,.pos-tr p.big,.pos-tr .spec,.pos-tr .tl,.pos-br .kicker,.pos-br p.big,.pos-br .tl{margin-left:auto}
 .pos-cc .kicker,.pos-cc p.big,.pos-cc .strip,.pos-cc .tl,.pos-cc .after{margin-left:auto;margin-right:auto}
+.pos-cc .kicker{margin-top:.7rem}
 .btn.ghost{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(16,12,7,.35)}
 
 /* S1: headingul se opreste inainte de blocul galben; lead = 1/2 din el */
