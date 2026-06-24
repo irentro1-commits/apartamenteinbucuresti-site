@@ -173,7 +173,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .ov-block b{color:var(--gold);font-weight:600}
 .ov-more{font-family:'Inter';font-size:.95rem;margin-top:1.2rem}
 .ov-more a{color:var(--gold);font-weight:600}
-.ov-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.ov-cta{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem 1.1rem;margin-top:1.6rem}
 .ov-cta .btn{margin-top:0}
 .ov-cta .btn.ghost{margin-left:0}
 @media (max-width:760px){
@@ -208,12 +208,12 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 #hcta.show{opacity:1;transform:none;pointer-events:auto}
 #hcta .hlink{font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(232,180,90,.6);padding-bottom:.1em;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease}
 #hcta .hlink:hover{color:var(--gold)}
-#hcta .htel{font-family:'Inter';font-weight:600;font-size:1.02rem;color:var(--cream);text-decoration:none;letter-spacing:.05em;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease}
-#hcta .htel:hover{color:var(--gold)}
-#hcta .hwa{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border:1px solid rgba(232,180,90,.6);border-radius:999px;padding:.5em 1em;background:rgba(16,12,7,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:border-color .3s ease,transform .15s ease}
-#hcta .hwa:hover{border-color:rgba(232,180,90,.95)}
+#hcta .htel{font-family:'Inter';font-weight:500;font-size:.84rem;color:var(--cream-soft);text-decoration:none;letter-spacing:.03em;opacity:.68;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease,opacity .3s ease}
+#hcta .htel:hover{color:var(--gold);opacity:1}
+#hcta .hwa{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:700;font-size:.96rem;color:#1a140c;text-decoration:none;border:1px solid var(--gold);border-radius:999px;padding:.58em 1.2em;background:var(--gold);box-shadow:0 6px 22px rgba(232,180,90,.26);transition:box-shadow .3s ease,transform .15s ease}
+#hcta .hwa:hover{box-shadow:0 9px 30px rgba(232,180,90,.45)}
 #hcta .hwa:active{transform:scale(.96)}
-@media (max-width:900px){ #hcta .hwa{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(16,12,7,.78)} }
+@media (max-width:900px){ #hcta .hwa{backdrop-filter:none;-webkit-backdrop-filter:none} }
 /* meniul site-ului, accesibil si din film (directiva Andy: meniu adevarat peste tot) */
 .mn-btn{pointer-events:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;margin-left:1rem;border-radius:10px;border:1px solid rgba(232,180,90,.5);background:rgba(16,12,7,.55);cursor:pointer;transition:border-color .3s ease}
 .mn-btn:hover{border-color:rgba(232,180,90,.95)}
@@ -227,7 +227,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
 .mn-panel nav{display:flex;flex-direction:column;gap:.3rem}
 .mn-panel nav a{font-family:'Fraunces',serif;font-weight:600;font-size:1.45rem;color:var(--cream);text-decoration:none;padding:.45rem 0;border-bottom:1px solid rgba(232,180,90,.12);transition:color .3s ease}
 .mn-panel nav a:hover{color:var(--gold)}
-.mn-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+.mn-cta{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem 1.1rem;margin-top:1.5rem}
 .mn-wa{display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:1.02rem;padding:.85em 1.6em;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;transition:transform .15s ease}
 .mn-wa:active{transform:scale(.96)}
 .mn-tel{display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:1.02rem;padding:.85em 1.6em;border-radius:999px;border:1px solid rgba(232,180,90,.6);color:var(--cream);background:rgba(16,12,7,.55);text-decoration:none;transition:transform .15s ease}
@@ -275,8 +275,13 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
 #mcta{position:fixed;left:0;right:0;bottom:0;z-index:7;display:none;gap:.6rem;align-items:stretch;padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(16,12,7,.92),rgba(16,12,7,.55) 70%,transparent);transform:translateY(110%);transition:transform .45s cubic-bezier(.22,.6,.2,1)}
 #mcta.show{transform:none}
 #mcta .mbtn{flex:1}
-.mtel{display:flex;align-items:center;justify-content:center;width:3.4rem;border-radius:999px;border:1px solid rgba(232,180,90,.6);color:var(--gold);background:rgba(16,12,7,.78);box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s ease}
+.mtel{display:flex;align-items:center;justify-content:center;width:2.7rem;border-radius:999px;border:1px solid rgba(232,180,90,.38);color:var(--cream-soft);background:rgba(16,12,7,.62);opacity:.82;box-shadow:0 8px 28px rgba(0,0,0,.4);transition:transform .15s ease}
+.mtel svg{width:17px;height:17px}
 .mtel:active{transform:scale(.94)}
+.telmini{display:block;width:fit-content;margin-top:1.1rem;font-family:'Inter';font-weight:500;font-size:.92rem;color:var(--cream-soft);text-decoration:none;opacity:.6;letter-spacing:.02em;border-bottom:1px solid transparent;text-shadow:0 1px 10px rgba(0,0,0,.6);transition:opacity .25s ease,color .25s ease,border-color .25s ease}
+.telmini:hover{opacity:1;color:var(--gold);border-bottom-color:rgba(232,180,90,.4)}
+.telmini:active{opacity:1}
+.mn-cta .telmini,.ov-cta .telmini{margin-top:0}
 .mbtn{display:block;text-align:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95em 1em;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s ease}
 .mbtn:active{transform:scale(.97)}
 .mbtn .wa{vertical-align:-4px;margin-right:.4em}
@@ -405,7 +410,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
 </header>
 <div class="mn-panel">
   <nav aria-label="Meniu complet"><a href="/apartamente/">Apartamente</a><a href="/preturi/">Prețuri</a><a href="/dotari/">Dotări</a><a href="/parcare/">Parcare</a><a href="/zona/">Locație și facilități</a><a href="/blog/">Blog</a></nav>
-  <div class="mn-cta"><a class="mn-wa" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei.">Scrie-ne pe WhatsApp</a><a class="mn-tel" href="tel:+40726712899">Sau sună direct</a></div>
+  <div class="mn-cta"><a class="mn-wa" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei.">Scrie-ne pe WhatsApp</a><a class="telmini" href="tel:+40726712899">sau sună la +40 726 712 899</a></div>
 </div>
 
 <!-- beats per sectiune, fiecare cu identitatea ei (data-seg = index hold 0..6). COPY DRAFT pre voce-vie. -->
@@ -464,7 +469,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
     <div class="it"><div class="v">2.000 EUR + TVA</div><div class="l">rezervare</div></div>
   </div>
   <div><a class="btn" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a>
-  <a class="btn ghost" href="tel:+40726712899">Sau sună direct</a></div>
+  <a class="telmini" href="tel:+40726712899">sau sună la +40 726 712 899</a></div>
   <div class="after">Primești planurile și prețurile pe WhatsApp, apoi stabilim împreună vizionarea.</div>
 </div>
 
@@ -488,7 +493,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
       <div class="ov-h">Rezervare</div>
       <div class="ov-block">Rezervi cu <b>2.000 EUR + TVA</b>, apoi avansul minim e <b>30%</b>. Restul detaliilor, pe WhatsApp sau la vizionare.</div>
       <p class="ov-more"><a href="/apartamente/">Vezi fiecare apartament în detaliu, cu pagina lui »</a></p>
-      <div class="ov-cta"><a class="btn" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua%21%20Vreau%20detalii%20despre%20pre%C8%9Buri%20%C8%99i%20apartamentele%20disponibile."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a><a class="btn ghost" href="tel:+40726712899">Sau sună direct</a></div>
+      <div class="ov-cta"><a class="btn" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua%21%20Vreau%20detalii%20despre%20pre%C8%9Buri%20%C8%99i%20apartamentele%20disponibile."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a><a class="telmini" href="tel:+40726712899">sau sună la +40 726 712 899</a></div>
     </div>
   </div>
 </div>
@@ -508,7 +513,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
       <div class="ov-h">Apartamentele</div>
       <div class="ov-block">Parter plus 7 etaje, <b>4 apartamente pe etaj</b>: unul de 3 camere și trei de 2 camere.<br>Suprafețe totale de la <b>47 la 85 mp</b>, cu compartimentare modulară.<br>Finalizare: <b>decembrie 2026</b>.</div>
       <p class="ov-more"><a href="/dotari/">Vezi toate dotările, în detaliu »</a></p>
-      <div class="ov-cta"><a class="btn" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20fi%C8%99a%20tehnic%C4%83%20%C8%99i%20vreau%20detalii.">Scrie-ne pe WhatsApp</a><a class="btn ghost" href="tel:+40726712899">Sau sună direct</a></div>
+      <div class="ov-cta"><a class="btn" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20fi%C8%99a%20tehnic%C4%83%20%C8%99i%20vreau%20detalii.">Scrie-ne pe WhatsApp</a><a class="telmini" href="tel:+40726712899">sau sună la +40 726 712 899</a></div>
     </div>
   </div>
 </div>
