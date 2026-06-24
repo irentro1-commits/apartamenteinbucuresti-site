@@ -741,7 +741,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   addEventListener('wheel', function(e){
     if(ovOpen || mnOpen) return; // overlay/meniu deschis: filmul sta pe loc
     if(ffShown){ if(e.deltaY < -1 && ffEl.scrollTop <= 0){ e.preventDefault(); hideFF(); } return; }
-    if(cur >= lastHold.a && e.deltaY > 0){ e.preventDefault(); showFF(); return; }
+    if(T >= 0.997 && e.deltaY > 0){ e.preventDefault(); showFF(); return; }
     e.preventDefault();
     var dy = e.deltaY;
     if(e.deltaMode === 1) dy *= 33;
@@ -755,7 +755,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   addEventListener('touchmove', function(e){
     if(ovOpen || mnOpen) return; // touch-ul apartine overlay-ului/meniului
     if(ffShown){ if(tY!==null && (tY - e.touches[0].clientY) < -5 && ffEl.scrollTop <= 0){ hideFF(); } return; }
-    if(cur >= lastHold.a && tY!==null && (tY - e.touches[0].clientY) > 5){ showFF(); return; }
+    if(T >= 0.997 && tY!==null && (tY - e.touches[0].clientY) > 5){ showFF(); return; }
     e.preventDefault();
     if(tY === null) return;
     var y = e.touches[0].clientY, dy = (tY - y) * 2.0, now = performance.now();
