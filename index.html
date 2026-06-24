@@ -92,6 +92,14 @@ a,button{-webkit-tap-highlight-color:transparent}
 .beat .sub b{color:var(--gold);font-weight:600}
 .btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;font-weight:600;font-size:1.35rem;padding:1.15rem 2.3rem;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;position:relative;overflow:hidden}
 .beat.on .btn{pointer-events:auto}
+.greviews{margin-top:1.4rem;text-align:center}
+.grev-badge{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border:1px solid rgba(232,180,90,.5);border-radius:999px;padding:.5em 1.1em;background:rgba(16,12,7,.42);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);text-shadow:0 1px 10px rgba(0,0,0,.45);transition:border-color .3s ease,transform .15s ease}
+.grev-badge .gstar{color:var(--gold);font-size:1.12em;line-height:1;margin-top:-1px}
+.grev-badge b{color:var(--gold);font-weight:700}
+.grev-badge:hover{border-color:rgba(232,180,90,.95)}
+.grev-badge:active{transform:scale(.97)}
+.beat.on .grev-badge{pointer-events:auto}
+@media (max-width:900px){.grev-badge{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(16,12,7,.72)}}
 .btn::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .55s ease}
 .btn:hover::after{left:125%}
 .beat .btn{transition-delay:var(--d,0ms)}
@@ -471,7 +479,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   </div>
   <div><a class="btn" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a></div>
   <div class="after">Primești planurile și prețurile pe WhatsApp, apoi stabilim împreună vizionarea.</div>
-  <div class="greviews" style="margin-top:1rem"><a href="https://www.google.com/maps?cid=7647297695462537735" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4em;color:var(--gold);font-family:'Inter';font-weight:600;font-size:.9rem;text-decoration:none;border-bottom:1px solid rgba(232,180,90,.4);padding-bottom:.12em;text-shadow:0 1px 10px rgba(0,0,0,.6)">★ 4.8 pe Google, 5 recenzii</a></div>
+  <div class="greviews"><a class="grev-badge" href="https://www.google.com/maps?cid=7647297695462537735" target="_blank" rel="noopener"><span class="gstar">★</span> <b>4.8</b> pe Google · 5 recenzii</a></div>
 </div>
 
 <div id="labels"></div>
