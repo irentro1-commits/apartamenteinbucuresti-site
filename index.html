@@ -406,6 +406,24 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   .beat[data-seg="5"] .note{margin-top:.9rem;font-size:.92rem}
   .beat[data-seg="5"] .rule{margin-top:.8rem}
 }
+.ff{position:fixed;left:0;right:0;bottom:0;z-index:10;transform:translateY(101%);transition:transform .55s cubic-bezier(.22,.6,.2,1);max-height:100dvh;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;background:linear-gradient(180deg,rgba(13,10,6,.97),#0b0805);border-top:1px solid rgba(232,180,90,.25);padding:3.2rem clamp(1.4rem,6vw,5rem) 2rem;box-shadow:0 -24px 70px rgba(0,0,0,.55)}
+.ff.show{transform:none}
+.ff-close{position:absolute;top:1rem;right:1.2rem;width:2.5rem;height:2.5rem;border-radius:999px;border:1px solid rgba(232,180,90,.4);background:rgba(16,12,7,.65);color:var(--cream);font-size:1.05rem;cursor:pointer;line-height:1;transition:border-color .25s ease}
+.ff-close:hover{border-color:rgba(232,180,90,.9)}
+.ff-in{max-width:62rem;margin:0 auto}
+.ff-brand{font-family:'Fraunces',serif;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:1.25rem;color:var(--cream)}
+.ff-brand b{color:var(--gold)}
+.ff-desc{font-family:'Inter';font-size:.92rem;line-height:1.65;color:var(--cream-soft);margin:1rem 0 1.7rem;max-width:38rem;text-wrap:pretty}
+.ff-nav{display:flex;flex-wrap:wrap;gap:.55rem 1.4rem;margin-bottom:1.2rem;align-items:baseline}
+.ff-nav a{font-family:'Inter';font-size:.95rem;color:var(--cream-soft);text-decoration:none;transition:color .25s cubic-bezier(.23,1,.32,1)}
+.ff-nav a:hover{color:var(--gold)}
+.ff-gh .ff-h{font-family:'Inter';font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.9;width:100%;margin-bottom:.2rem}
+.ff-rev{margin:.3rem 0 0}
+.ff-rev a{display:inline-flex;align-items:center;gap:.4em;font-family:'Inter';font-size:.88rem;font-weight:600;color:var(--cream);text-decoration:none;border:1px solid rgba(232,180,90,.4);border-radius:999px;padding:.5em 1em}
+.ff-rev a b{color:var(--gold)} .ff-rev .st{color:var(--gold)}
+.ff-bot{margin-top:2.2rem;padding-top:1.5rem;border-top:1px solid rgba(232,180,90,.12);font-family:'Inter';font-size:.86rem;color:var(--cream-soft);opacity:.72}
+.ff-bot a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(232,180,90,.4);padding-bottom:.05em}
+.ff-bot a:hover{border-bottom-color:var(--gold)}
 </style>
 </head>
 <body>
@@ -490,6 +508,17 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
 <div id="mcta"><a class="mbtn" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a></div>
 <nav id="rail" aria-label="Capitole"></nav>
 <div id="hint">Derulează</div>
+<footer id="ff" class="ff" aria-label="Footer">
+  <button type="button" id="ffClose" class="ff-close" aria-label="Înapoi la film">↑</button>
+  <div class="ff-in">
+    <div class="ff-brand">Ilioara <b>Residence</b></div>
+    <p class="ff-desc">Bloc nou pe Aleea Eprubetei 7, zona Titan-Dristor, Sector 3, București. Finalizare decembrie 2026.<br>Direct de la proprietari, fără comision pentru cumpărător.</p>
+    <nav class="ff-nav" aria-label="Pagini"><a href="/apartamente/">Apartamente</a><a href="/preturi/">Prețuri</a><a href="/dotari/">Dotări</a><a href="/parcare/">Parcare</a><a href="/zona/">Locație și facilități</a><a href="/blog/">Blog</a><a href="/echipa-ilioara-residence/">Echipa</a></nav>
+    <nav class="ff-nav ff-gh" aria-label="Ghiduri"><span class="ff-h">Ghiduri</span><a href="/apartamente-noi-bucuresti/">Apartamente noi București</a><a href="/apartamente-blocuri-noi-bucuresti/">Apartament în bloc nou</a><a href="/blocuri-noi-bucuresti/">Blocuri noi construite</a></nav>
+    <div class="ff-rev"><a href="https://www.google.com/maps/place/Apartamente+DIRECT+de+la+PROPRIETAR+%7C+Ilioara+Residence/@44.4128141,26.1558693,17z/data=!4m6!3m5!1s0x40b1ff34f06ca659:0x8da0a015e136c436!8m2!3d44.4128141!4d26.1558693!16s%2Fg%2F11gk1td05l" target="_blank" rel="noopener"><span class="st">★</span> <b>4.8</b> pe Google · 5 recenzii</a></div>
+    <div class="ff-bot">© 2026 Ilioara Residence · Crafted with care by <a href="https://i-vory.ro" target="_blank" rel="noopener">i-vory Studio</a></div>
+  </div>
+</footer>
 
 <div id="ov" role="dialog" aria-modal="true" aria-label="Prețuri și disponibilitate" hidden>
   <div class="ov-panel">
@@ -705,8 +734,14 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
     kick();
   }
 
+  var ffEl=document.getElementById('ff'), ffShown=false;
+  function showFF(){ if(ffShown) return; ffShown=true; ffEl.classList.add('show'); }
+  function hideFF(){ ffShown=false; ffEl.classList.remove('show'); ffEl.scrollTop=0; }
+  document.getElementById('ffClose').addEventListener('click', hideFF);
   addEventListener('wheel', function(e){
     if(ovOpen || mnOpen) return; // overlay/meniu deschis: filmul sta pe loc
+    if(ffShown){ if(e.deltaY < -1 && ffEl.scrollTop <= 0){ e.preventDefault(); hideFF(); } return; }
+    if(cur >= lastHold.a && e.deltaY > 0){ e.preventDefault(); showFF(); return; }
     e.preventDefault();
     var dy = e.deltaY;
     if(e.deltaMode === 1) dy *= 33;
@@ -719,6 +754,8 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   addEventListener('touchstart', function(e){ if(ovOpen || mnOpen) return; tY = e.touches[0].clientY; tV = 0; tvel = 0; glide = null; }, {passive:true});
   addEventListener('touchmove', function(e){
     if(ovOpen || mnOpen) return; // touch-ul apartine overlay-ului/meniului
+    if(ffShown){ if(tY!==null && (tY - e.touches[0].clientY) < -5 && ffEl.scrollTop <= 0){ hideFF(); } return; }
+    if(cur >= lastHold.a && tY!==null && (tY - e.touches[0].clientY) > 5){ showFF(); return; }
     e.preventDefault();
     if(tY === null) return;
     var y = e.touches[0].clientY, dy = (tY - y) * 2.0, now = performance.now();
