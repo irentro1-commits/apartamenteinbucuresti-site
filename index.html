@@ -308,6 +308,14 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
   .pos-tr .rule,.pos-br .rule{margin-left:0;transform-origin:left center}
   /* AERISIT + INCADRAT pe telefon (motion locked, doar textul) */
   .beat{padding:0 1.6rem;bottom:calc(clamp(4.5rem,14vh,8rem) + 3.1rem)}
+  /* S6 = cel mai inalt beat: centrat vertical pe mobil ca sa NU intre sub header (logo), compactat sa incapa si pe ecrane mici */
+  .beat[data-seg="5"]{top:50%;bottom:auto;transform:translateY(-50%)}
+  .beat[data-seg="5"] .kicker{margin-bottom:.85rem}
+  .beat[data-seg="5"] p.big{font-size:1.8rem}
+  .beat[data-seg="5"] .rule{margin-top:.85rem}
+  .beat[data-seg="5"] .stats{margin-top:.95rem;gap:1.05rem 1.6rem}
+  .beat[data-seg="5"] .note{margin-top:.8rem}
+  .beat[data-seg="5"] .plans{margin-top:.8rem}
   .kicker{font-size:.82rem;letter-spacing:.26em;margin-bottom:1.2rem}
   .beat h1{font-size:2.15rem;line-height:1.16}
   .beat p.big{font-size:2rem;line-height:1.16}
