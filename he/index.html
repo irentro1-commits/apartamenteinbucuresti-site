@@ -523,6 +523,24 @@ body.cov-in #cov .cv{opacity:1;transform:none}
 #cov .vl{position:relative;width:1px;height:40px;margin:.7rem auto 0;overflow:hidden}
 #cov .vl::after{content:'';position:absolute;left:0;top:0;width:1px;height:100%;background:linear-gradient(180deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent);animation:covdrop 2.6s cubic-bezier(.45,0,.25,1) infinite}
 @keyframes covdrop{0%{transform:translateY(-100%)}55%,60%{transform:translateY(0)}100%{transform:translateY(100%)}}
+/* polish IV: micro-detalii coperta */
+#cov .cardin:hover .ph img:nth-child(1){transform:rotate(-4deg) translateX(-4px)}
+#cov .cardin:hover .ph img:nth-child(2){transform:rotate(2.6deg) translateY(-6px)}
+#cov .cardin:hover .ph img:nth-child(3){transform:rotate(-2deg) translateX(4px)}
+#cov .ph img{transition:transform .45s cubic-bezier(.22,.6,.2,1)}
+#cov .cardin:active{transform:scale(.985)}
+#cov .cb{transition:transform .3s ease}
+#cov .cb:hover{transform:translateY(-2px)}
+#cov .cb:hover .l{color:#F4D9A6}
+#cov .ib:active{transform:scale(.96)}
+@media (min-width:1880px){
+  #cov .cl-band{left:calc(50% - 860px);right:calc(50% - 860px)}
+  #cov .cl-ed{left:calc(50% - 820px)}
+}
+@media (prefers-reduced-motion: reduce){
+  #cov .ph img,#cov .cb{transition:none}
+}
+
 #cov .nw{white-space:nowrap}
 #cov .dbr{display:none}
 #cov .hdm{display:none}
