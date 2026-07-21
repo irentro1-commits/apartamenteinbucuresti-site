@@ -432,6 +432,141 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
 .ff-bot{margin-top:2.2rem;padding-top:1.5rem;border-top:1px solid rgba(232,180,90,.12);font-family:'Inter';font-size:.86rem;color:var(--cream-soft);opacity:.72}
 .ff-bot a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(232,180,90,.4);padding-bottom:.05em}
 .ff-bot a:hover{border-bottom-color:var(--gold)}
+/* ===== COPERTA (21 Iul 2026): prima fereastra a casei; 6 straturi cu adancime; filmul + fizica lui neatinse ===== */
+.beat[data-seg="0"]{display:none} /* continutul S1 traieste acum pe coperta (acelasi titlu+lead+badge => zero dublura la retragere) */
+#rail{transition:opacity .45s ease}
+body.cov-on #rail{opacity:0;pointer-events:none}
+body.cov-on #hint{display:none}
+body.cov-on .brand .bword{display:inline}
+#cov{position:fixed;inset:0;z-index:5;--cp:0;--mx:0;--my:0}
+#cov.gone{display:none}
+#cov .bgw{position:absolute;inset:0;overflow:hidden;opacity:max(0, calc(1 - var(--cp) * 0.92));transform:translate3d(calc(var(--mx) * 4px), calc(var(--my) * 4px), 0) scale(1.045)}
+#cov .bgw img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 44%}
+#cov .grad{position:absolute;inset:0;pointer-events:none;opacity:max(0, calc(1 - var(--cp) * 1.15));background:
+  linear-gradient(96deg, rgba(16,12,7,.8) 0%, rgba(16,12,7,.46) 30%, rgba(16,12,7,.06) 58%, transparent 74%),
+  linear-gradient(0deg, rgba(16,12,7,.84) 0%, rgba(16,12,7,.3) 26%, transparent 52%),
+  linear-gradient(180deg, rgba(16,12,7,.52) 0%, transparent 22%)}
+#cov .frm{position:absolute;inset:24px;border:1px solid rgba(245,240,225,.15);pointer-events:none;opacity:max(0, calc(1 - var(--cp) * 1.25));transform:translate3d(calc(var(--mx) * -2px), calc(var(--my) * -2px), 0);animation:covfrm .7s ease both}
+@keyframes covfrm{from{opacity:0}}
+#cov .sc{position:absolute;inset:0;overflow:hidden}
+#cov .scin{position:absolute;inset:0}
+#cov .cl{position:absolute;pointer-events:none}
+#cov .cv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.6,.2,1),transform .7s cubic-bezier(.22,.6,.2,1);transition-delay:var(--ed,0ms)}
+body.cov-in #cov .cv{opacity:1;transform:none}
+/* straturi: parallax (mx/my) + retragere (cp), fiecare cu viteza lui; fundalul cel mai lent */
+#cov .cl-top{top:1.62rem;right:calc(clamp(1.4rem, 6vw, 6rem) + 3.7rem);display:flex;align-items:center;gap:1.3rem;transform:translate3d(calc(var(--mx) * 5px), calc(var(--my) * 5px - var(--cp) * 46px), 0);opacity:max(0, calc(1 - var(--cp) * 1.7))}
+#cov .lgs{display:flex;align-items:center;gap:.55rem;font-family:'Inter';font-weight:600;font-size:.7rem;letter-spacing:.16em;color:rgba(245,240,225,.52);text-shadow:0 1px 10px rgba(0,0,0,.6)}
+#cov .lgs b{color:var(--gold);font-weight:700}
+#cov .lgs .sep{opacity:.35}
+#cov .cph{pointer-events:auto;font-family:'Inter';font-weight:500;font-size:.8rem;letter-spacing:.04em;color:var(--cream-soft);opacity:.88;text-decoration:none;text-shadow:0 1px 10px rgba(0,0,0,.6);transition:color .3s ease}
+#cov .cph:hover{color:var(--gold)}
+#cov .cl-ed{left:clamp(2.2rem, 6.5vw, 7rem);top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;width:min(46vw, 42rem);padding-bottom:5rem;transform:translate3d(calc(var(--mx) * 6px), calc(var(--my) * 6px - var(--cp) * 72px), 0);opacity:max(0, calc(1 - var(--cp) * 1.5))}
+#cov .ck{font-family:'Inter';font-weight:600;font-size:clamp(.72rem, .72vw, .8rem);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-shadow:0 1px 12px rgba(0,0,0,.7)}
+#cov .cti{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.6rem, 4.2vw, 4.2rem);line-height:1.02;letter-spacing:-.02em;color:var(--cream);margin-top:1.05rem;text-shadow:0 2px 34px rgba(0,0,0,.62);text-wrap:balance}
+#cov .cti em{font-style:italic;color:var(--gold)}
+#cov .cle{font-family:'Inter';font-size:clamp(1.25rem, 1.9vw, 1.9rem);font-weight:400;line-height:1.34;color:var(--cream-soft);margin-top:1.35rem;max-width:23.5em;text-shadow:0 2px 20px rgba(0,0,0,.72);text-wrap:pretty}
+#cov .cle b{color:var(--cream);font-weight:600}
+#cov .cbtns{display:flex;align-items:center;gap:.9rem;margin-top:1.9rem;flex-wrap:wrap}
+#cov .cwa{pointer-events:auto;display:inline-flex;align-items:center;gap:.6rem;font-family:'Inter';font-weight:600;font-size:1.12rem;padding:1rem 1.9rem;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;box-shadow:0 10px 34px rgba(232,180,90,.28);position:relative;overflow:hidden;transition:transform .15s ease,box-shadow .3s ease}
+#cov .cwa::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .55s ease}
+#cov .cwa:hover{box-shadow:0 14px 44px rgba(232,180,90,.42)}
+#cov .cwa:hover::after{left:125%}
+#cov .cwa:active{transform:scale(.965)}
+#cov .cap{pointer-events:auto;display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95rem 1.7rem;border-radius:999px;border:1px solid rgba(232,180,90,.55);color:var(--cream);text-decoration:none;background:rgba(16,12,7,.38);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:border-color .3s ease,transform .15s ease}
+#cov .cap:hover{border-color:rgba(232,180,90,.95)}
+#cov .cap:active{transform:scale(.96)}
+#cov .ctr{font-family:'Inter';font-size:clamp(.92rem, .95vw, 1.02rem);color:rgba(245,240,225,.76);margin-top:1.15rem;text-shadow:0 1px 12px rgba(0,0,0,.7)}
+#cov .cl-band{left:calc(24px + 1.55rem);right:calc(24px + 1.55rem);bottom:44px;transform:translate3d(calc(var(--mx) * 7px), calc(var(--my) * 7px - var(--cp) * 54px), 0);opacity:max(0, calc(1 - var(--cp) * 1.55))}
+#cov .bandin{display:flex;background:rgba(16,12,7,.32);border:1px solid rgba(245,240,225,.09);border-radius:14px;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:0 18px 50px rgba(0,0,0,.35)}
+#cov .cb{flex:1;text-align:center;padding:1.05rem .6rem .95rem;min-width:0}
+#cov .cb + .cb{border-left:1px solid rgba(232,180,90,.16)}
+#cov .cb .v{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.3rem, 1.75vw, 1.8rem);line-height:1;color:var(--cream);text-shadow:0 2px 18px rgba(0,0,0,.55);white-space:nowrap}
+#cov .cb .l{font-family:'Inter';font-weight:600;font-size:clamp(.6rem, .58vw, .68rem);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:.55rem}
+#cov .cl-card{top:6rem;right:clamp(1.8rem, 5vw, 5.4rem);width:clamp(250px, 21vw, 318px);transform:translate3d(calc(var(--mx) * 14px), calc(var(--my) * 14px - var(--cp) * 92px), 0);opacity:max(0, calc(1 - var(--cp) * 1.8))}
+#cov .cardin{pointer-events:auto;display:block;text-decoration:none;background:rgba(18,13,8,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(232,180,90,.32);border-radius:16px;padding:1.05rem 1.05rem 1.15rem;box-shadow:0 24px 60px rgba(0,0,0,.45);transition:border-color .3s ease,transform .3s ease}
+#cov .cardin:hover{border-color:rgba(232,180,90,.85);transform:translateY(-3px)}
+#cov .clb{font-family:'Inter';font-weight:700;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+#cov .ph{display:flex;margin-top:.85rem;height:86px}
+#cov .ph img{width:37%;height:86px;object-fit:cover;border:3px solid rgba(247,242,228,.95);border-radius:4px;box-shadow:0 10px 26px rgba(0,0,0,.5)}
+#cov .ph img:nth-child(1){transform:rotate(-2.2deg);z-index:1}
+#cov .ph img:nth-child(2){transform:rotate(1.6deg) translateY(-3px);margin-left:-9%;z-index:2}
+#cov .ph img:nth-child(3){transform:rotate(-1.1deg);margin-left:-9%;z-index:3}
+#cov .ct{font-family:'Fraunces',serif;font-weight:600;font-size:1.28rem;color:var(--cream);margin-top:.95rem}
+#cov .cgo{display:inline-block;font-family:'Inter';font-weight:600;font-size:.88rem;color:var(--gold);margin-top:.45rem;border-bottom:1px solid rgba(232,180,90,.45);padding-bottom:.12em;transition:border-color .3s ease}
+#cov .cardin:hover .cgo{border-color:var(--gold)}
+#cov .cl-idx{top:23.4rem;right:clamp(1.8rem, 5vw, 5.4rem);display:flex;flex-direction:column;align-items:flex-end;transform:translate3d(calc(var(--mx) * 12px), calc(var(--my) * 12px - var(--cp) * 84px), 0);opacity:max(0, calc(1 - var(--cp) * 1.8))}
+#cov .il{font-family:'Inter';font-weight:700;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.92;margin-bottom:.5rem;text-shadow:0 1px 10px rgba(0,0,0,.7)}
+#cov .idxg{display:flex;flex-direction:column;align-items:flex-end}
+#cov .ib{pointer-events:auto;display:flex;align-items:center;justify-content:flex-end;gap:.7rem;background:none;border:0;cursor:pointer;padding:.42rem 0}
+#cov .ib .no{font-family:'Inter';font-weight:600;font-size:.68rem;letter-spacing:.12em;color:var(--gold)}
+#cov .ib .nm2{font-family:'Inter';font-weight:500;font-size:.98rem;color:var(--cream);text-shadow:0 1px 12px rgba(0,0,0,.7);transition:color .25s ease}
+#cov .ib .lnh{width:20px;height:1px;background:rgba(232,180,90,.5);transition:width .3s cubic-bezier(.22,.6,.2,1),background .3s ease}
+#cov .ib:hover .nm2,#cov .ib:focus-visible .nm2{color:var(--gold)}
+#cov .ib:hover .lnh,#cov .ib:focus-visible .lnh{width:44px;background:var(--gold)}
+#cov .cl-inv{left:0;right:0;bottom:clamp(8.6rem, 16vh, 10.4rem);text-align:center;transform:translate3d(calc(var(--mx) * 5px), calc(var(--my) * 5px - var(--cp) * 26px), 0);opacity:max(0, calc(1 - var(--cp) * 2.4))}
+#cov .dl{font-family:'Inter';font-weight:600;font-size:.64rem;letter-spacing:.34em;text-indent:.34em;text-transform:uppercase;color:var(--cream-soft);text-shadow:0 1px 10px rgba(0,0,0,.7)}
+#cov .vl{position:relative;width:1px;height:40px;margin:.7rem auto 0;overflow:hidden}
+#cov .vl::after{content:'';position:absolute;left:0;top:0;width:1px;height:100%;background:linear-gradient(180deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent);animation:covdrop 2.6s cubic-bezier(.45,0,.25,1) infinite}
+@keyframes covdrop{0%{transform:translateY(-100%)}55%,60%{transform:translateY(0)}100%{transform:translateY(100%)}}
+#cov .nw{white-space:nowrap}
+#cov .dbr{display:none}
+#cov .hdm{display:none}
+@media (min-width:761px){#cov .dbr{display:inline}}
+@media (min-width:761px) and (max-height:800px){
+  #cov .cl-card{top:5.2rem}
+  #cov .cl-idx{top:21.2rem}
+  #cov .ib{padding:.3rem 0}
+  #cov .cti{font-size:clamp(2.3rem, 3.8vw, 3.6rem)}
+  #cov .cle{font-size:clamp(1.15rem, 1.9vw, 1.8rem)}
+}
+@media (min-width:761px) and (max-height:560px){
+  #cov .cl-card{display:none}
+  #cov .cl-idx{top:5rem}
+  #cov .cl-inv{display:none}
+  #cov .cl-ed{padding-bottom:6rem}
+  #cov .cti{font-size:2.1rem}
+  #cov .cle{font-size:1.05rem;margin-top:.8rem}
+  #cov .cbtns{margin-top:1rem}
+  #cov .cb{padding:.7rem .4rem .6rem}
+}
+@media (max-width:760px){
+  #cov .frm{inset:12px}
+  #cov .sc{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}
+  #cov .scin{position:static;display:flex;flex-direction:column;gap:1.35rem;padding:4.9rem 1.5rem calc(2.4rem + env(safe-area-inset-bottom));min-height:100%}
+  #cov .sc{transform:translate3d(0, calc(var(--cp) * -46px), 0)}
+  #cov .cl{position:static;transform:none;width:auto}
+  #cov .cl-top{display:flex;justify-content:space-between;align-items:center}
+  #cov .cl-ed{display:block;padding:0}
+  #cov .cti{font-size:2.3rem;margin-top:.9rem}
+  #cov .cle{font-size:1.15rem;margin-top:1rem;max-width:none}
+  #cov .cbtns{margin-top:1.4rem;flex-direction:column;align-items:stretch;gap:.75rem}
+  #cov .cwa{justify-content:center;font-size:1.08rem;padding:1rem 1.2rem}
+  #cov .cap{justify-content:center;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(16,12,7,.6)}
+  #cov .ctr{margin-top:.9rem;font-size:.92rem}
+  #cov .bandin{display:grid;grid-template-columns:1fr 1fr;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(16,12,7,.55)}
+  #cov .cb{padding:.95rem .5rem .85rem}
+  #cov .cb + .cb{border-left:0}
+  #cov .cb:nth-child(2n){border-left:1px solid rgba(232,180,90,.16)}
+  #cov .cb:nth-child(n+3){border-top:1px solid rgba(232,180,90,.16)}
+  #cov .cb .v{font-size:1.3rem}
+  #cov .cb .l{font-size:.6rem;letter-spacing:.16em}
+  #cov .cardin{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(18,13,8,.72)}
+  #cov .ph{height:74px;gap:.45rem}
+  #cov .ph img{flex:1;min-width:0;width:auto;height:74px;margin-left:0;transform:none;border-width:2px}
+  #cov .cl-idx{align-items:flex-start}
+  #cov .il{margin-bottom:.4rem}
+  #cov .idxg{display:grid;grid-template-columns:1fr 1fr;column-gap:1.1rem;align-items:start;width:100%}
+  #cov .ib{justify-content:flex-start;padding:.34rem 0}
+  #cov .ib .lnh{width:14px}
+  #cov .cl-inv{padding:.4rem 0 0}
+  #cov .hdm{display:block;position:absolute;top:0;left:0;right:0;height:6.6rem;pointer-events:none;background:linear-gradient(180deg, rgba(20,16,11,.97) 0%, rgba(20,16,11,.82) 46%, rgba(20,16,11,.4) 74%, transparent 100%);opacity:max(0, calc(1 - var(--cp) * 1.4))}
+}
+@media (prefers-reduced-motion: reduce){
+  #cov .cv{transition:none;transition-delay:0ms}
+  #cov .frm{animation:none}
+  #cov .vl::after{animation:none;transform:none}
+  #rail{transition:none}
+}
 </style>
 </head>
 <body>
@@ -439,6 +574,64 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
 <div id="stage"><canvas id="frame"></canvas><video id="ambient" muted loop playsinline preload="none"></video></div>
 <div id="scrim"></div>
 <div id="bar"></div>
+
+<!-- COPERTA: prima fereastra a casei. Straturi: fundal h1 / gradient / rama / editorial / banda cifre / dovada Dristor / index film / invitatie -->
+<div id="cov" role="region" aria-label="Copertă">
+  <div class="bgw"><picture>
+    <source media="(max-width:760px)" srcset="film2/m_h1.webp">
+    <img src="film2/h1.webp" alt="Blocul Ilioara Residence filmat din dronă la apus, Aleea Eprubetei, Dristor-Titan" fetchpriority="high" decoding="async">
+  </picture></div>
+  <div class="grad"></div>
+  <div class="frm"></div>
+  <div class="sc"><div class="scin">
+    <div class="cl cl-top">
+      <div class="lgs cv" style="--ed:70ms" aria-hidden="true"><b>RO</b><span class="sep">·</span><span>EN</span><span class="sep">·</span><span>HE</span><span class="sep">·</span><span>AR</span><span class="sep">·</span><span>UA</span></div>
+      <a class="cph cv" style="--ed:110ms" href="tel:+40773287233">+40 773 287 233</a>
+    </div>
+    <div class="cl cl-ed">
+      <div class="ck cv" style="--ed:140ms">Bloc nou P+8 · Dristor-Titan, Sector 3</div>
+      <h1 class="cti cv" style="--ed:200ms">Aici nu cumperi blocul.<br><em>Cumperi locul.</em></h1>
+      <p class="cle cv" style="--ed:270ms">O stradă retrasă, între case:<br class="dbr"> <b class="nw">Aleea Eprubetei 7-11</b>.<br class="dbr"> Ești în oraș, dar <span class="nw">nu-l auzi.</span></p>
+      <div class="cbtns cv" style="--ed:340ms">
+        <a class="cwa" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a>
+        <a class="cap" href="/apartamente/">Apartamente și prețuri</a>
+      </div>
+      <div class="ctr cv" style="--ed:400ms">Direct de la proprietari. Răspundem și seara.</div>
+    </div>
+    <div class="cl cl-band"><div class="bandin cv" style="--ed:460ms">
+      <div class="cb"><div class="v">12 din 31</div><div class="l">disponibile</div></div>
+      <div class="cb"><div class="v">47–84 mp</div><div class="l">utile</div></div>
+      <div class="cb"><div class="v">4</div><div class="l">apartamente pe etaj</div></div>
+      <div class="cb"><div class="v">Dec 2026</div><div class="l">finalizare</div></div>
+      <div class="cb"><div class="v">5 min</div><div class="l">pe jos la metrou</div></div>
+      <div class="cb"><div class="v">0%</div><div class="l">comision</div></div>
+    </div></div>
+    <div class="cl cl-card"><a class="cardin cv" style="--ed:550ms" href="/proiecte-finalizate/" aria-label="Proiectul anterior, terminat și locuit: Dristor Apartments">
+      <div class="clb">Proiectul anterior · Terminat și locuit</div>
+      <div class="ph">
+        <img src="dristor/ext-fatada-t.webp" alt="Fațada finisată a blocului Dristor Apartments, Aleea Buhuși 4A" loading="lazy" decoding="async">
+        <img src="dristor/int-hol-t.webp" alt="Hol de etaj finisat complet, Dristor Apartments" loading="lazy" decoding="async">
+        <img src="dristor/parcare-t.webp" alt="Parcare subterană cu locuri largi, Dristor Apartments" loading="lazy" decoding="async">
+      </div>
+      <div class="ct">Dristor Apartments</div>
+      <span class="cgo">Vezi pozele →</span>
+    </a></div>
+    <div class="cl cl-idx">
+      <div class="il cv" style="--ed:620ms">Filmul · 7 capitole</div>
+      <div class="idxg">
+        <button type="button" class="ib cv" style="--ed:650ms" data-h="0" aria-label="Capitolul 1: Locul"><span class="no">01</span><span class="nm2">Locul</span><span class="lnh"></span></button>
+        <button type="button" class="ib cv" style="--ed:680ms" data-h="1" aria-label="Capitolul 2: Minutele"><span class="no">02</span><span class="nm2">Minutele</span><span class="lnh"></span></button>
+        <button type="button" class="ib cv" style="--ed:710ms" data-h="2" aria-label="Capitolul 3: Orașul"><span class="no">03</span><span class="nm2">Orașul</span><span class="lnh"></span></button>
+        <button type="button" class="ib cv" style="--ed:740ms" data-h="3" aria-label="Capitolul 4: Liniștea"><span class="no">04</span><span class="nm2">Liniștea</span><span class="lnh"></span></button>
+        <button type="button" class="ib cv" style="--ed:770ms" data-h="4" aria-label="Capitolul 5: Confortul"><span class="no">05</span><span class="nm2">Confortul</span><span class="lnh"></span></button>
+        <button type="button" class="ib cv" style="--ed:800ms" data-h="5" aria-label="Capitolul 6: Spațiul"><span class="no">06</span><span class="nm2">Spațiul</span><span class="lnh"></span></button>
+        <button type="button" class="ib cv" style="--ed:830ms" data-h="6" aria-label="Capitolul 7: Priveliștea"><span class="no">07</span><span class="nm2">Priveliștea</span><span class="lnh"></span></button>
+      </div>
+    </div>
+    <div class="cl cl-inv cv" style="--ed:880ms"><div class="dl">Derulează</div><div class="vl"></div></div>
+  </div></div>
+  <div class="hdm"></div>
+</div>
 
 <header>
   <div class="brand" role="img" aria-label="Ilioara Residence"><svg class="lg" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="13" fill="none" stroke="#F5F0E1" stroke-width="5"/><rect class="lg-bar" x="14" y="17" width="13" height="30" rx="4" fill="#E8B45A"/><rect x="32" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="38" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="44" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="50" y="17" width="3.5" height="30" fill="#F5F0E1"/></svg><span class="bword"><b>Ilioara</b> Residence</span></div>
@@ -454,7 +647,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
 <!-- beats per sectiune, fiecare cu identitatea ei (data-seg = index hold 0..6). COPY DRAFT pre voce-vie. -->
 <div class="beat" data-seg="0">
   <div class="kicker">Apartamente noi · Dristor-Titan, la 5 minute de metrou</div>
-  <h1 class="split">Aici nu cumperi blocul.<br><span class="g">Cumperi locul.</span></h1>
+  <p class="big split">Aici nu cumperi blocul.<br><span class="g">Cumperi locul.</span></p>
   <div class="rule"></div>
   <div class="lead"><b>Stradă retrasă</b>, între case. Ești în oraș, dar nu-l auzi.</div>
   <div class="bdg">Cumperi direct de la proprietari</div>
@@ -1157,6 +1350,7 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
     requestAnimationFrame(frame);
   }
 
+  window.FILM = { goTo: goTo, holds: HOLDS, t: function(){ return T; } };
   function start(){
     T = cur = HOLDS[0].c;
     document.getElementById('load').classList.add('hide');
@@ -1164,6 +1358,176 @@ body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4
     addEventListener('resize', function(){ resize(); kick(); }, {passive:true});
     kick();
   }
+})();
+</script>
+<script>
+(function(){
+  'use strict';
+  // COPERTA: interceptor de input CU capture, INAINTE de handlerele filmului. Fizica filmului ramane neatinsa.
+  var cov = document.getElementById('cov');
+  if(!cov) return;
+  var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sc = cov.querySelector('.sc');
+  var covT = 0, covC = 0, dirC = 1, lastAct = 0, running = false, gone = false;
+  var ptx = 0, pty = 0, mx = 0, my = 0, prevT = 0, gTY = null, mTY = null;
+  var GW = 0.0016, GT = 0.0026;
+  function booted(){ var l = document.getElementById('load'); return l && l.classList.contains('hide'); }
+  function blocked(){
+    if(document.body.classList.contains('mn-open')) return true;
+    var o = document.getElementById('ov'), o2 = document.getElementById('ovtech');
+    return (o && o.classList.contains('on')) || (o2 && o2.classList.contains('on'));
+  }
+  document.body.classList.add('cov-on');
+  // intrarea decalata porneste cand loaderul se ascunde
+  var ld = document.getElementById('load');
+  if(booted()) document.body.classList.add('cov-in');
+  else new MutationObserver(function(){
+    if(booted()) requestAnimationFrame(function(){ document.body.classList.add('cov-in'); });
+  }).observe(ld, {attributes:true, attributeFilter:['class']});
+
+  function apply(){
+    cov.style.setProperty('--cp', covC.toFixed(4));
+    cov.style.setProperty('--mx', mx.toFixed(3));
+    cov.style.setProperty('--my', my.toFixed(3));
+  }
+  function finalize(){
+    gone = true; running = false;
+    cov.classList.add('gone');
+    document.body.classList.remove('cov-on');
+  }
+  function wake(){ if(running || gone) return; running = true; prevT = 0; requestAnimationFrame(loop); }
+  function loop(t){
+    if(gone){ running = false; return; }
+    var dt = prevT ? Math.min(50, t - prevT) : 16.7;
+    prevT = t;
+    var f = dt/16.667;
+    // settle directional: dupa 220ms fara input, retragerea se termina pe directia de mers
+    if(!RM && covT > 0 && covT < 1 && (t - lastAct) > 220){
+      covT = Math.min(1, Math.max(0, covT + (dirC > 0 ? 0.045 : -0.045)*f));
+    }
+    covC += (covT - covC)*Math.min(1, 0.16*f);
+    if(Math.abs(covT - covC) < 0.0012) covC = covT;
+    mx += (ptx - mx)*Math.min(1, 0.08*f);
+    my += (pty - my)*Math.min(1, 0.08*f);
+    apply();
+    if(covC >= 0.999 && covT === 1){ finalize(); return; }
+    if(covC === covT && Math.abs(ptx - mx) < 0.002 && Math.abs(pty - my) < 0.002){ running = false; return; }
+    requestAnimationFrame(loop);
+  }
+  function drive(d){
+    lastAct = performance.now();
+    if(d) dirC = d > 0 ? 1 : -1;
+    covT = Math.min(1, Math.max(0, covT + d));
+    wake();
+  }
+  function dismissNow(){ covT = covC = 1; apply(); finalize(); }
+  function reopen(instant){
+    gone = false;
+    cov.classList.remove('gone');
+    document.body.classList.add('cov-on');
+    if(instant || RM){ covT = covC = 0; apply(); return; }
+    covT = covC = 1; apply();
+    void cov.offsetWidth;
+    dirC = -1; covT = 0.96; lastAct = performance.now();
+    wake();
+  }
+  function canDown(){ return sc.scrollHeight - sc.scrollTop - sc.clientHeight > 2; }
+  function canUp(){ return sc.scrollTop > 2; }
+  function atFilmTop(){
+    var F = window.FILM;
+    return F && F.t() !== undefined && F.t() <= F.holds[0].c + 0.0008;
+  }
+
+  addEventListener('wheel', function(e){
+    if(blocked()) return;
+    if(!gone){
+      e.preventDefault(); e.stopImmediatePropagation();
+      if(!booted()) return;
+      var dy = e.deltaY;
+      if(e.deltaMode === 1) dy *= 33;
+      if(covC < 0.02 && dy > 0 && canDown()){ sc.scrollTop += dy; return; }
+      if(covC < 0.02 && dy < 0 && canUp()){ sc.scrollTop += dy; return; }
+      if(RM){ if(dy > 8) dismissNow(); return; }
+      drive(dy * GW);
+      return;
+    }
+    if(e.deltaY < -1 && atFilmTop()){
+      e.preventDefault(); e.stopImmediatePropagation();
+      reopen(false);
+    }
+  }, {capture:true, passive:false});
+
+  addEventListener('touchstart', function(e){
+    if(blocked()) return;
+    if(gone){ gTY = e.touches[0].clientY; return; }
+    mTY = e.touches[0].clientY;
+    e.stopImmediatePropagation();
+  }, {capture:true, passive:true});
+  addEventListener('touchmove', function(e){
+    if(blocked()) return;
+    if(!gone){
+      e.stopImmediatePropagation();
+      if(mTY === null){ mTY = e.touches[0].clientY; return; }
+      var y = e.touches[0].clientY, dy = mTY - y;
+      mTY = y;
+      if(!booted()){ e.preventDefault(); return; }
+      if(covC < 0.02 && dy > 0 && canDown()) return;
+      if(covC < 0.02 && dy < 0 && canUp()) return;
+      e.preventDefault();
+      if(RM){ if(dy > 12) dismissNow(); return; }
+      drive(dy * GT);
+      return;
+    }
+    if(gTY === null){ gTY = e.touches[0].clientY; return; }
+    var y2 = e.touches[0].clientY, d2 = gTY - y2;
+    gTY = y2;
+    if(d2 < -5 && atFilmTop()){
+      e.preventDefault(); e.stopImmediatePropagation();
+      reopen(RM);
+    }
+  }, {capture:true, passive:false});
+  addEventListener('touchend', function(){
+    if(!gone) mTY = null;
+    gTY = null;
+  }, {capture:true, passive:true});
+  addEventListener('touchend', function(e){
+    if(!gone) e.stopImmediatePropagation();
+  }, {capture:true, passive:true});
+
+  addEventListener('keydown', function(e){
+    if(gone || blocked() || !booted()) return;
+    var k = e.key;
+    if(k === 'ArrowDown' || k === 'PageDown' || k === ' ' || k === 'End'){
+      e.preventDefault(); e.stopImmediatePropagation();
+      if(RM) dismissNow(); else { dirC = 1; covT = 1; lastAct = performance.now(); wake(); }
+      if(k === 'End' && window.FILM) window.FILM.goTo(window.FILM.holds.length - 1);
+    } else if(k === 'ArrowUp' || k === 'PageUp' || k === 'Home'){
+      e.preventDefault(); e.stopImmediatePropagation();
+      dirC = -1; covT = 0; lastAct = performance.now(); wake();
+    }
+  }, {capture:true});
+
+  // indexul filmului: capitolul 1 = coperta insasi (doar retrage), 2..7 = salt in film
+  [].slice.call(cov.querySelectorAll('.ib')).forEach(function(b){
+    b.addEventListener('click', function(){
+      if(!booted()) return;
+      var i = parseInt(b.dataset.h, 10), F = window.FILM;
+      if(RM){ dismissNow(); if(F && i > 0) F.goTo(i); return; }
+      dirC = 1; covT = 1; lastAct = performance.now(); wake();
+      if(F && i > 0) F.goTo(i);
+    });
+  });
+
+  // parallax discret pe straturi, doar pointer fin
+  if(matchMedia('(pointer:fine)').matches && !RM){
+    addEventListener('pointermove', function(e){
+      if(gone) return;
+      ptx = (e.clientX/innerWidth - 0.5)*2;
+      pty = (e.clientY/innerHeight - 0.5)*2;
+      wake();
+    }, {passive:true});
+  }
+  apply();
 })();
 </script>
 </body>
