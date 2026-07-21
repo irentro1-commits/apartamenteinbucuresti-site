@@ -13,6 +13,12 @@
 <link rel="alternate" hreflang="ar" href="https://apartamenteinbucuresti.ro/ar/">
 <link rel="alternate" hreflang="uk" href="https://apartamenteinbucuresti.ro/uk/">
 <link rel="alternate" hreflang="x-default" href="https://apartamenteinbucuresti.ro/">
+<link rel="alternate" hreflang="ro" href="https://apartamenteinbucuresti.ro/">
+<link rel="alternate" hreflang="en" href="https://apartamenteinbucuresti.ro/en/">
+<link rel="alternate" hreflang="he" href="https://apartamenteinbucuresti.ro/he/">
+<link rel="alternate" hreflang="ar" href="https://apartamenteinbucuresti.ro/ar/">
+<link rel="alternate" hreflang="uk" href="https://apartamenteinbucuresti.ro/uk/">
+<link rel="alternate" hreflang="x-default" href="https://apartamenteinbucuresti.ro/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
@@ -237,23 +243,41 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 body.mn-open .mn-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 body.mn-open .mn-btn span:nth-child(2){opacity:0}
 body.mn-open .mn-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-body.mn-open header{z-index:9}
-.mn-panel{position:fixed;top:0;left:0;right:0;z-index:8;padding:5.6rem clamp(1.4rem,6vw,6rem) 2.2rem;background:rgba(18,13,8,.97);border-bottom:1px solid rgba(232,180,90,.25);transform:translateY(-104%);visibility:hidden;transition:transform .4s cubic-bezier(.22,.6,.2,1),visibility 0s .4s}
-body.mn-open .mn-panel{transform:none;visibility:visible;transition:transform .4s cubic-bezier(.22,.6,.2,1),visibility 0s 0s}
-.mn-panel nav{display:flex;flex-direction:column;gap:.3rem}
-.mn-panel nav a{font-family:'Fraunces',serif;font-weight:600;font-size:1.45rem;color:var(--cream);text-decoration:none;padding:.45rem 0;border-bottom:1px solid rgba(232,180,90,.12);transition:color .3s ease}
-.mn-panel nav a:hover{color:var(--gold)}
-.mn-langs{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;margin-top:1.4rem;font-family:'Inter';font-size:.95rem}
-.mn-langs a{color:var(--cream-soft);text-decoration:none;transition:color .25s ease}
-.mn-langs a:hover{color:var(--gold)}
-.mn-langs a.act{color:var(--gold);font-weight:600}
-.mn-langs .sep{opacity:.35}
-.mn-cta{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem 1.1rem;margin-top:1.5rem}
-.mn-wa{display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:1.02rem;padding:.85em 1.6em;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;transition:transform .15s ease}
-.mn-wa:active{transform:scale(.96)}
-.mn-tel{display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:1.02rem;padding:.85em 1.6em;border-radius:999px;border:1px solid rgba(232,180,90,.6);color:var(--cream);background:rgba(16,12,7,.55);text-decoration:none;transition:transform .15s ease}
-.mn-tel:active{transform:scale(.96)}
-@media (max-width:760px){ .mn-panel nav a{font-size:1.3rem} .mn-btn{margin-left:0} }
+.mn-panel{position:fixed;inset:0;z-index:8;padding:0;border-bottom:0;transform:none;background-color:#14100b;background-image:radial-gradient(1100px 700px at 82% -5%, rgba(232,180,90,.09), transparent 60%),repeating-linear-gradient(0deg, rgba(245,240,225,.022) 0px, rgba(245,240,225,.022) 1px, transparent 1px, transparent 96px),repeating-linear-gradient(90deg, rgba(245,240,225,.022) 0px, rgba(245,240,225,.022) 1px, transparent 1px, transparent 96px);opacity:0;visibility:hidden;overflow-y:auto;overscroll-behavior:contain;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s .5s}
+body.mn-open .mn-panel{opacity:1;visibility:visible;transform:none;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s 0s}
+.mn-in{max-width:56rem;margin:0 auto;padding:5rem clamp(1.4rem,6vw,4rem) 2.6rem}
+.mn-k{font-family:'Inter';font-weight:700;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);opacity:0;transition:opacity .5s ease .08s}
+body.mn-open .mn-k{opacity:.95}
+.mn-list{display:flex;flex-direction:column;margin-top:1.1rem}
+.mn-list a{display:flex;align-items:baseline;gap:1.2rem;padding:.7rem 0;border-bottom:1px solid rgba(245,240,225,.1);text-decoration:none;font-size:1rem;opacity:0;transform:translateY(26px);transition:opacity .55s cubic-bezier(.16,1,.3,1) var(--d,0ms),transform .55s cubic-bezier(.16,1,.3,1) var(--d,0ms)}
+body.mn-open .mn-list a{opacity:1;transform:none}
+.mn-list .no{font-family:'Inter';font-weight:600;font-size:.7rem;letter-spacing:.14em;color:var(--gold);min-width:1.7rem}
+.mn-list .nm{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.45rem,3vw,2rem);line-height:1.12;color:var(--cream);transition:color .3s ease;border-bottom:0;padding:0}
+.mn-list a:hover .nm,.mn-list a:focus-visible .nm{color:var(--gold)}
+.mn-list a[aria-current] .nm{color:var(--gold)}
+.mn-list .hint{margin-left:auto;font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:.95rem;color:rgba(245,240,225,.55);white-space:nowrap}
+.mn-langs2{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem;margin-top:1.8rem;opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1) .5s,transform .55s cubic-bezier(.16,1,.3,1) .5s}
+body.mn-open .mn-langs2{opacity:1;transform:none}
+.mn-langs2 .lb{font-family:'Inter';font-weight:700;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);width:100%}
+.mn-langs2 a{font-family:'Inter';font-weight:500;font-size:1.06rem;color:var(--cream-soft);text-decoration:none;transition:color .25s ease}
+.mn-langs2 a:hover{color:var(--gold)}
+.mn-langs2 a.act{color:var(--gold);font-weight:700}
+.mn-foot{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(245,240,225,.12);display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.6rem;opacity:0;transition:opacity .55s ease .6s}
+body.mn-open .mn-foot{opacity:1}
+.mn-foot .ft{font-family:'Inter';font-weight:600;font-size:1rem;color:var(--cream);text-decoration:none;transition:color .25s ease}
+.mn-foot .ft:hover{color:var(--gold)}
+.mn-foot .fwa{display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter';font-weight:600;font-size:.95rem;padding:.6em 1.2em;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;transition:transform .15s ease}
+.mn-foot .fwa:active{transform:scale(.96)}
+.mn-tag{width:100%;font-family:'Inter';font-size:.82rem;color:rgba(245,240,225,.5);letter-spacing:.02em}
+.mn-craft2{width:100%;font-family:'Inter';font-size:.95rem;color:var(--cream-soft)}
+.mn-craft2 a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(232,180,90,.45);padding-bottom:.06em}
+.mn-x{position:fixed;top:1.1rem;right:clamp(1.2rem,4vw,3rem);left:auto;z-index:2;width:46px;height:46px;margin:0;flex-direction:row;gap:0;display:flex;align-items:center;justify-content:center;border:1px solid rgba(232,180,90,.45);border-radius:12px;background:rgba(20,16,11,.6);color:var(--cream);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s,border-color .3s ease,transform .45s cubic-bezier(.16,1,.3,1)}
+body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s,visibility 0s 0s,border-color .3s ease,transform .45s cubic-bezier(.16,1,.3,1)}
+.mn-x:hover{border-color:var(--gold);color:var(--gold);transform:rotate(90deg)}
+.mn-x span{display:none}
+@media (max-width:760px){.mn-in{padding:4.4rem 1.4rem 2.2rem}.mn-list a{padding:.6rem 0}.mn-list .hint{display:none}.mn-list .nm{font-size:1.4rem}.mn-langs2 a{font-size:1rem}}
+@media (prefers-reduced-motion: reduce){.mn-panel,.mn-list a,.mn-langs2,.mn-foot,.mn-k,.mn-x{transition:none;transform:none}}
+@media (max-width:760px){ .mn-btn{margin-left:0} }
 @media (prefers-reduced-motion: reduce){ .mn-panel{transition:none} .mn-btn span{transition:none} }
 #bar{position:fixed;top:0;left:0;height:3px;z-index:6;background:linear-gradient(90deg,var(--gold),#F4D9A6);width:0}
 
@@ -467,14 +491,16 @@ body.cov-on header{top:24px;left:24px;right:24px}
 #cov .cv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.6,.2,1),transform .7s cubic-bezier(.22,.6,.2,1);transition-delay:var(--ed,0ms)}
 body.cov-in #cov .cv{opacity:1;transform:none}
 /* straturi: parallax (mx/my) + retragere (cp), fiecare cu viteza lui; fundalul cel mai lent */
-#cov .cl-top{top:calc(24px + 1.95rem);right:calc(24px + clamp(1.4rem, 6vw, 6rem) + 3.7rem);display:flex;align-items:center;gap:1.3rem;transform:translate3d(calc(var(--mx) * 5px), calc(var(--my) * 5px - var(--cp) * 46px), 0);opacity:max(0, calc(1 - var(--cp) * 1.7))}
-#cov .lgs{display:flex;align-items:center;gap:.55rem;font-family:'Inter';font-weight:600;font-size:.7rem;letter-spacing:.16em;color:rgba(245,240,225,.52);text-shadow:0 1px 10px rgba(0,0,0,.6)}
-#cov .lgs a{pointer-events:auto;color:rgba(245,240,225,.52);text-decoration:none;transition:color .3s ease}
-#cov .lgs a:hover{color:var(--cream)}
-#cov .lgs a.lact{color:var(--gold);font-weight:700}
-#cov .lgs .sep{opacity:.35}
-#cov .cph{pointer-events:auto;font-family:'Inter';font-weight:500;font-size:.8rem;letter-spacing:.04em;color:var(--cream-soft);opacity:.88;text-decoration:none;text-shadow:0 1px 10px rgba(0,0,0,.6);transition:color .3s ease}
-#cov .cph:hover{color:var(--gold)}
+.hrr{display:flex;align-items:center;pointer-events:none}
+.hlgs{display:flex;align-items:center;gap:.5rem;margin-right:1.4rem;font-family:'Inter';font-weight:600;font-size:.7rem;letter-spacing:.15em;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.hlgs a{pointer-events:auto;color:rgba(245,240,225,.55);text-decoration:none;transition:color .3s ease}
+.hlgs a:hover{color:var(--cream)}
+.hlgs a.lact{color:var(--gold);font-weight:700}
+.hlgs .sep{opacity:.35;color:var(--cream-soft)}
+.htel2{pointer-events:auto;margin-right:1.4rem;font-family:'Inter';font-weight:500;font-size:.8rem;letter-spacing:.04em;color:var(--cream-soft);opacity:.88;text-decoration:none;text-shadow:0 1px 10px rgba(0,0,0,.6);transition:color .3s ease;white-space:nowrap}
+.htel2:hover{color:var(--gold)}
+@media (max-width:1000px){.htel2{display:none}}
+@media (max-width:760px){.hlgs{display:none}}
 #cov .cl-ed{left:clamp(2.2rem, 6.5vw, 7rem);top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;width:min(46vw, 42rem);padding-bottom:5rem;transform:translate3d(calc(var(--mx) * 6px), calc(var(--my) * 6px - var(--cp) * 72px), 0);opacity:max(0, calc(1 - var(--cp) * 1.5))}
 #cov .ck{font-family:'Inter';font-weight:600;font-size:clamp(.72rem, .72vw, .8rem);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-shadow:0 1px 12px rgba(0,0,0,.7)}
 #cov .cti{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.6rem, 4.2vw, 4.2rem);line-height:1.02;letter-spacing:-.02em;color:var(--cream);margin-top:1.05rem;text-shadow:0 2px 34px rgba(0,0,0,.62);text-wrap:balance}
@@ -569,7 +595,6 @@ body.cov-in #cov .cv{opacity:1;transform:none}
   #cov .scin{position:static;display:flex;flex-direction:column;gap:1.35rem;padding:5.6rem 1.5rem calc(2.4rem + env(safe-area-inset-bottom));min-height:100%}
   #cov .sc{transform:translate3d(0, calc(var(--cp) * -46px), 0)}
   #cov .cl{position:static;transform:none;width:auto}
-  #cov .cl-top{display:flex;justify-content:space-between;align-items:center}
   #cov .cl-ed{display:block;padding:0}
   #cov .cti{font-size:2.3rem;margin-top:.9rem}
   #cov .cle{font-size:1.15rem;margin-top:1rem;max-width:none}
@@ -620,11 +645,11 @@ html[dir="rtl"] #cov .cl-idx{right:auto;left:clamp(1.8rem, 5vw, 5.4rem);align-it
 html[dir="rtl"] #cov .idxg{align-items:flex-start}
 html[dir="rtl"] #cov .ib{justify-content:flex-start}
 html[dir="rtl"] header{direction:ltr}
-html[dir="rtl"] #cov .cl-top{direction:ltr}
-html[dir="rtl"] #cov .cph{direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .htel2,html[dir="rtl"] .mn-foot .ft{direction:ltr;unicode-bidi:isolate}
 html[dir="rtl"] #cov .cb:not(:first-child) .v,html[dir="rtl"] .strip .it:not(:first-child) .v,html[dir="rtl"] .stat .n{direction:ltr;unicode-bidi:isolate}
 html[dir="rtl"] #cov .ck{text-shadow:0 1px 14px rgba(0,0,0,.85),0 0 26px rgba(0,0,0,.55)}
-html[dir="rtl"] .ov-row .p,html[dir="rtl"] .telmini{direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .ov-row .p{direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .mn-list .hint{margin-left:0;margin-right:auto}
 @media (max-width:760px){
   html[dir="rtl"] #cov .scin{text-align:right}
   html[dir="rtl"] #cov .cl-idx{align-items:flex-start}
@@ -647,10 +672,6 @@ html[dir="rtl"] .ov-row .p,html[dir="rtl"] .telmini{direction:ltr;unicode-bidi:i
   <div class="grad"></div>
   <div class="frm"></div>
   <div class="sc"><div class="scin">
-    <div class="cl cl-top">
-      <nav class="lgs cv" style="--ed:70ms" aria-label="שפה"><a href="/">RO</a><span class="sep">·</span><a href="/en/">EN</a><span class="sep">·</span><a href="/he/" lang="he">HE</a><span class="sep">·</span><a href="/ar/" lang="ar">AR</a><span class="sep">·</span><a href="/uk/" lang="uk">UA</a></nav>
-      <a class="cph cv" style="--ed:110ms" href="tel:+40773287233">+40 773 287 233</a>
-    </div>
     <div class="cl cl-ed">
       <div class="ck cv" style="--ed:140ms">בניין חדש P+8 · דריסטור-טיטאן, סקטור 3</div>
       <h1 class="cti cv" style="--ed:200ms">כאן לא קונים בניין.<br><em>קונים מקום.</em></h1>
@@ -663,7 +684,7 @@ html[dir="rtl"] .ov-row .p,html[dir="rtl"] .telmini{direction:ltr;unicode-bidi:i
     </div>
     <div class="cl cl-band"><div class="bandin cv" style="--ed:460ms">
       <div class="cb"><div class="v">12 מתוך 31</div><div class="l">זמינות</div></div>
-      <div class="cb"><div class="v">47–84 mp</div><div class="l">שטח נטו</div></div>
+      <div class="cb"><div class="v">49–86 mp</div><div class="l">שטח נטו</div></div>
       <div class="cb"><div class="v">4</div><div class="l">דירות בקומה</div></div>
       <div class="cb"><div class="v">Dec 2026</div><div class="l">סיום בנייה</div></div>
       <div class="cb"><div class="v">5 min</div><div class="l">הליכה למטרו</div></div>
@@ -672,7 +693,7 @@ html[dir="rtl"] .ov-row .p,html[dir="rtl"] .telmini{direction:ltr;unicode-bidi:i
     <div class="cl cl-card"><a class="cardin cv" style="--ed:550ms" href="/proiecte-finalizate/" aria-label="הפרויקט הקודם: Dristor Apartments">
       <div class="clb">הפרויקט הקודם · הושלם ומאוכלס</div>
       <div class="ph">
-        <img src="/dristor/ext-fatada-t.webp" alt="Fațada finisată a blocului Dristor Apartments, Aleea Buhuși 4A" loading="lazy" decoding="async">
+        <img src="/dristor/ext-fatada-t.webp" alt="Fațada finisată a blocului Dristor Apartments, Strada Râmnicu Vâlcea 14A" loading="lazy" decoding="async">
         <img src="/dristor/int-hol-t.webp" alt="Hol de etaj finisat complet, Dristor Apartments" loading="lazy" decoding="async">
         <img src="/dristor/parcare-t.webp" alt="Parcare subterană cu locuri largi, Dristor Apartments" loading="lazy" decoding="async">
       </div>
@@ -698,14 +719,34 @@ html[dir="rtl"] .ov-row .p,html[dir="rtl"] .telmini{direction:ltr;unicode-bidi:i
 
 <header>
   <div class="brand" role="img" aria-label="Ilioara Residence"><svg class="lg" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="13" fill="none" stroke="#F5F0E1" stroke-width="5"/><rect class="lg-bar" x="14" y="17" width="13" height="30" rx="4" fill="#E8B45A"/><rect x="32" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="38" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="44" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="50" y="17" width="3.5" height="30" fill="#F5F0E1"/></svg><span class="bword"><b>Ilioara</b> Residence</span></div>
-  <div id="hcta"><a class="hlink" href="/apartamente/">דירות ומחירים</a><a class="hwa" href="https://wa.me/40773287233?text=%D7%A9%D7%9C%D7%95%D7%9D%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%A8%D7%95%D7%AA%20%D7%91%D7%A8%D7%97%D7%95%D7%91%20Aleea%20Eprubetei."><svg class="wa" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a></div>
-  <button type="button" id="mnBtn" class="mn-btn" aria-expanded="false" aria-label="תפריט"><span></span><span></span><span></span></button>
+  <div class="hrr"><nav class="hlgs" aria-label="שפה"><a href="/">RO</a><span class="sep">·</span><a href="/en/">EN</a><span class="sep">·</span><a href="/he/" lang="he">HE</a><span class="sep">·</span><a href="/ar/" lang="ar">AR</a><span class="sep">·</span><a href="/uk/" lang="uk">UA</a></nav><a class="htel2" href="tel:+40773287233">+40 773 287 233</a><div id="hcta"><a class="hlink" href="/apartamente/">דירות ומחירים</a><a class="hwa" href="https://wa.me/40773287233?text=%D7%A9%D7%9C%D7%95%D7%9D%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%A8%D7%95%D7%AA%20%D7%91%D7%A8%D7%97%D7%95%D7%91%20Aleea%20Eprubetei."><svg class="wa" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a></div>
+  <button type="button" id="mnBtn" class="mn-btn" aria-expanded="false" aria-label="תפריט"><span></span><span></span><span></span></button></div>
 </header>
 <div class="mn-panel">
-  <nav aria-label="תפריט מלא"><a href="/proiecte-finalizate/">פרויקטים שהושלמו</a><a href="/apartamente/">דירות</a><a href="/preturi/">מחירים</a><a href="/dotari/">מפרט</a><a href="/credit-ipotecar/">משכנתא</a><a href="/pentru-cine-construim/">למי אנחנו בונים</a><a href="/parcare/">חניה</a><a href="/zona/">מיקום</a><a href="/blog/">Blog</a><a href="https://wa.me/40773287233?text=%D7%A9%D7%9C%D7%95%D7%9D%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%A8%D7%95%D7%AA%20%D7%91%D7%A8%D7%97%D7%95%D7%91%20Aleea%20Eprubetei.">צור קשר</a></nav>
-  <div class="mn-langs" aria-label="שפה"><a href="/">Română</a><span class="sep">·</span><a href="/en/">English</a><span class="sep">·</span><a class="act" href="/he/" aria-current="true">עברית</a><span class="sep">·</span><a href="/ar/" lang="ar">العربية</a><span class="sep">·</span><a href="/uk/" lang="uk">Українська</a></div>
-  <div class="mn-cta"><a class="mn-wa" href="https://wa.me/40773287233?text=%D7%A9%D7%9C%D7%95%D7%9D%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%A8%D7%95%D7%AA%20%D7%91%D7%A8%D7%97%D7%95%D7%91%20Aleea%20Eprubetei.">כתבו לנו בוואטסאפ</a><a class="telmini" href="tel:+40773287233">או התקשרו +40 773 287 233</a></div>
-  <div class="mn-craft" style="margin-top:2rem;font-family:'Inter';font-size:.95rem;color:var(--cream-soft);opacity:.85">Crafted with care by <a href="https://i-vory.ro" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-weight:700;border-bottom:1px solid rgba(232,180,90,.4);padding-bottom:.05em">i-vory Studio</a></div>
+  <button type="button" class="mn-btn mn-x" aria-label="סגירת התפריט"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  <div class="mn-in">
+    <div class="mn-k">תפריט · Ilioara Residence</div>
+    <nav class="mn-list" aria-label="תפריט מלא">
+      <a href="/he/" style="--d:60ms" aria-current="page"><span class="no">01</span><span class="nm">בית</span><em class="hint">הסרט</em></a>
+      <a href="/proiecte-finalizate/" style="--d:100ms"><span class="no">02</span><span class="nm">פרויקטים שהושלמו</span><em class="hint">הושלם ומאוכלס</em></a>
+      <a href="/apartamente/" style="--d:140ms"><span class="no">03</span><span class="nm">דירות</span><em class="hint">12 מתוך 31 זמינות</em></a>
+      <a href="/preturi/" style="--d:180ms"><span class="no">04</span><span class="nm">מחירים</span><em class="hint">מ-107.500 EUR + TVA</em></a>
+      <a href="/dotari/" style="--d:220ms"><span class="no">05</span><span class="nm">מפרט</span><em class="hint">חימום תת-רצפתי כלול</em></a>
+      <a href="/credit-ipotecar/" style="--d:260ms"><span class="no">06</span><span class="nm">משכנתא</span><em class="hint">מחשבון + ברוקר</em></a>
+      <a href="/pentru-cine-construim/" style="--d:300ms"><span class="no">07</span><span class="nm">למי אנחנו בונים</span><em class="hint">5 שפות</em></a>
+      <a href="/parcare/" style="--d:340ms"><span class="no">08</span><span class="nm">חניה</span><em class="hint">מ-20.000 EUR + TVA</em></a>
+      <a href="/zona/" style="--d:380ms"><span class="no">09</span><span class="nm">מיקום</span><em class="hint">5 min מהמטרו</em></a>
+      <a href="/blog/" style="--d:420ms"><span class="no">10</span><span class="nm">בלוג</span><em class="hint">מדריכים</em></a>
+      <a href="https://wa.me/40773287233?text=%D7%A9%D7%9C%D7%95%D7%9D%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%A8%D7%95%D7%AA%20%D7%91%D7%A8%D7%97%D7%95%D7%91%20Aleea%20Eprubetei." style="--d:460ms"><span class="no">11</span><span class="nm">צור קשר</span><em class="hint">WhatsApp</em></a>
+    </nav>
+    <div class="mn-langs2"><span class="lb">בחרו שפה</span><a href="/">Română</a><a href="/en/">English</a><a class="act" href="/he/" aria-current="true">עברית</a><a href="/ar/" lang="ar">العربية</a><a href="/uk/" lang="uk">Українська</a></div>
+    <div class="mn-foot">
+      <a class="ft" href="tel:+40773287233">+40 773 287 233</a>
+      <a class="fwa" href="https://wa.me/40773287233?text=%D7%A9%D7%9C%D7%95%D7%9D%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%A8%D7%95%D7%AA%20%D7%91%D7%A8%D7%97%D7%95%D7%91%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>כתבו לנו בוואטסאפ</a>
+      <span class="mn-tag">Aleea Eprubetei 7 · Dristor-Titan · Sector 3, București</span>
+      <div class="mn-craft2">Crafted with care by <a href="https://i-vory.ro" target="_blank" rel="noopener">i-vory.ro</a></div>
+    </div>
+  </div>
 </div>
 
 <!-- beats per sectiune, fiecare cu identitatea ei (data-seg = index hold 0..6). COPY DRAFT pre voce-vie. -->
@@ -817,7 +858,7 @@ html[dir="rtl"] .ov-row .p,html[dir="rtl"] .telmini{direction:ltr;unicode-bidi:i
       <div class="ov-h">נוחות ומערכות</div>
       <div class="ov-block"><b>חימום תת-רצפתי</b> בכל הדירה וגם במרפסת.<br>דוד עצמאי <b>24 kW</b>.<br>כניסת רכב עם מחסום.</div>
       <div class="ov-h">הדירות</div>
-      <div class="ov-block">קרקע + 8 קומות, עם <b>2 פנטהאוזים בקומה העליונה</b> שכבר נמכרו.<br>בשאר: <b>4 דירות בקומה</b>, אחת של 3 חדרים ושלוש של 2.<br>שטחים כוללים <b>47 עד 85 mp</b>, חלוקה גמישה.<br>סיום: <b>דצמבר 2026</b>.</div>
+      <div class="ov-block">קרקע + 8 קומות, עם <b>2 פנטהאוזים בקומה העליונה</b> שכבר נמכרו.<br>בשאר: <b>4 דירות בקומה</b>, אחת של 3 חדרים ושלוש של 2.<br>שטחים כוללים <b>49 עד 86 mp</b>, חלוקה גמישה.<br>סיום: <b>דצמבר 2026</b>.</div>
       <p class="ov-more"><a href="/dotari/">לכל המפרט בפירוט</a></p>
       <div class="ov-cta"><a class="btn" href="https://wa.me/40773287233?text=%D7%A9%D7%9C%D7%95%D7%9D%21%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%A4%D7%A8%D7%98%20%D7%94%D7%98%D7%9B%D7%A0%D7%99%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D.">כתבו לנו בוואטסאפ</a></div>
     </div>
@@ -1594,5 +1635,6 @@ html[dir="rtl"] .ov-row .p,html[dir="rtl"] .telmini{direction:ltr;unicode-bidi:i
   apply();
 })();
 </script>
+<script>(function(){var x=document.querySelector('.mn-x'),b=document.getElementById('mnBtn');if(x&&b)x.addEventListener('click',function(){b.click();});})();</script>
 </body>
 </html>

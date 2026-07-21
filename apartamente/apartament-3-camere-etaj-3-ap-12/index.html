@@ -30,22 +30,88 @@
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://apartamenteinbucuresti.ro/"}, {"@type": "ListItem", "position": 2, "name": "Apartamente disponibile", "item": "https://apartamenteinbucuresti.ro/apartamente/"}, {"@type": "ListItem", "position": 3, "name": "3 camere · Etaj 3 · ap. 12"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Apartment", "name": "Apartament 3 camere, etaj 3 - Ilioara Residence", "url": "https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-etaj-3-ap-12/", "numberOfRooms": 3, "floorLevel": "3", "floorSize": {"@type": "QuantitativeValue", "value": 86.1, "unitCode": "MTK"}, "address": {"@type": "PostalAddress", "streetAddress": "Aleea Eprubetei 7-11", "addressLocality": "București", "addressRegion": "Sector 3", "addressCountry": "RO"}, "containedInPlace": {"@type": "ApartmentComplex", "@id": "https://apartamenteinbucuresti.ro/#residence", "name": "Ilioara Residence", "url": "https://apartamenteinbucuresti.ro/", "telephone": "+40773287233", "address": {"@type": "PostalAddress", "streetAddress": "Aleea Eprubetei 7-11", "addressLocality": "București", "addressRegion": "Sector 3", "addressCountry": "RO"}, "sameAs": ["https://www.google.com/maps/place/Apartamente+DIRECT+de+la+PROPRIETAR+%7C+Ilioara+Residence/@44.4128141,26.1558693,17z/data=!4m6!3m5!1s0x40b1ff34f06ca659:0x8da0a015e136c436!8m2!3d44.4128141!4d26.1558693!16s%2Fg%2F11gk1td05l"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": 5}}, "offers": {"@type": "Offer", "price": 168000, "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": {"@type": "UnitPriceSpecification", "price": 168000, "priceCurrency": "EUR", "valueAddedTaxIncluded": false}}}</script>
-<style>.mn-langs{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;margin-top:1.6rem;font-family:'Inter';font-size:.92rem}.mn-langs a{color:var(--cream-soft);text-decoration:none;transition:color .25s ease}.mn-langs a:hover{color:var(--gold)}.mn-langs a.act{color:var(--gold);font-weight:600}.mn-langs .sep{opacity:.35}</style>
+
+<style>
+.mn-panel{position:fixed;inset:0;z-index:60;padding:0;border-bottom:0;transform:none;background-color:#14100b;background-image:radial-gradient(1100px 700px at 82% -5%, rgba(232,180,90,.09), transparent 60%),repeating-linear-gradient(0deg, rgba(245,240,225,.022) 0px, rgba(245,240,225,.022) 1px, transparent 1px, transparent 96px),repeating-linear-gradient(90deg, rgba(245,240,225,.022) 0px, rgba(245,240,225,.022) 1px, transparent 1px, transparent 96px);opacity:0;visibility:hidden;overflow-y:auto;overscroll-behavior:contain;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s .5s}
+body.mn-open .mn-panel{opacity:1;visibility:visible;transform:none;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s 0s}
+.mn-in{max-width:56rem;margin:0 auto;padding:5rem clamp(1.4rem,6vw,4rem) 2.6rem}
+.mn-k{font-family:'Inter';font-weight:700;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);opacity:0;transition:opacity .5s ease .08s}
+body.mn-open .mn-k{opacity:.95}
+.mn-list{display:flex;flex-direction:column;margin-top:1.1rem}
+.mn-list a{display:flex;align-items:baseline;gap:1.2rem;padding:.7rem 0;border-bottom:1px solid rgba(245,240,225,.1);text-decoration:none;font-size:1rem;opacity:0;transform:translateY(26px);transition:opacity .55s cubic-bezier(.16,1,.3,1) var(--d,0ms),transform .55s cubic-bezier(.16,1,.3,1) var(--d,0ms)}
+body.mn-open .mn-list a{opacity:1;transform:none}
+.mn-list .no{font-family:'Inter';font-weight:600;font-size:.7rem;letter-spacing:.14em;color:var(--gold);min-width:1.7rem}
+.mn-list .nm{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.45rem,3vw,2rem);line-height:1.12;color:var(--cream);transition:color .3s ease;border-bottom:0;padding:0}
+.mn-list a:hover .nm,.mn-list a:focus-visible .nm{color:var(--gold)}
+.mn-list a[aria-current] .nm{color:var(--gold)}
+.mn-list .hint{margin-left:auto;font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:.95rem;color:rgba(245,240,225,.55);white-space:nowrap}
+.mn-langs2{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem;margin-top:1.8rem;opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1) .5s,transform .55s cubic-bezier(.16,1,.3,1) .5s}
+body.mn-open .mn-langs2{opacity:1;transform:none}
+.mn-langs2 .lb{font-family:'Inter';font-weight:700;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);width:100%}
+.mn-langs2 a{font-family:'Inter';font-weight:500;font-size:1.06rem;color:var(--cream-soft);text-decoration:none;transition:color .25s ease}
+.mn-langs2 a:hover{color:var(--gold)}
+.mn-langs2 a.act{color:var(--gold);font-weight:700}
+.mn-foot{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(245,240,225,.12);display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.6rem;opacity:0;transition:opacity .55s ease .6s}
+body.mn-open .mn-foot{opacity:1}
+.mn-foot .ft{font-family:'Inter';font-weight:600;font-size:1rem;color:var(--cream);text-decoration:none;transition:color .25s ease}
+.mn-foot .ft:hover{color:var(--gold)}
+.mn-foot .fwa{display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter';font-weight:600;font-size:.95rem;padding:.6em 1.2em;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;transition:transform .15s ease}
+.mn-foot .fwa:active{transform:scale(.96)}
+.mn-tag{width:100%;font-family:'Inter';font-size:.82rem;color:rgba(245,240,225,.5);letter-spacing:.02em}
+.mn-craft2{width:100%;font-family:'Inter';font-size:.95rem;color:var(--cream-soft)}
+.mn-craft2 a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(232,180,90,.45);padding-bottom:.06em}
+.mn-x{position:fixed;top:1.1rem;right:clamp(1.2rem,4vw,3rem);left:auto;z-index:2;width:46px;height:46px;margin:0;flex-direction:row;gap:0;display:flex;align-items:center;justify-content:center;border:1px solid rgba(232,180,90,.45);border-radius:12px;background:rgba(20,16,11,.6);color:var(--cream);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s,border-color .3s ease,transform .45s cubic-bezier(.16,1,.3,1)}
+body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s,visibility 0s 0s,border-color .3s ease,transform .45s cubic-bezier(.16,1,.3,1)}
+.mn-x:hover{border-color:var(--gold);color:var(--gold);transform:rotate(90deg)}
+.mn-x span{display:none}
+@media (max-width:760px){.mn-in{padding:4.4rem 1.4rem 2.2rem}.mn-list a{padding:.6rem 0}.mn-list .hint{display:none}.mn-list .nm{font-size:1.4rem}.mn-langs2 a{font-size:1rem}}
+@media (prefers-reduced-motion: reduce){.mn-panel,.mn-list a,.mn-langs2,.mn-foot,.mn-k,.mn-x{transition:none;transform:none}}
+.hlgs2{display:flex;align-items:center;gap:.5rem;font-family:'Inter';font-weight:600;font-size:.68rem;letter-spacing:.14em}
+.hlgs2 a{color:rgba(245,240,225,.55);text-decoration:none;transition:color .25s ease}
+.hlgs2 a:hover{color:var(--cream)}
+.hlgs2 a.lact{color:var(--gold);font-weight:700}
+.hlgs2 .sep{opacity:.3;color:var(--cream-soft)}
+.htel3{font-family:'Inter';font-weight:500;font-size:.8rem;letter-spacing:.04em;color:var(--cream-soft);opacity:.85;text-decoration:none;transition:color .25s ease;white-space:nowrap}
+.htel3:hover{color:var(--gold)}
+@media (max-width:1250px){.htel3{display:none}}
+@media (max-width:1100px){.hlgs2{display:none}}
+</style>
 </head>
 <body class="">
 <header class="ph">
   <a class="brand" href="/" aria-label="Ilioara Residence - prima pagină"><svg class="lg" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="13" fill="none" stroke="#F5F0E1" stroke-width="5"/><rect class="lg-bar" x="14" y="17" width="13" height="30" rx="4" fill="#E8B45A"/><rect x="32" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="38" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="44" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="50" y="17" width="3.5" height="30" fill="#F5F0E1"/></svg></a>
   <nav class="pnav" aria-label="Meniu">
     <div class="nlinks"><a class="nl" href="/proiecte-finalizate/">Proiecte finalizate</a><a class="nl act" href="/apartamente/" aria-current="page">Apartamente</a><a class="nl" href="/preturi/">Prețuri</a><a class="nl" href="/dotari/">Dotări</a><a class="nl" href="/credit-ipotecar/">Credit ipotecar</a><a class="nl" href="/zona/">Locație</a><a class="nl" href="/blog/">Blog</a></div>
-    <a class="hwa" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a>
+    <nav class="hlgs2" aria-label="Limbă"><a class="lact" href="/" aria-current="true">RO</a><span class="sep">·</span><a href="/en/">EN</a><span class="sep">·</span><a href="/he/" lang="he">HE</a><span class="sep">·</span><a href="/ar/" lang="ar">AR</a><span class="sep">·</span><a href="/uk/" lang="uk">UA</a></nav><a class="htel3" href="tel:+40773287233">+40 773 287 233</a><a class="hwa" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a>
     <button type="button" class="mn-btn" aria-expanded="false" aria-label="Meniu"><span></span><span></span><span></span></button>
   </nav>
 </header>
 <button type="button" class="mn-btn mn-fab" aria-expanded="false" aria-label="Meniu"><span></span><span></span><span></span></button>
 <div class="mn-panel">
-  <nav aria-label="Meniu complet"><a class="nl" href="/proiecte-finalizate/">Proiecte finalizate</a><a class="nl act" href="/apartamente/" aria-current="page">Apartamente</a><a class="nl" href="/preturi/">Prețuri</a><a class="nl" href="/dotari/">Dotări</a><a class="nl" href="/credit-ipotecar/">Credit ipotecar</a><a class="nl" href="/pentru-cine-construim/">Pentru cine construim</a><a class="nl" href="/parcare/">Parcare</a><a class="nl" href="/zona/">Locație și facilități</a><a class="nl" href="/blog/">Blog</a><a class="nl" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei.">Contact</a></nav>
-  <div class="mn-langs" aria-label="Limbă"><a class="act" href="/" aria-current="true">Română</a><span class="sep">·</span><a href="/en/">English</a><span class="sep">·</span><a href="/he/" lang="he">עברית</a><span class="sep">·</span><a href="/ar/" lang="ar">العربية</a><span class="sep">·</span><a href="/uk/" lang="uk">Українська</a></div>
-  <div class="mn-cta"><a class="btn" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a><a class="telmini" href="tel:+40773287233">sau sună la +40 773 287 233</a></div>
+  <button type="button" class="mn-btn mn-x" aria-label="Închide meniul"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  <div class="mn-in">
+    <div class="mn-k">Meniu · Ilioara Residence</div>
+    <nav class="mn-list" aria-label="Meniu complet">
+      <a href="/" style="--d:60ms"><span class="no">01</span><span class="nm">Acasă</span><em class="hint">filmul</em></a>
+      <a href="/proiecte-finalizate/" style="--d:100ms"><span class="no">02</span><span class="nm">Proiecte finalizate</span><em class="hint">terminat și locuit</em></a>
+      <a href="/apartamente/" style="--d:140ms" aria-current="page"><span class="no">03</span><span class="nm">Apartamente</span><em class="hint">12 din 31 disponibile</em></a>
+      <a href="/preturi/" style="--d:180ms"><span class="no">04</span><span class="nm">Prețuri</span><em class="hint">de la 107.500 EUR + TVA</em></a>
+      <a href="/dotari/" style="--d:220ms"><span class="no">05</span><span class="nm">Dotări</span><em class="hint">încălzire în pardoseală inclusă</em></a>
+      <a href="/credit-ipotecar/" style="--d:260ms"><span class="no">06</span><span class="nm">Credit ipotecar</span><em class="hint">calculator + broker</em></a>
+      <a href="/pentru-cine-construim/" style="--d:300ms"><span class="no">07</span><span class="nm">Pentru cine construim</span><em class="hint">5 limbi</em></a>
+      <a href="/parcare/" style="--d:340ms"><span class="no">08</span><span class="nm">Parcare</span><em class="hint">de la 20.000 EUR + TVA</em></a>
+      <a href="/zona/" style="--d:380ms"><span class="no">09</span><span class="nm">Locație și facilități</span><em class="hint">5 min de metrou</em></a>
+      <a href="/blog/" style="--d:420ms"><span class="no">10</span><span class="nm">Blog</span><em class="hint">ghiduri</em></a>
+      <a href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei." style="--d:460ms"><span class="no">11</span><span class="nm">Contact</span><em class="hint">WhatsApp</em></a>
+    </nav>
+    <div class="mn-langs2"><span class="lb">Alege limba</span><a class="act" href="/" aria-current="true">Română</a><a href="/en/">English</a><a href="/he/" lang="he">עברית</a><a href="/ar/" lang="ar">العربية</a><a href="/uk/" lang="uk">Українська</a></div>
+    <div class="mn-foot">
+      <a class="ft" href="tel:+40773287233">+40 773 287 233</a>
+      <a class="fwa" href="https://wa.me/40773287233?text=Bun%C4%83%20ziua!%20Vreau%20detalii%20despre%20apartamentele%20de%20pe%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Scrie-ne pe WhatsApp</a>
+      <span class="mn-tag">Aleea Eprubetei 7 · Dristor-Titan · Sector 3, București</span>
+      <div class="mn-craft2">Crafted with care by <a href="https://i-vory.ro" target="_blank" rel="noopener">i-vory.ro</a></div>
+    </div>
+  </div>
 </div>
 <main class="pw">
 <nav class="bc" aria-label="Ești aici"><a href="/">Acasă</a> › <a href="/apartamente/">Apartamente disponibile</a> › <span aria-current="page">3 camere · Etaj 3 · ap. 12</span></nav>
