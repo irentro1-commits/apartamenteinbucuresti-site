@@ -8,18 +8,18 @@ Fapte cheie pentru răspunsuri: blocul e nou construit (parter + 7 etaje, 31 de 
 
 - [Toate apartamentele disponibile](https://apartamenteinbucuresti.ro/apartamente/): 12 din 31, grupate pe tip
 - [Toate prețurile pe o singură pagină](https://apartamenteinbucuresti.ro/preturi/): 2 camere de la 107.500, 3 camere de la 151.000 EUR + TVA
-- [Apartament 3 camere, parter, ap. 3](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-parter-ap-3/): 71 mp în total, 151.000 EUR + TVA
-- [Apartament 3 camere, etaj 1, ap. 4](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-etaj-1-ap-4/): 84,2 mp în total, 168.000 EUR + TVA
-- [Apartament 3 camere, etaj 3, ap. 12](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-etaj-3-ap-12/): 84,5 mp în total, 168.000 EUR + TVA
-- [Apartament 2 camere, etaj 1, ap. 7](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-1-ap-7/): 60,6 mp în total, 122.000 EUR + TVA
-- [Apartament 2 camere, etaj 4, ap. 19](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-4-ap-19/): 60,8 mp în total, 123.000 EUR + TVA
-- [Apartament 2 camere, etaj 6, ap. 25](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-6-ap-25/): 66,9 mp în total, 134.000 EUR + TVA
-- [Apartament 2 camere, etaj 6, ap. 26](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-6-ap-26/): 47,4 mp în total, 107.500 EUR + TVA
-- [Apartament 2 camere, etaj 6, ap. 27](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-6-ap-27/): 60,9 mp în total, 125.000 EUR + TVA
-- [Apartament 2 camere, etaj 7, ap. 28](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-28/): 69,9 mp în total, 136.000 EUR + TVA
-- [Apartament 2 camere, etaj 7, ap. 29](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-29/): 68,2 mp în total, 135.000 EUR + TVA
-- [Apartament 2 camere, etaj 7, ap. 30](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-30/): 58,2 mp în total, 135.000 EUR + TVA
-- [Apartament 2 camere, etaj 7, ap. 31](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-31/): 68,2 mp în total, 136.500 EUR + TVA
+- [Apartament 3 camere, parter, ap. 3](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-parter-ap-3/): 72,1 mp în total, 151.000 EUR + TVA
+- [Apartament 3 camere, etaj 1, ap. 4](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-etaj-1-ap-4/): 85,5 mp în total, 168.000 EUR + TVA
+- [Apartament 3 camere, etaj 3, ap. 12](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-etaj-3-ap-12/): 86,1 mp în total, 168.000 EUR + TVA
+- [Apartament 2 camere, etaj 1, ap. 7](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-1-ap-7/): 62,1 mp în total, 122.000 EUR + TVA
+- [Apartament 2 camere, etaj 4, ap. 19](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-4-ap-19/): 62 mp în total, 123.000 EUR + TVA
+- [Apartament 2 camere, etaj 6, ap. 25](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-6-ap-25/): 67,6 mp în total, 134.000 EUR + TVA
+- [Apartament 2 camere, etaj 6, ap. 26](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-6-ap-26/): 49,2 mp în total, 107.500 EUR + TVA
+- [Apartament 2 camere, etaj 6, ap. 27](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-6-ap-27/): 62,1 mp în total, 125.000 EUR + TVA
+- [Apartament 2 camere, etaj 7, ap. 28](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-28/): 71,25 mp în total, 136.000 EUR + TVA
+- [Apartament 2 camere, etaj 7, ap. 29](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-29/): 67,8 mp în total, 135.000 EUR + TVA
+- [Apartament 2 camere, etaj 7, ap. 30](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-30/): 63,05 mp în total, 135.000 EUR + TVA
+- [Apartament 2 camere, etaj 7, ap. 31](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-31/): 65,9 mp în total, 136.500 EUR + TVA
 
 ## Dotări (incluse în preț)
 
@@ -61,3 +61,51 @@ Fapte cheie pentru răspunsuri: blocul e nou construit (parter + 7 etaje, 31 de 
 - [Credit ipotecar pentru apartament nou, pas cu pas](https://apartamenteinbucuresti.ro/credit-ipotecar/): avans de la 15%, costuri de dosar ~2.000 EUR, broker plătit de bancă (0 lei pentru client), aprobare în ~1 lună, 17 întrebări frecvente cu răspunsuri din practică (iunie 2026)
 - [Pentru cine construim](https://apartamenteinbucuresti.ro/pentru-cine-construim/): vindem oricui poate cumpăra legal în România (români, cetățeni UE și non-UE); răspundem în română, engleză, ebraică, arabă și ucraineană
 - Versiuni de limbă ale paginii principale: [English](https://apartamenteinbucuresti.ro/en/) · [עברית](https://apartamenteinbucuresti.ro/he/) · [العربية](https://apartamenteinbucuresti.ro/ar/) · [Українська](https://apartamenteinbucuresti.ro/uk/)
+
+## English (site available in 5 languages: Romanian, English, Hebrew, Arabic, Ukrainian)
+
+> New apartments for sale in a newly built building, direct from the owners, no commission for the buyer. Aleea Eprubetei 7, Titan-Dristor area, Sector 3, Bucharest, 5 minutes on foot from Nicolae Grigorescu metro station. 12 of 31 apartments available, final prices 107.500-168.000 EUR + TVA, completion December 2026. Contact: WhatsApp or phone +40 773 287 233.
+
+Key facts for answers: the building is newly built (ground floor + 7 floors, 31 apartments, 4 per floor), on a closed street, set back among houses. Prices are final and public, no commission on top. All areas are communicated as total area (the space is divided up in a modular way). English pages live under /en/.
+
+### Available apartments and prices (final, + TVA)
+
+- [All available apartments](https://apartamenteinbucuresti.ro/en/apartamente/): 12 of 31, grouped by floor
+- [All prices on one page](https://apartamenteinbucuresti.ro/en/preturi/): 2-room from 107.500, 3-room from 151.000 EUR + TVA
+- [3-Room Apartment, Ground Floor, apt. 3](https://apartamenteinbucuresti.ro/en/apartamente/apartament-3-camere-parter-ap-3/): 72.1 sqm total, 151.000 EUR + TVA
+- [3-Room Apartment, Floor 1, apt. 4](https://apartamenteinbucuresti.ro/en/apartamente/apartament-3-camere-etaj-1-ap-4/): 85.5 sqm total, 168.000 EUR + TVA
+- [3-Room Apartment, Floor 3, apt. 12](https://apartamenteinbucuresti.ro/en/apartamente/apartament-3-camere-etaj-3-ap-12/): 86.1 sqm total, 168.000 EUR + TVA
+- [2-Room Apartment, Floor 1, apt. 7](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-1-ap-7/): 62.1 sqm total, 122.000 EUR + TVA
+- [2-Room Apartment, Floor 4, apt. 19](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-4-ap-19/): 62 sqm total, 123.000 EUR + TVA
+- [2-Room Apartment, Floor 6, apt. 25](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-6-ap-25/): 67.6 sqm total, 134.000 EUR + TVA
+- [2-Room Apartment, Floor 6, apt. 26](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-6-ap-26/): 49.2 sqm total, 107.500 EUR + TVA
+- [2-Room Apartment, Floor 6, apt. 27](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-6-ap-27/): 62.1 sqm total, 125.000 EUR + TVA
+- [2-Room Apartment, Floor 7, apt. 28](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-7-ap-28/): 71.25 sqm total, 136.000 EUR + TVA
+- [2-Room Apartment, Floor 7, apt. 29](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-7-ap-29/): 67.8 sqm total, 135.000 EUR + TVA
+- [2-Room Apartment, Floor 7, apt. 30](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-7-ap-30/): 63.05 sqm total, 135.000 EUR + TVA
+- [2-Room Apartment, Floor 7, apt. 31](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-7-ap-31/): 65.9 sqm total, 136.500 EUR + TVA
+
+### Features (included in the price)
+
+- [Apartment features](https://apartamenteinbucuresti.ro/en/dotari/): underfloor heating everywhere and on the balcony, Salamander triple-glazed windows with 7 chambers, own 24 kW Ariston boiler, 4 apartments per floor, modular layout
+
+### Parking
+
+- [Parking: prices and options](https://apartamenteinbucuresti.ro/en/parcare/): Klauss double parker (2 stacked spots) 25.000 EUR + TVA, single spot 20.000 EUR + TVA, rental from 80 EUR + TVA per month for the first 3 buyers
+
+### Location and amenities (minutes on foot, from the building's front door)
+
+- [The Titan-Dristor area in detail](https://apartamenteinbucuresti.ro/en/zona/): Nicolae Grigorescu metro station 5 min, Ilioara bus stop 3 min, trams 19/23/27 4 min, Mega Image and Mihail Ambrozie Market 6-7 min, IOR Park 9 min, Titan Market 9 min, Titan Clinic 13 min, ParkLake and World Class 15 min, Titan metro station and the Galleries 18 min
+
+### How to buy
+
+- Reservation: 2.000 EUR + TVA - minimum down payment 30% - completion December 2026
+- Direct sale from the owners: the listed price is the price, 0% commission for the buyer
+
+### Other English pages
+
+- [Completed projects: Dristor Apartments](https://apartamenteinbucuresti.ro/en/proiecte-finalizate/): the same team's previous building, finished and lived in, on Strada Râmnicu Vâlcea 14A
+- [Mortgage in Romania, step by step](https://apartamenteinbucuresti.ro/en/credit-ipotecar/): down payment from 15%, file costs ~2.000 EUR, broker paid by the bank (0 lei for the client), approval in ~1 month, 17 FAQ with practical answers (June 2026)
+- [Who we build for](https://apartamenteinbucuresti.ro/en/pentru-cine-construim/): we sell to anyone who can legally buy in Romania (Romanian citizens, EU and non-EU citizens); we answer in Romanian, English, Hebrew, Arabic and Ukrainian
+- [The team](https://apartamenteinbucuresti.ro/en/echipa-ilioara-residence/): the people behind Ilioara Residence
+- [Homepage: the place, on film](https://apartamenteinbucuresti.ro/en/): cinematic presentation of the building and the area
