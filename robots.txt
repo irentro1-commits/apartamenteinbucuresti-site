@@ -52,3 +52,4 @@ User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://apartamenteinbucuresti.ro/sitemap.xml
+Sitemap: https://apartamenteinbucuresti.ro/image-sitemap.xml
