@@ -181,4 +181,10 @@ h2::after{content:'';display:block;width:38px;height:2px;background:rgba(232,180
 .rv[data-fx="slide"]{transform:translateX(-26px)}
 .rv[data-fx="pop"]{transform:translateY(8px) scale(.96)}
 .rv.on{opacity:1;transform:none}
-@media (prefers-reduced-motion: reduce){.rv{transition:none;opacity:1;transform:none}.ph{transition:none}}
+/* FIX LCP (23 Iul 2026): H1 + .lead sunt candidatul LCP pe toate paginile din familia asta (deasupra fold-ului).
+   Nu mai stau opacity:0 asteptand JS/IntersectionObserver ca sa fie "pictate": aceeasi animatie "rise"
+   (opacity 0->1 + translateY 22px->0, aceeasi curba/durata .65s ca mai sus), dar auto-play din CSS pur de la
+   randare. Restul elementelor .rv (sub fold) raman neschimbate, tot pe reveal-la-scroll din JS. */
+h1.rv,.lead.rv{opacity:0;transform:translateY(22px);animation:rvIn .65s cubic-bezier(.22,.6,.2,1) both}
+@keyframes rvIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.rv{transition:none;opacity:1;transform:none}.ph{transition:none}h1.rv,.lead.rv{animation:none;opacity:1;transform:none}}
