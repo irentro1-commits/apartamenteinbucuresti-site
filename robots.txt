@@ -63,5 +63,4 @@ Disallow: /
 User-agent: Applebot-Extended
 Disallow: /
 
-Sitemap: https://apartamenteinbucuresti.ro/sitemap.xml
-Sitemap: https://apartamenteinbucuresti.ro/image-sitemap.xml
+Sitemap: https://apartamenteinbucuresti.ro/sitemap-index.xml
