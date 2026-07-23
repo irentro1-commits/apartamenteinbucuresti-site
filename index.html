@@ -482,7 +482,12 @@ body.cov-on header{top:24px;left:24px;right:24px}
 #cov .sc{position:absolute;inset:0;overflow:hidden}
 #cov .scin{position:absolute;inset:0}
 #cov .cl{position:absolute;pointer-events:none}
-#cov .cv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.6,.2,1),transform .7s cubic-bezier(.22,.6,.2,1);transition-delay:var(--ed,0ms)}
+/* FIX LCP (23 Iul 2026): H1/text-ul copertei nu mai asteapta boot-ul filmului (JS + coada de imagini) ca sa fie "pictate".
+   Aceeasi animatie (opacity 0->1 + translateY 22px->0, aceeasi curba/durata .7s si acelasi decalaj --ed per element),
+   dar auto-play din CSS pur (ca la #cov .frm mai sus), asa ca motorul de masurare (si Google) o vede de la primul cadru.
+   body.cov-in ramane dedesubt ca plasa de siguranta (acelasi rezultat, no-op odata ce animatia a rulat deja). */
+#cov .cv{opacity:0;transform:translateY(22px);animation:cvIn .7s cubic-bezier(.22,.6,.2,1) both;animation-delay:var(--ed,0ms)}
+@keyframes cvIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 body.cov-in #cov .cv{opacity:1;transform:none}
 /* straturi: parallax (mx/my) + retragere (cp), fiecare cu viteza lui; fundalul cel mai lent */
 .hrr{display:flex;align-items:center;pointer-events:none}
@@ -615,7 +620,7 @@ body.cov-in #cov .cv{opacity:1;transform:none}
   #cov .hdm{display:block;position:absolute;top:0;left:0;right:0;height:7.3rem;pointer-events:none;background:linear-gradient(180deg, rgba(20,16,11,.97) 0%, rgba(20,16,11,.82) 46%, rgba(20,16,11,.4) 74%, transparent 100%);opacity:max(0, calc(1 - var(--cp) * 1.4))}
 }
 @media (prefers-reduced-motion: reduce){
-  #cov .cv{transition:none;transition-delay:0ms}
+  #cov .cv{animation:none;opacity:1;transform:none}
   #cov .frm{animation:none}
   #cov .vl::after{animation:none;transform:none}
   #rail{transition:none}
