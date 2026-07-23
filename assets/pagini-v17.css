@@ -151,7 +151,7 @@ h2::after{content:'';display:block;width:38px;height:2px;background:rgba(232,180
 @media(hover:hover) and (pointer:fine){.pf-col a:hover{transform:translateX(3px)}}
 .pf-bottom{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.6rem;max-width:80rem;margin:1.1rem auto 0;font-family:'Inter';font-size:.8rem;color:var(--cream-soft);opacity:.55}
 .pf-bottom .pf-tag{color:var(--gold);opacity:.92}
-.pf-craft{text-align:center;max-width:80rem;margin:3rem auto 0;padding-top:1.8rem;border-top:1px solid rgba(232,180,90,.12);font-family:'Inter';font-size:.98rem;color:var(--cream-soft);letter-spacing:.01em}
+.pf-craft{text-align:center;max-width:80rem;margin:3.2rem auto 0;padding-top:2.1rem;border-top:1px solid rgba(232,180,90,.22);font-family:'Inter';font-size:1.05rem;font-weight:500;color:var(--cream);letter-spacing:.01em}
 .pf-craft a{color:var(--gold);text-decoration:none;font-weight:700;border-bottom:1px solid rgba(232,180,90,.4);padding-bottom:.05em;transition:border-color .25s ease}
 .pf-craft a:hover{border-bottom-color:var(--gold)}
 @media (max-width:860px){.pf-top{grid-template-columns:1fr 1fr;gap:2.2rem 2rem}.pf-brand-col{grid-column:1/-1}.pf-desc{max-width:38rem}}
