@@ -1,13 +1,15 @@
 # Ilioara Residence - apartamente noi in bloc nou construit, direct de la proprietari
 # Titan-Dristor, Sector 3, Bucuresti. Continut deschis pentru motoare de cautare si asistenti AI.
+# Antrenament de model blocat, citare/cautare deschisa (politica no-train).
 # Rezumat structurat pentru AI: https://apartamenteinbucuresti.ro/llms.txt
 
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
-# OpenAI (ChatGPT)
+# OpenAI (ChatGPT) - GPTBot antreneaza modelul, blocat. OAI-SearchBot + ChatGPT-User citeaza, deschisi.
 User-agent: GPTBot
-Allow: /
+Disallow: /
 
 User-agent: OAI-SearchBot
 Allow: /
@@ -15,9 +17,9 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-# Anthropic (Claude)
+# Anthropic (Claude) - ClaudeBot antreneaza modelul, blocat. Claude-User + Claude-SearchBot citeaza, deschisi.
 User-agent: ClaudeBot
-Allow: /
+Disallow: /
 
 User-agent: Claude-User
 Allow: /
@@ -32,7 +34,7 @@ Allow: /
 User-agent: Perplexity-User
 Allow: /
 
-# Google (AI / Gemini)
+# Google (AI / Gemini) - Google-Extended ramane deschis (Google nu a clarificat daca AI Overviews trece prin el)
 User-agent: Google-Extended
 Allow: /
 
@@ -43,13 +45,23 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Meta AI
+# Meta AI - antreneaza modelul, blocat
 User-agent: meta-externalagent
-Allow: /
+Disallow: /
 
-# Amazon (Alexa / Rufus)
+# Amazon (Alexa / Rufus) - antreneaza modelul, blocat
 User-agent: Amazonbot
-Allow: /
+Disallow: /
+
+# Alti boti de antrenament fara pereche de citare, blocati
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
 
 Sitemap: https://apartamenteinbucuresti.ro/sitemap.xml
 Sitemap: https://apartamenteinbucuresti.ro/image-sitemap.xml
