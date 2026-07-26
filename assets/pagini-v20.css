@@ -195,3 +195,7 @@ h1.rv,.lead.rv{opacity:0;transform:translateY(22px);animation:rvIn .65s cubic-be
 .pf-soc{display:flex;align-items:center;gap:1rem;margin:1.1rem 0 0}
 .pf-soc a{color:var(--cream-soft);display:inline-flex;transition:color .25s ease}
 .pf-soc a:hover{color:var(--gold)}
+
+/* meniul deschis blocheaza scrollul paginii de dedesubt. overscroll-behavior singur
+   opreste doar propagarea la capat de panou, nu si scrollul cu panoul inchis peste el. */
+body.mn-open{overflow:hidden}

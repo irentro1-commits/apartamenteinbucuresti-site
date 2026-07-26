@@ -16,9 +16,14 @@
 (function(){
   var btns = [].slice.call(document.querySelectorAll('.mn-btn'));
   if(!btns.length) return;
+  var ultimul = null;
   function setMn(open){
+    if(open) ultimul = document.activeElement;
     document.body.classList.toggle('mn-open', open);
     btns.forEach(function(b){ b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+    // P-A-05: la inchidere focusul se intoarce de unde a plecat, altfel navigarea
+    // din tastatura reporneste din capul paginii dupa fiecare deschidere de meniu.
+    if(!open && ultimul && typeof ultimul.focus === 'function') ultimul.focus();
   }
   btns.forEach(function(b){ b.addEventListener('click', function(){ setMn(!document.body.classList.contains('mn-open')); }); });
   [].slice.call(document.querySelectorAll('.mn-panel a')).forEach(function(a){
