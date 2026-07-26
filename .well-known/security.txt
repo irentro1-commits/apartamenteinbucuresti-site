@@ -1,0 +1,10 @@
+Contact: mailto:contact@i-vory.studio
+Contact: https://wa.me/40773287233
+Expires: 2027-07-01T00:00:00.000Z
+Preferred-Languages: ro, en
+Canonical: https://apartamenteinbucuresti.ro/.well-known/security.txt
+Policy: https://apartamenteinbucuresti.ro/informatii-legale/
+
+# Site static, fara backend si fara formulare.
+# Raportati vulnerabilitati la adresa de mai sus. Raspundem in maximum 5 zile lucratoare.
+# Static site, no backend, no forms. Report vulnerabilities to the contact above.
