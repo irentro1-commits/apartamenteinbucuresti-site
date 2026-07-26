@@ -1,0 +1,22 @@
+# Secrete: nimic cu chei API, tokenuri sau credentiale nu intra in acest repo.
+.secrets/
+*.secret
+*.pem
+*.key
+.env
+.env.*
+
+# Gunoi de sistem si de editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.vscode/
+.idea/
+
+# Backup-uri si temporare din scripturile de editare
+*.bak
+*.orig
+*.rej
+__pycache__/
