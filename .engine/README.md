@@ -1,6 +1,8 @@
 # Motorul de blog, apartamenteinbucuresti.ro
 
-Un articol pe zi, in cinci limbi, dintr-o singura sursa de date. Folderul incepe cu punct, deci Cloudflare Pages nu il serveste, iar `robots.txt` il si interzice explicit.
+Un articol pe zi, in cinci limbi, dintr-o singura sursa de date.
+
+**Coada de subiecte NU e aici.** Traieste pe calculatorul lui Andy, la `_websites/_blog-engine/coada.json`, si se aduce cu `device_stage_files` la inceputul rutinei. Motivul, platit pe 4 august 2026: Cloudflare Pages SERVESTE si folderele care incep cu punct, iar un fisier care exista in repo castiga in fata regulii din `_redirects`, care prinde doar caile inexistente. Scripturile si articolele deja publicate pot sta linistite aici, nu spun nimic ce nu e deja pe site. Planul urmatoarei luni de articole nu are ce cauta la vedere, cu un concurent activ pe acelasi proiect.
 
 ## Ce e aici
 
@@ -8,7 +10,6 @@ Un articol pe zi, in cinci limbi, dintr-o singura sursa de date. Folderul incepe
 .engine/
   posts/
     ordine.json        ordinea cardurilor pe pagina de index, primul = cel mai sus
-    coada.json         subiectele viitoare, cu unghi si linkuri; sursa unica de adevar pentru ce urmeaza
     index-strings.json sirurile paginii de index in en, he, ar, uk
     ro/ en/ he/ ar/ uk/ cate un JSON per articol per limba
   scripts/
@@ -32,7 +33,7 @@ cd /tmp/apt/.engine/scripts
 export BLOG_REPO=/tmp/apt BLOG_POSTS=/tmp/apt/.engine/posts
 ```
 
-1. **Alege subiectul.** Primul element cu `"stare": "liber"` din `posts/coada.json`. Citeste unghiul si linkurile lui.
+1. **Alege subiectul.** Adu coada de pe calculatorul lui Andy (`_websites/_blog-engine/coada.json`) si ia primul element cu `"stare": "liber"`. Citeste unghiul si linkurile lui.
 2. **Verifica faptele.** Orice cifra din afara listei de fapte ale proiectului se cauta pe sursa primara si se trece in campul `sources` al articolului. Legislatia fiscala se re-verifica la fiecare articol care o atinge, chiar daca alt articol o are deja scrisa: cotele si termenele se schimba.
 3. **Scrie articolul in romana** ca JSON in `posts/ro/<slug>.json`, dupa forma oricarui fisier existent de acolo. Regulile de voce sunt mai jos.
 4. **Ruleaza gate-ul pe date:** `python3 validate_posts.py` cu folderul `posts/ro`. Zero FAIL inainte sa mergi mai departe.
@@ -49,7 +50,7 @@ export BLOG_REPO=/tmp/apt BLOG_POSTS=/tmp/apt/.engine/posts
    cd $BLOG_REPO && python3 -m http.server 8899 &
    ```
    Chromium din sandbox nu are iesire la internet, deci taie orice request care nu e catre 127.0.0.1.
-9. **Marcheaza in coada** `"stare": "publicat"` si adauga `"data": "AAAA-LL-ZZ"`.
+9. **Marcheaza in coada** `"stare": "publicat"`, adauga `"data": "AAAA-LL-ZZ"`, si scrie fisierul inapoi pe calculatorul lui Andy cu `device_commit_files`. Coada nu se comite niciodata in repo.
 10. **Un singur commit**, cu toate fisierele. Cloudflare Pages deployeaza serial, deci comiturile in rafala intarzie live-ul cu minute bune.
 11. **Dupa ce confirmi pe live**, pinguieste IndexNow (comanda mai jos).
 
