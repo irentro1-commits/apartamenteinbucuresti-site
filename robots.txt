@@ -6,6 +6,7 @@
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
+Disallow: /.engine/
 
 # OpenAI (ChatGPT) - GPTBot antreneaza modelul, blocat. OAI-SearchBot + ChatGPT-User citeaza, deschisi.
 User-agent: GPTBot
