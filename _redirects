@@ -1,0 +1,6 @@
+# Cloudflare Pages: reguli de rutare. Ordinea conteaza, prima potrivire castiga.
+
+# Motorul de blog e cod de build, nu continut public. Coada de subiecte a
+# urmatoarei luni nu are ce cauta la vedere. robots.txt il si interzice, dar
+# robots opreste indexarea, nu accesul direct.
+/.engine/*   /404.html   404
