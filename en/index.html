@@ -58,9 +58,9 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-ext-s2.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-s2.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--cta:#E8B45A;--cta-ink:#1C1710;--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12;color-scheme:dark}
+:root{--cta:#E8B45A;--cta-ink:#1C1710;--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--gold-lg:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12;color-scheme:dark}
 /* TEMA DESCHISA: hartie crem, cerneala, auriu inchis. Contraste calculate: 15,6:1 text, 7,4:1 secundar, 5,0:1 auriu. */
-html[data-theme="light"]{--cta:#E8B45A;--cta-ink:#1C1710;--cream:#1C1710;--cream-soft:#574C3E;--gold:#6B6A07;--bg:#F5F0E1;--bg2:#EDE6D4;--cream-rgb:28,23,16;--soft-rgb:87,76,62;--gold-rgb:107,106,7;--bg-rgb:245,240,225;--bg2-rgb:237,230,212;color-scheme:light}
+html[data-theme="light"]{--cta:#E8B45A;--cta-ink:#1C1710;--cream:#1C1710;--cream-soft:#574C3E;--gold:#966303;--gold-lg:#AE7E0A;--bg:#F5F0E1;--bg2:#EDE6D4;--cream-rgb:28,23,16;--soft-rgb:87,76,62;--gold-rgb:150,99,3;--bg-rgb:245,240,225;--bg2-rgb:237,230,212;color-scheme:light}
 /* Coperta ramane cinematica in ambele teme: fotografie inchisa, text crem peste ea. Antetul imprumuta
    paleta inchisa doar cat timp coperta e sus (body.cov-on), apoi revine la tema aleasa. */
 #cov,body.cov-on header,body.cov-on #rail,body.cov-on #hint,body.cov-on .brand{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12}
@@ -101,7 +101,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .beat.on[data-seg="6"] .tl{opacity:1;transform:scale(1)}
 .beat[data-seg="6"] .strip .it{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,.6,.2,1)}
 .beat.on[data-seg="6"] .strip .it{opacity:1;transform:none}
-.kicker{font-size:clamp(1rem,.9vw + .35rem,1.3rem);font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-shadow:0 1px 12px rgba(0,0,0,.7)}
+.kicker{font-size:clamp(1rem,.9vw + .35rem,1.3rem);font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lg);margin-bottom:1rem;text-shadow:0 1px 12px rgba(0,0,0,.7)}
 .beat h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4vw,4.25rem);line-height:1.04;letter-spacing:-.02em;text-shadow:0 2px 36px rgba(0,0,0,.55)}
 .beat p.big{font-family:'Fraunces',serif;font-size:clamp(1.7rem,3.7vw,4rem);line-height:1.05;letter-spacing:-.01em;text-shadow:0 2px 30px rgba(0,0,0,.55)}
 .rule{width:56px;height:2px;background:var(--gold);margin-top:1.1rem;transform-origin:left center}
@@ -152,7 +152,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .pos-cc .rule{margin-left:auto;margin-right:auto;transform-origin:center}
 
 /* accente + componente per sectiune */
-.g{color:var(--gold)}
+.g{color:var(--gold-lg)}
 .beat .sub,.lead,.quote,.note,.after,.ov-note,.ov-block,.stat .c,.spec .v,.ov-row .d,.ov-more,.bdg{text-wrap:pretty}
 .tl,.ov-title,.ov-h,.kicker{text-wrap:balance}
 .lead{font-family:'Inter';font-size:clamp(1.15rem,2vw,2.1rem);color:var(--cream-soft);margin-top:1.4rem;line-height:1.25;text-shadow:0 2px 22px rgba(0,0,0,.65)}
@@ -259,8 +259,8 @@ body.mn-open .mn-k{opacity:.95}
 body.mn-open .mn-list a{opacity:1;transform:none}
 .mn-list .no{font-family:'Inter';font-weight:600;font-size:.7rem;letter-spacing:.14em;color:var(--gold);min-width:1.7rem}
 .mn-list .nm{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.45rem,3vw,2rem);line-height:1.12;color:var(--cream);transition:color .3s ease;border-bottom:0;padding:0}
-.mn-list a:hover .nm,.mn-list a:focus-visible .nm{color:var(--gold)}
-.mn-list a[aria-current] .nm{color:var(--gold)}
+.mn-list a:hover .nm,.mn-list a:focus-visible .nm{color:var(--gold-lg)}
+.mn-list a[aria-current] .nm{color:var(--gold-lg)}
 .mn-list .hint{margin-left:auto;font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:.95rem;color:rgba(var(--cream-rgb),.55);white-space:nowrap}
 .mn-langs2{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem;margin-top:1.8rem;opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1) .5s,transform .55s cubic-bezier(.16,1,.3,1) .5s}
 body.mn-open .mn-langs2{opacity:1;transform:none}
@@ -293,7 +293,7 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
 #rail .nm{font-family:'Inter';font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-soft);opacity:0;transform:translateX(6px);transition:opacity .4s ease,transform .4s ease;text-shadow:0 1px 10px rgba(0,0,0,.7)}
 #rail .tick{width:18px;height:2px;background:rgba(var(--cream-rgb),.38);transition:width .4s cubic-bezier(.22,.6,.2,1),background .4s ease}
 #rail button.act .tick{width:34px;background:var(--gold)}
-#rail button.act .nm{opacity:1;transform:none;color:var(--gold)}
+#rail button.act .nm{opacity:1;transform:none;color:var(--gold-lg)}
 #rail button:hover .nm{opacity:1;transform:none}
 
 #hint{position:fixed;left:50%;transform:translateX(-50%);bottom:1.6rem;z-index:5;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--cream-soft);text-shadow:0 1px 12px rgba(0,0,0,.7);transition:opacity .5s ease;animation:pulse 2.4s ease-in-out infinite}
@@ -726,6 +726,14 @@ body.mn-open .mn-tema{opacity:1;transform:none}
   .dif-in{padding:.2rem .9rem 1rem}
   .dif-in li{font-size:.88rem}
 }
+
+/* Cuvantul accentuat din titluri primeste o linie cu aurul PLIN de brand.
+   Asa apare #E8B45A pe hartie deschisa la intensitate maxima, unde ca text ar da 1,66:1. */
+html[data-theme="light"] .g{
+  background-image:linear-gradient(var(--cta),var(--cta));
+  background-repeat:no-repeat;background-size:100% .14em;background-position:0 92%;
+  padding-bottom:.02em}
+html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:100% .11em}
 </style>
 </head>
 <body>
