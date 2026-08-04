@@ -13,7 +13,7 @@ html{scroll-behavior:smooth}
 html{background:var(--bg)}
 body{color:var(--cream);font-family:'Inter',sans-serif;line-height:1.6;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 /* Runda 2 (Taste): atmosfera cinematica - glow cald + grain fin, fixed + pointer-events none = perf-safe, leaga paginile de film */
-body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(125% 78% at 50% -8%, rgba(var(--gold-rgb),.07), transparent 56%)}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(125% 78% at 50% -8%, rgba(var(--cream-rgb),.035), transparent 56%)}
 body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 @media (max-width:760px){body::after{opacity:.03}}
 ::selection{background:var(--gold);color:var(--bg2)}
@@ -81,7 +81,7 @@ h2::after{content:'';display:block;width:38px;height:2px;background:rgba(var(--g
 .card h3 small{color:var(--cream-soft);font-family:'Inter';font-weight:400;font-size:.82rem}
 .plist{border-top:1px solid rgba(var(--gold-rgb),.28);margin:1rem 0 1.6rem}
 .prow{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.8rem .6rem;margin:0 -.6rem;border-bottom:1px solid rgba(var(--gold-rgb),.18);text-decoration:none;color:var(--cream);transition:background .25s ease}
-.prow:hover{background:rgba(var(--gold-rgb),.05)}
+.prow:hover{background:rgba(var(--cream-rgb),.04)}
 .prow .d{font-weight:600;font-size:1rem;line-height:1.35}
 .prow .d small{display:block;font-weight:400;color:var(--cream-soft);font-size:.85rem;margin-top:.15rem}
 .prow .d small b{color:var(--cream);font-weight:600}
@@ -225,7 +225,7 @@ body.mn-open{overflow:hidden}
 
 /* CINE RASPUNDE PENTRU CE CUMPERI */
 .resp{border:1px solid rgba(var(--gold-rgb),.34);border-radius:14px;padding:1.5rem 1.5rem 1.35rem;
-  margin:2.4rem 0 1.6rem;max-width:44rem;background:rgba(var(--gold-rgb),.05)}
+  margin:2.4rem 0 1.6rem;max-width:44rem;background:rgba(var(--cream-rgb),.03)}
 .resp h2{margin:0 0 .85rem;font-size:1.22rem}
 .resp p{margin:.6rem 0;font-size:1.02rem;line-height:1.62;color:var(--cream-soft);text-wrap:pretty}
 .resp p b{color:var(--cream)}
@@ -243,7 +243,7 @@ body.mn-open{overflow:hidden}
    cealalta e stinsa. Acelasi tipar pe care pagina il preda deja la limba activa. */
 .thm{display:inline-flex;align-items:center;gap:.12rem;padding:.14rem;
   border:1px solid rgba(var(--gold-rgb),.4);border-radius:999px;
-  background:rgba(var(--gold-rgb),.08);pointer-events:auto;flex:0 0 auto;vertical-align:middle}
+  background:rgba(var(--cream-rgb),.05);pointer-events:auto;flex:0 0 auto;vertical-align:middle}
 .thm .tb{display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;
   padding:0;border:0;border-radius:50%;background:transparent;color:rgba(var(--cream-rgb),.6);
   cursor:pointer;pointer-events:auto;transition:background-color .22s ease,color .22s ease}
@@ -270,11 +270,11 @@ body.mn-open .mn-tema{opacity:1;transform:none}
    Sus, in prima sectiune: numarul de telefon ca buton, apoi comutatorul cu restul canalelor.
    Comutatorul e element details nativ, deci merge si daca scriptul cade. */
 .dif{margin:1.5rem 0 .4rem;border:1px solid rgba(var(--gold-rgb),.44);border-radius:14px;
-  background:rgba(var(--gold-rgb),.07);overflow:hidden}
+  background:rgba(var(--cream-rgb),.035);overflow:hidden}
 .dif-tel{display:flex;align-items:center;gap:.85rem;padding:.85rem 1.1rem;text-decoration:none;
-  background:rgba(var(--gold-rgb),.13);
+  background:rgba(var(--cream-rgb),.075);
   border-bottom:1px solid rgba(var(--gold-rgb),.28);transition:background-color .22s ease}
-.dif-tel:hover{background:rgba(var(--gold-rgb),.2)}
+.dif-tel:hover{background:rgba(var(--cream-rgb),.11)}
 .dif-tel .tic{flex:0 0 auto;width:25px;height:25px;color:var(--gold)}
 .dif-tel .tw{display:flex;flex-direction:column;line-height:1.25}
 .dif-tel .tw b{font-family:'Inter';font-weight:700;font-size:1.28rem;letter-spacing:.02em;
@@ -285,7 +285,7 @@ body.mn-open .mn-tema{opacity:1;transform:none}
   padding:.85rem 1.1rem;font-family:'Inter';font-size:.94rem;line-height:1.45;color:var(--cream)}
 .dif-d>summary::-webkit-details-marker{display:none}
 .dif-d>summary::marker{content:""}
-.dif-d>summary:hover{background:rgba(var(--gold-rgb),.05)}
+.dif-d>summary:hover{background:rgba(var(--cream-rgb),.03)}
 .dif .ic{flex:0 0 auto;width:24px;height:24px;color:var(--gold)}
 .dif .tx{flex:1 1 auto}
 .dif .tx b{color:var(--gold);font-weight:700}
@@ -308,7 +308,7 @@ body.mn-open .mn-tema{opacity:1;transform:none}
   border:1px solid rgba(var(--gold-rgb),.42);border-radius:999px;font-family:'Inter';
   font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--gold);text-decoration:none;
   transition:background-color .22s ease}
-.dif-soc a:hover{background:rgba(var(--gold-rgb),.16)}
+.dif-soc a:hover{background:rgba(var(--cream-rgb),.09)}
 @media (max-width:600px){
   .dif-tel{padding:.78rem .9rem;gap:.65rem}
   .dif-tel .tw b{font-size:1.16rem}

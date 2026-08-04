@@ -249,7 +249,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 body.mn-open .mn-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 body.mn-open .mn-btn span:nth-child(2){opacity:0}
 body.mn-open .mn-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mn-panel{position:fixed;inset:0;z-index:8;padding:0;border-bottom:0;transform:none;background-color:var(--bg);background-image:radial-gradient(1100px 700px at 82% -5%, rgba(var(--gold-rgb),.09), transparent 60%),repeating-linear-gradient(0deg, rgba(var(--cream-rgb),.022) 0px, rgba(var(--cream-rgb),.022) 1px, transparent 1px, transparent 96px),repeating-linear-gradient(90deg, rgba(var(--cream-rgb),.022) 0px, rgba(var(--cream-rgb),.022) 1px, transparent 1px, transparent 96px);opacity:0;visibility:hidden;overflow-y:auto;overscroll-behavior:contain;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s .5s}
+.mn-panel{position:fixed;inset:0;z-index:8;padding:0;border-bottom:0;transform:none;background-color:var(--bg);background-image:radial-gradient(1100px 700px at 82% -5%, rgba(var(--cream-rgb),.05), transparent 60%),repeating-linear-gradient(0deg, rgba(var(--cream-rgb),.022) 0px, rgba(var(--cream-rgb),.022) 1px, transparent 1px, transparent 96px),repeating-linear-gradient(90deg, rgba(var(--cream-rgb),.022) 0px, rgba(var(--cream-rgb),.022) 1px, transparent 1px, transparent 96px);opacity:0;visibility:hidden;overflow-y:auto;overscroll-behavior:contain;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s .5s}
 body.mn-open .mn-panel{opacity:1;visibility:visible;transform:none;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s 0s}
 .mn-in{max-width:56rem;margin:0 auto;padding:5rem clamp(1.4rem,6vw,4rem) 2.6rem}
 .mn-k{font-family:'Inter';font-weight:700;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);opacity:0;transition:opacity .5s ease .08s}
@@ -315,7 +315,7 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
 #load .lg-r{display:block;font-family:'Inter';font-weight:600;font-size:.66rem;letter-spacing:.52em;text-indent:.52em;color:var(--gold);margin-top:.5rem}
 @keyframes sunbreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
 #load.err .sun{animation:none}
-#load.err .lg-bar{fill:#c97a5a}
+#load.err .lg-bar{fill:var(--gold)}
 @media (prefers-reduced-motion: reduce){ #load .sun{animation:none} #load .ring{transition:none} }
 
 #chips{position:fixed;top:4.2rem;left:.8rem;right:.8rem;z-index:3;display:none;flex-wrap:wrap;gap:.45rem;pointer-events:none}
@@ -650,7 +650,7 @@ body.cov-in #cov .cv{opacity:1;transform:none}
    cealalta e stinsa. Acelasi tipar pe care pagina il preda deja la limba activa. */
 .thm{display:inline-flex;align-items:center;gap:.12rem;padding:.14rem;
   border:1px solid rgba(var(--gold-rgb),.4);border-radius:999px;
-  background:rgba(var(--gold-rgb),.08);pointer-events:auto;flex:0 0 auto;vertical-align:middle}
+  background:rgba(var(--cream-rgb),.05);pointer-events:auto;flex:0 0 auto;vertical-align:middle}
 .thm .tb{display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;
   padding:0;border:0;border-radius:50%;background:transparent;color:rgba(var(--cream-rgb),.6);
   cursor:pointer;pointer-events:auto;transition:background-color .22s ease,color .22s ease}
@@ -678,11 +678,11 @@ body.mn-open .mn-tema{opacity:1;transform:none}
    Sus, in prima sectiune: numarul de telefon ca buton, apoi comutatorul cu restul canalelor.
    Comutatorul e element details nativ, deci merge si daca scriptul cade. */
 .dif{margin:1.5rem 0 .4rem;border:1px solid rgba(var(--gold-rgb),.44);border-radius:14px;
-  background:rgba(var(--gold-rgb),.07);overflow:hidden}
+  background:rgba(var(--cream-rgb),.035);overflow:hidden}
 .dif-tel{display:flex;align-items:center;gap:.85rem;padding:.85rem 1.1rem;text-decoration:none;
-  background:rgba(var(--gold-rgb),.13);
+  background:rgba(var(--cream-rgb),.075);
   border-bottom:1px solid rgba(var(--gold-rgb),.28);transition:background-color .22s ease}
-.dif-tel:hover{background:rgba(var(--gold-rgb),.2)}
+.dif-tel:hover{background:rgba(var(--cream-rgb),.11)}
 .dif-tel .tic{flex:0 0 auto;width:25px;height:25px;color:var(--gold)}
 .dif-tel .tw{display:flex;flex-direction:column;line-height:1.25}
 .dif-tel .tw b{font-family:'Inter';font-weight:700;font-size:1.28rem;letter-spacing:.02em;
@@ -693,7 +693,7 @@ body.mn-open .mn-tema{opacity:1;transform:none}
   padding:.85rem 1.1rem;font-family:'Inter';font-size:.94rem;line-height:1.45;color:var(--cream)}
 .dif-d>summary::-webkit-details-marker{display:none}
 .dif-d>summary::marker{content:""}
-.dif-d>summary:hover{background:rgba(var(--gold-rgb),.05)}
+.dif-d>summary:hover{background:rgba(var(--cream-rgb),.03)}
 .dif .ic{flex:0 0 auto;width:24px;height:24px;color:var(--gold)}
 .dif .tx{flex:1 1 auto}
 .dif .tx b{color:var(--gold);font-weight:700}
@@ -716,7 +716,7 @@ body.mn-open .mn-tema{opacity:1;transform:none}
   border:1px solid rgba(var(--gold-rgb),.42);border-radius:999px;font-family:'Inter';
   font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--gold);text-decoration:none;
   transition:background-color .22s ease}
-.dif-soc a:hover{background:rgba(var(--gold-rgb),.16)}
+.dif-soc a:hover{background:rgba(var(--cream-rgb),.09)}
 @media (max-width:600px){
   .dif-tel{padding:.78rem .9rem;gap:.65rem}
   .dif-tel .tw b{font-size:1.16rem}
