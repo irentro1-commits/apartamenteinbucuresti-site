@@ -347,7 +347,11 @@ html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:
    31,5em dau 65 de caractere pe rand, la orice marime de text. Deci 32em pe proza.
    `ch` ar fi fost gresit: `ch` e latimea cifrei zero, adica 0,6em la Inter,
    deci 66ch insemna 40em, adica randuri de 82 de caractere. Masurat, nu ghicit. */
-h1,h2,h3,h4,h5,h6,.lead,.big,.dif-d>summary,.faq-q,.card h3{text-wrap:balance}
+/* balance DOAR pe titluri si etichete scurte: peste 6 randuri Chromium il ignora
+   (MDN, text-wrap-style), iar daca a castigat cascada in fata lui `pretty`, blocul
+   ramane fara amandoua. Gasit pe /apartamente/, un .lead de 14 randuri pe telefon. */
+h1,h2,h3,h4,h5,h6,.dif-d>summary,.faq-q,.card h3{text-wrap:balance}
+.lead,.big{text-wrap:pretty}
 p,li,figcaption,blockquote,dd,dt,.hint,.cm,.after{text-wrap:pretty}
 main p,main blockquote,main dd,main figcaption{max-width:32em}
 main .lead{max-width:34em}
