@@ -58,12 +58,12 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-ext-s2.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-s2.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--cta:#E8B45A;--cta-ink:#1C1710;--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--gold-lg:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12;color-scheme:dark}
+:root{--logo-ink:#FFFFFF;--logo-gold:#E9B12B;--cta:#E9B12B;--cta-ink:#1C1710;--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E9B12B;--gold-lg:#E9B12B;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:233,177,43;--bg-rgb:20,16,11;--bg2-rgb:26,20,12;color-scheme:dark}
 /* TEMA DESCHISA: hartie crem, cerneala, auriu inchis. Contraste calculate: 15,6:1 text, 7,4:1 secundar, 5,0:1 auriu. */
-html[data-theme="light"]{--cta:#E8B45A;--cta-ink:#1C1710;--cream:#1C1710;--cream-soft:#574C3E;--gold:#966303;--gold-lg:#AE7E0A;--bg:#F5F0E1;--bg2:#EDE6D4;--cream-rgb:28,23,16;--soft-rgb:87,76,62;--gold-rgb:150,99,3;--bg-rgb:245,240,225;--bg2-rgb:237,230,212;color-scheme:light}
+html[data-theme="light"]{--logo-ink:#262320;--logo-gold:#E9B12B;--cta:#E9B12B;--cta-ink:#1C1710;--cream:#1C1710;--cream-soft:#574C3E;--gold:#966303;--gold-lg:#AE7E0A;--bg:#F5F0E1;--bg2:#EDE6D4;--cream-rgb:28,23,16;--soft-rgb:87,76,62;--gold-rgb:150,99,3;--bg-rgb:245,240,225;--bg2-rgb:237,230,212;color-scheme:light}
 /* Coperta ramane cinematica in ambele teme: fotografie inchisa, text crem peste ea. Antetul imprumuta
    paleta inchisa doar cat timp coperta e sus (body.cov-on), apoi revine la tema aleasa. */
-#cov,body.cov-on header,body.cov-on #rail,body.cov-on #hint,body.cov-on .brand{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12}
+#cov,body.cov-on header,body.cov-on #rail,body.cov-on #hint,body.cov-on .brand{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E9B12B;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:233,177,43;--bg-rgb:20,16,11;--bg2-rgb:26,20,12}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none;background:var(--bg)}
 body{font-family:'Inter',sans-serif;color:var(--cream);touch-action:none}
 ::selection{background:var(--cta);color:var(--cta-ink)}
@@ -514,24 +514,24 @@ body.cov-in #cov .cv{opacity:1;transform:none}
 #cov .cle{font-family:'Inter';font-size:clamp(1.25rem, 1.9vw, 1.9rem);font-weight:400;line-height:1.34;color:var(--cream-soft);margin-top:1.35rem;max-width:23.5em;text-shadow:0 2px 20px rgba(0,0,0,.72);text-wrap:pretty}
 #cov .cle b{color:var(--cream);font-weight:600}
 #cov .cbtns{display:flex;align-items:center;gap:.9rem;margin-top:1.9rem;flex-wrap:wrap}
-#cov .cwa{pointer-events:auto;display:inline-flex;align-items:center;gap:.6rem;font-family:'Inter';font-weight:600;font-size:1.12rem;padding:1rem 1.9rem;border-radius:999px;background:var(--cta);color:var(--cta-ink);text-decoration:none;box-shadow:0 10px 34px rgba(232,180,90,.28);position:relative;overflow:hidden;transition:transform .15s ease,box-shadow .3s ease}
+#cov .cwa{pointer-events:auto;display:inline-flex;align-items:center;gap:.6rem;font-family:'Inter';font-weight:600;font-size:1.12rem;padding:1rem 1.9rem;border-radius:999px;background:var(--cta);color:var(--cta-ink);text-decoration:none;box-shadow:0 10px 34px rgba(233,177,43,.28);position:relative;overflow:hidden;transition:transform .15s ease,box-shadow .3s ease}
 #cov .cwa::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .55s ease}
-#cov .cwa:hover{box-shadow:0 14px 44px rgba(232,180,90,.42)}
+#cov .cwa:hover{box-shadow:0 14px 44px rgba(233,177,43,.42)}
 #cov .cwa:hover::after{left:125%}
 #cov .cwa:active{transform:scale(.965)}
-#cov .cap{pointer-events:auto;display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95rem 1.7rem;border-radius:999px;border:1px solid rgba(232,180,90,.55);color:var(--cream);text-decoration:none;background:rgba(16,12,7,.38);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:border-color .3s ease,transform .15s ease}
-#cov .cap:hover{border-color:rgba(232,180,90,.95)}
+#cov .cap{pointer-events:auto;display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95rem 1.7rem;border-radius:999px;border:1px solid rgba(233,177,43,.55);color:var(--cream);text-decoration:none;background:rgba(16,12,7,.38);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:border-color .3s ease,transform .15s ease}
+#cov .cap:hover{border-color:rgba(233,177,43,.95)}
 #cov .cap:active{transform:scale(.96)}
 #cov .ctr{font-family:'Inter';font-size:clamp(.92rem, .95vw, 1.02rem);color:rgba(245,240,225,.76);margin-top:1.15rem;text-shadow:0 1px 12px rgba(0,0,0,.7)}
 #cov .cl-band{left:calc(24px + 1.55rem);right:calc(24px + 1.55rem);bottom:44px;transform:translate3d(calc(var(--mx) * 7px), calc(var(--my) * 7px - var(--cp) * 54px), 0);opacity:max(0, calc(1 - var(--cp) * 1.55))}
 #cov .bandin{display:flex;background:rgba(16,12,7,.32);border:1px solid rgba(245,240,225,.09);border-radius:14px;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:0 18px 50px rgba(0,0,0,.35)}
 #cov .cb{flex:1;text-align:center;padding:1.05rem .6rem .95rem;min-width:0}
-#cov .cb + .cb{border-left:1px solid rgba(232,180,90,.16)}
+#cov .cb + .cb{border-left:1px solid rgba(233,177,43,.16)}
 #cov .cb .v{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.3rem, 1.75vw, 1.8rem);line-height:1;color:var(--cream);text-shadow:0 2px 18px rgba(0,0,0,.55);white-space:nowrap}
 #cov .cb .l{font-family:'Inter';font-weight:600;font-size:clamp(.6rem, .58vw, .68rem);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:.55rem}
 #cov .cl-card{top:6rem;right:clamp(1.8rem, 5vw, 5.4rem);width:clamp(250px, 21vw, 318px);transform:translate3d(calc(var(--mx) * 14px), calc(var(--my) * 14px - var(--cp) * 92px), 0);opacity:max(0, calc(1 - var(--cp) * 1.8))}
-#cov .cardin{pointer-events:auto;display:block;text-decoration:none;background:rgba(18,13,8,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(232,180,90,.32);border-radius:16px;padding:1.05rem 1.05rem 1.15rem;box-shadow:0 24px 60px rgba(0,0,0,.45);transition:border-color .3s ease,transform .3s ease}
-#cov .cardin:hover{border-color:rgba(232,180,90,.85);transform:translateY(-3px)}
+#cov .cardin{pointer-events:auto;display:block;text-decoration:none;background:rgba(18,13,8,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(233,177,43,.32);border-radius:16px;padding:1.05rem 1.05rem 1.15rem;box-shadow:0 24px 60px rgba(0,0,0,.45);transition:border-color .3s ease,transform .3s ease}
+#cov .cardin:hover{border-color:rgba(233,177,43,.85);transform:translateY(-3px)}
 #cov .clb{font-family:'Inter';font-weight:700;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 #cov .ph{display:flex;margin-top:.85rem;height:86px}
 #cov .ph img{width:37%;height:86px;object-fit:cover;border:3px solid rgba(247,242,228,.95);border-radius:4px;box-shadow:0 10px 26px rgba(0,0,0,.5)}
@@ -539,7 +539,7 @@ body.cov-in #cov .cv{opacity:1;transform:none}
 #cov .ph img:nth-child(2){transform:rotate(1.6deg) translateY(-3px);margin-left:-9%;z-index:2}
 #cov .ph img:nth-child(3){transform:rotate(-1.1deg);margin-left:-9%;z-index:3}
 #cov .ct{font-family:'Fraunces',serif;font-weight:600;font-size:1.28rem;color:var(--cream);margin-top:.95rem}
-#cov .cgo{display:inline-block;font-family:'Inter';font-weight:600;font-size:.88rem;color:var(--gold);margin-top:.45rem;border-bottom:1px solid rgba(232,180,90,.45);padding-bottom:.12em;transition:border-color .3s ease}
+#cov .cgo{display:inline-block;font-family:'Inter';font-weight:600;font-size:.88rem;color:var(--gold);margin-top:.45rem;border-bottom:1px solid rgba(233,177,43,.45);padding-bottom:.12em;transition:border-color .3s ease}
 #cov .cardin:hover .cgo{border-color:var(--gold)}
 #cov .cl-idx{top:23.4rem;right:clamp(1.8rem, 5vw, 5.4rem);display:flex;flex-direction:column;align-items:flex-end;transform:translate3d(calc(var(--mx) * 12px), calc(var(--my) * 12px - var(--cp) * 84px), 0);opacity:max(0, calc(1 - var(--cp) * 1.8))}
 #cov .il{font-family:'Inter';font-weight:700;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.92;margin-bottom:.5rem;text-shadow:0 1px 10px rgba(0,0,0,.7)}
@@ -547,7 +547,7 @@ body.cov-in #cov .cv{opacity:1;transform:none}
 #cov .ib{pointer-events:auto;display:flex;align-items:center;justify-content:flex-end;gap:.7rem;background:none;border:0;cursor:pointer;padding:.42rem 0}
 #cov .ib .no{font-family:'Inter';font-weight:600;font-size:.68rem;letter-spacing:.12em;color:var(--gold)}
 #cov .ib .nm2{font-family:'Inter';font-weight:500;font-size:.98rem;color:var(--cream);text-shadow:0 1px 12px rgba(0,0,0,.7);transition:color .25s ease}
-#cov .ib .lnh{width:20px;height:1px;background:rgba(232,180,90,.5);transition:width .3s cubic-bezier(.22,.6,.2,1),background .3s ease}
+#cov .ib .lnh{width:20px;height:1px;background:rgba(233,177,43,.5);transition:width .3s cubic-bezier(.22,.6,.2,1),background .3s ease}
 #cov .ib:hover .nm2,#cov .ib:focus-visible .nm2{color:var(--gold)}
 #cov .ib:hover .lnh,#cov .ib:focus-visible .lnh{width:44px;background:var(--gold)}
 #cov .cl-inv{left:0;right:0;bottom:clamp(8.6rem, 16vh, 10.4rem);text-align:center;transform:translate3d(calc(var(--mx) * 5px), calc(var(--my) * 5px - var(--cp) * 26px), 0);opacity:max(0, calc(1 - var(--cp) * 2.4))}
@@ -611,8 +611,8 @@ body.cov-in #cov .cv{opacity:1;transform:none}
   #cov .bandin{display:grid;grid-template-columns:1fr 1fr;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(16,12,7,.55)}
   #cov .cb{padding:.95rem .5rem .85rem}
   #cov .cb + .cb{border-left:0}
-  #cov .cb:nth-child(2n){border-left:1px solid rgba(232,180,90,.16)}
-  #cov .cb:nth-child(n+3){border-top:1px solid rgba(232,180,90,.16)}
+  #cov .cb:nth-child(2n){border-left:1px solid rgba(233,177,43,.16)}
+  #cov .cb:nth-child(n+3){border-top:1px solid rgba(233,177,43,.16)}
   #cov .cb .v{font-size:1.3rem}
   #cov .cb .l{font-size:.6rem;letter-spacing:.16em}
   #cov .cardin{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(18,13,8,.72)}
@@ -752,7 +752,7 @@ body.mn-open .mn-tema{opacity:1;transform:none}
 }
 
 /* Cuvantul accentuat din titluri primeste o linie cu aurul PLIN de brand.
-   Asa apare #E8B45A pe hartie deschisa la intensitate maxima, unde ca text ar da 1,66:1. */
+   Asa apare #E9B12B pe hartie deschisa la intensitate maxima, unde ca text ar da 1,66:1. */
 html[data-theme="light"] .g{
   background-image:linear-gradient(var(--cta),var(--cta));
   background-repeat:no-repeat;background-size:100% .14em;background-position:0 92%;
@@ -821,7 +821,7 @@ html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:
 </div>
 
 <header>
-  <div class="brand" role="img" aria-label="Ilioara Residence"><svg class="lg" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="13" fill="none" stroke="#F5F0E1" stroke-width="5"/><rect class="lg-bar" x="14" y="17" width="13" height="30" rx="4" fill="#E8B45A"/><rect x="32" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="38" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="44" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="50" y="17" width="3.5" height="30" fill="#F5F0E1"/></svg><span class="bword"><b>Ilioara</b> Residence</span></div>
+  <div class="brand" role="img" aria-label="Ilioara Residence"><svg class="lg" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true"><rect x="1.83" y="1.83" width="60.34" height="60.34" rx="8.23" fill="none" stroke="#FFFFFF" stroke-width="3.89"/><rect class="lg-bar" x="10.06" y="10.06" width="14.63" height="43.89" rx="2.74" fill="#E9B12B"/><rect x="29.26" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="36.11" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="42.97" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="49.83" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/></svg><span class="bword"><b>Ilioara</b> Residence</span></div>
   <div class="hrr"><nav class="hlgs" aria-label="שפה וערכת נושא"><a href="/">RO</a><span class="sep">·</span><a href="/en/">EN</a><span class="sep">·</span><a href="/he/" lang="he">HE</a><span class="sep">·</span><a href="/ar/" lang="ar">AR</a><span class="sep">·</span><a href="/uk/" lang="uk">UA</a><span class="sep">·</span><span class="thm" role="group" aria-label="ערכת נושא"><button class="tb" type="button" data-tema="dark" aria-pressed="true" title="ערכת נושא כהה" aria-label="ערכת נושא כהה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg></button><button class="tb" type="button" data-tema="light" aria-pressed="false" title="ערכת נושא בהירה" aria-label="ערכת נושא בהירה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.1"/><path d="M12 2.3v2M12 19.7v2M2.3 12h2M19.7 12h2M5.1 5.1l1.4 1.4M17.5 17.5l1.4 1.4M5.1 18.9l1.4-1.4M17.5 6.5l1.4-1.4"/></svg></button></span></nav><div id="hcta"><a class="hlink" href="/he/apartamente/">דירות ומחירים</a><a class="hwa" href="https://wa.me/40774096700?text=%D7%A9%D7%9C%D7%95%D7%9D%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%A8%D7%95%D7%AA%20%D7%91%D7%A8%D7%97%D7%95%D7%91%20Aleea%20Eprubetei."><svg class="wa" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a></div>
   <button type="button" id="mnBtn" class="mn-btn" aria-expanded="false" aria-label="תפריט"><span></span><span></span><span></span></button></div>
 </header>
@@ -966,7 +966,7 @@ html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:
     </div>
   </div>
 </div>
-<div id="load"><div class="ring" id="ldring"><span class="sun"><svg class="lg" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="13" fill="none" stroke="#F5F0E1" stroke-width="5"/><rect class="lg-bar" x="14" y="17" width="13" height="30" rx="4" fill="#E8B45A"/><rect x="32" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="38" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="44" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="50" y="17" width="3.5" height="30" fill="#F5F0E1"/></svg></span></div><div class="lg-word"><span class="lg-n">ILIOARA</span><span class="lg-r">RESIDENCE</span></div><div class="p" id="pct">טוען 0%</div></div>
+<div id="load"><div class="ring" id="ldring"><span class="sun"><svg class="lg" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><rect x="1.83" y="1.83" width="60.34" height="60.34" rx="8.23" fill="none" stroke="#FFFFFF" stroke-width="3.89"/><rect class="lg-bar" x="10.06" y="10.06" width="14.63" height="43.89" rx="2.74" fill="#E9B12B"/><rect x="29.26" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="36.11" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="42.97" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="49.83" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/></svg></span></div><div class="lg-word"><span class="lg-n">ILIOARA</span><span class="lg-r">RESIDENCE</span></div><div class="p" id="pct">טוען 0%</div></div>
 <script>
 (function(){
   'use strict';
