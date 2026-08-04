@@ -318,3 +318,18 @@ body.mn-open .mn-tema{opacity:1;transform:none}
   .dif-in{padding:.2rem .9rem 1rem}
   .dif-in li{font-size:.88rem}
 }
+
+/* ===== PLANUL APARTAMENTULUI (4 aug 2026) =====
+   Desenul e al dezvoltatorului, foaia e a noastra, construita din cod. */
+.plan{margin:1.1rem 0 2rem;padding:0}
+.plan a{display:block;border:1px solid rgba(var(--gold-rgb),.32);border-radius:12px;
+  overflow:hidden;background:#F5F0E1;transition:border-color .25s ease}
+.plan a:hover{border-color:rgba(var(--gold-rgb),.7)}
+.plan img{display:block;width:100%;height:auto}
+.plan figcaption{margin-top:.75rem;font-family:'Inter';font-size:.88rem;line-height:1.6;
+  color:rgba(var(--cream-rgb),.72)}
+.plan figcaption b{color:var(--cream);font-weight:600}
+.plan .lupa{display:inline-block;margin-top:.5rem;font-family:'Inter';font-weight:600;
+  font-size:.8rem;letter-spacing:.02em;color:var(--gold);text-decoration:none}
+.plan .lupa:hover{text-decoration:underline}
+@media (max-width:600px){.plan figcaption{font-size:.83rem}}

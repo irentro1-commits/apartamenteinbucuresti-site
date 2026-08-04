@@ -15,6 +15,9 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+/planuri/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /.well-known/security.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=86400
