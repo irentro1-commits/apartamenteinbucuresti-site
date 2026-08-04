@@ -696,6 +696,45 @@ html[data-theme="light"] .mn-tema .tb-m[data-tema="light"]{color:var(--gold);fon
 
 .mn-tema{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1) .58s,transform .55s cubic-bezier(.16,1,.3,1) .58s}
 body.mn-open .mn-tema{opacity:1;transform:none}
+
+/* ===== BLOCUL DE DIFERENTIERE (4 aug 2026) =====
+   Sus, in prima sectiune, inchis pe un rand si deschis la clic. Element details nativ, deci zero JavaScript. */
+.dif{margin:1.5rem 0 .4rem;border:1px solid rgba(var(--gold-rgb),.44);border-radius:14px;
+  background:rgba(var(--gold-rgb),.07)}
+.dif>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.85rem;
+  padding:.9rem 1.1rem;font-family:'Inter';font-size:.95rem;line-height:1.45;color:var(--cream)}
+.dif>summary::-webkit-details-marker{display:none}
+.dif>summary::marker{content:""}
+.dif>summary:hover{background:rgba(var(--gold-rgb),.05);border-radius:13px}
+.dif .ic{flex:0 0 auto;width:25px;height:25px;color:var(--gold)}
+.dif .tx{flex:1 1 auto}
+.dif .tx b{color:var(--gold);font-weight:700}
+.dif .hn{display:block;margin-top:.2rem;font-size:.7rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(var(--cream-rgb),.55)}
+.dif .ch{flex:0 0 auto;width:17px;height:17px;color:var(--gold);
+  transition:transform .32s cubic-bezier(.23,1,.32,1)}
+.dif[open] .ch{transform:rotate(180deg)}
+.dif-in{padding:.2rem 1.1rem 1.15rem;border-top:1px solid rgba(var(--gold-rgb),.2);margin-top:.1rem}
+.dif-in h3{margin:1rem 0 0;font-family:'Inter';font-weight:700;font-size:.7rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold)}
+.dif-in ul{list-style:none;padding:0;margin:.9rem 0 0;display:grid;gap:.72rem}
+.dif-in li{position:relative;padding-inline-start:1.45rem;font-family:'Inter';font-size:.93rem;
+  line-height:1.6;color:rgba(var(--cream-rgb),.88)}
+.dif-in li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;height:7px;
+  border-radius:50%;background:var(--gold)}
+.dif-in li b{color:var(--gold);font-weight:700}
+.dif-soc{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.15rem}
+.dif-soc a{display:inline-flex;align-items:center;padding:.38rem .8rem;
+  border:1px solid rgba(var(--gold-rgb),.42);border-radius:999px;font-family:'Inter';
+  font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--gold);text-decoration:none;
+  transition:background-color .22s ease}
+.dif-soc a:hover{background:rgba(var(--gold-rgb),.16)}
+@media (max-width:600px){
+  .dif>summary{padding:.8rem .9rem;gap:.65rem;font-size:.89rem}
+  .dif .ic{width:22px;height:22px}
+  .dif-in{padding:.2rem .9rem 1rem}
+  .dif-in li{font-size:.89rem}
+}
 </style>
 </head>
 <body>
@@ -874,7 +913,7 @@ body.mn-open .mn-tema{opacity:1;transform:none}
       <div class="ov-h">3 חדרים · 3 זמינות</div>
       <div class="ov-row"><span class="d">קומת קרקע · דירה 3<small><b>72,1 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">182.710 EUR<small>151.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 1 · דירה 4<small><b>85,5 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">203.280 EUR<small>168.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 3 · דירה 12<small><b>86,1 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">203.280 EUR<small>168.000 EUR + TVA 21%</small></span></div>
       <div class="ov-h">2 חדרים · 9 זמינות</div>
-      <div class="ov-row"><span class="d">קומה 1 · דירה 7<small><b>62,1 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">147.620 EUR<small>122.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 4 · דירה 19<small><b>62 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">148.830 EUR<small>123.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 6 · דירה 25<small><b>67,6 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">162.140 EUR<small>134.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 6 · דירה 26<small><b>49,2 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">130.075 EUR<small>107.500 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 6 · דירה 27<small><b>62,1 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">151.250 EUR<small>125.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 7 · דירה 28<small><b>71,25 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">164.560 EUR<small>136.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 7 · דירה 29<small><b>67,8 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">163.350 EUR<small>135.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 7 · דירה 30<small><b>63,05 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">163.350 EUR<small>135.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 7 · דירה 31<small><b>65,9 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">165.165 EUR<small>136.500 EUR + TVA 21%</small></span></div>
+      <div class="ov-row"><span class="d">קומה 1 · דירה 7<small><b>62,1 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">147.620 EUR<small>122.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 4 · דירה 19<small><b>62 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">148.830 EUR<small>123.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 6 · דירה 25<small><b>67,6 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">162.140 EUR<small>134.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 6 · דירה 26<small><b>49,2 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">130.075 EUR<small>107.500 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 6 · דירה 27<small><b>62,1 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">151.250 EUR<small>125.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 7 · דירה 28<small><b>71,1 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">164.560 EUR<small>136.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 7 · דירה 29<small><b>67,8 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">163.350 EUR<small>135.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 7 · דירה 30<small><b>66,75 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">163.350 EUR<small>135.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">קומה 7 · דירה 31<small><b>65,9 mp סה״כ</b> · חלוקה גמישה</small></span><span class="p">165.165 EUR<small>136.500 EUR + TVA 21%</small></span></div>
       <div class="ov-h">חניה</div>
       <div class="ov-block">חניה כפולה מסוג Klauss, 2 מקומות: <b>30.250 EUR</b> כולל מע״מ 21%<br>מקום חניה רגיל: <b>24.200 EUR</b> כולל מע״מ 21%<br>לשלושת הרוכשים הראשונים: חניה להשכרה מ-<b>96,80 EUR</b> כולל מע״מ 21% לחודש.</div>
       <div class="ov-h">שריון</div>
