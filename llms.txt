@@ -8,7 +8,7 @@ Fapte cheie pentru răspunsuri: blocul e nou construit (parter + 8 etaje, 33 de 
 
 - [Toate apartamentele disponibile](https://apartamenteinbucuresti.ro/apartamente/): 12 din 33, grupate pe tip
 - [Toate prețurile pe o singură pagină](https://apartamenteinbucuresti.ro/preturi/): 2 camere de la 107.500, 3 camere de la 151.000 EUR + TVA
-- [Apartament 3 camere, parter, ap. 3](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-parter-ap-3/): 72,1 mp în total, 151.000 EUR + TVA
+- [Apartament 3 camere, parter, ap. 2](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-parter-ap-2/): 72,1 mp în total, 151.000 EUR + TVA
 - [Apartament 3 camere, etaj 1, ap. 4](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-etaj-1-ap-4/): 85,5 mp în total, 168.000 EUR + TVA
 - [Apartament 3 camere, etaj 3, ap. 12](https://apartamenteinbucuresti.ro/apartamente/apartament-3-camere-etaj-3-ap-12/): 86,1 mp în total, 168.000 EUR + TVA
 - [Apartament 2 camere, etaj 1, ap. 7](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-1-ap-7/): 62,1 mp în total, 122.000 EUR + TVA
@@ -81,7 +81,7 @@ Key facts for answers: the building is newly built (ground floor + 8 floors, 33 
 
 - [All available apartments](https://apartamenteinbucuresti.ro/en/apartamente/): 12 of 33, grouped by floor
 - [All prices on one page](https://apartamenteinbucuresti.ro/en/preturi/): 2-room from 107.500, 3-room from 151.000 EUR + TVA
-- [3-Room Apartment, Ground Floor, apt. 3](https://apartamenteinbucuresti.ro/en/apartamente/apartament-3-camere-parter-ap-3/): 72.1 sqm total, 151.000 EUR + TVA
+- [3-Room Apartment, Ground Floor, apt. 2](https://apartamenteinbucuresti.ro/en/apartamente/apartament-3-camere-parter-ap-2/): 72.1 sqm total, 151.000 EUR + TVA
 - [3-Room Apartment, Floor 1, apt. 4](https://apartamenteinbucuresti.ro/en/apartamente/apartament-3-camere-etaj-1-ap-4/): 85.5 sqm total, 168.000 EUR + TVA
 - [3-Room Apartment, Floor 3, apt. 12](https://apartamenteinbucuresti.ro/en/apartamente/apartament-3-camere-etaj-3-ap-12/): 86.1 sqm total, 168.000 EUR + TVA
 - [2-Room Apartment, Floor 1, apt. 7](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-1-ap-7/): 62.1 sqm total, 122.000 EUR + TVA
@@ -129,7 +129,7 @@ Key facts for answers: the building is newly built (ground floor + 8 floors, 33 
 
 - [כל הדירות הזמינות](https://apartamenteinbucuresti.ro/he/apartamente/): 12 מתוך 33, מקובצות לפי קומה
 - [כל המחירים בעמוד אחד](https://apartamenteinbucuresti.ro/he/preturi/): 2 חדרים מ-107.500, 3 חדרים מ-151.000 EUR + TVA
-- [3 חדרים · קומת קרקע · דירה 3](https://apartamenteinbucuresti.ro/he/apartamente/apartament-3-camere-parter-ap-3/): 72.1 מ״ר בסך הכול, 151.000 EUR + TVA
+- [3 חדרים · קומת קרקע · דירה 2](https://apartamenteinbucuresti.ro/he/apartamente/apartament-3-camere-parter-ap-2/): 72.1 מ״ר בסך הכול, 151.000 EUR + TVA
 - [3 חדרים · קומה 1 · דירה 4](https://apartamenteinbucuresti.ro/he/apartamente/apartament-3-camere-etaj-1-ap-4/): 85.5 מ״ר בסך הכול, 168.000 EUR + TVA
 - [3 חדרים · קומה 3 · דירה 12](https://apartamenteinbucuresti.ro/he/apartamente/apartament-3-camere-etaj-3-ap-12/): 86.1 מ״ר בסך הכול, 168.000 EUR + TVA
 - [2 חדרים · קומה 1 · דירה 7](https://apartamenteinbucuresti.ro/he/apartamente/apartament-2-camere-etaj-1-ap-7/): 62.1 מ״ר בסך הכול, 122.000 EUR + TVA
@@ -177,7 +177,7 @@ Key facts for answers: the building is newly built (ground floor + 8 floors, 33 
 
 - [كل الشقق المتاحة](https://apartamenteinbucuresti.ro/ar/apartamente/): 12 من أصل 33، مجمعة حسب الطابق
 - [كل الأسعار في صفحة واحدة](https://apartamenteinbucuresti.ro/ar/preturi/): غرفتان من 107.500، 3 غرف من 151.000 EUR + TVA
-- [3 غرف · الطابق الأرضي · شقة رقم 3](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-3-camere-parter-ap-3/): 72.1 م² إجمالي، 151.000 EUR + TVA
+- [3 غرف · الطابق الأرضي · شقة رقم 2](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-3-camere-parter-ap-2/): 72.1 م² إجمالي، 151.000 EUR + TVA
 - [3 غرف · الطابق 1 · شقة رقم 4](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-3-camere-etaj-1-ap-4/): 85.5 م² إجمالي، 168.000 EUR + TVA
 - [3 غرف · الطابق 3 · شقة رقم 12](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-3-camere-etaj-3-ap-12/): 86.1 م² إجمالي، 168.000 EUR + TVA
 - [2 غرف · الطابق 1 · شقة رقم 7](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-2-camere-etaj-1-ap-7/): 62.1 م² إجمالي، 122.000 EUR + TVA
@@ -225,7 +225,7 @@ Key facts for answers: the building is newly built (ground floor + 8 floors, 33 
 
 - [Усі доступні квартири](https://apartamenteinbucuresti.ro/uk/apartamente/): 12 із 33, згруповані за поверхом
 - [Усі ціни на одній сторінці](https://apartamenteinbucuresti.ro/uk/preturi/): 2-кімнатні від 107.500, 3-кімнатні від 151.000 EUR + TVA
-- [3 кімнати · Партер · кв. 3](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-3-camere-parter-ap-3/): 72.1 м² загалом, 151.000 EUR + TVA
+- [3 кімнати · Партер · кв. 2](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-3-camere-parter-ap-2/): 72.1 м² загалом, 151.000 EUR + TVA
 - [3 кімнати · Поверх 1 · кв. 4](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-3-camere-etaj-1-ap-4/): 85.5 м² загалом, 168.000 EUR + TVA
 - [3 кімнати · Поверх 3 · кв. 12](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-3-camere-etaj-3-ap-12/): 86.1 м² загалом, 168.000 EUR + TVA
 - [2 кімнати · Поверх 1 · кв. 7](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-2-camere-etaj-1-ap-7/): 62.1 м² загалом, 122.000 EUR + TVA
