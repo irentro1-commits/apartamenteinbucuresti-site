@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<script>(function(){var d=document.documentElement;try{var t=localStorage.getItem("tema")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");d.setAttribute("data-theme",t)}catch(e){d.setAttribute("data-theme","dark")}document.addEventListener("click",function(e){var b=e.target&&e.target.closest?e.target.closest(".thm,.thm-m"):null;if(!b)return;var n=d.getAttribute("data-theme")==="light"?"dark":"light";d.setAttribute("data-theme",n);try{localStorage.setItem("tema",n)}catch(x){}Array.prototype.forEach.call(document.querySelectorAll(".thm,.thm-m"),function(y){y.setAttribute("aria-pressed",n==="light")})});})();</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7X6VKM6PB"></script>
 <script>
@@ -55,10 +57,15 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-ext-s2.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-s2.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b}
+:root{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12;color-scheme:dark}
+/* TEMA DESCHISA: hartie crem, cerneala, auriu inchis. Contraste calculate: 15,6:1 text, 7,4:1 secundar, 5,0:1 auriu. */
+html[data-theme="light"]{--cream:#1C1710;--cream-soft:#574C3E;--gold:#8A5E0C;--bg:#F5F0E1;--bg2:#EDE6D4;--cream-rgb:28,23,16;--soft-rgb:87,76,62;--gold-rgb:138,94,12;--bg-rgb:245,240,225;--bg2-rgb:237,230,212;color-scheme:light}
+/* Coperta ramane cinematica in ambele teme: fotografie inchisa, text crem peste ea. Antetul imprumuta
+   paleta inchisa doar cat timp coperta e sus (body.cov-on), apoi revine la tema aleasa. */
+#cov,body.cov-on header,body.cov-on #rail,body.cov-on #hint,body.cov-on .brand{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none;background:var(--bg)}
 body{font-family:'Inter',sans-serif;color:var(--cream);touch-action:none}
-::selection{background:var(--gold);color:#1a140c}
+::selection{background:var(--gold);color:var(--bg2)}
 a,button{-webkit-tap-highlight-color:transparent}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
 
@@ -66,9 +73,9 @@ a,button{-webkit-tap-highlight-color:transparent}
 #frame{position:absolute;inset:0;width:100%;height:100%;display:block}
 #ambient{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease}
 #scrim{position:fixed;inset:0;z-index:1;pointer-events:none;background:
-  linear-gradient(95deg, rgba(16,12,7,.62) 0%, rgba(16,12,7,.32) 32%, rgba(16,12,7,.03) 60%, transparent 100%),
-  linear-gradient(275deg, rgba(16,12,7,.42) 0%, rgba(16,12,7,.10) 30%, transparent 55%),
-  linear-gradient(0deg, rgba(16,12,7,.54) 0%, transparent 40%)}
+  linear-gradient(95deg, rgba(var(--bg-rgb),.62) 0%, rgba(var(--bg-rgb),.32) 32%, rgba(var(--bg-rgb),.03) 60%, transparent 100%),
+  linear-gradient(275deg, rgba(var(--bg-rgb),.42) 0%, rgba(var(--bg-rgb),.10) 30%, transparent 55%),
+  linear-gradient(0deg, rgba(var(--bg-rgb),.54) 0%, transparent 40%)}
 
 .beat{position:fixed;left:clamp(1.4rem,6vw,6rem);bottom:clamp(3rem,14vh,8.5rem);z-index:4;max-width:78rem;pointer-events:none;visibility:hidden;transition:visibility 0s .85s}
 .beat.on{visibility:visible;transition-delay:0s}
@@ -101,32 +108,32 @@ a,button{-webkit-tap-highlight-color:transparent}
 .beat.on .rule{transform:scaleX(1)}
 .beat .sub{font-family:'Inter';font-size:clamp(1.1rem,1.85vw,2rem);color:var(--cream-soft);margin-top:1.4rem;font-weight:400;text-shadow:0 2px 22px rgba(0,0,0,.65);line-height:1.32}
 .beat .sub b{color:var(--gold);font-weight:600}
-.btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;font-weight:600;font-size:1.35rem;padding:1.15rem 2.3rem;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;position:relative;overflow:hidden}
+.btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;font-weight:600;font-size:1.35rem;padding:1.15rem 2.3rem;border-radius:999px;background:var(--gold);color:var(--bg2);text-decoration:none;position:relative;overflow:hidden}
 .beat.on .btn{pointer-events:auto}
 .greviews{margin-top:1.4rem;text-align:center}
-.grev-badge{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border:1px solid rgba(232,180,90,.5);border-radius:999px;padding:.5em 1.1em;background:rgba(16,12,7,.42);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);text-shadow:0 1px 10px rgba(0,0,0,.45);transition:border-color .3s ease,transform .15s ease}
+.grev-badge{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border:1px solid rgba(var(--gold-rgb),.5);border-radius:999px;padding:.5em 1.1em;background:rgba(var(--bg-rgb),.42);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);text-shadow:0 1px 10px rgba(0,0,0,.45);transition:border-color .3s ease,transform .15s ease}
 .grev-badge .gstar{color:var(--gold);font-size:1.12em;line-height:1;margin-top:-1px}
 .grev-badge b{color:var(--gold);font-weight:700}
-.grev-badge:hover{border-color:rgba(232,180,90,.95)}
+.grev-badge:hover{border-color:rgba(var(--gold-rgb),.95)}
 .grev-badge:active{transform:scale(.97)}
 .beat.on .grev-badge{pointer-events:auto}
-@media (max-width:900px){.grev-badge{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(16,12,7,.72)}}
+@media (max-width:900px){.grev-badge{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(var(--bg-rgb),.72)}}
 .btn::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .55s ease}
 .btn:hover::after{left:125%}
 .beat .btn{transition-delay:var(--d,0ms)}
 .beat.on .btn:active{transform:scale(.965);transition:transform .12s ease;transition-delay:0ms}
 .btn .wa{vertical-align:-3px;margin-right:.1em}
-.btn.ghost{border:1px solid rgba(232,180,90,.6);color:var(--cream);margin-left:.7rem}
+.btn.ghost{border:1px solid rgba(var(--gold-rgb),.6);color:var(--cream);margin-left:.7rem}
 
 /* glass STRANS pe fiecare element de text (doar sub litere, fundal intact) */
 .beat .kicker,.beat h1,.beat p.big,.beat .lead,.beat .quote,.beat .spec,.beat .stat,.beat .note,.beat .strip,.beat .after{position:relative;width:fit-content;max-width:100%}
 .tl{display:block;width:fit-content;max-width:100%;position:relative;white-space:nowrap}
-.beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before,.beat .after::before{content:'';position:absolute;inset:-.04em -.2em;z-index:-1;background:rgba(16,12,7,.32);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:.24em;-webkit-mask-image:radial-gradient(ellipse 115% 125% at center,#000 76%,transparent 100%);mask-image:radial-gradient(ellipse 115% 125% at center,#000 76%,transparent 100%);opacity:0;transition:opacity .5s ease}
+.beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before,.beat .after::before{content:'';position:absolute;inset:-.04em -.2em;z-index:-1;background:rgba(var(--bg-rgb),.32);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:.24em;-webkit-mask-image:radial-gradient(ellipse 115% 125% at center,#000 76%,transparent 100%);mask-image:radial-gradient(ellipse 115% 125% at center,#000 76%,transparent 100%);opacity:0;transition:opacity .5s ease}
 .beat.on .kicker::before,.beat.on .tl::before,.beat.on .lead::before,.beat.on .quote::before,.beat.on .spec::before,.beat.on .stat::before,.beat.on .note::before,.beat.on .strip::before,.beat.on .after::before{opacity:1}
 .pos-tr .kicker,.pos-tr p.big,.pos-tr .spec,.pos-tr .tl,.pos-br .kicker,.pos-br p.big,.pos-br .tl{margin-left:auto}
 .pos-cc .kicker,.pos-cc p.big,.pos-cc .strip,.pos-cc .tl,.pos-cc .after{margin-left:auto;margin-right:auto}
 .pos-cc .kicker{margin-top:.7rem}
-.btn.ghost{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(16,12,7,.35)}
+.btn.ghost{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(var(--bg-rgb),.35)}
 
 /* S1: headingul se opreste inainte de blocul galben; lead = 1/2 din el */
 .beat[data-seg="0"] .kicker{max-width:28ch}
@@ -149,12 +156,12 @@ a,button{-webkit-tap-highlight-color:transparent}
 .tl,.ov-title,.ov-h,.kicker{text-wrap:balance}
 .lead{font-family:'Inter';font-size:clamp(1.15rem,2vw,2.1rem);color:var(--cream-soft);margin-top:1.4rem;line-height:1.25;text-shadow:0 2px 22px rgba(0,0,0,.65)}
 .lead b{color:var(--cream);font-weight:600}
-.bdg{display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:.92rem;color:var(--gold);border:1px solid rgba(232,180,90,.55);border-radius:999px;padding:.45em .95em;background:rgba(16,12,7,.62);letter-spacing:.02em;margin-top:1.2rem}
+.bdg{display:inline-flex;align-items:center;font-family:'Inter';font-weight:600;font-size:.92rem;color:var(--gold);border:1px solid rgba(var(--gold-rgb),.55);border-radius:999px;padding:.45em .95em;background:rgba(var(--bg-rgb),.62);letter-spacing:.02em;margin-top:1.2rem}
 .quote{margin-top:1.6rem;border-left:4px solid var(--gold);padding-left:2rem;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.15rem,1.85vw,2rem);line-height:1.3;color:var(--cream-soft);text-shadow:0 2px 22px rgba(0,0,0,.65)}
 .quote .g{font-style:italic}
 .specs{margin-top:1.6rem}
-.spec{display:flex;gap:1.4rem;align-items:baseline;justify-content:flex-end;padding:1rem 0;border-bottom:1px solid rgba(232,180,90,.18)}
-.spec:first-child{border-top:1px solid rgba(232,180,90,.28)}
+.spec{display:flex;gap:1.4rem;align-items:baseline;justify-content:flex-end;padding:1rem 0;border-bottom:1px solid rgba(var(--gold-rgb),.18)}
+.spec:first-child{border-top:1px solid rgba(var(--gold-rgb),.28)}
 .spec .k{font-family:'Inter';font-weight:600;font-size:clamp(.78rem,.7vw,.85rem);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
 .spec .v{font-family:'Inter';font-size:clamp(1.15rem,1.85vw,2rem);color:var(--cream);text-shadow:0 2px 18px rgba(0,0,0,.6)}
 .spec .v b{color:var(--gold);font-weight:600}
@@ -164,27 +171,27 @@ a,button{-webkit-tap-highlight-color:transparent}
 .note{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(.95rem,.95vw,1.05rem);color:var(--cream-soft);margin-top:1.5rem;opacity:.92}
 /* pills planuri (propunerea #15 aprobata): prefill segmentat 2/3 camere, leadul vine gata calificat */
 .plans{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
-.pill{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-weight:600;font-size:clamp(.95rem,.95vw,1.05rem);color:var(--cream);text-decoration:none;border:1px solid rgba(232,180,90,.6);border-radius:999px;padding:.6em 1.1em;background:rgba(16,12,7,.55);transition:border-color .3s ease,transform .15s ease}
-.pill:hover{border-color:rgba(232,180,90,.95)}
+.pill{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-weight:600;font-size:clamp(.95rem,.95vw,1.05rem);color:var(--cream);text-decoration:none;border:1px solid rgba(var(--gold-rgb),.6);border-radius:999px;padding:.6em 1.1em;background:rgba(var(--bg-rgb),.55);transition:border-color .3s ease,transform .15s ease}
+.pill:hover{border-color:rgba(var(--gold-rgb),.95)}
 .pill:active{transform:scale(.96)}
-.pill.gold{background:var(--gold);color:#1a140c;border-color:var(--gold);cursor:pointer}
+.pill.gold{background:var(--gold);color:var(--bg2);border-color:var(--gold);cursor:pointer}
 .beat.on .plans .pill{pointer-events:auto}
 /* ===== overlay preturi (propunerea #1 aprobata): strat DOM separat peste film, canvas + fizica neatinse ===== */
 #ov,#ovtech{position:fixed;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(12,9,5,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;transition:opacity .35s ease}
 #ov.on,#ovtech.on{opacity:1}
 #ov[hidden],#ovtech[hidden]{display:none}
-.ov-panel{width:min(40rem,100%);max-height:88vh;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;background:#181209;border:1px solid rgba(232,180,90,.3);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:scale(.98);transition:transform .35s cubic-bezier(.22,.6,.2,1)}
+.ov-panel{width:min(40rem,100%);max-height:88vh;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;background:#181209;border:1px solid rgba(var(--gold-rgb),.3);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:scale(.98);transition:transform .35s cubic-bezier(.22,.6,.2,1)}
 #ov.on .ov-panel,#ovtech.on .ov-panel{transform:none}
-.ov-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.4rem .9rem;background:linear-gradient(180deg,#181209 78%,rgba(24,18,9,0));z-index:1}
+.ov-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.4rem .9rem;background:linear-gradient(180deg,#181209 78%,rgba(var(--bg2-rgb),0));z-index:1}
 .ov-title{font-family:'Fraunces',serif;font-weight:600;font-size:1.45rem;color:var(--cream)}
-.ov-x{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(232,180,90,.5);background:none;color:var(--cream);font-size:1.15rem;cursor:pointer;transition:border-color .3s ease,transform .15s ease}
-.ov-x:hover{border-color:rgba(232,180,90,.95)}
+.ov-x{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(var(--gold-rgb),.5);background:none;color:var(--cream);font-size:1.15rem;cursor:pointer;transition:border-color .3s ease,transform .15s ease}
+.ov-x:hover{border-color:rgba(var(--gold-rgb),.95)}
 .ov-x:active{transform:scale(.92)}
 .ov-body{padding:.2rem 1.4rem 1.5rem}
 .ov-note{font-family:'Inter';font-size:.92rem;color:var(--cream-soft);line-height:1.5;margin-bottom:.4rem}
 .ov-note b{color:var(--gold);font-weight:600}
 .ov-h{font-family:'Inter';font-weight:600;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:1.4rem 0 .3rem}
-.ov-row{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(232,180,90,.18)}
+.ov-row{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(var(--gold-rgb),.18)}
 .ov-row .d{font-family:'Inter';font-size:.98rem;color:var(--cream);line-height:1.4}
 .ov-row .d small{display:block;color:var(--cream-soft);font-size:.85rem;margin-top:.15rem}
 .ov-row .d small b{color:var(--cream);font-weight:600}
@@ -212,13 +219,13 @@ a,button{-webkit-tap-highlight-color:transparent}
 #labels{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden}
 .poi{position:absolute;left:0;top:0;opacity:0;transform:translate(-50%,-100%) translateY(12px);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1);will-change:left,top;pointer-events:none;text-align:center}
 .poi.on{opacity:1;transform:translate(-50%,-100%);pointer-events:auto}
-.poi .lab{display:inline-flex;align-items:center;gap:.85em;font-family:'Inter';font-size:clamp(1rem,.95vw + .35rem,1.35rem);font-weight:500;letter-spacing:.01em;background:rgba(18,13,8,.52);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(232,180,90,.55);box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(245,240,225,.09);padding:.62em 1.15em;border-radius:12px;white-space:nowrap;color:var(--cream);transition:transform .3s ease,border-color .3s ease}
-.poi .lab:hover{transform:translateY(-3px);border-color:rgba(232,180,90,.95)}
+.poi .lab{display:inline-flex;align-items:center;gap:.85em;font-family:'Inter';font-size:clamp(1rem,.95vw + .35rem,1.35rem);font-weight:500;letter-spacing:.01em;background:rgba(var(--bg-rgb),.52);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(var(--gold-rgb),.55);box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(var(--cream-rgb),.09);padding:.62em 1.15em;border-radius:12px;white-space:nowrap;color:var(--cream);transition:transform .3s ease,border-color .3s ease}
+.poi .lab:hover{transform:translateY(-3px);border-color:rgba(var(--gold-rgb),.95)}
 .poi .lab b{color:var(--gold);font-weight:700;font-size:.82em;letter-spacing:.12em;text-transform:uppercase}
-.poi .dv{width:1px;height:1.1em;background:rgba(232,180,90,.5)}
-.poi .ln{display:block;width:1px;height:15px;margin:0 auto;background:linear-gradient(180deg,rgba(232,180,90,.75),rgba(232,180,90,0))}
-.poi .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);margin:0 auto;box-shadow:0 0 0 3px rgba(20,15,9,.6),0 0 0 4px rgba(232,180,90,.85),0 0 18px rgba(232,180,90,.45),0 4px 14px rgba(0,0,0,.5)}
-@media (max-width:760px){ .poi .lab{font-size:.85rem;padding:.5em .8em;gap:.6em;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(18,13,8,.8)} .poi .dot{width:7px;height:7px} .poi .ln{height:10px} }
+.poi .dv{width:1px;height:1.1em;background:rgba(var(--gold-rgb),.5)}
+.poi .ln{display:block;width:1px;height:15px;margin:0 auto;background:linear-gradient(180deg,rgba(var(--gold-rgb),.75),rgba(var(--gold-rgb),0))}
+.poi .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);margin:0 auto;box-shadow:0 0 0 3px rgba(20,15,9,.6),0 0 0 4px rgba(var(--gold-rgb),.85),0 0 18px rgba(var(--gold-rgb),.45),0 4px 14px rgba(0,0,0,.5)}
+@media (max-width:760px){ .poi .lab{font-size:.85rem;padding:.5em .8em;gap:.6em;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(var(--bg-rgb),.8)} .poi .dot{width:7px;height:7px} .poi .ln{height:10px} }
 
 header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.4rem clamp(1.4rem,6vw,6rem);pointer-events:none}
 .brand{font-family:'Fraunces',serif;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:1.15rem;text-shadow:0 1px 14px rgba(0,0,0,.6)}
@@ -226,50 +233,50 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 /* CTA persistent desktop: apare dupa S1, dispare pe finalul cu CTA propriu (propunerea #0 aprobata) */
 #hcta{display:flex;align-items:center;gap:1.2rem;opacity:0;transform:translateY(-8px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
 #hcta.show{opacity:1;transform:none;pointer-events:auto}
-#hcta .hlink{font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(232,180,90,.6);padding-bottom:.1em;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease}
+#hcta .hlink{font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(var(--gold-rgb),.6);padding-bottom:.1em;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease}
 #hcta .hlink:hover{color:var(--gold)}
 #hcta .htel{font-family:'Inter';font-weight:500;font-size:.84rem;color:var(--cream-soft);text-decoration:none;letter-spacing:.03em;opacity:.68;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease,opacity .3s ease}
 #hcta .htel:hover{color:var(--gold);opacity:1}
-#hcta .hwa{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:700;font-size:.96rem;color:#1a140c;text-decoration:none;border:1px solid var(--gold);border-radius:999px;padding:.58em 1.2em;background:var(--gold);box-shadow:0 6px 22px rgba(232,180,90,.26);transition:box-shadow .3s ease,transform .15s ease}
-#hcta .hwa:hover{box-shadow:0 9px 30px rgba(232,180,90,.45)}
+#hcta .hwa{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:700;font-size:.96rem;color:var(--bg2);text-decoration:none;border:1px solid var(--gold);border-radius:999px;padding:.58em 1.2em;background:var(--gold);box-shadow:0 6px 22px rgba(var(--gold-rgb),.26);transition:box-shadow .3s ease,transform .15s ease}
+#hcta .hwa:hover{box-shadow:0 9px 30px rgba(var(--gold-rgb),.45)}
 #hcta .hwa:active{transform:scale(.96)}
 @media (max-width:900px){ #hcta .hwa{backdrop-filter:none;-webkit-backdrop-filter:none} }
 /* meniul site-ului, accesibil si din film (directiva Andy: meniu adevarat peste tot) */
-.mn-btn{pointer-events:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;margin-left:1rem;border-radius:10px;border:1px solid rgba(232,180,90,.5);background:rgba(16,12,7,.55);cursor:pointer;transition:border-color .3s ease}
-.mn-btn:hover{border-color:rgba(232,180,90,.95)}
+.mn-btn{pointer-events:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;margin-left:1rem;border-radius:10px;border:1px solid rgba(var(--gold-rgb),.5);background:rgba(var(--bg-rgb),.55);cursor:pointer;transition:border-color .3s ease}
+.mn-btn:hover{border-color:rgba(var(--gold-rgb),.95)}
 .mn-btn span{display:block;width:18px;height:2px;background:var(--cream);transition:transform .3s ease,opacity .3s ease}
 body.mn-open .mn-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 body.mn-open .mn-btn span:nth-child(2){opacity:0}
 body.mn-open .mn-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mn-panel{position:fixed;inset:0;z-index:8;padding:0;border-bottom:0;transform:none;background-color:#14100b;background-image:radial-gradient(1100px 700px at 82% -5%, rgba(232,180,90,.09), transparent 60%),repeating-linear-gradient(0deg, rgba(245,240,225,.022) 0px, rgba(245,240,225,.022) 1px, transparent 1px, transparent 96px),repeating-linear-gradient(90deg, rgba(245,240,225,.022) 0px, rgba(245,240,225,.022) 1px, transparent 1px, transparent 96px);opacity:0;visibility:hidden;overflow-y:auto;overscroll-behavior:contain;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s .5s}
+.mn-panel{position:fixed;inset:0;z-index:8;padding:0;border-bottom:0;transform:none;background-color:var(--bg);background-image:radial-gradient(1100px 700px at 82% -5%, rgba(var(--gold-rgb),.09), transparent 60%),repeating-linear-gradient(0deg, rgba(var(--cream-rgb),.022) 0px, rgba(var(--cream-rgb),.022) 1px, transparent 1px, transparent 96px),repeating-linear-gradient(90deg, rgba(var(--cream-rgb),.022) 0px, rgba(var(--cream-rgb),.022) 1px, transparent 1px, transparent 96px);opacity:0;visibility:hidden;overflow-y:auto;overscroll-behavior:contain;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s .5s}
 body.mn-open .mn-panel{opacity:1;visibility:visible;transform:none;transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility 0s 0s}
 .mn-in{max-width:56rem;margin:0 auto;padding:5rem clamp(1.4rem,6vw,4rem) 2.6rem}
 .mn-k{font-family:'Inter';font-weight:700;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);opacity:0;transition:opacity .5s ease .08s}
 body.mn-open .mn-k{opacity:.95}
 .mn-list{display:flex;flex-direction:column;margin-top:1.1rem}
-.mn-list a{display:flex;align-items:baseline;gap:1.2rem;padding:.7rem 0;border-bottom:1px solid rgba(245,240,225,.1);text-decoration:none;font-size:1rem;opacity:0;transform:translateY(26px);transition:opacity .55s cubic-bezier(.16,1,.3,1) var(--d,0ms),transform .55s cubic-bezier(.16,1,.3,1) var(--d,0ms)}
+.mn-list a{display:flex;align-items:baseline;gap:1.2rem;padding:.7rem 0;border-bottom:1px solid rgba(var(--cream-rgb),.1);text-decoration:none;font-size:1rem;opacity:0;transform:translateY(26px);transition:opacity .55s cubic-bezier(.16,1,.3,1) var(--d,0ms),transform .55s cubic-bezier(.16,1,.3,1) var(--d,0ms)}
 body.mn-open .mn-list a{opacity:1;transform:none}
 .mn-list .no{font-family:'Inter';font-weight:600;font-size:.7rem;letter-spacing:.14em;color:var(--gold);min-width:1.7rem}
 .mn-list .nm{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.45rem,3vw,2rem);line-height:1.12;color:var(--cream);transition:color .3s ease;border-bottom:0;padding:0}
 .mn-list a:hover .nm,.mn-list a:focus-visible .nm{color:var(--gold)}
 .mn-list a[aria-current] .nm{color:var(--gold)}
-.mn-list .hint{margin-left:auto;font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:.95rem;color:rgba(245,240,225,.55);white-space:nowrap}
+.mn-list .hint{margin-left:auto;font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:.95rem;color:rgba(var(--cream-rgb),.55);white-space:nowrap}
 .mn-langs2{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem;margin-top:1.8rem;opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1) .5s,transform .55s cubic-bezier(.16,1,.3,1) .5s}
 body.mn-open .mn-langs2{opacity:1;transform:none}
 .mn-langs2 .lb{font-family:'Inter';font-weight:700;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);width:100%}
 .mn-langs2 a{font-family:'Inter';font-weight:500;font-size:1.06rem;color:var(--cream-soft);text-decoration:none;transition:color .25s ease}
 .mn-langs2 a:hover{color:var(--gold)}
 .mn-langs2 a.act{color:var(--gold);font-weight:700}
-.mn-foot{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(245,240,225,.12);display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.6rem;opacity:0;transition:opacity .55s ease .6s}
+.mn-foot{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(var(--cream-rgb),.12);display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.6rem;opacity:0;transition:opacity .55s ease .6s}
 body.mn-open .mn-foot{opacity:1}
 .mn-foot .ft{font-family:'Inter';font-weight:600;font-size:1rem;color:var(--cream);text-decoration:none;transition:color .25s ease}
 .mn-foot .ft:hover{color:var(--gold)}
-.mn-foot .fwa{display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter';font-weight:600;font-size:.95rem;padding:.6em 1.2em;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;transition:transform .15s ease}
+.mn-foot .fwa{display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter';font-weight:600;font-size:.95rem;padding:.6em 1.2em;border-radius:999px;background:var(--gold);color:var(--bg2);text-decoration:none;transition:transform .15s ease}
 .mn-foot .fwa:active{transform:scale(.96)}
-.mn-tag{width:100%;font-family:'Inter';font-size:.82rem;color:rgba(245,240,225,.5);letter-spacing:.02em}
+.mn-tag{width:100%;font-family:'Inter';font-size:.82rem;color:rgba(var(--cream-rgb),.5);letter-spacing:.02em}
 .mn-craft2{width:100%;font-family:'Inter';font-size:.95rem;color:var(--cream-soft)}
-.mn-craft2 a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(232,180,90,.45);padding-bottom:.06em}
-.mn-x{position:fixed;top:1.1rem;right:clamp(1.2rem,4vw,3rem);left:auto;z-index:2;width:46px;height:46px;margin:0;flex-direction:row;gap:0;display:flex;align-items:center;justify-content:center;border:1px solid rgba(232,180,90,.45);border-radius:12px;background:rgba(20,16,11,.6);color:var(--cream);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s,border-color .3s ease,transform .45s cubic-bezier(.16,1,.3,1)}
+.mn-craft2 a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(var(--gold-rgb),.45);padding-bottom:.06em}
+.mn-x{position:fixed;top:1.1rem;right:clamp(1.2rem,4vw,3rem);left:auto;z-index:2;width:46px;height:46px;margin:0;flex-direction:row;gap:0;display:flex;align-items:center;justify-content:center;border:1px solid rgba(var(--gold-rgb),.45);border-radius:12px;background:rgba(var(--bg-rgb),.6);color:var(--cream);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s,border-color .3s ease,transform .45s cubic-bezier(.16,1,.3,1)}
 body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s,visibility 0s 0s,border-color .3s ease,transform .45s cubic-bezier(.16,1,.3,1)}
 .mn-x:hover{border-color:var(--gold);color:var(--gold);transform:rotate(90deg)}
 .mn-x span{display:none}
@@ -283,7 +290,7 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
 /* tinta de atingere 24px (WCAG 2.5.8) cu acelasi ritm vizual: padding-ul tine pasul, nu gap-ul */
 #rail button{display:flex;align-items:center;gap:10px;background:none;border:0;cursor:pointer;padding:11px 0}
 #rail .nm{font-family:'Inter';font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-soft);opacity:0;transform:translateX(6px);transition:opacity .4s ease,transform .4s ease;text-shadow:0 1px 10px rgba(0,0,0,.7)}
-#rail .tick{width:18px;height:2px;background:rgba(245,240,225,.38);transition:width .4s cubic-bezier(.22,.6,.2,1),background .4s ease}
+#rail .tick{width:18px;height:2px;background:rgba(var(--cream-rgb),.38);transition:width .4s cubic-bezier(.22,.6,.2,1),background .4s ease}
 #rail button.act .tick{width:34px;background:var(--gold)}
 #rail button.act .nm{opacity:1;transform:none;color:var(--gold)}
 #rail button:hover .nm{opacity:1;transform:none}
@@ -299,7 +306,7 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
 #load .p{font-size:.85rem;color:var(--gold);letter-spacing:.12em;font-variant-numeric:tabular-nums}
 /* loaderul = piesa de brand: soarele din sigla, cu rasaritul ca inel de progres */
 @property --p{syntax:'<number>';inherits:false;initial-value:0}
-#load .ring{position:relative;width:72px;height:72px;border-radius:50%;background:conic-gradient(var(--gold) calc(var(--p)*1%),rgba(232,180,90,.16) 0);transition:--p .4s ease}
+#load .ring{position:relative;width:72px;height:72px;border-radius:50%;background:conic-gradient(var(--gold) calc(var(--p)*1%),rgba(var(--gold-rgb),.16) 0);transition:--p .4s ease}
 #load .ring::before{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--bg)}
 #load .sun{position:absolute;inset:0;margin:auto;width:30px;height:30px;display:flex;align-items:center;justify-content:center;animation:sunbreathe 2.6s ease-in-out infinite}
 #load .lg-word{text-align:center;line-height:1}
@@ -311,22 +318,22 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
 @media (prefers-reduced-motion: reduce){ #load .sun{animation:none} #load .ring{transition:none} }
 
 #chips{position:fixed;top:4.2rem;left:.8rem;right:.8rem;z-index:3;display:none;flex-wrap:wrap;gap:.45rem;pointer-events:none}
-.chip{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-size:.85rem;font-weight:500;color:var(--cream);background:rgba(18,13,8,.78);border:1px solid rgba(232,180,90,.55);border-radius:12px;padding:.45em .7em;box-shadow:0 6px 16px rgba(0,0,0,.32),inset 0 1px 0 rgba(245,240,225,.07);opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s cubic-bezier(.34,1.56,.64,1)}
+.chip{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-size:.85rem;font-weight:500;color:var(--cream);background:rgba(var(--bg-rgb),.78);border:1px solid rgba(var(--gold-rgb),.55);border-radius:12px;padding:.45em .7em;box-shadow:0 6px 16px rgba(0,0,0,.32),inset 0 1px 0 rgba(var(--cream-rgb),.07);opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s cubic-bezier(.34,1.56,.64,1)}
 .chip.on{opacity:1;transform:none}
 .chip:not(.on){position:absolute;visibility:hidden;pointer-events:none}
 .chip b{color:var(--gold);font-weight:700;font-size:.82em;letter-spacing:.08em;text-transform:uppercase}
-#mcta{position:fixed;left:0;right:0;bottom:0;z-index:7;display:none;gap:.6rem;align-items:stretch;padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(16,12,7,.92),rgba(16,12,7,.55) 70%,transparent);transform:translateY(110%);transition:transform .45s cubic-bezier(.22,.6,.2,1)}
+#mcta{position:fixed;left:0;right:0;bottom:0;z-index:7;display:none;gap:.6rem;align-items:stretch;padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(var(--bg-rgb),.92),rgba(var(--bg-rgb),.55) 70%,transparent);transform:translateY(110%);transition:transform .45s cubic-bezier(.22,.6,.2,1)}
 #mcta.show{transform:none}
 #mcta .mbtn{flex:1}
-.mtel{display:flex;align-items:center;justify-content:center;width:2.7rem;border-radius:999px;border:1px solid rgba(232,180,90,.38);color:var(--cream-soft);background:rgba(16,12,7,.62);opacity:.82;box-shadow:0 8px 28px rgba(0,0,0,.4);transition:transform .15s ease}
+.mtel{display:flex;align-items:center;justify-content:center;width:2.7rem;border-radius:999px;border:1px solid rgba(var(--gold-rgb),.38);color:var(--cream-soft);background:rgba(var(--bg-rgb),.62);opacity:.82;box-shadow:0 8px 28px rgba(0,0,0,.4);transition:transform .15s ease}
 .mtel svg{width:17px;height:17px}
 .mtel:active{transform:scale(.94)}
 .telmini{display:block;width:fit-content;margin-top:1.1rem;font-family:'Inter';font-weight:500;font-size:.92rem;color:var(--cream-soft);text-decoration:none;opacity:.6;letter-spacing:.02em;border-bottom:1px solid transparent;text-shadow:0 1px 10px rgba(0,0,0,.6);transition:opacity .25s ease,color .25s ease,border-color .25s ease}
-.telmini:hover{opacity:1;color:var(--gold);border-bottom-color:rgba(232,180,90,.4)}
+.telmini:hover{opacity:1;color:var(--gold);border-bottom-color:rgba(var(--gold-rgb),.4)}
 .telmini:active{opacity:1}
 .mn-cta .telmini,.ov-cta .telmini{margin-top:0}
 .mn-cta .telmini{opacity:.88;font-size:1rem}
-.mbtn{display:block;text-align:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95em 1em;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s ease}
+.mbtn{display:block;text-align:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95em 1em;border-radius:999px;background:var(--gold);color:var(--bg2);text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s ease}
 .mbtn:active{transform:scale(.97)}
 .mbtn .wa{vertical-align:-4px;margin-right:.4em}
 @media (max-width:760px){
@@ -367,9 +374,9 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
   .pos-cc .btn{display:flex;justify-content:center;width:min(100%,21rem);margin-left:auto;margin-right:auto}
   .pos-cc .btn.ghost{margin:.75rem auto 0}
   .beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before,.beat .after::before,.btn.ghost{backdrop-filter:none;-webkit-backdrop-filter:none}
-  .beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before,.beat .after::before{background:rgba(16,12,7,.62)}
+  .beat .kicker::before,.tl::before,.beat .lead::before,.beat .quote::before,.beat .spec::before,.beat .stat::before,.beat .note::before,.beat .strip::before,.beat .after::before{background:rgba(var(--bg-rgb),.62)}
   .pos-cc{left:0;right:0;top:50%;bottom:auto;transform:translateY(-50%);text-align:center;width:auto;max-width:none}
-  #scrim{background:linear-gradient(0deg,rgba(16,12,7,.74),rgba(16,12,7,.15) 55%)}
+  #scrim{background:linear-gradient(0deg,rgba(var(--bg-rgb),.74),rgba(var(--bg-rgb),.15) 55%)}
   #rail{right:.7rem;gap:1px}
   #rail .nm{display:none}
   .btn.ghost{margin-left:0;margin-top:.8rem}
@@ -401,8 +408,8 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
 .chip.on{pointer-events:auto}
 /* S7: "Si asta e" inchis pe cer luminos, fara placa pe titlul final (Obrea) */
 .beat[data-seg="6"] .tl::before{display:none}
-.beat[data-seg="6"] .dk{color:#14100b}
-.beat[data-seg="6"] .tl{text-shadow:0 1px 10px rgba(245,240,225,.75),0 0 26px rgba(245,240,225,.45)}
+.beat[data-seg="6"] .dk{color:var(--bg)}
+.beat[data-seg="6"] .tl{text-shadow:0 1px 10px rgba(var(--cream-rgb),.75),0 0 26px rgba(var(--cream-rgb),.45)}
 @media (max-width:760px){
   /* logo full pe telefon ca sa se inteleaga (Obrea) */
   .brand .bword{display:inline}
@@ -447,10 +454,10 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
   .beat[data-seg="5"] .note{margin-top:.9rem;font-size:.92rem}
   .beat[data-seg="5"] .rule{margin-top:.8rem}
 }
-.ff{position:fixed;left:0;right:0;bottom:0;z-index:10;transform:translateY(101%);transition:transform .55s cubic-bezier(.22,.6,.2,1);max-height:100dvh;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;background:linear-gradient(180deg,rgba(13,10,6,.97),#0b0805);border-top:1px solid rgba(232,180,90,.25);padding:3.2rem clamp(1.4rem,6vw,5rem) 2rem;box-shadow:0 -24px 70px rgba(0,0,0,.55)}
+.ff{position:fixed;left:0;right:0;bottom:0;z-index:10;transform:translateY(101%);transition:transform .55s cubic-bezier(.22,.6,.2,1);max-height:100dvh;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;background:linear-gradient(180deg,rgba(13,10,6,.97),#0b0805);border-top:1px solid rgba(var(--gold-rgb),.25);padding:3.2rem clamp(1.4rem,6vw,5rem) 2rem;box-shadow:0 -24px 70px rgba(0,0,0,.55)}
 .ff.show{transform:none}
-.ff-close{position:absolute;top:1rem;right:1.2rem;width:2.5rem;height:2.5rem;border-radius:999px;border:1px solid rgba(232,180,90,.4);background:rgba(16,12,7,.65);color:var(--cream);font-size:1.05rem;cursor:pointer;line-height:1;transition:border-color .25s ease}
-.ff-close:hover{border-color:rgba(232,180,90,.9)}
+.ff-close{position:absolute;top:1rem;right:1.2rem;width:2.5rem;height:2.5rem;border-radius:999px;border:1px solid rgba(var(--gold-rgb),.4);background:rgba(var(--bg-rgb),.65);color:var(--cream);font-size:1.05rem;cursor:pointer;line-height:1;transition:border-color .25s ease}
+.ff-close:hover{border-color:rgba(var(--gold-rgb),.9)}
 .ff-in{max-width:62rem;margin:0 auto}
 .ff-brand{font-family:'Fraunces',serif;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:1.25rem;color:var(--cream)}
 .ff-brand b{color:var(--gold)}
@@ -460,10 +467,10 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
 .ff-nav a:hover{color:var(--gold)}
 .ff-gh .ff-h{font-family:'Inter';font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.9;width:100%;margin-bottom:.2rem}
 .ff-rev{margin:.3rem 0 0}
-.ff-rev a{display:inline-flex;align-items:center;gap:.4em;font-family:'Inter';font-size:.88rem;font-weight:600;color:var(--cream);text-decoration:none;border:1px solid rgba(232,180,90,.4);border-radius:999px;padding:.5em 1em}
+.ff-rev a{display:inline-flex;align-items:center;gap:.4em;font-family:'Inter';font-size:.88rem;font-weight:600;color:var(--cream);text-decoration:none;border:1px solid rgba(var(--gold-rgb),.4);border-radius:999px;padding:.5em 1em}
 .ff-rev a b{color:var(--gold)} .ff-rev .st{color:var(--gold)}
-.ff-bot{margin-top:2.2rem;padding-top:1.5rem;border-top:1px solid rgba(232,180,90,.12);font-family:'Inter';font-size:.86rem;color:var(--cream-soft);opacity:.72}
-.ff-bot a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(232,180,90,.4);padding-bottom:.05em}
+.ff-bot{margin-top:2.2rem;padding-top:1.5rem;border-top:1px solid rgba(var(--gold-rgb),.12);font-family:'Inter';font-size:.86rem;color:var(--cream-soft);opacity:.72}
+.ff-bot a{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(var(--gold-rgb),.4);padding-bottom:.05em}
 .ff-bot a:hover{border-bottom-color:var(--gold)}
 /* ===== COPERTA (21 Iul 2026): prima fereastra a casei; 6 straturi cu adancime; filmul + fizica lui neatinse ===== */
 .beat[data-seg="0"]{display:none} /* continutul S1 traieste acum pe coperta (acelasi titlu+lead+badge => zero dublura la retragere) */
@@ -491,7 +498,7 @@ body.cov-in #cov .cv{opacity:1;transform:none}
 /* straturi: parallax (mx/my) + retragere (cp), fiecare cu viteza lui; fundalul cel mai lent */
 .hrr{display:flex;align-items:center;pointer-events:none}
 .hlgs{display:flex;align-items:center;gap:.5rem;margin-right:1.4rem;font-family:'Inter';font-weight:600;font-size:.7rem;letter-spacing:.15em;text-shadow:0 1px 10px rgba(0,0,0,.6)}
-.hlgs a{pointer-events:auto;color:rgba(245,240,225,.55);text-decoration:none;transition:color .3s ease}
+.hlgs a{pointer-events:auto;color:rgba(var(--cream-rgb),.55);text-decoration:none;transition:color .3s ease}
 .hlgs a:hover{color:var(--cream)}
 .hlgs a.lact{color:var(--gold);font-weight:700}
 .hlgs .sep{opacity:.35;color:var(--cream-soft)}
@@ -724,7 +731,7 @@ html[dir="rtl"] .mn-list .hint{margin-left:0;margin-right:auto}
 
 <header>
   <div class="brand" role="img" aria-label="Ilioara Residence"><svg class="lg" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="13" fill="none" stroke="#F5F0E1" stroke-width="5"/><rect class="lg-bar" x="14" y="17" width="13" height="30" rx="4" fill="#E8B45A"/><rect x="32" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="38" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="44" y="17" width="3.5" height="30" fill="#F5F0E1"/><rect x="50" y="17" width="3.5" height="30" fill="#F5F0E1"/></svg><span class="bword"><b>Ilioara</b> Residence</span></div>
-  <div class="hrr"><nav class="hlgs" aria-label="اللغة"><a href="/">RO</a><span class="sep">·</span><a href="/en/">EN</a><span class="sep">·</span><a href="/he/" lang="he">HE</a><span class="sep">·</span><a href="/ar/" lang="ar">AR</a><span class="sep">·</span><a href="/uk/" lang="uk">UA</a></nav><div id="hcta"><a class="hlink" href="/ar/apartamente/">الشقق والأسعار</a><a class="hwa" href="https://wa.me/40774096700?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%21%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B4%D9%82%D9%82%20%D9%81%D9%8A%20Aleea%20Eprubetei."><svg class="wa" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a></div>
+  <div class="hrr"><nav class="hlgs" aria-label="اللغة"><a href="/">RO</a><span class="sep">·</span><a href="/en/">EN</a><span class="sep">·</span><a href="/he/" lang="he">HE</a><span class="sep">·</span><a href="/ar/" lang="ar">AR</a><span class="sep">·</span><a href="/uk/" lang="uk">UA</a></nav><button class="thm" type="button" aria-label="تبديل السمة" title="تبديل السمة" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="m" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/><g class="s"><circle cx="12" cy="12" r="4"/><path d="M12 2.4v1.8M12 19.8v1.8M2.4 12h1.8M19.8 12h1.8M5.2 5.2l1.3 1.3M17.5 17.5l1.3 1.3M5.2 18.8l1.3-1.3M17.5 6.5l1.3-1.3"/></g></svg></button><div id="hcta"><a class="hlink" href="/ar/apartamente/">الشقق والأسعار</a><a class="hwa" href="https://wa.me/40774096700?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%21%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B4%D9%82%D9%82%20%D9%81%D9%8A%20Aleea%20Eprubetei."><svg class="wa" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>WhatsApp</a></div>
   <button type="button" id="mnBtn" class="mn-btn" aria-expanded="false" aria-label="القائمة"><span></span><span></span><span></span></button></div>
 </header>
 <div class="mn-panel">
@@ -744,7 +751,7 @@ html[dir="rtl"] .mn-list .hint{margin-left:0;margin-right:auto}
       <a href="/blog/" style="--d:420ms"><span class="no">10</span><span class="nm">مدونة</span><em class="hint">أدلة</em></a>
       <a href="https://wa.me/40774096700?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%21%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B4%D9%82%D9%82%20%D9%81%D9%8A%20Aleea%20Eprubetei." style="--d:460ms"><span class="no">11</span><span class="nm">اتصل بنا</span><em class="hint">WhatsApp</em></a>
     </nav>
-    <div class="mn-langs2"><span class="lb">اختر اللغة</span><a href="/">Română</a><a href="/en/">English</a><a href="/he/" lang="he">עברית</a><a class="act" href="/ar/" aria-current="true">العربية</a><a href="/uk/" lang="uk">Українська</a></div>
+    <div class="mn-langs2"><span class="lb">اختر اللغة</span><a href="/">Română</a><a href="/en/">English</a><a href="/he/" lang="he">עברית</a><a class="act" href="/ar/" aria-current="true">العربية</a><a href="/uk/" lang="uk">Українська</a></div><div class="mn-tema"><span class="lb">السمة</span><button class="thm-m" type="button" aria-label="تبديل السمة" title="تبديل السمة" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="m" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/><g class="s"><circle cx="12" cy="12" r="4"/><path d="M12 2.4v1.8M12 19.8v1.8M2.4 12h1.8M19.8 12h1.8M5.2 5.2l1.3 1.3M17.5 17.5l1.3 1.3M5.2 18.8l1.3-1.3M17.5 6.5l1.3-1.3"/></g></svg></button></div>
     <div class="mn-foot">
       
       <a class="fwa" href="https://wa.me/40774096700?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%21%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B4%D9%82%D9%82%20%D9%81%D9%8A%20Aleea%20Eprubetei."><svg class="wa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>راسلنا على واتساب</a>
@@ -836,9 +843,9 @@ html[dir="rtl"] .mn-list .hint{margin-left:0;margin-right:auto}
     <div class="ov-body">
       <div class="ov-note"><b>12 من 33</b> شقة متاحة · الإنجاز ديسمبر 2026 · الأسعار نهائية ولا تشمل TVA (الضريبة)</div>
       <div class="ov-h">3 غرف · 3 متاحة</div>
-      <div class="ov-row"><span class="d">الطابق الأرضي · شقة 3<small><b>72,1 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">182.710 EUR<small>182.710 EUR cu TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 1 · شقة 4<small><b>85,5 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">203.280 EUR<small>168.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 3 · شقة 12<small><b>86,1 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">203.280 EUR<small>168.000 EUR + TVA 21%</small></span></div>
+      <div class="ov-row"><span class="d">الطابق الأرضي · شقة 3<small><b>72,1 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">182.710 EUR<small>151.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 1 · شقة 4<small><b>85,5 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">203.280 EUR<small>168.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 3 · شقة 12<small><b>86,1 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">203.280 EUR<small>168.000 EUR + TVA 21%</small></span></div>
       <div class="ov-h">غرفتان · 9 متاحة</div>
-      <div class="ov-row"><span class="d">الطابق 1 · شقة 7<small><b>62,1 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">147.620 EUR<small>122.420 EUR cu TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 4 · شقة 19<small><b>62 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">148.830 EUR<small>123.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 6 · شقة 25<small><b>67,6 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">162.140 EUR<small>134.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 6 · شقة 26<small><b>49,2 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">130.075 EUR<small>130.075 EUR cu TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 6 · شقة 27<small><b>62,1 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">151.250 EUR<small>125.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 7 · شقة 28<small><b>71,25 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">164.560 EUR<small>136.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 7 · شقة 29<small><b>67,8 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">163.350 EUR<small>135.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 7 · شقة 30<small><b>63,05 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">163.350 EUR<small>135.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 7 · شقة 31<small><b>65,9 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">165.165 EUR<small>136.500 EUR + TVA 21%</small></span></div>
+      <div class="ov-row"><span class="d">الطابق 1 · شقة 7<small><b>62,1 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">147.620 EUR<small>122.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 4 · شقة 19<small><b>62 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">148.830 EUR<small>123.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 6 · شقة 25<small><b>67,6 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">162.140 EUR<small>134.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 6 · شقة 26<small><b>49,2 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">130.075 EUR<small>107.500 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 6 · شقة 27<small><b>62,1 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">151.250 EUR<small>125.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 7 · شقة 28<small><b>71,25 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">164.560 EUR<small>136.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 7 · شقة 29<small><b>67,8 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">163.350 EUR<small>135.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 7 · شقة 30<small><b>63,05 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">163.350 EUR<small>135.000 EUR + TVA 21%</small></span></div><div class="ov-row"><span class="d">الطابق 7 · شقة 31<small><b>65,9 mp إجمالي</b> · تقسيم مرن</small></span><span class="p">165.165 EUR<small>136.500 EUR + TVA 21%</small></span></div>
       <div class="ov-h">المواقف</div>
       <div class="ov-block">موقف مزدوج نوع Klauss بمكانين: <b>30.250 EUR</b> شامل ضريبة القيمة المضافة 21%<br>موقف فردي: <b>24.200 EUR</b> شامل ضريبة القيمة المضافة 21%<br>لأول 3 مشترين: موقف للإيجار من <b>96,80 EUR</b> شامل ضريبة القيمة المضافة 21% شهريا.</div>
       <div class="ov-h">الحجز</div>
