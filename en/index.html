@@ -118,7 +118,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .grev-badge:hover{border-color:rgba(var(--gold-rgb),.95)}
 .grev-badge:active{transform:scale(.97)}
 .beat.on .grev-badge{pointer-events:auto}
-@media (max-width:900px){.grev-badge{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(var(--bg-rgb),.72)}}
+@media (max-width:700px){.grev-badge{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(var(--bg-rgb),.72)}}
 .btn::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .55s ease}
 .btn:hover::after{left:125%}
 .beat .btn{transition-delay:var(--d,0ms)}
@@ -241,7 +241,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 #hcta .hwa{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:700;font-size:.96rem;color:var(--cta-ink);text-decoration:none;border:1px solid var(--gold);border-radius:999px;padding:.58em 1.2em;background:var(--cta);box-shadow:0 6px 22px rgba(var(--gold-rgb),.26);transition:box-shadow .3s ease,transform .15s ease}
 #hcta .hwa:hover{box-shadow:0 9px 30px rgba(var(--gold-rgb),.45)}
 #hcta .hwa:active{transform:scale(.96)}
-@media (max-width:900px){ #hcta .hwa{backdrop-filter:none;-webkit-backdrop-filter:none} }
+@media (max-width:700px){ #hcta .hwa{backdrop-filter:none;-webkit-backdrop-filter:none} }
 /* meniul site-ului, accesibil si din film (directiva Andy: meniu adevarat peste tot) */
 .mn-btn{pointer-events:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;margin-left:1rem;border-radius:10px;border:1px solid rgba(var(--gold-rgb),.5);background:rgba(var(--bg-rgb),.55);cursor:pointer;transition:border-color .3s ease}
 .mn-btn:hover{border-color:rgba(var(--gold-rgb),.95)}
@@ -734,6 +734,21 @@ html[data-theme="light"] .g{
   background-repeat:no-repeat;background-size:100% .14em;background-position:0 92%;
   padding-bottom:.02em}
 html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:100% .11em}
+
+/* ===== ASEZAREA TEXTULUI (4 aug 2026) =====
+   MASURA in unitati de FONT, masurata pe site, nu presupusa: pentru Inter,
+   31,5em dau 65 de caractere pe rand, la orice marime de text. Deci 32em pe proza.
+   `ch` ar fi fost gresit: `ch` e latimea cifrei zero, adica 0,6em la Inter,
+   deci 66ch insemna 40em, adica randuri de 82 de caractere. Masurat, nu ghicit. */
+h1,h2,h3,h4,h5,h6,.lead,.big,.dif-d>summary,.faq-q,.card h3{text-wrap:balance}
+p,li,figcaption,blockquote,dd,dt,.hint,.cm,.after{text-wrap:pretty}
+main p,main blockquote,main dd,main figcaption{max-width:32em}
+main .lead{max-width:34em}
+main p.pblock,main p.dsc,main p.rv,main .pl li,main .fin li,.dif-in li,.resp p{max-width:32em}
+@media (max-width:700px){
+  main p,main .lead,main figcaption,main blockquote,main dd,
+  main .pl li,main .fin li,.dif-in li,.resp p{max-width:none}
+}
 </style>
 </head>
 <body>
@@ -753,8 +768,8 @@ html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:
   <div class="sc"><div class="scin">
     <div class="cl cl-ed">
       <div class="ck cv" style="--ed:140ms">New building P+8 · Dristor-Titan, Sector 3</div>
-      <h1 class="cti cv" style="--ed:200ms">Here you don't buy the building.<br><em>You buy the place.</em></h1>
-      <p class="cle cv" style="--ed:270ms">A quiet street, tucked between houses:<br class="dbr"> <b class="nw">Aleea Eprubetei 7-11</b>.<br class="dbr"> You are in the city, but <span class="nw">you cannot hear it.</span></p>
+      <h1 class="cti cv" style="--ed:200ms">Here you don't buy the building.<br><em>You buy the place.</em></h1>
+      <p class="cle cv" style="--ed:270ms">A quiet street, tucked between houses:<br class="dbr"> <b class="nw">Aleea Eprubetei 7-11</b>.<br class="dbr"> You are in the city, but <span class="nw">you cannot hear it.</span></p>
       <div class="cbtns cv" style="--ed:340ms">
         <a class="cwa" href="https://wa.me/40774096700?text=Hello%21%20I%20would%20like%20details%20about%20the%20apartments%20on%20Aleea%20Eprubetei."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Message us on WhatsApp</a>
         <a class="cap" href="/en/apartamente/">Apartments and prices</a>
@@ -832,7 +847,7 @@ html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:
 <!-- beats per sectiune, fiecare cu identitatea ei (data-seg = index hold 0..6). COPY DRAFT pre voce-vie. -->
 <div class="beat" data-seg="0">
   <div class="kicker">New apartments · Dristor-Titan, 5 minutes from the metro</div>
-  <p class="big split">Here you don't buy the building.<br><span class="g">You buy the place.</span></p>
+  <p class="big split">Here you don't buy the building.<br><span class="g">You buy the place.</span></p>
   <div class="rule"></div>
   <div class="lead"><b>A quiet street</b>, between houses. You are in the city, but you cannot hear it.</div>
   <div class="bdg">Buy directly from the developer</div>
@@ -849,7 +864,7 @@ html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:
 </div>
 <div class="beat pos-cl" data-seg="3">
   <div class="kicker">Aleea Eprubetei · closed street</div>
-  <p class="big split"><span class="g">Peace</span> and quiet.</p>
+  <p class="big split"><span class="g">Peace</span> and quiet.</p>
   <div class="rule"></div>
   <div class="quote">The top-floor penthouses are already sold.<br>On the 7th floor there are still apartments with the same <span class="g">view</span>.</div>
 </div>
@@ -897,7 +912,7 @@ html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:
   <button type="button" id="ffClose" class="ff-close" aria-label="Back to the film">↑</button>
   <div class="ff-in">
     <div class="ff-brand">Ilioara <b>Residence</b></div>
-    <p class="ff-desc">New building at Aleea Eprubetei 7, Titan-Dristor, Sector 3, Bucharest. Completion December 2026.<br>Directly from the developer, no buyer commission.</p>
+    <p class="ff-desc">New building at Aleea Eprubetei 7, Titan-Dristor, Sector 3, Bucharest. Completion December 2026.<br>Directly from the developer, no buyer commission.</p>
     <nav class="ff-nav" aria-label="Pagini"><a href="/en/proiecte-finalizate/">Completed projects</a><a href="/en/apartamente/">Apartments</a><a href="/en/preturi/">Prices</a><a href="/en/dotari/">Features</a><a href="/en/credit-ipotecar/">Mortgage</a><a href="/en/pentru-cine-construim/">Who we build for</a><a href="/en/parcare/">Parking</a><a href="/en/zona/">Location</a><a href="/blog/">Blog</a><a href="/en/echipa-ilioara-residence/">Team</a></nav>
     <nav class="ff-nav ff-gh" aria-label="Ghiduri"><span class="ff-h">Ghiduri</span><a href="/apartamente-noi-bucuresti/">Apartamente noi București</a><a href="/apartamente-blocuri-noi-bucuresti/">Apartament în bloc nou</a><a href="/blocuri-noi-bucuresti/">Blocuri noi construite</a></nav>
     <nav class="ff-soc" aria-label="Social"><a href="https://www.tiktok.com/@ilioara.residence" target="_blank" rel="noopener" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9.4" cy="16.9" r="3.1" stroke="currentColor" stroke-width="1.7"/><path d="M12.5 16.9V4.3h2c.32 2.02 1.63 3.5 3.6 3.78v2.3c-1.34 0-2.58-.42-3.6-1.18v7.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://www.instagram.com/ilioara.residence/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.7"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/people/Ilioara-Residence/61573376259964/?sk=photos" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M13.6 17.5v-5.3h1.8l.3-2.1h-2.1V8.7c0-.6.2-1 1-1h1.1V5.8c-.2 0-.9-.1-1.7-.1-1.7 0-2.9 1.1-2.9 3v1.4H8.9v2.1h1.8v5.3h1.9z" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@ilioara.residence.bucharest/shorts" target="_blank" rel="noopener" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M10.3 9.6l5 2.4-5 2.4z" fill="currentColor"/></svg></a><a href="https://www.linkedin.com/company/ilioara-residence/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.7"/><circle cx="8.2" cy="8.2" r="1.15" fill="currentColor"/><line x1="8.2" y1="11" x2="8.2" y2="17" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><line x1="11.5" y1="11" x2="11.5" y2="17" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M11.5 13.6c0-1.5 1-2.5 2.2-2.5 1.2 0 1.8.9 1.8 2.5V17" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round"/></svg></a></nav><div class="ff-bot">© 2026 Ilioara Residence · Crafted with care by <a href="https://i-vory.ro" target="_blank" rel="noopener">i-vory Studio</a> · <a href="/informatii-legale/">Legal information</a></div>
@@ -917,7 +932,7 @@ html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:
       <div class="ov-block">Klauss double parker, 2 stacked spots: <b>30.250 EUR</b> including 21% VAT<br>Single parking spot: <b>24.200 EUR</b> including 21% VAT<br>For the first 3 buyers: parking for rent, from <b>96,80 EUR</b> including 21% VAT per month.</div>
       <div class="ov-h">Reservation</div>
       <div class="ov-block">You reserve with <b>2.420 EUR</b> including 21% VAT, then the minimum down payment is <b>30%</b>. The rest of the details on WhatsApp or at the viewing.</div>
-      <p class="ov-more"><a href="/en/apartamente/">See every apartment in detail, each with its own page</a></p>
+      <p class="ov-more"><a href="/en/apartamente/">See every apartment in detail, each with its own page</a></p>
       <div class="ov-cta"><a class="btn" href="https://wa.me/40774096700?text=Hello%21%20I%20would%20like%20details%20about%20prices%20and%20available%20apartments."><svg class="wa" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.4 0-9.8 4.3-9.8 9.7 0 1.7.5 3.4 1.3 4.8L2.2 21.8l5.2-1.4c1.4.8 2.9 1.2 4.6 1.2 5.4 0 9.8-4.3 9.8-9.7S17.4 2.2 12 2.2zm0 17.6c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-7.9 8-7.9s8 3.5 8 7.9-3.6 7.9-8 7.9zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/></svg>Message us on WhatsApp</a></div>
     </div>
   </div>
@@ -937,7 +952,7 @@ html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:
       <div class="ov-block"><b>Underfloor heating</b> throughout, balcony included.<br>Individual <b>24 kW</b> boiler.<br>Barrier-controlled car access.</div>
       <div class="ov-h">The apartments</div>
       <div class="ov-block">Ground floor + 8, with <b>2 top-floor penthouses</b>, already sold.<br>Otherwise <b>4 apartments per floor</b>: one 3-room and three 2-room.<br>Total areas from <b>49 to 86 mp</b>, modular layouts.<br>Completion: <b>December 2026</b>.</div>
-      <p class="ov-more"><a href="/en/dotari/">See all features in detail</a></p>
+      <p class="ov-more"><a href="/en/dotari/">See all features in detail</a></p>
       <div class="ov-cta"><a class="btn" href="https://wa.me/40774096700?text=Hello%21%20I%20saw%20the%20technical%20sheet%20and%20I%20would%20like%20details.">Message us on WhatsApp</a></div>
     </div>
   </div>

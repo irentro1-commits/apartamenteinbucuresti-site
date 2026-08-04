@@ -341,3 +341,18 @@ html[data-theme="light"] .g{
   background-repeat:no-repeat;background-size:100% .14em;background-position:0 92%;
   padding-bottom:.02em}
 html[data-theme="light"] .big .g,html[data-theme="light"] h1 .g{background-size:100% .11em}
+
+/* ===== ASEZAREA TEXTULUI (4 aug 2026) =====
+   MASURA in unitati de FONT, masurata pe site, nu presupusa: pentru Inter,
+   31,5em dau 65 de caractere pe rand, la orice marime de text. Deci 32em pe proza.
+   `ch` ar fi fost gresit: `ch` e latimea cifrei zero, adica 0,6em la Inter,
+   deci 66ch insemna 40em, adica randuri de 82 de caractere. Masurat, nu ghicit. */
+h1,h2,h3,h4,h5,h6,.lead,.big,.dif-d>summary,.faq-q,.card h3{text-wrap:balance}
+p,li,figcaption,blockquote,dd,dt,.hint,.cm,.after{text-wrap:pretty}
+main p,main blockquote,main dd,main figcaption{max-width:32em}
+main .lead{max-width:34em}
+main p.pblock,main p.dsc,main p.rv,main .pl li,main .fin li,.dif-in li,.resp p{max-width:32em}
+@media (max-width:700px){
+  main p,main .lead,main figcaption,main blockquote,main dd,
+  main .pl li,main .fin li,.dif-in li,.resp p{max-width:none}
+}
