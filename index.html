@@ -58,15 +58,15 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-ext-s2.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-s2.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12;color-scheme:dark}
+:root{--cta:#E8B45A;--cta-ink:#1C1710;--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12;color-scheme:dark}
 /* TEMA DESCHISA: hartie crem, cerneala, auriu inchis. Contraste calculate: 15,6:1 text, 7,4:1 secundar, 5,0:1 auriu. */
-html[data-theme="light"]{--cream:#1C1710;--cream-soft:#574C3E;--gold:#6B6A07;--bg:#F5F0E1;--bg2:#EDE6D4;--cream-rgb:28,23,16;--soft-rgb:87,76,62;--gold-rgb:107,106,7;--bg-rgb:245,240,225;--bg2-rgb:237,230,212;color-scheme:light}
+html[data-theme="light"]{--cta:#E8B45A;--cta-ink:#1C1710;--cream:#1C1710;--cream-soft:#574C3E;--gold:#6B6A07;--bg:#F5F0E1;--bg2:#EDE6D4;--cream-rgb:28,23,16;--soft-rgb:87,76,62;--gold-rgb:107,106,7;--bg-rgb:245,240,225;--bg2-rgb:237,230,212;color-scheme:light}
 /* Coperta ramane cinematica in ambele teme: fotografie inchisa, text crem peste ea. Antetul imprumuta
    paleta inchisa doar cat timp coperta e sus (body.cov-on), apoi revine la tema aleasa. */
 #cov,body.cov-on header,body.cov-on #rail,body.cov-on #hint,body.cov-on .brand{--cream:#F5F0E1;--cream-soft:#E4DBC8;--gold:#E8B45A;--bg:#14100b;--bg2:#1a140c;--cream-rgb:245,240,225;--soft-rgb:228,219,200;--gold-rgb:232,180,90;--bg-rgb:20,16,11;--bg2-rgb:26,20,12}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none;background:var(--bg)}
 body{font-family:'Inter',sans-serif;color:var(--cream);touch-action:none}
-::selection{background:var(--gold);color:var(--bg2)}
+::selection{background:var(--cta);color:var(--cta-ink)}
 a,button{-webkit-tap-highlight-color:transparent}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
 
@@ -109,7 +109,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .beat.on .rule{transform:scaleX(1)}
 .beat .sub{font-family:'Inter';font-size:clamp(1.1rem,1.85vw,2rem);color:var(--cream-soft);margin-top:1.4rem;font-weight:400;text-shadow:0 2px 22px rgba(0,0,0,.65);line-height:1.32}
 .beat .sub b{color:var(--gold);font-weight:600}
-.btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;font-weight:600;font-size:1.35rem;padding:1.15rem 2.3rem;border-radius:999px;background:var(--gold);color:var(--bg2);text-decoration:none;position:relative;overflow:hidden}
+.btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;font-weight:600;font-size:1.35rem;padding:1.15rem 2.3rem;border-radius:999px;background:var(--cta);color:var(--cta-ink);text-decoration:none;position:relative;overflow:hidden}
 .beat.on .btn{pointer-events:auto}
 .greviews{margin-top:1.4rem;text-align:center}
 .grev-badge{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:600;font-size:.95rem;color:var(--cream);text-decoration:none;border:1px solid rgba(var(--gold-rgb),.5);border-radius:999px;padding:.5em 1.1em;background:rgba(var(--bg-rgb),.42);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);text-shadow:0 1px 10px rgba(0,0,0,.45);transition:border-color .3s ease,transform .15s ease}
@@ -175,7 +175,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .pill{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter';font-weight:600;font-size:clamp(.95rem,.95vw,1.05rem);color:var(--cream);text-decoration:none;border:1px solid rgba(var(--gold-rgb),.6);border-radius:999px;padding:.6em 1.1em;background:rgba(var(--bg-rgb),.55);transition:border-color .3s ease,transform .15s ease}
 .pill:hover{border-color:rgba(var(--gold-rgb),.95)}
 .pill:active{transform:scale(.96)}
-.pill.gold{background:var(--gold);color:var(--bg2);border-color:var(--gold);cursor:pointer}
+.pill.gold{background:var(--cta);color:var(--cta-ink);border-color:var(--gold);cursor:pointer}
 .beat.on .plans .pill{pointer-events:auto}
 /* ===== overlay preturi (propunerea #1 aprobata): strat DOM separat peste film, canvas + fizica neatinse ===== */
 #ov,#ovtech{position:fixed;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(12,9,5,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;transition:opacity .35s ease}
@@ -238,7 +238,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-conten
 #hcta .hlink:hover{color:var(--gold)}
 #hcta .htel{font-family:'Inter';font-weight:500;font-size:.84rem;color:var(--cream-soft);text-decoration:none;letter-spacing:.03em;opacity:.68;text-shadow:0 1px 12px rgba(0,0,0,.65);transition:color .3s ease,opacity .3s ease}
 #hcta .htel:hover{color:var(--gold);opacity:1}
-#hcta .hwa{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:700;font-size:.96rem;color:var(--bg2);text-decoration:none;border:1px solid var(--gold);border-radius:999px;padding:.58em 1.2em;background:var(--gold);box-shadow:0 6px 22px rgba(var(--gold-rgb),.26);transition:box-shadow .3s ease,transform .15s ease}
+#hcta .hwa{display:inline-flex;align-items:center;gap:.45em;font-family:'Inter';font-weight:700;font-size:.96rem;color:var(--cta-ink);text-decoration:none;border:1px solid var(--gold);border-radius:999px;padding:.58em 1.2em;background:var(--cta);box-shadow:0 6px 22px rgba(var(--gold-rgb),.26);transition:box-shadow .3s ease,transform .15s ease}
 #hcta .hwa:hover{box-shadow:0 9px 30px rgba(var(--gold-rgb),.45)}
 #hcta .hwa:active{transform:scale(.96)}
 @media (max-width:900px){ #hcta .hwa{backdrop-filter:none;-webkit-backdrop-filter:none} }
@@ -272,7 +272,7 @@ body.mn-open .mn-langs2{opacity:1;transform:none}
 body.mn-open .mn-foot{opacity:1}
 .mn-foot .ft{font-family:'Inter';font-weight:600;font-size:1rem;color:var(--cream);text-decoration:none;transition:color .25s ease}
 .mn-foot .ft:hover{color:var(--gold)}
-.mn-foot .fwa{display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter';font-weight:600;font-size:.95rem;padding:.6em 1.2em;border-radius:999px;background:var(--gold);color:var(--bg2);text-decoration:none;transition:transform .15s ease}
+.mn-foot .fwa{display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter';font-weight:600;font-size:.95rem;padding:.6em 1.2em;border-radius:999px;background:var(--cta);color:var(--cta-ink);text-decoration:none;transition:transform .15s ease}
 .mn-foot .fwa:active{transform:scale(.96)}
 .mn-tag{width:100%;font-family:'Inter';font-size:.82rem;color:rgba(var(--cream-rgb),.5);letter-spacing:.02em}
 .mn-craft2{width:100%;font-family:'Inter';font-size:.95rem;color:var(--cream-soft)}
@@ -334,7 +334,7 @@ body.mn-open .mn-x{opacity:1;visibility:visible;transition:opacity .4s ease .15s
 .telmini:active{opacity:1}
 .mn-cta .telmini,.ov-cta .telmini{margin-top:0}
 .mn-cta .telmini{opacity:.88;font-size:1rem}
-.mbtn{display:block;text-align:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95em 1em;border-radius:999px;background:var(--gold);color:var(--bg2);text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s ease}
+.mbtn{display:block;text-align:center;font-family:'Inter';font-weight:600;font-size:1.05rem;padding:.95em 1em;border-radius:999px;background:var(--cta);color:var(--cta-ink);text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s ease}
 .mbtn:active{transform:scale(.97)}
 .mbtn .wa{vertical-align:-4px;margin-right:.4em}
 @media (max-width:760px){
@@ -519,7 +519,7 @@ body.cov-in #cov .cv{opacity:1;transform:none}
 #cov .cle{font-family:'Inter';font-size:clamp(1.25rem, 1.9vw, 1.9rem);font-weight:400;line-height:1.34;color:var(--cream-soft);margin-top:1.35rem;max-width:23.5em;text-shadow:0 2px 20px rgba(0,0,0,.72);text-wrap:pretty}
 #cov .cle b{color:var(--cream);font-weight:600}
 #cov .cbtns{display:flex;align-items:center;gap:.9rem;margin-top:1.9rem;flex-wrap:wrap}
-#cov .cwa{pointer-events:auto;display:inline-flex;align-items:center;gap:.6rem;font-family:'Inter';font-weight:600;font-size:1.12rem;padding:1rem 1.9rem;border-radius:999px;background:var(--gold);color:#1a140c;text-decoration:none;box-shadow:0 10px 34px rgba(232,180,90,.28);position:relative;overflow:hidden;transition:transform .15s ease,box-shadow .3s ease}
+#cov .cwa{pointer-events:auto;display:inline-flex;align-items:center;gap:.6rem;font-family:'Inter';font-weight:600;font-size:1.12rem;padding:1rem 1.9rem;border-radius:999px;background:var(--cta);color:var(--cta-ink);text-decoration:none;box-shadow:0 10px 34px rgba(232,180,90,.28);position:relative;overflow:hidden;transition:transform .15s ease,box-shadow .3s ease}
 #cov .cwa::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .55s ease}
 #cov .cwa:hover{box-shadow:0 14px 44px rgba(232,180,90,.42)}
 #cov .cwa:hover::after{left:125%}
@@ -657,7 +657,7 @@ body.cov-in #cov .cv{opacity:1;transform:none}
 .thm .tb svg{width:13px;height:13px;display:block}
 .thm .tb:hover{color:var(--cream)}
 html[data-theme="dark"] .thm .tb[data-tema="dark"],
-html[data-theme="light"] .thm .tb[data-tema="light"]{background:var(--gold);color:var(--bg)}
+html[data-theme="light"] .thm .tb[data-tema="light"]{background:var(--cta);color:var(--cta-ink)}
 .mn-tema{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem;margin-top:1.15rem}
 .mn-tema .lb{font-family:'Inter';font-weight:700;font-size:.62rem;letter-spacing:.22em;
   text-transform:uppercase;color:var(--gold);width:100%}
