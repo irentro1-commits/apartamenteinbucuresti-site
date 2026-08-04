@@ -1,42 +1,42 @@
 {
-  "en": {
-    "seoTitle": "Blog: guides for new apartment buyers",
-    "description": "Guides on prices, paperwork, steps and the area, for anyone buying a new apartment in Bucharest. Short and to the point.",
-    "h1": "Guides for anyone buying a new apartment",
-    "badge": "Apartments direct from the owners",
-    "lead": "We write about what people ask before they buy: prices, paperwork, steps, the area.<br>Short and to the point.",
-    "cardLink": "Read",
-    "ctaAfter": "Questions we haven't answered yet? Message us on WhatsApp.",
-    "breadcrumbBlog": "Blog"
-  },
-  "he": {
-    "seoTitle": "בלוג: מדריכים לקוני דירות חדשות",
-    "description": "מדריכים על מחירים, מסמכים, שלבים והאזור, למי שקונה דירה חדשה בבוקרשט. קצר ולעניין.",
-    "h1": "מדריכים למי שקונה דירה חדשה",
-    "badge": "דירות ישירות מהבעלים",
-    "lead": "אנחנו כותבים על מה שאנשים שואלים לפני שהם קונים: מחירים, מסמכים, שלבים, אזור.<br>קצר ולעניין.",
-    "cardLink": "לקריאה",
-    "ctaAfter": "יש לכם שאלות שעדיין לא ענינו עליהן? כתבו לנו ב-WhatsApp.",
-    "breadcrumbBlog": "בלוג"
-  },
-  "ar": {
-    "seoTitle": "المدونة: أدلة لمشتري الشقق الجديدة",
-    "description": "أدلة عن الأسعار والأوراق والمراحل والمنطقة، لمن يشتري شقة جديدة في بوخارست. مختصرة وفي صلب الموضوع.",
-    "h1": "أدلة لمن يشتري شقة جديدة",
-    "badge": "شقق مباشرة من المالكين",
-    "lead": "نكتب عما يسأل عنه الناس قبل الشراء: الأسعار، الأوراق، المراحل، المنطقة.<br>مختصر وفي صلب الموضوع.",
-    "cardLink": "اقرأ",
-    "ctaAfter": "هل لديك أسئلة لم نجب عنها بعد؟ راسلنا عبر WhatsApp.",
-    "breadcrumbBlog": "المدونة"
-  },
-  "uk": {
-    "seoTitle": "Блог: посібники для покупців нових квартир",
-    "description": "Посібники про ціни, документи, етапи та район для тих, хто купує нову квартиру в Бухаресті. Коротко і по суті.",
-    "h1": "Посібники для тих, хто купує нову квартиру",
-    "badge": "Квартири напряму від власників",
-    "lead": "Пишемо про те, що люди питають перед купівлею: ціни, документи, етапи, район.<br>Коротко і по суті.",
-    "cardLink": "Читати",
-    "ctaAfter": "Є питання, на які ми ще не відповіли? Напишіть нам у WhatsApp.",
-    "breadcrumbBlog": "Блог"
-  }
+ "en": {
+  "seoTitle": "Blog: guides for new apartment buyers",
+  "description": "Guides on prices, paperwork, steps and the area, for anyone buying a new apartment in Bucharest. Short and to the point.",
+  "h1": "Guides for anyone buying a new apartment",
+  "badge": "Apartments direct from the developer",
+  "lead": "We write about what people ask before they buy: prices, paperwork, steps, the area.<br>Short and to the point.",
+  "cardLink": "Read",
+  "ctaAfter": "Questions we haven't answered yet? Message us on WhatsApp.",
+  "breadcrumbBlog": "Blog"
+ },
+ "he": {
+  "seoTitle": "בלוג: מדריכים לקוני דירות חדשות",
+  "description": "מדריכים על מחירים, מסמכים, שלבים והאזור, למי שקונה דירה חדשה בבוקרשט. קצר ולעניין.",
+  "h1": "מדריכים למי שקונה דירה חדשה",
+  "badge": "דירות ישירות מהיזם",
+  "lead": "אנחנו כותבים על מה שאנשים שואלים לפני שהם קונים: מחירים, מסמכים, שלבים, אזור.<br>קצר ולעניין.",
+  "cardLink": "לקריאה",
+  "ctaAfter": "יש לכם שאלות שעדיין לא ענינו עליהן? כתבו לנו ב-WhatsApp.",
+  "breadcrumbBlog": "בלוג"
+ },
+ "ar": {
+  "seoTitle": "المدونة: أدلة لمشتري الشقق الجديدة",
+  "description": "أدلة عن الأسعار والأوراق والمراحل والمنطقة، لمن يشتري شقة جديدة في بوخارست. مختصرة وفي صلب الموضوع.",
+  "h1": "أدلة لمن يشتري شقة جديدة",
+  "badge": "شقق مباشرة من المطوّر",
+  "lead": "نكتب عما يسأل عنه الناس قبل الشراء: الأسعار، الأوراق، المراحل، المنطقة.<br>مختصر وفي صلب الموضوع.",
+  "cardLink": "اقرأ",
+  "ctaAfter": "هل لديك أسئلة لم نجب عنها بعد؟ راسلنا عبر WhatsApp.",
+  "breadcrumbBlog": "المدونة"
+ },
+ "uk": {
+  "seoTitle": "Блог: посібники для покупців нових квартир",
+  "description": "Посібники про ціни, документи, етапи та район для тих, хто купує нову квартиру в Бухаресті. Коротко і по суті.",
+  "h1": "Посібники для тих, хто купує нову квартиру",
+  "badge": "Квартири напряму від забудовника",
+  "lead": "Пишемо про те, що люди питають перед купівлею: ціни, документи, етапи, район.<br>Коротко і по суті.",
+  "cardLink": "Читати",
+  "ctaAfter": "Є питання, на які ми ще не відповіли? Напишіть нам у WhatsApp.",
+  "breadcrumbBlog": "Блог"
+ }
 }

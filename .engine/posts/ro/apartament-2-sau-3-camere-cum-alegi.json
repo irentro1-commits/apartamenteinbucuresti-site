@@ -99,7 +99,7 @@
     },
     {
      "t": "p",
-     "x": "Restul detaliilor contează la fel de mult ca numărul de uși: încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie tripan Salamander cu 7 camere, centrală proprie Ariston, toate incluse în preț. Vânzarea e directă de la proprietari, 0% comision pentru cumpărător, iar prețul afișat e prețul, fără surprize la final. Vezi planurile și suprafețele concrete pe /apartamente/, compară cele două variante una lângă alta și alege pe cifre, nu pe frică. Pentru o întrebare rapidă sau o vizionare, un mesaj pe WhatsApp rezolvă."
+     "x": "Restul detaliilor contează la fel de mult ca numărul de uși: încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie tripan Salamander cu 7 camere, centrală proprie Ariston, toate incluse în preț. Vânzarea e directă de la dezvoltator, 0% comision pentru cumpărător, iar prețul afișat e prețul, fără surprize la final. Vezi planurile și suprafețele concrete pe /apartamente/, compară cele două variante una lângă alta și alege pe cifre, nu pe frică. Pentru o întrebare rapidă sau o vizionare, un mesaj pe WhatsApp rezolvă."
     },
     {
      "t": "p",
@@ -111,7 +111,7 @@
  "faq": [
   {
    "q": "Cât costă un apartament de 2 camere față de unul de 3 camere la Ilioara Residence?",
-   "a": "Apartamentele de 2 camere sunt între 107.500 și 136.500 EUR + TVA, iar cele de 3 camere între 151.000 și 168.000 EUR + TVA. Prețul afișat e prețul final, vânzare directă de la proprietari, 0% comision pentru cumpărător."
+   "a": "Apartamentele de 2 camere sunt între 107.500 și 136.500 EUR + TVA, iar cele de 3 camere între 151.000 și 168.000 EUR + TVA. Prețul afișat e prețul final, vânzare directă de la dezvoltator, 0% comision pentru cumpărător."
   },
   {
    "q": "Sunt cuplu fără copii. Chiar îmi trebuie 3 camere?",
@@ -146,7 +146,7 @@
   },
   {
    "href": "/blog/cumperi-direct-de-la-proprietar/",
-   "label": "Direct de la proprietari, fără comision: cum funcționează"
+   "label": "Direct de la dezvoltator, fără comision: cum funcționează"
   },
   {
    "href": "/apartamente/",

@@ -78,7 +78,7 @@
     },
     {
      "t": "p",
-     "x": "La Ilioara Residence vânzarea se face direct de la proprietari, deci comisionul pentru cumpărător este zero. Prețul afișat lângă fiecare apartament este prețul final al locuinței, iar peste el se adaugă TVA și costurile legale, atât. Am detaliat separat ce se schimbă în practică în ghidul despre <a href=\"/blog/cumperi-direct-de-la-proprietar/\">cumpărarea direct de la proprietar</a>."
+     "x": "La Ilioara Residence vânzarea se face direct de la dezvoltator, deci comisionul pentru cumpărător este zero. Prețul afișat lângă fiecare apartament este prețul final al locuinței, iar peste el se adaugă TVA și costurile legale, atât. Am detaliat separat ce se schimbă în practică în ghidul despre <a href=\"/blog/cumperi-direct-de-la-proprietar/\">cumpărarea direct de la dezvoltator</a>."
     },
     {
      "t": "p",
@@ -177,7 +177,7 @@
   },
   {
    "href": "/blog/cumperi-direct-de-la-proprietar/",
-   "label": "Ce se schimbă când cumperi direct de la proprietar"
+   "label": "Ce se schimbă când cumperi direct de la dezvoltator"
   }
  ]
 }

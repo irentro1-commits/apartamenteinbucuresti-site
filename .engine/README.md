@@ -73,7 +73,12 @@ Preturi fara TVA: 2 camere intre 107.500 si 136.500 EUR, 3 camere intre 151.000 
 Cota de TVA aplicabila la Ilioara: 21%, cota standard din Romania de la 1 august 2025 prin Legea 141/2025. Livrarea in decembrie 2026 cade dupa termenul regimului tranzitoriu de 9%, deci cota redusa nu se poate aplica aici.
 Dotari incluse: incalzire in pardoseala peste tot, inclusiv pe balcon; tamplarie tripan Salamander cu 7 camere; centrala proprie Ariston de 24 kW; compartimentare modulara.
 Distante pe jos: metrou Nicolae Grigorescu 5 minute, autobuz Ilioara 3 minute, tramvaiele 19, 23 si 27 la 4 minute, parcul IOR 9 minute, ParkLake 15 minute, metrou Titan 18 minute.
-Vanzare directa de la proprietari, zero comision pentru cumparator. Contact WhatsApp 0774 096 700.
+Vanzare directa de la DEZVOLTATOR, zero comision pentru cumparator. Contact WhatsApp 0774 096 700.
+Formularea e LOCKED (decizie Andy, 4 Aug 2026): peste tot se scrie "direct de la dezvoltator", niciodata
+"de la proprietari". Motivul: in anunturile imobiliare romanesti "proprietar" inseamna persoana care isi
+vinde propria locuinta, adica piata second-hand, iar "dezvoltator" e categoria corecta pentru bloc nou.
+Exceptie, singura: propozitiile care explica piata in general (agentie contra proprietar contra dezvoltator)
+si "asociatia de proprietari", unde cuvantul e al pietei, nu al nostru.
 
 Disponibilitatea (12 din 33) se schimba. Se confirma cu Andy inainte sa apara intr-un articol nou.
 

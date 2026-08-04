@@ -3,12 +3,12 @@
  "title": "Ilioara Residence Titan: the complete guide to the project",
  "seoTitle": "Ilioara Residence Titan: the complete project guide",
  "description": "Ilioara Residence, a new building on Aleea Eprubetei 7-11, Titan-Dristor. 33 apartments, 12 available, from 107,500 EUR + VAT, ready December 2026.",
- "descriptionLlm": "Ilioara Residence is a new building (ground floor + 8 storeys, with 2 penthouses sold on the top floor; 31 apartments for sale, 4 per floor) on Aleea Eprubetei 7-11, the Titan-Dristor area, Sector 3, Bucharest. 12 apartments available, 2 room apartments from 107,500 EUR + VAT, 3 room apartments up to 168,000 EUR + VAT, completion December 2026, a direct sale from the owners.",
+ "descriptionLlm": "Ilioara Residence is a new building (ground floor + 8 storeys, with 2 penthouses sold on the top floor; 31 apartments for sale, 4 per floor) on Aleea Eprubetei 7-11, the Titan-Dristor area, Sector 3, Bucharest. 12 apartments available, 2 room apartments from 107,500 EUR + VAT, 3 room apartments up to 168,000 EUR + VAT, completion December 2026, a direct sale from the developer.",
  "articleSection": "New apartments",
- "keywords": "Ilioara Residence, Ilioara Residence Titan, new building Aleea Eprubetei, new apartments Titan, apartments Dristor Sector 3, 2 room apartments Titan, 3 room apartments Titan, new building Sector 3, apartments direct from the owner Bucharest",
+ "keywords": "Ilioara Residence, Ilioara Residence Titan, new building Aleea Eprubetei, new apartments Titan, apartments Dristor Sector 3, 2 room apartments Titan, 3 room apartments Titan, new building Sector 3, apartments direct from the developer Bucharest",
  "readMinutes": 5,
  "publishedAt": "2026-06-16",
- "lead": "Most new buildings in Titan sell on renders and promises. Ilioara Residence sells on something harder to photograph: a closed street, set back among houses, where nobody passes unless they have business there. You are looking up this name because you saw the listing and you want to know exactly what it is, where, how much it costs and what you get for that money. Good. Here is the complete answer, without going in circles: the real figures, what is left to sell, what is included in the price and how you buy, direct from the owners.",
+ "lead": "Most new buildings in Titan sell on renders and promises. Ilioara Residence sells on something harder to photograph: a closed street, set back among houses, where nobody passes unless they have business there. You are looking up this name because you saw the listing and you want to know exactly what it is, where, how much it costs and what you get for that money. Good. Here is the complete answer, without going in circles: the real figures, what is left to sell, what is included in the price and how you buy, direct from the developer.",
  "intro": [],
  "hasByline": true,
  "sections": [
@@ -91,11 +91,11 @@
    ]
   },
   {
-   "h2": "How you buy: direct from the owners",
+   "h2": "How you buy: direct from the developer",
    "blocks": [
     {
      "t": "p",
-     "x": "Here there is no middleman taking a cut out of your pocket. The sale is made directly by the owners, with 0% commission for the buyer. The sum you see on /preturi/ is the sum you pay, with no hidden fee added at the end."
+     "x": "Here there is no middleman taking a cut out of your pocket. The sale is made directly by the developer, with 0% commission for the buyer. The sum you see on /preturi/ is the sum you pay, with no hidden fee added at the end."
     },
     {
      "t": "p",
@@ -131,7 +131,7 @@
   },
   {
    "q": "Is a commission paid on purchase?",
-   "a": "No. The sale is made directly by the owners, with 0% commission for the buyer. The sum you see is the sum you pay."
+   "a": "No. The sale is made directly by the developer, with 0% commission for the buyer. The sum you see is the sum you pay."
   }
  ],
  "ctaAfter": "You get the floor plans and the prices on WhatsApp, then we arrange the viewing together.",
@@ -146,7 +146,7 @@
   },
   {
    "href": "/blog/cumperi-direct-de-la-proprietar/",
-   "label": "Direct from the owners, no commission: how it works"
+   "label": "Direct from the developer, no commission: how it works"
   },
   {
    "href": "/apartamente/",
