@@ -673,24 +673,36 @@ html[data-theme="light"] .mn-tema .tb-m[data-tema="light"]{color:var(--gold);fon
 .mn-tema{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1) .58s,transform .55s cubic-bezier(.16,1,.3,1) .58s}
 body.mn-open .mn-tema{opacity:1;transform:none}
 
-/* ===== BLOCUL DE DIFERENTIERE (4 aug 2026) =====
-   Sus, in prima sectiune, inchis pe un rand si deschis la clic. Element details nativ, deci zero JavaScript. */
+
+/* ===== CANALELE DE VANZARE + DIFERENTIERE (4 aug 2026) =====
+   Sus, in prima sectiune: numarul de telefon ca buton, apoi comutatorul cu restul canalelor.
+   Comutatorul e element details nativ, deci merge si daca scriptul cade. */
 .dif{margin:1.5rem 0 .4rem;border:1px solid rgba(var(--gold-rgb),.44);border-radius:14px;
-  background:rgba(var(--gold-rgb),.07)}
-.dif>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.85rem;
-  padding:.9rem 1.1rem;font-family:'Inter';font-size:.95rem;line-height:1.45;color:var(--cream)}
-.dif>summary::-webkit-details-marker{display:none}
-.dif>summary::marker{content:""}
-.dif>summary:hover{background:rgba(var(--gold-rgb),.05);border-radius:13px}
-.dif .ic{flex:0 0 auto;width:25px;height:25px;color:var(--gold)}
+  background:rgba(var(--gold-rgb),.07);overflow:hidden}
+.dif-tel{display:flex;align-items:center;gap:.85rem;padding:.85rem 1.1rem;text-decoration:none;
+  background:rgba(var(--gold-rgb),.13);
+  border-bottom:1px solid rgba(var(--gold-rgb),.28);transition:background-color .22s ease}
+.dif-tel:hover{background:rgba(var(--gold-rgb),.2)}
+.dif-tel .tic{flex:0 0 auto;width:25px;height:25px;color:var(--gold)}
+.dif-tel .tw{display:flex;flex-direction:column;line-height:1.25}
+.dif-tel .tw b{font-family:'Inter';font-weight:700;font-size:1.28rem;letter-spacing:.02em;
+  color:var(--gold)}
+.dif-tel .tw span{margin-top:.15rem;font-family:'Inter';font-size:.83rem;
+  color:rgba(var(--cream-rgb),.78)}
+.dif-d>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.85rem;
+  padding:.85rem 1.1rem;font-family:'Inter';font-size:.94rem;line-height:1.45;color:var(--cream)}
+.dif-d>summary::-webkit-details-marker{display:none}
+.dif-d>summary::marker{content:""}
+.dif-d>summary:hover{background:rgba(var(--gold-rgb),.05)}
+.dif .ic{flex:0 0 auto;width:24px;height:24px;color:var(--gold)}
 .dif .tx{flex:1 1 auto}
 .dif .tx b{color:var(--gold);font-weight:700}
 .dif .hn{display:block;margin-top:.2rem;font-size:.7rem;font-weight:600;letter-spacing:.16em;
   text-transform:uppercase;color:rgba(var(--cream-rgb),.55)}
 .dif .ch{flex:0 0 auto;width:17px;height:17px;color:var(--gold);
   transition:transform .32s cubic-bezier(.23,1,.32,1)}
-.dif[open] .ch{transform:rotate(180deg)}
-.dif-in{padding:.2rem 1.1rem 1.15rem;border-top:1px solid rgba(var(--gold-rgb),.2);margin-top:.1rem}
+.dif-d[open] .ch{transform:rotate(180deg)}
+.dif-in{padding:.2rem 1.1rem 1.15rem;border-top:1px solid rgba(var(--gold-rgb),.2)}
 .dif-in h3{margin:1rem 0 0;font-family:'Inter';font-weight:700;font-size:.7rem;letter-spacing:.2em;
   text-transform:uppercase;color:var(--gold)}
 .dif-in ul{list-style:none;padding:0;margin:.9rem 0 0;display:grid;gap:.72rem}
@@ -706,10 +718,13 @@ body.mn-open .mn-tema{opacity:1;transform:none}
   transition:background-color .22s ease}
 .dif-soc a:hover{background:rgba(var(--gold-rgb),.16)}
 @media (max-width:600px){
-  .dif>summary{padding:.8rem .9rem;gap:.65rem;font-size:.89rem}
-  .dif .ic{width:22px;height:22px}
+  .dif-tel{padding:.78rem .9rem;gap:.65rem}
+  .dif-tel .tw b{font-size:1.16rem}
+  .dif-tel .tw span{font-size:.78rem}
+  .dif-d>summary{padding:.75rem .9rem;gap:.65rem;font-size:.88rem}
+  .dif .ic{width:21px;height:21px}
   .dif-in{padding:.2rem .9rem 1rem}
-  .dif-in li{font-size:.89rem}
+  .dif-in li{font-size:.88rem}
 }
 </style>
 </head>
