@@ -64,7 +64,11 @@ h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.4rem,3vw,2.05r
 h2::after{content:'';display:block;width:38px;height:2px;background:rgba(var(--gold-rgb),.55);margin-top:.55rem}
 .lead,.pblock,.pblock p,.pl li,.cm,.after,.bdgp,.prow .d,.pf p,.bc,.srow .v,.price small,.closeq{text-wrap:pretty}
 .card h3,.mn-panel nav a{text-wrap:balance}
-.cp{white-space:nowrap}
+.cp{white-space:normal}
+/* Totalul pe rand propriu. Cu `white-space:nowrap` pe tot blocul, textul nou
+   `136.000 EUR + TVA 21% (164.560 EUR total)` iesea din card si se suprapunea
+   peste cardul vecin. Prins de Andy pe etajul 7, 10 aug 2026. */
+.cp small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:.78rem;color:var(--cream-soft);margin-top:.2rem;white-space:nowrap}
 .lead{font-size:clamp(1.14rem,1.85vw,1.32rem);line-height:1.7;color:var(--cream-soft);max-width:35rem}
 .lead b,.pblock b{color:var(--gold);font-weight:600}
 .price{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--gold-lg);margin:.2rem 0 1.4rem}
@@ -111,7 +115,7 @@ h2::after{content:'';display:block;width:38px;height:2px;background:rgba(var(--g
 .read-also a:hover{color:var(--gold)}
 .cm{color:var(--cream-soft);font-size:.92rem;margin-top:.4rem}
 .cm b{color:var(--cream);font-weight:600}
-.cp{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;color:var(--gold-lg);margin-top:.7rem}
+.cp{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;color:var(--gold-lg);margin-top:.7rem}
 .cl{display:inline-block;font-size:.85rem;font-weight:600;letter-spacing:.06em;color:var(--cream);border-bottom:1px solid rgba(var(--gold-rgb),.6);margin-top:.7rem;padding-bottom:.1em}
 .specs{border-top:1px solid rgba(var(--gold-rgb),.28);margin:1rem 0 1.4rem}
 .srow{display:flex;justify-content:space-between;gap:1.4rem;align-items:baseline;padding:.75rem 0;border-bottom:1px solid rgba(var(--gold-rgb),.18)}
