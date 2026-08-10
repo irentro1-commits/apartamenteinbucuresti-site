@@ -1,18 +1,16 @@
 # Cloudflare Pages: reguli de rutare. Ordinea conteaza, prima potrivire castiga.
-
 # Motorul de blog e cod de build, nu continut public. Coada de subiecte a
 # urmatoarei luni nu are ce cauta la vedere. robots.txt il si interzice, dar
 # robots opreste indexarea, nu accesul direct.
 /.engine/*   /404.html   404
-
 # Apartamentul de la parter e nr. 2 in lista dezvoltatorului, nu nr. 3 (4 aug 2026).
-/apartamente/apartament-3-camere-parter-ap-3/*   /apartamente/apartament-3-camere-parter-ap-2/   301
-/apartamente/apartament-3-camere-parter-ap-3   /apartamente/apartament-3-camere-parter-ap-2/   301
-/en/apartamente/apartament-3-camere-parter-ap-3/*   /en/apartamente/apartament-3-camere-parter-ap-2/   301
-/en/apartamente/apartament-3-camere-parter-ap-3   /en/apartamente/apartament-3-camere-parter-ap-2/   301
-/he/apartamente/apartament-3-camere-parter-ap-3/*   /he/apartamente/apartament-3-camere-parter-ap-2/   301
-/he/apartamente/apartament-3-camere-parter-ap-3   /he/apartamente/apartament-3-camere-parter-ap-2/   301
-/ar/apartamente/apartament-3-camere-parter-ap-3/*   /ar/apartamente/apartament-3-camere-parter-ap-2/   301
-/ar/apartamente/apartament-3-camere-parter-ap-3   /ar/apartamente/apartament-3-camere-parter-ap-2/   301
-/uk/apartamente/apartament-3-camere-parter-ap-3/*   /uk/apartamente/apartament-3-camere-parter-ap-2/   301
-/uk/apartamente/apartament-3-camere-parter-ap-3   /uk/apartamente/apartament-3-camere-parter-ap-2/   301
+/apartamente/apartament-3-camere-parter-ap-2/*   /apartamente/apartament-3-camere-parter-ap-3/   301
+/apartamente/apartament-3-camere-parter-ap-2   /apartamente/apartament-3-camere-parter-ap-3/   301
+/en/apartamente/apartament-3-camere-parter-ap-2/*   /en/apartamente/apartament-3-camere-parter-ap-3/   301
+/en/apartamente/apartament-3-camere-parter-ap-2   /en/apartamente/apartament-3-camere-parter-ap-3/   301
+/he/apartamente/apartament-3-camere-parter-ap-2/*   /he/apartamente/apartament-3-camere-parter-ap-3/   301
+/he/apartamente/apartament-3-camere-parter-ap-2   /he/apartamente/apartament-3-camere-parter-ap-3/   301
+/ar/apartamente/apartament-3-camere-parter-ap-2/*   /ar/apartamente/apartament-3-camere-parter-ap-3/   301
+/ar/apartamente/apartament-3-camere-parter-ap-2   /ar/apartamente/apartament-3-camere-parter-ap-3/   301
+/uk/apartamente/apartament-3-camere-parter-ap-2/*   /uk/apartamente/apartament-3-camere-parter-ap-3/   301
+/uk/apartamente/apartament-3-camere-parter-ap-2   /uk/apartamente/apartament-3-camere-parter-ap-3/   301
