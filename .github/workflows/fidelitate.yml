@@ -15,8 +15,7 @@ on:
     branches: [main]
     paths:
       - ".engine/**"
-      - "blog/**"
-      - "*/blog/**"
+      - "**/index.html"
       - "sitemap.xml"
       - "llms.txt"
   workflow_dispatch:
@@ -33,3 +32,17 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 .engine/scripts/verifica_fidelitate.py --repo "$GITHUB_WORKSPACE"
+
+  schema:
+    # Datele structurate, verificate contra vocabularului OFICIAL schema.org, nu din memorie.
+    # Search Console spune "Invalid object type for field" si atat: nici pagina exacta, nici
+    # campul. Aici se vede campul, tipul primit si tipul cerut, in aceeasi linie.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Ia vocabularul schema.org
+        run: curl -sS -o /tmp/schemaorg.jsonld https://schema.org/version/latest/schemaorg-current-https.jsonld
+      - run: python3 .engine/scripts/gate_schema.py --repo "$GITHUB_WORKSPACE" --vocab /tmp/schemaorg.jsonld
