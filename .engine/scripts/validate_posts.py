@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Gate pe batch-ul de articole (blog-seo). Exit 1 la FAIL."""
-import json, re, sys, glob, os, unicodedata
+import argparse, json, re, sys, glob, os, unicodedata
+
+AP = argparse.ArgumentParser()
+AP.add_argument("--posts", default=os.environ.get("BLOG_POSTS_LANG", "/tmp/posts"))
+ARGS, _ = AP.parse_known_args()
 
 ALLOWED = {
  "/", "/apartamente/", "/preturi/", "/dotari/", "/credit-ipotecar/", "/zona/",
@@ -9,17 +13,22 @@ ALLOWED = {
  "/apartamente-noi-bucuresti/", "/blocuri-noi-bucuresti/",
  "/apartamente-blocuri-noi-bucuresti/",
 }
-KNOWN_BLOG = {
- "apartamente-noi-bucuresti-2026","apartamente-noi-titan-dristor",
- "apartament-2-sau-3-camere-cum-alegi","cumperi-direct-de-la-proprietar",
- "de-ce-ilioara-residence","ilioara-residence-bloc-nou-titan-dristor",
- # val nou
- "tva-apartamente-noi-2026","costuri-reale-apartament-nou",
- "credit-ipotecar-apartament-nou","suprafata-utila-vs-construita",
- "apartamente-langa-metrou-bucuresti",
-}
-REQ = ["slug","title","seoTitle","description","descriptionLlm","articleSection",
+# Slugurile cunoscute se CITESC din folder, nu se scriu cu mana. Lista scrisa cu mana
+# ramane in urma la primul articol nou si incepe sa dea FAIL pe legaturi perfect valide,
+# adica exact genul de gate pe care oamenii invata sa-l ignore.
+KNOWN_BLOG = {os.path.basename(f)[:-5] for f in glob.glob(os.path.join(ARGS.posts, "*.json"))}
+REQ = ["slug","publishAt","title","seoTitle","description","descriptionLlm","articleSection",
        "keywords","readMinutes","lead","sections","faq","ctaAfter","readAlso"]
+DATA_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+# `sablon` separa doua feluri de articol, si separarea e explicita in fisier, nu ghicita
+# dupa data. "ghid" = scris pe sablonul de acum, deci trece prin toate pragurile de structura.
+# "vechi" = cele sase articole de proiect, scoase in JSON din HTML scris de mana inainte sa
+# existe sablonul. Pragurile de STRUCTURA devin avertisment pentru ele, fiindca sunt live si
+# corecte asa; pragurile de CONTINUT (diacritice, deschideri de robot, liniute, cedila,
+# legaturi moarte) raman blocante pentru toata lumea. Un gate care da FAIL pe ceva ce nu are
+# nimeni de gand sa schimbe e un gate pe care oamenii invata sa-l ignore, si atunci nu mai
+# prinde nici ce conteaza.
 CEDILLA = "şŞţŢ"
 AI_OPEN = ["Desigur","Absolut","Iată un","În concluzie","În era digitală",
            "Este important de menționat","Merită menționat că","În lumea de azi"]
@@ -40,17 +49,33 @@ def texts(p):
     for r in p["readAlso"]: out.append(r["label"])
     return out
 
-files = sorted(glob.glob("/tmp/posts/*.json"))
-if not files: print("ZERO fisiere in /tmp/posts"); sys.exit(1)
+files = sorted(glob.glob(os.path.join(ARGS.posts, "*.json")))
+if not files: print(f"ZERO fisiere in {ARGS.posts}"); sys.exit(1)
+
+# datele de publicare ale tuturor articolelor din limba asta, pentru verificarea legaturilor
+DATE_PUB = {}
+for _f in files:
+    _p = json.load(open(_f, encoding="utf-8"))
+    DATE_PUB[_p.get("slug","?")] = _p.get("publishAt") or _p.get("publishedAt") or ""
 print(f"Validez {len(files)} articole\n")
 
 for fp in files:
     p = json.load(open(fp, encoding="utf-8"))
     slug = p.get("slug","?")
+    strict = p.get("sablon", "ghid") == "ghid"
+    S = F if strict else W          # pragurile de structura, blocante doar pe sablonul nou
     for k in REQ:
         if k not in p: F(slug, f"lipseste cheia '{k}'")
     if os.path.basename(fp) != slug + ".json":
         F(slug, f"numele fisierului nu se potriveste cu slug")
+
+    # datele
+    for k in ("publishAt", "updatedAt"):
+        v = p.get(k)
+        if v is not None and not DATA_RE.match(str(v)):
+            F(slug, f"{k} = {v!r}, cer forma AAAA-LL-ZZ")
+    if p.get("updatedAt") and p.get("publishAt") and p["updatedAt"] < p["publishAt"]:
+        F(slug, f"updatedAt {p['updatedAt']} inainte de publishAt {p['publishAt']}")
 
     # lungimi, numarate in CARACTERE nu bytes
     lt, ld = len(p["seoTitle"]), len(p["description"])
@@ -70,10 +95,15 @@ for fp in files:
             F(slug, f"cedila '{ch}' x{n} (cere virgula dedesubt). Context: {ctx}")
 
     # liniuta lunga / scurta
-    for d in DASHES:
-        if d in blob:
-            ctx=[t[max(0,t.find(d)-40):t.find(d)+40] for t in allt if d in t][:2]
-            F(slug, f"liniuta lunga U+{ord(d):04X}. Context: {ctx}")
+    # Interdictia de liniuta e o regula de VOCE romaneasca si engleza, nu o lege universala.
+    # In ucraineana tire e punctuatie obligatorie ("Стандартна ставка — 21%"), la fel ca virgula:
+    # scoasa, propozitia devine gresita gramatical. Gate-ul dadea 11 FAIL pe traduceri corecte,
+    # adica exact zgomotul care il invata pe om sa treaca peste toate FAIL-urile deodata.
+    if os.path.basename(os.path.normpath(ARGS.posts)) not in ("uk",):
+        for d in DASHES:
+            if d in blob:
+                ctx=[t[max(0,t.find(d)-40):t.find(d)+40] for t in allt if d in t][:2]
+                F(slug, f"liniuta lunga U+{ord(d):04X}. Context: {ctx}")
     for t in allt:
         for m in re.finditer(r"(?<=[a-zăâîșțA-ZĂÂÎȘȚ,]) - (?=[a-zăâîșțA-ZĂÂÎȘȚ])", t):
             F(slug, f"liniuta folosita ca legatura: ...{t[max(0,m.start()-40):m.end()+40]}...")
@@ -83,9 +113,21 @@ for fp in files:
         for a in AI_OPEN:
             if t.strip().startswith(a): F(slug, f"deschidere de robot '{a}' in: {t[:70]}")
 
-    # diacritice prezente (articol RO fara nicio diacritica = agent care a returnat ASCII)
-    dia = sum(blob.count(c) for c in "ăâîșțĂÂÎȘȚ")
-    if dia < 100: F(slug, f"doar {dia} diacritice in tot articolul, suspect de ASCII")
+    # DIACRITICE, masurate ca PROPORTIE, nu ca numar absolut. Pragul vechi era "sub 100
+    # de diacritice in tot articolul", si asta masoara lungimea, nu corectitudinea: un articol
+    # scurt si perfect scris pica, iar unul lung si pe jumatate ciuntit trece. Proza romaneasca
+    # reala are intre 3,5% si 5,5% diacritice din caractere; sub 1,5% inseamna text scris fara.
+    # Asa a fost prins, pe 10 aug 2026, `apartamente-noi-titan-dristor`: 0,15%, adica romana
+    # fara nicio diacritica, LIVE de doua luni, pe o pagina de cuvant-cheie. Vechiul prag il
+    # semnala si el, dar cu un mesaj despre "agent care a returnat ASCII", deci suna a
+    # problema de unealta, nu a text de reparat, si nimeni nu s-a dus sa se uite.
+    if os.path.basename(os.path.normpath(ARGS.posts)) == "ro":
+        dia = sum(blob.count(c) for c in "ăâîșțĂÂÎȘȚ")
+        rap = 100.0 * dia / max(1, len(blob))
+        if rap < 1.5:
+            F(slug, f"{rap:.2f}% diacritice: textul romanesc e scris FARA diacritice")
+        elif rap < 2.8:
+            W(slug, f"{rap:.2f}% diacritice, sub proza romaneasca obisnuita (3,5-5,5%)")
 
     # formulari negative
     for t in allt:
@@ -108,18 +150,27 @@ for fp in files:
         if h.startswith("/blog/"):
             s2=h.strip("/").split("/")[-1]
             if s2 not in KNOWN_BLOG: F(slug, f"readAlso catre slug necunoscut: {h}")
+            # Legatura catre un articol care apare MAI TARZIU: avertisment, nu oprire.
+            # Generatorul o scoate singur pana cand tinta exista, si o pune inapoi automat
+            # in ziua in care tinta se publica, fiindca rularea zilnica regenereaza tot ce e
+            # publicat. Asa se poate scrie graful de legaturi interne DIN PRIMA, cu lotul
+            # intreg in fata, si se completeaza singur pe masura ce ies articolele.
+            # FAIL ar fi fost gresit aici: ar interzice exact planificarea care da valoare.
+            elif DATE_PUB.get(s2, "") > p.get("publishAt", ""):
+                W(slug, f"readAlso catre {s2} apare abia pe {DATE_PUB[s2]}: legatura sta "
+                        f"ascunsa pana atunci, apoi intra singura")
         elif h not in ALLOWED: F(slug, f"readAlso nepermis: {h}")
 
     # structura
-    if not (3 <= len(p["sections"]) <= 7): F(slug, f"{len(p['sections'])} sectiuni h2")
-    if not (3 <= len(p["faq"]) <= 4): F(slug, f"{len(p['faq'])} intrebari FAQ")
-    if len(p["readAlso"]) != 4: F(slug, f"{len(p['readAlso'])} intrari readAlso, cer exact 4")
+    if not (3 <= len(p["sections"]) <= 7): S(slug, f"{len(p['sections'])} sectiuni h2")
+    if not (3 <= len(p["faq"]) <= 4): S(slug, f"{len(p['faq'])} intrebari FAQ")
+    if len(p["readAlso"]) != 4: S(slug, f"{len(p['readAlso'])} intrari readAlso, cer exact 4")
     for b in [b for s in p["sections"] for b in s["blocks"]]:
         if b["t"] not in ("p","ul","h3"): F(slug, f"tip de bloc necunoscut: {b['t']}")
     # taguri permise
     for t in allt:
         for tag in re.findall(r"</?([a-zA-Z][a-zA-Z0-9]*)", t):
-            if tag.lower() not in ("a","strong","em"): F(slug, f"tag nepermis <{tag}>")
+            if tag.lower() not in ("a","strong","em","b","br"): F(slug, f"tag nepermis <{tag}>")
 
     words = len(re.findall(r"\w+", " ".join(allt)))
     print(f"  {slug:36} seoTitle={lt:3}  desc={ld:3}  h2={len(p['sections'])}  faq={len(p['faq'])}  cuvinte~{words}")

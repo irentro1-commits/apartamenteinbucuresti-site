@@ -1,5 +1,8 @@
 {
  "slug": "apartamente-noi-bucuresti-2026",
+ "sablon": "vechi",
+ "publishAt": "2026-06-16",
+ "updatedAt": "2026-08-10",
  "title": "Apartamente noi Bucuresti: ghid de cumparare 2026",
  "seoTitle": "Apartamente noi Bucuresti: ghid de cumparare 2026",
  "description": "Apartamente noi Bucuresti, ghid 2026: ce verifici inainte sa cumperi, bloc nou vs vechi, capcanele cu suprafete si comisioane, cu exemplu real.",
@@ -7,7 +10,6 @@
  "articleSection": "Apartamente noi",
  "keywords": "apartamente noi bucuresti, apartamente de vanzare bucuresti, apartamente noi 2026, apartament nou Titan, apartamente Sector 3, bloc nou vs bloc vechi, ghid cumparare apartament, apartamente Dristor, apartamente metrou Nicolae Grigorescu, Ilioara Residence",
  "readMinutes": 6,
- "publishedAt": "2026-06-16",
  "lead": "Cei mai mulți oameni aleg apartamentul greșit din același motiv: se uită la preț și la randări, și sar exact peste lucrurile care îi costă după ce semnează. Prețul afișat e începutul conversației, nu sfârșitul ei. Un apartament nou se măsoară în ce primești inclus, ce plătești pe deasupra și cât de aproape e ușa blocului de metrou, nu în cât de bine arată holul într-o fotografie editată. Ghidul ăsta merge pe pașii pe care un cumpărător atent îi face oricum, doar că în ordinea care te scutește de surprize. Cifrele vin dintr-un exemplu concret, un bloc deja terminat în Titan.",
  "intro": [],
  "hasByline": true,
@@ -119,7 +121,7 @@
    "blocks": [
     {
      "t": "p",
-     "x": "Trei capcane prind cei mai mulți cumpărători, și toate trei se evită cu o singură întrebare pusă la timp. Prima: suprafața umflată. Când vezi doar o cifră scoasă în evidență, sau când numerele dansează între anunț și contract, ceri să fie clar ce înseamnă cifra. La Ilioara se comunică direct totalul, util plus terasă, între 47 și 85 mp, cu o compartimentare modulară, ca să știi din start ce cumperi, nu ce pare că cumperi."
+     "x": "Trei capcane prind cei mai mulți cumpărători, și toate trei se evită cu o singură întrebare pusă la timp. Prima: suprafața umflată. Când vezi doar o cifră scoasă în evidență, sau când numerele dansează între anunț și contract, ceri să fie clar ce înseamnă cifra. La Ilioara se comunică direct totalul, util plus terasă, între 47 și 84 mp, cu o compartimentare modulară, ca să știi din start ce cumperi, nu ce pare că cumperi."
     },
     {
      "t": "p",

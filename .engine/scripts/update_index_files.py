@@ -11,8 +11,23 @@ SITE = "https://apartamenteinbucuresti.ro"
 LANGS = ["ro", "en", "he", "ar", "uk"]
 TODAY = sys.argv[1] if len(sys.argv) > 1 else date.today().isoformat()
 
-ORDER = json.load(open(os.path.join(POSTS, "ordine.json"), encoding="utf-8"))
-NOI = ORDER[:5]
+ORDER_TOT = json.load(open(os.path.join(POSTS, "ordine.json"), encoding="utf-8"))
+
+# Articolele, cu datele lor. Sitemap-ul si llms.txt arata DOAR ce are publishAt trecut:
+# un URL in sitemap care da 404 e cel mai prost semnal pe care il poti trimite unui crawler.
+def _post(slug, lang="ro"):
+    fp = os.path.join(POSTS, lang, slug + ".json")
+    return json.load(open(fp, encoding="utf-8")) if os.path.exists(fp) else None
+
+def _pub(p):   return (p or {}).get("publishAt") or (p or {}).get("publishedAt") or "9999-12-31"
+def _mod(p):   return (p or {}).get("updatedAt") or _pub(p)
+
+ORDER = [s for s in ORDER_TOT if _pub(_post(s)) <= TODAY]
+AMANATE = [s for s in ORDER_TOT if s not in ORDER]
+if AMANATE:
+    print(f"  in asteptare, in afara sitemap-ului: {len(AMANATE)} -> "
+          + ", ".join(f"{s} ({_pub(_post(s))})" for s in AMANATE[:4])
+          + (" ..." if len(AMANATE) > 4 else ""))
 
 def u(lang, slug=None):
     b = f"{SITE}/" if lang == "ro" else f"{SITE}/{lang}/"
@@ -33,7 +48,9 @@ for slug in ORDER:
         p = os.path.join(REPO, ("blog" if l == "ro" else f"{l}/blog"), slug, "index.html")
         if not os.path.exists(p):
             print(f"  ATENTIE: lipseste de pe disc {l}/{slug}, nu il pun in sitemap"); continue
-        lm = TODAY if slug in NOI or l != "ro" else TODAY
+        # lastmod = ultima atingere REALA a textului, nu ziua rularii. Un lastmod care se
+        # muta singur la fiecare build il invata pe crawler ca datele noastre nu inseamna nimic.
+        lm = _mod(_post(slug, l)) if _post(slug, l) else _mod(_post(slug))
         blog_urls.append(f"<url><loc>{u(l, slug)}</loc><lastmod>{lm}</lastmod>{alts(slug)}</url>")
 
 head = sm[: sm.find("<url>")]

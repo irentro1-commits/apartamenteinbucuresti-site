@@ -1,5 +1,8 @@
 {
  "slug": "apartamente-noi-bucuresti-2026",
+ "sablon": "vechi",
+ "publishAt": "2026-06-16",
+ "updatedAt": "2026-08-10",
  "title": "New apartments in Bucharest in 2026: a buying guide",
  "seoTitle": "New apartments in Bucharest in 2026: a buying guide",
  "description": "New apartments in Bucharest, 2026 guide: what to check before you buy, new versus old, the traps with areas and commissions, plus a real example.",
@@ -7,7 +10,6 @@
  "articleSection": "New apartments",
  "keywords": "new apartments bucharest, apartments for sale bucharest, new apartments 2026, new apartment Titan, apartments Sector 3, new building vs old building, apartment buying guide, apartments Dristor, apartments Nicolae Grigorescu metro, Ilioara Residence",
  "readMinutes": 6,
- "publishedAt": "2026-06-16",
  "lead": "Most people choose the wrong apartment for the same reason: they look at the price and at the renders, and they skip exactly the things that cost them after they sign. The displayed price is the beginning of the conversation, not the end of it. A new apartment is measured in what you get included, what you pay on top and how close the door of the building is to the metro, not in how good the lobby looks in an edited photograph. This guide follows the steps a careful buyer takes anyway, only in the order that spares you the surprises. The figures come from a concrete example, a building already finished in Titan.",
  "intro": [],
  "hasByline": true,
@@ -119,7 +121,7 @@
    "blocks": [
     {
      "t": "p",
-     "x": "Three traps catch most buyers, and all three are avoided with a single question asked in time. The first: the inflated area. When you see only one figure pushed to the front, or when the numbers dance between the listing and the contract, you ask for it to be clear what the figure means. At Ilioara the total is given directly, usable plus terrace, between 47 and 85 sqm, with a modular layout, so you know from the start what you are buying, not what it looks like you are buying."
+     "x": "Three traps catch most buyers, and all three are avoided with a single question asked in time. The first: the inflated area. When you see only one figure pushed to the front, or when the numbers dance between the listing and the contract, you ask for it to be clear what the figure means. At Ilioara the total is given directly, usable plus terrace, between 47 and 84 sqm, with a modular layout, so you know from the start what you are buying, not what it looks like you are buying."
     },
     {
      "t": "p",
@@ -159,7 +161,7 @@
   },
   {
    "q": "How do I tell whether the area is inflated?",
-   "a": "You ask for it to be clear what the figure given means and you compare the listing with the contract. At Ilioara the total is given directly, usable plus terrace, between 47 and 85 sqm, so you know from the start what you are buying."
+   "a": "You ask for it to be clear what the figure given means and you compare the listing with the contract. At Ilioara the total is given directly, usable plus terrace, between 47 and 84 sqm, so you know from the start what you are buying."
   },
   {
    "q": "How close is Ilioara Residence to the metro and to transport?",

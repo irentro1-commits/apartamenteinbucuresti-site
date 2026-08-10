@@ -12,9 +12,13 @@ spec = importlib.util.spec_from_file_location("bb", os.path.join(ENGINE, "build_
 bb = importlib.util.module_from_spec(spec); spec.loader.exec_module(bb)
 SITE, LANGS, WA = bb.SITE, bb.LANGS, bb.WA
 
-TODAY = sys.argv[1] if len(sys.argv) > 1 else date.today().isoformat()
+# Ceasul: implicit ziua de la Bucuresti, dar se poate da unul fals ca argument, pentru probe.
+AZI = sys.argv[1] if len(sys.argv) > 1 else bb.azi_ro()
 
 # Ordinea cardurilor: intai valul nou pe intentie de cumparare, apoi articolele de proiect.
+# Slugurile cu publishAt in viitor stau in ordine.json, dar NU ajung pe pagina: indexul
+# arata exact ce e publicat, ca sitemap-ul si ca llms.txt. Un card care duce la o pagina
+# inexistenta e un 404 pus de noi, cu mana.
 ORDER = json.load(open(os.path.join(POSTS, "ordine.json"), encoding="utf-8"))
 
 # RO ramane exact cum e pe site acum. Restul vin din traducerea sirurilor de index.
@@ -40,9 +44,12 @@ WA_INDEX_MSG = {
 
 
 def posts_for(lang):
+    """Doar articolele publicate. Restul exista in .engine/posts si nicaieri altundeva."""
     out = {}
     for fp in glob.glob(os.path.join(POSTS, lang, "*.json")):
-        p = json.load(open(fp, encoding="utf-8")); out[p["slug"]] = p
+        p = json.load(open(fp, encoding="utf-8"))
+        if bb.publicat(p, AZI):
+            out[p["slug"]] = p
     return out
 
 
@@ -51,8 +58,11 @@ def build(lang):
     root = "/" if lang == "ro" else f"/{lang}/"
     url = f"{SITE}{root}blog/"
     ps = posts_for(lang)
-    missing = [s for s in ORDER if s not in ps]
-    if missing: print(f"  [{lang}] lipsesc din date: {missing}")
+    # "lipseste" inseamna traducere care nu exista pe disc. Un articol nepublicat inca
+    # NU lipseste: e la coada, si asta e normal.
+    missing = [s for s in ORDER if s not in ps
+               and not os.path.exists(os.path.join(POSTS, lang, s + ".json"))]
+    if missing: print(f"  [{lang}] lipsesc traducerile: {missing}")
 
     # coaja: RO din indexul existent, restul dintr-o subpagina a limbii
     ref = os.path.join(REPO, "blog/index.html" if lang == "ro" else f"{lang}/preturi/index.html")

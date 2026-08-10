@@ -1,5 +1,8 @@
 {
  "slug": "cumperi-direct-de-la-proprietar",
+ "sablon": "vechi",
+ "publishAt": "2026-06-12",
+ "updatedAt": "2026-08-04",
  "title": "What it means to buy an apartment directly from the developer, with no commission",
  "seoTitle": "Direct from the developer, no commission: how it works",
  "description": "What buying a new apartment directly from the developer means: the displayed price is the final price, with no commission for the buyer.",
@@ -7,7 +10,6 @@
  "articleSection": "Blog",
  "keywords": "",
  "readMinutes": 5,
- "publishedAt": "",
  "lead": "In short: you sign the contract with the developer, the displayed price is the price, and the commission does not exist for you.<br>Below, how it works in practice.",
  "intro": [
   {

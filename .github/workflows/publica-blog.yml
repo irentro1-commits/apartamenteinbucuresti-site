@@ -1,0 +1,98 @@
+name: Publica blogul
+
+# PUBLICAREA E O DATA, NU UN CRON.
+#
+# Articolele se scriu toate odata, fiecare cu `publishAt`-ul lui, si stau in `.engine/posts`
+# pana le vine ziua. Workflow-ul asta nu decide NIMIC despre ce se publica: doar reconstruieste
+# situl cu ceasul de azi si comite daca s-a schimbat ceva. Daca nu e nimic de publicat,
+# rularea se termina fara comit, deci fara deploy.
+#
+# De ce aici si nu intr-un scheduled task: un task ruleaza pe calculatorul lui Andy, deci
+# publicarea depinde de un laptop pornit la ora sase dimineata. In iulie-august 2026 taskul
+# a pornit de sapte ori si a publicat zero articole, iar nimeni nu a aflat pana nu s-a uitat
+# cineva. Aici rularea, rezultatul si esecul sunt vizibile in istoricul repo-ului.
+
+on:
+  schedule:
+    - cron: "0 5 * * *"       # 05:00 UTC = 08:00 la Bucuresti vara, 07:00 iarna.
+                              # Ora exacta nu conteaza: ziua se calculeaza in Europe/Bucharest
+                              # INAUNTRUL scriptului, nu din ceasul masinii.
+  workflow_dispatch:          # si manual, cand vrei sa vezi rezultatul imediat
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publica-blog
+  cancel-in-progress: false
+
+jobs:
+  publica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Reconstruieste situl cu ceasul de azi
+        id: build
+        run: |
+          set -o pipefail
+          python3 .engine/scripts/publica.py --repo "$GITHUB_WORKSPACE" | tee /tmp/publicare.log
+          {
+            echo "aparute<<EOF"
+            grep '^APARE AZI' /tmp/publicare.log | sed 's/^APARE AZI *//' || true
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Gate de fidelitate
+        # Repo-ul trebuie sa fie EXACT ce produce motorul. Daca pica AICI, dupa build, inseamna
+        # ca pipeline-ul nu e determinist, si atunci nimic din ce urmeaza nu e de incredere.
+        run: python3 .engine/scripts/verifica_fidelitate.py --repo "$GITHUB_WORKSPACE"
+
+      - name: Comite, daca s-a schimbat ceva
+        id: comit
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nimic de publicat azi."
+            echo "schimbat=nu" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          NOI="${{ steps.build.outputs.aparute }}"
+          if [ -n "$NOI" ]; then
+            MSG="Blog: apare $(echo "$NOI" | awk '{print $2}' | paste -sd', ' -)"
+          else
+            MSG="Blog: reconstructie, fara articol nou"
+          fi
+          git config user.name  "publicare-automata"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "$MSG"
+          git push
+          echo "schimbat=da" >> "$GITHUB_OUTPUT"
+
+      - name: Asteapta deployul si pinguie IndexNow
+        # Best effort: daca deployul intarzie peste zece minute, pasul se opreste fara sa strice
+        # publicarea. Comitul e deja facut, deci articolul apare oricum la urmatorul deploy.
+        if: steps.comit.outputs.schimbat == 'da' && steps.build.outputs.aparute != ''
+        continue-on-error: true
+        run: |
+          SLUGS=$(echo "${{ steps.build.outputs.aparute }}" | awk '{print $2}')
+          PRIMUL=$(echo "$SLUGS" | head -1)
+          for i in $(seq 1 20); do
+            COD=$(curl -s -o /dev/null -w '%{http_code}' "https://apartamenteinbucuresti.ro/blog/$PRIMUL/")
+            [ "$COD" = "200" ] && break
+            sleep 30
+          done
+          [ "$COD" = "200" ] || { echo "Deployul inca nu a ajuns (cod $COD). Nu pinguiesc."; exit 0; }
+          LISTA=$(for s in $SLUGS; do for l in "" "en/" "he/" "ar/" "uk/"; do
+                    printf '"https://apartamenteinbucuresti.ro/%sblog/%s/"\n' "$l" "$s"
+                  done; done | paste -sd, -)
+          curl -sS -X POST https://api.indexnow.org/IndexNow \
+            -H 'Content-Type: application/json' \
+            -d "{\"host\":\"apartamenteinbucuresti.ro\",
+                 \"key\":\"3b82c83e09f7e6727f43d556d6225e25\",
+                 \"keyLocation\":\"https://apartamenteinbucuresti.ro/3b82c83e09f7e6727f43d556d6225e25.txt\",
+                 \"urlList\":[$LISTA]}" -w '\nIndexNow: %{http_code}\n'

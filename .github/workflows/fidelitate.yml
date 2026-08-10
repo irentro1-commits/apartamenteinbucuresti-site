@@ -1,0 +1,35 @@
+name: Fidelitate
+
+# Alarma care tine motorul in viata.
+#
+# Regula: HTML-ul din repo trebuie sa fie EXACT ce produce `.engine/scripts/publica.py`.
+# Cand cineva schimba o pagina de blog direct in HTML, cu un script one-shot, si nu intoarce
+# schimbarea in sursa, workflow-ul asta se face rosu in doua minute. Fara el, defectul sta
+# ascuns pana la prima regenerare, adica pana intr-o noapte oarecare, si atunci se pierde
+# tot ce s-a acumulat intre timp. Exact asta s-a intamplat intre 4 si 10 august 2026.
+#
+# Nu blocheaza nimic si nu repara nimic. Doar spune, tare, ca sursa si situl s-au despartit.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".engine/**"
+      - "blog/**"
+      - "*/blog/**"
+      - "sitemap.xml"
+      - "llms.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fidelitate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 .engine/scripts/verifica_fidelitate.py --repo "$GITHUB_WORKSPACE"
