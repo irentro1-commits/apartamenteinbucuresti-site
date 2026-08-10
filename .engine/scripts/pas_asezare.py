@@ -64,10 +64,24 @@ def leaga_fraze(t):
                 continue
             out.append(s[poz:m.end()])
             rest = s[m.end():]
-            mm = re.match(r"^(\S+)(\s+)(\S+)", rest)
+            mm = re.match(r"^(\S+)(\s+)(\S+)((\s+)(\S+))?", rest)
             if mm and NB not in mm.group(2):
-                out.append(mm.group(1) + NB + mm.group(3))
-                poz = m.end() + mm.end()
+                pereche = mm.group(1) + NB + mm.group(3)
+                sfarsit = m.end() + mm.end(3)
+                # AL TREILEA CUVANT, cand primele doua sunt scurte. Masurat pe 10 aug 2026:
+                # legarea a doua cuvinte nu ajunge cand perechea e scurta, fiindca INCAPE in
+                # golul ramas la capatul randului, deci frazele "La asta", "Suma din", "Un an"
+                # tot porneau pisate in coltul din dreapta. 12 cazuri pe patru pagini de blog,
+                # la prag 5. Sub 11 caractere insumate legam si al treilea: atunci grupul nu
+                # mai incape in gol si trece intreg pe randul urmator.
+                # Pragul NU e ales din burta: peste el, grupurile lungi incep sa lase randuri
+                # ciuntite, adica muti defectul in loc sa-l repari.
+                if (len(mm.group(1)) + len(mm.group(3)) <= 10 and mm.group(4)
+                        and NB not in mm.group(5)):
+                    pereche += NB + mm.group(6)
+                    sfarsit = m.end() + mm.end(6)
+                out.append(pereche)
+                poz = sfarsit
             else:
                 poz = m.end()
         out.append(s[poz:])
