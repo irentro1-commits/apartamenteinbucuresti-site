@@ -1,0 +1,21 @@
+{
+  "_comentariu": "SURSA UNICA pentru profilul Google Business. Nimic din astea nu se scrie a doua oara altundeva. Reimprospatat de .engine/scripts/gbp_refresh.py; daca nu ruleaza, valorile raman ultimele masurate.",
+  "cid": "8596399498612591025",
+  "nume": "Ilioara Residence Dezvoltator",
+  "mapsUrl": "https://www.google.com/maps?cid=8596399498612591025",
+  "reviewUrl": "https://g.page/r/CbFJJl7Mi0x3EAE/review",
+  "_notaSiNumarNuSeRandeaza": "Decizia lui Andy, 13 Aug 2026: cifra nu se afiseaza pe site. O cifra scrisa in pagina se invecheste exact cand incepe sa creasca, iar tinerea ei la zi ar fi cerut cheie Places API cu facturare. Raman aici ca fapt masurat, atat.",
+  "rating": "5,0",
+  "ratingPunct": "5.0",
+  "reviewCount": 4,
+  "geo": { "lat": 44.4128141, "lng": 26.1558693 },
+  "adresa": {
+    "streetAddress": "Aleea Eprubetei 7-11",
+    "postalCode": "032116",
+    "addressLocality": "București",
+    "addressRegion": "Sector 3",
+    "addressCountry": "RO"
+  },
+  "masuratLa": "2026-08-13T15:30:00+03:00",
+  "sursaMasuratorii": "citit din Google Maps delogat, panoul profilului"
+}
