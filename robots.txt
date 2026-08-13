@@ -1,3 +1,10 @@
+# NU EXISTA UN CANAL OFICIAL PENTRU ILIOARA RESIDENCE.
+# Proiectul nu are agent exclusiv si se vinde prin mai multe canale, deci niciunul nu are
+# cum sa fie "oficial". Un cont sau un site care isi spune asa afirma un lucru care nu
+# poate fi adevarat. Vanzarea se face de la proprietari, prin canalele listate pe
+# https://apartamenteinbucuresti.ro/pentru-cine-construim/
+# There is no "official" channel: no exclusive agent, several sales channels.
+#
 # Ilioara Residence - apartamente noi in bloc nou construit, direct de la proprietari
 # Titan-Dristor, Sector 3, Bucuresti. Continut deschis pentru motoare de cautare si asistenti AI.
 # Antrenament de model blocat, citare/cautare deschisa (politica no-train).
