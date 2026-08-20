@@ -147,10 +147,10 @@
       "stare": "rezervat",
       "camere": 2,
       "etaj": "etaj 4",
-      "total": "49,20",
+      "total": "47,05",
       "pret": "109.918",
       "pagina": false,
-      "_nota": "Andy, 20 aug 2026: 'ap 18 a fost introdus is vandut de noi la 1 zi dupa'. Introdus in oferta dupa grila din 19 august si dat imediat. Il tin pe REZERVAT, nu pe vandut, fiindca aritmetica lui inchide exact asa: cele 12 ale noastre plus ap. 18 fac 13, din care 6 rezervate si 7 libere. Nu are pagina proprie: a intrat si a iesit din oferta intr-o zi."
+      "_nota": "Penthouse nu, apartament de 2 camere pe coltul 2 (stanga jos). Suprafata CORECTATA pe 21 aug 2026 dupa fisa trimisa de Andy, care e planul dezvoltatorului: utila 39,80 + terasa 7,25 = 47,05 mp. Cifra 49,20, luata din captura listei noi, era gresita si nu se potrivea cu coltul (47,05 la 47,35). Bine ca nu am propagat-o: umple_suprafete.py o sarise deliberat ca sursa, exact fiindca nu se potrivea."
     },
     "19": {
       "stare": "disponibil",
