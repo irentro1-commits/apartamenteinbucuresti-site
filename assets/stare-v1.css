@@ -64,9 +64,12 @@
 :root[data-theme="dark"],
 html[data-theme="dark"]{ --liber:#5FC79E; --liber-rgb:95,199,158; }
 .stare-disponibil{
+  /* Pastila verde trebuie sa se vada la fel de tare ca cea aurie. Prima versiune avea
+     fundalul la 17% pe hartie crem si disparea: eticheta arata a text cu un punct, nu a
+     stare. Masurat pe randare, nu presupus. */
   color:var(--liber);
-  border:1px solid rgba(var(--liber-rgb),.5);
-  background:linear-gradient(135deg,rgba(var(--liber-rgb),.17),rgba(var(--liber-rgb),.06));
+  border:1.5px solid rgba(var(--liber-rgb),.72);
+  background:linear-gradient(135deg,rgba(var(--liber-rgb),.3),rgba(var(--liber-rgb),.14));
 }
 .stare-disponibil::before{box-shadow:0 0 0 .2em rgba(var(--liber-rgb),.18)}
 .card[data-stare="disponibil"]{border-color:rgba(var(--liber-rgb),.42)}
