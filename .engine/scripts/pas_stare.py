@@ -58,8 +58,16 @@ def insigna(stare, lang):
 
 
 def curata(h):
-    """Scoate tot ce a pus pasul asta, ca sa se poata pune din nou, cu starea de azi."""
-    h = re.sub(r'<span class="stare stare-[a-z]+">[^<]*</span>', "", h)
+    """Scoate tot ce a pus PASUL ASTA, si numai atat.
+
+    Insignele de «disponibil» NU se ating: ele sunt puse de `pas_lista`, care regenereaza
+    lista intreaga din aceleasi date. Prima versiune stergea toate insignele si punea inapoi
+    doar rezervat si vandut, fiindca disponibilul nu are insigna pe /preturi/. Rezultat: cele
+    sapte etichete verzi de pe /apartamente/ dispareau tacut la fiecare rulare, si s-a vazut
+    abia pe live. Doi pasi care scriu in acelasi loc au nevoie de o granita scrisa, nu de
+    noroc: aici e granita.
+    ORDINEA e pas_lista, apoi pas_stare. Invers, lista ar fi regenerata peste insigne."""
+    h = re.sub(r'<span class="stare stare-(?:rezervat|vandut)">[^<]*</span>', "", h)
     h = re.sub(r'<p class="stare-pag">\s*</p>\s*', "", h)
     h = re.sub(r'(<a class="(?:prow|card) rv)( e-(?:rezervat|vandut))', r"\1", h)
     return h
