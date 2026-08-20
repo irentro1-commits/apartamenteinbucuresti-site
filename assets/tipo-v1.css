@@ -1,0 +1,8 @@
+/* Cuvintele compuse nu se rup in cratima. Andy, 21 aug 2026, dupa ce a vazut "penthouse-uri"
+   taiat in doua intr-un titlu: "aplica regula asta de la penthouse-uri peste tot".
+
+   De ce legare si nu cratima nedespartitoare (U+2011): situl are 1.743 de cuvinte cu cratima,
+   iar cele mai dese sunt Titan-Dristor si i-vory. "Titan-Dristor" e cuvant-tinta in cautare.
+   U+2011 arata identic pentru om, dar e alt caracter pentru un motor de cautare. Asa,
+   caracterele raman neatinse si se schimba doar unde are voie randul sa se rupa. */
+.nb{white-space:nowrap}
