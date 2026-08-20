@@ -16,6 +16,16 @@
   var containere = [].slice.call(document.querySelectorAll("[data-filtrabil]"));
   if (!containere.length) return;
 
+  /* ASCUNDEREA SE FACE PE `style.display`, NU PE ATRIBUTUL `hidden`.
+     `hidden` e doar `display:none` cu specificitate zero, deci ORICE regula de layout il bate.
+     Pe /preturi/ randurile au `display:grid` din foaia de stil, asa ca `hidden` nu avea niciun
+     efect: comutatorul "doar disponibile" parea sa mearga, dar rezervatele ramaneau pe ecran.
+     Numarul de deasupra spunea 7 si dedesubt se vedeau 12. Un stil in linie nu poate fi batut
+     de nicio foaie, deci filtrul merge pe orice element, indiferent cum e stilizat. */
+  function arata(el, da) {
+    el.style.display = da ? "" : "none";
+  }
+
   containere.forEach(function (lista) {
     var bara = document.querySelector('[data-filtre-pentru="' + lista.id + '"]') ||
                document.getElementById("filtre");
@@ -34,13 +44,17 @@
         var potrivit =
           (cam === "toate" || r.getAttribute("data-cam") === cam) &&
           (!doarLibere || r.getAttribute("data-stare") === "disponibil");
-        r.hidden = !potrivit;
+        arata(r, potrivit);
         if (potrivit) vazute++;
       });
 
       // o sectiune fara niciun rand vizibil nu are ce cauta pe ecran, cu titlu cu tot
       [].forEach.call(lista.querySelectorAll("[data-sectiune]"), function (s) {
-        s.hidden = !s.querySelector("[data-stare]:not([hidden])");
+        var areRanduri = false;
+        [].forEach.call(s.querySelectorAll("[data-stare]"), function (r) {
+          if (r.style.display !== "none") areRanduri = true;
+        });
+        arata(s, areRanduri);
       });
 
       if (gol) gol.hidden = vazute > 0;

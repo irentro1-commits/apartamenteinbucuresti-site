@@ -52,8 +52,11 @@ NIVELE = [("etaj 8", "Etajul 8"), ("etaj 7", "Etajul 7"), ("etaj 6", "Etajul 6")
           ("etaj 1", "Etajul 1"), ("parter", "Parter")]
 
 # coada editoriala pastrata din pagina veche, ca sa nu se piarda ce era scris de om
+# Cratima din "penthouse-uri" e NEDESPARTITOARE (U+2011): arata identic, dar browserul
+# nu mai poate rupe randul in ea. Cu cratima obisnuita, titlul se taia in "penthouse-"
+# si "uri" pe randul urmator, si asta se vedea din prima.
 COADA = {"etaj 7": " · priveliștea cea mai deschisă",
-         "etaj 8": " · cele două penthouse-uri, vândute de la început"}
+         "etaj 8": " · două penthouse‑uri, vândute"}
 
 
 def incarca():
@@ -206,7 +209,7 @@ def lista(A):
     return "\n".join(out)
 
 
-JS = '<script src="/assets/filtre-v1.js" defer></script>'
+JS = '<script src="/assets/filtre-v2.js" defer></script>'
 
 GOL = ('<p class="f-gol" id="f-gol" hidden>Nu e niciun apartament care să '
        'bifeze filtrele alese. Scoateți un filtru și reapare lista.</p>')
@@ -367,7 +370,7 @@ def nota_penthouse(h, A):
     # rand aici. O cifra care nu se potriveste cu ce numeri pe ecran strica exact increderea
     # pe care o construieste nota.
     nota = ('<p class="%s">Blocul are %d de apartamente în total, dintre care %d '
-            'penthouse-uri la ultimul etaj, vândute de la început. Aici sunt cele care se '
+            'penthouse‑uri la ultimul etaj, vândute de la început. Aici sunt cele care se '
             'mai pot cumpăra; lista întreagă, etaj cu etaj, este pe '
             '<a href="/apartamente/">pagina de apartamente</a>.</p>'
             % (NOTA_PH, len(A), len(ph)))
