@@ -45,7 +45,10 @@
     "5": {
       "stare": "vandut",
       "camere": 2,
-      "etaj": "etaj 1"
+      "etaj": "etaj 1",
+      "total": "66,70",
+      "total_derivat": true,
+      "total_sursa": "ap. 17"
     },
     "6": {
       "stare": "vandut",
@@ -67,17 +70,26 @@
     "8": {
       "stare": "vandut",
       "camere": 3,
-      "etaj": "etaj 2"
+      "etaj": "etaj 2",
+      "total": "84,45",
+      "total_derivat": true,
+      "total_sursa": "ap. 12"
     },
     "9": {
       "stare": "vandut",
       "camere": 2,
-      "etaj": "etaj 2"
+      "etaj": "etaj 2",
+      "total": "66,70",
+      "total_derivat": true,
+      "total_sursa": "ap. 17"
     },
     "10": {
       "stare": "vandut",
       "camere": 2,
-      "etaj": "etaj 2"
+      "etaj": "etaj 2",
+      "total": "47,35",
+      "total_derivat": true,
+      "total_sursa": "ap. 26"
     },
     "11": {
       "stare": "vandut",
@@ -99,17 +111,26 @@
     "13": {
       "stare": "vandut",
       "camere": 2,
-      "etaj": "etaj 3"
+      "etaj": "etaj 3",
+      "total": "66,70",
+      "total_derivat": true,
+      "total_sursa": "ap. 17"
     },
     "14": {
       "stare": "vandut",
       "camere": 2,
-      "etaj": "etaj 3"
+      "etaj": "etaj 3",
+      "total": "47,35",
+      "total_derivat": true,
+      "total_sursa": "ap. 26"
     },
     "15": {
       "stare": "vandut",
       "camere": 2,
-      "etaj": "etaj 3"
+      "etaj": "etaj 3",
+      "total": "60,75",
+      "total_derivat": true,
+      "total_sursa": "ap. 19"
     },
     "16": {
       "stare": "vandut",
@@ -146,7 +167,10 @@
     "20": {
       "stare": "vandut",
       "camere": 3,
-      "etaj": "etaj 5"
+      "etaj": "etaj 5",
+      "total": "85,05",
+      "total_derivat": true,
+      "total_sursa": "ap. 24"
     },
     "21": {
       "stare": "vandut",
@@ -157,7 +181,10 @@
     "22": {
       "stare": "vandut",
       "camere": 2,
-      "etaj": "etaj 5"
+      "etaj": "etaj 5",
+      "total": "47,35",
+      "total_derivat": true,
+      "total_sursa": "ap. 26"
     },
     "23": {
       "stare": "vandut",
