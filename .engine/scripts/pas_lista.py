@@ -36,7 +36,10 @@ import re
 ENGINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CALE_DATE = os.path.join(ENGINE, "date", "apartamente.json")
 
-CSS = '<link rel="stylesheet" href="/assets/stare-v2.css">'
+# Doua foi, si amandoua trebuie sa fie acolo: insignele de stare traiesc in stare-v2.css,
+# randurile in carduri-v1.css. Injectarea uneia singure lasa etichetele nestilizate.
+CSS = ('<link rel="stylesheet" href="/assets/stare-v2.css">' + "\n" +
+       '<link rel="stylesheet" href="/assets/carduri-v1.css">')
 ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
 
 NB = " "
@@ -105,31 +108,53 @@ def cuvant(n):
 
 
 def card(nr, a, et):
-    """Un card. Cu adresa daca are pagina, altfel o cutie moarta: vandutul nu se da la click."""
+    """Un RAND, nu un card.
+
+    Andy, 21 aug 2026: intai *"fa-le pe toate mici si pune-le 2x2"*, apoi, imediat,
+    *"sau in linie de fapt mai degraba"*. A doua varianta e si cea corecta, si se poate
+    argumenta: cumparatorul nu citeste un apartament, ci COMPARA mai multe. Pe randuri,
+    preturile cad unul sub altul intr-o singura coloana si ochiul le parcurge pe verticala
+    fara sa sara. Intr-o grila 2x2, aceleasi preturi sunt imprastiate pe doua axe si fiecare
+    comparatie cere o miscare de ochi in plus.
+
+    Toate cele trei stari au EXACT aceleasi celule, deci toate randurile au aceeasi inaltime.
+    Vandutul are coloana de pret goala: nu se inventeaza un pret ca sa iasa simetria, si nu
+    devine clicabil ce nu se poate cumpara.
+    """
     cam = a["camere"]
     stare = a["stare"]
     eticheta = {"disponibil": "Disponibil", "rezervat": "Rezervat", "vandut": "Vândut"}[stare]
     ins = '<span class="stare stare-%s">%s</span>' % (stare, eticheta)
-    titlu = "Apartament %d camere · %s" % (cam, et)
-    mic = "<small>ap.%s%s</small>" % (NB, nr)
 
-    randuri = ['<h3>%s%s%s%s</h3>' % (titlu, NB, mic, ins)]
-    if a.get("total"):
-        randuri.append('<p class="cm"><b>%s mp în%stotal</b> · compartimentare%smodulară</p>'
-                       % (a["total"], NB, NB))
+    # Insigna sta INAUNTRUL celulei cu numarul. Lasata afara, devenea a cincea celula a
+    # grilei si impingea toate coloanele cu una: pretul ajungea in coloana a treia, iar
+    # marginile nu se mai aliniau intre randuri. Masurat, nu banuit.
+    celule = [
+        '<span class="ap-nr">ap.%s%s%s</span>' % (NB, nr, ins),
+        '<span class="ap-d">%d camere · %s</span>' % (cam, et),
+        '<span class="ap-mp">%s</span>' % (
+            (a["total"] + NB + "mp") if a.get("total") else "&mdash;"),
+    ]
+
     if stare != "vandut" and a.get("pret"):
-        p = '<p class="cp">%s EUR + TVA %s%%' % (a["pret"], a.get("tva", "21"))
+        pret = '<b>%s</b><i>EUR + TVA %s%%</i>' % (a["pret"], a.get("tva", "21"))
         if a.get("pret_total"):
-            p += "<small>(%s EUR total)</small>" % a["pret_total"]
-        randuri.append(p + "</p>")
+            pret += '<em>%s EUR%stotal</em>' % (a["pret_total"], NB)
+        celule.append('<span class="ap-p">%s</span>' % pret)
+    else:
+        celule.append('<span class="ap-p ap-p-gol" aria-hidden="true"></span>')
 
     date = ' data-cam="%d" data-stare="%s"' % (cam, stare)
+    corp = "".join(celule)
     if stare != "vandut" and a.get("href"):
-        randuri.append('<span class="cl">Vedeți detalii</span>')
-        return ('<a class="card rv e-%s" data-fx="pop"%s href="%s">%s</a>'
-                % (stare, date, a["href"], "".join(randuri)))
-    clasa = "card rv card-mut" + ("" if stare == "vandut" else " e-" + stare)
-    return '<div class="%s"%s>%s</div>' % (clasa, date, "".join(randuri))
+        # FARA `rv` si fara `data-fx` pe rand. Randul nu se anima individual din doua motive:
+        # treizeci si unu de randuri care apar unul cate unul e zgomot, nu miscare; si, cat
+        # timp nu s-au revelat, au un `transform` pe ele, deci se masoara altfel decat arata.
+        # Sectiunea etajului pastreaza revelarea, deci lista tot intra frumos in pagina.
+        return ('<a class="aprow e-%s"%s href="%s">%s</a>'
+                % (stare, date, a["href"], corp))
+    clasa = "aprow aprow-mut" + ("" if stare == "vandut" else " e-" + stare)
+    return '<div class="%s"%s>%s</div>' % (clasa, date, corp)
 
 
 def bara(A):
@@ -163,7 +188,7 @@ def lista(A):
         out.append('<section class="etaj-ap" data-etaj="%s">' % cheie)
         out.append('<h2 class="rv" data-fx="slide">%s · %s%s</h2>'
                    % (titlu, cuvant(lib), COADA.get(cheie, "")))
-        out.append('<div class="grid">')
+        out.append('<div class="aplist">')
         out.extend(card(k, A[k], et_scurt if cheie != "parter" else "Parter") for k in nr_et)
         out.append("</div></section>")
     out.append("</div>")
@@ -180,13 +205,13 @@ JS = """<script>
     var cam=lista.getAttribute('data-f-cam')||'toate';
     var lib=lista.getAttribute('data-f-lib')==='1';
     var vazute=0;
-    [].forEach.call(lista.querySelectorAll('.card'),function(c){
+    [].forEach.call(lista.querySelectorAll('.aprow'),function(c){
       var ok=(cam==='toate'||c.getAttribute('data-cam')===cam)
           && (!lib||c.getAttribute('data-stare')==='disponibil');
       c.hidden=!ok; if(ok)vazute++;
     });
     [].forEach.call(lista.querySelectorAll('.etaj-ap'),function(s){
-      s.hidden=!s.querySelector('.card:not([hidden])');
+      s.hidden=!s.querySelector('.aprow:not([hidden])');
     });
     var gol=document.getElementById('f-gol');
     if(gol)gol.hidden=vazute>0;
@@ -232,7 +257,7 @@ def rescrie(html, A):
 
     # paragraful "nu bifeaza filtrele" si sectiunile vechi raman in afara zonei taiate
     zona = html[inceput:sfarsit]
-    if '<div class="grid">' not in zona and '<div class="lista-ap"' not in zona:
+    if '<div class="aplist">' not in zona and '<div class="lista-ap"' not in zona:
         return html, False
 
     nou = lista(A) + "\n" + GOL + "\n"
@@ -257,8 +282,12 @@ def main():
     if not ok:
         print("pas_lista: nu am gasit ancora, nu ating nimic")
         return 1
-    if CSS not in nou:
-        nou = nou.replace(ANCORA_CSS, ANCORA_CSS + "\n" + CSS, 1)
+    # Fiecare foaie se verifica SEPARAT. Verificarea pe sirul concatenat trecea si atunci cand
+    # una din ele era deja in pagina, si o adauga a doua oara: pagina ajunsese cu stare-v2.css
+    # legat de doua ori.
+    for foaie in CSS.split("\n"):
+        if foaie and foaie not in nou:
+            nou = nou.replace(ANCORA_CSS, ANCORA_CSS + "\n" + foaie, 1)
     if 'id="lista-ap"' in nou and "getElementById('lista-ap')" not in nou:
         nou = nou.replace("</body>", JS + "\n</body>", 1)
 

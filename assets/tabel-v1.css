@@ -1,0 +1,269 @@
+/* tabel-v1.css | 21 august 2026 | Ilioara Residence
+   TABELUL DE PRETURI: randurile de pe /preturi/ si cardurile de pe /apartamente/.
+
+   FISIER NOU, cu versiune in nume. /assets/* se serveste cu Cache-Control immutable un an,
+   deci un fisier MODIFICAT nu ajunge la nimeni. Se incarca DUPA pagini-v33.css si DUPA
+   stare-v2.css: de acolo isi ia dreptul sa suprascrie .prow, .card, .cp si .card-mut.
+
+   Zero culori scrise de mana. Doar tokenurile temei: --gold, --gold-rgb, --cta, --cta-ink,
+   --cream, --cream-soft, --bg2-rgb, --soft-rgb, --eo, plus --liber/--liber-rgb din
+   stare-v2.css. Deci amandoua temele merg fara nicio regula de tema in fisierul asta.
+
+   Tot ce e directional e scris logic (inline-start/end, margin-block), pentru /he/ si /ar/.
+   Singura exceptie explicita: cifrele se izoleaza bidi, ca "164.560 EUR" sa nu se rupa in RTL. */
+
+/* ============ 0. GEOMETRIA COLOANELOR ============
+   Latimile sunt FIXE, nu derivate din continut. Asta e tot secretul alinierii: o celula goala
+   nu strange coloana, deci randul fara suprafata sta exact sub randul cu suprafata. */
+.ptab,.lista-ap{
+  --col-mp:5.4rem;      /* "85,05 mp" la .95rem */
+  --col-pret:9.9rem;    /* "164.560 EUR" la 1.2rem Fraunces */
+  --col-stare:7.4rem;   /* insigna, cea mai lata: "Disponibil" */
+  --gutter:clamp(.7rem,2.2vw,1.5rem);
+  --rand-h:4.5rem;      /* inaltimea fixa a randului: aceeasi in toate cele trei stari */
+}
+
+/* ============ 1. CIFRELE ============
+   tabular-nums e declarat pe toate cifrele. ATENTIE, masurat: fonturile subsetate din
+   /fonts/ nu au inca feature-ul tnum, deci azi declaratia nu face nimic. Alinierea reala
+   vine din geometrie (coloana fixa + text-align:end) si din faptul ca toate preturile au
+   acelasi numar de cifre, iar suprafetele se scriu cu doua zecimale, mereu. In ziua in care
+   fonturile se re-subseteaza cu tnum, regula asta se aprinde singura, fara alta interventie. */
+.num{
+  font-variant-numeric:tabular-nums lining-nums;
+  font-feature-settings:"tnum" 1,"lnum" 1;
+  letter-spacing:0;
+  unicode-bidi:isolate;   /* in RTL, numarul si moneda raman impreuna si in ordine */
+}
+
+/* ============ 2. CAPUL DE TABEL ============ */
+.ptab{
+  margin:1.1rem 0 2rem;
+  border:1px solid rgba(var(--gold-rgb),.26);
+  border-radius:14px;
+  overflow:hidden;
+  /* FARA fond propriu. Masurat: un fond de .32 din --bg2 pe tema deschisa cobora pretul de la
+     4,51:1 la 4,39:1, adica sub pragul AA. Tabelul se tine din chenar, din cap si din liniile
+     dintre randuri, nu dintr-un strat de culoare peste care cifra se stinge. */
+  background:transparent;
+}
+.ptab-cap{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) var(--col-mp) var(--col-pret) var(--col-stare);
+  column-gap:var(--gutter);
+  align-items:end;
+  padding:.7rem 1rem .6rem;
+  padding-inline-start:calc(1rem + 3px);   /* cat sina de stare a randurilor de dedesubt */
+  border-bottom:1px solid rgba(var(--gold-rgb),.3);
+  background:rgba(var(--bg2-rgb),.6);
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cream-soft);
+}
+.ptab-cap span:nth-child(2),
+.ptab-cap span:nth-child(3){text-align:end}
+.ptab-cap span:nth-child(4){text-align:start}
+
+/* ============ 3. RANDUL ============ */
+.prow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) var(--col-mp) var(--col-pret) var(--col-stare);
+  column-gap:var(--gutter);
+  align-items:center;
+  min-block-size:var(--rand-h);          /* toate randurile, aceeasi inaltime. Fara exceptie. */
+  margin:0;
+  padding:.7rem 1rem;
+  border:0;
+  border-bottom:1px solid rgba(var(--gold-rgb),.16);
+  border-inline-start:3px solid transparent;   /* sina de stare */
+  text-decoration:none;
+  color:var(--cream);
+  transition:background .2s ease,border-color .2s ease;
+}
+.prow:last-child{border-bottom:0}
+.prow:hover{background:rgba(var(--cream-rgb),.05)}
+a.prow:focus-visible{outline:2px solid var(--cta);outline-offset:-2px;border-radius:2px}
+
+/* --- celula 1: cine e --- */
+.p-nume{
+  min-inline-size:0;
+  font-family:'Inter',system-ui,sans-serif;
+  font-weight:600;font-size:1rem;line-height:1.3;
+  color:var(--cream);
+}
+.p-loc{
+  display:block;
+  font-weight:400;font-size:.84rem;line-height:1.35;
+  color:var(--cream-soft);
+  margin-block-start:.12rem;
+}
+
+/* --- celula 2: cat are --- */
+.p-mp{
+  text-align:end;
+  font-family:'Fraunces',serif;font-weight:600;font-size:.95rem;
+  color:var(--cream);
+  white-space:nowrap;
+}
+.p-mp .u,.p-pret .u{font-family:'Inter',system-ui,sans-serif;font-weight:400;font-size:.78em;color:var(--cream-soft)}
+
+/* --- celula 3: cat costa. AICI E TOATA DECIZIA. --- */
+.p-pret{
+  text-align:end;
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;line-height:1.2;
+  /* --gold, NU --gold-lg. Pe hartie crem --gold-lg da 3,18:1 si pica AA; --gold da 4,5:1.
+     Pe tema inchisa cele doua sunt acelasi galben, deci nu se pierde nimic. */
+  color:var(--gold);
+  white-space:nowrap;
+}
+.p-pret small{
+  display:block;
+  font-family:'Inter',system-ui,sans-serif;font-weight:400;font-size:.78rem;line-height:1.35;
+  /* fara opacity. Opacitatea .72 de pe vechiul .p small scotea randul al doilea din AA. */
+  color:var(--cream-soft);
+  margin-block-start:.14rem;
+}
+
+/* --- celula 4: in ce stare e --- */
+.p-stare{display:flex;align-items:center;justify-content:flex-start}
+.p-stare .stare{margin-inline-start:0}
+
+/* ============ 4. CELULA CARE NU ARE CE SPUNE ============
+   Vandutul nu primeste pret, si nici apartamentul fara suprafata nu primeste cifra inventata.
+   Primesc un semn tacut, la aceeasi inaltime, ca sa nu se surpe randul. */
+.p-nil{
+  display:inline-block;vertical-align:.28em;
+  inline-size:2.2rem;block-size:2px;border-radius:2px;
+  background:rgba(var(--soft-rgb),.34);
+}
+
+/* ============ 5. STARILE ============
+   Sina coloreaza randul din marginea de inceput; insigna spune cuvantul. Niciodata numai
+   culoarea: cine nu distinge verde de auriu citeste "Disponibil" scris. */
+.prow[data-stare="disponibil"],.card[data-stare="disponibil"]{border-inline-start-color:rgba(var(--liber-rgb),.85)}
+.prow[data-stare="rezervat"],.card[data-stare="rezervat"],
+.prow.e-rezervat,.card.e-rezervat{border-inline-start-color:rgba(var(--gold-rgb),.6)}
+.prow[data-stare="vandut"],.card[data-stare="vandut"],
+.prow.e-vandut,.card.e-vandut{border-inline-start-color:rgba(var(--soft-rgb),.3)}
+
+/* Rezervatul NU se stinge. E un pret adevarat al unui apartament adevarat, care se poate
+   elibera maine. Vechiul opacity:.6 pe pret il scotea sub pragul de contrast. */
+.prow[data-stare="rezervat"] .p-pret,.card[data-stare="rezervat"] .c-pret{opacity:1}
+.prow.e-rezervat::after,.card.e-rezervat::after{content:none}
+
+/* Vandutul: fara aur, fara link, fara taietura peste cifre (nu mai exista cifre de taiat). */
+.prow[data-stare="vandut"],.card[data-stare="vandut"]{
+  cursor:default;
+  background:rgba(var(--soft-rgb),.045);
+}
+.prow[data-stare="vandut"] .p-nume,.card[data-stare="vandut"] h3{color:var(--cream-soft)}
+.prow[data-stare="vandut"] .p-mp,.card[data-stare="vandut"] .c-mp{color:var(--cream-soft)}
+.prow[data-stare="vandut"]:hover{background:rgba(var(--soft-rgb),.045)}
+/* anuleaza mostenirile vechi din stare-v2.css care lucrau pe .p si .cp */
+.card-mut{opacity:1;background-image:none}
+.card-mut h3{font-size:1.12rem}
+
+/* ============ 6. CARDUL DE PE /apartamente/ ============
+   Aceeasi lege ca la rand: inaltime fixa si continutul lipit de amandoua capetele, ca sa nu
+   mai ramana 101px de aer sub cardul vandut. Masurat inainte: 42% din cutie era gol. */
+.lista-ap .grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:.9rem;
+  margin:1rem 0 0;
+}
+@media (min-width:34rem){.lista-ap .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* patru coloane = un etaj pe un rand. Pagina devine cladirea, etaj cu etaj. */
+@media (min-width:60rem){
+  .lista-ap .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}
+  .lista-ap .card{padding:1rem 1.05rem}
+}
+
+.card{
+  display:flex;flex-direction:column;
+  /* fondul cardului scade de la .55 la .34: acelasi motiv ca la tabel, contrastul cifrei. */
+  background:rgba(var(--bg2-rgb),.34);
+  min-block-size:12.4rem;                    /* toate cardurile, aceeasi cutie */
+  border-inline-start-width:3px;             /* sina de stare, ca la rand */
+  border-radius:14px;
+}
+.card h3{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;line-height:1.22;
+  text-wrap:balance;
+}
+.card h3 small{
+  display:block;
+  font-family:'Inter',system-ui,sans-serif;font-weight:400;font-size:.82rem;
+  color:var(--cream-soft);margin-block-start:.15rem;
+}
+.card .stare{margin:.6rem 0 0;margin-inline-start:0}
+.c-mp{
+  font-family:'Fraunces',serif;font-weight:600;font-size:.95rem;
+  color:var(--cream);margin-block-start:.7rem;
+}
+.c-mp .u{font-family:'Inter',system-ui,sans-serif;font-weight:400;font-size:.78em;color:var(--cream-soft)}
+.c-pret{
+  margin-block-start:auto;                   /* impinge pretul la fundul cutiei */
+  padding-block-start:.7rem;
+  /* cutia pretului tine DOUA randuri chiar cand are unul singur. Fara asta, un etaj vandut
+     integral iesea cu 17px mai scund decat un etaj mixt, si banda se vedea. */
+  min-block-size:calc(2.6rem + .7rem);
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;line-height:1.2;
+  color:var(--gold);
+}
+.c-pret .u{font-family:'Inter',system-ui,sans-serif;font-weight:400;font-size:.78em;color:var(--cream-soft)}
+.c-pret small{
+  display:block;
+  font-family:'Inter',system-ui,sans-serif;font-weight:400;font-size:.78rem;
+  color:var(--cream-soft);margin-block-start:.14rem;white-space:nowrap;
+}
+.cl{
+  display:inline-block;align-self:flex-start;
+  font-size:.82rem;font-weight:600;letter-spacing:.05em;
+  color:var(--cream);
+  border-bottom:1px solid rgba(var(--gold-rgb),.6);
+  margin-block-start:.65rem;padding-bottom:.1em;
+}
+/* linia de subsol a vandutului: acelasi loc, acelasi rand, alt inteles. Nu e link. */
+.cl-mut{
+  color:var(--cream-soft);
+  border-bottom:1px solid rgba(var(--soft-rgb),.28);
+  cursor:default;
+}
+
+/* ============ 7. LA 390px ============
+   Doua coloane, nu patru. Suprafata coboara pe linia de sub nume, langa etaj: acolo e citita
+   ca descriere, nu comparata. Coloana de pret ramane coloana, aliniata la marginea de sfarsit,
+   fiindca ea e singura pentru care omul a deschis pagina. */
+@media (max-width:40rem){
+  .ptab,.lista-ap{--rand-h:4.2rem}
+  .ptab-cap{
+    grid-template-columns:minmax(0,1fr) auto;
+    column-gap:.6rem;
+  }
+  .ptab-cap span:nth-child(2),.ptab-cap span:nth-child(4){display:none}
+  .ptab-cap span:nth-child(3){grid-column:2;text-align:end}
+  .prow{
+    grid-template-columns:minmax(0,1fr) auto;
+    column-gap:.7rem;
+    padding:.75rem .85rem;
+  }
+  .p-nume{grid-column:1;grid-row:1}
+  .p-pret{grid-column:2;grid-row:1;font-size:1.12rem}
+  .p-mp{
+    grid-column:1;grid-row:2;
+    text-align:start;font-family:'Inter',system-ui,sans-serif;font-weight:400;
+    font-size:.84rem;color:var(--cream-soft);margin-block-start:-.1rem;
+  }
+  .p-mp .u{font-size:1em}
+  .p-stare{grid-column:2;grid-row:2;justify-content:flex-end;align-items:start}
+  .card{min-block-size:0}
+  .card .stare{margin-block-start:.5rem}
+}
+
+/* ============ 8. TIPARIT ============ */
+@media print{
+  .ptab{border-color:#999;background:none}
+  .prow{break-inside:avoid;min-block-size:0;padding:.4rem .6rem}
+  .p-pret{color:#000}
+}

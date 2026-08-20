@@ -1,0 +1,172 @@
+/* ==========================================================================
+   lista-v3.css  ·  randul de pret (/preturi/) si cardul (/apartamente/)
+   FISIER NOU. /assets/* e servit immutable un an: un fisier MODIFICAT nu
+   ajunge la nimeni, deci se face fisier nou cu alt nume.
+   Se incarca DUPA pagini-v33.css si DUPA stare-v2.css si le suprascrie.
+   Zero variabile noi de tema.
+   ========================================================================== */
+
+/* --- 0. VERDELE DE DISPONIBIL: baza e tema INCHISA, ca in pagini-v33.css.
+   In stare-v2.css era invers (baza = valoarea de hartie). Cand documentul nu
+   are inca data-theme (JS oprit), verdele de hartie cade pe fundal inchis,
+   la 1,7:1. Aceleasi doua culori, ordinea corecta. */
+:root{--liber:#5FC79E;--liber-rgb:95,199,158}
+html[data-theme="light"]{--liber:#1F6B4F;--liber-rgb:31,107,79}
+
+/* --- 1. CIFRELE.
+   tabular-nums e declarat corect, dar fonturile subsetate din /fonts/ nu au
+   feature-ul, deci nu se poate baza nimic pe el: alinierea o face COLOANA
+   (latime fixa + text-align:end), nu fontul. Declaratia ramane ca sa se
+   aprinda singura in ziua in care fonturile se re-subseteaza cu "tnum".
+   unicode-bidi:isolate tine "164.560 EUR" nedesfacut pe /he/ si /ar/. */
+.num{font-variant-numeric:tabular-nums lining-nums;
+     font-feature-settings:"tnum" 1,"lnum" 1;
+     unicode-bidi:isolate}
+
+/* --- 2. BARA DE COMPARATIE.
+   Pozitia pretului pe metru patrat intre 2.300 si 2.850 EUR/mp cu TVA.
+   Capetele sunt rotunjite in afara si SCRISE in legenda de deasupra listei:
+   o bara normalizata pe interval, fara capete scrise, transforma o diferenta
+   reala de 19% intr-una care arata ca 100%. Fara capat scris, bara minte.
+   --q vine din generator, ca numar intre 0 si 1. */
+.sc{position:relative;display:block;block-size:.32rem;border-radius:999px;
+    background:rgba(var(--soft-rgb),.24);margin:.15rem 0 .55rem}
+.sc::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;
+    inline-size:calc(var(--q,0)*100%);border-radius:999px;
+    background:rgba(var(--gold-rgb),.55)}
+.sc i{position:absolute;inset-block-start:50%;inset-inline-start:calc(var(--q,0)*100%);
+    transform:translate(-50%,-50%);inline-size:.6rem;block-size:.6rem;border-radius:50%;
+    background:var(--gold);box-shadow:0 0 0 2px var(--bg)}
+/* fara pret nu exista pozitie. Slotul ramane, desenul dispare:
+   geometria din CSS, adevarul din HTML. */
+.e-vandut .sc,.card-mut .sc{visibility:hidden}
+.sc-leg{margin:.2rem 0 1.1rem;font-size:.84rem;line-height:1.5;color:var(--cream-soft)}
+
+/* --- 3. ZONA DE PRET, comuna randului si cardului.
+   TREI linii, mereu trei, in toate cele trei stari:
+     1  cifra de decizie   Fraunces 600 · 1,45rem · var(--gold)
+     2  eticheta de regim  Inter 600 · 0,7rem · versale · var(--cream-soft)
+     3  cifra de contract  Inter 400 · 0,82rem · var(--cream-soft)
+   min-block-size tine randul la aceeasi inaltime cand starea are doua linii. */
+.pz{display:block;text-align:end;min-block-size:4.25rem;margin:0}
+.pz b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:1.45rem;
+    line-height:1.14;letter-spacing:-.01em;color:var(--gold)}
+.pz .u{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:.7rem;
+    line-height:1.3;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--cream-soft);margin-block-start:.22rem}
+.pz small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:.82rem;
+    line-height:1.4;color:var(--cream-soft);margin-block-start:.26rem}
+/* opacity pe text taia contrastul secundarei la 3,62:1 pe hartie crem, sub AA.
+   Culoarea o face tokenul, nu transparenta. */
+.pz small,.pz .u{opacity:1}
+
+/* rezervat: pretul ramane intreg si lizibil, dar iese din aur.
+   Aurul devine, pe toata pagina, semnul unui singur lucru: se cumpara azi. */
+.e-rezervat .pz b{color:var(--cream)}
+/* vandut: nu exista pret, deci nu se scrie niciunul si nu se taie niciunul. */
+.e-vandut .pz b,.card-mut .pz b{color:var(--cream-soft);font-weight:400}
+
+/* --- 4. RANDUL DE PRET (/preturi/) --------------------------------------- */
+.plist{border-block-start:1px solid rgba(var(--gold-rgb),.28);margin:.8rem 0 1.2rem}
+.prow{display:grid;grid-template-columns:minmax(0,1fr) 7rem 15rem;
+    align-items:center;column-gap:1.4rem;
+    padding:.9rem .7rem;margin-inline:-.7rem;border-radius:12px;
+    border-block-end:1px solid rgba(var(--gold-rgb),.18);
+    text-decoration:none;color:var(--cream);
+    transition:background-color .25s ease}
+a.prow:hover{background:rgba(var(--cream-rgb),.05)}
+.prow .d{min-inline-size:0}
+.prow .dn{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;
+    line-height:1.3}
+.prow .dm{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .55rem;
+    margin-block-start:.28rem;font-size:.86rem;color:var(--cream-soft);
+    min-block-size:1.6rem}
+.prow .dm .stare{margin-inline-start:0}
+.prow .dm b{color:var(--cream);font-weight:600}
+.prow .sc{margin:0}
+
+/* --- 5. CARDUL (/apartamente/) ------------------------------------------- */
+/* patru apartamente pe etaj, deci patru coloane: un etaj = un rand de grila.
+   Cu minmax(15rem) ieseau trei coloane si fiecare etaj se rupea 3+1, cu un
+   card orfan pe randul doi, pe toata pagina. */
+.lista-ap .grid{display:grid;grid-template-columns:1fr;gap:.9rem;margin:1rem 0 .4rem}
+@media (min-width:600px){.lista-ap .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.lista-ap .grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+.lista-ap .card{display:flex;flex-direction:column;gap:0;
+    padding:1.05rem 1.1rem 1.1rem;border-radius:14px}
+/* tot ce e de decizie se lipeste de talpa cardului. Cardul vandut are mai
+   putin de spus, deci ii ramane mai mult AER LA MIJLOC, nu o gaura jos.
+   Asta e tot ce inseamna "sa arate la fel": aceleasi sloturi, in aceeasi
+   ordine, ancorate de aceleasi doua margini. */
+.lista-ap .cbot{margin-block-start:auto;padding-block-start:.7rem}
+.lista-ap .card h3{font-size:1.12rem;line-height:1.25;font-weight:600}
+/* titlul pe randul lui, apoi numarul si insigna pe acelasi rand: la patru
+   coloane asta economiseste un rand intreg din cap, pe fiecare card. */
+.lista-ap .card h3 .nm{display:block}
+.lista-ap .card h3 small{margin-inline-end:.15rem}
+.lista-ap .card h3 .stare{margin-inline-start:.45em;vertical-align:.05em}
+.cm{color:var(--cream-soft);font-size:.9rem;line-height:1.45;margin-block-start:.55rem;
+    min-block-size:1.35rem}
+.cm b{color:var(--cream);font-weight:600}
+.lista-ap .pz{text-align:start;min-block-size:4.25rem}
+.cl{display:inline-block;font-size:.84rem;font-weight:600;letter-spacing:.04em;
+    color:var(--cream);border-block-end:1px solid rgba(var(--gold-rgb),.6);
+    margin-block-start:.75rem;padding-block-end:.1em}
+
+/* --- 6. CE NEUTRALIZEAZA din stare-v2.css -------------------------------- */
+/* (a) titlul vandutului era 1,02rem langa 1,12rem al vecinului: doua carduri
+       alaturate cu titluri de marimi diferite. Asta a reclamat proprietarul. */
+.card-mut h3{font-size:1.12rem}
+/* (b) opacity pe tot cardul stinge SI textul, adica taie contrastul la tot.
+       Diferenta o fac lipsa aurului, insigna si hasura, nu transparenta. */
+.card-mut,.card.e-vandut,.prow.e-vandut{opacity:1}
+.card-mut{cursor:default;border-color:rgba(var(--soft-rgb),.32);
+    background-image:repeating-linear-gradient(-45deg,transparent 0 7px,
+        rgba(var(--soft-rgb),.05) 7px 14px)}
+.card-mut:hover{transform:none;border-color:rgba(var(--soft-rgb),.32)}
+/* (c) pretul rezervatului la opacity .6 si mp-ul la .75: acelasi bug. */
+.prow.e-rezervat .d>small,.card.e-rezervat .cm,
+.prow.e-rezervat .p,.card.e-rezervat .cp{opacity:1}
+/* (d) linia peste pretul vandut nu mai are ce taia: nu se mai scrie pret. */
+.prow.e-vandut .p,.card.e-vandut .cp{text-decoration:none}
+
+/* --- 7. BARA DE SORTARE (/preturi/) -------------------------------------- */
+/* refoloseste .filtre / .f-tabs / .ft din stare-v2.css: zero limbaj nou. */
+.srt{margin:1.6rem 0 .9rem}
+.srt .lb{font-family:'Inter',sans-serif;font-weight:600;font-size:.72rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+
+/* --- 8. TELEFON (390px) --------------------------------------------------- */
+@media (max-width:640px){
+  /* randul se desface pe verticala: nume, apoi meta plus insigna, apoi bara,
+     apoi pretul. Pretul trece de la text-align:end la start, fiindca pe o
+     singura coloana marginea de scanare e cea de inceput, nu cea de sfarsit:
+     toate cifrele au acelasi numar de ranguri, deci pornesc de pe aceeasi
+     verticala si se compara fara sa mai sara ochiul. */
+  .prow{grid-template-columns:1fr;row-gap:.55rem;padding:1rem .7rem}
+  .prow .pz{text-align:start;min-block-size:0}
+  /* pe telefon cele doua linii secundare se strang intr-una singura: regimul
+     de TVA si cifra fara TVA sunt acelasi gand, iar un rand economisit pe rand
+     inseamna doua apartamente in plus pe ecran. Separatorul e semn de
+     punctuatie, nu cuvant: nu trebuie tradus in cele cinci limbi. */
+  .pz .u{display:inline;text-transform:none;letter-spacing:0;font-size:.82rem;
+     font-weight:400;margin-block-start:0}
+  .pz small{display:inline;margin-block-start:0}
+  .pz small::before{content:" · "}
+  .prow .sc{margin-block-start:.1rem}
+  .pz b{font-size:1.32rem}
+  .sc-leg{font-size:.82rem}
+}
+/* sub 600px grila e pe o coloana, deci nu mai exista vecin de egalat:
+   inaltimea minima a zonei de pret se stinge si cardul se strange. */
+@media (max-width:600px){.lista-ap .pz{min-block-size:0}}
+@media (max-width:420px){
+  .lista-ap .card{padding:.95rem 1rem 1rem}
+  .pz b{font-size:1.28rem}
+}
+
+/* --- 9. RTL: totul de mai sus e pe proprietati logice.
+   Singurul lucru care nu se rezolva din CSS e textul: "cu TVA 21%", "Vandut",
+   "pret nepublicat" se traduc in generator, nu in content:"", fiindca pagina
+   traieste in cinci limbi. Nicio regula de aici nu scrie cuvinte. --- */

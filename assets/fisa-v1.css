@@ -1,0 +1,321 @@
+/* FISA DE PRODUS - lista de apartamente si lista de preturi, o singura gramatica.
+   Fisier NOU, versionat in nume: /assets/* e servit cu Cache-Control immutable un an,
+   deci un fisier MODIFICAT nu ajunge la nimeni. Se incarca DUPA pagini-v33.css si
+   stare-v2.css, deci suprascrie la specificitate egala. Foloseste doar tokenurile temei.
+
+   TREI DECIZII, toate masurate, nu alese:
+   1. Cifra mare e SUMA CARE SE PLATESTE (cu TVA). Aceeasi cifra ca pe pagina
+      apartamentului. Inainte, lista arata 136.000 si pagina 164.560, pentru acelasi
+      apartament: cumparatorul care sarea din lista in pagina credea ca s-a schimbat pretul.
+   2. Cifra mare e CERNEALA, nu aur. Masurat: aurul deschis (--gold-lg) da 3,18:1 pe
+      hartie crem, adica elementul cel mai slab din rand era exact cifra de decizie.
+      Cerneala da 14,9:1 pe fisa si 15,6:1 pe rand. Aurul ramane DOAR pe linii si pe
+      insigne, adica pe suprafete, nu pe text: masurat, la marimile de aici orice text
+      auriu cade intre 4,30 si 4,51:1, iar pragul AA e 4,5:1.
+   3. Alinierea coloanelor NU vine din tabular-nums. Masurat in fonturile subsetate de pe
+      acest site: Fraunces are doar kern si liga, Inter are doar calt, kern si locl.
+      NICIUNUL nu are tnum, iar cifrele sunt proportionale: in Fraunces cifra 1 are 1024
+      unitati si cifra 0 are 1461, adica 21,9% de em diferenta. Pe preturile reale de aici,
+      la 28px, latimea variaza cu 13,1 px intre cel mai ingust si cel mai lat total.
+      Declaratia ramane scrisa mai jos (costa zero si se aprinde singura in ziua in care
+      subsetul se reface cu +tnum), dar alinierea o da COLOANA: numarul sta intr-o celula
+      proprie, aliniata la end, si toate randurile impart aceeasi celula.
+*/
+
+/* ============================ 0. CIFRELE ============================ */
+.num{
+  font-variant-numeric:tabular-nums lining-nums;
+  font-feature-settings:"tnum" 1,"lnum" 1;
+  letter-spacing:0;
+}
+
+/* ============================ 1. FISA (card) ============================ */
+
+/* Doua coloane pe desktop, nu trei. Latimea de continut a paginii e 816 px (.pw are
+   56rem si scade paddingul): cu minmax(15rem) incapeau 3 coloane, iar un etaj de 4
+   apartamente se rupea 3+1, cu un card orfan pe al doilea rand, la fiecare etaj.
+   Cu 17rem incap 2, deci fiecare etaj e 2+2 si nu mai exista orfan. */
+.lista-ap .grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));
+  column-gap:.9rem;
+  /* ROW-GAP ZERO, si nu din estetica. Fiecare fisa ocupa PATRU randuri ale grilei
+     parinte; un row-gap pe parinte s-ar fi asezat si INTRE cele patru randuri ale
+     aceleiasi fise, iar subgridul, care isi tine gutierele proprii, ar fi cazut alaturi.
+     Masurat: doua fise vecine porneau de la y=938 si y=950, decalate cu 12 px.
+     Aerul dintre benzi vine din marginea fisei, nu din gap. */
+  row-gap:0;
+  margin:1rem 0 0;
+  align-items:stretch;
+  grid-auto-rows:auto;
+}
+
+/* SUBGRID: fiecare fisa isi imprumuta cele patru randuri de la grila parinte, deci
+   pretul, suprafata si actiunea stau pe ACEEASI linie orizontala la toate fisele de pe
+   acelasi rand. Fara asta, egalitatea e doar a cutiei, nu si a continutului: cardurile
+   vandute lasau 101 px de aer jos, 42% din cutie, si de acolo venea "arata altfel". */
+.lista-ap .card{
+  grid-row:span 4;
+  display:grid;
+  grid-template-rows:subgrid;
+  row-gap:0;
+  margin-block-end:.9rem;
+  padding:1.05rem 1.15rem 1.1rem;
+  border-radius:14px;
+}
+@supports not (grid-template-rows:subgrid){
+  .lista-ap .grid{row-gap:.9rem}
+  .lista-ap .card{display:flex;flex-direction:column;margin-block-end:0}
+  .lista-ap .card .f-act{margin-top:auto}
+}
+
+/* --- randul 1: identitatea si starea --- */
+.lista-ap .card h3{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .5rem;
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.82rem;line-height:1.3;letter-spacing:.02em;
+  color:var(--cream-soft);
+  margin:0 0 .55rem;
+}
+.lista-ap .card h3 small{
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;
+  color:var(--cream-soft);opacity:.72;
+}
+/* insigna se duce la capatul randului, la aceeasi distanta pe toate fisele */
+.lista-ap .card h3 .stare{margin-inline:auto 0}
+/* fisa vanduta avea titlul la 1,02rem langa vecini la 1,12rem: doua carduri alaturate
+   cu titluri de marimi diferite se citesc ca doua feluri de lucruri. Acum, un singur corp. */
+.lista-ap .card-mut h3{font-size:.82rem}
+
+/* --- randul 2: cifra --- */
+.lista-ap .card .cp{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:clamp(1.5rem,1.05rem + 1.5vw,1.85rem);
+  line-height:1.05;letter-spacing:-.015em;
+  color:var(--cream);
+  margin:0;
+  white-space:nowrap;
+  align-self:start;
+}
+.lista-ap .card .cp .u{
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.42em;letter-spacing:.1em;text-transform:uppercase;
+  /* NU aur. Masurat pe randare: --gold la 12,4 px peste fundalul fisei da 4,30:1, sub
+     pragul AA de 4,5:1 pentru text mic. Si, oricum, "EUR" e identic pe toate cele 31 de
+     fise: o informatie care nu variaza nu are ce sa castige din culoare. */
+  color:var(--cream-soft);
+  margin-inline-start:.35em;vertical-align:.22em;
+}
+.lista-ap .card .cp small{
+  display:block;
+  font-family:'Inter',sans-serif;font-weight:400;
+  font-size:.78rem;line-height:1.4;letter-spacing:0;
+  color:var(--cream-soft);
+  margin-top:.42rem;
+  white-space:normal;
+}
+/* fisa fara pret: aceeasi cutie, aceeasi inaltime, acelasi loc. Linia mica spune de ce
+   nu e cifra acolo, ca sa nu para ca lipseste ceva din pagina. */
+.lista-ap .card .cp-off{color:var(--cream-soft)}
+.lista-ap .card .cp-off .dash{opacity:.5}
+
+/* --- randul 3: suprafata --- */
+.lista-ap .card .cm{
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:1rem;line-height:1.3;
+  color:var(--cream);
+  margin:.75rem 0 0;
+  align-self:start;
+}
+.lista-ap .card .cm .u{font-weight:400;font-size:.82em;color:var(--cream-soft);
+  margin-inline-start:.22em}
+/* suprafata derivata din apartamentul de deasupra: un singur semn, nu o fraza pe 9 fise.
+   Fraza se scrie o data, sub lista. Semnul nu schimba inaltimea randului, deci coloana
+   ramane coloana. */
+.aprox{font-weight:400;color:var(--cream-soft);margin-inline-end:.12em;opacity:.8}
+.lista-ap .card .cm-off,.prow .mp-off{color:var(--cream-soft)}
+.lista-ap .card .cm-off .dash,.prow .mp-off .dash{opacity:.5}
+.lista-ap .card .cp .dash,.lista-ap .card .cm-off .dash{font-size:.9em;line-height:1}
+
+/* --- randul 4: actiunea --- */
+.lista-ap .card .f-act{display:flex;align-items:end;margin-top:.85rem}
+.lista-ap .card .cl{
+  display:inline-block;margin:0;
+  font-size:.82rem;font-weight:600;letter-spacing:.04em;
+  color:var(--cream);
+  border-bottom:1px solid rgba(var(--gold-rgb),.6);padding-bottom:.12em;
+}
+.lista-ap .card .cl-alt{color:var(--cream);text-decoration:none;
+  border-bottom-color:rgba(var(--gold-rgb),.45)}
+.lista-ap .card .cl-alt:hover{border-bottom-color:var(--gold)}
+.lista-ap .card .cl-off{color:var(--cream-soft);border-bottom-color:transparent}
+
+/* fisa vanduta: stinsa, dar nu invizibila. Opacitatea .62 peste un text deja secundar
+   scotea suprafata sub pragul de citit; hasura ramane, fiindca ea spune "alt fel de rand"
+   fara sa consume contrast. */
+.lista-ap .card-mut{opacity:1;background-image:repeating-linear-gradient(-45deg,
+  transparent 0 7px,rgba(var(--soft-rgb),.05) 7px 14px)}
+.lista-ap .card-mut h3{color:var(--cream-soft)}
+.lista-ap .card.e-vandut{opacity:1}
+.lista-ap .card.e-vandut .cp{text-decoration:none}
+.lista-ap .card.e-rezervat .cp,.lista-ap .card.e-rezervat .cm{opacity:1}
+.lista-ap .card.e-rezervat::after{display:none}
+
+/* ============================ 2. RANDUL DE PRET ============================ */
+
+/* Coloanele se aliniaza pe TOATA lista, nu pe rand: grila sta pe .plist, iar fiecare
+   rand ii imprumuta coloanele prin subgrid. Asa suprafata si pretul au acelasi x de la
+   primul pana la ultimul rand, si ochiul are o margine dreapta de urmat in jos. */
+.plist{
+  display:grid;
+  /* LATIMI FIXE, nu `auto`. Pagina are DOUA liste (3 camere si 2 camere) si fiecare e
+     propria grila: cu `auto`, coloana de pret se masura separat in fiecare lista si
+     marginea dreapta cadea la 1031,7 px in una si la 1048 px in cealalta. Ochiul care
+     coboara pe pagina pierde exact acolo linia pe care o urmarea. */
+  grid-template-columns:minmax(0,1fr) 5.5rem 11rem;
+  border-top:1px solid rgba(var(--gold-rgb),.28);
+  margin:.9rem 0 1.8rem;
+}
+.prow{
+  display:grid;
+  grid-template-columns:subgrid;
+  grid-column:1 / -1;
+  align-items:baseline;
+  column-gap:clamp(.9rem,3vw,2.2rem);
+  row-gap:0;
+  padding:.78rem .6rem;
+  margin:0 -.6rem;
+  border-bottom:1px solid rgba(var(--gold-rgb),.18);
+  text-decoration:none;color:var(--cream);
+  transition:background .25s ease;
+}
+@supports not (grid-template-columns:subgrid){
+  .plist{display:block}
+  .prow{display:grid;grid-template-columns:minmax(0,1fr) 5.5rem 11rem;grid-column:auto}
+}
+.prow:hover{background:rgba(var(--cream-rgb),.05)}
+
+/* capul de lista: singurul loc din pagina care spune ce inseamna cifra mare.
+   Fara el, 164.560 si 136.000 sunt doua numere; cu el, sunt pretul si referinta. */
+.phead{
+  display:grid;grid-template-columns:subgrid;grid-column:1 / -1;
+  align-items:end;
+  column-gap:clamp(.9rem,3vw,2.2rem);
+  padding:.55rem .6rem .5rem;margin:0 -.6rem;
+  border-bottom:1px solid rgba(var(--gold-rgb),.28);
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  /* si aici cerneala stinsa, nu aur: 4,51:1 pe hartie crem trece pragul cu o suta de
+     miime, adica nu il trece. --cream-soft da 7,00:1 si capul de lista nu are nevoie
+     sa concureze cifrele de sub el. */
+  color:var(--cream-soft);
+}
+@supports not (grid-template-columns:subgrid){
+  .phead{grid-template-columns:minmax(0,1fr) 5.5rem 11rem;grid-column:auto}
+}
+.phead .mp,.phead .p{text-align:end}
+
+/* coloana 1: cine e */
+.prow .d{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .55rem;
+  font-weight:600;font-size:.98rem;line-height:1.35;
+  color:var(--cream);
+}
+.prow .d small{
+  font-weight:400;font-size:.86rem;color:var(--cream-soft);
+  margin:0;display:inline;
+}
+/* INSIGNA la capatul coloanei de identitate, nu lipita de numele apartamentului.
+   Numele au lungimi diferite, deci insignele cadeau la x diferit si nu se puteau citi
+   in jos. Impinse la capat, cele trei stari formeaza a treia coloana a listei si
+   raspunsul la "ce mai e liber" se ia dintr-o singura privire verticala. */
+.prow .d .stare{margin-inline-start:auto}
+
+/* coloana 2: suprafata */
+.prow .mp{
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.98rem;
+  color:var(--cream);text-align:end;white-space:nowrap;
+}
+.prow .mp .u{font-weight:400;font-size:.84em;color:var(--cream-soft);
+  margin-inline-start:.22em}
+
+/* coloana 3: cifra de decizie */
+.prow .p{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:1.32rem;line-height:1.15;letter-spacing:-.01em;
+  color:var(--cream);
+  text-align:end;white-space:nowrap;
+}
+.prow .p .u{
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.55em;
+  /* si aici cerneala stinsa, nu aur: la 9,3 px aurul de pe hartie crem da 4,51:1, iar
+     unitatea e identica pe toate randurile, deci nu are ce sa castige din culoare. */
+  letter-spacing:.1em;text-transform:uppercase;color:var(--cream-soft);
+  margin-inline-start:.32em;vertical-align:.2em;
+}
+.prow .p small{
+  display:block;margin-top:.22rem;
+  font-family:'Inter',sans-serif;font-weight:400;font-size:.76rem;
+  letter-spacing:0;color:var(--cream-soft);opacity:.85;white-space:nowrap;
+}
+.prow .p-off{color:var(--cream-soft)}
+.prow .p-off .dash{font-size:1.1em;line-height:1;opacity:.5}
+
+.prow.prow-mut{cursor:default;background-image:repeating-linear-gradient(-45deg,
+  transparent 0 7px,rgba(var(--soft-rgb),.035) 7px 14px)}
+.prow.prow-mut:hover{background-color:transparent}
+.prow.e-vandut{opacity:1}
+.prow.e-vandut .p{text-decoration:none}
+.prow.e-rezervat{opacity:1}
+.prow.e-rezervat .p,.prow.e-rezervat .d>small{opacity:1}
+.prow.e-rezervat::after{display:none}
+
+/* ============================ 3. LA 390 px ============================ */
+@media (max-width:640px){
+  /* FISA: o coloana, deci nu mai exista vecin cu care sa se alinieze si subgridul se
+     opreste. Nu dispare niciun rand din fisa: masurat, toate cele 31 stau la 177 px. */
+  .lista-ap .grid{grid-template-columns:1fr;gap:.7rem}
+  .lista-ap .card{grid-row:auto;display:block;padding:.95rem 1rem 1rem}
+  .lista-ap .card h3{margin-bottom:.5rem}
+  .lista-ap .card .cp{font-size:1.62rem}
+  .lista-ap .card .cm{margin-top:.6rem;font-size:.95rem}
+  /* linia de actiune RAMANE si pe telefon, desi toata fisa e zona de atins. Pe touch nu
+     exista hover, deci ea e singurul lucru care spune care fisa se deschide si care nu:
+     la vandute, in acelasi loc, sta linkul catre un apartament liber. */
+  .lista-ap .card .f-act{margin-top:.7rem}
+
+  /* RANDUL DE PRET: coloana de suprafata iese din grila si coboara sub identitate.
+     Raman doua coloane, cine si cat, fiindca la 390 px trei coloane inseamna trei
+     numere ingramadite si niciunul citit. */
+  .plist{grid-template-columns:minmax(0,1fr) 8.6rem}
+  .prow,.phead{column-gap:.7rem;padding-inline:.4rem;margin-inline:-.4rem}
+  /* .d ramane rand care se infasoara, NU coloana: pe coloana, numele, numarul si insigna
+     ieseau pe trei linii si un rand ajungea la 150 px inaltime. Pe rand, numele si
+     numarul stau impreuna si numai insigna coboara cand nu incape. */
+  .prow .d{grid-column:1;font-size:.94rem;gap:.25rem .45rem}
+  .prow .mp{grid-column:1;grid-row:2;text-align:start;font-weight:400;
+    font-size:.85rem;color:var(--cream-soft);margin-top:.15rem}
+  .prow .mp .u{color:var(--cream-soft)}
+  .prow .p{grid-column:2;grid-row:1 / span 2;align-self:center;font-size:1.18rem}
+  .prow .p small{font-size:.72rem}
+  .phead{grid-template-columns:minmax(0,1fr) 8.6rem;font-size:.62rem;letter-spacing:.1em}
+  .phead .mp{display:none}
+  .prow .d .stare{font-size:.56rem;padding:.34em .6em .28em;margin-inline-start:0}
+}
+
+/* ============================ 4. RTL ============================ */
+/* Nu e mare lucru de intors: grila urmeaza directia de scriere, iar alinierile sunt
+   logice (text-align:end, margin-inline, padding-inline). Singurul lucru care nu se poate
+   lasa pe seama directiei e cifra: un numar ramane latin si se citeste de la stanga la
+   dreapta chiar si in mijlocul unei fraze ebraice, deci celula lui primeste directie proprie. */
+[dir="rtl"] .prow .p,[dir="rtl"] .prow .mp,
+[dir="rtl"] .lista-ap .card .cp,[dir="rtl"] .lista-ap .card .cm{
+  direction:ltr;unicode-bidi:isolate;
+}
+[dir="rtl"] .prow .p,[dir="rtl"] .prow .mp,
+[dir="rtl"] .phead .p,[dir="rtl"] .phead .mp{text-align:left}
+
+/* ============================ 5. MISCARE ============================ */
+@media (prefers-reduced-motion:reduce){
+  .lista-ap .card,.prow{transition:none}
+}
