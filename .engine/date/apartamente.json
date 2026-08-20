@@ -1,11 +1,10 @@
 {
   "_": "STAREA fiecarui apartament din bloc, toate 31. SINGURA sursa de adevar pentru insigne, pentru numaratori si pentru filtrele de pe /apartamente/. Se schimba AICI, niciodata in HTML, si se aplica cu .engine/scripts/pas_stare.py. Stari valide: disponibil, rezervat, vandut.",
   "_sursa": "Structura si suprafetele: artifactul 'Structura Ilioara Residence' (6e3c5f32), reconstituit din grila de preturi a dezvoltatorului si din plansa etajului 7, 19 august 2026. Rezervarile: captura trimisa de Andy pe 20 august 2026.",
-  "_actualizat": "2026-08-20",
+  "_actualizat": "2026-08-21",
   "_deconfirmat": [
-    "PARTERUL: lista noua il numeste ap. 2 la 72,1 mp; site-ul si artifactul il tin pe nr. 3 la 71,00 mp, acelasi pret 151.000. Numarul a fost schimbat 3->2 pe 4 aug (comit e92c7b2) si intors 2->3 pe 10 aug (comit fdba622). A treia schimbare nu se face fara cuvantul lui Andy.",
-    "SUPRAFETELE din lista noua difera de la 0,5 la 5 mp fata de cele publicate, pe TOATE apartamentele. Nicio suprafata nu se schimba pe site pana nu se stabileste care grila e cea buna.",
-    "Structura de 31 din artifact NU includea ap. 18 ca fiind in oferta. Andy: 'structura e fara al nou bagat ca sunt 13 de fapt acum'."
+    "PARTERUL: lista noua il numeste ap. 2 la 72,1 mp; site-ul si structura il tin pe nr. 3 la 71,00 mp, acelasi pret 151.000. Numarul a fost schimbat 3->2 pe 4 aug (comit e92c7b2) si intors 2->3 pe 10 aug (comit fdba622). A treia schimbare nu se face fara cuvantul lui Andy.",
+    "SUPRAFETELE din lista noua a dezvoltatorului difera intre 0,5 si 5 mp fata de cele publicate, pe TOATE apartamentele. Nu se schimba pana nu se stabileste care grila e cea buna."
   ],
   "apartamente": {
     "1": {
@@ -274,33 +273,55 @@
       "pret": "136.500",
       "tva": "21",
       "pret_total": "165.165"
+    },
+    "32": {
+      "stare": "vandut",
+      "camere": null,
+      "etaj": "etaj 8",
+      "tip": "penthouse",
+      "pagina": false,
+      "_nota": "Penthouse la ultimul etaj, vandut inainte de a incepe site-ul. Numarul de camere si suprafata nu sunt in grila dezvoltatorului, deci nu se scriu. Andy, 21 aug 2026: 'pune peste tot clar 2 penthouse-uri deja vandute- in total 33'."
+    },
+    "33": {
+      "stare": "vandut",
+      "camere": null,
+      "etaj": "etaj 8",
+      "tip": "penthouse",
+      "pagina": false,
+      "_nota": "Penthouse la ultimul etaj, vandut inainte de a incepe site-ul. Numarul de camere si suprafata nu sunt in grila dezvoltatorului, deci nu se scriu. Andy, 21 aug 2026: 'pune peste tot clar 2 penthouse-uri deja vandute- in total 33'."
     }
   },
   "etichete": {
     "ro": {
       "rezervat": "Rezervat",
       "vandut": "Vândut",
-      "disponibil": "Disponibil"
+      "disponibil": "Disponibil",
+      "penthouse": "Penthouse"
     },
     "en": {
       "rezervat": "Reserved",
       "vandut": "Sold",
-      "disponibil": "Available"
+      "disponibil": "Available",
+      "penthouse": "Penthouse"
     },
     "he": {
       "rezervat": "שמור",
       "vandut": "נמכר",
-      "disponibil": "זמין"
+      "disponibil": "זמין",
+      "penthouse": "פנטהאוז"
     },
     "ar": {
       "rezervat": "محجوز",
       "vandut": "مباع",
-      "disponibil": "متاح"
+      "disponibil": "متاح",
+      "penthouse": "بنتهاوس"
     },
     "uk": {
       "rezervat": "Зарезервовано",
       "vandut": "Продано",
-      "disponibil": "Вільна"
+      "disponibil": "Вільна",
+      "penthouse": "Пентхаус"
     }
-  }
+  },
+  "_lamurit": "31 CONTRA 33, inchis pe 21 aug 2026. Blocul are parter plus 8 etaje. Structura reconstituita din plansele etajelor tip dadea 31 (3 la parter plus 4 x 7 etaje), fiindca NU includea etajul 8, unde sunt doua penthouse-uri, vandute inainte de a incepe site-ul. 31 + 2 = 33, iar cifra scrisa pe site era corecta de la inceput. Andy: 'pune peste tot clar 2 penthouse-uri deja vandute- in total 33'."
 }

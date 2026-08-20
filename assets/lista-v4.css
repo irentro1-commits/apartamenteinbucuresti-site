@@ -25,18 +25,19 @@
       ca titlu, cu 164.560 in paranteza mica. Acelasi apartament, doua numere-titlu, la
       un click distanta. Nu e o problema de tipografie, e o contrazicere pe fata.
 
-   2. CIFRA MARE E CERNEALA, NU AUR. Calculat pe tema deschisa: --gold-lg (#AE7E0A) pe
-      hartie (#F5F0E1) da 3,19:1. Pretul se scrie azi la 1,05-1,12rem gros, adica sub
-      pragul de «text mare» (18,66px gros), deci ii trebuie 4,5:1. Elementul cel mai
-      important din rand era singurul care pica AA. --cream da 15,6:1 pe hartie si
-      16,6:1 pe intuneric. Aurul ramane pe SUPRAFETE (linii, insigne), niciodata pe
-      cifra de decizie.
+   2. CIFRA MARE E CERNEALA, NU AUR. MASURAT pe randare, tema deschisa: --gold-lg
+      (#AE7E0A) pe hartie (#F5F0E1) da 3,18:1 la 17,92px gros, iar pretul rezervatului,
+      cu opacity .62 peste, da 1,97:1. Sub 18,66px gros pragul AA e 4,5:1, deci
+      elementul cel mai important din rand era si cel mai slab de pe pagina. --cream da
+      15,63:1 pe hartie si 16,63:1 pe intuneric. Aurul ramane pe SUPRAFETE (linii,
+      insigne), niciodata pe cifra de decizie.
 
    3. VANDUTUL NU SE STINGE, SE RETRAGE. `carduri-v1.css` punea opacity:.55 pe randul
-      vandut. Calculat: --cream-soft (#574C3E) la 55% peste hartie da 1,91:1. Aia nu e
-      «discret», e ilizibil, si exact asta a vazut proprietarul cand a zis ca vandutele
-      «arata golite si diferite». Aici recesiunea se face din TOKEN de culoare
-      (--cream-soft, 7,35:1), nu din transparenta, iar geometria ramane identica.
+      vandut. MASURAT pe tema deschisa: numarul apartamentului 3,82:1, tipul si
+      suprafata 2,58:1. Aia nu e «discret», e ilizibil, si exact asta a vazut
+      proprietarul cand a zis ca vandutele «arata golite si diferite». Aici recesiunea
+      se face din TOKEN de culoare (--cream-soft, 7,35:1), nu din transparenta, iar
+      geometria ramane identica: 70px, randul viu si randul vandut deopotriva.
    ========================================================================== */
 
 
@@ -197,9 +198,14 @@ a.aprow:focus-visible{outline:2px solid var(--cta);outline-offset:-2px;border-ra
 /* semnul tacut, in locul pretului la vandut. Desenat din CSS, nu scris ca text: nu
    depinde de font, nu se rupe in RTL si nu se citeste cu voce tare de doua ori.
    Ocupa exact inaltimea liniei 1, deci randul ramane al aceleiasi inaltimi. */
-.r-nil{display:flex;align-items:center;justify-content:end;block-size:1.44rem}
-.r-nil::after{
-  content:'';inline-size:1.75rem;block-size:2px;border-radius:999px;
+/* SPECIFICITATE, si e o capcana vazuta pe randare: `.r-pret b` (clasa + element) bate
+   `.r-nil` (o clasa), deci `display:block` de mai sus anula `display:flex` de aici si
+   liniuta nu se desena deloc — coloana vandutului ramanea complet goala, adica exact
+   defectul pe care il repara. Selectorul trebuie sa fie cel putin la fel de specific. */
+.r-pret b.r-nil{display:flex;align-items:center;justify-content:end;block-size:1.44rem}
+.r-pret b.r-nil::after{
+  content:'';display:block;
+  inline-size:1.75rem;block-size:2px;border-radius:999px;
   background:rgba(var(--soft-rgb),.42);
 }
 
@@ -208,6 +214,17 @@ a.aprow:focus-visible{outline:2px solid var(--cta);outline-offset:-2px;border-ra
   margin-block:1rem 0;font-size:.82rem;line-height:1.55;
   color:var(--cream-soft);max-inline-size:44em;
 }
+
+/* ============ §6b. CIFRA DIN TAB ============
+   Cate sunt libere pe fiecare tip de apartament sta pe COMANDA, nu in proza de deasupra.
+   Azi «6 cu 2 camere si unul singur cu 3» ori lipseste, ori e scris de mana intr-un
+   paragraf care se strica la prima vanzare. Pe buton, cifra vine din date si nu poate minti. */
+.ft i{
+  font-style:normal;font-weight:700;font-size:.78em;
+  margin-inline-start:.45em;color:var(--liber);
+  font-variant-numeric:tabular-nums;
+}
+.ft.on i{color:var(--cta-ink)}
 
 
 /* ============ §7. FILTRELE (ascunderea) ============ */

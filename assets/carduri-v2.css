@@ -131,3 +131,11 @@ a.aprow:focus-visible{outline:2px solid var(--cta);outline-offset:-2px;border-ra
   }
   .plist .prow .p{font-size:1rem}
 }
+
+/* Propozitia care inchide diferenta dintre cele 12 de pe pagina de preturi si cele 33 ale
+   blocului. Fara ea, cititorul aduna singur si nu-i iese. */
+.nota-penthouse{
+  margin:0 0 1.4rem;font-size:.9rem;line-height:1.6;color:var(--cream-soft);
+  padding-inline-start:.9rem;border-inline-start:2px solid rgba(var(--gold-rgb),.45);
+}
+.nota-penthouse a{color:var(--cream)}

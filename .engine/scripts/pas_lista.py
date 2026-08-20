@@ -9,15 +9,16 @@ CERUT DE OBREA, prin Andy, 20 aug 2026:
   4. taburi pe numarul de camere
   5. un comutator "doar disponibilele"
 
-DE CE SE ARATA SI CELE VANDUTE, desi nu se mai pot cumpara. Un bloc din care s-au vandut 18 din
-31 spune singur ca merge bine. Lista scurta de 13 nu spune nimic; lista intreaga, cu 18 taiate,
+DE CE SE ARATA SI CELE VANDUTE, desi nu se mai pot cumpara. Un bloc din care s-au vandut 20 din
+33 spune singur ca merge bine. Lista scurta de 13 nu spune nimic; lista intreaga, cu 20 taiate,
 spune ca ai ramas cu ce a mai ramas si ca nu mai e mult. E acelasi fapt, citit altfel, si e
 argumentul cel mai onest pe care il avem: nu e o afirmatie despre noi, e o numaratoare.
 
 Cele vandute NU primesc pagina proprie si NU primesc pret: nu au ce sa vanda si nu au ce sa
 indexeze. Sunt `<div>`, nu `<a>`, deci nici nu se poate da click pe ele.
 
-SURSA e `.engine/date/apartamente.json`, toate cele 31. Aici nu se scrie niciun pret si nicio
+SURSA e `.engine/date/apartamente.json`, toate cele 33: 31 de apartamente pe parter si
+pe etajele 1-7, plus cele doua penthouse-uri de la etajul 8, vandute de la inceput. Aici nu se scrie niciun pret si nicio
 stare: se citesc de acolo. Preturile care lipsesc din date se recupereaza o singura data din
 cardurile existente si se scriu inapoi in date, ca sa nu ramana niciodata in doua locuri.
 
@@ -37,20 +38,22 @@ ENGINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CALE_DATE = os.path.join(ENGINE, "date", "apartamente.json")
 
 # Doua foi, si amandoua trebuie sa fie acolo: insignele de stare traiesc in stare-v2.css,
-# randurile in carduri-v1.css. Injectarea uneia singure lasa etichetele nestilizate.
+# randurile in carduri-v2.css. Injectarea uneia singure lasa etichetele nestilizate.
 CSS = ('<link rel="stylesheet" href="/assets/stare-v2.css">' + "\n" +
-       '<link rel="stylesheet" href="/assets/carduri-v1.css">')
+       '<link rel="stylesheet" href="/assets/carduri-v2.css">')
 ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
 
 NB = " "
 
 # ordinea de afisare: de sus in jos, cum se urca in bloc
-NIVELE = [("etaj 7", "Etajul 7"), ("etaj 6", "Etajul 6"), ("etaj 5", "Etajul 5"),
+NIVELE = [("etaj 8", "Etajul 8"), ("etaj 7", "Etajul 7"), ("etaj 6", "Etajul 6"),
+          ("etaj 5", "Etajul 5"),
           ("etaj 4", "Etajul 4"), ("etaj 3", "Etajul 3"), ("etaj 2", "Etajul 2"),
           ("etaj 1", "Etajul 1"), ("parter", "Parter")]
 
 # coada editoriala pastrata din pagina veche, ca sa nu se piarda ce era scris de om
-COADA = {"etaj 7": " · priveliștea cea mai deschisă"}
+COADA = {"etaj 7": " · priveliștea cea mai deschisă",
+         "etaj 8": " · cele două penthouse-uri, vândute de la început"}
 
 
 def incarca():
@@ -131,7 +134,9 @@ def card(nr, a, et):
     # marginile nu se mai aliniau intre randuri. Masurat, nu banuit.
     celule = [
         '<span class="ap-nr">ap.%s%s%s</span>' % (NB, nr, ins),
-        '<span class="ap-d">%d camere · %s</span>' % (cam, et),
+        '<span class="ap-d">%s · %s</span>' % (
+            "Penthouse" if a.get("tip") == "penthouse"
+            else ("%d camere" % cam) if cam else "Apartament", et),
         '<span class="ap-mp">%s</span>' % (
             (a["total"] + NB + "mp") if a.get("total") else "&mdash;"),
     ]
@@ -144,7 +149,7 @@ def card(nr, a, et):
     else:
         celule.append('<span class="ap-p ap-p-gol" aria-hidden="true"></span>')
 
-    date = ' data-cam="%d" data-stare="%s"' % (cam, stare)
+    date = (' data-cam="%d"' % cam if cam else "") + ' data-stare="%s"' % stare
     corp = "".join(celule)
     if stare != "vandut" and a.get("href"):
         # FARA `rv` si fara `data-fx` pe rand. Randul nu se anima individual din doua motive:
@@ -186,8 +191,14 @@ def lista(A):
         lib = sum(1 for k in nr_et if A[k]["stare"] == "disponibil")
         et_scurt = titlu.replace("Etajul ", "Etaj ")
         out.append('<section class="etaj-ap" data-sectiune data-etaj="%s">' % cheie)
-        out.append('<h2 class="rv" data-fx="slide">%s · %s%s</h2>'
-                   % (titlu, cuvant(lib), COADA.get(cheie, "")))
+        # Etajul penthouse-urilor nu primeste numaratoare: e mereu zero, iar "niciunul
+        # liber" langa "vandute de la inceput" spune acelasi lucru de doua ori.
+        if cheie == "etaj 8":
+            out.append('<h2 class="rv" data-fx="slide">%s%s</h2>'
+                       % (titlu, COADA.get(cheie, "")))
+        else:
+            out.append('<h2 class="rv" data-fx="slide">%s · %s%s</h2>'
+                       % (titlu, cuvant(lib), COADA.get(cheie, "")))
         out.append('<div class="aplist">')
         out.extend(card(k, A[k], et_scurt if cheie != "parter" else "Parter") for k in nr_et)
         out.append("</div></section>")
@@ -335,6 +346,37 @@ def rescrie_preturi(html, A):
     return html, True, len(stari)
 
 
+NOTA_PH = "nota-penthouse"
+
+
+def nota_penthouse(h, A):
+    """Pe /preturi/ se vad doar cele care se mai pot cumpara, dar totalul scris peste tot pe
+    sit e 33. Fara o propozitie care sa inchida diferenta, cititorul aduna singur si nu-i iese.
+    Andy, 21 aug 2026: *"pune peste tot clar 2 penthouse-uri deja vandute- in total 33"*."""
+    # SE INLOCUIESTE, nu se sare. O garda de tip "exista deja ceva" lasa in pagina versiunea
+    # veche a textului cand textul se schimba, si exact asta s-a intamplat acum o ora cu blocul
+    # de filtrare. Garda corecta e "exista exact ce pun eu acum", iar cel mai simplu mod de a o
+    # respecta e sa stergi si sa scrii din nou.
+    h = re.sub(r'<p class="' + NOTA_PH + r'">.*?</p>', "", h, flags=re.S)
+    ph = [k for k, v in A.items() if v.get("tip") == "penthouse"]
+    de_vanzare = sum(1 for v in A.values() if v["stare"] != "vandut")
+    if not ph:
+        return h
+    # FARA cifra pentru "cele care se mai pot cumpara": pe /preturi/ apar 12 randuri, dar in
+    # date sunt 13 nevandute, fiindca ap. 18 a intrat si a iesit din oferta intr-o zi si nu are
+    # rand aici. O cifra care nu se potriveste cu ce numeri pe ecran strica exact increderea
+    # pe care o construieste nota.
+    nota = ('<p class="%s">Blocul are %d de apartamente în total, dintre care %d '
+            'penthouse-uri la ultimul etaj, vândute de la început. Aici sunt cele care se '
+            'mai pot cumpăra; lista întreagă, etaj cu etaj, este pe '
+            '<a href="/apartamente/">pagina de apartamente</a>.</p>'
+            % (NOTA_PH, len(A), len(ph)))
+    i = h.find('<div id="lista-pret"')
+    if i < 0:
+        return h
+    return h[:i] + nota + h[i:]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=os.environ.get("BLOG_REPO", "/tmp/apt"))
@@ -377,6 +419,7 @@ def main():
         for foaie in CSS.split("\n"):
             if foaie and foaie not in n2:
                 n2 = n2.replace(ANCORA_CSS, ANCORA_CSS + "\n" + foaie, 1)
+        n2 = nota_penthouse(n2, A)
         n2 = leaga_filtrul(n2)
         if a.apply and n2 != h2:
             io.open(fp2, "w", encoding="utf-8", newline="\n").write(n2)
