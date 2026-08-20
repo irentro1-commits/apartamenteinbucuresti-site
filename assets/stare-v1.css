@@ -1,0 +1,56 @@
+/* Starea apartamentului: rezervat / vandut. Fisier NOU, versionat in nume, ca sa nu intre in
+   capcana de cache immutable de pe /assets/*. Doar variabilele temei, deci merge pe amandoua. */
+
+/* --- insigna --- */
+.stare{
+  display:inline-flex;align-items:center;gap:.45em;
+  margin-inline-start:.6em;vertical-align:.1em;
+  font-family:'Inter',system-ui,sans-serif;font-weight:600;
+  font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;
+  padding:.4em .78em .34em;border-radius:999px;
+  backdrop-filter:saturate(1.2);
+}
+.stare::before{
+  content:'';width:.4em;height:.4em;border-radius:50%;background:currentColor;
+  box-shadow:0 0 0 .2em rgba(var(--gold-rgb),.16);
+}
+
+/* rezervat: aurul casei, dar stins. Nu are voie sa concureze butonul de actiune. */
+.stare-rezervat{
+  color:var(--gold-lg);
+  border:1px solid rgba(var(--gold-rgb),.5);
+  background:linear-gradient(135deg,rgba(var(--gold-rgb),.16),rgba(var(--gold-rgb),.05));
+}
+/* vandut: fara aur deloc. Culoarea se retrage din pagina. */
+.stare-vandut{
+  color:var(--cream-soft);
+  border:1px solid rgba(var(--soft-rgb),.42);
+  background:rgba(var(--soft-rgb),.09);
+}
+.stare-vandut::before{box-shadow:0 0 0 .2em rgba(var(--soft-rgb),.14)}
+
+/* --- randul si cardul --- */
+.prow.e-rezervat,.card.e-rezervat{position:relative;overflow:hidden}
+.prow.e-rezervat .p,.card.e-rezervat .cp{opacity:.6}
+.prow.e-rezervat .d>small,.card.e-rezervat .cm{opacity:.75}
+
+/* hasura diagonala, foarte slaba: se simte ca e altfel, nu se vede ca e decorata */
+.prow.e-rezervat::after,.card.e-rezervat::after{
+  content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:repeating-linear-gradient(135deg,
+    transparent 0 10px,rgba(var(--gold-rgb),.05) 10px 11px);
+}
+
+.prow.e-vandut,.card.e-vandut{opacity:.5}
+.prow.e-vandut .p,.card.e-vandut .cp{text-decoration:line-through;
+  text-decoration-thickness:1px;text-decoration-color:rgba(var(--soft-rgb),.6)}
+.card.e-vandut:hover{transform:none;border-color:rgba(var(--gold-rgb),.3)}
+
+/* pe pagina apartamentului, insigna sta sub titlu, pe rand propriu */
+.stare-pag{margin:0 0 1.2rem}
+.stare-pag .stare{margin-inline-start:0;font-size:.7rem}
+
+@media (max-width:520px){
+  .stare{font-size:.58rem;letter-spacing:.12em;padding:.36em .66em .3em}
+  .prow.e-rezervat .d .stare{margin-inline-start:.4em}
+}

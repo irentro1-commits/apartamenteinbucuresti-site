@@ -1,0 +1,231 @@
+{
+  "_": "STAREA fiecarui apartament din bloc, toate 31. SINGURA sursa de adevar pentru insigne, pentru numaratori si pentru filtrele de pe /apartamente/. Se schimba AICI, niciodata in HTML, si se aplica cu .engine/scripts/pas_stare.py. Stari valide: disponibil, rezervat, vandut.",
+  "_sursa": "Structura si suprafetele: artifactul 'Structura Ilioara Residence' (6e3c5f32), reconstituit din grila de preturi a dezvoltatorului si din plansa etajului 7, 19 august 2026. Rezervarile: captura trimisa de Andy pe 20 august 2026.",
+  "_actualizat": "2026-08-20",
+  "_deconfirmat": [
+    "PARTERUL: lista noua il numeste ap. 2 la 72,1 mp; site-ul si artifactul il tin pe nr. 3 la 71,00 mp, acelasi pret 151.000. Numarul a fost schimbat 3->2 pe 4 aug (comit e92c7b2) si intors 2->3 pe 10 aug (comit fdba622). A treia schimbare nu se face fara cuvantul lui Andy.",
+    "SUPRAFETELE din lista noua difera de la 0,5 la 5 mp fata de cele publicate, pe TOATE apartamentele. Nicio suprafata nu se schimba pe site pana nu se stabileste care grila e cea buna.",
+    "Structura de 31 din artifact NU includea ap. 18 ca fiind in oferta. Andy: 'structura e fara al nou bagat ca sunt 13 de fapt acum'."
+  ],
+  "apartamente": {
+    "1": {
+      "stare": "vandut",
+      "camere": 3,
+      "etaj": "parter",
+      "total": "68,20"
+    },
+    "2": {
+      "stare": "vandut",
+      "camere": 3,
+      "etaj": "parter",
+      "total": "70,70"
+    },
+    "3": {
+      "stare": "rezervat",
+      "camere": 3,
+      "etaj": "parter",
+      "total": "71,00",
+      "pagina": true
+    },
+    "4": {
+      "stare": "disponibil",
+      "camere": 3,
+      "etaj": "etaj 1",
+      "total": "84,15",
+      "pagina": true
+    },
+    "5": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 1"
+    },
+    "6": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 1",
+      "total": "47,05"
+    },
+    "7": {
+      "stare": "disponibil",
+      "camere": 2,
+      "etaj": "etaj 1",
+      "total": "60,60",
+      "pagina": true
+    },
+    "8": {
+      "stare": "vandut",
+      "camere": 3,
+      "etaj": "etaj 2"
+    },
+    "9": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 2"
+    },
+    "10": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 2"
+    },
+    "11": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 2",
+      "total": "60,60"
+    },
+    "12": {
+      "stare": "rezervat",
+      "camere": 3,
+      "etaj": "etaj 3",
+      "total": "84,45",
+      "pagina": true
+    },
+    "13": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 3"
+    },
+    "14": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 3"
+    },
+    "15": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 3"
+    },
+    "16": {
+      "stare": "vandut",
+      "camere": 3,
+      "etaj": "etaj 4",
+      "total": "84,45"
+    },
+    "17": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 4",
+      "total": "66,70"
+    },
+    "18": {
+      "stare": "rezervat",
+      "camere": 2,
+      "etaj": "etaj 4",
+      "total": "49,20",
+      "pret": "109.918",
+      "pagina": false,
+      "_nota": "Andy, 20 aug 2026: 'ap 18 a fost introdus is vandut de noi la 1 zi dupa'. Introdus in oferta dupa grila din 19 august si dat imediat. Il tin pe REZERVAT, nu pe vandut, fiindca aritmetica lui inchide exact asa: cele 12 ale noastre plus ap. 18 fac 13, din care 6 rezervate si 7 libere. Nu are pagina proprie: a intrat si a iesit din oferta intr-o zi."
+    },
+    "19": {
+      "stare": "disponibil",
+      "camere": 2,
+      "etaj": "etaj 4",
+      "total": "60,75",
+      "pagina": true
+    },
+    "20": {
+      "stare": "vandut",
+      "camere": 3,
+      "etaj": "etaj 5"
+    },
+    "21": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 5",
+      "total": "66,70"
+    },
+    "22": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 5"
+    },
+    "23": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 5",
+      "total": "60,75"
+    },
+    "24": {
+      "stare": "vandut",
+      "camere": 3,
+      "etaj": "etaj 6",
+      "total": "85,05"
+    },
+    "25": {
+      "stare": "disponibil",
+      "camere": 2,
+      "etaj": "etaj 6",
+      "total": "66,85",
+      "pagina": true
+    },
+    "26": {
+      "stare": "rezervat",
+      "camere": 2,
+      "etaj": "etaj 6",
+      "total": "47,35",
+      "pagina": true
+    },
+    "27": {
+      "stare": "disponibil",
+      "camere": 2,
+      "etaj": "etaj 6",
+      "total": "60,90",
+      "pagina": true
+    },
+    "28": {
+      "stare": "disponibil",
+      "camere": 2,
+      "etaj": "etaj 7",
+      "total": "69,85",
+      "pagina": true
+    },
+    "29": {
+      "stare": "rezervat",
+      "camere": 2,
+      "etaj": "etaj 7",
+      "total": "68,25",
+      "pagina": true
+    },
+    "30": {
+      "stare": "rezervat",
+      "camere": 2,
+      "etaj": "etaj 7",
+      "total": "58,15",
+      "pagina": true
+    },
+    "31": {
+      "stare": "disponibil",
+      "camere": 2,
+      "etaj": "etaj 7",
+      "total": "68,15",
+      "pagina": true
+    }
+  },
+  "etichete": {
+    "ro": {
+      "rezervat": "Rezervat",
+      "vandut": "Vândut",
+      "disponibil": "Disponibil"
+    },
+    "en": {
+      "rezervat": "Reserved",
+      "vandut": "Sold",
+      "disponibil": "Available"
+    },
+    "he": {
+      "rezervat": "שמור",
+      "vandut": "נמכר",
+      "disponibil": "זמין"
+    },
+    "ar": {
+      "rezervat": "محجوز",
+      "vandut": "مباع",
+      "disponibil": "متاح"
+    },
+    "uk": {
+      "rezervat": "Зарезервовано",
+      "vandut": "Продано",
+      "disponibil": "Вільна"
+    }
+  }
+}
