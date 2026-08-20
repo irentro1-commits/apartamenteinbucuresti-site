@@ -67,10 +67,29 @@ def curata(h):
     abia pe live. Doi pasi care scriu in acelasi loc au nevoie de o granita scrisa, nu de
     noroc: aici e granita.
     ORDINEA e pas_lista, apoi pas_stare. Invers, lista ar fi regenerata peste insigne."""
-    h = re.sub(r'<span class="stare stare-(?:rezervat|vandut)">[^<]*</span>', "", h)
-    h = re.sub(r'<p class="stare-pag">\s*</p>\s*', "", h)
-    h = re.sub(r'(<a class="(?:prow|card) rv)( e-(?:rezervat|vandut))', r"\1", h)
-    return h
+    inc, sf = zona_lista(h)
+    cap, mijloc, coada = h[:inc], h[inc:sf], h[sf:]
+    def _c(x):
+        x = re.sub(r'<span class="stare stare-[a-z]+">[^<]*</span>', "", x)
+        x = re.sub(r'<p class="stare-pag">\s*</p>\s*', "", x)
+        x = re.sub(r'(<a class="(?:prow|card) rv)( e-(?:rezervat|vandut))', r"\1", x)
+        return x
+    return _c(cap) + mijloc + _c(coada)
+
+
+def zona_lista(h):
+    """Bucata de pagina care apartine lui `pas_lista`. Nimic din ea nu se atinge aici.
+
+    Fara granita asta, `curata` stergea insignele din lista si `pe_ancora` nu le mai punea
+    inapoi, fiindca markupul generat de pas_lista are alta forma (`class="card rv e-rezervat"`
+    plus `data-cam` inaintea lui `href`), pe care tiparul de aici nu il prinde. Efectul s-a
+    vazut pe LIVE, nu local, si numai fiindca fisierul se scria doar cand se schimba altceva.
+    Un pas care se bazeaza pe noroc ca sa nu strice e un pas stricat."""
+    i = h.find('id="lista-ap"')
+    if i < 0:
+        return 0, 0
+    j = h.find('id="f-gol"', i)
+    return (i, j if j > i else len(h))
 
 
 def numara(camere=None, etaj=None):
