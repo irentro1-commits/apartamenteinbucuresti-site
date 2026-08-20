@@ -20,8 +20,9 @@ ORDINEA PASILOR NU E ARBITRARA:
   2. build_blog              paginile de articol, doar cele cu publishAt trecut
   3. build_index             indexul blogului, in 5 limbi
   4. pas_dif                 blocul de canale de vanzare (post-generare)
-  5. pas_asezare             legaturile nedespartitoare (post-generare, ULTIMUL pas pe text)
-  6. update_index_files      sitemap.xml, sitemap-index.xml, llms.txt
+  5. pas_formular            a doua usa de contact, langa butonul de WhatsApp (post-generare)
+  6. pas_asezare             legaturile nedespartitoare (post-generare, ULTIMUL pas pe text)
+  7. update_index_files      sitemap.xml, sitemap-index.xml, llms.txt
 
 Pasii 4 si 5 exista fiindca pe 4 aug 2026 au fost facuti cu scripturi one-shot din /tmp, iar
 sursa n-a stiut niciodata de ei. Rezultat: pe 10 aug, o regenerare din JSON stergea 91 de
@@ -84,11 +85,15 @@ def main():
     print(ruleaza(["python3", "pas_dif.py", "--repo", a.repo,
                    "--doar", BLOG_GLOB, "--apply"], mediu))
 
-    print("\n5. asezarea textului")
+    print("\n5. a doua usa de contact")
+    print(ruleaza(["python3", "pas_formular.py", "--repo", a.repo,
+                   "--doar", BLOG_GLOB, "--apply"], mediu))
+
+    print("\n6. asezarea textului")
     print(ruleaza(["python3", "pas_asezare.py", "--repo", a.repo,
                    "--doar", BLOG_GLOB, "--apply"], mediu))
 
-    print("\n6. sitemap + llms.txt")
+    print("\n7. sitemap + llms.txt")
     print(ruleaza(["python3", "update_index_files.py", azi], mediu))
 
     # raportul: ce e pe site si ce urmeaza. Serveste si workflow-ului, ca sa stie ce sa scrie
