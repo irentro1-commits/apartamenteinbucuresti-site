@@ -36,7 +36,7 @@ D = json.load(open(os.path.join(ENGINE, "date", "apartamente.json"), encoding="u
 APT = D["apartamente"]
 ETICHETE = D["etichete"]
 
-CSS = '<link rel="stylesheet" href="/assets/stare-v1.css">'
+CSS = '<link rel="stylesheet" href="/assets/stare-v2.css">'
 ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
 
 # numarul apartamentului se citeste din adresa, nu din text: adresa e stabila, textul nu

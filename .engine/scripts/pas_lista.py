@@ -36,7 +36,7 @@ import re
 ENGINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CALE_DATE = os.path.join(ENGINE, "date", "apartamente.json")
 
-CSS = '<link rel="stylesheet" href="/assets/stare-v1.css">'
+CSS = '<link rel="stylesheet" href="/assets/stare-v2.css">'
 ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
 
 NB = " "
