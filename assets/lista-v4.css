@@ -1,0 +1,257 @@
+/* ==========================================================================
+   lista-v4.css  ·  21 august 2026  ·  Ilioara Residence
+   O SINGURA GRAMATICA DE RAND, folosita si pe /apartamente/ si pe /preturi/.
+
+   FISIER NOU, cu versiune in nume. `_headers` serveste /assets/* cu
+   `Cache-Control: public, max-age=31536000, immutable`, deci un fisier MODIFICAT nu
+   ajunge niciodata la cine a vizitat site-ul. Numele nou e singura cale.
+
+   INLOCUIESTE `carduri-v1.css`, care nu a fost niciodata comis, deci nu a fost
+   niciodata servit. Se incarca DUPA `pagini-v33.css` si DUPA `stare-v2.css`, si de
+   acolo isi ia dreptul sa le suprascrie la specificitate egala.
+
+   Zero culori scrise de mana. Doar tokenurile temei: --cream, --cream-soft, --gold-rgb,
+   --soft-rgb, --cta, --bg-rgb, --eo, plus --liber din stare-v2.css. Amandoua temele merg
+   fara nicio regula de tema aici, in afara de cele doua linii care repara ordinea lui
+   --liber (vezi §1).
+
+   Tot ce e directional e scris logic (inline-start/end, block-start/end, padding-inline),
+   pentru /he/ si /ar/. Singura exceptie explicita: `unicode-bidi:isolate` pe cifre.
+
+   TREI DECIZII, toate masurate pe tokenurile reale ale temei, nu alese din gust:
+
+   1. CIFRA MARE E SUMA CARE SE PLATESTE, cu TVA. Azi pagina apartamentului 28 spune
+      «164.560 EUR cu TVA» ca titlu, iar lista si /preturi/ spun «136.000 EUR + TVA 21%»
+      ca titlu, cu 164.560 in paranteza mica. Acelasi apartament, doua numere-titlu, la
+      un click distanta. Nu e o problema de tipografie, e o contrazicere pe fata.
+
+   2. CIFRA MARE E CERNEALA, NU AUR. Calculat pe tema deschisa: --gold-lg (#AE7E0A) pe
+      hartie (#F5F0E1) da 3,19:1. Pretul se scrie azi la 1,05-1,12rem gros, adica sub
+      pragul de «text mare» (18,66px gros), deci ii trebuie 4,5:1. Elementul cel mai
+      important din rand era singurul care pica AA. --cream da 15,6:1 pe hartie si
+      16,6:1 pe intuneric. Aurul ramane pe SUPRAFETE (linii, insigne), niciodata pe
+      cifra de decizie.
+
+   3. VANDUTUL NU SE STINGE, SE RETRAGE. `carduri-v1.css` punea opacity:.55 pe randul
+      vandut. Calculat: --cream-soft (#574C3E) la 55% peste hartie da 1,91:1. Aia nu e
+      «discret», e ilizibil, si exact asta a vazut proprietarul cand a zis ca vandutele
+      «arata golite si diferite». Aici recesiunea se face din TOKEN de culoare
+      (--cream-soft, 7,35:1), nu din transparenta, iar geometria ramane identica.
+   ========================================================================== */
+
+
+/* ============ §1. VERDELE DE DISPONIBIL: ordinea temelor, reparata ============
+   In `pagini-v33.css`, `:root` gol e tema INCHISA, iar deschisa vine pe
+   `html[data-theme="light"]`. In `stare-v2.css` e exact invers: `:root` gol tine verdele
+   de hartie, iar cel de intuneric vine pe `[data-theme="dark"]`. Cand documentul nu are
+   inca `data-theme` (JS oprit, sau inainte de bootstrap), fundalul e inchis si verdele e
+   cel de hartie: #1F6B4F pe #14100b = 2,95:1. Aceleasi doua culori, ordinea corecta. */
+:root{--liber:#5FC79E;--liber-rgb:95,199,158}
+html[data-theme="light"]{--liber:#1F6B4F;--liber-rgb:31,107,79}
+
+
+/* ============ §2. CIFRELE ============
+   `tabular-nums` e declarat corect, dar fonturile subsetate din /fonts/ nu au azi
+   feature-ul `tnum`, deci declaratia nu face nimic. Nu se bazeaza nimic pe ea:
+   ALINIEREA O FACE COLOANA — latime fixa, identica in fiecare rand, plus text-align:end
+   — si NORMALIZAREA ZECIMALELOR in generator (toate suprafetele cu doua zecimale: azi
+   in date stau «71», «60,6» si «60,9» langa «84,15», si coloana danseaza).
+   Declaratia ramane scrisa: costa zero si se aprinde singura in ziua in care subsetul se
+   reface cu +tnum.
+
+   RTL. Orice cifra se scrie intr-un `<bdi class="num">`, si numai cifra plus unitatea ei.
+   VAZUT PE RANDARE, nu presupus: cu paragraful pe RTL, «182.710 EUR» iesea «EUR 182.710»
+   si «71,00 mp» iesea «mp 71,00», fiindca algoritmul bidi reordoneaza doua runde latine
+   vecine dupa directia paragrafului. `<bdi>` izoleaza runda, `direction:ltr` ii fixeaza
+   ordinea inauntru, iar elementul ramane inline, deci `text-align:end` al celulei
+   continua sa aseze runda la capatul PAGINII (dreapta in RO, stanga in HE si AR).
+   Cuvintele din jur («fara TVA», «mp») raman AFARA din bdi cand sunt traduse. */
+bdi.num,.num{
+  font-variant-numeric:tabular-nums lining-nums;
+  font-feature-settings:"tnum" 1,"lnum" 1;
+}
+bdi.num{direction:ltr;unicode-bidi:isolate}
+
+/* text numai pentru cititorul de ecran (randul vandut nu are cifra de pret) */
+.r-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+
+/* ============ §3. GEOMETRIA COLOANELOR ============
+   Latimile sunt FIXE, si e obligatoriu: fiecare rand e o grila separata, deci coloanele
+   nu se aliniaza intre randuri daca latimile sunt «auto». Cu latimi fixe, toate randurile
+   calculeaza acelasi lucru si coloana de pret devine o linie dreapta pe care coboara ochiul.
+   Tokenurile stau intr-un singur loc, ca sa se acordeze o data pentru amandoua paginile. */
+.aplist{
+  --col-nr:13.5rem;      /* «ap. 28» + insigna, cea mai lata fiind «Disponibil» */
+  --col-mp:5.6rem;       /* «85,05 mp» la .94rem */
+  --col-pret:11rem;      /* «136.000 EUR fara TVA» la .78rem, linia cea mai lata */
+  --gutter:clamp(.8rem,2vw,1.4rem);
+  margin-block:1.2rem 0;
+}
+
+.aprow,.aphead{
+  display:grid;
+  grid-template-columns:var(--col-nr) minmax(0,1fr) var(--col-mp) var(--col-pret);
+  column-gap:var(--gutter);
+  padding-inline:.9rem .5rem;
+}
+
+
+/* ============ §4. CAPUL DE LISTA ============
+   Se scrie O SINGURA DATA pe grup, si tine locul celor douasprezece repetari de
+   «mp in total · compartimentare modulara» de pe /preturi/, care spuneau acelasi lucru pe
+   fiecare rand. Un cap de lista invata ochiul o data; o eticheta repetata il incarca de
+   12 ori. E `aria-hidden` fiindca celulele se descriu singure: unitatea sta langa cifra. */
+.aphead{
+  padding-block:.55rem .45rem;
+  border-block-end:1px solid rgba(var(--gold-rgb),.42);
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:.66rem;font-weight:600;line-height:1.3;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cream-soft);
+}
+.aphead span:nth-child(3),
+.aphead span:nth-child(4){text-align:end}
+
+
+/* ============ §5. RANDUL ============ */
+.aprow{
+  position:relative;
+  align-items:center;
+  min-block-size:4.4rem;          /* aceeasi inaltime in toate cele trei stari */
+  padding-block:.75rem;
+  border-block-end:1px solid rgba(var(--gold-rgb),.2);
+  color:var(--cream);
+  text-decoration:none;
+  transition:background-color .18s ease;
+}
+a.aprow:hover{background:rgba(var(--gold-rgb),.06)}
+a.aprow:focus-visible{outline:2px solid var(--cta);outline-offset:-2px;border-radius:10px}
+
+/* DISPONIBIL: singura stare care primeste un semn pe marginea randului. Verdele e deja
+   limba casei pentru «se poate cumpara»; aici il duce mai departe, ca sa se vada de la
+   distanta cate randuri sunt vii, fara sa citesti nicio insigna.
+   `inset-inline-start` se intoarce singur pe /he/ si /ar/. */
+.aprow.e-disponibil::before{
+  content:'';position:absolute;
+  inset-block:.5rem;inset-inline-start:0;
+  inline-size:3px;border-radius:999px;
+  background:var(--liber);
+}
+
+/* REZERVAT: hasura diagonala foarte slaba, pastrata din limba deja folosita pe site.
+   Se simte ca e altfel, nu se vede ca e decorata. PRETUL RAMANE INTREG: un rezervat se
+   poate elibera maine, iar un pret pe jumatate sters e un fapt pe jumatate sters.
+   Regula asta suprascrie `.prow.e-rezervat .p{opacity:.6}` din stare-v2.css. */
+.aprow.e-rezervat{
+  background-image:repeating-linear-gradient(135deg,
+    transparent 0 10px,rgba(var(--gold-rgb),.045) 10px 11px);
+}
+.aprow.e-rezervat .r-pret,
+.aprow.e-rezervat .r-mp,
+.aprow.e-rezervat .r-tip{opacity:1}
+
+/* VANDUT: cutie moarta, nu link. Nu se da click pe ce nu se poate cumpara.
+   Recesiunea se face din culoare, nu din transparenta: vezi decizia 3 din antet. */
+.aprow-mut{cursor:default}
+.aprow-mut .r-nr{color:var(--cream-soft)}
+.aprow-mut:hover{background:transparent}
+
+
+/* ============ §6. CELULELE ============ */
+
+/* 1. numarul apartamentului: ancora pe care sare ochiul, plus insigna de stare */
+.r-nr{
+  display:flex;align-items:center;flex-wrap:wrap;gap:.2rem .1rem;
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.06rem;line-height:1.25;
+  font-variant-numeric:tabular-nums;
+}
+.r-nr .stare{margin-inline-start:.55em}
+
+/* 2. tipul si etajul: context, deci subordonat */
+.r-tip{min-inline-size:0;color:var(--cream-soft);font-size:.94rem;line-height:1.35}
+
+/* 3. suprafata: coloana proprie, aliniata la capat. Pe /preturi/ statea inghesuita
+      intr-o propozitie («60,9 mp in total · compartimentare modulara»), deci nu se putea
+      citi pe verticala. O cifra care nu are coloana nu se compara. */
+.r-mp{color:var(--cream-soft);font-size:.94rem;text-align:end;white-space:nowrap}
+
+/* 4. pretul: DOUA linii, mereu doua, in toate cele trei stari.
+      linia 1  cifra de decizie   Fraunces 600 · 1,2rem · var(--cream)
+      linia 2  cifra de contract  Inter 400 · 0,78rem · var(--cream-soft)
+      «cu TVA 21%» NU se repeta pe fiecare rand: sta o data in capul de lista si o data
+      in nota de sub lista. Un fapt, un loc — inclusiv pe orizontala.
+      `min-block-size` tine cutia la inaltime cand randul nu are pret. */
+.r-pret{display:block;text-align:end;min-block-size:2.6rem}
+.r-pret b{
+  display:block;font-family:'Fraunces',serif;font-weight:600;
+  font-size:1.2rem;line-height:1.2;letter-spacing:-.01em;
+  color:var(--cream);white-space:nowrap;
+}
+.r-pret em{
+  display:block;font-style:normal;font-size:.78rem;line-height:1.45;
+  color:var(--cream-soft);white-space:nowrap;margin-block-start:.14rem;
+}
+
+/* semnul tacut, in locul pretului la vandut. Desenat din CSS, nu scris ca text: nu
+   depinde de font, nu se rupe in RTL si nu se citeste cu voce tare de doua ori.
+   Ocupa exact inaltimea liniei 1, deci randul ramane al aceleiasi inaltimi. */
+.r-nil{display:flex;align-items:center;justify-content:end;block-size:1.44rem}
+.r-nil::after{
+  content:'';inline-size:1.75rem;block-size:2px;border-radius:999px;
+  background:rgba(var(--soft-rgb),.42);
+}
+
+/* nota de sub lista: suprafetele deduse, TVA, sursa cifrelor. O singura data pe pagina. */
+.ap-nota{
+  margin-block:1rem 0;font-size:.82rem;line-height:1.55;
+  color:var(--cream-soft);max-inline-size:44em;
+}
+
+
+/* ============ §7. FILTRELE (ascunderea) ============ */
+.etaj-ap[hidden],.aprow[hidden],.aplist[hidden]{display:none !important}
+
+
+/* ============ §8. TELEFON: doua randuri, pretul ramane in capat ============ */
+@media (max-width:760px){
+  /* capul de lista nu se mapeaza pe doua coloane, si nici nu e nevoie: unitatea sta
+     langa cifra in fiecare celula, deci fiecare celula se descrie singura. */
+  .aphead{display:none}
+
+  .aprow{
+    grid-template-columns:minmax(0,1fr) auto;
+    grid-template-areas:"nr pret" "tip mp";
+    column-gap:.9rem;row-gap:.15rem;
+    min-block-size:4.7rem;
+    padding-inline:.8rem .2rem;
+  }
+  .r-nr{grid-area:nr}
+  .r-pret{grid-area:pret}
+  .r-tip{grid-area:tip}
+  .r-mp{grid-area:mp}
+  .r-tip,.r-mp{font-size:.88rem}
+  .r-pret b{font-size:1.1rem}
+  .aprow.e-disponibil::before{inset-block:.55rem}
+}
+
+@media (max-width:390px){
+  /* Unitatea NU se ascunde nici pe cel mai mic ecran: un pret fara moneda e o capcana,
+     nu o economie de spatiu. Se micsoreaza, atat. */
+  .r-nr{font-size:1rem}
+  .r-tip{font-size:.84rem}
+  .r-mp{font-size:.84rem}
+  .r-pret b{font-size:1.04rem}
+  .r-pret em{font-size:.74rem}
+}
+
+
+/* ============ §9. MISCARE ============
+   Randurile NU se animeaza individual. Doua motive, amandoua platite:
+   31 de randuri care apar unul cate unul e zgomot, nu miscare; si, cat timp nu s-au
+   revelat, `.rv` inseamna `opacity:0`, deci pe /preturi/ TOATA lista de preturi e
+   invizibila fara JavaScript. Sectiunea (h2 + lista) pastreaza revelarea. */
+@media (prefers-reduced-motion:reduce){
+  .aprow{transition:none}
+}

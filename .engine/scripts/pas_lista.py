@@ -162,7 +162,7 @@ def bara(A):
     rez = numara(A, stare="rezervat")
     vnd = numara(A, stare="vandut")
     return (
-        '<div class="filtre rv" data-fx="rise" id="filtre">'
+        '<div class="filtre rv" data-fx="rise" id="filtre" data-filtre-pentru="lista-ap">'
         '<div class="f-tabs" role="group" aria-label="Filtrează după numărul de camere">'
         '<button type="button" class="ft on" data-cam="toate" aria-pressed="true">Toate</button>'
         '<button type="button" class="ft" data-cam="2" aria-pressed="false">2 camere</button>'
@@ -177,7 +177,7 @@ def bara(A):
 
 
 def lista(A):
-    out = [bara(A), '<div class="lista-ap" id="lista-ap">']
+    out = [bara(A), '<div class="lista-ap" id="lista-ap" data-filtrabil>']
     for cheie, titlu in NIVELE:
         nr_et = [k for k, v in A.items() if v["etaj"] == cheie]
         if not nr_et:
@@ -185,7 +185,7 @@ def lista(A):
         nr_et.sort(key=int)
         lib = sum(1 for k in nr_et if A[k]["stare"] == "disponibil")
         et_scurt = titlu.replace("Etajul ", "Etaj ")
-        out.append('<section class="etaj-ap" data-etaj="%s">' % cheie)
+        out.append('<section class="etaj-ap" data-sectiune data-etaj="%s">' % cheie)
         out.append('<h2 class="rv" data-fx="slide">%s · %s%s</h2>'
                    % (titlu, cuvant(lib), COADA.get(cheie, "")))
         out.append('<div class="aplist">')
@@ -195,39 +195,7 @@ def lista(A):
     return "\n".join(out)
 
 
-JS = """<script>
-(function(){
-  var lista=document.getElementById('lista-ap');
-  if(!lista)return;
-  var taburi=[].slice.call(document.querySelectorAll('.ft'));
-  var doarLibere=document.getElementById('f-libere');
-  function aplica(){
-    var cam=lista.getAttribute('data-f-cam')||'toate';
-    var lib=lista.getAttribute('data-f-lib')==='1';
-    var vazute=0;
-    [].forEach.call(lista.querySelectorAll('.aprow'),function(c){
-      var ok=(cam==='toate'||c.getAttribute('data-cam')===cam)
-          && (!lib||c.getAttribute('data-stare')==='disponibil');
-      c.hidden=!ok; if(ok)vazute++;
-    });
-    [].forEach.call(lista.querySelectorAll('.etaj-ap'),function(s){
-      s.hidden=!s.querySelector('.aprow:not([hidden])');
-    });
-    var gol=document.getElementById('f-gol');
-    if(gol)gol.hidden=vazute>0;
-  }
-  taburi.forEach(function(b){
-    b.addEventListener('click',function(){
-      taburi.forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed','false')});
-      b.classList.add('on'); b.setAttribute('aria-pressed','true');
-      lista.setAttribute('data-f-cam',b.getAttribute('data-cam')); aplica();
-    });
-  });
-  if(doarLibere)doarLibere.addEventListener('change',function(){
-    lista.setAttribute('data-f-lib',doarLibere.checked?'1':'0'); aplica();
-  });
-})();
-</script>"""
+JS = '<script src="/assets/filtre-v1.js" defer></script>'
 
 GOL = ('<p class="f-gol" id="f-gol" hidden>Nu e niciun apartament care să '
        'bifeze filtrele alese. Scoateți un filtru și reapare lista.</p>')
@@ -235,6 +203,25 @@ GOL = ('<p class="f-gol" id="f-gol" hidden>Nu e niciun apartament care să '
 
 H2 = re.compile(r'<h2 class="rv" data-fx="slide">([^<]*)')
 E_NIVEL = re.compile(r"^(Etajul \d|Parter)\b")
+
+# blocul de filtrare scris INLINE de versiunile vechi ale acestui pas
+INLINE_VECHI = re.compile(r"<script>\s*\(function\(\)\{\s*var lista=document\.getElementById"
+                          r"\('lista-ap'\).*?</script>\s*", re.S)
+
+
+def leaga_filtrul(h):
+    """Scoate orice bloc de filtrare scris inline de o versiune veche a pasului, si pune
+    trimiterea catre fisierul de azi.
+
+    DE CE, si e defectul care a ajuns pe LIVE pe 21 aug 2026: blocul era injectat inline si
+    sarit daca pagina avea deja unul. Cand randurile s-au redenumit din `.card` in `.aprow`,
+    pagina a ramas cu scriptul vechi, care cauta elemente disparute. Comutatorul "doar
+    disponibile" ascundea TOT si scria "nu e niciun apartament", desi erau sapte.
+    Un cod injectat care nu se poate INLOCUI e un cod care imbatraneste in pagina."""
+    h = INLINE_VECHI.sub("", h)
+    if JS not in h:
+        h = h.replace("</body>", JS + "\n</body>", 1)
+    return h
 
 
 def rescrie(html, A):
@@ -264,6 +251,90 @@ def rescrie(html, A):
     return html[:inceput] + nou + html[sfarsit:], True
 
 
+PROW = re.compile(r'<a class="prow([^"]*)"([^>]*?)href="(/apartamente/[^"]+)"')
+H2_CAMERE = re.compile(r'<h2 class="rv" data-fx="slide">(\d camere ·[^<]*)</h2>')
+
+
+def capat_bloc(h, start, eticheta="div"):
+    """Capatul unui element, numarand deschiderile si inchiderile. Nu se cauta primul
+    `</div>`: containerul are copii, si o ancora gresita taie pagina in doua."""
+    adanc = 0
+    for m in re.finditer(r"<%s\b|</%s>" % (eticheta, eticheta), h[start:]):
+        adanc += 1 if m.group(0).startswith("</") is False else -1
+        if adanc == 0:
+            return start + m.end()
+    return -1
+
+
+def bara_pret(rand_stari):
+    """Bara pentru /preturi/. Numara ce e PE PAGINA, nu tot blocul: acolo nu apar cele
+    vandute, iar o bara care ar spune 31 langa o lista de 12 ar fi o contradictie."""
+    lib = sum(1 for s in rand_stari if s == "disponibil")
+    rez = sum(1 for s in rand_stari if s == "rezervat")
+    return (
+        '<div class="filtre rv" data-fx="rise" data-filtre-pentru="lista-pret">'
+        '<div class="f-tabs" role="group" aria-label="Filtrează după numărul de camere">'
+        '<button type="button" class="ft on" data-cam="toate" aria-pressed="true">Toate</button>'
+        '<button type="button" class="ft" data-cam="2" aria-pressed="false">2 camere</button>'
+        '<button type="button" class="ft" data-cam="3" aria-pressed="false">3 camere</button>'
+        "</div>"
+        '<label class="f-sw"><input type="checkbox" id="f-libere-pret">'
+        '<span class="f-sw-b" aria-hidden="true"></span>'
+        "<span>Doar disponibile</span></label>"
+        '<p class="f-num" role="status"><b>%d</b> disponibile · %d rezervate, '
+        "din %d în%stot</p></div>" % (lib, rez, lib + rez, NB))
+
+
+def rescrie_preturi(html, A):
+    """Aceleasi filtre pe /preturi/. Randurile de acolo nu se regenereaza, doar primesc
+    atributele dupa care stie filtrul sa lucreze, iar sectiunile se inchid intr-un container."""
+    if "lista-pret" in html:
+        return html, False, 0
+
+    stari = []
+
+    def pe_prow(m):
+        nr = re.search(r"-ap-(\d+)/", m.group(3))
+        a = A.get(nr.group(1)) if nr else None
+        if not a:
+            return m.group(0)
+        stari.append(a["stare"])
+        return ('<a class="prow%s"%sdata-cam="%d" data-stare="%s" href="%s"'
+                % (m.group(1), m.group(2), a["camere"], a["stare"], m.group(3)))
+
+    html = PROW.sub(pe_prow, html)
+    if not stari:
+        return html, False, 0
+
+    # fiecare pereche titlu + lista devine o sectiune, ca sa dispara cu titlu cu tot
+    bucati, pozitii = [], [m.start() for m in H2_CAMERE.finditer(html)]
+    if not pozitii:
+        return html, False, 0
+    ultim = 0
+    for p in pozitii:
+        inc_lista = html.find('<div class="plist"', p)
+        if inc_lista < 0:
+            continue
+        sf = capat_bloc(html, inc_lista)
+        if sf < 0:
+            continue
+        bucati.append(html[ultim:p])
+        bucati.append('<section data-sectiune>' + html[p:sf] + "</section>")
+        ultim = sf
+    bucati.append(html[ultim:])
+    html = "".join(bucati)
+
+    # containerul se inchide in jurul tuturor sectiunilor, o data
+    prima = html.find("<section data-sectiune>")
+    ultima = html.rfind("</section>") + len("</section>")
+    gol = ('<p class="f-gol" id="lista-pret-gol" hidden>Nu e niciun apartament care să '
+           'bifeze filtrele alese. Scoateți un filtru și reapare lista.</p>')
+    html = (html[:prima] + bara_pret(stari) +
+            '<div id="lista-pret" data-filtrabil>' + html[prima:ultima] + "</div>" +
+            gol + html[ultima:])
+    return html, True, len(stari)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=os.environ.get("BLOG_REPO", "/tmp/apt"))
@@ -288,15 +359,29 @@ def main():
     for foaie in CSS.split("\n"):
         if foaie and foaie not in nou:
             nou = nou.replace(ANCORA_CSS, ANCORA_CSS + "\n" + foaie, 1)
-    if 'id="lista-ap"' in nou and "getElementById('lista-ap')" not in nou:
-        nou = nou.replace("</body>", JS + "\n</body>", 1)
+    nou = leaga_filtrul(nou)
 
     if a.apply and nou != html:
         io.open(fp, "w", encoding="utf-8", newline="\n").write(nou)
-    print("pas_lista: %d carduri (%d libere, %d rezervate, %d vandute), "
+    print("pas_lista: %d randuri (%d libere, %d rezervate, %d vandute), "
           "%d preturi recuperate  (%s)"
           % (len(A), numara(A, stare="disponibil"), numara(A, stare="rezervat"),
              numara(A, stare="vandut"), n, "APLICAT" if a.apply else "PROBA"))
+
+    # --- aceleasi filtre pe pagina de preturi ---
+    fp2 = os.path.join(a.repo, "preturi", "index.html")
+    if os.path.exists(fp2):
+        h2 = io.open(fp2, encoding="utf-8").read()
+        n2, pus, cate = h2, False, 0
+        n2, pus, cate = rescrie_preturi(h2, A)
+        for foaie in CSS.split("\n"):
+            if foaie and foaie not in n2:
+                n2 = n2.replace(ANCORA_CSS, ANCORA_CSS + "\n" + foaie, 1)
+        n2 = leaga_filtrul(n2)
+        if a.apply and n2 != h2:
+            io.open(fp2, "w", encoding="utf-8", newline="\n").write(n2)
+        print("            /preturi/: %s, %d randuri marcate"
+              % ("filtre puse" if pus else "filtre deja acolo", cate))
     return 0
 
 
