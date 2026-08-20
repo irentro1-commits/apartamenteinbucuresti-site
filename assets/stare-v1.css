@@ -54,3 +54,76 @@
   .stare{font-size:.58rem;letter-spacing:.12em;padding:.36em .66em .3em}
   .prow.e-rezervat .d .stare{margin-inline-start:.4em}
 }
+
+/* ============ LISTA INTREAGA A BLOCULUI ============
+   Se arata si cele vandute, fara pagina si fara pret. Un bloc din care s-au dat 18 din 31
+   spune singur ca merge bine; lista scurta de 13 nu spune nimic. */
+
+/* --- disponibil: singura stare care primeste verde. Se vede din prima ce mai e liber. --- */
+:root{ --liber:#1F6B4F; --liber-rgb:31,107,79; }
+:root[data-theme="dark"],
+html[data-theme="dark"]{ --liber:#5FC79E; --liber-rgb:95,199,158; }
+.stare-disponibil{
+  color:var(--liber);
+  border:1px solid rgba(var(--liber-rgb),.5);
+  background:linear-gradient(135deg,rgba(var(--liber-rgb),.17),rgba(var(--liber-rgb),.06));
+}
+.stare-disponibil::before{box-shadow:0 0 0 .2em rgba(var(--liber-rgb),.18)}
+.card[data-stare="disponibil"]{border-color:rgba(var(--liber-rgb),.42)}
+.card[data-stare="disponibil"]:hover{border-color:rgba(var(--liber-rgb),.85)}
+
+/* --- vandut: cutie moarta, nu link. Nu se da click pe ce nu se poate cumpara. --- */
+.card-mut{
+  cursor:default;opacity:.62;
+  background-image:repeating-linear-gradient(-45deg,
+    transparent 0 7px,rgba(var(--soft-rgb),.055) 7px 14px);
+}
+.card-mut:hover{transform:none;border-color:rgba(var(--gold-rgb),.3)}
+.card-mut h3{font-size:1.02rem}
+
+/* --- bara de filtre --- */
+.filtre{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.7rem 1.1rem;
+  margin:2.6rem 0 1.6rem;padding:.85rem 1rem;
+  border:1px solid rgba(var(--gold-rgb),.3);border-radius:16px;
+  background:rgba(var(--bg2-rgb),.5);
+}
+.f-tabs{display:inline-flex;gap:.25rem;padding:.22rem;border-radius:999px;
+  background:rgba(var(--bg-rgb),.5);border:1px solid rgba(var(--gold-rgb),.22)}
+.ft{
+  font:inherit;font-size:.88rem;font-weight:600;color:var(--cream-soft);
+  border:0;background:transparent;cursor:pointer;
+  padding:.42em 1em;border-radius:999px;transition:background .18s ease,color .18s ease;
+}
+.ft:hover{color:var(--cream)}
+.ft.on{background:var(--cta);color:var(--cta-ink)}
+.ft:focus-visible{outline:2px solid var(--cta);outline-offset:2px}
+
+.f-sw{display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;
+  font-size:.9rem;color:var(--cream-soft);user-select:none}
+.f-sw input{position:absolute;opacity:0;width:1px;height:1px}
+.f-sw-b{width:2.35em;height:1.3em;border-radius:999px;flex:none;position:relative;
+  background:rgba(var(--soft-rgb),.28);border:1px solid rgba(var(--gold-rgb),.3);
+  transition:background .2s ease}
+.f-sw-b::after{content:'';position:absolute;top:.16em;inset-inline-start:.18em;
+  width:.92em;height:.92em;border-radius:50%;background:var(--cream);
+  transition:transform .2s var(--eo)}
+.f-sw input:checked + .f-sw-b{background:var(--cta);border-color:var(--cta)}
+.f-sw input:checked + .f-sw-b::after{transform:translateX(1.02em);background:var(--cta-ink)}
+.f-sw input:focus-visible + .f-sw-b{outline:2px solid var(--cta);outline-offset:2px}
+.f-sw:hover{color:var(--cream)}
+
+.f-num{margin:0;margin-inline-start:auto;font-size:.84rem;color:var(--cream-soft)}
+.f-num b{color:var(--liber);font-size:1rem}
+
+.f-gol{margin:2rem 0;padding:1.1rem 1.2rem;border-radius:14px;
+  border:1px dashed rgba(var(--gold-rgb),.45);color:var(--cream-soft)}
+
+.etaj-ap[hidden],.card[hidden]{display:none !important}
+
+@media (max-width:640px){
+  .filtre{gap:.7rem;padding:.8rem}
+  .f-num{margin-inline-start:0;width:100%;order:3}
+  .f-tabs{width:100%;justify-content:space-between}
+  .ft{flex:1;text-align:center;padding:.5em .4em}
+}

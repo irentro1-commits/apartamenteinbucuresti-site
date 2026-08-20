@@ -24,15 +24,23 @@
       "stare": "rezervat",
       "camere": 3,
       "etaj": "parter",
-      "total": "71,00",
-      "pagina": true
+      "total": "71",
+      "pagina": true,
+      "href": "/apartamente/apartament-3-camere-parter-ap-3/",
+      "pret": "151.000",
+      "tva": "21",
+      "pret_total": "182.710"
     },
     "4": {
       "stare": "disponibil",
       "camere": 3,
       "etaj": "etaj 1",
       "total": "84,15",
-      "pagina": true
+      "pagina": true,
+      "href": "/apartamente/apartament-3-camere-etaj-1-ap-4/",
+      "pret": "168.000",
+      "tva": "21",
+      "pret_total": "203.280"
     },
     "5": {
       "stare": "vandut",
@@ -49,8 +57,12 @@
       "stare": "disponibil",
       "camere": 2,
       "etaj": "etaj 1",
-      "total": "60,60",
-      "pagina": true
+      "total": "60,6",
+      "pagina": true,
+      "href": "/apartamente/apartament-2-camere-etaj-1-ap-7/",
+      "pret": "122.000",
+      "tva": "21",
+      "pret_total": "147.620"
     },
     "8": {
       "stare": "vandut",
@@ -78,7 +90,11 @@
       "camere": 3,
       "etaj": "etaj 3",
       "total": "84,45",
-      "pagina": true
+      "pagina": true,
+      "href": "/apartamente/apartament-3-camere-etaj-3-ap-12/",
+      "pret": "168.000",
+      "tva": "21",
+      "pret_total": "203.280"
     },
     "13": {
       "stare": "vandut",
@@ -121,7 +137,11 @@
       "camere": 2,
       "etaj": "etaj 4",
       "total": "60,75",
-      "pagina": true
+      "pagina": true,
+      "href": "/apartamente/apartament-2-camere-etaj-4-ap-19/",
+      "pret": "123.000",
+      "tva": "21",
+      "pret_total": "148.830"
     },
     "20": {
       "stare": "vandut",
@@ -156,49 +176,77 @@
       "camere": 2,
       "etaj": "etaj 6",
       "total": "66,85",
-      "pagina": true
+      "pagina": true,
+      "href": "/apartamente/apartament-2-camere-etaj-6-ap-25/",
+      "pret": "134.000",
+      "tva": "21",
+      "pret_total": "162.140"
     },
     "26": {
       "stare": "rezervat",
       "camere": 2,
       "etaj": "etaj 6",
       "total": "47,35",
-      "pagina": true
+      "pagina": true,
+      "href": "/apartamente/apartament-2-camere-etaj-6-ap-26/",
+      "pret": "107.500",
+      "tva": "21",
+      "pret_total": "130.075"
     },
     "27": {
       "stare": "disponibil",
       "camere": 2,
       "etaj": "etaj 6",
-      "total": "60,90",
-      "pagina": true
+      "total": "60,9",
+      "pagina": true,
+      "href": "/apartamente/apartament-2-camere-etaj-6-ap-27/",
+      "pret": "125.000",
+      "tva": "21",
+      "pret_total": "151.250"
     },
     "28": {
       "stare": "disponibil",
       "camere": 2,
       "etaj": "etaj 7",
       "total": "69,85",
-      "pagina": true
+      "pagina": true,
+      "href": "/apartamente/apartament-2-camere-etaj-7-ap-28/",
+      "pret": "136.000",
+      "tva": "21",
+      "pret_total": "164.560"
     },
     "29": {
       "stare": "rezervat",
       "camere": 2,
       "etaj": "etaj 7",
       "total": "68,25",
-      "pagina": true
+      "pagina": true,
+      "href": "/apartamente/apartament-2-camere-etaj-7-ap-29/",
+      "pret": "135.000",
+      "tva": "21",
+      "pret_total": "163.350"
     },
     "30": {
       "stare": "rezervat",
       "camere": 2,
       "etaj": "etaj 7",
       "total": "58,15",
-      "pagina": true
+      "pagina": true,
+      "href": "/apartamente/apartament-2-camere-etaj-7-ap-30/",
+      "pret": "135.000",
+      "tva": "21",
+      "pret_total": "163.350"
     },
     "31": {
       "stare": "disponibil",
       "camere": 2,
       "etaj": "etaj 7",
       "total": "68,15",
-      "pagina": true
+      "pagina": true,
+      "href": "/apartamente/apartament-2-camere-etaj-7-ap-31/",
+      "pret": "136.500",
+      "tva": "21",
+      "pret_total": "165.165"
     }
   },
   "etichete": {

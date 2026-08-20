@@ -103,6 +103,22 @@ def scrie_numar(h):
         cuv = "disponibil" if n == 1 else "disponibile"
         return "%s · %d%s%s" % (m.group(1), n, NB, cuv)
 
+    def pe_din(m):
+        """«12 din 33 disponibile», scris de mana in 39 de locuri. Se schimba doar CIFRA
+        LIBERELOR. Totalul ramane neatins, si nu din delicatete: situl scrie 33, iar
+        structura reconstituita din plansele dezvoltatorului da 31. Pana nu se lamureste
+        care e adevarul, nu ating totalul. O cifra corectata pe jumatate e mai buna decat
+        una schimbata pe ghicite."""
+        return "%d din %s disponibile" % (numara(), m.group(1))
+
+    def pe_inca(m):
+        return "cele %d apartamente încă%sdisponibile" % (numara(), NB)
+
+    h = re.sub(r"\d+ din (\d+)[\s ]*disponibile", pe_din, h)
+    h = re.sub(r"cele (<b>)?\d+ apartamente încă[\s ]*disponibile(</b>)?",
+               lambda m: "cele %s%d apartamente încă%sdisponibile%s"
+               % (m.group(1) or "", numara(), NB, m.group(2) or ""), h)
+
     h = re.sub(r"(\d) camere ·[\s ]*\d+[\s ]*disponibil[e]?", pe_camere, h)
     h = re.sub(r"(Etajul \d|Parter) ·[\s ]*(?:toate cele )?\d+[\s ]*disponibil[e]?",
                pe_etaj, h)
