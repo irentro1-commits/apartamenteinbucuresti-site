@@ -1,64 +1,64 @@
 {
- "slug": "cumperi-direct-de-la-proprietar",
- "sablon": "vechi",
- "publishAt": "2026-06-12",
- "updatedAt": "2026-08-04",
- "title": "Ce înseamnă să cumperi un apartament direct de la dezvoltator, fără comision",
- "seoTitle": "Direct de la dezvoltator, fără comision: cum funcționează",
- "description": "Ce înseamnă să cumperi un apartament nou direct de la dezvoltator: prețul afișat e prețul final, fără comision pentru cumpărător.",
- "descriptionLlm": "",
- "articleSection": "Blog",
- "keywords": "",
- "readMinutes": 5,
- "lead": "Pe scurt: contractul îl semnezi cu dezvoltatorul, prețul afișat e prețul, iar comisionul nu există pentru tine.<br>Mai jos, cum funcționează concret.",
- "intro": [
-  {
-   "t": "p",
-   "x": "Când cumperi printr-o agenție clasică, undeva pe drum apare un comision. Uneori îl vezi în contract, alteori e deja topit în preț. Când cumperi direct de la dezvoltator, comisionul dispare din ecuație: <b>cumpărătorul nu plătește niciun comision</b>."
-  },
-  {
-   "t": "p",
-   "x": "Asta înseamnă două lucruri practice. Unu: <b>prețul afișat pe site e prețul</b>, nu un punct de pornire peste care se mai adaugă ceva. Doi: vorbești direct cu cine vinde, fără un intermediar care livrează mesaje între voi."
-  }
- ],
- "hasByline": false,
- "sections": [
-  {
-   "h2": "Cum decurge, pas cu pas",
-   "blocks": [
+  "slug": "cumperi-direct-de-la-proprietar",
+  "sablon": "vechi",
+  "publishAt": "2026-06-12",
+  "updatedAt": "2026-08-04",
+  "title": "Ce înseamnă să cumpărați un apartament direct de la dezvoltator, fără comision",
+  "seoTitle": "Direct de la dezvoltator, fără comision: cum funcționează",
+  "description": "Ce înseamnă să cumpărați un apartament nou direct de la dezvoltator: prețul afișat e prețul final, fără comision pentru cumpărător.",
+  "descriptionLlm": "",
+  "articleSection": "Blog",
+  "keywords": "",
+  "readMinutes": 5,
+  "lead": "Pe scurt: contractul îl semnați cu dezvoltatorul, prețul afișat e prețul, iar comisionul nu există pentru dumneavoastră.<br>Mai jos, cum funcționează concret.",
+  "intro": [
     {
-     "t": "p",
-     "x": "1. <b>Ne scrii pe WhatsApp</b> sau suni. Primești planurile și prețurile pentru apartamentele care te interesează."
+      "t": "p",
+      "x": "Când cumpărați printr-o agenție clasică, undeva pe drum apare un comision. Uneori îl vedeți în contract, alteori e deja topit în preț. Când cumpărați direct de la dezvoltator, comisionul dispare din ecuație: <b>cumpărătorul nu plătește niciun comision</b>."
     },
     {
-     "t": "p",
-     "x": "2. <b>Vii la vizionare</b>, pe Aleea Eprubetei 7. Vezi blocul, strada, etajul tău, și pui toate întrebările, inclusiv pe cele incomode."
-    },
-    {
-     "t": "p",
-     "x": "3. Dacă vrei să mergi mai departe, <b>rezervi cu 2.000 EUR + TVA</b>, apoi avansul minim e 30%. Finalizarea blocului: decembrie 2026."
+      "t": "p",
+      "x": "Aceasta înseamnă două lucruri practice. Unu: <b>prețul afișat pe site e prețul</b>, nu un punct de pornire peste care se mai adaugă ceva. Doi: vorbiți direct cu cine vinde, fără un intermediar care livrează mesaje între voi."
     }
-   ]
-  },
-  {
-   "h2": "Ce să verifici, indiferent de la cine cumperi",
-   "blocks": [
+  ],
+  "hasByline": false,
+  "sections": [
     {
-     "t": "p",
-     "x": "Cere actele la vizionare și verifică stadiul real al construcției cu ochii tăi. Un vânzător serios nu se ferește de întrebările astea."
+      "h2": "Cum decurge, pas cu pas",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "1. <b>Ne scrieți pe WhatsApp</b> sau sunați. Primiți planurile și prețurile pentru apartamentele care vă interesează."
+        },
+        {
+          "t": "p",
+          "x": "2. <b>Veniți la vizionare</b>, pe Aleea Eprubetei 7. Vedeți blocul, strada, etajul dumneavoastră, și puneți toate întrebările, inclusiv pe cele incomode."
+        },
+        {
+          "t": "p",
+          "x": "3. Dacă vreți să mergeți mai departe, <b>rezervați cu 2.000 EUR + TVA</b>, apoi avansul minim e 30%. Finalizarea blocului: decembrie 2026."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "Apartamentele disponibile, cu prețul final lângă fiecare, sunt aici: <a href=\"/apartamente/\">apartamente disponibile</a> și <a href=\"/preturi/\">toate prețurile</a>."
-    },
-    {
-     "t": "p",
-     "x": "Pe larg: <a href=\"/apartamente-noi-bucuresti/\">apartament nou fără comision pentru cumpărător</a>."
+      "h2": "Ce să verificați, indiferent de la cine cumpărați",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Cereți actele la vizionare și verifică stadiul real al construcției cu ochii dumneavoastră. Un vânzător serios nu se ferește de aceste întrebări."
+        },
+        {
+          "t": "p",
+          "x": "Apartamentele disponibile, cu prețul final lângă fiecare, sunt aici: <a href=\"/apartamente/\">apartamente disponibile</a> și <a href=\"/preturi/\">toate prețurile</a>."
+        },
+        {
+          "t": "p",
+          "x": "Pe larg: <a href=\"/apartamente-noi-bucuresti/\">apartament nou fără comision pentru cumpărător</a>."
+        }
+      ]
     }
-   ]
-  }
- ],
- "faq": [],
- "ctaAfter": "Primești planurile și prețurile pe WhatsApp, apoi stabilim împreună vizionarea.",
- "readAlso": []
+  ],
+  "faq": [],
+  "ctaAfter": "Primiți planurile și prețurile pe WhatsApp, apoi stabilim împreună vizionarea.",
+  "readAlso": []
 }

@@ -32,9 +32,9 @@ REF = {
 }
 
 L = {
- "ro": dict(code="ro-RO", og="ro_RO", home="Acasă", blog="Blog", here="Ești aici",
-            faqH="Întrebări frecvente", readAlso="Citește și", updated="Actualizat",
-            readTime="minute de citit", waBtn="Scrie-ne pe WhatsApp",
+ "ro": dict(code="ro-RO", og="ro_RO", home="Acasă", blog="Blog", here="Sunteți aici",
+            faqH="Întrebări frecvente", readAlso="Citiți și", updated="Actualizat",
+            readTime="minute de citit", waBtn="Scrieți-ne pe WhatsApp",
             author="Echipa Ilioara Residence",
             authorRole="Oamenii care construiesc și vând Ilioara Residence, direct",
             waMsg='Bună ziua! Am citit articolul "{t}" și vreau detalii.',

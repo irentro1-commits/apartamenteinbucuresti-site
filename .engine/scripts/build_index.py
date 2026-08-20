@@ -24,12 +24,12 @@ ORDER = json.load(open(os.path.join(POSTS, "ordine.json"), encoding="utf-8"))
 # RO ramane exact cum e pe site acum. Restul vin din traducerea sirurilor de index.
 IX = {"ro": dict(
     seoTitle="Blog apartamente noi în blocuri noi construite | Ilioara",
-    description="Ghiduri oneste despre cumpărarea unui apartament nou în bloc nou construit: prețuri, acte, zona Titan-Dristor, cum alegi.",
+    description="Ghiduri oneste despre cumpărarea unui apartament nou în bloc nou construit: prețuri, acte, zona Titan-Dristor, cum alegeți.",
     h1="Ghiduri pentru cine cumpără un apartament nou",
     badge="Apartamente direct de la dezvoltator",
     lead="Scriem despre ce întreabă oamenii înainte să cumpere: prețuri, acte, etape, zonă.<br>Scurt și fără povești.",
-    cardLink="Citește",
-    ctaAfter="Întrebări la care nu am răspuns încă? Scrie-ne pe WhatsApp.",
+    cardLink="Citiți",
+    ctaAfter="Întrebări la care nu am răspuns încă? Scrieți-ne pe WhatsApp.",
     breadcrumbBlog="Blog",
 )}
 IX.update(json.load(open(os.path.join(POSTS, "index-strings.json"), encoding="utf-8")))

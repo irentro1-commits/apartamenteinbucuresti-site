@@ -145,13 +145,46 @@ def injecteaza(h, cale):
     return h, True
 
 
+def scoate(h):
+    """Scoate blocul, ca sa poata fi pus la loc proaspat. Nu e o functie de curatenie: e
+    singura cale onesta de a REIMPROSPATA blocul cand se schimba ceva ce el a copiat din
+    pagina. Subiectul emailului contine <h1>-ul paginii; daca titlul se rescrie si blocul
+    ramane pe loc, subiectul minte despre pagina din care a venit cererea.
+    Aceeasi numaratoare de div-uri ca la injectare, nu primul </div> gasit."""
+    i = h.find("<div " + MARCA)
+    if i < 0:
+        return h, False
+    j = sfarsit_pcta(h, i)
+    if j < 0:
+        return h, False
+    # inghite si randul gol pe care l-a lasat injectarea, ca sa iasa fisier identic
+    inc = i - 1 if i > 0 and h[i - 1] == "\n" else i
+    sf = j + 1 if h[j:j + 1] == "\n" else j
+    return h[:inc] + h[sf:], True
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=os.environ.get("BLOG_REPO", "/tmp/apt"))
     ap.add_argument("--doar", default="**/*.html",
                     help="tipar glob relativ la repo; implicit tot situl")
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--reimprospateaza", action="store_true",
+                    help="scoate blocul si il pune la loc, cu textul de azi al paginii")
     a = ap.parse_args()
+
+    if a.reimprospateaza:
+        n = 0
+        for fp in sorted(glob.glob(os.path.join(a.repo, a.doar), recursive=True)):
+            h = open(fp, encoding="utf-8").read()
+            h2, s = scoate(h)
+            if s:
+                n += 1
+                if a.apply:
+                    open(fp, "w", encoding="utf-8", newline="\n").write(h2)
+        print(f"pas_formular: {n} blocuri scoase pentru reimprospatare "
+              f"({'APLICAT' if a.apply else 'PROBA'})")
+        raise SystemExit(0)
 
     pus = sarit = 0
     for fp in sorted(glob.glob(os.path.join(a.repo, a.doar), recursive=True)):

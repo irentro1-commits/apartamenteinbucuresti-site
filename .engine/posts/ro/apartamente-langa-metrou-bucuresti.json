@@ -1,130 +1,130 @@
 {
- "slug": "apartamente-langa-metrou-bucuresti",
- "publishAt": "2026-08-04",
- "updatedAt": "2026-08-04",
- "title": "Apartamente lângă metrou în București: ce înseamnă cu adevărat cinci minute pe jos",
- "seoTitle": "Apartamente lângă metrou în București: cât e aproape",
- "description": "Ce câștigi când stația e la 5 minute pe jos, ce înseamnă aproape de metrou în anunțuri și cum verifici singur traseul înainte de vizionare.",
- "descriptionLlm": "Articolul explică ce câștigi concret când stația de metrou e la cinci minute pe jos, de ce distanța din anunțuri diferă de drumul real și cum îți verifici singur traseul înainte de vizionare. Exemplu din Titan-Dristor: Ilioara Residence, Aleea Eprubetei 7-11, la 5 minute de stația Nicolae Grigorescu, cu acces la magistralele M1 și M3.",
- "articleSection": "Zona",
- "keywords": "apartamente lângă metrou București, apartamente lângă metrou Nicolae Grigorescu, apartamente noi Titan-Dristor, distanța până la metrou, bloc nou lângă metrou, apartamente Sector 3",
- "readMinutes": 5,
- "lead": "Ai văzut anunțul într-o pauză de prânz: bloc nou, apartament luminos, metroul la doi pași. Ai pus vizionarea sâmbătă dimineața și ai plecat liniștit, convins că ajungi ușor. De la ieșirea din stație ai mers un sfert de oră, ai așteptat la un semafor mare și ai urcat o stradă în pantă, cu telefonul în mână. Apartamentul arăta exact ca în poze. Drumul până la el arăta cu totul altfel, iar drumul e partea pe care o repeți de două ori pe zi, ani la rând. Despre el nu scrie nimic în anunț.",
- "sections": [
-  {
-   "h2": "Ce câștigi când stația e la cinci minute de ușă",
-   "blocks": [
+  "slug": "apartamente-langa-metrou-bucuresti",
+  "publishAt": "2026-08-04",
+  "updatedAt": "2026-08-04",
+  "title": "Apartamente lângă metrou în București: ce înseamnă cu adevărat cinci minute pe jos",
+  "seoTitle": "Apartamente lângă metrou în București: cât e aproape",
+  "description": "Ce câștigați când stația e la 5 minute pe jos, ce înseamnă aproape de metrou în anunțuri și cum verificați singur traseul înainte de vizionare.",
+  "descriptionLlm": "Articolul explică ce câștigați concret când stația de metrou e la cinci minute pe jos, de ce distanța din anunțuri diferă de drumul real și cum vă verificați singur traseul înainte de vizionare. Exemplu din Titan-Dristor: Ilioara Residence, Aleea Eprubetei 7-11, la 5 minute de stația Nicolae Grigorescu, cu acces la magistralele M1 și M3.",
+  "articleSection": "Zona",
+  "keywords": "apartamente lângă metrou București, apartamente lângă metrou Nicolae Grigorescu, apartamente noi Titan-Dristor, distanța până la metrou, bloc nou lângă metrou, apartamente Sector 3",
+  "readMinutes": 5,
+  "lead": "Ați văzut anunțul într-o pauză de prânz: bloc nou, apartament luminos, metroul la doi pași. Ați pus vizionarea sâmbătă dimineața și ați plecat liniștit, convins că ajungeți ușor. De la ieșirea din stație ați mers un sfert de oră, ați așteptat la un semafor mare și ați urcat o stradă în pantă, cu telefonul în mână. Apartamentul arăta exact ca în poze. Drumul până la el arăta cu totul altfel, iar drumul e partea pe care o repeți de două ori pe zi, ani la rând. Despre el nu scrie nimic în anunț.",
+  "sections": [
     {
-     "t": "p",
-     "x": "Primul câștig nu e timpul, e <strong>previzibilitatea</strong>. Când stația e la cinci minute pe jos, pleci de acasă la aceeași oră și ajungi la aceeași oră, indiferent dacă plouă, dacă s-a blocat bulevardul sau dacă e zi de salariu în tot orașul. Îți faci programul pe minute, nu pe estimări optimiste."
+      "h2": "Ce câștigați când stația e la cinci minute de ușă",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Primul câștig nu e timpul, e <strong>previzibilitatea</strong>. Când stația e la cinci minute pe jos, plecați de acasă la aceeași oră și ajungeți la aceeași oră, indiferent dacă plouă, dacă s-a blocat bulevardul sau dacă e zi de salariu în tot orașul. Vă faceți programul pe minute, nu pe estimări optimiste."
+        },
+        {
+          "t": "p",
+          "x": "Al doilea câștig se vede seara și în weekend. Cu stația aproape, ieșiți în centru la o cină și vă întorci la ora care vă convine, iar mașina rămâne pentru drumurile lungi și pentru cumpărăturile mari. Pentru o familie, acest lucru poate însemna un singur automobil în loc de două, cu tot ce ține de el."
+        },
+        {
+          "t": "p",
+          "x": "Al treilea câștig apare abia după ce vă mutați: raza în care puteți lucra se lărgește. Cartiere aflate la capete diferite ale orașului intră deodată în aceeași categorie de navetă, iar când <a href=\"/blog/apartamente-noi-bucuresti-2026/\">căutați un apartament nou în București</a>, acest criteriu cântărește mai mult decât culoarea gresiei din baie."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "Al doilea câștig se vede seara și în weekend. Cu stația aproape, ieși în centru la o cină și te întorci la ora care îți convine, iar mașina rămâne pentru drumurile lungi și pentru cumpărăturile mari. Pentru o familie, asta poate însemna un singur automobil în loc de două, cu tot ce ține de el."
+      "h2": "Ce înseamnă \"aproape de metrou\" într-un anunț",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "În anunțuri, distanța se măsoară aproape întotdeauna cu bunăvoință. Se măsoară în linie dreaptă pe hartă, din mijlocul cartierului, uneori pe traseul mașinii, care taie pe unde tu oricum nu mergeți pe jos. <strong>Anunțul nu minte mereu. Doar măsoară din alt punct decât ușa blocului.</strong>"
+        },
+        {
+          "t": "p",
+          "x": "Trei lucruri fac diferența dintre minutele din anunț și minutele dumneavoastră. Stația are de obicei mai multe guri de acces, iar traseul vă poate scoate fix la cea mai depărtată de casă. Între dumneavoastră și intrare poate sta un bulevard cu trafic, unde aștepți la semafor de fiecare dată, la dus și la întors. Iar ultima bucată de drum, cea cu scări, cu pasaj sau cu pantă, se simte mult mai lungă decât arată pe hartă."
+        },
+        {
+          "t": "p",
+          "x": "Merită spusă și partea cealaltă. Proximitatea de metrou se plătește: la aceeași suprafață și aceeași calitate, un apartament aflat la câteva minute de stație costă mai mult decât unul din care faceți un sfert de oră până acolo. Iar dacă blocul stă chiar pe bulevardul aglomerat de lângă stație, câștigul se poate anula singur, între zgomot, praf și geamuri pe care le țineți închise vara. Combinația care ține pe termen lung e o stradă liniștită la câteva minute de intrarea în stație, nu blocul lipit de gura de metrou."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "Al treilea câștig apare abia după ce te muți: raza în care poți lucra se lărgește. Cartiere aflate la capete diferite ale orașului intră deodată în aceeași categorie de navetă, iar când <a href=\"/blog/apartamente-noi-bucuresti-2026/\">cauți un apartament nou în București</a>, criteriul ăsta cântărește mai mult decât culoarea gresiei din baie."
+      "h2": "Cum verificați singur drumul, înainte să vă urcați în mașină",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Verificarea durează câteva minute și se face de acasă, în aplicația de hărți. Cereți agentului sau proprietarului adresa exactă, stradă și număr, apoi o puneți ca punct de plecare și stația ca destinație. Aici dispar aproape toate surprizele de la vizionare."
+        },
+        {
+          "t": "ul",
+          "x": [
+            "Puneți în hartă <strong>adresa exactă</strong>, stradă și număr, în locul numelui de cartier sau al unei pastile așezate aproximativ pe zonă.",
+            "Alegeți modul pe jos și vă uiți la traseu, nu doar la minute: câte treceri de pietoni tai, ce bulevard traversați, unde urcați scări.",
+            "Verificați la ce gură de metrou vă scoate traseul, fiindcă o stație are ieșiri la capete diferite, uneori la o distanță bună una de alta.",
+            "Faceți drumul o dată pe jos, la ora la care l-ați face zilnic, și îl faceți și înapoi, cu sacoșe în mână."
+          ]
+        },
+        {
+          "t": "p",
+          "x": "<strong>Harta vă dă metri. Drumul făcut pe jos vă dă minute.</strong> Cu minutele trăiți în fiecare dimineață, metrii rămân o cifră pe ecran. Dacă traseul iese bine la ora de vârf, pe ploaie și cu mâinile ocupate, atunci e cu adevărat aproape."
+        }
+      ]
+    },
+    {
+      "h2": "Cât contează la revânzare, și cum arată acest lucru în Titan-Dristor",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "La revânzare și la închiriere, stația e unul dintre puținele lucruri care rămân pe loc. Finisajele se învechesc, mobila se schimbă, vecinii se schimbă și ei. <strong>Un apartament îl puteți renova. Distanța până la metrou rămâne exact cât e.</strong>"
+        },
+        {
+          "t": "p",
+          "x": "Practic, aceasta înseamnă că filtrul după care vă caută următorul cumpărător sau chiriaș e deja bifat. Oamenii caută după numele stației înainte să se uite la bucătărie, iar un apartament care apare în acea căutare pleacă mai repede și de pe o poziție mai bună la negociere."
+        },
+        {
+          "t": "p",
+          "x": "În <a href=\"/blog/apartamente-noi-titan-dristor/\">Titan-Dristor</a> această diferență se vede cu ochiul liber pe aceeași hartă. Ilioara Residence, pe Aleea Eprubetei 7-11, are stația Nicolae Grigorescu la 5 minute pe jos din ușa blocului, cu acces la magistralele M1 și M3, în timp ce stația Titan, aflată în celălalt capăt al cartierului, e la 18 minute pe jos. Același cartier, alt drum zilnic."
+        },
+        {
+          "t": "p",
+          "x": "Restul distanțelor merg în aceeași direcție: stația de autobuz Ilioara la 3 minute pe jos, tramvaiele 19, 23 și 27 la 4 minute, Parcul IOR la 9 minute și mall-ul ParkLake la 15 minute. Blocul stă pe o stradă închisă, nu pe bulevard, cu patru apartamente pe etaj, adică fix combinația despre care vorbeam mai sus: stație aproape, liniște pe stradă. <a href=\"/zona/\">Distanțele din zonă</a> sunt scrise una câte una, ca să le puteți verifica singur pe hartă înainte să veniți."
+        },
+        {
+          "t": "p",
+          "x": "Proiectul are 33 de apartamente, dintre care 12 mai sunt disponibile, cu finalizare în decembrie 2026. Cele de 2 camere pornesc de la 107.500 de euro și ajung la 136.500, iar cele de 3 camere stau între 151.000 și 168.000 de euro, prețuri la care se adaugă TVA, cota aplicabilă fiind 21%. <a href=\"/preturi/\">Lista de prețuri</a> arată ce a rămas, apartament cu apartament, cu suprafețele și etajele lor."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "h2": "Ce înseamnă \"aproape de metrou\" într-un anunț",
-   "blocks": [
+  ],
+  "faq": [
     {
-     "t": "p",
-     "x": "În anunțuri, distanța se măsoară aproape întotdeauna cu bunăvoință. Se măsoară în linie dreaptă pe hartă, din mijlocul cartierului, uneori pe traseul mașinii, care taie pe unde tu oricum nu mergi pe jos. <strong>Anunțul nu minte mereu. Doar măsoară din alt punct decât ușa blocului.</strong>"
+      "q": "Cât de aproape de metrou înseamnă cu adevărat aproape?",
+      "a": "Reperul practic e un drum pe jos de cinci minute din ușa blocului, fiindcă la această distanță folosiți metroul zilnic, din reflex. De la un sfert de oră în sus, drumul devine o decizie pe care o luați de fiecare dată, mai ales iarna, pe ploaie și cu sacoșe în mână."
     },
     {
-     "t": "p",
-     "x": "Trei lucruri fac diferența dintre minutele din anunț și minutele tale. Stația are de obicei mai multe guri de acces, iar traseul te poate scoate fix la cea mai depărtată de casă. Între tine și intrare poate sta un bulevard cu trafic, unde aștepți la semafor de fiecare dată, la dus și la întors. Iar ultima bucată de drum, cea cu scări, cu pasaj sau cu pantă, se simte mult mai lungă decât arată pe hartă."
+      "q": "Merită să plătesc mai mult pentru un apartament lângă metrou?",
+      "a": "Dacă folosiți metroul zilnic, diferența se întoarce în timp câștigat și se vede și la revânzare, fiindcă stația rămâne acolo indiferent cât se învechesc finisajele. Dacă lucrați de acasă și conduci oricum, cântărește mai puțin, iar banii pot merge în suprafață sau într-un etaj mai bun. Comparația corectă e pe același criteriu: stradă liniștită la câteva minute de stație, nu bloc lipit de bulevard."
     },
     {
-     "t": "p",
-     "x": "Merită spusă și partea cealaltă. Proximitatea de metrou se plătește: la aceeași suprafață și aceeași calitate, un apartament aflat la câteva minute de stație costă mai mult decât unul din care faci un sfert de oră până acolo. Iar dacă blocul stă chiar pe bulevardul aglomerat de lângă stație, câștigul se poate anula singur, între zgomot, praf și geamuri pe care le ții închise vara. Combinația care ține pe termen lung e o stradă liniștită la câteva minute de intrarea în stație, nu blocul lipit de gura de metrou."
+      "q": "La ce stație de metrou e Ilioara Residence?",
+      "a": "La Nicolae Grigorescu, aflată la 5 minute pe jos din ușa blocului, cu acces la magistralele M1 și M3. Stația Titan, din celălalt capăt al cartierului, e la 18 minute pe jos, stația de autobuz Ilioara la 3 minute, iar tramvaiele 19, 23 și 27 la 4 minute."
     }
-   ]
-  },
-  {
-   "h2": "Cum verifici singur drumul, înainte să te urci în mașină",
-   "blocks": [
+  ],
+  "ctaAfter": "Scrieți-ne pe WhatsApp și fixăm o vizionare la care veniți pe jos de la Nicolae Grigorescu, ca să vedeți drumul înainte să vedeți apartamentul.",
+  "readAlso": [
     {
-     "t": "p",
-     "x": "Verificarea durează câteva minute și se face de acasă, în aplicația de hărți. Ceri agentului sau proprietarului adresa exactă, stradă și număr, apoi o pui ca punct de plecare și stația ca destinație. Aici dispar aproape toate surprizele de la vizionare."
+      "href": "/blog/apartamente-noi-titan-dristor/",
+      "label": "Apartamente noi în Titan-Dristor: ce găsiți în cartier"
     },
     {
-     "t": "ul",
-     "x": [
-      "Pui în hartă <strong>adresa exactă</strong>, stradă și număr, în locul numelui de cartier sau al unei pastile așezate aproximativ pe zonă.",
-      "Alegi modul pe jos și te uiți la traseu, nu doar la minute: câte treceri de pietoni tai, ce bulevard traversezi, unde urci scări.",
-      "Verifici la ce gură de metrou te scoate traseul, fiindcă o stație are ieșiri la capete diferite, uneori la o distanță bună una de alta.",
-      "Faci drumul o dată pe jos, la ora la care l-ai face zilnic, și îl faci și înapoi, cu sacoșe în mână."
-     ]
+      "href": "/blog/apartamente-noi-bucuresti-2026/",
+      "label": "Apartamente noi în București în 2026: ghid de cumpărare"
     },
     {
-     "t": "p",
-     "x": "<strong>Harta îți dă metri. Drumul făcut pe jos îți dă minute.</strong> Cu minutele trăiești în fiecare dimineață, metrii rămân o cifră pe ecran. Dacă traseul iese bine la ora de vârf, pe ploaie și cu mâinile ocupate, atunci e cu adevărat aproape."
+      "href": "/zona/",
+      "label": "Zona Ilioara Residence: distanțele reale pe jos"
+    },
+    {
+      "href": "/apartamente/",
+      "label": "Apartamentele disponibile la Ilioara Residence"
     }
-   ]
-  },
-  {
-   "h2": "Cât contează la revânzare, și cum arată asta în Titan-Dristor",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "La revânzare și la închiriere, stația e unul dintre puținele lucruri care rămân pe loc. Finisajele se învechesc, mobila se schimbă, vecinii se schimbă și ei. <strong>Un apartament îl poți renova. Distanța până la metrou rămâne exact cât e.</strong>"
-    },
-    {
-     "t": "p",
-     "x": "Practic, asta înseamnă că filtrul după care te caută următorul cumpărător sau chiriaș e deja bifat. Oamenii caută după numele stației înainte să se uite la bucătărie, iar un apartament care apare în căutarea aia pleacă mai repede și de pe o poziție mai bună la negociere."
-    },
-    {
-     "t": "p",
-     "x": "În <a href=\"/blog/apartamente-noi-titan-dristor/\">Titan-Dristor</a> diferența asta se vede cu ochiul liber pe aceeași hartă. Ilioara Residence, pe Aleea Eprubetei 7-11, are stația Nicolae Grigorescu la 5 minute pe jos din ușa blocului, cu acces la magistralele M1 și M3, în timp ce stația Titan, aflată în celălalt capăt al cartierului, e la 18 minute pe jos. Același cartier, alt drum zilnic."
-    },
-    {
-     "t": "p",
-     "x": "Restul distanțelor merg în aceeași direcție: stația de autobuz Ilioara la 3 minute pe jos, tramvaiele 19, 23 și 27 la 4 minute, Parcul IOR la 9 minute și mall-ul ParkLake la 15 minute. Blocul stă pe o stradă închisă, nu pe bulevard, cu patru apartamente pe etaj, adică fix combinația despre care vorbeam mai sus: stație aproape, liniște pe stradă. <a href=\"/zona/\">Distanțele din zonă</a> sunt scrise una câte una, ca să le poți verifica singur pe hartă înainte să vii."
-    },
-    {
-     "t": "p",
-     "x": "Proiectul are 33 de apartamente, dintre care 12 mai sunt disponibile, cu finalizare în decembrie 2026. Cele de 2 camere pornesc de la 107.500 de euro și ajung la 136.500, iar cele de 3 camere stau între 151.000 și 168.000 de euro, prețuri la care se adaugă TVA, cota aplicabilă fiind 21%. <a href=\"/preturi/\">Lista de prețuri</a> arată ce a rămas, apartament cu apartament, cu suprafețele și etajele lor."
-    }
-   ]
-  }
- ],
- "faq": [
-  {
-   "q": "Cât de aproape de metrou înseamnă cu adevărat aproape?",
-   "a": "Reperul practic e un drum pe jos de cinci minute din ușa blocului, fiindcă la distanța asta folosești metroul zilnic, din reflex. De la un sfert de oră în sus, drumul devine o decizie pe care o iei de fiecare dată, mai ales iarna, pe ploaie și cu sacoșe în mână."
-  },
-  {
-   "q": "Merită să plătesc mai mult pentru un apartament lângă metrou?",
-   "a": "Dacă folosești metroul zilnic, diferența se întoarce în timp câștigat și se vede și la revânzare, fiindcă stația rămâne acolo indiferent cât se învechesc finisajele. Dacă lucrezi de acasă și conduci oricum, cântărește mai puțin, iar banii pot merge în suprafață sau într-un etaj mai bun. Comparația corectă e pe același criteriu: stradă liniștită la câteva minute de stație, nu bloc lipit de bulevard."
-  },
-  {
-   "q": "La ce stație de metrou e Ilioara Residence?",
-   "a": "La Nicolae Grigorescu, aflată la 5 minute pe jos din ușa blocului, cu acces la magistralele M1 și M3. Stația Titan, din celălalt capăt al cartierului, e la 18 minute pe jos, stația de autobuz Ilioara la 3 minute, iar tramvaiele 19, 23 și 27 la 4 minute."
-  }
- ],
- "ctaAfter": "Scrie-ne pe WhatsApp și fixăm o vizionare la care vii pe jos de la Nicolae Grigorescu, ca să vezi drumul înainte să vezi apartamentul.",
- "readAlso": [
-  {
-   "href": "/blog/apartamente-noi-titan-dristor/",
-   "label": "Apartamente noi în Titan-Dristor: ce găsești în cartier"
-  },
-  {
-   "href": "/blog/apartamente-noi-bucuresti-2026/",
-   "label": "Apartamente noi în București în 2026: ghid de cumpărare"
-  },
-  {
-   "href": "/zona/",
-   "label": "Zona Ilioara Residence: distanțele reale pe jos"
-  },
-  {
-   "href": "/apartamente/",
-   "label": "Apartamentele disponibile la Ilioara Residence"
-  }
- ],
- "sources": []
+  ],
+  "sources": []
 }

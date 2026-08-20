@@ -1,157 +1,157 @@
 {
- "slug": "apartamente-noi-titan-dristor",
- "sablon": "vechi",
- "publishAt": "2026-06-16",
- "updatedAt": "2026-08-10",
- "title": "Apartamente noi Titan Dristor: ghidul zonei",
- "seoTitle": "Apartamente noi Titan Dristor: ghidul zonei",
- "description": "Apartamente noi Titan-Dristor: metrou Grigorescu la 5 minute pe jos, parcul IOR la 9, ParkLake la 15. Ghidul real al zonei, cu distanțe concrete.",
- "descriptionLlm": "Ghid de zonă Titan-Dristor (Sector 3, București) pentru cumpărători de apartamente noi, din perspectiva dezvoltatorului proiectului Ilioara Residence (Aleea Eprubetei 7-11). Repere pe jos: metrou Nicolae Grigorescu 5 min, parcul IOR 9 min, ParkLake 15 min. Apartamente 2 și 3 camere, 47-84 mp total, 107.500-168.000 EUR + TVA 21%.",
- "articleSection": "Apartamente noi",
- "keywords": "apartamente noi titan, apartamente dristor, apartamente sector 3, apartamente nicolae grigorescu, apartamente noi bucuresti, parcul IOR, metrou grigorescu, ParkLake, ghid zona titan dristor",
- "readMinutes": 5,
- "lead": "Lumea crede că Titan înseamnă blocuri vechi și trafic. Cine spune asta n-a stat niciodată cinci minute în colțul dintre metroul Nicolae Grigorescu și parcul IOR. Aici e altceva: cartier așezat, cu metrou la suprafață și verdeață care nu mai încape în fotografii. Diferența dintre o stradă-bulevard și o alee închisă între case se vede în prețul de revânzare peste cinci ani. Ghidul ăsta e despre zona Titan-Dristor așa cum o știe cineva care locuiește în ea, nu cum o descrie o hartă.",
- "intro": [],
- "hasByline": true,
- "sections": [
-  {
-   "h2": "Metroul face zona, nu strada",
-   "blocks": [
+  "slug": "apartamente-noi-titan-dristor",
+  "sablon": "vechi",
+  "publishAt": "2026-06-16",
+  "updatedAt": "2026-08-10",
+  "title": "Apartamente noi Titan Dristor: ghidul zonei",
+  "seoTitle": "Apartamente noi Titan Dristor: ghidul zonei",
+  "description": "Apartamente noi Titan-Dristor: metrou Grigorescu la 5 minute pe jos, parcul IOR la 9, ParkLake la 15. Ghidul real al zonei, cu distanțe concrete.",
+  "descriptionLlm": "Ghid de zonă Titan-Dristor (Sector 3, București) pentru cumpărători de apartamente noi, din perspectiva dezvoltatorului proiectului Ilioara Residence (Aleea Eprubetei 7-11). Repere pe jos: metrou Nicolae Grigorescu 5 min, parcul IOR 9 min, ParkLake 15 min. Apartamente 2 și 3 camere, 47-84 mp total, 107.500-168.000 EUR + TVA 21%.",
+  "articleSection": "Apartamente noi",
+  "keywords": "apartamente noi titan, apartamente dristor, apartamente sector 3, apartamente nicolae grigorescu, apartamente noi bucuresti, parcul IOR, metrou grigorescu, ParkLake, ghid zona titan dristor",
+  "readMinutes": 5,
+  "lead": "Lumea crede că Titan înseamnă blocuri vechi și trafic. Cine spune acest lucru n-a stat niciodată cinci minute în colțul dintre metroul Nicolae Grigorescu și parcul IOR. Aici e altceva: cartier așezat, cu metrou la suprafață și verdeață care nu mai încape în fotografii. Diferența dintre o stradă-bulevard și o alee închisă între case se vede în prețul de revânzare peste cinci ani. Acest ghid e despre zona Titan-Dristor așa cum o știe cineva care locuiește în ea, nu cum o descrie o hartă.",
+  "intro": [],
+  "hasByline": true,
+  "sections": [
     {
-     "t": "p",
-     "x": "Un apartament nou în Sector 3 se cumpără pentru un singur motiv tehnic: cât de repede ajungi la metrou fără mașină. La Ilioara Residence, stația Nicolae Grigorescu e la 5 minute pe jos din ușa blocului. Nu \"în apropiere\", nu \"în zonă\". Cinci minute, mers normal."
+      "h2": "Metroul face zona, nu strada",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Un apartament nou în Sector 3 se cumpără pentru un singur motiv tehnic: cât de repede ajungeți la metrou fără mașină. La Ilioara Residence, stația Nicolae Grigorescu e la 5 minute pe jos din ușa blocului. Nu \"în apropiere\", nu \"în zonă\". Cinci minute, mers normal."
+        },
+        {
+          "t": "p",
+          "x": "Aceasta schimbă tot calculul. De la Grigorescu prindeți M1 și M3, sunteți în Unirii în câteva opriri și la Universitate fără să schimbați. Cine lucrează în centru renunță la mașină după prima lună. Iar pentru cine vinde mai târziu, proximitatea de metrou e prima întrebare a următorului cumpărător."
+        },
+        {
+          "t": "p",
+          "x": "Și nu e doar metroul. Stația de autobuz Ilioara e la 3 minute, tramvaiele 19, 23 și 27 la 4 minute, metroul Titan, capătul celălalt al cartierului, la 18 minute pe jos. Când aveți trei feluri de transport în patru minute, mașina nu mai e o condiție a vieții de zi cu zi."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "Asta schimbă tot calculul. De la Grigorescu prinzi M1 și M3, ești în Unirii în câteva opriri și la Universitate fără să schimbi. Cine lucrează în centru renunță la mașină după prima lună. Iar pentru cine vinde mai târziu, proximitatea de metrou e prima întrebare a următorului cumpărător."
+      "h2": "Parcul IOR e luxul pe care nimeni nu-l trece în preț",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Verdeața în București se măsoară în minute până la ea, nu în metri pătrați pe hârtie. Parcul IOR, unul dintre cele mai mari spații verzi din oraș, e la 9 minute pe jos de Ilioara Residence. Cu lac, cu alei lungi, cu acel loc unde duminică dimineața pare că sunteți la marginea orașului, nu în Sector 3."
+        },
+        {
+          "t": "p",
+          "x": "Pentru o familie cu copii sau pentru cineva care aleargă, acest lucru cântărește mai mult decât orice finisaj. Un parc mare la zece minute înseamnă că ieșiți afară fără să-ți faceți un plan. Nu apare pe niciun anunț, dar decide unde vreți să trăiți cu adevărat."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "Și nu e doar metroul. Stația de autobuz Ilioara e la 3 minute, tramvaiele 19, 23 și 27 la 4 minute, metroul Titan, capătul celălalt al cartierului, la 18 minute pe jos. Când ai trei feluri de transport în patru minute, mașina nu mai e o condiție a vieții de zi cu zi."
+      "h2": "Cumpărăturile: aveți de toate la cinci-zece minute",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Zona Titan-Dristor nu vă trimite nicăieri departe pentru lucrurile de zi cu zi. Mega Image și Piața Mihail Ambrozie sunt la 6-7 minute pe jos, deci pâinea proaspătă și legumele din piață le aveți înainte să-ți faceți cafeaua. Piața Titan, cea mare, e la 9 minute."
+        },
+        {
+          "t": "p",
+          "x": "Când vreți mall cu de toate, ParkLake plus World Class sunt la 15 minute pe jos, iar Galeriile Titan, lângă metroul Titan, la 18. La acestea se adaugă infrastructura banală dar care contează într-o zi grea: benzinărie Lukoil non-stop la 2 minute, spălătorie auto la 1 minut, Policlinica Titan la 13. Nimic spectaculos în această listă. Exact aceasta este ideea. Totul aproape, nimic care să lipsească."
+        }
+      ]
+    },
+    {
+      "h2": "Bulevard sau stradă retrasă: alegerea care contează cel mai mult",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Aici se desparte un apartament bun de unul pe care îl regreți. Multe blocuri noi din Sector 3 stau direct pe bulevard, cu tot ce vine la pachet: claxoane la 7 dimineața, praf pe pervaz, geam care nu se deschide vara. Arată bine în poze, se trăiește greu."
+        },
+        {
+          "t": "p",
+          "x": "Aleea Eprubetei, unde e Ilioara Residence, e o stradă închisă, retrasă între case. Nu e drum de trecere, deci nu trece nimeni pe acolo dacă nu locuiește acolo. Aveți liniștea unei zone rezidențiale, dar cu metroul și magazinele la cinci-nouă minute. Aceasta este combinația rară în București: aproape de tot, dar nu pe arteră. Când căutați apartamente noi în Titan sau Dristor, întreabă mereu pe ce fel de stradă dă blocul. Restul e decor."
+        }
+      ]
+    },
+    {
+      "h2": "De ce un apartament nou aici, nu unul vechi mai ieftin",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Titan e plin de blocuri vechi la preț mai mic, acest lucru este adevărat. Exact de aceea merită spus limpede ce luați în plus cu un apartament nou: izolație reală, deci facturi mai mici la iarnă, și zero buget pus deoparte pentru țevi, instalație sau acoperiș peste cinci ani."
+        },
+        {
+          "t": "p",
+          "x": "La Ilioara Residence dotările sunt în preț, nu opțiuni cu steluță. Încălzire în pardoseală peste tot, inclusiv pe balcon. Tâmplărie tripan Salamander cu 7 camere, care chiar ține afară frigul și zgomotul. Centrală proprie Ariston de 24 kW, deci sunteți pe cont propriu, nu prins în sistemul centralizat. Palier scurt, doar 4 apartamente pe etaj, fără aglomerația de pe culoarele lungi."
+        },
+        {
+          "t": "p",
+          "x": "Bloc nou, parter plus 8 etaje, cu 2 penthouse-uri vândute la ultimul etaj și 31 de apartamente în vânzare, câte 4 pe etaj. Suprafețele merg de la 47 la 84 mp în total, cu compartimentări modulare, așa că găsiți de la studio până la trei camere generoase. Prețul comunicat e cu totul inclus, terasa numărată."
+        }
+      ]
+    },
+    {
+      "h2": "Prețuri, disponibilitate și cum se cumpără aici",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Direct la cifre, fără dans. Apartamentele de 2 camere sunt între 107.500 și 136.500 EUR + TVA 21%. Cele de 3 camere, între 151.000 și 168.000 EUR + TVA 21%. Prețul afișat e prețul, cu suma finală spusă din prima."
+        },
+        {
+          "t": "p",
+          "x": "Din cele 33 de apartamente, mai sunt disponibile 12. Etajele de jos aproape s-au vândut, așa că majoritatea celor rămase sunt sus, la 6 și 7, exact partea cu priveliștea cea mai frumoasă. Cine vrea lumină și vedere acum o prinde, peste o lună probabil nu."
+        },
+        {
+          "t": "p",
+          "x": "Pentru mașină aveți parcare dublă tip Klauss, două locuri suprapuse, la 25.000 EUR + TVA 21%, sau simplă la 20.000 EUR + TVA 21%. Pentru primii 3 clienți există și închiriere de la 80 EUR + TVA 21% pe lună. Rezervarea e 2.000 EUR + TVA 21%, avansul minim 30%, finalizarea în decembrie 2026. Se vinde direct de la dezvoltator, 0% comision pentru cumpărător, suma pe care o vedeți e suma pe care o plătiți. Pe WhatsApp aflați ce a mai rămas liber azi."
+        },
+        {
+          "t": "p",
+          "x": "Pe larg: <a href=\"/apartamente-noi-bucuresti/\">piața apartamentelor noi din București</a>."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "h2": "Parcul IOR e luxul pe care nimeni nu-l trece în preț",
-   "blocks": [
+  ],
+  "faq": [
     {
-     "t": "p",
-     "x": "Verdeața în București se măsoară în minute până la ea, nu în metri pătrați pe hârtie. Parcul IOR, unul dintre cele mai mari spații verzi din oraș, e la 9 minute pe jos de Ilioara Residence. Cu lac, cu alei lungi, cu locul ăla unde duminică dimineața pare că ești la marginea orașului, nu în Sector 3."
+      "q": "Cât de aproape e metroul de Ilioara Residence?",
+      "a": "Stația de metrou Nicolae Grigorescu e la 5 minute pe jos din ușa blocului, cu acces la M1 și M3. Metroul Titan, în celălalt capăt al cartierului, e la 18 minute pe jos."
     },
     {
-     "t": "p",
-     "x": "Pentru o familie cu copii sau pentru cineva care aleargă, asta cântărește mai mult decât orice finisaj. Un parc mare la zece minute înseamnă că ieși afară fără să-ți faci un plan. Nu apare pe niciun anunț, dar decide unde vrei să trăiești cu adevărat."
+      "q": "Ce apartamente mai sunt disponibile?",
+      "a": "Din cele 33, mai sunt 12 disponibile. Etajele de jos aproape s-au vândut, așa că majoritatea celor rămase sunt la etajele 6 și 7, partea cu priveliștea cea mai frumoasă."
+    },
+    {
+      "q": "Cât costă un apartament la Ilioara Residence?",
+      "a": "Apartamentele de 2 camere sunt între 107.500 și 136.500 EUR + TVA 21%, iar cele de 3 camere între 151.000 și 168.000 EUR + TVA 21%. Prețul afișat este prețul final, cu 0% comision pentru cumpărător."
+    },
+    {
+      "q": "Ce dotări sunt incluse în preț?",
+      "a": "Încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie tripan Salamander cu 7 camere și centrală proprie Ariston de 24 kW. Palier scurt, doar 4 apartamente pe etaj."
+    },
+    {
+      "q": "Există loc de parcare?",
+      "a": "Da. Parcare dublă tip Klauss (două locuri suprapuse) la 25.000 EUR + TVA 21%, simplă la 20.000 EUR + TVA 21%, iar pentru primii 3 clienți se poate închiria de la 80 EUR + TVA 21% pe lună."
+    },
+    {
+      "q": "Cum se rezervă și când se finalizează?",
+      "a": "Rezervarea este 2.000 EUR + TVA 21%, cu avans minim de 30%, iar finalizarea este în decembrie 2026. Vânzarea se face direct de la dezvoltator, cu 0% comision pentru cumpărător. Detalii pe WhatsApp."
     }
-   ]
-  },
-  {
-   "h2": "Cumpărăturile: ai de toate la cinci-zece minute",
-   "blocks": [
+  ],
+  "ctaAfter": "Primiți planurile și prețurile pe WhatsApp, apoi stabilim împreună vizionarea.",
+  "readAlso": [
     {
-     "t": "p",
-     "x": "Zona Titan-Dristor nu te trimite nicăieri departe pentru lucrurile de zi cu zi. Mega Image și Piața Mihail Ambrozie sunt la 6-7 minute pe jos, deci pâinea proaspătă și legumele din piață le ai înainte să-ți faci cafeaua. Piața Titan, cea mare, e la 9 minute."
+      "href": "/blog/apartamente-noi-bucuresti-2026/",
+      "label": "Apartamente noi București: ghid de cumpărare 2026"
     },
     {
-     "t": "p",
-     "x": "Când vrei mall cu de toate, ParkLake plus World Class sunt la 15 minute pe jos, iar Galeriile Titan, lângă metroul Titan, la 18. La asta adaugi infrastructura banală dar care contează într-o zi grea: benzinărie Lukoil non-stop la 2 minute, spălătorie auto la 1 minut, Policlinica Titan la 13. Nimic spectaculos în lista asta. Exact aia e ideea. Totul aproape, nimic care să lipsească."
+      "href": "/blog/ilioara-residence-bloc-nou-titan-dristor/",
+      "label": "Ilioara Residence Titan: ghidul complet al proiectului"
+    },
+    {
+      "href": "/blog/de-ce-ilioara-residence/",
+      "label": "Ilioara Residence: păreri și 6 diferențe reale"
+    },
+    {
+      "href": "/apartamente/",
+      "label": "Vedeți apartamentele disponibile, cu prețul lângă fiecare"
     }
-   ]
-  },
-  {
-   "h2": "Bulevard sau stradă retrasă: alegerea care contează cel mai mult",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Aici se desparte un apartament bun de unul pe care îl regreți. Multe blocuri noi din Sector 3 stau direct pe bulevard, cu tot ce vine la pachet: claxoane la 7 dimineața, praf pe pervaz, geam care nu se deschide vara. Arată bine în poze, se trăiește greu."
-    },
-    {
-     "t": "p",
-     "x": "Aleea Eprubetei, unde e Ilioara Residence, e o stradă închisă, retrasă între case. Nu e drum de trecere, deci nu trece nimeni pe acolo dacă nu locuiește acolo. Ai liniștea unei zone rezidențiale, dar cu metroul și magazinele la cinci-nouă minute. Asta e combinația rară în București: aproape de tot, dar nu pe arteră. Când cauți apartamente noi în Titan sau Dristor, întreabă mereu pe ce fel de stradă dă blocul. Restul e decor."
-    }
-   ]
-  },
-  {
-   "h2": "De ce un apartament nou aici, nu unul vechi mai ieftin",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Titan e plin de blocuri vechi la preț mai mic, asta e adevărat. Exact de aceea merită spus pe șleau ce iei în plus cu un apartament nou: izolație reală, deci facturi mai mici la iarnă, și zero buget pus deoparte pentru țevi, instalație sau acoperiș peste cinci ani."
-    },
-    {
-     "t": "p",
-     "x": "La Ilioara Residence dotările sunt în preț, nu opțiuni cu steluță. Încălzire în pardoseală peste tot, inclusiv pe balcon. Tâmplărie tripan Salamander cu 7 camere, care chiar ține afară frigul și zgomotul. Centrală proprie Ariston de 24 kW, deci ești pe cont propriu, nu prins în sistemul centralizat. Palier scurt, doar 4 apartamente pe etaj, fără aglomerația de pe culoarele lungi."
-    },
-    {
-     "t": "p",
-     "x": "Bloc nou, parter plus 8 etaje, cu 2 penthouse-uri vândute la ultimul etaj și 31 de apartamente în vânzare, câte 4 pe etaj. Suprafețele merg de la 47 la 84 mp în total, cu compartimentări modulare, așa că găsești de la studio până la trei camere generoase. Prețul comunicat e cu totul inclus, terasa numărată."
-    }
-   ]
-  },
-  {
-   "h2": "Prețuri, disponibilitate și cum se cumpără aici",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Direct la cifre, fără dans. Apartamentele de 2 camere sunt între 107.500 și 136.500 EUR + TVA 21%. Cele de 3 camere, între 151.000 și 168.000 EUR + TVA 21%. Prețul afișat e prețul, cu suma finală spusă din prima."
-    },
-    {
-     "t": "p",
-     "x": "Din cele 33 de apartamente, mai sunt disponibile 12. Etajele de jos aproape s-au vândut, așa că majoritatea celor rămase sunt sus, la 6 și 7, exact partea cu priveliștea cea mai frumoasă. Cine vrea lumină și vedere acum o prinde, peste o lună probabil nu."
-    },
-    {
-     "t": "p",
-     "x": "Pentru mașină ai parcare dublă tip Klauss, două locuri suprapuse, la 25.000 EUR + TVA 21%, sau simplă la 20.000 EUR + TVA 21%. Pentru primii 3 clienți există și închiriere de la 80 EUR + TVA 21% pe lună. Rezervarea e 2.000 EUR + TVA 21%, avansul minim 30%, finalizarea în decembrie 2026. Se vinde direct de la dezvoltator, 0% comision pentru cumpărător, suma pe care o vezi e suma pe care o plătești. Pe WhatsApp afli ce a mai rămas liber azi."
-    },
-    {
-     "t": "p",
-     "x": "Pe larg: <a href=\"/apartamente-noi-bucuresti/\">piața apartamentelor noi din București</a>."
-    }
-   ]
-  }
- ],
- "faq": [
-  {
-   "q": "Cât de aproape e metroul de Ilioara Residence?",
-   "a": "Stația de metrou Nicolae Grigorescu e la 5 minute pe jos din ușa blocului, cu acces la M1 și M3. Metroul Titan, în celălalt capăt al cartierului, e la 18 minute pe jos."
-  },
-  {
-   "q": "Ce apartamente mai sunt disponibile?",
-   "a": "Din cele 33, mai sunt 12 disponibile. Etajele de jos aproape s-au vândut, așa că majoritatea celor rămase sunt la etajele 6 și 7, partea cu priveliștea cea mai frumoasă."
-  },
-  {
-   "q": "Cât costă un apartament la Ilioara Residence?",
-   "a": "Apartamentele de 2 camere sunt între 107.500 și 136.500 EUR + TVA 21%, iar cele de 3 camere între 151.000 și 168.000 EUR + TVA 21%. Prețul afișat este prețul final, cu 0% comision pentru cumpărător."
-  },
-  {
-   "q": "Ce dotări sunt incluse în preț?",
-   "a": "Încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie tripan Salamander cu 7 camere și centrală proprie Ariston de 24 kW. Palier scurt, doar 4 apartamente pe etaj."
-  },
-  {
-   "q": "Există loc de parcare?",
-   "a": "Da. Parcare dublă tip Klauss (două locuri suprapuse) la 25.000 EUR + TVA 21%, simplă la 20.000 EUR + TVA 21%, iar pentru primii 3 clienți se poate închiria de la 80 EUR + TVA 21% pe lună."
-  },
-  {
-   "q": "Cum se rezervă și când se finalizează?",
-   "a": "Rezervarea este 2.000 EUR + TVA 21%, cu avans minim de 30%, iar finalizarea este în decembrie 2026. Vânzarea se face direct de la dezvoltator, cu 0% comision pentru cumpărător. Detalii pe WhatsApp."
-  }
- ],
- "ctaAfter": "Primești planurile și prețurile pe WhatsApp, apoi stabilim împreună vizionarea.",
- "readAlso": [
-  {
-   "href": "/blog/apartamente-noi-bucuresti-2026/",
-   "label": "Apartamente noi București: ghid de cumpărare 2026"
-  },
-  {
-   "href": "/blog/ilioara-residence-bloc-nou-titan-dristor/",
-   "label": "Ilioara Residence Titan: ghidul complet al proiectului"
-  },
-  {
-   "href": "/blog/de-ce-ilioara-residence/",
-   "label": "Ilioara Residence: păreri și 6 diferențe reale"
-  },
-  {
-   "href": "/apartamente/",
-   "label": "Vezi apartamentele disponibile, cu prețul lângă fiecare"
-  }
- ]
+  ]
 }
