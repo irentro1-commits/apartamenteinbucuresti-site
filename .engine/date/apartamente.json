@@ -325,5 +325,10 @@
       "penthouse": "Пентхаус"
     }
   },
-  "_lamurit": "31 CONTRA 33, inchis pe 21 aug 2026. Blocul are parter plus 8 etaje. Structura reconstituita din plansele etajelor tip dadea 31 (3 la parter plus 4 x 7 etaje), fiindca NU includea etajul 8, unde sunt doua penthouse-uri, vandute inainte de a incepe site-ul. 31 + 2 = 33, iar cifra scrisa pe site era corecta de la inceput. Andy: 'pune peste tot clar 2 penthouse-uri deja vandute- in total 33'."
+  "_lamurit": "31 CONTRA 33, inchis pe 21 aug 2026. Blocul are parter plus 8 etaje. Structura reconstituita din plansele etajelor tip dadea 31 (3 la parter plus 4 x 7 etaje), fiindca NU includea etajul 8, unde sunt doua penthouse-uri, vandute inainte de a incepe site-ul. 31 + 2 = 33, iar cifra scrisa pe site era corecta de la inceput. Andy: 'pune peste tot clar 2 penthouse-uri deja vandute- in total 33'.",
+  "_verificat": {
+    "moment": "2026-08-21T06:29:04+03:00",
+    "_": "MOMENTUL IN CARE STAREA A FOST CONFIRMATA CU DEZVOLTATORUL. Insigna 'live' de pe /apartamente/ arata exact ce scrie aici. NU se atinge la fiecare publicare: daca s-ar rescrie automat, situl ar spune vesnic 'verificat acum cinci minute', ceea ce ar fi o minciuna care se reinnoieste singura. Se schimba cand cineva chiar intreaba dezvoltatorul. Insigna se stinge singura dupa 48 de ore, vezi pas_live.py.",
+    "de": "i-vory Studio, cu dezvoltatorul"
+  }
 }

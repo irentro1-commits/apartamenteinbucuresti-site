@@ -1,0 +1,47 @@
+/* INSIGNA "VERIFICAT CU DEZVOLTATORUL", cu ora.
+   Andy, 21 aug 2026: "pune si badge live acolo la apartamente si cu ora exacta, sa stie
+   lumea ca asta e disponibilitatea lor acum si la data asta".
+
+   De ce e discreta si nu tipa: propozitia asta nu vinde, ea GARANTEAZA. Un anunt cu chenar
+   rosu si "LIVE" clipind se citeste ca reclama si scade increderea exact in lucrul pe care
+   ar trebui s-o creasca. Un punct verde, o linie de text si o ora sunt de ajuns, fiindca
+   cine cauta garantia o gaseste, iar cine nu o cauta nu e deranjat de ea. */
+.lv-b{
+  display:flex;align-items:center;gap:.6rem;
+  margin:.9rem 0 1.6rem;
+  font-size:.86rem;line-height:1.5;
+  color:rgba(var(--soft-rgb),.9);
+}
+.lv-b time{
+  color:var(--eo,inherit);font-weight:600;font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+
+/* punctul: gol cand verificarea a imbatranit, plin si cu puls cat e proaspata */
+.lv-p{
+  width:.56rem;height:.56rem;border-radius:50%;flex:none;
+  border:1px solid rgba(var(--soft-rgb),.5);
+}
+.lv-on .lv-p{
+  border-color:transparent;
+  background:var(--liber,#2f9e6f);
+  box-shadow:0 0 0 0 rgba(var(--liber-rgb,47,158,111),.55);
+  animation:lvPuls 2.4s ease-out infinite;
+}
+@keyframes lvPuls{
+  0%{box-shadow:0 0 0 0 rgba(var(--liber-rgb,47,158,111),.5)}
+  70%{box-shadow:0 0 0 .55rem rgba(var(--liber-rgb,47,158,111),0)}
+  100%{box-shadow:0 0 0 0 rgba(var(--liber-rgb,47,158,111),0)}
+}
+/* Cine a cerut mai putina miscare primeste punctul plin, fara puls: informatia ramane
+   intreaga, doar animatia dispare. */
+@media (prefers-reduced-motion: reduce){
+  .lv-on .lv-p{animation:none}
+}
+
+@media (max-width:760px){
+  /* pe telefon linia se rupe intre propozitie si ora, si atunci ora trebuie sa ramana
+     lipita de ce inseamna, nu sa cada singura pe rand */
+  .lv-b{align-items:flex-start;font-size:.82rem}
+  .lv-p{margin-top:.42rem}
+}

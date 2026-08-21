@@ -34,7 +34,7 @@ T = json.load(open(os.path.join(ENGINE, "date", "formular.json"), encoding="utf-
 # regenereaza. Nicaieri altundeva.
 CHEIE = "826056ec-19c9-49f6-b07f-2dda086e6887"
 
-CSS = '<link rel="stylesheet" href="/assets/formular-v1.css">'
+CSS = '<link rel="stylesheet" href="/assets/formular-v2.css">'
 JS = '<script src="/assets/formular-v1.js" defer></script>'
 ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
 

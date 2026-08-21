@@ -1,0 +1,425 @@
+{
+ "_": "TITLURILE META, forma ceruta de Andy pe 21 aug 2026: 'Fraza descriptiva | Calificativ'. Regula intreaga si poarta care o masoara: .engine/scripts/gate_titluri.py. Scrise de cate un editor pe limba si contestate de un al doilea, pe paginile reale.",
+ "titluri": {
+  "404.html": {
+   "vechi": "Ilioara Residence · Pagina nu există",
+   "nou": "Ilioara Residence | Pagina căutată nu există"
+  },
+  "apartamente-blocuri-noi-bucuresti/index.html": {
+   "vechi": "Bloc nou București, de la Dezvoltator: ce câștigați",
+   "nou": "Apartamente în blocuri noi din București | Ce câștigați"
+  },
+  "apartamente-noi-bucuresti/index.html": {
+   "vechi": "Apartamente noi în București, direct de la Dezvoltator",
+   "nou": "Apartamente noi în București | Direct de la Dezvoltator"
+  },
+  "blocuri-noi-bucuresti/index.html": {
+   "vechi": "Blocuri noi construite în București, de la Dezvoltator",
+   "nou": "Blocuri noi construite în București | De la Dezvoltator"
+  },
+  "blog/apartament-2-sau-3-camere-cum-alegi/index.html": {
+   "vechi": "Apartament 2 sau 3 camere: cum alegeți corect",
+   "nou": "Apartament 2 sau 3 camere | Ghid de alegere"
+  },
+  "blog/apartamente-langa-metrou-bucuresti/index.html": {
+   "vechi": "Apartamente lângă metrou în București: cât e aproape",
+   "nou": "Apartamente lângă metrou în București | Minute reale pe jos"
+  },
+  "blog/apartamente-noi-bucuresti-2026/index.html": {
+   "vechi": "Apartamente noi Bucuresti: ghid de cumparare 2026",
+   "nou": "Apartamente noi București 2026 | Ghid de cumpărare"
+  },
+  "blog/apartamente-noi-titan-dristor/index.html": {
+   "vechi": "Apartamente noi Titan Dristor: ghidul zonei",
+   "nou": "Apartamente noi în Titan-Dristor | Ghidul zonei"
+  },
+  "blog/costuri-reale-apartament-nou/index.html": {
+   "vechi": "Cât costă real un apartament nou, peste prețul afișat",
+   "nou": "Cât costă un apartament nou | Costurile peste preț"
+  },
+  "blog/credit-ipotecar-apartament-nou/index.html": {
+   "vechi": "Credit ipotecar pentru apartament nou în construcție",
+   "nou": "Credit ipotecar pentru apartament nou | Ce cere banca"
+  },
+  "blog/cumperi-apartament-inainte-sa-fie-gata/index.html": {
+   "vechi": "Apartament în construcție, ce verifici",
+   "nou": "Apartament în construcție | Ce verifici la semnare"
+  },
+  "blog/cumperi-direct-de-la-proprietar/index.html": {
+   "vechi": "Direct de la dezvoltator, fără comision: cum funcționează",
+   "nou": "Cumpărați direct de la Dezvoltator | Fără comision"
+  },
+  "blog/de-ce-ilioara-residence/index.html": {
+   "vechi": "Ilioara Residence: păreri și 6 diferențe reale",
+   "nou": "Ilioara Residence | Păreri și 6 diferențe reale"
+  },
+  "blog/ilioara-residence-bloc-nou-titan-dristor/index.html": {
+   "vechi": "Ilioara Residence Titan: ghidul complet al proiectului",
+   "nou": "Ilioara Residence Titan-Dristor | Ghidul proiectului"
+  },
+  "blog/suprafata-utila-vs-construita/index.html": {
+   "vechi": "Suprafață utilă vs construită: ce cumpărați de fapt",
+   "nou": "Suprafață utilă vs construită | Ce cumpărați de fapt"
+  },
+  "blog/tva-apartamente-noi-2026/index.html": {
+   "vechi": "TVA apartamente noi 2026: cine plătește 9% și cine 21%",
+   "nou": "TVA la apartamente noi în 2026 | Cine plătește 9% sau 21%"
+  },
+  "echipa-ilioara-residence/index.html": {
+   "vechi": "Ilioara Residence: echipa care construiește și vinde blocul",
+   "nou": "Ilioara Residence | Cine construiește și cine vinde"
+  },
+  "index.html": {
+   "vechi": "Ilioara Residence: apartamente direct de la Dezvoltator",
+   "nou": "Ilioara Residence | Apartamente noi de la Dezvoltator"
+  },
+  "zona/index.html": {
+   "vechi": "Ilioara Residence | Zona Titan-Dristor: metrou la 5 minute",
+   "nou": "Ilioara Residence | Zona Titan-Dristor, metrou la 5 minute"
+  },
+  "en/apartamente-blocuri-noi-bucuresti/index.html": {
+   "vechi": "New-Build Apartment Living in Bucharest: What You Gain",
+   "nou": "Apartments in New Buildings in Bucharest | What You Gain"
+  },
+  "en/apartamente-noi-bucuresti/index.html": {
+   "vechi": "New-Build Apartments in Bucharest, Direct From the Developer",
+   "nou": "New Apartments in Bucharest | Direct From the Developer"
+  },
+  "en/blocuri-noi-bucuresti/index.html": {
+   "vechi": "Newly Built Apartment Blocks in Bucharest: What to Check",
+   "nou": "New Apartment Blocks in Bucharest | What to Check"
+  },
+  "en/blog/apartament-2-sau-3-camere-cum-alegi/index.html": {
+   "vechi": "A 2 or 3 room apartment: how to choose right",
+   "nou": "A 2 or 3 Room Apartment | How to Choose Right"
+  },
+  "en/blog/apartamente-langa-metrou-bucuresti/index.html": {
+   "vechi": "Apartments near the metro in Bucharest: how close?",
+   "nou": "Apartments Near the Metro in Bucharest | How Close"
+  },
+  "en/blog/apartamente-noi-bucuresti-2026/index.html": {
+   "vechi": "New apartments in Bucharest in 2026: a buying guide",
+   "nou": "Buying a New Apartment in Bucharest | Guide for 2026"
+  },
+  "en/blog/apartamente-noi-titan-dristor/index.html": {
+   "vechi": "New apartments in Titan Dristor: a guide to the area",
+   "nou": "New Apartments in Titan-Dristor | Guide to the Area"
+  },
+  "en/blog/costuri-reale-apartament-nou/index.html": {
+   "vechi": "What a new apartment really costs, beyond the price",
+   "nou": "What a New Apartment Really Costs | Beyond the Price"
+  },
+  "en/blog/credit-ipotecar-apartament-nou/index.html": {
+   "vechi": "Mortgage for a new apartment under construction",
+   "nou": "Mortgage for an Apartment Under Construction | The Steps"
+  },
+  "en/blog/cumperi-apartament-inainte-sa-fie-gata/index.html": {
+   "vechi": "Apartment under construction: what to check",
+   "nou": "Buying an Apartment Before It Is Finished | What to Check"
+  },
+  "en/blog/cumperi-direct-de-la-proprietar/index.html": {
+   "vechi": "Direct from the developer, no commission: how it works",
+   "nou": "Buying Direct From the Developer | No Commission"
+  },
+  "en/blog/de-ce-ilioara-residence/index.html": {
+   "vechi": "Ilioara Residence: reviews and 6 real differences",
+   "nou": "Ilioara Residence | Reviews and 6 Real Differences"
+  },
+  "en/blog/ilioara-residence-bloc-nou-titan-dristor/index.html": {
+   "vechi": "Ilioara Residence Titan: the complete project guide",
+   "nou": "Ilioara Residence Titan | The Complete Project Guide"
+  },
+  "en/blog/index.html": {
+   "vechi": "Blog: guides for new apartment buyers",
+   "nou": "Blog and Guides for New Apartment Buyers | Bucharest"
+  },
+  "en/blog/suprafata-utila-vs-construita/index.html": {
+   "vechi": "Usable vs built area: what you actually buy",
+   "nou": "Usable, Built or Total Area | What You Actually Buy"
+  },
+  "en/blog/tva-apartamente-noi-2026/index.html": {
+   "vechi": "VAT on new apartments 2026: who pays 9% and who 21%",
+   "nou": "VAT on New Apartments in 2026 | Who Pays 9% and Who 21%"
+  },
+  "en/credit-ipotecar/index.html": {
+   "vechi": "Ilioara Residence | Mortgage in Romania: Step-by-Step Guide",
+   "nou": "Ilioara Residence | Mortgage in Romania, Answered"
+  },
+  "en/echipa-ilioara-residence/index.html": {
+   "vechi": "Ilioara Residence Team: Who Builds and Sells the Building",
+   "nou": "Ilioara Residence Team | Who Builds and Sells the Building"
+  },
+  "en/index.html": {
+   "vechi": "Ilioara Residence: New Apartments, Bucharest, No Commission",
+   "nou": "Ilioara Residence | New Apartments in Titan, Bucharest"
+  },
+  "en/pentru-cine-construim/index.html": {
+   "vechi": "Ilioara Residence | Foreigners: Buy an Apartment in Romania",
+   "nou": "Ilioara Residence | Who Can Buy an Apartment in Romania"
+  },
+  "en/proiecte-finalizate/index.html": {
+   "vechi": "Ilioara Residence | Dristor Apartments, Bucharest: Finished",
+   "nou": "Ilioara Residence | Our Finished Building in Dristor"
+  },
+  "en/zona/index.html": {
+   "vechi": "Ilioara Residence | Bucharest Area: Metro in 5 Minutes",
+   "nou": "Ilioara Residence | Titan Area, Metro in Five Minutes"
+  },
+  "he/apartamente-blocuri-noi-bucuresti/index.html": {
+   "vechi": "דירה בבניין חדש בבוקרשט: מה באמת מרוויחים",
+   "nou": "דירות בבניין חדש בבוקרשט | 2 ו-3 חדרים מהיזם"
+  },
+  "he/apartamente-noi-bucuresti/index.html": {
+   "vechi": "דירה חדשה בבוקרשט, ישירות מהיזם",
+   "nou": "דירות חדשות בבוקרשט | ישירות מהיזם, בלי עמלה"
+  },
+  "he/blocuri-noi-bucuresti/index.html": {
+   "vechi": "בניין חדש בבוקרשט: מה בודקים לפני שקונים",
+   "nou": "בניינים חדשים בבוקרשט | מה בודקים לפני שקונים"
+  },
+  "he/blog/apartament-2-sau-3-camere-cum-alegi/index.html": {
+   "vechi": "דירת 2 חדרים או 3 חדרים: איך בוחרים נכון",
+   "nou": "דירת 2 חדרים או 3 חדרים | איך בוחרים נכון"
+  },
+  "he/blog/apartamente-langa-metrou-bucuresti/index.html": {
+   "vechi": "דירות ליד המטרו בבוקרשט: כמה זה באמת קרוב",
+   "nou": "דירות ליד המטרו בבוקרשט | כמה זה באמת קרוב"
+  },
+  "he/blog/apartamente-noi-bucuresti-2026/index.html": {
+   "vechi": "דירות חדשות בבוקרשט: מדריך רכישה 2026",
+   "nou": "דירות חדשות בבוקרשט | מדריך רכישה 2026"
+  },
+  "he/blog/apartamente-noi-titan-dristor/index.html": {
+   "vechi": "דירות חדשות ב-Titan Dristor: מדריך האזור",
+   "nou": "דירות חדשות ב-Titan-Dristor | מדריך האזור בבוקרשט"
+  },
+  "he/blog/costuri-reale-apartament-nou/index.html": {
+   "vechi": "כמה באמת עולה דירה חדשה, מעבר למחיר המוצג",
+   "nou": "כמה באמת עולה דירה חדשה | כל העלויות מעל המחיר המוצג"
+  },
+  "he/blog/credit-ipotecar-apartament-nou/index.html": {
+   "vechi": "משכנתה לדירה חדשה שעדיין בבנייה",
+   "nou": "משכנתה לדירה חדשה בבנייה | מה הבנק דורש"
+  },
+  "he/blog/cumperi-apartament-inainte-sa-fie-gata/index.html": {
+   "vechi": "דירה בבנייה: מה בודקים לפני חתימה",
+   "nou": "קונים דירה שעדיין בבנייה | מה בודקים לפני חתימה"
+  },
+  "he/blog/cumperi-direct-de-la-proprietar/index.html": {
+   "vechi": "ישירות מהיזם, בלי עמלה: איך זה עובד",
+   "nou": "קונים דירה ישירות מהיזם | בלי עמלה, איך זה עובד"
+  },
+  "he/blog/de-ce-ilioara-residence/index.html": {
+   "vechi": "חוות דעת על Ilioara Residence ו-6 הבדלים אמיתיים",
+   "nou": "Ilioara Residence | חוות דעת ו-6 הבדלים אמיתיים"
+  },
+  "he/blog/ilioara-residence-bloc-nou-titan-dristor/index.html": {
+   "vechi": "פרויקט Ilioara Residence ב-Titan: המדריך המלא",
+   "nou": "Ilioara Residence | בניין חדש ב-Titan, המדריך המלא"
+  },
+  "he/blog/index.html": {
+   "vechi": "בלוג: מדריכים לקוני דירות חדשות",
+   "nou": "מדריכים לקוני דירות חדשות בבוקרשט | הבלוג שלנו"
+  },
+  "he/blog/suprafata-utila-vs-construita/index.html": {
+   "vechi": "שטח שימושי מול בנוי: מה אתה קונה באמת",
+   "nou": "שטח שימושי מול שטח בנוי | מה אתם קונים באמת"
+  },
+  "he/blog/tva-apartamente-noi-2026/index.html": {
+   "vechi": "מע&quot;מ על דירות חדשות 2026: מי משלם 9% ומי 21%",
+   "nou": "מע״מ על דירות חדשות ב-2026 | מי משלם 9% ומי 21%"
+  },
+  "he/dotari/index.html": {
+   "vechi": "Ilioara Residence | מפרט דירה חדשה: חימום תת-רצפתי כלול",
+   "nou": "Ilioara Residence | מפרט דירה חדשה, חימום תת-רצפתי כלול"
+  },
+  "he/echipa-ilioara-residence/index.html": {
+   "vechi": "צוות Ilioara Residence: מי בונה ומוכר את הבניין",
+   "nou": "Ilioara Residence | הצוות שבונה ומוכר את הבניין"
+  },
+  "he/index.html": {
+   "vechi": "Ilioara Residence: דירות חדשות בבוקרשט ישירות מהיזם",
+   "nou": "Ilioara Residence | דירות חדשות בבוקרשט ישירות מהיזם"
+  },
+  "he/pentru-cine-construim/index.html": {
+   "vechi": "Ilioara Residence | למי אנחנו בונים: קונים מכל מדינה",
+   "nou": "Ilioara Residence | למי אנחנו בונים, קונים מכל מדינה"
+  },
+  "he/proiecte-finalizate/index.html": {
+   "vechi": "Ilioara Residence | Dristor Apartments, בוקרשט: הושלם",
+   "nou": "Ilioara Residence | Dristor Apartments, פרויקט שהושלם"
+  },
+  "he/zona/index.html": {
+   "vechi": "Ilioara Residence | אזור בוקרשט: מטרו ב-5 דקות, פארק IOR ב-9",
+   "nou": "Ilioara Residence | אזור טיטאן-דריסטור, מטרו ב-5 דקות"
+  },
+  "ar/apartamente-blocuri-noi-bucuresti/index.html": {
+   "vechi": "السكن في شقة بمبنى جديد في بوخارست: ماذا تكسب",
+   "nou": "شقة في مبنى جديد في بوخارست | ما الذي تكسبه فعليًا"
+  },
+  "ar/apartamente-noi-bucuresti/index.html": {
+   "vechi": "شقة جديدة في بوخارست، مباشرة من المطوّر",
+   "nou": "شراء شقة جديدة في بوخارست | مباشرة من المطوّر"
+  },
+  "ar/blocuri-noi-bucuresti/index.html": {
+   "vechi": "بناء جديد في بوخارست: ماذا تتحقق منه قبل الشراء",
+   "nou": "أبنية جديدة في بوخارست | ما تتحقق منه قبل الشراء"
+  },
+  "ar/blog/apartament-2-sau-3-camere-cum-alegi/index.html": {
+   "vechi": "شقة من غرفتين أو 3 غرف: كيف تختار بشكل صحيح",
+   "nou": "شقة من غرفتين أو 3 غرف | كيف تختار بشكل صحيح"
+  },
+  "ar/blog/apartamente-langa-metrou-bucuresti/index.html": {
+   "vechi": "شقق قرب المترو في بوخارست: كم يعني قريب",
+   "nou": "شقق قرب المترو في بوخارست | ماذا تعني 5 دقائق سيرًا"
+  },
+  "ar/blog/apartamente-noi-bucuresti-2026/index.html": {
+   "vechi": "شقق جديدة في بوخارست: دليل الشراء 2026",
+   "nou": "شقق جديدة في بوخارست | دليل الشراء 2026"
+  },
+  "ar/blog/apartamente-noi-titan-dristor/index.html": {
+   "vechi": "شقق جديدة في Titan Dristor: دليل المنطقة",
+   "nou": "شقق جديدة في Titan Dristor | دليل المنطقة"
+  },
+  "ar/blog/costuri-reale-apartament-nou/index.html": {
+   "vechi": "كم تكلف شقة جديدة فعلًا، فوق السعر المعروض",
+   "nou": "كم تكلف شقة جديدة فعلًا | كل التكاليف فوق السعر المعروض"
+  },
+  "ar/blog/credit-ipotecar-apartament-nou/index.html": {
+   "vechi": "قرض عقاري لشقة جديدة قيد البناء",
+   "nou": "قرض عقاري لشقة قيد البناء | ماذا يطلب البنك"
+  },
+  "ar/blog/cumperi-apartament-inainte-sa-fie-gata/index.html": {
+   "vechi": "شقة قيد البناء: ماذا تتحقق قبل التوقيع",
+   "nou": "شراء شقة قبل اكتمالها | ماذا تتحقق منه قبل التوقيع"
+  },
+  "ar/blog/cumperi-direct-de-la-proprietar/index.html": {
+   "vechi": "مباشرة من المطوّر، بلا عمولة: كيف يسير الأمر",
+   "nou": "الشراء مباشرة من المطوّر | بلا عمولة على المشتري"
+  },
+  "ar/blog/de-ce-ilioara-residence/index.html": {
+   "vechi": "آراء في Ilioara Residence و6 فروق حقيقية",
+   "nou": "Ilioara Residence | آراء و6 فروق حقيقية"
+  },
+  "ar/blog/ilioara-residence-bloc-nou-titan-dristor/index.html": {
+   "vechi": "دليل كامل لمشروع Ilioara Residence في Titan",
+   "nou": "Ilioara Residence Titan | الدليل الكامل للمشروع"
+  },
+  "ar/blog/index.html": {
+   "vechi": "المدونة: أدلة لمشتري الشقق الجديدة",
+   "nou": "مدونة الشقق الجديدة في بوخارست | أدلة للمشترين"
+  },
+  "ar/blog/suprafata-utila-vs-construita/index.html": {
+   "vechi": "المساحة النافعة مقابل المبنية: ماذا تشتري فعلًا",
+   "nou": "المساحة النافعة مقابل المبنية | ماذا تشتري فعلًا"
+  },
+  "ar/blog/tva-apartamente-noi-2026/index.html": {
+   "vechi": "ضريبة القيمة المضافة 2026: من يدفع 9% ومن يدفع 21%",
+   "nou": "ضريبة القيمة المضافة على الشقق الجديدة 2026 | 9% أم 21%"
+  },
+  "ar/echipa-ilioara-residence/index.html": {
+   "vechi": "فريق Ilioara Residence: من يبني ويبيع المبنى",
+   "nou": "Ilioara Residence | الفريق الذي يبني ويبيع المبنى"
+  },
+  "ar/index.html": {
+   "vechi": "Ilioara Residence: شقق جديدة في بوخارست مباشرة من المطوّر",
+   "nou": "Ilioara Residence | شقق جديدة في بوخارست مباشرة من المطوّر"
+  },
+  "ar/pentru-cine-construim/index.html": {
+   "vechi": "Ilioara Residence | لمن نبني: مشترون من أي بلد",
+   "nou": "Ilioara Residence | نبيع لمشترين من أي بلد"
+  },
+  "ar/proiecte-finalizate/index.html": {
+   "vechi": "Ilioara Residence | Dristor Apartments، بوخارست: مشروع منجز",
+   "nou": "Ilioara Residence | Dristor Apartments، مشروع منجز"
+  },
+  "ar/zona/index.html": {
+   "vechi": "Ilioara Residence | منطقة بوخارست: مترو 5 دقائق، حديقة IOR 9",
+   "nou": "Ilioara Residence | منطقة Titan-Dristor، المترو 5 دقائق"
+  },
+  "uk/apartamente-blocuri-noi-bucuresti/index.html": {
+   "vechi": "Квартира в новому будинку в Бухаресті: що ви отримуєте",
+   "nou": "Квартири в нових будинках Бухареста | Без комісії"
+  },
+  "uk/apartamente-noi-bucuresti/index.html": {
+   "vechi": "Нова квартира в Бухаресті, напряму від забудовника",
+   "nou": "Нові квартири в Бухаресті | Напряму від забудовника"
+  },
+  "uk/blocuri-noi-bucuresti/index.html": {
+   "vechi": "Новий будинок у Бухаресті: що перевірити",
+   "nou": "Нові будинки в Бухаресті | Як перевірити якість"
+  },
+  "uk/blog/apartament-2-sau-3-camere-cum-alegi/index.html": {
+   "vechi": "2- чи 3-кімнатна квартира: як обрати правильно",
+   "nou": "Квартира 2 чи 3 кімнати | Як обрати правильно"
+  },
+  "uk/blog/apartamente-langa-metrou-bucuresti/index.html": {
+   "vechi": "Квартири біля метро в Бухаресті: наскільки це близько",
+   "nou": "Квартири біля метро в Бухаресті | Скільки це пішки"
+  },
+  "uk/blog/apartamente-noi-bucuresti-2026/index.html": {
+   "vechi": "Нові квартири в Бухаресті: посібник з купівлі 2026",
+   "nou": "Нові квартири в Бухаресті | Посібник з купівлі 2026"
+  },
+  "uk/blog/apartamente-noi-titan-dristor/index.html": {
+   "vechi": "Нові квартири Titan Dristor: посібник по району",
+   "nou": "Нові квартири в Titan-Dristor | Путівник районом"
+  },
+  "uk/blog/costuri-reale-apartament-nou/index.html": {
+   "vechi": "Скільки реально коштує нова квартира, понад ціну",
+   "nou": "Реальні витрати на нову квартиру | Понад вказану ціну"
+  },
+  "uk/blog/credit-ipotecar-apartament-nou/index.html": {
+   "vechi": "Іпотечний кредит на нову квартиру в будівництві",
+   "nou": "Іпотечний кредит на нову квартиру | Що вимагає банк"
+  },
+  "uk/blog/cumperi-apartament-inainte-sa-fie-gata/index.html": {
+   "vechi": "Квартира в будівництві: що перевірити",
+   "nou": "Квартира в будівництві | Що перевірити до підпису"
+  },
+  "uk/blog/cumperi-direct-de-la-proprietar/index.html": {
+   "vechi": "Прямо у забудовника, без комісії: як це працює",
+   "nou": "Купівля напряму від забудовника | Без комісії для покупця"
+  },
+  "uk/blog/de-ce-ilioara-residence/index.html": {
+   "vechi": "Ilioara Residence: відгуки і 6 реальних відмінностей",
+   "nou": "Ilioara Residence, відгуки | Шість реальних відмінностей"
+  },
+  "uk/blog/ilioara-residence-bloc-nou-titan-dristor/index.html": {
+   "vechi": "Ilioara Residence Titan: повний посібник з проєкту",
+   "nou": "Ilioara Residence, Titan-Dristor | Повний гід з проєкту"
+  },
+  "uk/blog/index.html": {
+   "vechi": "Блог: посібники для покупців нових квартир",
+   "nou": "Блог про нові квартири в Бухаресті | Посібники покупця"
+  },
+  "uk/blog/suprafata-utila-vs-construita/index.html": {
+   "vechi": "Корисна чи загальна площа: що ви купуєте насправді",
+   "nou": "Корисна чи загальна площа квартири | Що ви купуєте"
+  },
+  "uk/blog/tva-apartamente-noi-2026/index.html": {
+   "vechi": "ПДВ на нові квартири 2026: хто платить 9%, а хто 21%",
+   "nou": "ПДВ на нові квартири 2026 | Хто платить 9% і хто 21%"
+  },
+  "uk/echipa-ilioara-residence/index.html": {
+   "vechi": "Команда Ilioara Residence: хто будує і продає будинок",
+   "nou": "Ilioara Residence, команда | Хто будує і продає"
+  },
+  "uk/index.html": {
+   "vechi": "Ilioara Residence: нові квартири в Бухаресті, без комісії",
+   "nou": "Ilioara Residence, нові квартири в Бухаресті | Без комісії"
+  },
+  "uk/pentru-cine-construim/index.html": {
+   "vechi": "Ilioara Residence | Для кого будуємо: покупці звідусіль",
+   "nou": "Ilioara Residence, для кого будуємо | Покупці звідусіль"
+  },
+  "uk/proiecte-finalizate/index.html": {
+   "vechi": "Ilioara Residence | Dristor Apartments, Бухарест: завершено",
+   "nou": "Ilioara Residence, завершені проєкти | Dristor Apartments"
+  },
+  "uk/zona/index.html": {
+   "vechi": "Ilioara Residence | Район Бухарест: метро за 5 хвилин",
+   "nou": "Ilioara Residence, район Titan-Dristor | Метро за 5 хвилин"
+  }
+ }
+}

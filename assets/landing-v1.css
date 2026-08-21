@@ -1,0 +1,127 @@
+/* TELEFON: REPARATIILE GASITE PE LANDING, APLICATE PE TOT SITUL
+   Andy, 21 aug 2026: "unele chestii se vad busit rau pe landing pe mobil", apoi
+   "fa absolut tot sa arate impecabil".
+
+   Fisierul asta repara patru lucruri masurate, nu banuite. Fiecare are cifra lui in
+   comentariu, ca sa se stie ce se pierde daca cineva il scoate. */
+
+/* ============================================================================
+   1. PANOUL FINAL ERA NEGRU PE NEGRU PE TEMA DESCHISA
+
+   `.ff` isi picteaza singur un fond inchis, in amandoua temele: e cortina de la
+   capatul filmului, si asa a fost gandita. Dar textul din el cerea culoarea prin
+   tokenurile TEMEI, iar pe tema deschisa `--cream` inseamna cerneala inchisa,
+   #1C1710. Rezultat masurat: 18 elemente cu luminanta sub 0,15 pe un fond aproape
+   negru, adica butonul de inchidere, toate cele 12 legaturi din navigatie si
+   butoanele de recenzii, invizibile. Pe tema inchisa: zero. Andy a vazut fix asta
+   si i-a zis "busit".
+
+   Cauza nu e o culoare gresita, ci faptul ca o suprafata cu culoare FIXA cerea
+   tokenuri VARIABILE. Deci tokenurile se fixeaza inauntrul ei, o data, si nu mai
+   conteaza cu ce tema intra omul pe site. Valorile sunt copiate din blocul temei
+   inchise, nu inventate. */
+.ff{
+  --logo-ink:#FFFFFF; --logo-gold:#E9B12B; --cta:#E9B12B; --cta-ink:#1C1710;
+  --cream:#F5F0E1; --cream-soft:#E4DBC8; --gold:#E9B12B; --gold-lg:#E9B12B;
+  --bg:#14100b; --bg2:#1a140c;
+  --cream-rgb:245,240,225; --soft-rgb:228,219,200; --gold-rgb:233,177,43;
+  --bg-rgb:20,16,11; --bg2-rgb:26,20,12;
+  color-scheme:dark;
+  /* Fondul era `rgba(13,10,6,.97)` in capat, deci trei procente din cover razbateau
+     prin panou si se citeau cifrele de dedesubt peste text. Pe o fotografie luminoasa,
+     trei procente se vad. Opac. */
+  background:linear-gradient(180deg,#0d0a06,#0b0805);
+}
+
+/* ============================================================================
+   2. CELE DOUA BUTOANE DE RECENZII SE ATINGEAU
+
+   `.ff-rev` e `display:block`, iar cele doua ancore sunt `inline-flex` fara niciun
+   spatiu intre ele. Masurat la 390px: primul se termina la y=427, al doilea incepe
+   la y=427. Marginile rotunjite se suprapun exact pe linie si arata a greseala. */
+.ff-rev{display:flex;flex-wrap:wrap;gap:.55rem}
+.ff-rev a{min-height:44px}          /* tinta de atins, nu doar chenar */
+
+/* ============================================================================
+   3. ETICHETELE DE 9,6 PX
+
+   Blocul de cifre de pe cover are etichete la `clamp(.6rem,.58vw,.68rem)`, ceea ce
+   pe telefon inseamna 9,6 px, cu 0,2 em de spatiere si toate majuscule. Masurate 63
+   de bucati de text sub 12,5 px. Majuscula spatiata la marimea asta nu se citeste,
+   se ghiceste. Se urca la 11 px, unde textul isi pastreaza rolul de eticheta dar
+   redevine lizibil, si se strange spatierea, care la marimi mici face mai mult rau. */
+@media (max-width:760px){
+  .l{font-size:11px !important;letter-spacing:.13em !important}
+  .ilr-sc{font-size:11.5px !important}
+}
+
+/* ============================================================================
+   4. TINTE DE ATINS SUB 40 PX
+
+   67 de tinte sub 40 px pe latura mica, printre ele cele sapte capitole ale filmului,
+   la 30 px inaltime. Se ating cu degetul, deci trec la 44, minimul de la care nu se
+   mai rateaza. Se creste zona activa, nu textul: `padding` in loc de `font-size`,
+   ca sa nu se mute nimic in pagina. */
+@media (max-width:760px){
+  .ib{min-height:44px;padding-top:.7rem;padding-bottom:.7rem}
+  .ff-nav a{display:inline-block;padding:.42rem 0;min-height:34px}
+  .ff-close{width:2.9rem;height:2.9rem}
+}
+
+/* ============================================================================
+   5. RESTUL TINTELOR DE ATINS, DUPA PRIMA TRECERE
+
+   Dupa reparatia de mai sus au ramas 58 de tinte sub 40 px, toate in interfata
+   filmului si in meniu, adica exact acolo unde omul apasa cu degetul in timp ce
+   tine telefonul cu o mana: cele 31 de comutatoare de limba (20 px), chipurile de
+   pe harta (27 px), pastilele de plan (31 px), butonul plutitor de WhatsApp (37 px)
+   si punctele capitolelor (24 px).
+
+   Se creste ZONA, nu litera: peste tot `padding` si `min-height`, ca sa nu se mute
+   nimic in compozitie si sa nu creasca textul acolo unde marimea lui e o decizie
+   de design. */
+@media (max-width:760px){
+  .fwa{min-height:46px}
+  .pill{min-height:42px;display:inline-flex;align-items:center;justify-content:center}
+  .chip{min-height:40px;display:inline-flex;align-items:center}
+  .tb-m{min-height:40px;padding-inline:.7rem}
+  .ft{min-height:44px;display:inline-flex;align-items:center}
+  /* comutatorul de limba din meniu: tinte lipite una de alta, deci si aer intre ele */
+  .mn-panel a{min-height:40px;display:inline-flex;align-items:center}
+  /* punctele capitolelor: cercul ramane cat e, dar suprafata apasabila creste in jurul lui.
+     Selectorul e pe `nav` fara clasa, ca in pagina; `.rail` nu exista, l-am scris din
+     memorie si nu prindea nimic. Masurat, nu presupus. */
+  main > nav button{min-height:44px}
+  /* pictogramele sociale si semnaturile din subsol: 18 px inaltime, cele mai mici de pe
+     pagina, si stau lipite una de alta */
+  .ff-soc a{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center}
+  .ff-bot a{min-height:40px;display:inline-flex;align-items:center}
+  .ff-nav a{min-height:40px}
+}
+
+
+/* ============================================================================
+   6. ACELEASI DEFECTE, PE PAGINILE INTERIOARE
+
+   Masurat pe /apartamente/: 43 de tinte sub 36 px si 37 de bucati de text sub 11 px, dintre
+   care 33 sunt chiar insignele de stare, la 8,64 px. O insigna care spune "Vândut" e a doua
+   informatie ca importanta din rand, dupa numar, si e scrisa cu litere de opt pixeli si
+   jumatate, cu spatiere. Se urca la 10 px si se strange spatierea; sub 10 px o majuscula
+   spatiata nu se citeste, se ghiceste.
+
+   Comutatorul de limba are 40 de ancore la 26 px inaltime, lipite una de alta in panoul de
+   meniu: pe telefon se nimereste alta limba decat cea vrutta. */
+@media (max-width:760px){
+  /* `!important` fiindca `stare-v3.css` se incarca DUPA foaia asta, iar ordinea foilor e
+     data de pasii care le injecteaza, nu de mine. Fara el, regula se scrie si nu se aplica:
+     masurat, insignele ramaneau la 8,64 px. */
+  .stare{font-size:10px !important;letter-spacing:.1em !important}
+  .lb{font-size:11px}
+  .mn-k{font-size:11px}
+  .lg-r{font-size:10px}
+  .mn-panel a,.mn-panel .act{min-height:40px;display:inline-flex;align-items:center}
+  .tb-m{min-height:40px}
+  .brand{min-height:40px;display:inline-flex;align-items:center}
+  /* legaturile din subsol: 16 px inaltime, 29 la numar, cele mai mici tinte de pe pagina */
+  .pf a{min-height:38px;display:inline-flex;align-items:center}
+}

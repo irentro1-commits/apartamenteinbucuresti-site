@@ -1,0 +1,54 @@
+/* Formularul de contact. Fisier NOU, versionat in nume: /assets/* e servit immutable 1 an,
+   deci un fisier nou nu are problema de cache pe care o are unul modificat.
+   Foloseste DOAR variabilele temei existente, deci merge pe amandoua temele fara nimic in plus. */
+
+.lf{margin:2.2rem 0 1rem;border:1px solid rgba(var(--gold-rgb),.32);border-radius:18px;
+    padding:1.5rem 1.4rem;background:rgba(var(--bg2-rgb),.55)}
+.lf-t{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;line-height:1.25;
+      margin:0 0 .35rem;color:var(--cream)}
+.lf-s{margin:0 0 1.1rem;color:var(--cream-soft);font-size:.95rem;line-height:1.5}
+
+.lf-f{display:block}
+.lf-l{display:block;font-size:.82rem;letter-spacing:.02em;color:var(--cream-soft);
+      margin:0 0 .3rem}
+.lf-i{display:block;width:100%;box-sizing:border-box;font:inherit;font-size:1rem;
+      padding:.8em .95em;margin:0 0 .9rem;color:var(--cream);
+      background:rgba(var(--bg-rgb),.55);border:1px solid rgba(var(--gold-rgb),.34);
+      border-radius:12px;transition:border-color .2s ease}
+.lf-i::placeholder{color:rgba(var(--soft-rgb),.75)}
+.lf-i:focus{outline:none;border-color:rgba(var(--gold-rgb),.95)}
+.lf-i:focus-visible{outline:2px solid var(--cta);outline-offset:2px}
+textarea.lf-i{min-height:5.2em;resize:vertical;line-height:1.5}
+
+.lf-b{width:100%;justify-content:center;margin:.2rem 0 0;border:0;cursor:pointer;font:inherit;
+      font-weight:600;font-size:1.05rem}
+.lf-b[disabled]{opacity:.65;cursor:default}
+
+/* CAMPUL-CAPCANA NU SE MAI ASCUNDE LA `left:-9999px`.
+   Andy, 21 aug 2026, despre paginile in ebraica si araba. Masurat: pe telefon, `/he/` si
+   `/ar/` aveau scrollWidth 10.389 px la o fereastra de 390. Cauza: exact linia asta.
+   In stanga-dreapta, un element mutat la stanga origini nu se poate derula, deci trucul
+   nu costa nimic. In dreapta-stanga ORIGINEA DERULARII E INVERSATA, iar acelasi element
+   devine zece mii de pixeli de derulat lateral, pe fiecare pagina care are formular.
+   Romana si ucraineana erau curate, ebraica si araba nu: acelasi cod, alt sens de citire.
+   Ascunderea corecta nu muta nimic nicaieri: taie elementul la un pixel si il decupeaza. */
+.lf-hp{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+.lf-legal{margin:.9rem 0 0;font-size:.78rem;line-height:1.5;color:var(--cream-soft)}
+.lf-legal a{color:var(--cream-soft);text-underline-offset:3px}
+
+.lf-msg{display:none;margin:.2rem 0 0;padding:1rem 1.05rem;border-radius:14px;
+        border:1px solid rgba(var(--gold-rgb),.45);background:rgba(var(--bg-rgb),.5)}
+.lf-msg.on{display:block}
+.lf-msg h4{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;margin:0 0 .3rem;
+           color:var(--cream)}
+.lf-msg p{margin:0;color:var(--cream-soft);font-size:.94rem;line-height:1.5}
+.lf-f.off{display:none}
+
+@media (min-width:720px){
+  .lf{padding:1.8rem 1.7rem}
+  .lf-row{display:flex;gap:.9rem}
+  .lf-row>div{flex:1 1 0;min-width:0}
+  .lf-b{width:auto;padding-inline:2.4em}
+}

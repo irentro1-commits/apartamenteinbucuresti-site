@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#14100b">
-<title>Ilioara Residence: apartamente direct de la Dezvoltator</title>
+<title>Ilioara Residence | Apartamente noi de la Dezvoltator</title>
 <meta name="description" content="Apartamente noi direct de la dezvoltator, bloc nou în zona Titan-Dristor, Aleea Eprubetei 7. Ilioara Residence: 7 disponibile, finalizare decembrie 2026.">
 <link rel="canonical" href="https://apartamenteinbucuresti.ro/">
 <link rel="alternate" hreflang="ro" href="https://apartamenteinbucuresti.ro/">
@@ -28,7 +28,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ro_RO">
 <meta property="og:site_name" content="Ilioara Residence">
-<meta property="og:title" content="Ilioara Residence: apartamente direct de la Dezvoltator">
+<meta property="og:title" content="Ilioara Residence | Apartamente noi de la Dezvoltator">
 <meta property="og:description" content="Cumpărați direct de la dezvoltator, fără comision. Stradă retrasă, între case, încălzire în pardoseală. 7 disponibile din 33, finalizare decembrie 2026.">
 <meta property="og:url" content="https://apartamenteinbucuresti.ro/">
 <meta property="og:image" content="https://apartamenteinbucuresti.ro/og.jpg">
@@ -829,6 +829,7 @@ html[dir="rtl"] .ilr-i--rez::before{background-image:repeating-linear-gradient(4
 @media (max-width:400px){.ilr-lg{flex-direction:column;align-items:center;gap:.12rem}}
 @media (prefers-reduced-motion:reduce){.ilr-bar{animation:none;transform:none}}
 </style>
+<link rel="stylesheet" href="/assets/landing-v1.css">
 <link rel="stylesheet" href="/assets/stare-v3.css">
 <link rel="stylesheet" href="/assets/tipo-v1.css">
 </head>
@@ -1046,8 +1047,15 @@ html[dir="rtl"] .ilr-i--rez::before{background-image:repeating-linear-gradient(4
   'use strict';
   var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var MOBILE = matchMedia('(max-width:760px)').matches;
-  var PFX = MOBILE ? 'film2/m_' : 'film2/';   // set dedicat telefonului: 12fps/820px, 7.9MB
-  var FPC = MOBILE ? 60 : 120;                // cadre per clip
+  var PFX = MOBILE ? 'film2/m_' : 'film2/';   // set dedicat telefonului, 820px; se ia din doua in doua, vezi STEP
+  // CADRE PER CLIP. Pe telefon erau 60, deci 300 in tot filmul. Un cadru mobil e
+  // 820x462, adica 1,5 MB dupa decodare: 300 de cadre inseamna pana la 450 MB de bitmap
+  // pe un telefon, si de acolo vine smucitura. Se injumatateste la 30 pe clip, luand din
+  // fisiere DIN DOUA IN DOUA (`STEP`), deci filmul acopera exact acelasi drum, cu jumatate
+  // de densitate. Nu se pierde nimic din poveste: cu castigul pe glisare dublat mai sus,
+  // numarul de cadre pe care le vezi la o glisare ramane acelasi ca inainte.
+  var FPC = MOBILE ? 30 : 120;                // cadre per clip
+  var STEP = MOBILE ? 2 : 1;                  // al catelea fisier ia fiecare cadru logic
 
   // camera: z = zoom peste cover-fit, cx/cy = punctul din imagine adus in centrul ecranului
   var WIDE  = {z:1,   cx:0.50, cy:0.50};
@@ -1116,7 +1124,9 @@ html[dir="rtl"] .ilr-i--rez::before{background-image:repeating-linear-gradient(4
   // BOOT PROGRESIV: pornim cu criticul (holds + primul clip), restul curge in fundal.
   // Coada cu concurenta limitata = nu inecam browserele in-app. Watchdog = pornim oricum dupa 9s.
   var critTotal = HOLD_IMGS.length + FPC, critLoaded = 0, booted = false;
-  var QUEUE = [], ACTIVE = 0, CONC = 20;
+  // Douazeci de cereri deodata pe o retea de telefon nu incarca mai repede, doar imping
+  // toate cadrele in aceeasi coada si intarzie cele critice, care sunt primele.
+  var QUEUE = [], ACTIVE = 0, CONC = MOBILE ? 6 : 20;
   function boot(){ if(booted) return; booted = true; start(); }
   function onAsset(crit){
     loaded++;
@@ -1144,7 +1154,7 @@ html[dir="rtl"] .ilr-i--rez::before{background-image:repeating-linear-gradient(4
     QUEUE.push({src: PFX + h + '.webp', crit: true, fi: 0, put: function(im){ holdFrames[h] = im; }});
   });
   for(var i=1;i<=NC;i++){(function(idx){
-    QUEUE.push({src: PFX + 'c' + pad(idx) + '.webp', crit: idx <= FPC, fi: idx, put: function(im){ clipFrames[idx-1] = im; }});
+    QUEUE.push({src: PFX + 'c' + pad((idx-1)*STEP + 1) + '.webp', crit: idx <= FPC, fi: idx, put: function(im){ clipFrames[idx-1] = im; }});
   })(i);}
   pump();
   // la salt prin rail/taste, fundalul se rearanjeaza: cadrele zonei tinta se incarca primele
@@ -1179,8 +1189,19 @@ html[dir="rtl"] .ilr-i--rez::before{background-image:repeating-linear-gradient(4
 
   // ===== DRIVE DIRECT =====
   var T, cur, tvel = 0, lastInput = 0, glide = null, lastDir = 1;
-  var GAIN_WHEEL = 0.00017, GAIN_TOUCH = 0.00013, LERP = 0.075;
-  var HOLD_DAMP = 0.55, MAGNET = 0.08, IDLE_MS = 260;
+  // FILMUL PE TELEFON, Andy 21 aug 2026: "filmul se misca fff greu, ar trebui facut si
+  // mult mai rapid si mult mai smooth pe mobil".
+  // Cifrele de dinainte: o glisare de 300 px avansa 300*2*0.00013 = 7,8% din film, deci
+  // treceau ~13 glisari pana la capat, si fiecare se aseza cu LERP 0.075, adica peste 30
+  // de cadre ca sa inchida diferenta. De aici si "greu": nu era doar lent, era si moale.
+  // Pe desktop nu s-a plans nimeni si rotita are alta rezolutie, deci ea ramane cum era.
+  var GAIN_WHEEL = 0.00017;
+  var GAIN_TOUCH = MOBILE ? 0.00030 : 0.00013;   // ~5 glisari in loc de 13
+  var LERP       = MOBILE ? 0.16   : 0.075;      // se aseaza in ~8 cadre, nu in 30
+  // In holduri filmul se franeaza deliberat, ca sa poti citi. Pe telefon, franarea la
+  // 0,55 peste castigul mic de dinainte insemna ca degetul trage si nu se intampla
+  // nimic. Cu castigul dublat, franarea poate fi mai blanda si tot ramane oprire.
+  var HOLD_DAMP = MOBILE ? 0.72 : 0.55, MAGNET = 0.08, IDLE_MS = 260;
 
   function segAt(p){
     for(var k=0;k<SEGS.length;k++) if(p>=SEGS[k].a && p<=SEGS[k].b) return k;
