@@ -38,9 +38,9 @@ ENGINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CALE_DATE = os.path.join(ENGINE, "date", "apartamente.json")
 
 # Doua foi, si amandoua trebuie sa fie acolo: insignele de stare traiesc in stare-v2.css,
-# randurile in carduri-v2.css. Injectarea uneia singure lasa etichetele nestilizate.
+# randurile in carduri-v3.css. Injectarea uneia singure lasa etichetele nestilizate.
 CSS = ('<link rel="stylesheet" href="/assets/stare-v2.css">' + "\n" +
-       '<link rel="stylesheet" href="/assets/carduri-v2.css">')
+       '<link rel="stylesheet" href="/assets/carduri-v3.css">')
 ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
 
 NB = " "
@@ -135,7 +135,20 @@ def card(nr, a, et):
     # Insigna sta INAUNTRUL celulei cu numarul. Lasata afara, devenea a cincea celula a
     # grilei si impingea toate coloanele cu una: pretul ajungea in coloana a treia, iar
     # marginile nu se mai aliniau intre randuri. Masurat, nu banuit.
+    # MINIATURA PLANULUI. Andy, 21 aug 2026, aratand lista concurentului: "pune ca florin dar
+    # sa avem astea pe chestia noastra smechera". La el, poza e cat cardul si impinge pretul
+    # sub pliu; aici e o miniatura de 76px la capatul randului, deci lista ramane o lista si
+    # ochiul tot coboara pe coloana de preturi. Randurile fara plan pastreaza celula goala,
+    # ca sa nu se strice alinierea.
+    mini = os.path.join(os.path.dirname(ENGINE), "planuri", "mini", "ap-%s.webp" % nr)
+    if os.path.exists(mini):
+        foto = ('<span class="ap-foto"><img src="/planuri/mini/ap-%s.webp" alt="" '
+                'width="432" height="320" loading="lazy" decoding="async"></span>' % nr)
+    else:
+        foto = '<span class="ap-foto ap-foto-gol" aria-hidden="true"></span>'
+
     celule = [
+        foto,
         '<span class="ap-nr">ap.%s%s%s</span>' % (NB, nr, ins),
         '<span class="ap-d">%s · %s</span>' % (
             "Penthouse" if a.get("tip") == "penthouse"
