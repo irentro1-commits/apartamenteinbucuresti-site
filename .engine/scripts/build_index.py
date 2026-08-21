@@ -69,10 +69,12 @@ def build(lang):
     h = bb.read(ref)
     head_pre = h[: h.find("<title>")]
     style = re.search(r"<style>.*?</style>", h, re.S).group(0)
-    style += ('<style>.card .cmeta{display:flex;align-items:center;gap:10px;font-size:.72rem;'
-              'letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin:0 0 10px}'
-              '.card .cmeta .ct{border:1px solid currentColor;border-radius:999px;padding:2px 10px;'
-              'white-space:nowrap}.card .cmeta time{white-space:nowrap}</style>')
+    style += ('<style>.card .cmeta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;'
+              'font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;opacity:.72;'
+              'margin:0 0 10px;min-width:0}'
+              '.card .cmeta .ct{border:1px solid currentColor;border-radius:999px;padding:2px 9px;'
+              'white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}'
+              '.card .cmeta time{white-space:nowrap}</style>')
     body_pre = h[h.find("</head>"): h.find("<main")]
     body_post = h[h.find("</main>"):]
 
