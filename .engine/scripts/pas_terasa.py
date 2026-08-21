@@ -67,6 +67,12 @@ def pune(h, b):
     if i > 0:
         j = i + len("</figure>")
         return h[:j] + b + h[j:]
+    # Pe lista si pe preturi nu exista plansa, dar exista paragraful de intro. Banda merge
+    # DUPA el: intai omul afla ce e pagina, apoi primeste vestea cu ceas. Pusa inainte, sarea
+    # peste introducere si pagina incepea cu o avertizare, ceea ce se citeste ca reclama.
+    m = re.search(r'<p class="lead[^"]*"[^>]*>.*?</p>', h, re.S)
+    if m:
+        return h[:m.end()] + b + h[m.end():]
     m = re.search(r"</h1>", h)
     if m:
         # dupa paragraful de intro, daca are unul

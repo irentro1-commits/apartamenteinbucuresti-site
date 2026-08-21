@@ -12,28 +12,29 @@
   "texte": {
     "ro": {
       "titlu": "Terasa poate deveni suprafață utilă, dar nu mult timp",
-      "corp": "Blocul se predă în decembrie 2026. Compartimentarea se mai poate schimba doar în perioada asta, până la <b>%(termen)s</b>: după aceea structura nu mai permite intervenții, iar terasa rămâne terasă. Cât din ea se închide și cum se modifică suprafața utilă se stabilesc pe planul apartamentului dumneavoastră, la vizionare.",
+      "corp": "Blocul se predă în decembrie 2026. Terasa se mai poate închide, ca să intre în suprafața utilă, doar până la <b>%(termen)s</b>. Bucătăria rămâne la alegerea dumneavoastră, închisă sau deschisă, aproape până la predare. Ce și cât se schimbă se stabilesc pe planul apartamentului, la vizionare.",
       "cta": "Întrebați pe WhatsApp"
     },
     "en": {
       "titlu": "The terrace can become usable area, but not for long",
-      "corp": "The building is handed over in December 2026. The layout can still be changed, but only until <b>%(termen)s</b>: after that the structure no longer allows it, and the terrace stays a terrace. How much of it gets enclosed, and what that does to the usable area, we work out on your apartment's floor plan, at the viewing.",
+      "corp": "The building is handed over in December 2026. The terrace can still be enclosed and counted as usable area, but only until <b>%(termen)s</b>. The kitchen stays yours to decide, open or closed, almost up to handover. What changes, and by how much, we work out on your floor plan, at the viewing.",
       "cta": "Ask on WhatsApp how much can be enclosed"
     },
     "he": {
       "titlu": "המרפסת יכולה להפוך לשטח שימושי, אבל לא להרבה זמן",
-      "corp": "הבניין נמסר בדצמבר 2026. את החלוקה הפנימית עוד אפשר לשנות רק בתקופה הזאת, עד <b>%(termen)s</b>, ואחרי זה השלד כבר לא מאפשר שינויים והמרפסת נשארת מרפסת. כמה ממנה נסגר ואיך זה משנה את השטח השימושי נקבעים מול תוכנית הדירה שלכם, בסיור.",
+      "corp": "הבניין נמסר בדצמבר 2026. את המרפסת עוד אפשר לסגור ולצרף אותה לשטח השימושי, אבל רק עד <b>%(termen)s</b>, ואחרי זה היא נשארת מרפסת. המטבח דווקא נשאר לבחירתכם, סגור או פתוח, כמעט עד המסירה. מה משנים וכמה, קובעים מול תוכנית הדירה שלכם, בסיור.",
       "cta": "שאלו בוואטסאפ כמה מהמרפסת אפשר לסגור"
     },
     "ar": {
       "titlu": "الشرفة قد تصبح مساحة مفيدة، لكن ليس لوقت طويل",
-      "corp": "يُسلَّم المبنى في ديسمبر 2026. التقسيم الداخلي يمكن تغييره في هذه الفترة فقط، حتى <b>%(termen)s</b>. بعدها لا يسمح الهيكل بأي تعديل، وتبقى الشرفة شرفة. كم يمكن إغلاقه منها وكيف تتغير المساحة المفيدة، هذا نحدّده على مخطط شقتك، عند المعاينة.",
+      "corp": "يُسلَّم المبنى في ديسمبر 2026. ما زال بالإمكان إغلاق الشرفة لتُضاف إلى المساحة المفيدة، لكن حتى <b>%(termen)s</b> فقط. أما المطبخ فيبقى لك أن تختاره مغلقاً أو مفتوحاً، إلى ما قبل التسليم بقليل. ما يتغيّر وإلى أي حدّ، هذا نحدّده على مخطط شقتك، عند المعاينة.",
       "cta": "اسألنا على واتساب كم يمكن إغلاقه من الشرفة"
     },
     "uk": {
       "titlu": "Тераса ще може стати корисною площею, але вже недовго",
-      "corp": "Будинок здають у грудні 2026 року. Планування можна змінити лише в цей період, до <b>%(termen)s</b>: після цього в конструкцію вже не втручаються, і тераса лишається терасою. Скільки саме з неї можна закрити і як зміниться корисна площа, визначають на плані саме вашої квартири, під час перегляду.",
+      "corp": "Будинок здають у грудні 2026 року. Терасу ще можна закрити, щоб вона стала корисною площею, але лише до <b>%(termen)s</b>. Зате кухня лишається на ваш вибір, закрита чи відкрита, майже до самої здачі. Що і скільки змінювати, визначають на плані саме вашої квартири, під час перегляду.",
       "cta": "Запитайте у WhatsApp, скільки тераси можна закрити"
     }
-  }
+  },
+  "_bucataria": "Andy, 21 aug 2026: 'pune clar de asemenea ca bucataria poate fi inchisa sau deschisa pana aproape de predare, ca parte pozitiva, totusi, la mesajul ala prim'. Faptul e confirmat si de materialele dezvoltatorului: fiecare apartament are doua variante de plansa, bucatarie inchisa si bucatarie deschisa. NU se scrie o data pentru bucatarie: 'aproape pana la predare' e formularea lui Andy si e cinstita; o data inventata acolo ar fi o promisiune."
 }
