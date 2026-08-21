@@ -69,6 +69,10 @@ def build(lang):
     h = bb.read(ref)
     head_pre = h[: h.find("<title>")]
     style = re.search(r"<style>.*?</style>", h, re.S).group(0)
+    style += ('<style>.card .cmeta{display:flex;align-items:center;gap:10px;font-size:.72rem;'
+              'letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin:0 0 10px}'
+              '.card .cmeta .ct{border:1px solid currentColor;border-radius:999px;padding:2px 10px;'
+              'white-space:nowrap}.card .cmeta time{white-space:nowrap}</style>')
     body_pre = h[h.find("</head>"): h.find("<main")]
     body_post = h[h.find("</main>"):]
 
@@ -135,6 +139,8 @@ def build(lang):
     # main
     cards = "".join(
         f'<a class="card rv" data-fx="pop" href="{root}blog/{s}/">'
+        f'<div class="cmeta"><span class="ct">{bb.esc(ps[s]["articleSection"])}</span>'
+        f'<time datetime="{bb.data_pub(ps[s])}">{bb.fmt_date(bb.data_pub(ps[s]), lang)}</time></div>'
         f'<h2 style="margin:0;font-size:1.12rem;text-wrap:balance">{bb.esc(ps[s]["title"])}</h2>'
         f'<p class="cm">{bb.esc(ps[s]["description"])}</p>'
         f'<span class="cl">{bb.esc(ix["cardLink"])}</span></a>'

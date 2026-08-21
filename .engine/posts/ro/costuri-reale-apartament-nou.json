@@ -1,185 +1,185 @@
 {
-  "slug": "costuri-reale-apartament-nou",
-  "publishAt": "2026-08-04",
-  "updatedAt": "2026-08-04",
-  "title": "Cât costă de fapt un apartament nou: toate costurile care apar peste prețul afișat",
-  "seoTitle": "Cât costă un apartament nou | Costurile peste preț",
-  "description": "Toate costurile peste prețul afișat la un apartament nou: TVA, avans, notar, intabulare, comision, credit, mobilare și cheltuieli lunare.",
-  "descriptionLlm": "Ghid despre costurile reale ale unui apartament nou în București, dincolo de prețul afișat: TVA de 21%, rezervare și avans, onorariu notarial și intabulare, comision de agenție, costul creditului, mobilare și cheltuieli lunare de bloc. Exemplele de calcul folosesc prețurile reale de la Ilioara Residence, Titan-Dristor, Sector 3.",
-  "articleSection": "Ghid de cumparare",
-  "keywords": "costuri apartament nou, TVA apartamente noi 2026, avans apartament nou, costuri notar apartament, comision agenție imobiliară, costul creditului ipotecar, cheltuieli lunare apartament nou, apartamente noi Sector 3",
-  "readMinutes": 7,
-  "lead": "Ați pus deoparte exact cât scrie pe anunț, la leu. Ați numărat de trei ori, aveți închis calculatorul și v-ați zis că sunteți acoperit. Apoi cineva pomenește de TVA, altcineva de onorariul notarului, iar suma pe care o știai de luni de zile începe să se miște sub dumneavoastră. Nu e o capcană. E felul obișnuit în care se construiește prețul unei locuințe noi, pe straturi pe care cumpărătorul le descoperă unul câte unul, de obicei prea târziu. Le punem aici pe toate pe masă, în ordinea în care banii chiar pleacă din cont.",
-  "sections": [
+ "slug": "costuri-reale-apartament-nou",
+ "publishAt": "2026-08-04",
+ "updatedAt": "2026-08-04",
+ "title": "Cât costă de fapt un apartament nou: toate costurile care apar peste prețul afișat",
+ "seoTitle": "Cât costă un apartament nou | Costurile peste preț",
+ "description": "Toate costurile peste prețul afișat la un apartament nou: TVA, avans, notar, intabulare, comision, credit, mobilare și cheltuieli lunare.",
+ "descriptionLlm": "Ghid despre costurile reale ale unui apartament nou în București, dincolo de prețul afișat: TVA de 21%, rezervare și avans, onorariu notarial și intabulare, comision de agenție, costul creditului, mobilare și cheltuieli lunare de bloc. Exemplele de calcul folosesc prețurile reale de la Ilioara Residence, Titan-Dristor, Sector 3.",
+ "articleSection": "Ghid de cumpărare",
+ "keywords": "costuri apartament nou, TVA apartamente noi 2026, avans apartament nou, costuri notar apartament, comision agenție imobiliară, costul creditului ipotecar, cheltuieli lunare apartament nou, apartamente noi Sector 3",
+ "readMinutes": 7,
+ "lead": "Ați pus deoparte exact cât scrie pe anunț, la leu. Ați numărat de trei ori, aveți închis calculatorul și v-ați zis că sunteți acoperit. Apoi cineva pomenește de TVA, altcineva de onorariul notarului, iar suma pe care o știai de luni de zile începe să se miște sub dumneavoastră. Nu e o capcană. E felul obișnuit în care se construiește prețul unei locuințe noi, pe straturi pe care cumpărătorul le descoperă unul câte unul, de obicei prea târziu. Le punem aici pe toate pe masă, în ordinea în care banii chiar pleacă din cont.",
+ "sections": [
+  {
+   "h2": "Prețul afișat și suma de pe contract sunt două cifre diferite",
+   "blocks": [
     {
-      "h2": "Prețul afișat și suma de pe contract sunt două cifre diferite",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "Primul strat nu vine de la vânzător, vine de la stat. Prețurile apartamentelor noi se afișează de regulă fără TVA, iar cota standard în România este de <strong>21%</strong>, aplicată de la 1 august 2025 prin Legea 141/2025. Cota redusă de 9% a rămas doar tranzitoriu, pentru cine avea antecontract semnat până la 31 iulie 2025 și finalizează până la 30 septembrie 2026, cu plafon de 600.000 lei fără TVA și maximum 120 mp utili."
-        },
-        {
-          "t": "p",
-          "x": "La Ilioara Residence finalizarea este în decembrie 2026, deci aici se plătește 21%, fără loc de interpretare. Pe cel mai mic apartament de 2 camere, cu preț de 107.500 EUR fără TVA, taxa adaugă 22.575 EUR, deci suma reală ajunge la <strong>130.075 EUR</strong>. Aceeași aritmetică se aplică la fiecare rând din <a href=\"/preturi/\">lista de prețuri</a>: cifra pe care o vedeți este baza de calcul, nu totalul."
-        },
-        {
-          "t": "p",
-          "x": "Prețul afișat nu e o momeală. E o convenție de piață pe care o folosește toată lumea și o explică puțină lume. Dacă vreți mecanismul întreg, cu cine mai prinde cota redusă și cine nu, l-am desfășurat separat în ghidul despre <a href=\"/blog/tva-apartamente-noi-2026/\">TVA la apartamentele noi</a>."
-        }
-      ]
+     "t": "p",
+     "x": "Primul strat nu vine de la vânzător, vine de la stat. Prețurile apartamentelor noi se afișează de regulă fără TVA, iar cota standard în România este de <strong>21%</strong>, aplicată de la 1 august 2025 prin Legea 141/2025. Cota redusă de 9% a rămas doar tranzitoriu, pentru cine avea antecontract semnat până la 31 iulie 2025 și finalizează până la 30 septembrie 2026, cu plafon de 600.000 lei fără TVA și maximum 120 mp utili."
     },
     {
-      "h2": "Rezervarea și avansul, banii care pleacă primii",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "Odată ce aveți numărul real în cap, urmează calendarul plăților. Rezervarea unui apartament la Ilioara este de 2.000 EUR și ține unitatea pe numele dumneavoastră, iar avansul minim este de 30%. Cele două sume nu ies în aceeași zi, dar ies amândouă cu mult înainte să atingeți clanța."
-        },
-        {
-          "t": "p",
-          "x": "Treizeci la sută din 107.500 EUR înseamnă <strong>32.250 EUR</strong>, bani care trebuie să fie lichizi la data semnării, nu blocați într-un depozit cu scadență peste un an. Întrebați din prima discuție la ce sumă se calculează procentul și dacă rezervarea se scade din avans sau se adaugă lângă el. Sunt două întrebări scurte care vă schimbă complet planificarea."
-        },
-        {
-          "t": "p",
-          "x": "Mai există un lucru care ține de ritm, nu de bani. Din 33 de apartamente au rămas 12 disponibile, iar tipul de apartament pe care îl vreți poate pleca din listă cât timp tu strângeți avansul. Puteți vedea ce mai este liber acum în <a href=\"/apartamente/\">lista de apartamente</a>, cu suprafețe și etaje."
-        }
-      ]
+     "t": "p",
+     "x": "La Ilioara Residence finalizarea este în decembrie 2026, deci aici se plătește 21%, fără loc de interpretare. Pe cel mai mic apartament de 2 camere, cu preț de 107.500 EUR fără TVA, taxa adaugă 22.575 EUR, deci suma reală ajunge la <strong>130.075 EUR</strong>. Aceeași aritmetică se aplică la fiecare rând din <a href=\"/preturi/\">lista de prețuri</a>: cifra pe care o vedeți este baza de calcul, nu totalul."
     },
     {
-      "h2": "Notarul și intabularea: costuri sigure, sume variabile",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "Aici începe zona în care nimeni serios nu vă dă o cifră la telefon, iar cine v-o dă, ghicește. Onorariul notarial și taxa de intabulare se calculează după reguli proprii, care se schimbă în timp și depind de dosarul dumneavoastră concret. Ce puteți afla însă din prima zi este mecanismul, iar mecanismul vă ajunge ca să cereți o estimare corectă."
-        },
-        {
-          "t": "ul",
-          "x": [
-            "<strong>Valoarea din contract.</strong> Onorariul notarial se calculează procentual, pe tranșe de valoare, deci un apartament de 3 camere costă mai mult la notar decât unul de 2 camere, chiar dacă actul arată la fel.",
-            "<strong>Numărul de acte.</strong> Dacă luați și loc de parcare, întrebați din start dacă intră în același contract sau într-unul separat, fiindcă al doilea act înseamnă a doua rundă de costuri.",
-            "<strong>Creditul.</strong> Ipoteca băncii se înscrie în cartea funciară, iar acest lucru adaugă operațiuni peste o vânzare plătită integral din surse proprii.",
-            "<strong>Traducerile și procurile.</strong> Dacă semnați prin împuternicit sau aveți un act într-o limbă străină, apar linii în plus pe deviz."
-          ]
-        },
-        {
-          "t": "p",
-          "x": "Cereți devizul notarial în scris, pe valoarea exactă din contract, cu câteva zile înainte de semnare. Un birou serios îl trimite pe email la simpla cerere. Comparați apoi două birouri pe aceeași valoare de contract, altfel comparați lucruri diferite și vă bucuri degeaba."
-        },
-        {
-          "t": "p",
-          "x": "Intabularea urmează aceeași logică: se raportează la valoarea din act și la ce anume înscrieți în cartea funciară. Întrebați cine depune dosarul, în cât timp se eliberează extrasul și dacă suma cerută acoperă doar taxa sau și demersul făcut de birou."
-        }
-      ]
-    },
-    {
-      "h2": "Comisionul de agenție, costul care poate lipsi cu totul",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "Pe piața rezidențială clasică, comisionul cumpărătorului este un procent din preț care se adaugă peste tot restul și se plătește la semnare. Este cel mai mare cost variabil dintre toate cele de aici și, spre deosebire de taxele legale, se negociază. Merită întrebat direct, de la prima vizionare: cine plătește comisionul, cât este și când se achită."
-        },
-        {
-          "t": "p",
-          "x": "La Ilioara Residence vânzarea se face direct de la dezvoltator, deci comisionul pentru cumpărător este zero. Prețul afișat lângă fiecare apartament este prețul final al locuinței, iar peste el se adaugă TVA și costurile legale, atât. Am detaliat separat ce se schimbă în practică în ghidul despre <a href=\"/blog/cumperi-direct-de-la-proprietar/\">cumpărarea direct de la dezvoltator</a>."
-        },
-        {
-          "t": "p",
-          "x": "Zero comision nu înseamnă automat că iese mai ieftin. Înseamnă că știți de la început care e suma pe care o negociați și cu cine vorbiți când aveți o întrebare despre finisaje sau despre termene."
-        }
-      ]
-    },
-    {
-      "h2": "Creditul costă și el, dincolo de rata lunară",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "Rata lunară este singura cifră pe care o rețin mulți cumpărători, și este cea mai puțin lămuritoare dintre toate. Costul real al unui credit stă în DAE, care adună dobânda cu toate costurile obligatorii, și în durata pe care îl luați. Aceeași rată, întinsă cu zece ani în plus, înseamnă alți bani plătiți în total."
-        },
-        {
-          "t": "ul",
-          "x": [
-            "<strong>Dobânda și tipul ei.</strong> Fixă pe o perioadă și apoi variabilă, legată de un indice, sau variabilă de la început. Întrebați ce se întâmplă cu rata în luna în care se termină perioada fixă.",
-            "<strong>Comisionul de analiză a dosarului</strong>, plătit la depunere, indiferent de răspunsul băncii.",
-            "<strong>Evaluarea imobilului</strong>, plătită de dumneavoastră, la un evaluator agreat de bancă.",
-            "<strong>Asigurările.</strong> Cea obligatorie a locuinței, polița facultativă cerută de bancă și, la unele oferte, asigurarea de viață cesionată.",
-            "<strong>Comisionul de administrare</strong>, lunar sau anual, care intră în costul total chiar dacă apare topit în rată."
-          ]
-        },
-        {
-          "t": "p",
-          "x": "Cereți oferta scrisă cu DAE și cu graficul de rambursare, de la două bănci, pe aceeași sumă și aceeași durată. Comparați apoi totalul de plată, nu rata. Ce cere banca la un apartament nou și cum se leagă tragerea creditului de stadiul construcției am explicat la <a href=\"/credit-ipotecar/\">secțiunea de credit ipotecar</a>."
-        },
-        {
-          "t": "p",
-          "x": "Aici e limita pe care o spunem deschis: nicio dobândă scrisă într-un articol nu ar merita încrederea dumneavoastră. Se schimbă de la o lună la alta și de la un profil de client la altul. Singura cifră care contează este cea din oferta emisă pe numele dumneavoastră, cu venitul dumneavoastră, la data la care semnați."
-        }
-      ]
-    },
-    {
-      "h2": "După mutare: finisare, mobilare și cheltuielile de bloc",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "Cheltuiala care sperie cel mai des nu e nici notarul, nici banca. E ce vine după ce aveți cheia în mână. Mobilarea și finisarea se întind pe o plajă uriașă de sume, fiindcă depind de câte camere aveți de umplut, de cât luați gata făcut și de cât construiți de la zero."
-        },
-        {
-          "t": "p",
-          "x": "Ce mișcă suma aici: numărul de camere, bucătăria la comandă sau din magazin, electrocasnicele luate deodată sau eșalonat, și cât din finisaj este deja făcut la predare. Cereți lista de dotări incluse în scris, apoi faceți bugetul doar pe ce lipsește din ea. La Ilioara, încălzirea în pardoseală este inclusă în tot apartamentul, tâmplăria este tripan Salamander cu 7 camere, iar fiecare apartament are centrală proprie Ariston de 24 kW."
-        },
-        {
-          "t": "p",
-          "x": "Urmează cheltuielile lunare, care se împart în două. Utilitățile dumneavoastră, unde centrala proprie înseamnă că plătiți exact ce consumați tu, și partea de bloc, unde plătiți împreună cu vecinii. Acolo intră cota indiviză și fondul de reparații, două rânduri pe care mulți cumpărători le văd prima oară abia pe prima întreținere."
-        },
-        {
-          "t": "p",
-          "x": "Cota indiviză se calculează după suprafața dumneavoastră raportată la suprafața totală a blocului, deci un apartament mai mare duce o parte mai mare din cheltuielile comune. Merită să știți exact ce suprafață intră în calcul înainte să semnați, fiindcă diferența dintre suprafața utilă și cea construită se vede direct în factura de întreținere. La Ilioara sunt patru apartamente pe etaj, iar numărul de uși de pe palier vă spune din start cât de intens se folosesc spațiile comune pe care le întrețineți împreună."
-        },
-        {
-          "t": "p",
-          "x": "Fondul de reparații înseamnă bani puși deoparte de asociație pentru ce se strică la comun, de la lift până la instalațiile de pe casa scării. Suma se stabilește prin hotărârea asociației, deci nu există un procent universal pe care să vi-l spună cineva dinainte. Într-un bloc nou intervențiile mari vin mai târziu, însă fondul se constituie de la început, exact ca să existe atunci."
-        },
-        {
-          "t": "p",
-          "x": "Ultimul cost pe care mulți îl uită complet este mașina. Locul de parcare se cumpără separat, la Ilioara 20.000 EUR unul simplu și 25.000 EUR unul dublu tip Klauss, ambele fără TVA, la fel ca apartamentele. Cum funcționează sistemul dublu și cui i se potrivește am explicat la <a href=\"/parcare/\">pagina de parcare</a>."
-        }
-      ]
+     "t": "p",
+     "x": "Prețul afișat nu e o momeală. E o convenție de piață pe care o folosește toată lumea și o explică puțină lume. Dacă vreți mecanismul întreg, cu cine mai prinde cota redusă și cine nu, l-am desfășurat separat în ghidul despre <a href=\"/blog/tva-apartamente-noi-2026/\">TVA la apartamentele noi</a>."
     }
-  ],
-  "faq": [
+   ]
+  },
+  {
+   "h2": "Rezervarea și avansul, banii care pleacă primii",
+   "blocks": [
     {
-      "q": "Prețul afișat la apartamentele noi include TVA?",
-      "a": "De regulă nu, prețurile se afișează fără TVA, iar cota standard este de 21% de la 1 august 2025. La Ilioara Residence, care se finalizează în decembrie 2026, se aplică 21%, deci la fiecare preț din listă adăugați taxa ca să obții suma reală de pe contract."
+     "t": "p",
+     "x": "Odată ce aveți numărul real în cap, urmează calendarul plăților. Rezervarea unui apartament la Ilioara este de 2.000 EUR și ține unitatea pe numele dumneavoastră, iar avansul minim este de 30%. Cele două sume nu ies în aceeași zi, dar ies amândouă cu mult înainte să atingeți clanța."
     },
     {
-      "q": "Cât avans îmi trebuie pentru un apartament nou?",
-      "a": "La Ilioara avansul minim este de 30%, plus o rezervare de 2.000 EUR care ține apartamentul pe numele dumneavoastră. Întrebați din prima discuție la ce sumă se calculează procentul și dacă rezervarea se scade din avans, fiindcă acest lucru vă schimbă tot calendarul plăților."
+     "t": "p",
+     "x": "Treizeci la sută din 107.500 EUR înseamnă <strong>32.250 EUR</strong>, bani care trebuie să fie lichizi la data semnării, nu blocați într-un depozit cu scadență peste un an. Întrebați din prima discuție la ce sumă se calculează procentul și dacă rezervarea se scade din avans sau se adaugă lângă el. Sunt două întrebări scurte care vă schimbă complet planificarea."
     },
     {
-      "q": "Ce costuri am la notar când cumpăr un apartament?",
-      "a": "Onorariul notarial și taxa de intabulare se calculează după valoarea din contract și după ce anume înscrieți în cartea funciară, iar un credit adaugă înscrierea ipotecii. Cifra exactă o aflați cerând devizul în scris, pe valoarea dumneavoastră de contract, cu câteva zile înainte de semnare."
-    },
-    {
-      "q": "Ce plătesc lunar la un apartament nou, în afară de rată?",
-      "a": "Utilitățile pe care le consumați, plus partea de bloc: cota indiviză, calculată după suprafața dumneavoastră raportată la a blocului, și fondul de reparații stabilit de asociație. Cu centrală proprie plătiți gazul și curentul pe consumul dumneavoastră, separat de întreținerea comună."
+     "t": "p",
+     "x": "Mai există un lucru care ține de ritm, nu de bani. Din 33 de apartamente au rămas 12 disponibile, iar tipul de apartament pe care îl vreți poate pleca din listă cât timp tu strângeți avansul. Puteți vedea ce mai este liber acum în <a href=\"/apartamente/\">lista de apartamente</a>, cu suprafețe și etaje."
     }
-  ],
-  "ctaAfter": "Scrieți-ne pe WhatsApp apartamentul care vă interesează și primiți suma completă, cu TVA și cu tot ce urmează până la semnare.",
-  "readAlso": [
+   ]
+  },
+  {
+   "h2": "Notarul și intabularea: costuri sigure, sume variabile",
+   "blocks": [
     {
-      "href": "/blog/tva-apartamente-noi-2026/",
-      "label": "TVA la apartamentele noi în 2026: cine plătește 21% și cine prinde 9%"
+     "t": "p",
+     "x": "Aici începe zona în care nimeni serios nu vă dă o cifră la telefon, iar cine v-o dă, ghicește. Onorariul notarial și taxa de intabulare se calculează după reguli proprii, care se schimbă în timp și depind de dosarul dumneavoastră concret. Ce puteți afla însă din prima zi este mecanismul, iar mecanismul vă ajunge ca să cereți o estimare corectă."
     },
     {
-      "href": "/blog/credit-ipotecar-apartament-nou/",
-      "label": "Credit ipotecar pentru un apartament nou: ce cere banca, pas cu pas"
+     "t": "ul",
+     "x": [
+      "<strong>Valoarea din contract.</strong> Onorariul notarial se calculează procentual, pe tranșe de valoare, deci un apartament de 3 camere costă mai mult la notar decât unul de 2 camere, chiar dacă actul arată la fel.",
+      "<strong>Numărul de acte.</strong> Dacă luați și loc de parcare, întrebați din start dacă intră în același contract sau într-unul separat, fiindcă al doilea act înseamnă a doua rundă de costuri.",
+      "<strong>Creditul.</strong> Ipoteca băncii se înscrie în cartea funciară, iar acest lucru adaugă operațiuni peste o vânzare plătită integral din surse proprii.",
+      "<strong>Traducerile și procurile.</strong> Dacă semnați prin împuternicit sau aveți un act într-o limbă străină, apar linii în plus pe deviz."
+     ]
     },
     {
-      "href": "/blog/suprafata-utila-vs-construita/",
-      "label": "Suprafață utilă sau construită: ce cumpărați de fapt"
+     "t": "p",
+     "x": "Cereți devizul notarial în scris, pe valoarea exactă din contract, cu câteva zile înainte de semnare. Un birou serios îl trimite pe email la simpla cerere. Comparați apoi două birouri pe aceeași valoare de contract, altfel comparați lucruri diferite și vă bucuri degeaba."
     },
     {
-      "href": "/blog/cumperi-direct-de-la-proprietar/",
-      "label": "Ce se schimbă când cumpărați direct de la dezvoltator"
+     "t": "p",
+     "x": "Intabularea urmează aceeași logică: se raportează la valoarea din act și la ce anume înscrieți în cartea funciară. Întrebați cine depune dosarul, în cât timp se eliberează extrasul și dacă suma cerută acoperă doar taxa sau și demersul făcut de birou."
     }
-  ]
+   ]
+  },
+  {
+   "h2": "Comisionul de agenție, costul care poate lipsi cu totul",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Pe piața rezidențială clasică, comisionul cumpărătorului este un procent din preț care se adaugă peste tot restul și se plătește la semnare. Este cel mai mare cost variabil dintre toate cele de aici și, spre deosebire de taxele legale, se negociază. Merită întrebat direct, de la prima vizionare: cine plătește comisionul, cât este și când se achită."
+    },
+    {
+     "t": "p",
+     "x": "La Ilioara Residence vânzarea se face direct de la dezvoltator, deci comisionul pentru cumpărător este zero. Prețul afișat lângă fiecare apartament este prețul final al locuinței, iar peste el se adaugă TVA și costurile legale, atât. Am detaliat separat ce se schimbă în practică în ghidul despre <a href=\"/blog/cumperi-direct-de-la-proprietar/\">cumpărarea direct de la dezvoltator</a>."
+    },
+    {
+     "t": "p",
+     "x": "Zero comision nu înseamnă automat că iese mai ieftin. Înseamnă că știți de la început care e suma pe care o negociați și cu cine vorbiți când aveți o întrebare despre finisaje sau despre termene."
+    }
+   ]
+  },
+  {
+   "h2": "Creditul costă și el, dincolo de rata lunară",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Rata lunară este singura cifră pe care o rețin mulți cumpărători, și este cea mai puțin lămuritoare dintre toate. Costul real al unui credit stă în DAE, care adună dobânda cu toate costurile obligatorii, și în durata pe care îl luați. Aceeași rată, întinsă cu zece ani în plus, înseamnă alți bani plătiți în total."
+    },
+    {
+     "t": "ul",
+     "x": [
+      "<strong>Dobânda și tipul ei.</strong> Fixă pe o perioadă și apoi variabilă, legată de un indice, sau variabilă de la început. Întrebați ce se întâmplă cu rata în luna în care se termină perioada fixă.",
+      "<strong>Comisionul de analiză a dosarului</strong>, plătit la depunere, indiferent de răspunsul băncii.",
+      "<strong>Evaluarea imobilului</strong>, plătită de dumneavoastră, la un evaluator agreat de bancă.",
+      "<strong>Asigurările.</strong> Cea obligatorie a locuinței, polița facultativă cerută de bancă și, la unele oferte, asigurarea de viață cesionată.",
+      "<strong>Comisionul de administrare</strong>, lunar sau anual, care intră în costul total chiar dacă apare topit în rată."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "Cereți oferta scrisă cu DAE și cu graficul de rambursare, de la două bănci, pe aceeași sumă și aceeași durată. Comparați apoi totalul de plată, nu rata. Ce cere banca la un apartament nou și cum se leagă tragerea creditului de stadiul construcției am explicat la <a href=\"/credit-ipotecar/\">secțiunea de credit ipotecar</a>."
+    },
+    {
+     "t": "p",
+     "x": "Aici e limita pe care o spunem deschis: nicio dobândă scrisă într-un articol nu ar merita încrederea dumneavoastră. Se schimbă de la o lună la alta și de la un profil de client la altul. Singura cifră care contează este cea din oferta emisă pe numele dumneavoastră, cu venitul dumneavoastră, la data la care semnați."
+    }
+   ]
+  },
+  {
+   "h2": "După mutare: finisare, mobilare și cheltuielile de bloc",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Cheltuiala care sperie cel mai des nu e nici notarul, nici banca. E ce vine după ce aveți cheia în mână. Mobilarea și finisarea se întind pe o plajă uriașă de sume, fiindcă depind de câte camere aveți de umplut, de cât luați gata făcut și de cât construiți de la zero."
+    },
+    {
+     "t": "p",
+     "x": "Ce mișcă suma aici: numărul de camere, bucătăria la comandă sau din magazin, electrocasnicele luate deodată sau eșalonat, și cât din finisaj este deja făcut la predare. Cereți lista de dotări incluse în scris, apoi faceți bugetul doar pe ce lipsește din ea. La Ilioara, încălzirea în pardoseală este inclusă în tot apartamentul, tâmplăria este tripan Salamander cu 7 camere, iar fiecare apartament are centrală proprie Ariston de 24 kW."
+    },
+    {
+     "t": "p",
+     "x": "Urmează cheltuielile lunare, care se împart în două. Utilitățile dumneavoastră, unde centrala proprie înseamnă că plătiți exact ce consumați tu, și partea de bloc, unde plătiți împreună cu vecinii. Acolo intră cota indiviză și fondul de reparații, două rânduri pe care mulți cumpărători le văd prima oară abia pe prima întreținere."
+    },
+    {
+     "t": "p",
+     "x": "Cota indiviză se calculează după suprafața dumneavoastră raportată la suprafața totală a blocului, deci un apartament mai mare duce o parte mai mare din cheltuielile comune. Merită să știți exact ce suprafață intră în calcul înainte să semnați, fiindcă diferența dintre suprafața utilă și cea construită se vede direct în factura de întreținere. La Ilioara sunt patru apartamente pe etaj, iar numărul de uși de pe palier vă spune din start cât de intens se folosesc spațiile comune pe care le întrețineți împreună."
+    },
+    {
+     "t": "p",
+     "x": "Fondul de reparații înseamnă bani puși deoparte de asociație pentru ce se strică la comun, de la lift până la instalațiile de pe casa scării. Suma se stabilește prin hotărârea asociației, deci nu există un procent universal pe care să vi-l spună cineva dinainte. Într-un bloc nou intervențiile mari vin mai târziu, însă fondul se constituie de la început, exact ca să existe atunci."
+    },
+    {
+     "t": "p",
+     "x": "Ultimul cost pe care mulți îl uită complet este mașina. Locul de parcare se cumpără separat, la Ilioara 20.000 EUR unul simplu și 25.000 EUR unul dublu tip Klauss, ambele fără TVA, la fel ca apartamentele. Cum funcționează sistemul dublu și cui i se potrivește am explicat la <a href=\"/parcare/\">pagina de parcare</a>."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Prețul afișat la apartamentele noi include TVA?",
+   "a": "De regulă nu, prețurile se afișează fără TVA, iar cota standard este de 21% de la 1 august 2025. La Ilioara Residence, care se finalizează în decembrie 2026, se aplică 21%, deci la fiecare preț din listă adăugați taxa ca să obții suma reală de pe contract."
+  },
+  {
+   "q": "Cât avans îmi trebuie pentru un apartament nou?",
+   "a": "La Ilioara avansul minim este de 30%, plus o rezervare de 2.000 EUR care ține apartamentul pe numele dumneavoastră. Întrebați din prima discuție la ce sumă se calculează procentul și dacă rezervarea se scade din avans, fiindcă acest lucru vă schimbă tot calendarul plăților."
+  },
+  {
+   "q": "Ce costuri am la notar când cumpăr un apartament?",
+   "a": "Onorariul notarial și taxa de intabulare se calculează după valoarea din contract și după ce anume înscrieți în cartea funciară, iar un credit adaugă înscrierea ipotecii. Cifra exactă o aflați cerând devizul în scris, pe valoarea dumneavoastră de contract, cu câteva zile înainte de semnare."
+  },
+  {
+   "q": "Ce plătesc lunar la un apartament nou, în afară de rată?",
+   "a": "Utilitățile pe care le consumați, plus partea de bloc: cota indiviză, calculată după suprafața dumneavoastră raportată la a blocului, și fondul de reparații stabilit de asociație. Cu centrală proprie plătiți gazul și curentul pe consumul dumneavoastră, separat de întreținerea comună."
+  }
+ ],
+ "ctaAfter": "Scrieți-ne pe WhatsApp apartamentul care vă interesează și primiți suma completă, cu TVA și cu tot ce urmează până la semnare.",
+ "readAlso": [
+  {
+   "href": "/blog/tva-apartamente-noi-2026/",
+   "label": "TVA la apartamentele noi în 2026: cine plătește 21% și cine prinde 9%"
+  },
+  {
+   "href": "/blog/credit-ipotecar-apartament-nou/",
+   "label": "Credit ipotecar pentru un apartament nou: ce cere banca, pas cu pas"
+  },
+  {
+   "href": "/blog/suprafata-utila-vs-construita/",
+   "label": "Suprafață utilă sau construită: ce cumpărați de fapt"
+  },
+  {
+   "href": "/blog/cumperi-direct-de-la-proprietar/",
+   "label": "Ce se schimbă când cumpărați direct de la dezvoltator"
+  }
+ ]
 }
