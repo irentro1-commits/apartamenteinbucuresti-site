@@ -125,3 +125,26 @@
   /* legaturile din subsol: 16 px inaltime, 29 la numar, cele mai mici tinte de pe pagina */
   .pf a{min-height:38px;display:inline-flex;align-items:center}
 }
+
+/* ============================================================================
+   7. GARDA DE SCROLL LATERAL PE TELEFON
+
+   Defectul mare de dreapta-stanga era campul-capcana al formularului, si a fost reparat la
+   cauza: `formular-v2.css`. A ramas insa un rest de 7 px pe articolele arabe, si pe ala NU
+   l-am gasit: `main` il produce, dar niciunul dintre urmasii lui nu il explica la ascundere,
+   deci vine din continutul propriu sau dintr-un pseudo-element pe care masuratoarea nu il
+   prinde. Scriu ce stiu, nu ce presupun.
+
+   `overflow-x: clip`, si nu `hidden`: `hidden` face din body un container de derulare si
+   rupe `position: sticky` al barei de sus, care e chiar mecanismul de meniu al sitului.
+   `clip` taie fara sa creeze container, deci bara ramane lipicioasa. Panourile in afara
+   ecranului sunt `position: fixed`, deci nu sunt taiate de aici.
+
+   E o GARDA, nu un diagnostic: opreste simptomul la sub 10 px, unde nu se taie continut.
+   Daca vreodata dispare continut pe o latura, aici se cauta intai. */
+@media (max-width:900px){
+  /* si pe radacina: derularea paginii e a lui `html`, deci o garda pusa doar pe `body`
+     opreste pictarea, nu si derularea. Masurat: cu `clip` doar pe body, scrollWidth
+     ramanea 397. */
+  html,body{overflow-x:clip}
+}
