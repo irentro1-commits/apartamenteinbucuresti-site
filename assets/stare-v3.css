@@ -1,0 +1,139 @@
+/* Starea apartamentului: rezervat / vandut. Fisier NOU, versionat in nume, ca sa nu intre in
+   capcana de cache immutable de pe /assets/*. Doar variabilele temei, deci merge pe amandoua. */
+
+/* --- insigna --- */
+.stare{
+  display:inline-flex;align-items:center;gap:.45em;
+  margin-inline-start:.6em;vertical-align:.1em;
+  font-family:'Inter',system-ui,sans-serif;font-weight:600;
+  font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;
+  padding:.4em .78em .34em;border-radius:999px;
+}
+/* NU SE PUNE `backdrop-filter` AICI, si e o lectie platita.
+   Andy, 21 aug 2026: "vezi ca merge scrollul ciudat acum, lagheaza, nu e smooth deloc".
+   Erau 33 de insigne pe /apartamente/, fiecare cu `backdrop-filter:saturate(1.2)`. Fiecare
+   isi cere propriul strat de compunere si isi re-esantioneaza fundalul cat timp e vizibila,
+   iar deasupra lor sta o bara LIPICIOASA si semi-transparenta, care se repicteaza oricum la
+   fiecare cadru. Treizeci si trei de straturi care se recalculeaza in timp ce derulezi, pe
+   telefon, pentru o saturatie de 1,2 pe o pastila de un centimetru: nu se vedea nici cu
+   ochiul lipit de ecran. Efectele care costa la SCROLL nu se pun pe elemente care se repeta. */
+.stare::before{
+  content:'';width:.4em;height:.4em;border-radius:50%;background:currentColor;
+  box-shadow:0 0 0 .2em rgba(var(--gold-rgb),.16);
+}
+
+/* rezervat: aurul casei, dar stins. Nu are voie sa concureze butonul de actiune. */
+.stare-rezervat{
+  color:var(--gold-lg);
+  border:1px solid rgba(var(--gold-rgb),.5);
+  background:linear-gradient(135deg,rgba(var(--gold-rgb),.16),rgba(var(--gold-rgb),.05));
+}
+/* vandut: fara aur deloc. Culoarea se retrage din pagina. */
+.stare-vandut{
+  color:var(--cream-soft);
+  border:1px solid rgba(var(--soft-rgb),.42);
+  background:rgba(var(--soft-rgb),.09);
+}
+.stare-vandut::before{box-shadow:0 0 0 .2em rgba(var(--soft-rgb),.14)}
+
+/* --- randul si cardul --- */
+.prow.e-rezervat,.card.e-rezervat{position:relative;overflow:hidden}
+.prow.e-rezervat .p,.card.e-rezervat .cp{opacity:.6}
+.prow.e-rezervat .d>small,.card.e-rezervat .cm{opacity:.75}
+
+/* hasura diagonala, foarte slaba: se simte ca e altfel, nu se vede ca e decorata */
+.prow.e-rezervat::after,.card.e-rezervat::after{
+  content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:repeating-linear-gradient(135deg,
+    transparent 0 10px,rgba(var(--gold-rgb),.05) 10px 11px);
+}
+
+.prow.e-vandut,.card.e-vandut{opacity:.5}
+.prow.e-vandut .p,.card.e-vandut .cp{text-decoration:line-through;
+  text-decoration-thickness:1px;text-decoration-color:rgba(var(--soft-rgb),.6)}
+.card.e-vandut:hover{transform:none;border-color:rgba(var(--gold-rgb),.3)}
+
+/* pe pagina apartamentului, insigna sta sub titlu, pe rand propriu */
+.stare-pag{margin:0 0 1.2rem}
+.stare-pag .stare{margin-inline-start:0;font-size:.7rem}
+
+@media (max-width:520px){
+  .stare{font-size:.58rem;letter-spacing:.12em;padding:.36em .66em .3em}
+  .prow.e-rezervat .d .stare{margin-inline-start:.4em}
+}
+
+/* ============ LISTA INTREAGA A BLOCULUI ============
+   Se arata si cele vandute, fara pagina si fara pret. Un bloc din care s-au dat 18 din 31
+   spune singur ca merge bine; lista scurta de 13 nu spune nimic. */
+
+/* --- disponibil: singura stare care primeste verde. Se vede din prima ce mai e liber. --- */
+:root{ --liber:#1F6B4F; --liber-rgb:31,107,79; }
+:root[data-theme="dark"],
+html[data-theme="dark"]{ --liber:#5FC79E; --liber-rgb:95,199,158; }
+.stare-disponibil{
+  /* Pastila verde trebuie sa se vada la fel de tare ca cea aurie. Prima versiune avea
+     fundalul la 17% pe hartie crem si disparea: eticheta arata a text cu un punct, nu a
+     stare. Masurat pe randare, nu presupus. */
+  color:var(--liber);
+  border:1.5px solid rgba(var(--liber-rgb),.72);
+  background:linear-gradient(135deg,rgba(var(--liber-rgb),.3),rgba(var(--liber-rgb),.14));
+}
+.stare-disponibil::before{box-shadow:0 0 0 .2em rgba(var(--liber-rgb),.18)}
+.card[data-stare="disponibil"]{border-color:rgba(var(--liber-rgb),.42)}
+.card[data-stare="disponibil"]:hover{border-color:rgba(var(--liber-rgb),.85)}
+
+/* --- vandut: cutie moarta, nu link. Nu se da click pe ce nu se poate cumpara. --- */
+.card-mut{
+  cursor:default;opacity:.62;
+  background-image:repeating-linear-gradient(-45deg,
+    transparent 0 7px,rgba(var(--soft-rgb),.055) 7px 14px);
+}
+.card-mut:hover{transform:none;border-color:rgba(var(--gold-rgb),.3)}
+.card-mut h3{font-size:1.02rem}
+
+/* --- bara de filtre --- */
+.filtre{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.7rem 1.1rem;
+  margin:2.6rem 0 1.6rem;padding:.85rem 1rem;
+  border:1px solid rgba(var(--gold-rgb),.3);border-radius:16px;
+  background:rgba(var(--bg2-rgb),.5);
+}
+.f-tabs{display:inline-flex;gap:.25rem;padding:.22rem;border-radius:999px;
+  background:rgba(var(--bg-rgb),.5);border:1px solid rgba(var(--gold-rgb),.22)}
+.ft{
+  font:inherit;font-size:.88rem;font-weight:600;color:var(--cream-soft);
+  border:0;background:transparent;cursor:pointer;
+  padding:.42em 1em;border-radius:999px;transition:background .18s ease,color .18s ease;
+}
+.ft:hover{color:var(--cream)}
+.ft.on{background:var(--cta);color:var(--cta-ink)}
+.ft:focus-visible{outline:2px solid var(--cta);outline-offset:2px}
+
+.f-sw{display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;
+  font-size:.9rem;color:var(--cream-soft);user-select:none}
+.f-sw input{position:absolute;opacity:0;width:1px;height:1px}
+.f-sw-b{width:2.35em;height:1.3em;border-radius:999px;flex:none;position:relative;
+  background:rgba(var(--soft-rgb),.28);border:1px solid rgba(var(--gold-rgb),.3);
+  transition:background .2s ease}
+.f-sw-b::after{content:'';position:absolute;top:.16em;inset-inline-start:.18em;
+  width:.92em;height:.92em;border-radius:50%;background:var(--cream);
+  transition:transform .2s var(--eo)}
+.f-sw input:checked + .f-sw-b{background:var(--cta);border-color:var(--cta)}
+.f-sw input:checked + .f-sw-b::after{transform:translateX(1.02em);background:var(--cta-ink)}
+.f-sw input:focus-visible + .f-sw-b{outline:2px solid var(--cta);outline-offset:2px}
+.f-sw:hover{color:var(--cream)}
+
+.f-num{margin:0;margin-inline-start:auto;font-size:.84rem;color:var(--cream-soft)}
+.f-num b{color:var(--liber);font-size:1rem}
+
+.f-gol{margin:2rem 0;padding:1.1rem 1.2rem;border-radius:14px;
+  border:1px dashed rgba(var(--gold-rgb),.45);color:var(--cream-soft)}
+
+.etaj-ap[hidden],.card[hidden]{display:none !important}
+
+@media (max-width:640px){
+  .filtre{gap:.7rem;padding:.8rem}
+  .f-num{margin-inline-start:0;width:100%;order:3}
+  .f-tabs{width:100%;justify-content:space-between}
+  .ft{flex:1;text-align:center;padding:.5em .4em}
+}

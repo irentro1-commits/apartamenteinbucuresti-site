@@ -1,0 +1,39 @@
+{
+  "_": "FEREASTRA DE MODIFICARI LA TERASA. Andy, 21 aug 2026, verbatim: 'SI PUNE PESTE TOT CA SE POT FACE MODIFICARI LA TERASA DOAR IN ACEASTA PERIOADA - MAI SUNT 4 LUNI PANA LA PREDARE - IN 2 LUNI NU SE VOR MAI PUTEA FACE MODIFICARILE ASTEA - GEN CA TERASA SA FIE SUPRAFATA UTILA'.",
+  "_datele": "Predarea, decembrie 2026, e din datele proiectului. Termenul de modificare e calculat din 'in 2 luni', spus pe 21 august 2026, deci sfarsitul lui octombrie. SE SCHIMBA INTR-UN SINGUR LOC, aici, si intra in toate cele 60 de pagini si in fise.",
+  "_ce_nu_scrie_si_de_ce": "Nu apare nicio cifra de metri patrati pentru cat se poate inchide din terasa, si nici un exemplu numeric. Andy a spus 'poate iti dai tu seama ca nu vreau sa zic prostii', iar din grila nu se poate deduce conversia: apartamentele cu terasa mica (coltul 2, 7,25 mp) au aproape aceeasi suprafata utila ca cele cu terasa mare (coltul 3, 21,10 mp), deci diferenta vine din pozitia in bloc, nu dintr-o inchidere. Cat se inchide si cat rezulta se stabilesc pe planul apartamentului, la vizionare. Daca vrea un exemplu cu cifre, ni-l da el pe un apartament anume si intra aici.",
+  "termen": {
+    "ro": "sfârșitul lui octombrie 2026",
+    "en": "the end of October 2026",
+    "he": "סוף אוקטובר 2026",
+    "ar": "نهاية أكتوبر 2026",
+    "uk": "кінця жовтня 2026"
+  },
+  "texte": {
+    "ro": {
+      "titlu": "Terasa poate deveni suprafață utilă, dar nu mult timp",
+      "corp": "Blocul se predă în decembrie 2026. Compartimentarea se mai poate schimba doar în perioada asta, până la <b>%(termen)s</b>: după aceea structura nu mai permite intervenții, iar terasa rămâne terasă. Cât din ea se închide și cum se modifică suprafața utilă se stabilesc pe planul apartamentului dumneavoastră, la vizionare.",
+      "cta": "Întrebați pe WhatsApp"
+    },
+    "en": {
+      "titlu": "The terrace can become usable area, but not for long",
+      "corp": "The building is handed over in December 2026. The layout can still be changed, but only until <b>%(termen)s</b>: after that the structure no longer allows it, and the terrace stays a terrace. How much of it gets enclosed, and what that does to the usable area, we work out on your apartment's floor plan, at the viewing.",
+      "cta": "Ask on WhatsApp how much can be enclosed"
+    },
+    "he": {
+      "titlu": "המרפסת יכולה להפוך לשטח שימושי, אבל לא להרבה זמן",
+      "corp": "הבניין נמסר בדצמבר 2026. את החלוקה הפנימית עוד אפשר לשנות רק בתקופה הזאת, עד <b>%(termen)s</b>, ואחרי זה השלד כבר לא מאפשר שינויים והמרפסת נשארת מרפסת. כמה ממנה נסגר ואיך זה משנה את השטח השימושי נקבעים מול תוכנית הדירה שלכם, בסיור.",
+      "cta": "שאלו בוואטסאפ כמה מהמרפסת אפשר לסגור"
+    },
+    "ar": {
+      "titlu": "الشرفة قد تصبح مساحة مفيدة، لكن ليس لوقت طويل",
+      "corp": "يُسلَّم المبنى في ديسمبر 2026. التقسيم الداخلي يمكن تغييره في هذه الفترة فقط، حتى <b>%(termen)s</b>. بعدها لا يسمح الهيكل بأي تعديل، وتبقى الشرفة شرفة. كم يمكن إغلاقه منها وكيف تتغير المساحة المفيدة، هذا نحدّده على مخطط شقتك، عند المعاينة.",
+      "cta": "اسألنا على واتساب كم يمكن إغلاقه من الشرفة"
+    },
+    "uk": {
+      "titlu": "Тераса ще може стати корисною площею, але вже недовго",
+      "corp": "Будинок здають у грудні 2026 року. Планування можна змінити лише в цей період, до <b>%(termen)s</b>: після цього в конструкцію вже не втручаються, і тераса лишається терасою. Скільки саме з неї можна закрити і як зміниться корисна площа, визначають на плані саме вашої квартири, під час перегляду.",
+      "cta": "Запитайте у WhatsApp, скільки тераси можна закрити"
+    }
+  }
+}

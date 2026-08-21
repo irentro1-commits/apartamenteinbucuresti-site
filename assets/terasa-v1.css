@@ -1,0 +1,91 @@
+/* BANDA CU TERMEN: singurul lucru de pe sit care expira.
+   Andy, 21 aug 2026: "PUNE PESTE TOT CA SE POT FACE MODIFICARI LA TERASA DOAR IN ACEASTA
+   PERIOADA". Restul argumentelor raman valabile si peste o luna; asta nu.
+
+   De ce nu e rosie si de ce nu tipa: pe o pagina crem, linistita, un dreptunghi rosu cu
+   semnul exclamarii citeste "reclama" si ochiul il sare. Aici urgenta o duce CIFRA din text
+   si o dunga de aur pe muchie, in aceeasi limba vizuala cu insignele de stare. Se vede ca e
+   altceva decat paragraful de langa, fara sa para lipita de altcineva. */
+.tz-banda{
+  position:relative;
+  display:grid;
+  /* `minmax(0,1fr)` pe coloana de text, nu `1fr`: cu `1fr` butonul isi impune latimea
+     lui de continut si textul se strange la patruzeci de caractere pe rand, adica exact
+     ce nu vrei intr-un anunt care trebuie citit dintr-o privire. Masurat: 490px text
+     langa 400px buton, pe o banda de 816. */
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:1.15rem 1.5rem;
+  margin:2.2rem 0 2.6rem;
+  padding:1.35rem 1.6rem 1.35rem 1.4rem;
+  border:1px solid rgba(var(--gold-rgb),.4);
+  border-radius:12px;
+  background:
+    linear-gradient(to right, rgba(var(--gold-rgb),.09), rgba(var(--gold-rgb),0) 42%),
+    var(--bg2, transparent);
+  overflow:hidden;
+}
+/* muchia de aur: semnul ca randul asta are ceas pe el */
+.tz-banda::before{
+  content:"";position:absolute;inset-block:0;inset-inline-start:0;width:3px;
+  background:linear-gradient(to bottom, var(--gold), rgba(var(--gold-rgb),.35));
+}
+
+/* ceasul, desenat din doua cercuri si doua ace, ca sa nu incarcam pagina cu o imagine */
+.tz-c{
+  width:2.5rem;height:2.5rem;flex:none;border-radius:50%;
+  border:1.5px solid rgba(var(--gold-rgb),.65);
+  position:relative;
+}
+.tz-c::before,.tz-c::after{
+  content:"";position:absolute;left:50%;top:50%;background:var(--gold);
+  transform-origin:0 0;border-radius:1px;
+}
+.tz-c::before{width:1.5px;height:.72rem;transform:translate(-50%,-100%)}
+.tz-c::after{width:.5rem;height:1.5px;transform:translateY(-50%) rotate(38deg)}
+/* acul mic sta la ora doua, nu la trei: cu amandoua acele pe axe, cercul citea litera L */
+
+.tz-t h3{
+  font-family:var(--serif,Fraunces,serif);
+  font-size:1.12rem;font-weight:600;line-height:1.25;
+  margin:0 0 .35rem;color:var(--eo,inherit);
+}
+.tz-t p{
+  margin:0;font-size:.93rem;line-height:1.62;
+  color:rgba(var(--soft-rgb),.92);max-width:62ch;
+}
+.tz-t p b{color:var(--eo,inherit);font-weight:600;white-space:nowrap}
+
+.tz-b{
+  justify-self:end;white-space:nowrap;max-width:100%;
+  font-size:.82rem;letter-spacing:.02em;font-weight:600;
+  padding:.72rem 1.15rem;border-radius:999px;
+  border:1px solid rgba(var(--gold-rgb),.55);
+  color:var(--eo,inherit);text-decoration:none;
+  transition:background .18s ease,border-color .18s ease;
+}
+.tz-b:hover{background:rgba(var(--gold-rgb),.14);border-color:var(--gold)}
+
+/* RTL: dunga si degradeul trec pe partea cealalta singure, prin inset-inline,
+   dar degradeul de fundal e scris pe directie fizica, deci se intoarce explicit */
+.tz-banda[dir="rtl"]{
+  padding:1.35rem 1.4rem 1.35rem 1.6rem;
+  background:
+    linear-gradient(to left, rgba(var(--gold-rgb),.09), rgba(var(--gold-rgb),0) 42%),
+    var(--bg2, transparent);
+}
+
+@media (max-width:760px){
+  /* Pe telefon butonul NU ramane pe acelasi rand: la 360px ar strange textul la doua
+     cuvinte pe linie. Trece dedesubt, pe toata latimea, unde e si mai usor de apasat. */
+  .tz-banda{
+    grid-template-columns:auto 1fr;
+    grid-template-areas:"c t" "b b";
+    gap:.9rem 1rem;padding:1.15rem 1.15rem 1.2rem;
+  }
+  .tz-c{grid-area:c;align-self:start;margin-top:.15rem}
+  .tz-t{grid-area:t}
+  .tz-b{grid-area:b;justify-self:stretch;text-align:center;margin-top:.35rem}
+  .tz-t h3{font-size:1.04rem}
+  .tz-t p{font-size:.89rem}
+}

@@ -37,9 +37,9 @@ import re
 ENGINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CALE_DATE = os.path.join(ENGINE, "date", "apartamente.json")
 
-# Doua foi, si amandoua trebuie sa fie acolo: insignele de stare traiesc in stare-v2.css,
+# Doua foi, si amandoua trebuie sa fie acolo: insignele de stare traiesc in stare-v3.css,
 # randurile in carduri-v4.css. Injectarea uneia singure lasa etichetele nestilizate.
-CSS = ('<link rel="stylesheet" href="/assets/stare-v2.css">' + "\n" +
+CSS = ('<link rel="stylesheet" href="/assets/stare-v3.css">' + "\n" +
        '<link rel="stylesheet" href="/assets/carduri-v4.css">')
 ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
 
@@ -428,7 +428,7 @@ def main():
         print("pas_lista: nu am gasit ancora, nu ating nimic")
         return 1
     # Fiecare foaie se verifica SEPARAT. Verificarea pe sirul concatenat trecea si atunci cand
-    # una din ele era deja in pagina, si o adauga a doua oara: pagina ajunsese cu stare-v2.css
+    # una din ele era deja in pagina, si o adauga a doua oara: pagina ajunsese cu stare-v3.css
     # legat de doua ori.
     for foaie in CSS.split("\n"):
         if foaie and foaie not in nou:
