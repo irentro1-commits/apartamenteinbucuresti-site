@@ -38,10 +38,10 @@ ENGINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CALE_DATE = os.path.join(ENGINE, "date", "apartamente.json")
 
 # Doua foi, si amandoua trebuie sa fie acolo: insignele de stare traiesc in stare-v3.css,
-# randurile in carduri-v4.css. Injectarea uneia singure lasa etichetele nestilizate.
+# randurile in carduri-v5.css. Injectarea uneia singure lasa etichetele nestilizate.
 CSS = ('<link rel="stylesheet" href="/assets/stare-v3.css">' + "\n" +
-       '<link rel="stylesheet" href="/assets/carduri-v4.css">')
-ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
+       '<link rel="stylesheet" href="/assets/carduri-v5.css">')
+ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v34.css">'
 
 NB = " "
 

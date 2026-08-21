@@ -3,7 +3,7 @@
 """CONTRASTUL DIN STILURILE SCRISE IN PAGINA.
 
 Cele mai multe reparatii de contrast s-au facut acolo unde trebuiau, in tokenurile temei
-deschise din `pagini-v33.css` si in `carduri-v4.css`. A ramas insa o regula care NU sta
+deschise din `pagini-v34.css` si in `carduri-v5.css`. A ramas insa o regula care NU sta
 intr-o foaie, ci intr-un `<style>` scris in capul fiecarei pagini, deci nu se poate atinge
 dintr-un fisier CSS fara sa te bazezi pe ordinea de incarcare.
 
@@ -14,7 +14,7 @@ comutator e chiar cel care nu citeste romana, si lui ii era cel mai stins elemen
 
 DE CE UN PAS SI NU O REGULA IN FOAIE. Un `<style>` scris in pagina bate orice foaie legata
 inaintea lui, la specificitate egala. Am platit deja o data lectia asta, cu `stare-v3.css`
-incarcata dupa `landing-v1.css`: regula se scrie si nu se aplica. Deci se repara la sursa ei.
+incarcata dupa `landing-v2.css`: regula se scrie si nu se aplica. Deci se repara la sursa ei.
 
     python3 pas_contrast.py --repo <cale>
     python3 pas_contrast.py --repo <cale> --apply

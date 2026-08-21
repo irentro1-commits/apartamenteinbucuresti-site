@@ -30,7 +30,7 @@ import os
 import re
 
 CSS = '<link rel="stylesheet" href="/assets/tipo-v1.css">'
-ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
+ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v34.css">'
 
 LITERA = "A-Za-zĂÂÎȘȚăâîșț0-9"
 # cuvant cu cratima: litera sau cifra de o parte si de alta. Cratima cu spatii in jur e linie

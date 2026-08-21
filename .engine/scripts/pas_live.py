@@ -31,7 +31,7 @@ import re
 
 MARCA = "lv-b"
 CSS = '<link rel="stylesheet" href="/assets/live-v1.css">'
-ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
+ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v34.css">'
 PRAG_ORE = 48
 
 LUNI = {

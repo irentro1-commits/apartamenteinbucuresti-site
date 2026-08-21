@@ -37,7 +37,7 @@ APT = D["apartamente"]
 ETICHETE = D["etichete"]
 
 CSS = '<link rel="stylesheet" href="/assets/stare-v3.css">'
-ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
+ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v34.css">'
 
 # numarul apartamentului se citeste din adresa, nu din text: adresa e stabila, textul nu
 NR_DIN_CALE = re.compile(r"-ap-(\d+)/")

@@ -3,7 +3,7 @@
 """FOILE DE STIL CARE NU AU ALT STAPAN, legate de fiecare pagina.
 
 Nascut pe 21 aug 2026 dintr-o poarta cazuta, nu dintr-o idee. Reparasem telefonul cu o foaie
-noua, `landing-v1.css`, si o legasem in pagini cu o bucla scrisa pe loc: 192 de fisiere
+noua, `landing-v2.css`, si o legasem in pagini cu o bucla scrisa pe loc: 192 de fisiere
 atinse direct, fara pas. `verifica_fidelitate.py` a picat imediat cu 65 de fisiere, si avea
 dreptate: la prima regenerare, legatura ar fi disparut din toate, iar telefonul s-ar fi
 stricat la loc fara ca nimeni sa fi schimbat ceva.
@@ -13,8 +13,8 @@ direct in HTML, invizibile din repo, care ar fi murit in tacere la prima rulare 
 Diferenta e ca de data asta poarta a prins-o in aceeasi ora.
 
 CELELALTE FOI NU SUNT AICI, si asta e regula: fiecare pas isi leaga singur foaia lui.
-`pas_terasa` pune `terasa-v1.css`, `pas_live` pune `live-v1.css`, `pas_formular` pune
-`formular-v2.css`, `pas_lista` pune `stare-v3.css` si `carduri-v4.css`. Aici stau doar
+`pas_terasa` pune `terasa-v2.css`, `pas_live` pune `live-v1.css`, `pas_formular` pune
+`formular-v2.css`, `pas_lista` pune `stare-v3.css` si `carduri-v5.css`. Aici stau doar
 foile de sit, care nu apartin niciunei lucrari anume.
 
     python3 pas_foi.py --repo <cale>
@@ -26,8 +26,8 @@ import io
 import os
 
 # foaia de reparatii pentru telefon: se aplica pe tot situl, nu doar pe pagina de start
-FOI = ["/assets/landing-v1.css"]
-ANCORA = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
+FOI = ["/assets/landing-v2.css"]
+ANCORA = '<link rel="stylesheet" href="/assets/pagini-v34.css">'
 
 
 def main():

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Repara markupul badge-ului montat de gbp_monteaza.py, ca sa foloseasca EXCLUSIV clasele
-care exista deja in CSS. Fara clase noi = fara atingerea `assets/pagini-v33.css` = fara
+care exista deja in CSS. Fara clase noi = fara atingerea `assets/pagini-v34.css` = fara
 bump de versiune (regula: /assets/* e immutable 1 an).
 
 Doua corectii:
