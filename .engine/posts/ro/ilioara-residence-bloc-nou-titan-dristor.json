@@ -58,7 +58,7 @@
       "blocks": [
         {
           "t": "p",
-          "x": "Aici se vede diferența dintre un bloc făcut să arate bine în poză și unul făcut să fie locuit. Încălzire în pardoseală peste tot, inclusiv pe balcon. Tâmplărie Salamander tripan, cu 7 camere, genul care ține frigul afară și liniștea înăuntru. Centrală proprie Ariston de 24 kW în fiecare apartament, deci controlați singur căldura și factura."
+          "x": "Aici se vede diferența dintre un bloc făcut să arate bine în poză și unul făcut să fie locuit. Încălzire în pardoseală în tot apartamentul. Tâmplărie Salamander tripan, cu 7 camere, genul care ține frigul afară și liniștea înăuntru. Centrală proprie Ariston de 24 kW în fiecare apartament, deci controlați singur căldura și factura."
         },
         {
           "t": "p",
@@ -125,7 +125,7 @@
     },
     {
       "q": "Ce este inclus în preț?",
-      "a": "Încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie Salamander tripan cu 7 camere, centrală proprie Ariston de 24 kW și un palier scurt cu doar 4 apartamente pe etaj."
+      "a": "Încălzire în pardoseală în tot apartamentul, tâmplărie Salamander tripan cu 7 camere, centrală proprie Ariston de 24 kW și un palier scurt cu doar 4 apartamente pe etaj."
     },
     {
       "q": "Când se finalizează blocul?",

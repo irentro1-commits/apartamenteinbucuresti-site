@@ -1,0 +1,492 @@
+{
+ "ro": [
+  {
+   "vechi": "peste tot, și pe balcon, inclusă în preț.",
+   "nou": "în tot apartamentul, inclusă în preț."
+  },
+  {
+   "vechi": "În pardoseală peste tot, și pe balcon ·",
+   "nou": "În pardoseală, în tot apartamentul ·"
+  },
+  {
+   "vechi": "peste tot, inclusiv pe balcon.<br>Centrală proprie de <b>24 kW</b>",
+   "nou": "în tot apartamentul.<br>Centrală proprie de <b>24 kW</b>"
+  },
+  {
+   "vechi": "încălzire în pardoseală peste tot și pe balcon, tâmplărie Tripan Salamander",
+   "nou": "încălzire în pardoseală în tot apartamentul, tâmplărie Tripan Salamander"
+  },
+  {
+   "vechi": "Dotările apartamentelor noi din blocul nou construit pe Aleea Eprubetei 7, Titan-Dristor: încălzire în pardoseală inclusă peste tot și pe balcon, tâmplărie",
+   "nou": "Dotările apartamentelor noi din blocul nou construit pe Aleea Eprubetei 7, Titan-Dristor: încălzire în pardoseală inclusă în tot apartamentul, tâmplărie"
+  },
+  {
+   "vechi": "Inclusă în preț, în toate camerele și pe balcon.",
+   "nou": "Inclusă în preț, în toate camerele."
+  },
+  {
+   "vechi": "Încălzire în pardoseală inclusă, peste tot și pe balcon. Apartament 2 camere, 60,75 mp în total, 123.000 EUR + TVA 21%, fără comision, bloc nou Titan-Dristor, la 5",
+   "nou": "Încălzire în pardoseală inclusă, în tot apartamentul. Apartament 2 camere, 60,75 mp în total, 123.000 EUR + TVA 21%, fără comision, bloc nou Titan-Dristor, la 5"
+  },
+  {
+   "vechi": "Încălzire în pardoseală inclusă, peste tot și pe balcon. Apartament 3 camere, 71 mp în total, 151.000 EUR + TVA 21%, fără comision, bloc nou Titan-Dristor, la 5",
+   "nou": "Încălzire în pardoseală inclusă, în tot apartamentul. Apartament 3 camere, 71 mp în total, 151.000 EUR + TVA 21%, fără comision, bloc nou Titan-Dristor, la 5"
+  },
+  {
+   "vechi": "Încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie tripan Salamander cu 7 camere și centrală proprie Ariston de 24 kW, toate incluse. Parcarea se ia separat: dublă tip Klauss 25.000 EUR + TVA, simplă 20.000 EUR + TVA.",
+   "nou": "Încălzire în pardoseală în tot apartamentul, tâmplărie tripan Salamander cu 7 camere și centrală proprie Ariston de 24 kW, toate incluse. Parcarea se ia separat: dublă tip Klauss 25.000 EUR + TVA, simplă 20.000 EUR + TVA."
+  },
+  {
+   "vechi": "încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie tripan Salamander cu 7 camere, centrală proprie Ariston, toate incluse în preț.",
+   "nou": "încălzire în pardoseală în tot apartamentul, tâmplărie tripan Salamander cu 7 camere, centrală proprie Ariston, toate incluse în preț."
+  },
+  {
+   "vechi": "intră încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie tripan Salamander cu 7 camere și centrală proprie Ariston de 24 kW.",
+   "nou": "intră încălzire în pardoseală în tot apartamentul, tâmplărie tripan Salamander cu 7 camere și centrală proprie Ariston de 24 kW."
+  },
+  {
+   "vechi": "în pardoseală peste tot, inclusiv pe balcon. Tâmplărie",
+   "nou": "în pardoseală în tot apartamentul. Tâmplărie"
+  },
+  {
+   "vechi": "Încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie tripan Salamander cu 7 camere și centrală proprie Ariston de 24 kW. Palier scurt, doar 4 apartamente pe etaj.",
+   "nou": "Încălzire în pardoseală în tot apartamentul, tâmplărie tripan Salamander cu 7 camere și centrală proprie Ariston de 24 kW. Palier scurt, doar 4 apartamente pe etaj."
+  },
+  {
+   "vechi": "încălzirea în pardoseală este inclusă peste tot, inclusiv pe balcon, tâmplăria este tripan Salamander cu 7 camere",
+   "nou": "încălzirea în pardoseală este inclusă în tot apartamentul, tâmplăria este tripan Salamander cu 7 camere"
+  },
+  {
+   "vechi": "încălzirea în pardoseală e trecută în preț, inclusiv pe balcon, tocmai ca să nu vă apară mai târziu pe vreo listă de",
+   "nou": "încălzirea în pardoseală e trecută în preț pentru tot apartamentul, tocmai ca să nu vă apară mai târziu pe vreo listă de"
+  },
+  {
+   "vechi": "inclusă în preț (peste tot, plus pe balcon)",
+   "nou": "inclusă în preț (în tot apartamentul)"
+  },
+  {
+   "vechi": "La Ilioara Residence e inclusă. Peste tot în apartament. Și pe balcon, ceea ce aproape nimeni nu face.",
+   "nou": "La Ilioara Residence e inclusă. Peste tot în apartament."
+  },
+  {
+   "vechi": "Peste tot în apartament. Și pe balcon, ceea ce aproape nimeni nu face.",
+   "nou": "Peste tot în apartament."
+  },
+  {
+   "vechi": "Încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie Salamander tripan cu 7 camere, centrală proprie Ariston de 24 kW și un palier scurt cu doar 4 apartamente pe etaj.",
+   "nou": "Încălzire în pardoseală în tot apartamentul, tâmplărie Salamander tripan cu 7 camere, centrală proprie Ariston de 24 kW și un palier scurt cu doar 4 apartamente pe etaj."
+  },
+  {
+   "vechi": "încălzirea în pardoseală merge peste tot, inclusiv pe balcon, deci balconul se folosește și în februarie, nu doar în iulie.",
+   "nou": "încălzirea în pardoseală merge peste tot în apartament, iar terasa e trecută separat în plan, cu suprafața ei."
+  },
+  {
+   "vechi": "bloc nou serios, apartamentul se predă cu finisajele incluse, gata de mutat, nu la roșu. La Ilioara Residence intră încălzire în pardoseală peste tot, inclusiv pe balcon, tâmplărie tripan Salamander cu 7 camere și centrală proprie de 24 kW. Sunt lucruri pe care, dacă nu vin incluse,",
+   "nou": "bloc nou serios, apartamentul se predă cu finisajele incluse, gata de mutat, nu la roșu. La Ilioara Residence intră încălzire în pardoseală în tot apartamentul, tâmplărie tripan Salamander cu 7 camere și centrală proprie de 24 kW. Sunt lucruri pe care, dacă nu vin incluse,"
+  },
+  {
+   "vechi": "centrală proprie de 24 kW și încălzire în pardoseală peste tot, inclusiv pe balcon.",
+   "nou": "centrală proprie de 24 kW și încălzire în pardoseală în tot apartamentul."
+  },
+  {
+   "vechi": "încălzirea în pardoseală merge inclusiv pe balcon, deci acel spațiu rămâne folosibil și iarna, nu doar trei luni pe an.",
+   "nou": "e trecut separat în plan, cu suprafața lui, lângă suprafața utilă, așa că vedeți din start cât spațiu aveți afară și cât în camere."
+  },
+  {
+   "vechi": "are centrală proprie, încălzire în pardoseală peste tot, inclusiv pe balcon, și tâmplărie tripan Salamander",
+   "nou": "are centrală proprie, încălzire în pardoseală în tot apartamentul și tâmplărie tripan Salamander"
+  },
+  {
+   "vechi": "are centrală proprie de 24 kW, încălzire în pardoseală peste tot, inclusiv pe balcon, și tâmplărie tripan Salamander",
+   "nou": "are centrală proprie de 24 kW, încălzire în pardoseală în tot apartamentul și tâmplărie tripan Salamander"
+  }
+ ],
+ "en": [
+  {
+   "vechi": "everywhere, including the balcony, included in the",
+   "nou": "throughout the apartment, included in the"
+  },
+  {
+   "vechi": "the underfloor heating runs onto the balcony too, so that space stays usable in winter, not just three months a",
+   "nou": "its area is written next to the usable area on every apartment sheet, so you know how many metres you have out there before you sign, not after you have lived there a"
+  },
+  {
+   "vechi": "Underfloor heating included, everywhere and on the balcony. 2-room apartment, 60.75 sqm, 123.000 EUR + TVA 21%, no commission, Titan-Dristor.",
+   "nou": "Underfloor heating included, in every room. 2-room apartment, 60.75 sqm, 123.000 EUR + TVA 21%, no commission, Titan-Dristor."
+  },
+  {
+   "vechi": "Underfloor heating included, everywhere and on the balcony. 3-room apartment, 71 sqm, 151.000 EUR + TVA 21%, no commission, Titan-Dristor.",
+   "nou": "Underfloor heating included, in every room. 3-room apartment, 71 sqm, 151.000 EUR + TVA 21%, no commission, Titan-Dristor."
+  },
+  {
+   "vechi": "Underfloor heating everywhere, including on the balcony, triple glazed Salamander joinery with 7 chambers and a 24 kW Ariston boiler of your own, all included.",
+   "nou": "Underfloor heating in every room, triple glazed Salamander joinery with 7 chambers and a 24 kW Ariston boiler of your own, all included."
+  },
+  {
+   "vechi": "Underfloor heating everywhere, including on the balcony, triple glazed Salamander joinery with 7 chambers and a 24 kW Ariston boiler of your own. A short landing",
+   "nou": "Underfloor heating in every room, triple glazed Salamander joinery with 7 chambers and a 24 kW Ariston boiler of your own. A short landing"
+  },
+  {
+   "vechi": "underfloor heating included in the price (everywhere, plus on the balcony)",
+   "nou": "underfloor heating included in the price (in every room of the apartment)"
+  },
+  {
+   "vechi": "Underfloor heating everywhere, including on the balcony, Salamander triple glazed joinery",
+   "nou": "Underfloor heating in every room, Salamander triple glazed joinery"
+  },
+  {
+   "vechi": "What you can do with the metres outside the rooms matters too. Here",
+   "nou": "What the apartment comes with at handover matters too. Here"
+  },
+  {
+   "vechi": "underfloor heating runs everywhere, including on the balcony, so the balcony is used in February as well, not only in July.",
+   "nou": "underfloor heating runs through every room, so the warmth comes up from the whole floor, not from a radiator under the window."
+  },
+  {
+   "vechi": "underfloor heating included, even on the balcony, Salamander triple-glazed windows",
+   "nou": "underfloor heating included in every room, Salamander triple-glazed windows"
+  },
+  {
+   "vechi": "that includes underfloor heating throughout, including the balcony, Salamander",
+   "nou": "that includes underfloor heating in every room, Salamander"
+  },
+  {
+   "vechi": "every apartment has its own 24 kW boiler and underfloor heating throughout, including on the balcony.",
+   "nou": "every apartment has its own 24 kW boiler and underfloor heating in every room."
+  },
+  {
+   "vechi": "has its own boiler, underfloor heating throughout, including on the balcony, and Salamander",
+   "nou": "has its own boiler, underfloor heating in every room, and Salamander"
+  },
+  {
+   "vechi": "has its own 24 kW boiler, underfloor heating throughout including the balcony, and Salamander",
+   "nou": "has its own 24 kW boiler, underfloor heating in every room, and Salamander"
+  },
+  {
+   "vechi": "underfloor heating everywhere, including on the balcony, triple glazed Salamander joinery with 7 chambers, an Ariston boiler of your own",
+   "nou": "underfloor heating in every room, triple glazed Salamander joinery with 7 chambers, an Ariston boiler of your own"
+  },
+  {
+   "vechi": "price includes underfloor heating everywhere, including on the balcony, triple glazed",
+   "nou": "price includes underfloor heating in every room, triple glazed"
+  },
+  {
+   "vechi": "heating everywhere, including on the balcony. Triple",
+   "nou": "heating in every room of the apartment. Triple"
+  },
+  {
+   "vechi": "underfloor heating is included everywhere, including on the balcony, the joinery",
+   "nou": "underfloor heating is included in every room, the joinery"
+  },
+  {
+   "vechi": "included in the price, balcony included, precisely",
+   "nou": "included in the price, in every room, precisely"
+  },
+  {
+   "vechi": "the balcony, which almost nobody",
+   "nou": "the price list, with no asterisk next to it, which almost nobody"
+  },
+  {
+   "vechi": "heating everywhere, including on the balcony. Salamander",
+   "nou": "heating in every room of the apartment. Salamander"
+  },
+  {
+   "vechi": "Included in the price, in every room and on the balcony.",
+   "nou": "Included in the price, in every room of the apartment."
+  },
+  {
+   "vechi": "Underfloor, everywhere, balcony included",
+   "nou": "Underfloor, throughout the apartment"
+  },
+  {
+   "vechi": "throughout, balcony included.",
+   "nou": "throughout the apartment."
+  },
+  {
+   "vechi": "underfloor heating everywhere and on the balcony, Salamander triple-glazed windows",
+   "nou": "underfloor heating in every room, Salamander triple-glazed windows"
+  }
+ ],
+ "he": [
+  {
+   "vechi": "בכל מקום, כולל במרפסת, כלול",
+   "nou": "בכל הדירה, כלול"
+  },
+  {
+   "vechi": "זה כולל חימום תת-רצפתי בכל הדירה, כולל במרפסת, חלונות",
+   "nou": "זה כולל חימום תת-רצפתי בכל הדירה, חלונות"
+  },
+  {
+   "vechi": "דירה טובה ניכרת בדברים הקטנים שנוגעים בהם כל יום. המרפסת, למשל. ב-Ilioara Residence החימום התת-רצפתי עובר גם למרפסת, כך שהמרחב הזה נשאר שמיש גם בחורף, לא רק שלושה חודשים בשנה.",
+   "nou": "דירה טובה ניכרת בדברים הקטנים שנוגעים בהם כל יום. המרפסת, למשל. ב-Ilioara Residence לכל דירה יש מרפסת משלה, מרחב נוסף מעבר לחדרים, שאתם מסדרים לפי איך שאתם חיים."
+  },
+  {
+   "vechi": "חימום תת-רצפתי כלול, בכל מקום ובמרפסת. דירת 2 חדרים",
+   "nou": "חימום תת-רצפתי כלול, בכל הדירה. דירת 2 חדרים"
+  },
+  {
+   "vechi": "חימום תת-רצפתי כלול, בכל מקום ובמרפסת. דירת 3 חדרים",
+   "nou": "חימום תת-רצפתי כלול, בכל הדירה. דירת 3 חדרים"
+  },
+  {
+   "vechi": "חימום תת-רצפתי בכל מקום, כולל במרפסת, מסגרות Salamander בזיגוג משולש עם 7 תאים ויחידת חימום עצמאית Ariston של 24 kW. מבואה קצרה",
+   "nou": "חימום תת-רצפתי בכל הדירה, מסגרות Salamander בזיגוג משולש עם 7 תאים ויחידת חימום עצמאית Ariston של 24 kW. מבואה קצרה"
+  },
+  {
+   "vechi": "חימום תת-רצפתי כלול במחיר (בכל מקום, ועוד במרפסת), רחוב סגור",
+   "nou": "חימום תת-רצפתי כלול במחיר (בכל הדירה), רחוב סגור"
+  },
+  {
+   "vechi": "חימום תת-רצפתי בכל מקום, כולל במרפסת, מסגרות Salamander בזיגוג משולש עם 7 תאים, יחידת חימום עצמאית Ariston של 24 kW ומבואה קצרה",
+   "nou": "חימום תת-רצפתי בכל הדירה, מסגרות Salamander בזיגוג משולש עם 7 תאים, יחידת חימום עצמאית Ariston של 24 kW ומבואה קצרה"
+  },
+  {
+   "vechi": "חשוב גם מה אפשר לעשות עם המטרים שמחוץ לחדרים. כאן החימום התת-רצפתי עובר בכל מקום, כולל במרפסת, ולכן משתמשים במרפסת גם בפברואר, לא רק ביולי. שאר האבזור נמצא",
+   "nou": "חשוב גם איפה יושבים המטרים שמחוץ לחדרים. המרפסת נכנסת לשטח הכולל, ולכן שווה לדעת מראש כמה מהמטרים שלך יושבים שם וכמה נשארים בתוך החדרים. שאר האבזור נמצא"
+  },
+  {
+   "vechi": "חימום תת-רצפתי כלול בכל מקום ובמרפסת, חלונות זיגוג משולש",
+   "nou": "חימום תת-רצפתי כלול בכל הדירה, חלונות זיגוג משולש"
+  },
+  {
+   "vechi": "וחימום תת-רצפתי בכל הדירה, כולל במרפסת. דוד פרטי",
+   "nou": "וחימום תת-רצפתי בכל הדירה. דוד פרטי"
+  },
+  {
+   "vechi": "חימום תת-רצפתי בכל הדירה, כולל במרפסת, וחלונות",
+   "nou": "חימום תת-רצפתי בכל הדירה, וחלונות"
+  },
+  {
+   "vechi": "חימום תת-רצפתי בכל הדירה כולל במרפסת, וחלונות",
+   "nou": "חימום תת-רצפתי בכל הדירה, וחלונות"
+  },
+  {
+   "vechi": "חימום תת-רצפתי בכל מקום, כולל במרפסת, מסגרות Salamander בזיגוג משולש עם 7 תאים ויחידת חימום עצמאית Ariston של 24 kW, הכול כלול. החניה",
+   "nou": "חימום תת-רצפתי בכל הדירה, מסגרות Salamander בזיגוג משולש עם 7 תאים ויחידת חימום עצמאית Ariston של 24 kW, הכול כלול. החניה"
+  },
+  {
+   "vechi": "כמו מספר הדלתות: חימום תת-רצפתי בכל מקום, כולל במרפסת, מסגרות",
+   "nou": "כמו מספר הדלתות: חימום תת-רצפתי בכל הדירה, מסגרות"
+  },
+  {
+   "vechi": "במחיר נכללים חימום תת-רצפתי בכל מקום, כולל במרפסת, מסגרות",
+   "nou": "במחיר נכללים חימום תת-רצפתי בכל הדירה, מסגרות"
+  },
+  {
+   "vechi": "לא אופציות עם כוכבית. חימום תת-רצפתי בכל מקום, כולל במרפסת. מסגרות",
+   "nou": "לא אופציות עם כוכבית. חימום תת-רצפתי בכל הדירה. מסגרות"
+  },
+  {
+   "vechi": "החימום התת-רצפתי כלול בכל מקום, כולל במרפסת, מסגרות החלונות",
+   "nou": "החימום התת-רצפתי כלול בכל הדירה, מסגרות החלונות"
+  },
+  {
+   "vechi": "חימום תת-רצפתי כלול במחיר, כולל במרפסת, בדיוק כדי",
+   "nou": "חימום תת-רצפתי כלול במחיר, בכל הדירה, בדיוק כדי"
+  },
+  {
+   "vechi": "הוא כלול. בכל מקום בדירה. וגם במרפסת, מה שכמעט אף אחד לא עושה.",
+   "nou": "הוא כלול. בכל הדירה, לא רק בסלון."
+  },
+  {
+   "vechi": "הוא כלול. בכל מקום בדירה. וגם במרפסת, מה שכמעט אף אחד לא עושה.",
+   "nou": "הוא כלול. בכל הדירה, לא רק בסלון."
+  },
+  {
+   "vechi": "כדי לגור בו. חימום תת-רצפתי בכל מקום, כולל במרפסת. מסגרות",
+   "nou": "כדי לגור בו. חימום תת-רצפתי בכל הדירה. מסגרות"
+  },
+  {
+   "vechi": "כלול במחיר, בכל החדרים ובמרפסת.",
+   "nou": "כלול במחיר, בכל החדרים."
+  },
+  {
+   "vechi": "בכל הדירה וגם במרפסת ·",
+   "nou": "בכל הדירה ·"
+  },
+  {
+   "vechi": "בכל הדירה וגם במרפסת.",
+   "nou": "בכל הדירה."
+  },
+  {
+   "vechi": "חימום תת-רצפתי בכל מקום ובמרפסת",
+   "nou": "חימום תת-רצפתי בכל הדירה"
+  }
+ ],
+ "ar": [
+  {
+   "vechi": "تدفئة أرضية في كل مكان، بما في ذلك الشرفة",
+   "nou": "تدفئة أرضية في كامل الشقة"
+  },
+  {
+   "vechi": "التدفئة الأرضية مشمولة في كل مكان، بما في ذلك الشرفة",
+   "nou": "التدفئة الأرضية مشمولة في كامل الشقة"
+  },
+  {
+   "vechi": "التدفئة الأرضية مشمولة في السعر، بما في ذلك الشرفة",
+   "nou": "التدفئة الأرضية مشمولة في السعر، في كامل الشقة"
+  },
+  {
+   "vechi": "هنا التدفئة الأرضية موجودة في كل مكان، بما في ذلك الشرفة، فتُستعمل الشرفة في فبراير أيضًا لا في يوليو فقط.",
+   "nou": "هنا التدفئة الأرضية موجودة في كامل الشقة، من الممر إلى الحمام، لا في الغرف وحدها."
+  },
+  {
+   "vechi": "في كل أنحاء الشقة. وعلى الشرفة أيضًا، وهو ما لا يفعله أحد",
+   "nou": "في كل أنحاء الشقة، بلا ترقية وبلا مبلغ يُدفع على حدة، وهو ما لا يفعله أحد"
+  },
+  {
+   "vechi": "تدفئة أرضية مشمولة في السعر (في كل مكان، ومعها الشرفة)",
+   "nou": "تدفئة أرضية مشمولة في السعر (في كامل الشقة)"
+  },
+  {
+   "vechi": "تدفئة أرضية في كامل الشقة بما فيها الشرفة",
+   "nou": "تدفئة أرضية في كامل الشقة"
+  },
+  {
+   "vechi": "وتدفئة أرضية في كامل الشقة، بما في ذلك الشرفة.",
+   "nou": "وتدفئة أرضية في كامل الشقة."
+  },
+  {
+   "vechi": "وتدفئة أرضية في كل الشقة بما في ذلك الشرفة،",
+   "nou": "وتدفئة أرضية في كل الشقة،"
+  },
+  {
+   "vechi": "وتدفئة أرضية في كامل الشقة بما في ذلك الشرفة،",
+   "nou": "وتدفئة أرضية في كامل الشقة،"
+  },
+  {
+   "vechi": "في Ilioara Residence، تمتد التدفئة الأرضية إلى الشرفة أيضًا، فيبقى ذلك المكان قابلًا للاستخدام في الشتاء أيضًا، لا لثلاثة أشهر فقط في",
+   "nou": "في Ilioara Residence، لكل شقة شرفتها الخاصة، وداخل الشقة تدفئة أرضية مشمولة في السعر، فيبقى البيت دافئًا بالتساوي في كل شهر بارد من"
+  },
+  {
+   "vechi": "في كل مكان، حتى الشرفة، مشمولة في",
+   "nou": "في كامل الشقة، مشمولة في"
+  },
+  {
+   "vechi": "تدفئة أرضية مشمولة، في كل مكان وعلى الشرفة.",
+   "nou": "تدفئة أرضية مشمولة، في كامل الشقة."
+  },
+  {
+   "vechi": "تدفئة أرضية مشمولة في كل مكان وعلى الشرفة،",
+   "nou": "تدفئة أرضية مشمولة في كامل الشقة،"
+  },
+  {
+   "vechi": "مشمولة في السعر، في جميع الغرف وعلى الشرفة.",
+   "nou": "مشمولة في السعر، في كامل الشقة."
+  },
+  {
+   "vechi": "في كل الشقة وحتى الشرفة ·",
+   "nou": "في كامل الشقة ·"
+  },
+  {
+   "vechi": "في كل مكان حتى الشرفة.",
+   "nou": "في كامل الشقة."
+  },
+  {
+   "vechi": "تدفئة أرضية في كل مكان وعلى الشرفة",
+   "nou": "تدفئة أرضية في كامل الشقة"
+  }
+ ],
+ "uk": [
+  {
+   "vechi": "всюди, включно з балконом, включена",
+   "nou": "в усій квартирі, включена"
+  },
+  {
+   "vechi": "У серйозному новому будинку квартиру передають із готовим оздобленням, готовою до заселення, а не на чорновому етапі. В Ilioara Residence це включає теплу підлогу по всій квартирі, включно з балконом, вікна Salamander з потрійним склопакетом і 7 повітряними камерами, і власний котел на 24 кВт. Це те, за що інакше довелося б платити окремо вже після переїзду.",
+   "nou": "У серйозному новому будинку квартиру передають із готовим оздобленням, готовою до заселення, а не на чорновому етапі. В Ilioara Residence це включає теплу підлогу по всій квартирі, вікна Salamander з потрійним склопакетом і 7 повітряними камерами, і власний котел на 24 кВт. Це те, за що інакше довелося б платити окремо вже після переїзду."
+  },
+  {
+   "vechi": "Хороша квартира проявляється в дрібницях, яких торкаєшся щодня. Наприклад, балкон. В Ilioara Residence тепла підлога йде і на балкон, тож цей простір лишається придатним для використання і взимку, а не лише три місяці на рік.",
+   "nou": "Хороша квартира проявляється в дрібницях, яких торкаєшся щодня. Наприклад, тепло під ногами. В Ilioara Residence тепла підлога йде по всій квартирі й уже входить у ціну, тож температура рівномірна, а стіни лишаються вільними для меблів."
+  },
+  {
+   "vechi": "Балкон, світло і паркомісце",
+   "nou": "Тепло, світло і паркомісце"
+  },
+  {
+   "vechi": "Тепла підлога включена в ціну, всюди й на балконі. 2-кімнатна квартира, 60.75 м², 123.000 EUR + TVA 21%, без комісії, Тітан-Дрістор.",
+   "nou": "Тепла підлога в усій квартирі, включена в ціну. 2-кімнатна квартира, 60.75 м², 123.000 EUR + TVA 21%, без комісії, Тітан-Дрістор."
+  },
+  {
+   "vechi": "Тепла підлога включена в ціну, всюди й на балконі. 3-кімнатна квартира, 71 м², 151.000 EUR + TVA 21%, без комісії, Тітан-Дрістор.",
+   "nou": "Тепла підлога в усій квартирі, включена в ціну. 3-кімнатна квартира, 71 м², 151.000 EUR + TVA 21%, без комісії, Тітан-Дрістор."
+  },
+  {
+   "vechi": "Тепла підлога всюди, зокрема на балконі, вікна Salamander із потрійним склопакетом і профілем на 7 камер та власний котел Ariston на 24 кВт — усе це включено.",
+   "nou": "Тепла підлога в усій квартирі, вікна Salamander із потрійним склопакетом і профілем на 7 камер та власний котел Ariston на 24 кВт — усе це включено."
+  },
+  {
+   "vechi": "Тепла підлога всюди, зокрема на балконі, вікна Salamander із потрійним склопакетом і профілем на 7 камер та власний котел Ariston на 24 кВт. Короткий майданчик",
+   "nou": "Тепла підлога в усій квартирі, вікна Salamander із потрійним склопакетом і профілем на 7 камер та власний котел Ariston на 24 кВт. Короткий майданчик"
+  },
+  {
+   "vechi": "тепла підлога включена в ціну (всюди, плюс на балконі), закрита вулиця",
+   "nou": "тепла підлога включена в ціну (в усій квартирі), закрита вулиця"
+  },
+  {
+   "vechi": "Тепла підлога всюди, зокрема на балконі, вікна Salamander із потрійним склопакетом і профілем на 7 камер, власний котел Ariston на 24 кВт і короткий майданчик",
+   "nou": "Тепла підлога в усій квартирі, вікна Salamander із потрійним склопакетом і профілем на 7 камер, власний котел Ariston на 24 кВт і короткий майданчик"
+  },
+  {
+   "vechi": "Важить і те, що ви можете зробити з метрами поза кімнатами. Тут тепла підлога йде всюди, зокрема на балконі, тож балконом користуються і в лютому, а не тільки в липні. Решта обладнання — у",
+   "nou": "Важить і те, що ви можете зробити з метрами поза кімнатами: балкон рахується в загальній площі, тож дивіться на нього окремо від кімнат. Усередині тепла підлога йде по всій квартирі й уже входить у ціну. Решта обладнання — у"
+  },
+  {
+   "vechi": "У будинку на Aleea Eprubetei 7, Titan-Dristor: тепла підлога включена всюди й на балконі, вікна Salamander з потрійним склопакетом, власний котел Ariston 24 kW.",
+   "nou": "У будинку на Aleea Eprubetei 7, Titan-Dristor: у ціні тепла підлога в усій квартирі, вікна Salamander з потрійним склопакетом, власний котел Ariston 24 kW."
+  },
+  {
+   "vechi": "тепла підлога по всій квартирі, включно з балконом. Власний котел означає",
+   "nou": "тепла підлога по всій квартирі. Власний котел означає"
+  },
+  {
+   "vechi": "тепла підлога по всій квартирі, включно з балконом, і вікна Salamander",
+   "nou": "тепла підлога по всій квартирі і вікна Salamander"
+  },
+  {
+   "vechi": "кількість дверей: тепла підлога всюди, зокрема на балконі, вікна Salamander",
+   "nou": "кількість дверей: тепла підлога в усій квартирі, вікна Salamander"
+  },
+  {
+   "vechi": "В Ilioara у ціну входять тепла підлога всюди, зокрема на балконі, вікна Salamander",
+   "nou": "В Ilioara у ціну входять тепла підлога в усьому житлі, вікна Salamander"
+  },
+  {
+   "vechi": "із зірочкою. Тепла підлога всюди, зокрема на балконі. Вікна Salamander",
+   "nou": "із зірочкою. Тепла підлога в усій квартирі. Вікна Salamander"
+  },
+  {
+   "vechi": "В Ilioara тепла підлога включена всюди, зокрема на балконі, вікна — Salamander",
+   "nou": "В Ilioara тепла підлога включена в ціну, в усій квартирі, вікна — Salamander"
+  },
+  {
+   "vechi": "тепла підлога включена в ціну, разом із балконом,",
+   "nou": "тепла підлога включена в ціну, в усьому житлі,"
+  },
+  {
+   "vechi": "Усюди в квартирі. І на балконі, чого майже ніхто не",
+   "nou": "Усюди в квартирі, чого майже ніхто не"
+  },
+  {
+   "vechi": "щоб у ньому жили. Тепла підлога всюди, зокрема на балконі. Вікна Salamander",
+   "nou": "щоб у ньому жили. Тепла підлога в усій квартирі. Вікна Salamander"
+  },
+  {
+   "vechi": "Включено в ціну, в усіх кімнатах і на балконі.",
+   "nou": "Включено в ціну, в усіх кімнатах квартири."
+  },
+  {
+   "vechi": "У всій квартирі й на балконі ·",
+   "nou": "У всій квартирі ·"
+  },
+  {
+   "vechi": "скрізь, включно з балконом.",
+   "nou": "скрізь у квартирі."
+  },
+  {
+   "vechi": "тепла підлога всюди й на балконі, вікна Salamander з потрійним склопакетом (7 камер)",
+   "nou": "тепла підлога в усій квартирі, вікна Salamander з потрійним склопакетом (7 камер)"
+  }
+ ]
+}
