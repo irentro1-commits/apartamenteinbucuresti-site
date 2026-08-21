@@ -52,7 +52,7 @@ def banda(T, termen, rtl):
     return (
         '\n<aside class="%s rv" data-fx="rise"%s>'
         '<span class="tz-c"></span>'
-        '<div class="tz-t"><h3>%s</h3><p>%s</p></div>'
+        '<div class="tz-t"><h2>%s</h2><p>%s</p></div>'
         '<a class="tz-b" href="%s" target="_blank" rel="noopener">%s</a>'
         "</aside>\n" % (MARCA, ' dir="rtl"' if rtl else "", T["titlu"], corp, WA, T["cta"]))
 

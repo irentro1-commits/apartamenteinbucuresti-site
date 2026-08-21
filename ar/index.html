@@ -857,8 +857,8 @@ html[dir="rtl"] .ilr-i--rez::before{background-image:repeating-linear-gradient(4
 </head>
 <body>
 
-<div id="stage"><canvas id="frame"></canvas><video id="ambient" muted loop playsinline preload="none"></video></div>
-<div id="scrim"></div>
+<div id="stage" role="region" aria-label="فيلم المجمّع"><canvas id="frame"></canvas><video id="ambient" muted loop playsinline preload="none"></video></div>
+<div id="scrim" aria-hidden="true"></div>
 <div id="bar"></div>
 
 <!-- COPERTA: prima fereastra a casei. Straturi: fundal h1 / gradient / rama / editorial / banda cifre / dovada Dristor / index film / invitatie -->
@@ -1063,7 +1063,7 @@ html[dir="rtl"] .ilr-i--rez::before{background-image:repeating-linear-gradient(4
     </div>
   </div>
 </div>
-<div id="load"><div class="ring" id="ldring"><span class="sun"><svg class="lg" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><rect x="1.83" y="1.83" width="60.34" height="60.34" rx="8.23" fill="none" stroke="#FFFFFF" stroke-width="3.89"/><rect class="lg-bar" x="10.06" y="10.06" width="14.63" height="43.89" rx="2.74" fill="#E9B12B"/><rect x="29.26" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="36.11" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="42.97" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="49.83" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/></svg></span></div><div class="lg-word"><span class="lg-n">ILIOARA</span><span class="lg-r">RESIDENCE</span></div><div class="p" id="pct">جار التحميل 0%</div></div>
+<div id="load" role="status" aria-label="جارٍ التحميل"><div class="ring" id="ldring"><span class="sun"><svg class="lg" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><rect x="1.83" y="1.83" width="60.34" height="60.34" rx="8.23" fill="none" stroke="#FFFFFF" stroke-width="3.89"/><rect class="lg-bar" x="10.06" y="10.06" width="14.63" height="43.89" rx="2.74" fill="#E9B12B"/><rect x="29.26" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="36.11" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="42.97" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/><rect x="49.83" y="10.06" width="4.11" height="43.89" rx="0.91" fill="#FFFFFF"/></svg></span></div><div class="lg-word"><span class="lg-n">ILIOARA</span><span class="lg-r">RESIDENCE</span></div><div class="p" id="pct" aria-hidden="true">جار التحميل 0%</div></div>
 <script>
 (function(){
   'use strict';

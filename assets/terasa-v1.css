@@ -45,7 +45,9 @@
 .tz-c::after{width:.5rem;height:1.5px;transform:translateY(-50%) rotate(38deg)}
 /* acul mic sta la ora doua, nu la trei: cu amandoua acele pe axe, cercul citea litera L */
 
-.tz-t h3{
+/* h2, nu h3: axe raporta 10 salturi de nivel (h1 direct la h3). Banda e o sectiune
+   a paginii, deci nivelul doi e si corect semantic, nu doar convenabil. */
+.tz-t h2{
   font-family:var(--serif,Fraunces,serif);
   font-size:1.12rem;font-weight:600;line-height:1.25;
   margin:0 0 .35rem;color:var(--eo,inherit);
@@ -86,6 +88,6 @@
   .tz-c{grid-area:c;align-self:start;margin-top:.15rem}
   .tz-t{grid-area:t}
   .tz-b{grid-area:b;justify-self:stretch;text-align:center;margin-top:.35rem}
-  .tz-t h3{font-size:1.04rem}
+  .tz-t h2{font-size:1.04rem}
   .tz-t p{font-size:.89rem}
 }

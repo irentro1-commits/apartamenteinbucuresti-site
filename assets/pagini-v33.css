@@ -8,7 +8,7 @@
 /* TEMA DESCHISA (4 Aug 2026): hartie crem, cerneala, auriu inchis. Aceleasi tokenuri, alte valori,
    deci fiecare regula existenta se muta singura. Contrastele, calculate: text 15,6:1, secundar 7,4:1,
    auriu 5,0:1, toate peste pragul AA. Coperta ramane cinematica: e o fotografie. */
-html[data-theme="light"]{--logo-ink:#262320;--logo-gold:#E9B12B;--cta:#E9B12B;--cta-ink:#1C1710;--cream:#1C1710;--cream-soft:#574C3E;--gold:#966303;--gold-lg:#AE7E0A;--bg:#F5F0E1;--bg2:#EDE6D4;--cream-rgb:28,23,16;--soft-rgb:87,76,62;--gold-rgb:150,99,3;--bg-rgb:245,240,225;--bg2-rgb:237,230,212;color-scheme:light}
+html[data-theme="light"]{--logo-ink:#262320;--logo-gold:#E9B12B;--cta:#E9B12B;--cta-ink:#1C1710;--cream:#1C1710;--cream-soft:#574C3E;--gold:#7E5202;--gold-lg:#8A6408;--bg:#F5F0E1;--bg2:#EDE6D4;--cream-rgb:28,23,16;--soft-rgb:87,76,62;--gold-rgb:150,99,3;--bg-rgb:245,240,225;--bg2-rgb:237,230,212;color-scheme:light}
 html{scroll-behavior:smooth}
 html{background:var(--bg)}
 body{color:var(--cream);font-family:'Inter',sans-serif;line-height:1.6;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -132,7 +132,7 @@ h2::after{content:'';display:block;width:38px;height:2px;background:rgba(var(--g
 .btn:active{transform:scale(.965)}
 .btn .wa{vertical-align:-3px}
 .btn.ghost{background:rgba(var(--bg-rgb),.5);border:1px solid rgba(var(--gold-rgb),.6);color:var(--cream);margin-left:.6rem}
-.telmini{display:inline-block;font-size:.82rem;color:var(--cream-soft);text-decoration:none;opacity:.62;letter-spacing:.02em;border-bottom:1px solid transparent;transition:opacity .25s ease,color .25s ease,border-color .25s ease}
+.telmini{display:inline-block;font-size:.82rem;color:var(--cream-soft);text-decoration:none;opacity:.88;letter-spacing:.02em;border-bottom:1px solid transparent;transition:opacity .25s ease,color .25s ease,border-color .25s ease}
 .telmini:hover{opacity:1;color:var(--gold);border-bottom-color:rgba(var(--gold-rgb),.4)}
 .pcta .btn{display:inline-flex}
 .mn-cta{align-items:center}
@@ -294,7 +294,7 @@ body.mn-open .mn-tema{opacity:1;transform:none}
 .dif .tx{flex:1 1 auto}
 .dif .tx b{color:var(--gold);font-weight:700}
 .dif .hn{display:block;margin-top:.2rem;font-size:.7rem;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:rgba(var(--cream-rgb),.55)}
+  text-transform:uppercase;color:rgba(var(--cream-rgb),.75)}
 .dif .ch{flex:0 0 auto;width:17px;height:17px;color:var(--gold);
   transition:transform .32s cubic-bezier(.23,1,.32,1)}
 .dif-d[open] .ch{transform:rotate(180deg)}

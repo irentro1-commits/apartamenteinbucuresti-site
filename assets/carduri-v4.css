@@ -53,17 +53,22 @@ a.aprow:focus-visible{outline:2px solid var(--cta);outline-offset:-2px;border-ra
 }
 .ap-p i{font-style:normal;font-size:.76rem;margin-inline-start:.3em;color:var(--cream-soft);white-space:nowrap}
 .ap-p em{
-  display:block;font-style:normal;font-size:.76rem;color:var(--cream-soft);opacity:.72;
+  display:block;font-style:normal;font-size:.76rem;color:var(--cream-soft);opacity:.88;
   font-variant-numeric:tabular-nums;white-space:nowrap;margin-top:.1rem;
 }
 .ap-p-gol{min-height:1px}
 
 /* --- starile --- */
-.aprow.e-rezervat .ap-p b,.aprow.e-rezervat .ap-p i,.aprow.e-rezervat .ap-p em{opacity:.62}
+.aprow.e-rezervat .ap-p b,.aprow.e-rezervat .ap-p i,.aprow.e-rezervat .ap-p em{opacity:.8}
 .aprow.e-rezervat{background-image:repeating-linear-gradient(135deg,
   transparent 0 10px,rgba(var(--gold-rgb),.045) 10px 11px)}
 .aprow-mut{cursor:default}
-.aprow-mut .ap-nr,.aprow-mut .ap-d,.aprow-mut .ap-mp{opacity:.55}
+.aprow-mut .ap-d,.aprow-mut .ap-mp{opacity:.85}
+/* Numarul si insigna raman mai prezente decat restul randului: stinsul se aplica
+   DATELOR, nu MOTIVULUI. Cine se uita la un rand retras vrea sa afle exact de ce e
+   retras, iar asta scrie in insigna. La .85 "Vandut" ramanea la 4,47, sub prag,
+   fiindca fondul propriu al insignei e mai inchis decat pagina. */
+.aprow-mut .ap-nr{opacity:.9}
 .aprow-mut:hover{background:transparent}
 
 .aprow .stare{margin-inline-start:.55em}
@@ -115,7 +120,7 @@ a.aprow:focus-visible{outline:2px solid var(--cta);outline-offset:-2px;border-ra
   display:block;text-align:end;line-height:1.3;white-space:normal;
 }
 .plist .prow .p small{
-  display:block;font-size:.76rem;color:var(--cream-soft);opacity:.75;
+  display:block;font-size:.76rem;color:var(--cream-soft);opacity:.88;
   font-variant-numeric:tabular-nums;margin-top:.1rem;
 }
 .plist .prow .d{font-size:.98rem}
@@ -252,3 +257,30 @@ a.aprow[data-foto]:hover .ap-foto{
   .aprow[data-foto]{grid-template-columns:1fr 7.4rem}
   .aprow[data-foto] .ap-foto{height:12.5rem}
 }
+
+/* ============================================================================
+   CONTRASTUL PE TEMA DESCHISA, MASURAT CU axe-core
+
+   Pe /apartamente/, tema deschisa, 233 de bucati de text cadeau sub pragul de 4,5:1.
+   Impartite pe categorii, spun ceva neplacut:
+
+     pretul apartamentelor DISPONIBILE   3,18:1   (aurul --gold-lg pe crem)
+     totalul cu TVA, tot pe disponibile  3,71:1   (cream-soft la .72)
+     randurile vandute, stinse la .55    2,39:1   pana la 3,80:1
+
+   Adica exact suprafata si pretul, informatiile pentru care omul a deschis pagina,
+   erau cel mai greu de citit text de pe ea. Pe telefon, afara, in soare, un pret la
+   3,18:1 nu se citeste. Cine nu citeste pretul nu scrie.
+
+   REPARAT LA RADACINA, NU AICI. Aurul era gresit in TOKEN, nu in regula: `--gold-lg`
+   al temei deschise. `lista-v4.css` si `fisa-v1.css` aveau deja masurata aceeasi
+   cifra, 3,18, in comentarii, si o ocolisera fiecare local, punand cerneala in loc de
+   aur. Tokenul a ramas insa gresit, deci acelasi aur pica in continuare pe tabelul de
+   preturi, pe intrebarile frecvente si pe insignele de stare. Un fapt, un loc.
+
+   VANDUTELE NU SE APRIND, SE RETRAG MAI PUTIN. .55 -> .85 (la .78 insigna
+   ramanea la 3,83, fiindca fondul EI e mai inchis decat pagina): raman vizibil in urma
+   randurilor libere, dar "Vandut" redevine lizibil. Cine se uita la un rand stins
+   vrea sa stie DE CE e stins.
+
+   Tema inchisa era deja curata: singurul defect era insigna de vandut, la 4,40. */
