@@ -32,11 +32,17 @@ import re
 
 # subtitrarea spune de unde vin cifrele, in limba paginii. Numerele raman in text, nu doar in
 # imagine: un motor de cautare nu citeste suprafetele dintr-un webp.
+# Andy, 21 aug 2026, aratand subtitrarea: *"aici sa pui clar Planul dezvoltatorului si atat"*.
+# Scrisesem "Fisa i-vory, dupa planul dezvoltatorului si grila lui de preturi", crezand ca
+# lamuresc de unde vin cifrele. Lamuream de fapt cine a facut plansa, ceea ce pe pagina unui
+# apartament nu intereseaza pe nimeni si suna a semnatura pusa pe munca altuia: desenul e al
+# dezvoltatorului, noi doar l-am asezat. Ebraica, araba si ucraineana spuneau deja simplu
+# "Plan de la dezvoltator"; romana si engleza s-au aliniat la ele.
 LEGENDA = {
-    "ro": ("Fișă i-vory, după planul dezvoltatorului și grila lui de prețuri. "
+    "ro": ("Planul dezvoltatorului. "
            "Suprafață utilă <b>%(utila)s mp</b>, terasă <b>%(terasa)s mp</b>, "
            "total <b>%(total)s mp</b>. Mobilierul e orientativ."),
-    "en": ("Sheet by i-vory, based on the developer's floor plan and price list. "
+    "en": ("The developer's floor plan. "
            "Usable area <b>%(utila)s sqm</b>, terrace <b>%(terasa)s sqm</b>, "
            "total <b>%(total)s sqm</b>. Furniture is indicative."),
 }
