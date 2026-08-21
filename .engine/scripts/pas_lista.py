@@ -38,12 +38,20 @@ ENGINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CALE_DATE = os.path.join(ENGINE, "date", "apartamente.json")
 
 # Doua foi, si amandoua trebuie sa fie acolo: insignele de stare traiesc in stare-v2.css,
-# randurile in carduri-v3.css. Injectarea uneia singure lasa etichetele nestilizate.
+# randurile in carduri-v4.css. Injectarea uneia singure lasa etichetele nestilizate.
 CSS = ('<link rel="stylesheet" href="/assets/stare-v2.css">' + "\n" +
-       '<link rel="stylesheet" href="/assets/carduri-v3.css">')
+       '<link rel="stylesheet" href="/assets/carduri-v4.css">')
 ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v33.css">'
 
 NB = " "
+
+# PLANSELE MICI, citite din manifestul lor. `/planuri/*` se serveste `immutable` un an,
+# deci fisierele poarta versiune in nume, iar versiunea are UN SINGUR loc: manifestul
+# scris de `_fise/build_mini.py`. Aici nu se compune niciodata un nume de fisier cu mana:
+# asa s-a nascut lista cu sase poze la sapte apartamente disponibile.
+_MANIFEST = os.path.join(os.path.dirname(ENGINE), "planuri", "mini", "index.json")
+PLANSE = (json.load(io.open(_MANIFEST, encoding="utf-8"))
+          if os.path.exists(_MANIFEST) else {})
 
 # ordinea de afisare: de sus in jos, cum se urca in bloc
 NIVELE = [("etaj 8", "Etajul 8"), ("etaj 7", "Etajul 7"), ("etaj 6", "Etajul 6"),
@@ -135,20 +143,25 @@ def card(nr, a, et):
     # Insigna sta INAUNTRUL celulei cu numarul. Lasata afara, devenea a cincea celula a
     # grilei si impingea toate coloanele cu una: pretul ajungea in coloana a treia, iar
     # marginile nu se mai aliniau intre randuri. Masurat, nu banuit.
-    # MINIATURA PLANULUI. Andy, 21 aug 2026, aratand lista concurentului: "pune ca florin dar
-    # sa avem astea pe chestia noastra smechera". La el, poza e cat cardul si impinge pretul
-    # sub pliu; aici e o miniatura de 76px la capatul randului, deci lista ramane o lista si
-    # ochiul tot coboara pe coloana de preturi. Randurile fara plan pastreaza celula goala,
-    # ca sa nu se strice alinierea.
-    mini = os.path.join(os.path.dirname(ENGINE), "planuri", "mini", "ap-%s.webp" % nr)
-    if os.path.exists(mini):
-        foto = ('<span class="ap-foto"><img src="/planuri/mini/ap-%s.webp" alt="" '
-                'width="432" height="320" loading="lazy" decoding="async"></span>' % nr)
+    # PLANSA APARTAMENTULUI. Andy, 21 aug 2026, aratand lista concurentului: "pune ca florin
+    # dar sa avem astea pe chestia noastra smechera", apoi "trebuie pozele mult mai mari sa
+    # isi dea oamenii seama" si "sa nu para ca l-am copiat pe asta, sa avem propria noastra
+    # identitate". La el e o poza decupata sa umple o cutie. Aici e o PLANSA: randarea intreaga,
+    # asezata pe hartie crem, in aceeasi conventie ca fisa de apartament. Se genereaza in
+    # `_fise/build_mini.py`, nu se decupeaza aici.
+    # POZA DOAR PE DISPONIBILE. Andy, tot 21 aug: "nu le punem pe alea rezervate cu poza".
+    # Are dreptate si e si design bun: lista da greutate vizuala fix la ce se poate cumpara.
+    # Un plan mare langa un apartament pe care nu il poti lua nu ajuta pe nimeni, doar
+    # imparte atentia. Rezervatele si vandutele raman randuri scurte, fara celula de plansa.
+    cale = PLANSE.get(nr)
+    if stare == "disponibil" and cale:
+        foto = ('<span class="ap-foto"><img src="%s" alt="Plan apartament %s" '
+                'width="864" height="640" loading="lazy" decoding="async"></span>'
+                % (cale, nr))
     else:
-        foto = '<span class="ap-foto ap-foto-gol" aria-hidden="true"></span>'
+        foto = ""     # fara celula deloc: randul are patru coloane, nu cinci
 
     celule = [
-        foto,
         '<span class="ap-nr">ap.%s%s%s</span>' % (NB, nr, ins),
         '<span class="ap-d">%s · %s</span>' % (
             "Penthouse" if a.get("tip") == "penthouse"
@@ -165,7 +178,10 @@ def card(nr, a, et):
     else:
         celule.append('<span class="ap-p ap-p-gol" aria-hidden="true"></span>')
 
-    date = (' data-cam="%d"' % cam if cam else "") + ' data-stare="%s"' % stare
+    if foto:
+        celule.insert(0, foto)
+    date = ((' data-cam="%d"' % cam if cam else "") + ' data-stare="%s"' % stare
+            + (' data-foto' if foto else ""))
     corp = "".join(celule)
     if stare != "vandut" and a.get("href"):
         # FARA `rv` si fara `data-fx` pe rand. Randul nu se anima individual din doua motive:

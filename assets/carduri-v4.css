@@ -1,0 +1,254 @@
+/* LISTA DE APARTAMENTE, PE RANDURI. Fisier NOU, versionat in nume: /assets/* e servit
+   immutable un an, deci un fisier modificat nu ajunge niciodata la vizitatori.
+
+   De ce randuri si nu grila: cumparatorul nu citeste un apartament, ci COMPARA mai multe.
+   Pe randuri, preturile cad unul sub altul intr-o singura coloana si ochiul le parcurge pe
+   verticala. Intr-o grila, aceleasi preturi sunt imprastiate pe doua axe si fiecare
+   comparatie cere o miscare de ochi in plus.
+
+   Toate cele trei stari au aceleasi celule, deci toate randurile au aceeasi inaltime.
+   Vandutul are coloana de pret goala: nu se inventeaza un pret ca sa iasa simetria. */
+
+.aplist{margin:1.1rem 0 0;border-top:1px solid rgba(var(--gold-rgb),.22)}
+
+.aprow{
+  display:grid;
+  /* COLOANE FIXE, si e obligatoriu. Fiecare rand e o grila separata, deci coloanele nu se
+     aliniaza intre randuri daca latimile sunt "auto": masurat, preturile cadeau pe doua
+     margini diferite. Cu latimi fixe, toate randurile calculeaza acelasi lucru si coloana
+     de pret devine o linie dreapta pe care ochiul coboara. */
+  grid-template-columns:12.4rem 1fr 6rem 12.6rem;
+  align-items:center;
+  gap:.4rem 1.2rem;
+  min-height:4.35rem;   /* aceeasi inaltime, indiferent cate randuri de text are pretul */
+  padding:.7rem .4rem;
+  border-bottom:1px solid rgba(var(--gold-rgb),.22);
+  color:var(--cream);text-decoration:none;
+  transition:background .18s ease;
+}
+a.aprow:hover{background:rgba(var(--gold-rgb),.06)}
+a.aprow:focus-visible{outline:2px solid var(--cta);outline-offset:-2px;border-radius:8px}
+
+/* --- numarul apartamentului: ancora pe care sare ochiul --- */
+.ap-nr{
+  display:flex;align-items:center;flex-wrap:wrap;gap:.15rem;
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.06rem;
+  font-variant-numeric:tabular-nums;
+}
+/* --- camere si etaj: context, deci subordonat --- */
+.ap-d{color:var(--cream-soft);font-size:.94rem;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+/* --- suprafata: cifra, deci tabulara, ca sa se alinieze intre randuri --- */
+.ap-mp{
+  font-variant-numeric:tabular-nums;font-size:.94rem;color:var(--cream-soft);
+  white-space:nowrap;text-align:end;
+}
+/* --- pretul: capatul randului, aliniat la dreapta pe toata coloana --- */
+/* Pretul pe DOUA randuri, nu pe trei: cifra si unitatea stau pe aceeasi linie, totalul
+   coboara sub ele. Trei randuri suprapuse faceau randul mai inalt decat vecinii lui. */
+.ap-p{display:block;text-align:end;line-height:1.3}
+.ap-p b{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;color:var(--gold-lg);
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.ap-p i{font-style:normal;font-size:.76rem;margin-inline-start:.3em;color:var(--cream-soft);white-space:nowrap}
+.ap-p em{
+  display:block;font-style:normal;font-size:.76rem;color:var(--cream-soft);opacity:.72;
+  font-variant-numeric:tabular-nums;white-space:nowrap;margin-top:.1rem;
+}
+.ap-p-gol{min-height:1px}
+
+/* --- starile --- */
+.aprow.e-rezervat .ap-p b,.aprow.e-rezervat .ap-p i,.aprow.e-rezervat .ap-p em{opacity:.62}
+.aprow.e-rezervat{background-image:repeating-linear-gradient(135deg,
+  transparent 0 10px,rgba(var(--gold-rgb),.045) 10px 11px)}
+.aprow-mut{cursor:default}
+.aprow-mut .ap-nr,.aprow-mut .ap-d,.aprow-mut .ap-mp{opacity:.55}
+.aprow-mut:hover{background:transparent}
+
+.aprow .stare{margin-inline-start:.55em}
+
+.etaj-ap[hidden],.aprow[hidden]{display:none !important}
+
+/* ---------------- telefon: doua randuri, pretul ramane la dreapta ---------------- */
+@media (max-width:900px){
+  .aprow{
+    grid-template-columns:4.6rem 1fr auto;
+    grid-template-areas:"nr pret" "det mp";
+    gap:.2rem .8rem;padding:.75rem .2rem;min-height:4.6rem;
+  }
+  .ap-nr{grid-area:nr}
+  .ap-p{grid-area:pret}
+  .ap-d{grid-area:det;font-size:.88rem}
+  .ap-mp{grid-area:mp;font-size:.88rem}
+  .ap-p b{font-size:1.02rem}
+  /* Randurile fara total au o linie mai putin, deci ies mai scunde decat vecinii. Coloana
+     de pret isi rezerva inaltimea pentru doua linii, si lista ramane un tipar regulat. */
+  .ap-p{min-height:2.55em}
+  .aprow .stare{margin-inline-start:.45em}
+}
+@media (max-width:390px){
+  /* Unitatea NU se ascunde nici pe cel mai mic ecran: un pret fara moneda si fara
+     mentiunea de TVA e o capcana, nu o economie de spatiu. Se micsoreaza, atat. */
+  .ap-p i{font-size:.72rem}
+  .ap-d{font-size:.84rem}
+}
+
+/* ============ PAGINA DE PRETURI, acelasi tratament ============
+   Andy: "sa faci si pagina de preturi la fel de usor de citit".
+   Randurile de acolo (.prow) au alt markup, cu doua celule in loc de patru, deci nu se pot
+   uniformiza prin acelasi generator fara sa fie rescrise. Dar problema de scanare e aceeasi
+   si se rezolva cu aceleasi doua unelte: o COLOANA FIXA pentru pret, ca marginea din dreapta
+   sa fie o linie dreapta, si CIFRE TABULARE, ca sutele si miile sa cada una sub alta.
+   `justify-content: space-between` aliniaza pretul la marginea randului, nu la o coloana:
+   arata aliniat doar cand denumirile au aceeasi lungime, si aici nu au. */
+
+.plist .prow{
+  display:grid;
+  grid-template-columns:1fr 14.5rem;
+  align-items:center;
+  gap:.4rem 1.2rem;
+  min-height:4.5rem;
+}
+.plist .prow .p{
+  font-variant-numeric:tabular-nums;
+  display:block;text-align:end;line-height:1.3;white-space:normal;
+}
+.plist .prow .p small{
+  display:block;font-size:.76rem;color:var(--cream-soft);opacity:.75;
+  font-variant-numeric:tabular-nums;margin-top:.1rem;
+}
+.plist .prow .d{font-size:.98rem}
+.plist .prow .d>small{
+  display:block;font-weight:400;font-size:.88rem;color:var(--cream-soft);margin-top:.15rem;
+}
+.plist .prow .d>small b{font-variant-numeric:tabular-nums;font-weight:600}
+
+@media (max-width:640px){
+  .plist .prow{
+    grid-template-columns:4.6rem 1fr auto;
+    gap:.3rem .8rem;
+    min-height:5rem;
+  }
+  .plist .prow .p{font-size:1rem}
+}
+
+/* Propozitia care inchide diferenta dintre cele 12 de pe pagina de preturi si cele 33 ale
+   blocului. Fara ea, cititorul aduna singur si nu-i iese. */
+.nota-penthouse{
+  margin:0 0 1.4rem;font-size:.9rem;line-height:1.6;color:var(--cream-soft);
+  padding-inline-start:.9rem;border-inline-start:2px solid rgba(var(--gold-rgb),.45);
+}
+.nota-penthouse a{color:var(--cream)}
+
+/* --- miniatura planului, la capatul randului --- */
+.ap-foto{display:block;width:4.8rem;height:3.55rem;border-radius:7px;overflow:hidden;
+  background:rgba(var(--bg-rgb),.45);border:1px solid rgba(var(--gold-rgb),.28);flex:none}
+.ap-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.ap-foto-gol{border-style:dashed;opacity:.35}
+.aprow-mut .ap-foto{opacity:.5}
+a.aprow:hover .ap-foto{border-color:rgba(var(--gold-rgb),.75)}
+@media (max-width:760px){
+  /* Pe telefon, miniatura ia din latimea randului si impinge numarul si descrierea pe doua
+     randuri: randurile disponibile ies 124px, cele vandute 92px, iar lista isi pierde tiparul.
+     Deci pe telefon poza e mai mica, iar cele doua texte nu au voie sa se rupa. Masurat, nu ghicit. */
+  .ap-foto{grid-area:foto;align-self:center;width:3.5rem;height:2.7rem}
+  /* Coloana de pret e FIXA si pe telefon. Cu `auto`, latimea ei urmeaza continutul, deci
+     marginea din dreapta cadea in zece locuri diferite si la 360px pagina capata scroll
+     orizontal. Fix, si coloana redevine o linie dreapta. */
+  .aprow{grid-template-columns:1fr 8.5rem;grid-template-areas:"nr pret" "det mp";
+    gap:.15rem .55rem}
+  .ap-nr{flex-wrap:nowrap;font-size:.98rem}
+  .ap-d{white-space:nowrap;font-size:.82rem;overflow:hidden;text-overflow:ellipsis}
+  .aprow .stare{font-size:.54rem;letter-spacing:.1em;padding:.32em .55em .28em}
+}
+
+@media (max-width:380px){
+  .aprow{grid-template-columns:1fr 7.4rem;gap:.1rem .38rem;padding:.65rem 0}
+  .ap-foto{width:3.1rem;height:2.4rem}
+  .ap-p b{font-size:.96rem}
+  .ap-d{font-size:.78rem}
+  /* Unitatea trece pe rand propriu: inline, ea se rupe altfel de la rand la rand si trage
+     cifra dupa ea, deci marginea din dreapta cadea in cinci locuri diferite. */
+  .ap-p i{display:block;margin-inline-start:0;font-size:.68rem}
+  .ap-p em{font-size:.68rem}
+  /* Trei linii rezervate: cifra, unitatea, totalul. Randurile fara total au doua si ar iesi
+     mai scunde, iar lista si-ar pierde tiparul exact pe cel mai mic ecran. */
+  .ap-p{min-height:3.55em}
+}
+
+/* Sub 520px, unitatea sta pe rand propriu pe TOATE telefoanele, nu doar pe cele foarte mici:
+   inline, ea se rupe altfel de la rand la rand si trage cifra dupa ea. Masurat la 390px:
+   cinci margini diferite pentru coloana de pret. Cu ea pe rand propriu, una singura. */
+@media (max-width:520px){
+  .ap-p i{display:block;margin-inline-start:0;font-size:.7rem}
+  .ap-p{min-height:3.55em}
+}
+
+/* ============ RANDUL CU POZA: numai pentru ce se poate cumpara ============
+   Andy: "nu le punem pe alea rezervate cu poza- si trebuie pozele mult mai mari sa isi dea
+   oamenii seama". Deci lista are DOUA greutati: randul disponibil, cu plan mare, si randul
+   rezervat sau vandut, scurt si linistit. Inauntrul fiecarei grupe randurile raman identice;
+   diferenta dintre grupe e intentionata, si e chiar ierarhia care lipsea. */
+.aprow[data-foto]{
+  /* PATRU COLOANE, nu cinci, si numarul sta PESTE descriere. Cu o a cincea coloana
+     pentru plansa, randul ramanea fara loc: `1fr` se stringea la ZERO si "2 camere ·
+     Etaj 7" disparea din randurile cu plan. Masurat: 816px lat, 755 luati de coloane fixe.
+     Aici plansa ia locul primei coloane, iar numarul si descrierea se aseaza pe doua
+     randuri in a doua. Latimile sunt alese ca `mp` si pretul sa cada pe ACEEASI margine
+     ca la randurile fara plansa: 16.5rem + 1fr = 12.4rem + 1fr, deci coloana de preturi
+     ramane linia dreapta pe care coboara ochiul. */
+  grid-template-columns:16.5rem 1fr 6rem 12.6rem;
+  grid-template-areas:"foto nr mp pret" "foto det mp pret";
+  align-content:center;
+  min-height:13.3rem;padding:1rem .4rem;
+}
+/* PLANSA, NU POZA. Diferenta de identitate fata de o lista de anunturi e chiar asta:
+   la ei planul e o imagine intr-o cutie, decupata ca sa umple cutia. Aici planul sta pe
+   HARTIE, intreg, cu repere de plansa in colturi, exact ca pe fisele noastre. Doua efecte:
+   se vede tot apartamentul, nu o bucata din el, si obiectul se citeste ca document de
+   arhitectura, nu ca poza de portal.
+   Hartia e crem in amandoua temele, deliberat: o plansa e alba, nu isi schimba culoarea
+   dupa cum vrea cititorul. */
+.aprow[data-foto] .ap-foto{
+  grid-area:foto;align-self:center;
+  width:16.5rem;height:12.85rem;border-radius:3px;padding:0;
+  background:#F5F0E1;border:1px solid rgba(var(--gold-rgb),.42);
+  position:relative;overflow:hidden;
+  box-shadow:0 1px 0 rgba(var(--gold-rgb),.14), 0 10px 26px rgba(0,0,0,.18);
+}
+/* hartia e coapta in imagine, deci imaginea umple rama fara cusatura */
+.aprow[data-foto] .ap-foto img{width:100%;height:100%;object-fit:cover}
+/* reperele de plansa: patru colturi, o linie subtire, nimic mai mult */
+.aprow[data-foto] .ap-foto::before,
+.aprow[data-foto] .ap-foto::after{
+  content:"";position:absolute;width:13px;height:13px;pointer-events:none;z-index:2;
+  border-color:rgba(var(--gold-rgb),.8);border-style:solid;border-width:0;
+}
+.aprow[data-foto] .ap-foto::before{top:6px;inset-inline-start:6px;
+  border-top-width:1.5px;border-inline-start-width:1.5px}
+.aprow[data-foto] .ap-foto::after{bottom:6px;inset-inline-end:6px;
+  border-bottom-width:1.5px;border-inline-end-width:1.5px}
+a.aprow[data-foto]:hover .ap-foto{
+  border-color:rgba(var(--gold-rgb),.9);
+  box-shadow:0 1px 0 rgba(var(--gold-rgb),.22), 0 14px 34px rgba(0,0,0,.26);
+}
+/* numarul apartamentului, pe randul cu plansa, capata greutatea unui numar de plansa */
+.aprow[data-foto] .ap-nr{grid-area:nr;font-size:1.34rem;align-self:end}
+.aprow[data-foto] .ap-d{grid-area:det;align-self:start;padding-top:.2rem}
+.aprow[data-foto] .ap-mp{grid-area:mp;align-self:center}
+.aprow[data-foto] .ap-p{grid-area:pret;align-self:center}
+
+@media (max-width:900px){
+  .aprow[data-foto]{
+    grid-template-columns:1fr 8.5rem;
+    grid-template-areas:"foto foto" "nr pret" "det mp";
+    align-content:stretch;
+    min-height:0;row-gap:.55rem;
+  }
+  .aprow[data-foto] .ap-foto{grid-area:foto;width:100%;height:15.5rem}
+}
+@media (max-width:380px){
+  .aprow[data-foto]{grid-template-columns:1fr 7.4rem}
+  .aprow[data-foto] .ap-foto{height:12.5rem}
+}
