@@ -1,185 +1,185 @@
 {
- "slug": "costuri-reale-apartament-nou",
- "publishAt": "2026-08-04",
- "updatedAt": "2026-08-04",
- "title": "What a new apartment actually costs: every cost that lands on top of the displayed price",
- "seoTitle": "What a new apartment really costs, beyond the price",
- "description": "Every cost above the displayed price of a new apartment: VAT, deposit, notary, land registry, commission, loan, furnishing, monthly bills.",
- "descriptionLlm": "Guide to the real costs of a new apartment in Bucharest, beyond the displayed price: VAT of 21%, reservation and deposit, notary fee and land registry entry, agency commission, the cost of the loan, furnishing and monthly building charges. The calculation examples use the real prices at Ilioara Residence, Titan-Dristor, Sector 3.",
- "articleSection": "Buying guide",
- "keywords": "new apartment costs, VAT new apartments 2026, deposit new apartment, notary costs apartment, estate agency commission, cost of a mortgage, monthly costs new apartment, new apartments Sector 3",
- "readMinutes": 7,
- "lead": "You have set aside exactly what the listing says, down to the last leu. You counted three times, closed the calculator and told yourself you were covered. Then someone mentions VAT, someone else the notary fee, and the sum you have known for months starts shifting under you. It is not a trap. It is the usual way the price of a new home is built, in layers the buyer discovers one by one, usually too late. We put them all on the table here, in the order in which the money actually leaves the account.",
- "sections": [
-  {
-   "h2": "The displayed price and the sum in the contract are two different figures",
-   "blocks": [
+  "slug": "costuri-reale-apartament-nou",
+  "publishAt": "2026-08-04",
+  "updatedAt": "2026-08-04",
+  "title": "What a new apartment actually costs: every cost that lands on top of the displayed price",
+  "seoTitle": "What a New Apartment Really Costs | Beyond the Price",
+  "description": "Every cost above the displayed price of a new apartment: VAT, deposit, notary, land registry, commission, loan, furnishing, monthly bills.",
+  "descriptionLlm": "Guide to the real costs of a new apartment in Bucharest, beyond the displayed price: VAT of 21%, reservation and deposit, notary fee and land registry entry, agency commission, the cost of the loan, furnishing and monthly building charges. The calculation examples use the real prices at Ilioara Residence, Titan-Dristor, Sector 3.",
+  "articleSection": "Buying guide",
+  "keywords": "new apartment costs, VAT new apartments 2026, deposit new apartment, notary costs apartment, estate agency commission, cost of a mortgage, monthly costs new apartment, new apartments Sector 3",
+  "readMinutes": 7,
+  "lead": "You have set aside exactly what the listing says, down to the last leu. You counted three times, closed the calculator and told yourself you were covered. Then someone mentions VAT, someone else the notary fee, and the sum you have known for months starts shifting under you. It is not a trap. It is the usual way the price of a new home is built, in layers the buyer discovers one by one, usually too late. We put them all on the table here, in the order in which the money actually leaves the account.",
+  "sections": [
     {
-     "t": "p",
-     "x": "The first layer does not come from the seller, it comes from the state. Prices for new apartments are usually displayed without VAT, and the standard rate in Romania is <strong>21%</strong>, applied since 1 August 2025 through Law 141/2025. The reduced rate of 9% has remained only as a transitional measure, for anyone with a preliminary contract (antecontract) signed by 31 July 2025 who completes by 30 September 2026, with a ceiling of 600,000 lei excluding VAT and a maximum of 120 sqm of usable area."
+      "h2": "The displayed price and the sum in the contract are two different figures",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "The first layer does not come from the seller, it comes from the state. Prices for new apartments are usually displayed without VAT, and the standard rate in Romania is <strong>21%</strong>, applied since 1 August 2025 through Law 141/2025. The reduced rate of 9% has remained only as a transitional measure, for anyone with a preliminary contract (antecontract) signed by 31 July 2025 who completes by 30 September 2026, with a ceiling of 600,000 lei excluding VAT and a maximum of 120 sqm of usable area."
+        },
+        {
+          "t": "p",
+          "x": "At Ilioara Residence completion is in December 2026, so 21% is what you pay here, with no room for interpretation. On the smallest 2 room apartment, priced at 107,500 EUR excluding VAT, the tax adds 22,575 EUR, so the real sum reaches <strong>130,075 EUR</strong>. The same arithmetic applies to every line in the <a href=\"/preturi/\">price list</a>: the figure you see is the basis of calculation, not the total."
+        },
+        {
+          "t": "p",
+          "x": "The displayed price is not bait. It is a market convention everyone uses and few explain. If you want the whole mechanism, with who still catches the reduced rate and who does not, we set it out separately in the guide on <a href=\"/blog/tva-apartamente-noi-2026/\">VAT on new apartments</a>."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "At Ilioara Residence completion is in December 2026, so 21% is what you pay here, with no room for interpretation. On the smallest 2 room apartment, priced at 107,500 EUR excluding VAT, the tax adds 22,575 EUR, so the real sum reaches <strong>130,075 EUR</strong>. The same arithmetic applies to every line in the <a href=\"/preturi/\">price list</a>: the figure you see is the basis of calculation, not the total."
+      "h2": "The reservation and the deposit, the money that leaves first",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Once you have the real number in your head, the payment calendar comes next. Reserving an apartment at Ilioara is 2,000 EUR and holds the unit in your name, and the minimum deposit is 30%. The two sums do not leave on the same day, but both leave long before you touch the door handle."
+        },
+        {
+          "t": "p",
+          "x": "Thirty per cent of 107,500 EUR means <strong>32,250 EUR</strong>, money that has to be liquid on the signing date, not locked in a deposit maturing in a year. Ask in the first conversation which sum the percentage is calculated on and whether the reservation is deducted from the deposit or added next to it. Two short questions that completely change your planning."
+        },
+        {
+          "t": "p",
+          "x": "There is one more thing, and it is about timing, not money. Of 33 apartments, 12 are left available, and the type you want can leave the list while you are gathering the deposit. You can see what is free right now in the <a href=\"/apartamente/\">list of apartments</a>, with areas and floors."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "The displayed price is not bait. It is a market convention everyone uses and few explain. If you want the whole mechanism, with who still catches the reduced rate and who does not, we set it out separately in the guide on <a href=\"/blog/tva-apartamente-noi-2026/\">VAT on new apartments</a>."
+      "h2": "The notary and the land registry entry: certain costs, variable sums",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Here begins the area where nobody serious gives you a figure over the phone, and whoever does is guessing. The notary fee and the land registry entry fee are calculated by their own rules, which change over time and depend on your particular file. What you can find out from day one is the mechanism, and the mechanism is enough for you to ask for a proper estimate."
+        },
+        {
+          "t": "ul",
+          "x": [
+            "<strong>The value in the contract.</strong> The notary fee is calculated as a percentage, in value bands, so a 3 room apartment costs more at the notary than a 2 room one, even though the deed looks the same.",
+            "<strong>The number of deeds.</strong> If you are also taking a parking space, ask from the start whether it goes into the same contract or a separate one, because a second deed means a second round of costs.",
+            "<strong>The loan.</strong> The bank's mortgage is recorded in the land registry, and that adds steps on top of a sale paid entirely from your own funds.",
+            "<strong>Translations and powers of attorney.</strong> If you sign through a representative or have a document in a foreign language, extra lines appear on the quote."
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Ask for the notary's quote in writing, on the exact value in the contract, a few days before signing. A serious office emails it on request. Then you compare two offices on the same contract value, otherwise you are comparing different things and celebrating for nothing."
+        },
+        {
+          "t": "p",
+          "x": "The land registry entry follows the same logic: it relates to the value in the deed and to what exactly you are recording in the land registry. Ask who files the application, how long it takes for the extract to be issued and whether the sum asked covers only the fee or the office's work as well."
+        }
+      ]
+    },
+    {
+      "h2": "The agency commission, the cost that can be missing entirely",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "On the classic residential market, the buyer's commission is a percentage of the price that is added on top of everything else and paid at signing. It is the biggest variable cost of all the ones here and, unlike the legal fees, it is negotiable. It is worth asking directly, from the first viewing: who pays the commission, how much it is and when it is due."
+        },
+        {
+          "t": "p",
+          "x": "At Ilioara Residence the sale is made directly by the developer, so the commission for the buyer is zero. The price displayed next to each apartment is the final price of the home, and on top of it come VAT and the legal costs, that is all. We covered separately what changes in practice in the guide on <a href=\"/blog/cumperi-direct-de-la-proprietar/\">buying directly from the developer</a>."
+        },
+        {
+          "t": "p",
+          "x": "Zero commission does not automatically mean it comes out cheaper. It means you know from the start which sum you are negotiating and who you are talking to when you have a question about finishes or deadlines."
+        }
+      ]
+    },
+    {
+      "h2": "The loan costs money too, beyond the monthly instalment",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "The monthly instalment is the only figure many buyers remember, and it is the least revealing of them all. The real cost of a loan sits in the APR (DAE), which adds the interest to all the mandatory costs, and in the term you take it over. The same instalment, stretched by ten more years, means a different total paid."
+        },
+        {
+          "t": "ul",
+          "x": [
+            "<strong>The interest and its type.</strong> Fixed for a period and then variable, tied to an index, or variable from the start. Ask what happens to the instalment in the month the fixed period ends.",
+            "<strong>The file analysis fee</strong>, paid on submission, whatever the bank's answer turns out to be.",
+            "<strong>The property valuation</strong>, paid by you, with a valuer approved by the bank.",
+            "<strong>The insurance policies.</strong> The compulsory home policy, the optional policy the bank asks for and, on some offers, the assigned life insurance.",
+            "<strong>The administration fee</strong>, monthly or annual, which goes into the total cost even when it appears melted into the instalment."
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Ask for the written offer with the APR and the repayment schedule, from two banks, on the same amount and the same term. Then you compare the total to be paid, not the instalment. What the bank asks for on a new apartment and how the loan drawdown ties to the stage of construction we explained in the <a href=\"/credit-ipotecar/\">mortgage section</a>."
+        },
+        {
+          "t": "p",
+          "x": "Here is the limit we state openly: no interest rate written in an article would deserve your trust. It changes from one month to the next and from one client profile to another. The only figure that counts is the one in the offer issued in your name, with your income, on the date you sign."
+        }
+      ]
+    },
+    {
+      "h2": "After the move: finishing, furnishing and the building charges",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "The expense that frightens people most often is neither the notary nor the bank. It is what comes after you have the key in your hand. Furnishing and finishing stretch across a huge range of sums, because they depend on how many rooms you have to fill, how much you buy ready made and how much you build from scratch."
+        },
+        {
+          "t": "p",
+          "x": "What moves the sum here: the number of rooms, a made to measure kitchen or one off the shelf, appliances bought all at once or in stages, and how much of the finishing is already done at handover. Ask for the list of included fittings in writing, then budget only for what is missing from it. At Ilioara, underfloor heating is included in every room, the joinery is triple glazed Salamander with 7 chambers, and every apartment has its own 24 kW Ariston boiler."
+        },
+        {
+          "t": "p",
+          "x": "Then come the monthly costs, which split in two. Your utilities, where having your own boiler means you pay exactly what you consume, and the building's part, where you pay together with the neighbours. That is where the share of common parts and the repair fund sit, two lines many buyers see for the first time only on the first maintenance bill."
+        },
+        {
+          "t": "p",
+          "x": "The share of common parts is calculated from your area relative to the total area of the building, so a bigger apartment carries a bigger part of the common costs. It is worth knowing exactly which area goes into the calculation before you sign, because the difference between usable and built area shows up directly in the maintenance bill. At Ilioara there are four apartments per floor, and the number of doors on the landing tells you from the start how intensively the common spaces you maintain together are used."
+        },
+        {
+          "t": "p",
+          "x": "The repair fund means money set aside by the owners' association for what breaks in the shared parts, from the lift to the installations in the stairwell. The sum is set by a decision of the association, so there is no universal percentage anyone can tell you in advance. In a new building the big interventions come later, but the fund is built up from the start, precisely so that it is there then."
+        },
+        {
+          "t": "p",
+          "x": "The last cost many forget completely is the car. The parking space is bought separately, at Ilioara 20,000 EUR for a single one and 25,000 EUR for a Klauss double one, both excluding VAT, like the apartments. How the double system works and who it suits we explained on the <a href=\"/parcare/\">parking page</a>."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "h2": "The reservation and the deposit, the money that leaves first",
-   "blocks": [
+  ],
+  "faq": [
     {
-     "t": "p",
-     "x": "Once you have the real number in your head, the payment calendar comes next. Reserving an apartment at Ilioara is 2,000 EUR and holds the unit in your name, and the minimum deposit is 30%. The two sums do not leave on the same day, but both leave long before you touch the door handle."
+      "q": "Does the displayed price of new apartments include VAT?",
+      "a": "As a rule no, prices are displayed without VAT, and the standard rate is 21% since 1 August 2025. At Ilioara Residence, which is completed in December 2026, 21% applies, so you add the tax to every price in the list to get the real sum in the contract."
     },
     {
-     "t": "p",
-     "x": "Thirty per cent of 107,500 EUR means <strong>32,250 EUR</strong>, money that has to be liquid on the signing date, not locked in a deposit maturing in a year. Ask in the first conversation which sum the percentage is calculated on and whether the reservation is deducted from the deposit or added next to it. Two short questions that completely change your planning."
+      "q": "How much deposit do I need for a new apartment?",
+      "a": "At Ilioara the minimum deposit is 30%, plus a reservation of 2,000 EUR that holds the apartment in your name. Ask in the first conversation which sum the percentage is calculated on and whether the reservation is deducted from the deposit, because that changes your whole payment calendar."
     },
     {
-     "t": "p",
-     "x": "There is one more thing, and it is about timing, not money. Of 33 apartments, 12 are left available, and the type you want can leave the list while you are gathering the deposit. You can see what is free right now in the <a href=\"/apartamente/\">list of apartments</a>, with areas and floors."
+      "q": "What costs do I have at the notary when I buy an apartment?",
+      "a": "The notary fee and the land registry entry fee are calculated from the value in the contract and from what exactly you are recording in the land registry, and a loan adds the registration of the mortgage. You find the exact figure by asking for the quote in writing, on your own contract value, a few days before signing."
+    },
+    {
+      "q": "What do I pay monthly on a new apartment, apart from the instalment?",
+      "a": "The utilities you consume, plus the building's part: the share of common parts, calculated from your area relative to the building's, and the repair fund set by the owners' association. With your own boiler you pay the gas and the electricity on your own consumption, separately from the shared maintenance."
     }
-   ]
-  },
-  {
-   "h2": "The notary and the land registry entry: certain costs, variable sums",
-   "blocks": [
+  ],
+  "ctaAfter": "Write to us on WhatsApp with the apartment that interests you and you get the complete sum, with VAT and with everything that follows up to signing.",
+  "readAlso": [
     {
-     "t": "p",
-     "x": "Here begins the area where nobody serious gives you a figure over the phone, and whoever does is guessing. The notary fee and the land registry entry fee are calculated by their own rules, which change over time and depend on your particular file. What you can find out from day one is the mechanism, and the mechanism is enough for you to ask for a proper estimate."
+      "href": "/blog/tva-apartamente-noi-2026/",
+      "label": "VAT on new apartments in 2026: who pays 21% and who catches 9%"
     },
     {
-     "t": "ul",
-     "x": [
-      "<strong>The value in the contract.</strong> The notary fee is calculated as a percentage, in value bands, so a 3 room apartment costs more at the notary than a 2 room one, even though the deed looks the same.",
-      "<strong>The number of deeds.</strong> If you are also taking a parking space, ask from the start whether it goes into the same contract or a separate one, because a second deed means a second round of costs.",
-      "<strong>The loan.</strong> The bank's mortgage is recorded in the land registry, and that adds steps on top of a sale paid entirely from your own funds.",
-      "<strong>Translations and powers of attorney.</strong> If you sign through a representative or have a document in a foreign language, extra lines appear on the quote."
-     ]
+      "href": "/blog/credit-ipotecar-apartament-nou/",
+      "label": "A mortgage for a new apartment: what the bank asks for, step by step"
     },
     {
-     "t": "p",
-     "x": "Ask for the notary's quote in writing, on the exact value in the contract, a few days before signing. A serious office emails it on request. Then you compare two offices on the same contract value, otherwise you are comparing different things and celebrating for nothing."
+      "href": "/blog/suprafata-utila-vs-construita/",
+      "label": "Usable or built area: what you are actually buying"
     },
     {
-     "t": "p",
-     "x": "The land registry entry follows the same logic: it relates to the value in the deed and to what exactly you are recording in the land registry. Ask who files the application, how long it takes for the extract to be issued and whether the sum asked covers only the fee or the office's work as well."
+      "href": "/blog/cumperi-direct-de-la-proprietar/",
+      "label": "What changes when you buy directly from the developer"
     }
-   ]
-  },
-  {
-   "h2": "The agency commission, the cost that can be missing entirely",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "On the classic residential market, the buyer's commission is a percentage of the price that is added on top of everything else and paid at signing. It is the biggest variable cost of all the ones here and, unlike the legal fees, it is negotiable. It is worth asking directly, from the first viewing: who pays the commission, how much it is and when it is due."
-    },
-    {
-     "t": "p",
-     "x": "At Ilioara Residence the sale is made directly by the developer, so the commission for the buyer is zero. The price displayed next to each apartment is the final price of the home, and on top of it come VAT and the legal costs, that is all. We covered separately what changes in practice in the guide on <a href=\"/blog/cumperi-direct-de-la-proprietar/\">buying directly from the developer</a>."
-    },
-    {
-     "t": "p",
-     "x": "Zero commission does not automatically mean it comes out cheaper. It means you know from the start which sum you are negotiating and who you are talking to when you have a question about finishes or deadlines."
-    }
-   ]
-  },
-  {
-   "h2": "The loan costs money too, beyond the monthly instalment",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "The monthly instalment is the only figure many buyers remember, and it is the least revealing of them all. The real cost of a loan sits in the APR (DAE), which adds the interest to all the mandatory costs, and in the term you take it over. The same instalment, stretched by ten more years, means a different total paid."
-    },
-    {
-     "t": "ul",
-     "x": [
-      "<strong>The interest and its type.</strong> Fixed for a period and then variable, tied to an index, or variable from the start. Ask what happens to the instalment in the month the fixed period ends.",
-      "<strong>The file analysis fee</strong>, paid on submission, whatever the bank's answer turns out to be.",
-      "<strong>The property valuation</strong>, paid by you, with a valuer approved by the bank.",
-      "<strong>The insurance policies.</strong> The compulsory home policy, the optional policy the bank asks for and, on some offers, the assigned life insurance.",
-      "<strong>The administration fee</strong>, monthly or annual, which goes into the total cost even when it appears melted into the instalment."
-     ]
-    },
-    {
-     "t": "p",
-     "x": "Ask for the written offer with the APR and the repayment schedule, from two banks, on the same amount and the same term. Then you compare the total to be paid, not the instalment. What the bank asks for on a new apartment and how the loan drawdown ties to the stage of construction we explained in the <a href=\"/credit-ipotecar/\">mortgage section</a>."
-    },
-    {
-     "t": "p",
-     "x": "Here is the limit we state openly: no interest rate written in an article would deserve your trust. It changes from one month to the next and from one client profile to another. The only figure that counts is the one in the offer issued in your name, with your income, on the date you sign."
-    }
-   ]
-  },
-  {
-   "h2": "After the move: finishing, furnishing and the building charges",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "The expense that frightens people most often is neither the notary nor the bank. It is what comes after you have the key in your hand. Furnishing and finishing stretch across a huge range of sums, because they depend on how many rooms you have to fill, how much you buy ready made and how much you build from scratch."
-    },
-    {
-     "t": "p",
-     "x": "What moves the sum here: the number of rooms, a made to measure kitchen or one off the shelf, appliances bought all at once or in stages, and how much of the finishing is already done at handover. Ask for the list of included fittings in writing, then budget only for what is missing from it. At Ilioara, underfloor heating is included in every room, the joinery is triple glazed Salamander with 7 chambers, and every apartment has its own 24 kW Ariston boiler."
-    },
-    {
-     "t": "p",
-     "x": "Then come the monthly costs, which split in two. Your utilities, where having your own boiler means you pay exactly what you consume, and the building's part, where you pay together with the neighbours. That is where the share of common parts and the repair fund sit, two lines many buyers see for the first time only on the first maintenance bill."
-    },
-    {
-     "t": "p",
-     "x": "The share of common parts is calculated from your area relative to the total area of the building, so a bigger apartment carries a bigger part of the common costs. It is worth knowing exactly which area goes into the calculation before you sign, because the difference between usable and built area shows up directly in the maintenance bill. At Ilioara there are four apartments per floor, and the number of doors on the landing tells you from the start how intensively the common spaces you maintain together are used."
-    },
-    {
-     "t": "p",
-     "x": "The repair fund means money set aside by the owners' association for what breaks in the shared parts, from the lift to the installations in the stairwell. The sum is set by a decision of the association, so there is no universal percentage anyone can tell you in advance. In a new building the big interventions come later, but the fund is built up from the start, precisely so that it is there then."
-    },
-    {
-     "t": "p",
-     "x": "The last cost many forget completely is the car. The parking space is bought separately, at Ilioara 20,000 EUR for a single one and 25,000 EUR for a Klauss double one, both excluding VAT, like the apartments. How the double system works and who it suits we explained on the <a href=\"/parcare/\">parking page</a>."
-    }
-   ]
-  }
- ],
- "faq": [
-  {
-   "q": "Does the displayed price of new apartments include VAT?",
-   "a": "As a rule no, prices are displayed without VAT, and the standard rate is 21% since 1 August 2025. At Ilioara Residence, which is completed in December 2026, 21% applies, so you add the tax to every price in the list to get the real sum in the contract."
-  },
-  {
-   "q": "How much deposit do I need for a new apartment?",
-   "a": "At Ilioara the minimum deposit is 30%, plus a reservation of 2,000 EUR that holds the apartment in your name. Ask in the first conversation which sum the percentage is calculated on and whether the reservation is deducted from the deposit, because that changes your whole payment calendar."
-  },
-  {
-   "q": "What costs do I have at the notary when I buy an apartment?",
-   "a": "The notary fee and the land registry entry fee are calculated from the value in the contract and from what exactly you are recording in the land registry, and a loan adds the registration of the mortgage. You find the exact figure by asking for the quote in writing, on your own contract value, a few days before signing."
-  },
-  {
-   "q": "What do I pay monthly on a new apartment, apart from the instalment?",
-   "a": "The utilities you consume, plus the building's part: the share of common parts, calculated from your area relative to the building's, and the repair fund set by the owners' association. With your own boiler you pay the gas and the electricity on your own consumption, separately from the shared maintenance."
-  }
- ],
- "ctaAfter": "Write to us on WhatsApp with the apartment that interests you and you get the complete sum, with VAT and with everything that follows up to signing.",
- "readAlso": [
-  {
-   "href": "/blog/tva-apartamente-noi-2026/",
-   "label": "VAT on new apartments in 2026: who pays 21% and who catches 9%"
-  },
-  {
-   "href": "/blog/credit-ipotecar-apartament-nou/",
-   "label": "A mortgage for a new apartment: what the bank asks for, step by step"
-  },
-  {
-   "href": "/blog/suprafata-utila-vs-construita/",
-   "label": "Usable or built area: what you are actually buying"
-  },
-  {
-   "href": "/blog/cumperi-direct-de-la-proprietar/",
-   "label": "What changes when you buy directly from the developer"
-  }
- ]
+  ]
 }

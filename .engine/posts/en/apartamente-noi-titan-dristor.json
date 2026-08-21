@@ -1,157 +1,157 @@
 {
- "slug": "apartamente-noi-titan-dristor",
- "sablon": "vechi",
- "publishAt": "2026-06-16",
- "updatedAt": "2026-08-04",
- "title": "New apartments in Titan Dristor: a guide to the area",
- "seoTitle": "New apartments in Titan Dristor: a guide to the area",
- "description": "New apartments in Titan-Dristor: Grigorescu metro 5 minutes on foot, IOR Park at 9, ParkLake at 15. The real guide to the area, with concrete distances.",
- "descriptionLlm": "A guide to the Titan-Dristor area (Sector 3, Bucharest) for buyers of new apartments, from the perspective of the owners of the Ilioara Residence project (Aleea Eprubetei 7-11). Landmarks on foot: Nicolae Grigorescu metro 5 min, IOR Park 9 min, ParkLake 15 min. Apartments with 2 and 3 rooms, 47-85 sqm in total, 107,500-168,000 EUR + VAT.",
- "articleSection": "New apartments",
- "keywords": "new apartments titan, apartments dristor, apartments sector 3, apartments nicolae grigorescu, new apartments bucharest, IOR park, grigorescu metro, ParkLake, titan dristor area guide",
- "readMinutes": 5,
- "lead": "People think Titan means old blocks and traffic. Anyone who says that has never spent five minutes in the corner between Nicolae Grigorescu metro station and IOR Park. This is something else: a settled neighbourhood, with the metro at the surface and more greenery than fits in a photograph. The difference between a street that is really a boulevard and a closed alley among houses shows up in the resale price five years later. This guide is about the Titan-Dristor area as someone who lives in it knows it, not as a map describes it.",
- "intro": [],
- "hasByline": true,
- "sections": [
-  {
-   "h2": "The metro makes the area, not the street",
-   "blocks": [
+  "slug": "apartamente-noi-titan-dristor",
+  "sablon": "vechi",
+  "publishAt": "2026-06-16",
+  "updatedAt": "2026-08-04",
+  "title": "New apartments in Titan Dristor: a guide to the area",
+  "seoTitle": "New Apartments in Titan-Dristor | Guide to the Area",
+  "description": "New apartments in Titan-Dristor: Grigorescu metro 5 minutes on foot, IOR Park at 9, ParkLake at 15. The real guide to the area, with concrete distances.",
+  "descriptionLlm": "A guide to the Titan-Dristor area (Sector 3, Bucharest) for buyers of new apartments, from the perspective of the owners of the Ilioara Residence project (Aleea Eprubetei 7-11). Landmarks on foot: Nicolae Grigorescu metro 5 min, IOR Park 9 min, ParkLake 15 min. Apartments with 2 and 3 rooms, 47-85 sqm in total, 107,500-168,000 EUR + VAT.",
+  "articleSection": "New apartments",
+  "keywords": "new apartments titan, apartments dristor, apartments sector 3, apartments nicolae grigorescu, new apartments bucharest, IOR park, grigorescu metro, ParkLake, titan dristor area guide",
+  "readMinutes": 5,
+  "lead": "People think Titan means old blocks and traffic. Anyone who says that has never spent five minutes in the corner between Nicolae Grigorescu metro station and IOR Park. This is something else: a settled neighbourhood, with the metro at the surface and more greenery than fits in a photograph. The difference between a street that is really a boulevard and a closed alley among houses shows up in the resale price five years later. This guide is about the Titan-Dristor area as someone who lives in it knows it, not as a map describes it.",
+  "intro": [],
+  "hasByline": true,
+  "sections": [
     {
-     "t": "p",
-     "x": "A new apartment in Sector 3 is bought for one technical reason: how fast you get to the metro without a car. At Ilioara Residence, Nicolae Grigorescu station is 5 minutes on foot from the door of the building. Not \"nearby\", not \"in the area\". Five minutes, at a normal pace."
+      "h2": "The metro makes the area, not the street",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "A new apartment in Sector 3 is bought for one technical reason: how fast you get to the metro without a car. At Ilioara Residence, Nicolae Grigorescu station is 5 minutes on foot from the door of the building. Not \"nearby\", not \"in the area\". Five minutes, at a normal pace."
+        },
+        {
+          "t": "p",
+          "x": "That changes the whole calculation. From Grigorescu you catch M1 and M3, you are at Unirii in a few stops and at Universitate without changing. Anyone working in the centre gives up the car after the first month. And for anyone selling later, being close to the metro is the next buyer's first question."
+        },
+        {
+          "t": "p",
+          "x": "And it is not only the metro. The Ilioara bus stop is at 3 minutes, trams 19, 23 and 27 at 4 minutes, Titan metro station, the other end of the neighbourhood, at 18 minutes on foot. When you have three kinds of transport within four minutes, the car stops being a condition of everyday life."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "That changes the whole calculation. From Grigorescu you catch M1 and M3, you are at Unirii in a few stops and at Universitate without changing. Anyone working in the centre gives up the car after the first month. And for anyone selling later, being close to the metro is the next buyer's first question."
+      "h2": "IOR Park is the luxury nobody puts in the price",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Greenery in Bucharest is measured in minutes to it, not in square metres on paper. IOR Park, one of the largest green spaces in the city, is 9 minutes on foot from Ilioara Residence. With a lake, with long paths, with that spot where on a Sunday morning it feels like you are at the edge of the city, not in Sector 3."
+        },
+        {
+          "t": "p",
+          "x": "For a family with children or for someone who runs, that weighs more than any finish. A big park ten minutes away means you go outside without making a plan. It appears in no listing, but it decides where you really want to live."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "And it is not only the metro. The Ilioara bus stop is at 3 minutes, trams 19, 23 and 27 at 4 minutes, Titan metro station, the other end of the neighbourhood, at 18 minutes on foot. When you have three kinds of transport within four minutes, the car stops being a condition of everyday life."
+      "h2": "The shopping: you have everything five to ten minutes away",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "The Titan-Dristor area does not send you anywhere far for everyday things. Mega Image and Piața Mihail Ambrozie are at 6-7 minutes on foot, so you have fresh bread and vegetables from the market before you make your coffee. Piața Titan, the big one, is at 9 minutes."
+        },
+        {
+          "t": "p",
+          "x": "When you want a mall with everything in it, ParkLake plus World Class are at 15 minutes on foot, and Galeriile Titan, next to Titan metro station, at 18. To that you add the ordinary infrastructure that counts on a hard day: a non stop Lukoil petrol station at 2 minutes, a car wash at 1 minute, Policlinica Titan at 13. Nothing spectacular on this list. That is exactly the point. Everything close, nothing missing."
+        }
+      ]
+    },
+    {
+      "h2": "Boulevard or a street set back: the choice that counts most",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "This is where a good apartment parts ways with one you regret. Many new buildings in Sector 3 sit directly on the boulevard, with everything that comes in the package: horns at 7 in the morning, dust on the window sill, a window you cannot open in summer. It looks good in photos, it is hard to live in."
+        },
+        {
+          "t": "p",
+          "x": "Aleea Eprubetei, where Ilioara Residence is, is a closed street, set back among houses. It is not a through road, so nobody passes along it unless they live there. You have the quiet of a residential area, but with the metro and the shops five to nine minutes away. That is the rare combination in Bucharest: close to everything, but not on the artery. When you look for new apartments in Titan or Dristor, always ask what kind of street the building faces. The rest is decoration."
+        }
+      ]
+    },
+    {
+      "h2": "Why a new apartment here, not a cheaper old one",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Titan is full of old blocks at a lower price, that is true. Exactly for that reason it is worth saying plainly what you get on top with a new apartment: real insulation, so smaller bills in winter, and zero budget set aside for pipes, wiring or a roof five years from now."
+        },
+        {
+          "t": "p",
+          "x": "At Ilioara Residence the features are in the price, not options with an asterisk. Underfloor heating in every room of the apartment. Triple glazed Salamander joinery with 7 chambers, which really does keep the cold and the noise outside. A 24 kW Ariston boiler of your own, so you are on your own, not caught in the district heating system. A short landing, only 4 apartments per floor, without the crowding of long corridors."
+        },
+        {
+          "t": "p",
+          "x": "A new building, ground floor plus 8 storeys, with 2 penthouses sold on the top floor and 31 apartments for sale, 4 per floor. The areas run from 49 to 86 sqm in total, with modular layouts, so you find everything from a studio to three generous rooms. The price given is with everything included, the terrace counted."
+        }
+      ]
+    },
+    {
+      "h2": "Prices, availability and how you buy here",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Straight to the figures, no dancing. The 2 room apartments are between 107,500 and 136,500 EUR + VAT. The 3 room ones, between 151,000 and 168,000 EUR + VAT. The displayed price is the price, with no surprise at the end."
+        },
+        {
+          "t": "p",
+          "x": "Out of the 33 apartments, 12 are still available. The lower floors have almost sold out, so most of those left are up on 6 and 7, exactly the part with the best view. Anyone who wants light and a view catches it now, in a month probably not."
+        },
+        {
+          "t": "p",
+          "x": "For the car there is a Klauss double parking space, two spaces stacked, at 25,000 EUR + VAT, or a single one at 20,000 EUR + VAT. For the first 3 clients there is also renting from 80 EUR + VAT a month. The reservation is 2,000 EUR + VAT, the minimum deposit 30%, completion in December 2026. The sale is direct from the developer, 0% commission for the buyer, the sum you see is the sum you pay. On WhatsApp you find out what is still free today."
+        },
+        {
+          "t": "p",
+          "x": "In detail: <a href=\"/apartamente-noi-bucuresti/\">the market for new apartments in Bucharest</a>."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "h2": "IOR Park is the luxury nobody puts in the price",
-   "blocks": [
+  ],
+  "faq": [
     {
-     "t": "p",
-     "x": "Greenery in Bucharest is measured in minutes to it, not in square metres on paper. IOR Park, one of the largest green spaces in the city, is 9 minutes on foot from Ilioara Residence. With a lake, with long paths, with that spot where on a Sunday morning it feels like you are at the edge of the city, not in Sector 3."
+      "q": "How close is the metro to Ilioara Residence?",
+      "a": "Nicolae Grigorescu metro station is 5 minutes on foot from the door of the building, with access to M1 and M3. Titan metro station, at the other end of the neighbourhood, is 18 minutes on foot."
     },
     {
-     "t": "p",
-     "x": "For a family with children or for someone who runs, that weighs more than any finish. A big park ten minutes away means you go outside without making a plan. It appears in no listing, but it decides where you really want to live."
+      "q": "Which apartments are still available?",
+      "a": "Out of the 33, there are 12 still available. The lower floors have almost sold out, so most of those left are on floors 6 and 7, the part with the best view."
+    },
+    {
+      "q": "What does an apartment at Ilioara Residence cost?",
+      "a": "The 2 room apartments are between 107,500 and 136,500 EUR + VAT, and the 3 room ones between 151,000 and 168,000 EUR + VAT. The displayed price is the final price, with no commission for the buyer."
+    },
+    {
+      "q": "What features are included in the price?",
+      "a": "Underfloor heating in every room, triple glazed Salamander joinery with 7 chambers and a 24 kW Ariston boiler of your own. A short landing, only 4 apartments per floor."
+    },
+    {
+      "q": "Is there a parking space?",
+      "a": "Yes. A Klauss double parking space (two spaces stacked) at 25,000 EUR + VAT, a single one at 20,000 EUR + VAT, and for the first 3 clients it can be rented from 80 EUR + VAT a month."
+    },
+    {
+      "q": "How do you reserve and when is it completed?",
+      "a": "The reservation is 2,000 EUR + VAT, with a minimum deposit of 30%, and completion is in December 2026. The sale is made directly by the developer, with 0% commission for the buyer. Details on WhatsApp."
     }
-   ]
-  },
-  {
-   "h2": "The shopping: you have everything five to ten minutes away",
-   "blocks": [
+  ],
+  "ctaAfter": "You get the floor plans and the prices on WhatsApp, then we arrange the viewing together.",
+  "readAlso": [
     {
-     "t": "p",
-     "x": "The Titan-Dristor area does not send you anywhere far for everyday things. Mega Image and Piața Mihail Ambrozie are at 6-7 minutes on foot, so you have fresh bread and vegetables from the market before you make your coffee. Piața Titan, the big one, is at 9 minutes."
+      "href": "/blog/apartamente-noi-bucuresti-2026/",
+      "label": "New apartments in Bucharest in 2026: a buying guide"
     },
     {
-     "t": "p",
-     "x": "When you want a mall with everything in it, ParkLake plus World Class are at 15 minutes on foot, and Galeriile Titan, next to Titan metro station, at 18. To that you add the ordinary infrastructure that counts on a hard day: a non stop Lukoil petrol station at 2 minutes, a car wash at 1 minute, Policlinica Titan at 13. Nothing spectacular on this list. That is exactly the point. Everything close, nothing missing."
+      "href": "/blog/ilioara-residence-bloc-nou-titan-dristor/",
+      "label": "Ilioara Residence Titan: the complete guide to the project"
+    },
+    {
+      "href": "/blog/de-ce-ilioara-residence/",
+      "label": "Ilioara Residence: reviews and 6 real differences"
+    },
+    {
+      "href": "/apartamente/",
+      "label": "See the available apartments, with the price next to each one"
     }
-   ]
-  },
-  {
-   "h2": "Boulevard or a street set back: the choice that counts most",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "This is where a good apartment parts ways with one you regret. Many new buildings in Sector 3 sit directly on the boulevard, with everything that comes in the package: horns at 7 in the morning, dust on the window sill, a window you cannot open in summer. It looks good in photos, it is hard to live in."
-    },
-    {
-     "t": "p",
-     "x": "Aleea Eprubetei, where Ilioara Residence is, is a closed street, set back among houses. It is not a through road, so nobody passes along it unless they live there. You have the quiet of a residential area, but with the metro and the shops five to nine minutes away. That is the rare combination in Bucharest: close to everything, but not on the artery. When you look for new apartments in Titan or Dristor, always ask what kind of street the building faces. The rest is decoration."
-    }
-   ]
-  },
-  {
-   "h2": "Why a new apartment here, not a cheaper old one",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Titan is full of old blocks at a lower price, that is true. Exactly for that reason it is worth saying plainly what you get on top with a new apartment: real insulation, so smaller bills in winter, and zero budget set aside for pipes, wiring or a roof five years from now."
-    },
-    {
-     "t": "p",
-     "x": "At Ilioara Residence the features are in the price, not options with an asterisk. Underfloor heating in every room of the apartment. Triple glazed Salamander joinery with 7 chambers, which really does keep the cold and the noise outside. A 24 kW Ariston boiler of your own, so you are on your own, not caught in the district heating system. A short landing, only 4 apartments per floor, without the crowding of long corridors."
-    },
-    {
-     "t": "p",
-     "x": "A new building, ground floor plus 8 storeys, with 2 penthouses sold on the top floor and 31 apartments for sale, 4 per floor. The areas run from 49 to 86 sqm in total, with modular layouts, so you find everything from a studio to three generous rooms. The price given is with everything included, the terrace counted."
-    }
-   ]
-  },
-  {
-   "h2": "Prices, availability and how you buy here",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Straight to the figures, no dancing. The 2 room apartments are between 107,500 and 136,500 EUR + VAT. The 3 room ones, between 151,000 and 168,000 EUR + VAT. The displayed price is the price, with no surprise at the end."
-    },
-    {
-     "t": "p",
-     "x": "Out of the 33 apartments, 12 are still available. The lower floors have almost sold out, so most of those left are up on 6 and 7, exactly the part with the best view. Anyone who wants light and a view catches it now, in a month probably not."
-    },
-    {
-     "t": "p",
-     "x": "For the car there is a Klauss double parking space, two spaces stacked, at 25,000 EUR + VAT, or a single one at 20,000 EUR + VAT. For the first 3 clients there is also renting from 80 EUR + VAT a month. The reservation is 2,000 EUR + VAT, the minimum deposit 30%, completion in December 2026. The sale is direct from the developer, 0% commission for the buyer, the sum you see is the sum you pay. On WhatsApp you find out what is still free today."
-    },
-    {
-     "t": "p",
-     "x": "In detail: <a href=\"/apartamente-noi-bucuresti/\">the market for new apartments in Bucharest</a>."
-    }
-   ]
-  }
- ],
- "faq": [
-  {
-   "q": "How close is the metro to Ilioara Residence?",
-   "a": "Nicolae Grigorescu metro station is 5 minutes on foot from the door of the building, with access to M1 and M3. Titan metro station, at the other end of the neighbourhood, is 18 minutes on foot."
-  },
-  {
-   "q": "Which apartments are still available?",
-   "a": "Out of the 33, there are 12 still available. The lower floors have almost sold out, so most of those left are on floors 6 and 7, the part with the best view."
-  },
-  {
-   "q": "What does an apartment at Ilioara Residence cost?",
-   "a": "The 2 room apartments are between 107,500 and 136,500 EUR + VAT, and the 3 room ones between 151,000 and 168,000 EUR + VAT. The displayed price is the final price, with no commission for the buyer."
-  },
-  {
-   "q": "What features are included in the price?",
-   "a": "Underfloor heating in every room, triple glazed Salamander joinery with 7 chambers and a 24 kW Ariston boiler of your own. A short landing, only 4 apartments per floor."
-  },
-  {
-   "q": "Is there a parking space?",
-   "a": "Yes. A Klauss double parking space (two spaces stacked) at 25,000 EUR + VAT, a single one at 20,000 EUR + VAT, and for the first 3 clients it can be rented from 80 EUR + VAT a month."
-  },
-  {
-   "q": "How do you reserve and when is it completed?",
-   "a": "The reservation is 2,000 EUR + VAT, with a minimum deposit of 30%, and completion is in December 2026. The sale is made directly by the developer, with 0% commission for the buyer. Details on WhatsApp."
-  }
- ],
- "ctaAfter": "You get the floor plans and the prices on WhatsApp, then we arrange the viewing together.",
- "readAlso": [
-  {
-   "href": "/blog/apartamente-noi-bucuresti-2026/",
-   "label": "New apartments in Bucharest in 2026: a buying guide"
-  },
-  {
-   "href": "/blog/ilioara-residence-bloc-nou-titan-dristor/",
-   "label": "Ilioara Residence Titan: the complete guide to the project"
-  },
-  {
-   "href": "/blog/de-ce-ilioara-residence/",
-   "label": "Ilioara Residence: reviews and 6 real differences"
-  },
-  {
-   "href": "/apartamente/",
-   "label": "See the available apartments, with the price next to each one"
-  }
- ]
+  ]
 }

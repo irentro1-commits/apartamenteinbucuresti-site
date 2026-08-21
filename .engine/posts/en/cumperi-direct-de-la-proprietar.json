@@ -1,64 +1,64 @@
 {
- "slug": "cumperi-direct-de-la-proprietar",
- "sablon": "vechi",
- "publishAt": "2026-06-12",
- "updatedAt": "2026-08-04",
- "title": "What it means to buy an apartment directly from the developer, with no commission",
- "seoTitle": "Direct from the developer, no commission: how it works",
- "description": "What buying a new apartment directly from the developer means: the displayed price is the final price, with no commission for the buyer.",
- "descriptionLlm": "",
- "articleSection": "Blog",
- "keywords": "",
- "readMinutes": 5,
- "lead": "In short: you sign the contract with the developer, the displayed price is the price, and the commission does not exist for you.<br>Below, how it works in practice.",
- "intro": [
-  {
-   "t": "p",
-   "x": "When you buy through a traditional agency, a commission turns up somewhere along the way. Sometimes you see it in the contract, other times it is already melted into the price. When you buy directly from the developer, the commission disappears from the equation: <b>the buyer pays no commission</b>."
-  },
-  {
-   "t": "p",
-   "x": "That means two practical things. One: <b>the price shown on the site is the price</b>, not a starting point with something added on top. Two: you talk directly to the person selling, with no middleman carrying messages between you."
-  }
- ],
- "hasByline": false,
- "sections": [
-  {
-   "h2": "How it goes, step by step",
-   "blocks": [
+  "slug": "cumperi-direct-de-la-proprietar",
+  "sablon": "vechi",
+  "publishAt": "2026-06-12",
+  "updatedAt": "2026-08-04",
+  "title": "What it means to buy an apartment directly from the developer, with no commission",
+  "seoTitle": "Buying Direct From the Developer | No Commission",
+  "description": "What buying a new apartment directly from the developer means: the displayed price is the final price, with no commission for the buyer.",
+  "descriptionLlm": "",
+  "articleSection": "Blog",
+  "keywords": "",
+  "readMinutes": 5,
+  "lead": "In short: you sign the contract with the developer, the displayed price is the price, and the commission does not exist for you.<br>Below, how it works in practice.",
+  "intro": [
     {
-     "t": "p",
-     "x": "1. <b>You write to us on WhatsApp</b> or you call. You get the floor plans and the prices for the apartments that interest you."
+      "t": "p",
+      "x": "When you buy through a traditional agency, a commission turns up somewhere along the way. Sometimes you see it in the contract, other times it is already melted into the price. When you buy directly from the developer, the commission disappears from the equation: <b>the buyer pays no commission</b>."
     },
     {
-     "t": "p",
-     "x": "2. <b>You come to a viewing</b>, on Aleea Eprubetei 7. You see the building, the street, your floor, and you ask every question, including the awkward ones."
-    },
-    {
-     "t": "p",
-     "x": "3. If you want to go further, <b>you reserve with 2,000 EUR + VAT</b>, then the minimum deposit is 30%. The building is completed in December 2026."
+      "t": "p",
+      "x": "That means two practical things. One: <b>the price shown on the site is the price</b>, not a starting point with something added on top. Two: you talk directly to the person selling, with no middleman carrying messages between you."
     }
-   ]
-  },
-  {
-   "h2": "What to check, whoever you buy from",
-   "blocks": [
+  ],
+  "hasByline": false,
+  "sections": [
     {
-     "t": "p",
-     "x": "Ask for the documents at the viewing and check the real state of the construction with your own eyes. A serious seller does not dodge these questions."
+      "h2": "How it goes, step by step",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "1. <b>You write to us on WhatsApp</b> or you call. You get the floor plans and the prices for the apartments that interest you."
+        },
+        {
+          "t": "p",
+          "x": "2. <b>You come to a viewing</b>, on Aleea Eprubetei 7. You see the building, the street, your floor, and you ask every question, including the awkward ones."
+        },
+        {
+          "t": "p",
+          "x": "3. If you want to go further, <b>you reserve with 2,000 EUR + VAT</b>, then the minimum deposit is 30%. The building is completed in December 2026."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "The available apartments, with the final price next to each one, are here: <a href=\"/apartamente/\">available apartments</a> and <a href=\"/preturi/\">all the prices</a>."
-    },
-    {
-     "t": "p",
-     "x": "In detail: <a href=\"/apartamente-noi-bucuresti/\">a new apartment with no commission for the buyer</a>."
+      "h2": "What to check, whoever you buy from",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Ask for the documents at the viewing and check the real state of the construction with your own eyes. A serious seller does not dodge these questions."
+        },
+        {
+          "t": "p",
+          "x": "The available apartments, with the final price next to each one, are here: <a href=\"/apartamente/\">available apartments</a> and <a href=\"/preturi/\">all the prices</a>."
+        },
+        {
+          "t": "p",
+          "x": "In detail: <a href=\"/apartamente-noi-bucuresti/\">a new apartment with no commission for the buyer</a>."
+        }
+      ]
     }
-   ]
-  }
- ],
- "faq": [],
- "ctaAfter": "You get the floor plans and the prices on WhatsApp, then we arrange the viewing together.",
- "readAlso": []
+  ],
+  "faq": [],
+  "ctaAfter": "You get the floor plans and the prices on WhatsApp, then we arrange the viewing together.",
+  "readAlso": []
 }

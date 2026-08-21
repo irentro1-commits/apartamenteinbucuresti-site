@@ -1,182 +1,182 @@
 {
- "slug": "credit-ipotecar-apartament-nou",
- "publishAt": "2026-08-04",
- "updatedAt": "2026-08-04",
- "title": "A mortgage for a new apartment still under construction: what the bank asks for and in what order",
- "seoTitle": "Mortgage for a new apartment under construction",
- "description": "What the bank asks for on an apartment under construction, what Noua Casă means in 2026 and how the deposit sits on top of the reservation.",
- "descriptionLlm": "Guide to financing a new apartment still under construction: what changes compared with a loan for a finished home, what conditions the Noua Casă programme has in 2026 and in what order the steps are taken, from pre-approval to the completion inspection. Illustrated on Ilioara Residence, Titan, Sector 3, with completion in December 2026.",
- "articleSection": "Financing",
- "keywords": "mortgage new apartment, Noua Casă 2026, deposit apartment under construction, mortgage on a future asset, preliminary contract new apartment, new apartments Titan, financing Ilioara Residence",
- "readMinutes": 5,
- "lead": "You have seen a 2 room apartment at Ilioara Residence, you like it, and you have saved about 30,000 euros. The building is handed over in December 2026, so right now there is a permit, a structure and a works schedule. The first question is whether the bank lends money on a property that does not yet have its own number in the land registry. The second, whether you go for Noua Casă or an ordinary loan. The third, the order: do you reserve first and ask the bank afterwards, or the other way round. The answers are tied to each other, and the third one decides how much a mistake costs you.",
- "sections": [
-  {
-   "h2": "What changes when the building is not finished yet",
-   "blocks": [
+  "slug": "credit-ipotecar-apartament-nou",
+  "publishAt": "2026-08-04",
+  "updatedAt": "2026-08-04",
+  "title": "A mortgage for a new apartment still under construction: what the bank asks for and in what order",
+  "seoTitle": "Mortgage for an Apartment Under Construction | The Steps",
+  "description": "What the bank asks for on an apartment under construction, what Noua Casă means in 2026 and how the deposit sits on top of the reservation.",
+  "descriptionLlm": "Guide to financing a new apartment still under construction: what changes compared with a loan for a finished home, what conditions the Noua Casă programme has in 2026 and in what order the steps are taken, from pre-approval to the completion inspection. Illustrated on Ilioara Residence, Titan, Sector 3, with completion in December 2026.",
+  "articleSection": "Financing",
+  "keywords": "mortgage new apartment, Noua Casă 2026, deposit apartment under construction, mortgage on a future asset, preliminary contract new apartment, new apartments Titan, financing Ilioara Residence",
+  "readMinutes": 5,
+  "lead": "You have seen a 2 room apartment at Ilioara Residence, you like it, and you have saved about 30,000 euros. The building is handed over in December 2026, so right now there is a permit, a structure and a works schedule. The first question is whether the bank lends money on a property that does not yet have its own number in the land registry. The second, whether you go for Noua Casă or an ordinary loan. The third, the order: do you reserve first and ask the bank afterwards, or the other way round. The answers are tied to each other, and the third one decides how much a mistake costs you.",
+  "sections": [
     {
-     "t": "p",
-     "x": "With a finished home, the bank has something to value and something to mortgage. The valuer writes the report, the money is transferred at the notary, and the mortgage is recorded together with the sale. It all closes in a single session."
+      "h2": "What changes when the building is not finished yet",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "With a finished home, the bank has something to value and something to mortgage. The valuer writes the report, the money is transferred at the notary, and the mortgage is recorded together with the sale. It all closes in a single session."
+        },
+        {
+          "t": "p",
+          "x": "With a building under construction, that same session splits into two moments months apart. First you sign the <strong>preliminary contract (antecontract)</strong>, the promise authenticated at the notary through which the developer takes the apartment off the market and you commit to buying it at a fixed price. Only after the completion inspection and after the land registry entry does the apartment become an individual asset, with its own number in the land registry, and the bank can register the mortgage and transfer the money."
+        },
+        {
+          "t": "p",
+          "x": "The bank does not finance the concrete. It finances the deed."
+        },
+        {
+          "t": "p",
+          "x": "Between the two moments, the payments to the developer come out of your own money, on the schedule in the preliminary contract. At Ilioara Residence the reservation is 2,000 euros plus VAT, and the minimum deposit is 30% of the price. The loan covers the rest, at the end. Some banks also work with a <strong>mortgage on a future asset</strong>, a mortgage registered now on something that will exist legally later, and the conditions are set case by case."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "With a building under construction, that same session splits into two moments months apart. First you sign the <strong>preliminary contract (antecontract)</strong>, the promise authenticated at the notary through which the developer takes the apartment off the market and you commit to buying it at a fixed price. Only after the completion inspection and after the land registry entry does the apartment become an individual asset, with its own number in the land registry, and the bank can register the mortgage and transfer the money."
+      "h2": "Noua Casă, in its 2026 version",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "The programme is up and running. In May 2026 the Government adopted the decision to continue it, with a guarantee ceiling of 500 million lei for this year. The guarantees go through FNGCIMM."
+        },
+        {
+          "t": "p",
+          "x": "The mechanism, simply: the state guarantees part of the loan, so the bank accepts a smaller deposit than it usually asks for. The thresholds are read on the purchase price of the home, not on the amount borrowed. Up to 70,000 euros, the minimum deposit is 5%, and the state guarantees 50% of the loan."
+        },
+        {
+          "t": "p",
+          "x": "Between 70,001 and 140,000 euros, on new homes, the minimum deposit rises to 15%, and the state guarantee goes up to 60%. Above 140,000 euros, the discussion moves to a standard mortgage."
+        },
+        {
+          "t": "p",
+          "x": "Who qualifies: you declare that you own no home, or at most one under 50 square metres of usable area acquired outside the programme, and you buy a single home through the programme, in Romania. Anyone who once took Prima Casă has used up their right, because Noua Casă continues the same programme. Banks add their own conditions: a minimum age of 21, an age limit at the final maturity of the loan, between 63 and 65 years, and a minimum of 3 months in the current job."
+        },
+        {
+          "t": "p",
+          "x": "Here is the part many people find out late. The programme requires a home that is <strong>completed and entered in the land registry</strong>, with the completion documents signed no more than 5 years before the loan application, and a property under construction only comes into the discussion once it reaches that state. An energy performance certificate in class A, B or C is required as well."
+        },
+        {
+          "t": "p",
+          "x": "On a building handed over in December 2026, that places the Noua Casă loan after the completion inspection and the land registry entry, not at reservation. Until then, the instalments to the developer come out of your own money, on the schedule in the preliminary contract. Whether the bank holds a place in the ceiling for you during the waiting period is something you ask it directly, because practice differs from one bank to another."
+        },
+        {
+          "t": "p",
+          "x": "The second filter is the price in the contract, the one with VAT included. At Ilioara 21% applies, the standard rate in Romania since 1 August 2025, because a building completed in December 2026 stays outside the conditions of the reduced rate."
+        },
+        {
+          "t": "p",
+          "x": "A 2 room apartment starting at 107,500 euros excluding VAT comes to about 130,000 with VAT included, so within the programme's band. The upper end of the 2 room ones and all the 3 room ones go above it, and there the discussion is about a standard mortgage. The calculation on rates is in the article on <a href=\"/blog/tva-apartamente-noi-2026/\">VAT on new apartments in 2026</a>, and the sums per unit are in the <a href=\"/preturi/\">price list</a>. The ceilings do move from one year to the next, so you confirm the current figure with the bank."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "The bank does not finance the concrete. It finances the deed."
+      "h2": "The order of the steps and why it counts",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "The right order starts at the bank, not at the apartment. Pre-approval tells you what sum you get on your current income, and that sum decides which apartments are really on your list."
+        },
+        {
+          "t": "p",
+          "x": "The apartment is chosen in an afternoon. The file is built in two months."
+        },
+        {
+          "t": "ul",
+          "x": [
+            "Pre-approval at one or two banks, before you lock anything in.",
+            "The reservation, 2,000 euros plus VAT, which takes the apartment off the market in your name.",
+            "The preliminary contract authenticated at the notary, the document with which you actually enter the loan file.",
+            "The deposit of at least 30% to the developer, paid on the schedule in the preliminary contract.",
+            "The file at the bank, the valuation and, if you go for Noua Casă, the guarantee request to FNGCIMM.",
+            "The completion inspection, the land registry entry, the final contract at the notary and the loan drawdown."
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Swapping the first two steps is the most expensive mistake. You reserve, you pay, then you find out the bank approves less than you thought, and you are left with a gap to cover from somewhere else. <a href=\"/credit-ipotecar/\">The instalment calculator and the broker on the loan page</a> show you the sum before you sign."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "Between the two moments, the payments to the developer come out of your own money, on the schedule in the preliminary contract. At Ilioara Residence the reservation is 2,000 euros plus VAT, and the minimum deposit is 30% of the price. The loan covers the rest, at the end. Some banks also work with a <strong>mortgage on a future asset</strong>, a mortgage registered now on something that will exist legally later, and the conditions are set case by case."
+      "h2": "What is up to you and what is up to the bank",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Approval is played out on income, on your history at the Credit Bureau, on length of service and on the <strong>debt-to-income ratio</strong>, that is on how much of your monthly income is allowed to go towards instalments, a limit the bank applies under its own rules and those of the BNR."
+        },
+        {
+          "t": "p",
+          "x": "This is where the thing it is fair for you to hear from us comes in: no website can promise you a loan. We tell you the price, the payment schedule and the documents the developer asks for. The approved figure comes from the bank, on your own file."
+        },
+        {
+          "t": "p",
+          "x": "The rest is in your control: a stable income for a few months, credit cards reduced or closed, a deposit above the minimum and a clear picture of the notary, valuation and land registry entry costs, gathered in the article on the <a href=\"/blog/costuri-reale-apartament-nou/\">real costs of a new apartment</a>. The sale at Ilioara is direct from the developer, so the calculation covers the price plus the legal costs, that is all."
+        },
+        {
+          "t": "p",
+          "x": "The building is finished in December. Your file starts now."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "h2": "Noua Casă, in its 2026 version",
-   "blocks": [
+  ],
+  "faq": [
     {
-     "t": "p",
-     "x": "The programme is up and running. In May 2026 the Government adopted the decision to continue it, with a guarantee ceiling of 500 million lei for this year. The guarantees go through FNGCIMM."
+      "q": "Can I take Noua Casă for an apartment handed over in December 2026?",
+      "a": "You can enter the programme, but not from the day of the reservation. The programme requires a home that is completed and entered in the land registry, with the completion documents signed, plus an energy performance certificate in class A, B or C. On a building handed over in December 2026, that means the Noua Casă file is put together around the completion inspection, and until then you pay the developer from your own money. How each bank treats the waiting period is confirmed directly with the bank."
     },
     {
-     "t": "p",
-     "x": "The mechanism, simply: the state guarantees part of the loan, so the bank accepts a smaller deposit than it usually asks for. The thresholds are read on the purchase price of the home, not on the amount borrowed. Up to 70,000 euros, the minimum deposit is 5%, and the state guarantees 50% of the loan."
+      "q": "What is the difference between the deposit the developer asks for and the deposit the bank asks for?",
+      "a": "They are two separate things that overlap in time. The deposit to the developer, at least 30% at Ilioara, is paid on the schedule in the preliminary contract, during construction, from your own money. The deposit from the bank's point of view is the part of the price it does not finance, and with Noua Casă it starts at 5% or 15%, depending on the threshold you fall into. In practice, the sums already transferred to the developer are usually counted as your own contribution, and the exact way that is done is confirmed with the bank."
     },
     {
-     "t": "p",
-     "x": "Between 70,001 and 140,000 euros, on new homes, the minimum deposit rises to 15%, and the state guarantee goes up to 60%. Above 140,000 euros, the discussion moves to a standard mortgage."
-    },
-    {
-     "t": "p",
-     "x": "Who qualifies: you declare that you own no home, or at most one under 50 square metres of usable area acquired outside the programme, and you buy a single home through the programme, in Romania. Anyone who once took Prima Casă has used up their right, because Noua Casă continues the same programme. Banks add their own conditions: a minimum age of 21, an age limit at the final maturity of the loan, between 63 and 65 years, and a minimum of 3 months in the current job."
-    },
-    {
-     "t": "p",
-     "x": "Here is the part many people find out late. The programme requires a home that is <strong>completed and entered in the land registry</strong>, with the completion documents signed no more than 5 years before the loan application, and a property under construction only comes into the discussion once it reaches that state. An energy performance certificate in class A, B or C is required as well."
-    },
-    {
-     "t": "p",
-     "x": "On a building handed over in December 2026, that places the Noua Casă loan after the completion inspection and the land registry entry, not at reservation. Until then, the instalments to the developer come out of your own money, on the schedule in the preliminary contract. Whether the bank holds a place in the ceiling for you during the waiting period is something you ask it directly, because practice differs from one bank to another."
-    },
-    {
-     "t": "p",
-     "x": "The second filter is the price in the contract, the one with VAT included. At Ilioara 21% applies, the standard rate in Romania since 1 August 2025, because a building completed in December 2026 stays outside the conditions of the reduced rate."
-    },
-    {
-     "t": "p",
-     "x": "A 2 room apartment starting at 107,500 euros excluding VAT comes to about 130,000 with VAT included, so within the programme's band. The upper end of the 2 room ones and all the 3 room ones go above it, and there the discussion is about a standard mortgage. The calculation on rates is in the article on <a href=\"/blog/tva-apartamente-noi-2026/\">VAT on new apartments in 2026</a>, and the sums per unit are in the <a href=\"/preturi/\">price list</a>. The ceilings do move from one year to the next, so you confirm the current figure with the bank."
+      "q": "How long does it take, from reservation to the money from the bank?",
+      "a": "It depends on two calendars running in parallel. Yours, with the pre-approval, the preliminary contract and the loan file, is measured in weeks. The building's, with the completion inspection and the land registry entry, is measured in months and closes at completion, December 2026 in the case of Ilioara. The loan drawdown comes after both have closed, so prepare the file early and stay in touch with the bank throughout."
     }
-   ]
-  },
-  {
-   "h2": "The order of the steps and why it counts",
-   "blocks": [
+  ],
+  "ctaAfter": "Write to us on WhatsApp with the sum you have available and we will tell you which apartments fit into it and what the next steps at the bank look like.",
+  "readAlso": [
     {
-     "t": "p",
-     "x": "The right order starts at the bank, not at the apartment. Pre-approval tells you what sum you get on your current income, and that sum decides which apartments are really on your list."
+      "href": "/credit-ipotecar/",
+      "label": "Instalment calculator and credit broker"
     },
     {
-     "t": "p",
-     "x": "The apartment is chosen in an afternoon. The file is built in two months."
+      "href": "/apartamente/",
+      "label": "The available apartments at Ilioara Residence"
     },
     {
-     "t": "ul",
-     "x": [
-      "Pre-approval at one or two banks, before you lock anything in.",
-      "The reservation, 2,000 euros plus VAT, which takes the apartment off the market in your name.",
-      "The preliminary contract authenticated at the notary, the document with which you actually enter the loan file.",
-      "The deposit of at least 30% to the developer, paid on the schedule in the preliminary contract.",
-      "The file at the bank, the valuation and, if you go for Noua Casă, the guarantee request to FNGCIMM.",
-      "The completion inspection, the land registry entry, the final contract at the notary and the loan drawdown."
-     ]
+      "href": "/blog/costuri-reale-apartament-nou/",
+      "label": "The real costs of a new apartment"
     },
     {
-     "t": "p",
-     "x": "Swapping the first two steps is the most expensive mistake. You reserve, you pay, then you find out the bank approves less than you thought, and you are left with a gap to cover from somewhere else. <a href=\"/credit-ipotecar/\">The instalment calculator and the broker on the loan page</a> show you the sum before you sign."
+      "href": "/blog/tva-apartamente-noi-2026/",
+      "label": "VAT on new apartments in 2026"
     }
-   ]
-  },
-  {
-   "h2": "What is up to you and what is up to the bank",
-   "blocks": [
+  ],
+  "sources": [
     {
-     "t": "p",
-     "x": "Approval is played out on income, on your history at the Credit Bureau, on length of service and on the <strong>debt-to-income ratio</strong>, that is on how much of your monthly income is allowed to go towards instalments, a limit the bank applies under its own rules and those of the BNR."
+      "claim": "Programul Noua Casă continuă în 2026, cu un plafon de garantare de 500 de milioane de lei, aprobat prin hotărâre de guvern pe 4 mai 2026",
+      "url": "https://agerpres.ro/economic/2026/05/04/executivul-a-adoptat-hotararea-de-guvern-pentru-continuarea-programului-noua-casa-si-in-2026-plafon---1552715",
+      "publisher": "AGERPRES"
     },
     {
-     "t": "p",
-     "x": "This is where the thing it is fair for you to hear from us comes in: no website can promise you a loan. We tell you the price, the payment schedule and the documents the developer asks for. The approved figure comes from the bank, on your own file."
+      "claim": "Locuința nouă eligibilă este cea pentru care documentele de recepție la terminarea lucrărilor s-au semnat cu cel mult 5 ani înainte de solicitarea creditului garantat, prin program se achiziționează o singură locuință finalizată, iar dosarul cere certificat de eficiență energetică în clasa A, B sau C",
+      "url": "https://www.fngcimm.ro/noua-casa",
+      "publisher": "FNGCIMM"
     },
     {
-     "t": "p",
-     "x": "The rest is in your control: a stable income for a few months, credit cards reduced or closed, a deposit above the minimum and a clear picture of the notary, valuation and land registry entry costs, gathered in the article on the <a href=\"/blog/costuri-reale-apartament-nou/\">real costs of a new apartment</a>. The sale at Ilioara is direct from the developer, so the calculation covers the price plus the legal costs, that is all."
+      "claim": "Condiții de eligibilitate: beneficiarul nu deține nicio locuință sau deține cel mult una sub 50 mp utili dobândită altfel decât prin program, cumpără o singură locuință în România prin program, iar foștii beneficiari Prima Casă nu mai sunt eligibili",
+      "url": "https://www.fngcimm.ro/noua-casa",
+      "publisher": "FNGCIMM"
     },
     {
-     "t": "p",
-     "x": "The building is finished in December. Your file starts now."
+      "claim": "Prin Noua Casă se achiziționează doar locuințe finalizate și intabulate în cartea funciară, imobilele în construcție nu sunt acceptate; praguri de preț 70.000 și 140.000 de euro, cu avans 5% respectiv 15% și garanție de stat 50% respectiv 60%; vârstă minimă 21 de ani și maximă 63 de ani femei sau 65 de ani bărbați la scadența finală; vechime de minimum 3 luni la locul de muncă actual",
+      "url": "https://www.raiffeisen.ro/ro/persoane-fizice/produsele-noastre/credite/creditul-imobiliar-prin-programul-guvernamental-noua-casa.html",
+      "publisher": "Raiffeisen Bank România"
+    },
+    {
+      "claim": "Cota standard de TVA în România este 21%, introdusă prin Legea nr. 141/2025",
+      "url": "https://legislatie.just.ro/Public/DetaliiDocument/300022",
+      "publisher": "Portal Legislativ, Ministerul Justiției"
     }
-   ]
-  }
- ],
- "faq": [
-  {
-   "q": "Can I take Noua Casă for an apartment handed over in December 2026?",
-   "a": "You can enter the programme, but not from the day of the reservation. The programme requires a home that is completed and entered in the land registry, with the completion documents signed, plus an energy performance certificate in class A, B or C. On a building handed over in December 2026, that means the Noua Casă file is put together around the completion inspection, and until then you pay the developer from your own money. How each bank treats the waiting period is confirmed directly with the bank."
-  },
-  {
-   "q": "What is the difference between the deposit the developer asks for and the deposit the bank asks for?",
-   "a": "They are two separate things that overlap in time. The deposit to the developer, at least 30% at Ilioara, is paid on the schedule in the preliminary contract, during construction, from your own money. The deposit from the bank's point of view is the part of the price it does not finance, and with Noua Casă it starts at 5% or 15%, depending on the threshold you fall into. In practice, the sums already transferred to the developer are usually counted as your own contribution, and the exact way that is done is confirmed with the bank."
-  },
-  {
-   "q": "How long does it take, from reservation to the money from the bank?",
-   "a": "It depends on two calendars running in parallel. Yours, with the pre-approval, the preliminary contract and the loan file, is measured in weeks. The building's, with the completion inspection and the land registry entry, is measured in months and closes at completion, December 2026 in the case of Ilioara. The loan drawdown comes after both have closed, so prepare the file early and stay in touch with the bank throughout."
-  }
- ],
- "ctaAfter": "Write to us on WhatsApp with the sum you have available and we will tell you which apartments fit into it and what the next steps at the bank look like.",
- "readAlso": [
-  {
-   "href": "/credit-ipotecar/",
-   "label": "Instalment calculator and credit broker"
-  },
-  {
-   "href": "/apartamente/",
-   "label": "The available apartments at Ilioara Residence"
-  },
-  {
-   "href": "/blog/costuri-reale-apartament-nou/",
-   "label": "The real costs of a new apartment"
-  },
-  {
-   "href": "/blog/tva-apartamente-noi-2026/",
-   "label": "VAT on new apartments in 2026"
-  }
- ],
- "sources": [
-  {
-   "claim": "Programul Noua Casă continuă în 2026, cu un plafon de garantare de 500 de milioane de lei, aprobat prin hotărâre de guvern pe 4 mai 2026",
-   "url": "https://agerpres.ro/economic/2026/05/04/executivul-a-adoptat-hotararea-de-guvern-pentru-continuarea-programului-noua-casa-si-in-2026-plafon---1552715",
-   "publisher": "AGERPRES"
-  },
-  {
-   "claim": "Locuința nouă eligibilă este cea pentru care documentele de recepție la terminarea lucrărilor s-au semnat cu cel mult 5 ani înainte de solicitarea creditului garantat, prin program se achiziționează o singură locuință finalizată, iar dosarul cere certificat de eficiență energetică în clasa A, B sau C",
-   "url": "https://www.fngcimm.ro/noua-casa",
-   "publisher": "FNGCIMM"
-  },
-  {
-   "claim": "Condiții de eligibilitate: beneficiarul nu deține nicio locuință sau deține cel mult una sub 50 mp utili dobândită altfel decât prin program, cumpără o singură locuință în România prin program, iar foștii beneficiari Prima Casă nu mai sunt eligibili",
-   "url": "https://www.fngcimm.ro/noua-casa",
-   "publisher": "FNGCIMM"
-  },
-  {
-   "claim": "Prin Noua Casă se achiziționează doar locuințe finalizate și intabulate în cartea funciară, imobilele în construcție nu sunt acceptate; praguri de preț 70.000 și 140.000 de euro, cu avans 5% respectiv 15% și garanție de stat 50% respectiv 60%; vârstă minimă 21 de ani și maximă 63 de ani femei sau 65 de ani bărbați la scadența finală; vechime de minimum 3 luni la locul de muncă actual",
-   "url": "https://www.raiffeisen.ro/ro/persoane-fizice/produsele-noastre/credite/creditul-imobiliar-prin-programul-guvernamental-noua-casa.html",
-   "publisher": "Raiffeisen Bank România"
-  },
-  {
-   "claim": "Cota standard de TVA în România este 21%, introdusă prin Legea nr. 141/2025",
-   "url": "https://legislatie.just.ro/Public/DetaliiDocument/300022",
-   "publisher": "Portal Legislativ, Ministerul Justiției"
-  }
- ]
+  ]
 }

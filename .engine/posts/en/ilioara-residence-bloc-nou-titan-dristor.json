@@ -1,158 +1,158 @@
 {
- "slug": "ilioara-residence-bloc-nou-titan-dristor",
- "sablon": "vechi",
- "publishAt": "2026-06-16",
- "updatedAt": "2026-08-04",
- "title": "Ilioara Residence Titan: the complete guide to the project",
- "seoTitle": "Ilioara Residence Titan: the complete project guide",
- "description": "Ilioara Residence, a new building on Aleea Eprubetei 7-11, Titan-Dristor. 33 apartments, 12 available, from 107,500 EUR + VAT, ready December 2026.",
- "descriptionLlm": "Ilioara Residence is a new building (ground floor + 8 storeys, with 2 penthouses sold on the top floor; 31 apartments for sale, 4 per floor) on Aleea Eprubetei 7-11, the Titan-Dristor area, Sector 3, Bucharest. 12 apartments available, 2 room apartments from 107,500 EUR + VAT, 3 room apartments up to 168,000 EUR + VAT, completion December 2026, a direct sale from the developer.",
- "articleSection": "New apartments",
- "keywords": "Ilioara Residence, Ilioara Residence Titan, new building Aleea Eprubetei, new apartments Titan, apartments Dristor Sector 3, 2 room apartments Titan, 3 room apartments Titan, new building Sector 3, apartments direct from the developer Bucharest",
- "readMinutes": 5,
- "lead": "Most new buildings in Titan sell on renders and promises. Ilioara Residence sells on something harder to photograph: a closed street, set back among houses, where nobody passes unless they have business there. You are looking up this name because you saw the listing and you want to know exactly what it is, where, how much it costs and what you get for that money. Good. Here is the complete answer, without going in circles: the real figures, what is left to sell, what is included in the price and how you buy, direct from the developer.",
- "intro": [],
- "hasByline": true,
- "sections": [
-  {
-   "h2": "What Ilioara Residence actually is",
-   "blocks": [
+  "slug": "ilioara-residence-bloc-nou-titan-dristor",
+  "sablon": "vechi",
+  "publishAt": "2026-06-16",
+  "updatedAt": "2026-08-04",
+  "title": "Ilioara Residence Titan: the complete guide to the project",
+  "seoTitle": "Ilioara Residence Titan | The Complete Project Guide",
+  "description": "Ilioara Residence, a new building on Aleea Eprubetei 7-11, Titan-Dristor. 33 apartments, 12 available, from 107,500 EUR + VAT, ready December 2026.",
+  "descriptionLlm": "Ilioara Residence is a new building (ground floor + 8 storeys, with 2 penthouses sold on the top floor; 31 apartments for sale, 4 per floor) on Aleea Eprubetei 7-11, the Titan-Dristor area, Sector 3, Bucharest. 12 apartments available, 2 room apartments from 107,500 EUR + VAT, 3 room apartments up to 168,000 EUR + VAT, completion December 2026, a direct sale from the developer.",
+  "articleSection": "New apartments",
+  "keywords": "Ilioara Residence, Ilioara Residence Titan, new building Aleea Eprubetei, new apartments Titan, apartments Dristor Sector 3, 2 room apartments Titan, 3 room apartments Titan, new building Sector 3, apartments direct from the developer Bucharest",
+  "readMinutes": 5,
+  "lead": "Most new buildings in Titan sell on renders and promises. Ilioara Residence sells on something harder to photograph: a closed street, set back among houses, where nobody passes unless they have business there. You are looking up this name because you saw the listing and you want to know exactly what it is, where, how much it costs and what you get for that money. Good. Here is the complete answer, without going in circles: the real figures, what is left to sell, what is included in the price and how you buy, direct from the developer.",
+  "intro": [],
+  "hasByline": true,
+  "sections": [
     {
-     "t": "p",
-     "x": "A new building on Aleea Eprubetei 7-11, in the Titan-Dristor area, Sector 3. Ground floor plus 8 storeys: at the top, 2 penthouses already sold, and the rest 31 apartments, 4 per floor: one with 3 rooms and three with 2 rooms. That is all. No anthill with ten doors on the landing and a lift always in use."
+      "h2": "What Ilioara Residence actually is",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "A new building on Aleea Eprubetei 7-11, in the Titan-Dristor area, Sector 3. Ground floor plus 8 storeys: at the top, 2 penthouses already sold, and the rest 31 apartments, 4 per floor: one with 3 rooms and three with 2 rooms. That is all. No anthill with ten doors on the landing and a lift always in use."
+        },
+        {
+          "t": "p",
+          "x": "The street counts more than it seems. Aleea Eprubetei is a dead end set back among houses, not a boulevard you end up on by mistake. The quiet here is not a marketing argument, it is geography. Whoever ends up in front of the building has business in front of the building."
+        }
+      ]
     },
     {
-     "t": "p",
-     "x": "The street counts more than it seems. Aleea Eprubetei is a dead end set back among houses, not a boulevard you end up on by mistake. The quiet here is not a marketing argument, it is geography. Whoever ends up in front of the building has business in front of the building."
+      "h2": "What is left and why the where matters",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Out of 33 apartments, 12 are still available. The lower floors have almost gone, the penthouses on the top floor have sold as well, so most of those left are up on 6 and 7. To some buyers that sounds like bad news. It is exactly the other way round."
+        },
+        {
+          "t": "p",
+          "x": "The upper part is the part with the best view. The light comes in differently, the view opens up, and the noise from the street stays down below. Whoever arrived first took the lower floors because they were cheap. Whoever arrives now actually catches the best of the building. The up to date list is on /apartamente/."
+        }
+      ]
+    },
+    {
+      "h2": "The prices, with nothing hidden",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "The 2 room apartments start at 107,500 EUR + VAT and go up to 136,500 EUR + VAT. The 3 room ones are between 151,000 and 168,000 EUR + VAT. These are the final prices. The displayed price is the price, not an anchor from which a nerve wracking negotiation starts."
+        },
+        {
+          "t": "p",
+          "x": "The areas run from 49 to 86 sqm in total, usable plus terrace together, with a modular layout that folds around the way you live. The complete grid, apartment by apartment, is on /preturi/. There you see in black and white what you get for each sum."
+        }
+      ]
+    },
+    {
+      "h2": "What is included in the price and usually is not",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "This is where you see the difference between a building made to look good in a photo and one made to be lived in. Underfloor heating in every room of the apartment. Salamander triple glazed joinery, with 7 chambers, the kind that keeps the cold outside and the quiet inside. A 24 kW Ariston boiler of its own in every apartment, so you control the heat and the bill yourself."
+        },
+        {
+          "t": "p",
+          "x": "And a detail many discover only after moving in: the short landing, with only 4 doors per floor. It seems minor until you live in a building with long corridors and neighbours you cannot count. Here you know who lives next to you."
+        }
+      ]
+    },
+    {
+      "h2": "Parking and the reservation, in figures",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "A Klauss double space, two cars stacked, 25,000 EUR + VAT. A single space, 20,000 EUR + VAT. Anyone who does not want to buy now can rent, from 80 EUR + VAT a month, an option available for the first 3 clients."
+        },
+        {
+          "t": "p",
+          "x": "To lock an apartment, the reservation is 2,000 EUR + VAT. The minimum deposit is 30%, and the building is completed in December 2026. That means you catch today's price for a home you receive finished, not in three years."
+        }
+      ]
+    },
+    {
+      "h2": "Why the Titan area remains a safe bet",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Everything you need daily is a few steps from the door of the building. Nicolae Grigorescu metro station, 5 minutes on foot. The Ilioara bus stop, 3 minutes. Trams 19, 23 and 27, 4 minutes. Mega Image and Piața Mihail Ambrozie, 6 to 7 minutes, so the shopping gets done without a car."
+        },
+        {
+          "t": "p",
+          "x": "IOR Park, 9 minutes. Piața Titan, 9 as well. Policlinica Titan at 13, ParkLake and World Class at 15, Titan metro and Galeriile at 18. Plus the small things that count at 7 in the morning and at 11 at night: the non stop Lukoil petrol station at 2 minutes, the car wash at one. This is not an area we promise will develop. It is already developed."
+        }
+      ]
+    },
+    {
+      "h2": "How you buy: direct from the developer",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Here there is no middleman taking a cut out of your pocket. The sale is made directly by the developer, with 0% commission for the buyer. The sum you see on /preturi/ is the sum you pay, with no hidden fee added at the end."
+        },
+        {
+          "t": "p",
+          "x": "The steps are simple: you choose the apartment, you lock it with the 2,000 EUR + VAT reservation, you sign for the minimum deposit of 30% and you wait for completion in December 2026. If you want to see a particular apartment or to ask anything that is unclear, a message on WhatsApp is the quickest route. The upper floors, the ones with the view, do not stand still."
+        },
+        {
+          "t": "p",
+          "x": "In detail: <a href=\"/blocuri-noi-bucuresti/\">newly built blocks in Bucharest</a>."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "h2": "What is left and why the where matters",
-   "blocks": [
+  ],
+  "faq": [
     {
-     "t": "p",
-     "x": "Out of 33 apartments, 12 are still available. The lower floors have almost gone, the penthouses on the top floor have sold as well, so most of those left are up on 6 and 7. To some buyers that sounds like bad news. It is exactly the other way round."
+      "q": "Where exactly is Ilioara Residence?",
+      "a": "On Aleea Eprubetei 7-11, in the Titan-Dristor area, Sector 3, Bucharest. It is a closed street, set back among houses, 5 minutes on foot from Nicolae Grigorescu metro."
     },
     {
-     "t": "p",
-     "x": "The upper part is the part with the best view. The light comes in differently, the view opens up, and the noise from the street stays down below. Whoever arrived first took the lower floors because they were cheap. Whoever arrives now actually catches the best of the building. The up to date list is on /apartamente/."
+      "q": "What does an apartment in Ilioara Residence cost?",
+      "a": "The 2 room apartments are between 107,500 and 136,500 EUR + VAT. The 3 room ones, between 151,000 and 168,000 EUR + VAT. The displayed price is the final price, the complete grid is on /preturi/."
+    },
+    {
+      "q": "How many apartments are still available?",
+      "a": "12 out of 33. The lower floors have almost sold out, so most of those left are up on floors 6 and 7, the part with the best view."
+    },
+    {
+      "q": "What is included in the price?",
+      "a": "Underfloor heating in every room, Salamander triple glazed joinery with 7 chambers, a 24 kW Ariston boiler of its own and a short landing with only 4 apartments per floor."
+    },
+    {
+      "q": "When is the building completed?",
+      "a": "In December 2026. An apartment is reserved with 2,000 EUR + VAT, and the minimum deposit is 30%."
+    },
+    {
+      "q": "Is a commission paid on purchase?",
+      "a": "No. The sale is made directly by the developer, with 0% commission for the buyer. The sum you see is the sum you pay."
     }
-   ]
-  },
-  {
-   "h2": "The prices, with nothing hidden",
-   "blocks": [
+  ],
+  "ctaAfter": "You get the floor plans and the prices on WhatsApp, then we arrange the viewing together.",
+  "readAlso": [
     {
-     "t": "p",
-     "x": "The 2 room apartments start at 107,500 EUR + VAT and go up to 136,500 EUR + VAT. The 3 room ones are between 151,000 and 168,000 EUR + VAT. These are the final prices. The displayed price is the price, not an anchor from which a nerve wracking negotiation starts."
+      "href": "/blog/de-ce-ilioara-residence/",
+      "label": "Ilioara Residence: reviews and 6 real differences"
     },
     {
-     "t": "p",
-     "x": "The areas run from 49 to 86 sqm in total, usable plus terrace together, with a modular layout that folds around the way you live. The complete grid, apartment by apartment, is on /preturi/. There you see in black and white what you get for each sum."
+      "href": "/blog/apartamente-noi-titan-dristor/",
+      "label": "New apartments in Titan Dristor: a guide to the area"
+    },
+    {
+      "href": "/blog/cumperi-direct-de-la-proprietar/",
+      "label": "Direct from the developer, no commission: how it works"
+    },
+    {
+      "href": "/apartamente/",
+      "label": "See the available apartments, with the price next to each one"
     }
-   ]
-  },
-  {
-   "h2": "What is included in the price and usually is not",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "This is where you see the difference between a building made to look good in a photo and one made to be lived in. Underfloor heating in every room of the apartment. Salamander triple glazed joinery, with 7 chambers, the kind that keeps the cold outside and the quiet inside. A 24 kW Ariston boiler of its own in every apartment, so you control the heat and the bill yourself."
-    },
-    {
-     "t": "p",
-     "x": "And a detail many discover only after moving in: the short landing, with only 4 doors per floor. It seems minor until you live in a building with long corridors and neighbours you cannot count. Here you know who lives next to you."
-    }
-   ]
-  },
-  {
-   "h2": "Parking and the reservation, in figures",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "A Klauss double space, two cars stacked, 25,000 EUR + VAT. A single space, 20,000 EUR + VAT. Anyone who does not want to buy now can rent, from 80 EUR + VAT a month, an option available for the first 3 clients."
-    },
-    {
-     "t": "p",
-     "x": "To lock an apartment, the reservation is 2,000 EUR + VAT. The minimum deposit is 30%, and the building is completed in December 2026. That means you catch today's price for a home you receive finished, not in three years."
-    }
-   ]
-  },
-  {
-   "h2": "Why the Titan area remains a safe bet",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Everything you need daily is a few steps from the door of the building. Nicolae Grigorescu metro station, 5 minutes on foot. The Ilioara bus stop, 3 minutes. Trams 19, 23 and 27, 4 minutes. Mega Image and Piața Mihail Ambrozie, 6 to 7 minutes, so the shopping gets done without a car."
-    },
-    {
-     "t": "p",
-     "x": "IOR Park, 9 minutes. Piața Titan, 9 as well. Policlinica Titan at 13, ParkLake and World Class at 15, Titan metro and Galeriile at 18. Plus the small things that count at 7 in the morning and at 11 at night: the non stop Lukoil petrol station at 2 minutes, the car wash at one. This is not an area we promise will develop. It is already developed."
-    }
-   ]
-  },
-  {
-   "h2": "How you buy: direct from the developer",
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Here there is no middleman taking a cut out of your pocket. The sale is made directly by the developer, with 0% commission for the buyer. The sum you see on /preturi/ is the sum you pay, with no hidden fee added at the end."
-    },
-    {
-     "t": "p",
-     "x": "The steps are simple: you choose the apartment, you lock it with the 2,000 EUR + VAT reservation, you sign for the minimum deposit of 30% and you wait for completion in December 2026. If you want to see a particular apartment or to ask anything that is unclear, a message on WhatsApp is the quickest route. The upper floors, the ones with the view, do not stand still."
-    },
-    {
-     "t": "p",
-     "x": "In detail: <a href=\"/blocuri-noi-bucuresti/\">newly built blocks in Bucharest</a>."
-    }
-   ]
-  }
- ],
- "faq": [
-  {
-   "q": "Where exactly is Ilioara Residence?",
-   "a": "On Aleea Eprubetei 7-11, in the Titan-Dristor area, Sector 3, Bucharest. It is a closed street, set back among houses, 5 minutes on foot from Nicolae Grigorescu metro."
-  },
-  {
-   "q": "What does an apartment in Ilioara Residence cost?",
-   "a": "The 2 room apartments are between 107,500 and 136,500 EUR + VAT. The 3 room ones, between 151,000 and 168,000 EUR + VAT. The displayed price is the final price, the complete grid is on /preturi/."
-  },
-  {
-   "q": "How many apartments are still available?",
-   "a": "12 out of 33. The lower floors have almost sold out, so most of those left are up on floors 6 and 7, the part with the best view."
-  },
-  {
-   "q": "What is included in the price?",
-   "a": "Underfloor heating in every room, Salamander triple glazed joinery with 7 chambers, a 24 kW Ariston boiler of its own and a short landing with only 4 apartments per floor."
-  },
-  {
-   "q": "When is the building completed?",
-   "a": "In December 2026. An apartment is reserved with 2,000 EUR + VAT, and the minimum deposit is 30%."
-  },
-  {
-   "q": "Is a commission paid on purchase?",
-   "a": "No. The sale is made directly by the developer, with 0% commission for the buyer. The sum you see is the sum you pay."
-  }
- ],
- "ctaAfter": "You get the floor plans and the prices on WhatsApp, then we arrange the viewing together.",
- "readAlso": [
-  {
-   "href": "/blog/de-ce-ilioara-residence/",
-   "label": "Ilioara Residence: reviews and 6 real differences"
-  },
-  {
-   "href": "/blog/apartamente-noi-titan-dristor/",
-   "label": "New apartments in Titan Dristor: a guide to the area"
-  },
-  {
-   "href": "/blog/cumperi-direct-de-la-proprietar/",
-   "label": "Direct from the developer, no commission: how it works"
-  },
-  {
-   "href": "/apartamente/",
-   "label": "See the available apartments, with the price next to each one"
-  }
- ]
+  ]
 }
