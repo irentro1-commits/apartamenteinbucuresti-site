@@ -209,6 +209,7 @@ def fix_nav(body_pre, lang, slug):
 
 def head_meta(p, lang):
     lg, u = L[lang], url_for(lang, p["slug"])
+    og_img = (SITE + p["image"]["src"]) if p.get("image", {}).get("src") else f"{SITE}/og.jpg"
     alts = "".join(f'<link rel="alternate" hreflang="{L[l2]["code"].split("-")[0]}" href="{url_for(l2, p["slug"])}">\n'
                    for l2 in LANGS)
     alts += f'<link rel="alternate" hreflang="x-default" href="{url_for("ro", p["slug"])}">\n'
@@ -219,7 +220,7 @@ def head_meta(p, lang):
 <meta property="og:type" content="article">
 <meta property="og:locale" content="{lg['og']}">
 <meta property="og:site_name" content="Ilioara Residence">
-<meta property="og:image" content="{SITE}/og.jpg">
+<meta property="og:image" content="{og_img}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -252,7 +253,7 @@ def head_schema(p, lang):
         "datePublished":data_pub(p),"dateModified":data_mod(p),
         "inLanguage":lg["code"],
         "mainEntityOfPage":{"@type":"WebPage","@id":u},
-        "image":{"@type":"ImageObject","url":f"{SITE}/og.jpg","width":1200,"height":630},
+        "image":{"@type":"ImageObject","url":(SITE + p["image"]["src"]) if p.get("image", {}).get("src") else f"{SITE}/og.jpg","width":1200,"height":630},
         "author":{"@type":"Organization","name":lg["author"],
                   "url":(url_for(lang).replace("blog/","")) + "echipa-ilioara-residence/"},
         "publisher":{"@id":f"{SITE}/#organization","@type":"Organization","name":"Ilioara Residence",
@@ -338,6 +339,11 @@ def article(p, lang, nepublicate=frozenset()):
              f'<span class="br">{esc(lg["authorRole"])}</span></span></div>')
     o.append(f'<h1 class="rv" data-fx="rise">{esc(p["title"])}</h1>')
     o.append(localize(f'<p class="lead rv" data-fx="rise">{p["lead"]}</p>', lang, nepublicate))
+    if p.get("image", {}).get("src"):
+        o.append(f'<figure class="ahero rv" data-fx="rise" style="margin:18px 0 6px">'
+                 f'<img src="{p["image"]["src"]}" alt="{esc(p["image"].get("alt", ""))}" width="1200" height="630" '
+                 f'fetchpriority="high" decoding="async" style="width:100%;height:auto;border-radius:14px;display:block">'
+                 '</figure>')
     if p.get("intro"):
         o.append('<div class="pblock rv" data-fx="rise">' + render_blocks(p["intro"], lang, nepublicate) + "</div>")
 

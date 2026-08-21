@@ -69,6 +69,15 @@ def main():
     for l in LANGS:
         print(ruleaza(["python3", "validate_posts.py", "--posts", os.path.join(posts, l)], mediu))
 
+    poze = glob.glob(os.path.join(posts, "img", "*.jpg"))
+    if poze:
+        import shutil
+        dst = os.path.join(a.repo, "blog", "img")
+        os.makedirs(dst, exist_ok=True)
+        for f in poze:
+            shutil.copy2(f, os.path.join(dst, os.path.basename(f)))
+        print(f"\n1b. pozele articolelor: {len(poze)} copiate in blog/img/")
+
     print("\n2. paginile de articol")
     for l in LANGS:
         cmd = ["python3", "build_blog.py", "--repo", a.repo,
