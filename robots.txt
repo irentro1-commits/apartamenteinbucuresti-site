@@ -42,9 +42,19 @@ Allow: /
 User-agent: Perplexity-User
 Allow: /
 
-# Google (AI / Gemini) - Google-Extended ramane deschis (Google nu a clarificat daca AI Overviews trece prin el)
-User-agent: Google-Extended
+# Google. Googlebot e cautarea si ramane deschis; AI Overviews sunt parte din Cautare si trec
+# tot prin el, deci nu se pierde nimic din citare. Google-Extended e ALTCEVA: e exact
+# comutatorul de ANTRENAMENT pentru Gemini si Vertex, si Google scrie ca nu influenteaza
+# includerea in Cautare si nu e semnal de clasare. Andy, 21 aug 2026: "vrem robots pentru
+# citare si search atat, nu de train". Deci inchis.
+User-agent: Googlebot
 Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Google-Extended
+Disallow: /
 
 User-agent: GoogleOther
 Allow: /
@@ -61,7 +71,26 @@ Disallow: /
 User-agent: Amazonbot
 Disallow: /
 
-# Alti boti de antrenament fara pereche de citare, blocati
+# Restul motoarelor de cautare, deschise
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Asistenti care CITEAZA la cererea unui om, deschisi
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Alti boti de antrenament fara pereche de citare, blocati.
+# Lista e scrisa pe nume, nu prin `*`, fiindca regula generala de sus lasa deschis pentru
+# cautare: un bot care nu e numit aici trece. Cand apare unul nou, aici se adauga.
 User-agent: CCBot
 Disallow: /
 
@@ -69,6 +98,51 @@ User-agent: Bytespider
 Disallow: /
 
 User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: img2dataset
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: Webzio-Extended
+Disallow: /
+
+User-agent: PanguBot
+Disallow: /
+
+User-agent: Kangaroo Bot
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: magpie-crawler
 Disallow: /
 
 Sitemap: https://apartamenteinbucuresti.ro/sitemap-index.xml

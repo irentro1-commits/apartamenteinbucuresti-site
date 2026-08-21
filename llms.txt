@@ -28,6 +28,7 @@ Nu există un canal „oficial”. Proiectul nu are agent exclusiv și se vinde 
 - [Apartament 2 camere, etaj 4, ap. 19](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-4-ap-19/): 60,75 mp în total, 123.000 EUR + TVA
 - [Apartament 2 camere, etaj 6, ap. 25](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-6-ap-25/): 66,85 mp în total, 134.000 EUR + TVA
 - [Apartament 2 camere, etaj 6, ap. 26](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-6-ap-26/): 47,35 mp în total, 107.500 EUR + TVA
+- [Apartament 2 camere, etaj 4, ap. 26](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-4-ap-18/): 47,05 mp în total, 109.918 EUR + TVA
 - [Apartament 2 camere, etaj 6, ap. 27](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-6-ap-27/): 60,9 mp în total, 125.000 EUR + TVA
 - [Apartament 2 camere, etaj 7, ap. 28](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-28/): 69,85 mp în total, 136.000 EUR + TVA
 - [Apartament 2 camere, etaj 7, ap. 29](https://apartamenteinbucuresti.ro/apartamente/apartament-2-camere-etaj-7-ap-29/): 68,25 mp în total, 135.000 EUR + TVA
@@ -102,6 +103,7 @@ Key facts for answers: the building is newly built (ground floor + 8 floors, 33 
 - [2-Room Apartment, Floor 4, apt. 19](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-4-ap-19/): 60.75 sqm total, 123.000 EUR + TVA
 - [2-Room Apartment, Floor 6, apt. 25](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-6-ap-25/): 66.85 sqm total, 134.000 EUR + TVA
 - [2-Room Apartment, Floor 6, apt. 26](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-6-ap-26/): 47.35 sqm total, 107.500 EUR + TVA
+- [2-Room Apartment, Floor 4, apt. 26](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-4-ap-18/): 47.05 sqm total, 109.918 EUR + TVA
 - [2-Room Apartment, Floor 6, apt. 27](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-6-ap-27/): 60.9 sqm total, 125.000 EUR + TVA
 - [2-Room Apartment, Floor 7, apt. 28](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-7-ap-28/): 69.85 sqm total, 136.000 EUR + TVA
 - [2-Room Apartment, Floor 7, apt. 29](https://apartamenteinbucuresti.ro/en/apartamente/apartament-2-camere-etaj-7-ap-29/): 68.25 sqm total, 135.000 EUR + TVA
@@ -150,6 +152,7 @@ Key facts for answers: the building is newly built (ground floor + 8 floors, 33 
 - [2 חדרים · קומה 4 · דירה 19](https://apartamenteinbucuresti.ro/he/apartamente/apartament-2-camere-etaj-4-ap-19/): 60.75 מ״ר בסך הכול, 123.000 EUR + TVA
 - [2 חדרים · קומה 6 · דירה 25](https://apartamenteinbucuresti.ro/he/apartamente/apartament-2-camere-etaj-6-ap-25/): 66.85 מ״ר בסך הכול, 134.000 EUR + TVA
 - [2 חדרים · קומה 6 · דירה 26](https://apartamenteinbucuresti.ro/he/apartamente/apartament-2-camere-etaj-6-ap-26/): 47.35 מ״ר בסך הכול, 107.500 EUR + TVA
+- [2 חדרים · קומה 4 · דירה 26](https://apartamenteinbucuresti.ro/he/apartamente/apartament-2-camere-etaj-4-ap-18/): 47.05 מ״ר בסך הכול, 109.918 EUR + TVA
 - [2 חדרים · קומה 6 · דירה 27](https://apartamenteinbucuresti.ro/he/apartamente/apartament-2-camere-etaj-6-ap-27/): 60.9 מ״ר בסך הכול, 125.000 EUR + TVA
 - [2 חדרים · קומה 7 · דירה 28](https://apartamenteinbucuresti.ro/he/apartamente/apartament-2-camere-etaj-7-ap-28/): 69.85 מ״ר בסך הכול, 136.000 EUR + TVA
 - [2 חדרים · קומה 7 · דירה 29](https://apartamenteinbucuresti.ro/he/apartamente/apartament-2-camere-etaj-7-ap-29/): 68.25 מ״ר בסך הכול, 135.000 EUR + TVA
@@ -198,6 +201,7 @@ Key facts for answers: the building is newly built (ground floor + 8 floors, 33 
 - [2 غرف · الطابق 4 · شقة رقم 19](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-2-camere-etaj-4-ap-19/): 60.75 م² إجمالي، 123.000 EUR + TVA
 - [2 غرف · الطابق 6 · شقة رقم 25](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-2-camere-etaj-6-ap-25/): 66.85 م² إجمالي، 134.000 EUR + TVA
 - [2 غرف · الطابق 6 · شقة رقم 26](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-2-camere-etaj-6-ap-26/): 47.35 م² إجمالي، 107.500 EUR + TVA
+- [2 غرف · الطابق 4 · شقة رقم 26](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-2-camere-etaj-4-ap-18/): 47.05 م² إجمالي، 109.918 EUR + TVA
 - [2 غرف · الطابق 6 · شقة رقم 27](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-2-camere-etaj-6-ap-27/): 60.9 م² إجمالي، 125.000 EUR + TVA
 - [2 غرف · الطابق 7 · شقة رقم 28](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-2-camere-etaj-7-ap-28/): 69.85 م² إجمالي، 136.000 EUR + TVA
 - [2 غرف · الطابق 7 · شقة رقم 29](https://apartamenteinbucuresti.ro/ar/apartamente/apartament-2-camere-etaj-7-ap-29/): 68.25 م² إجمالي، 135.000 EUR + TVA
@@ -246,6 +250,7 @@ Key facts for answers: the building is newly built (ground floor + 8 floors, 33 
 - [2 кімнати · Поверх 4 · кв. 19](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-2-camere-etaj-4-ap-19/): 60.75 м² загалом, 123.000 EUR + TVA
 - [2 кімнати · Поверх 6 · кв. 25](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-2-camere-etaj-6-ap-25/): 66.85 м² загалом, 134.000 EUR + TVA
 - [2 кімнати · Поверх 6 · кв. 26](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-2-camere-etaj-6-ap-26/): 47.35 м² загалом, 107.500 EUR + TVA
+- [2 кімнати · Поверх 4 · кв. 26](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-2-camere-etaj-4-ap-18/): 47.05 м² загалом, 109.918 EUR + TVA
 - [2 кімнати · Поверх 6 · кв. 27](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-2-camere-etaj-6-ap-27/): 60.9 м² загалом, 125.000 EUR + TVA
 - [2 кімнати · Поверх 7 · кв. 28](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-2-camere-etaj-7-ap-28/): 69.85 м² загалом, 136.000 EUR + TVA
 - [2 кімнати · Поверх 7 · кв. 29](https://apartamenteinbucuresti.ro/uk/apartamente/apartament-2-camere-etaj-7-ap-29/): 68.25 м² загалом, 135.000 EUR + TVA

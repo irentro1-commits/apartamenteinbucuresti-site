@@ -149,10 +149,11 @@
       "etaj": "etaj 4",
       "total": "47,05",
       "pret": "109.918",
-      "pagina": false,
+      "pagina": true,
       "_nota": "Penthouse nu, apartament de 2 camere pe coltul 2 (stanga jos). Suprafata CORECTATA pe 21 aug 2026 dupa fisa trimisa de Andy, care e planul dezvoltatorului: utila 39,80 + terasa 7,25 = 47,05 mp. Cifra 49,20, luata din captura listei noi, era gresita si nu se potrivea cu coltul (47,05 la 47,35). Bine ca nu am propagat-o: umple_suprafete.py o sarise deliberat ca sursa, exact fiindca nu se potrivea. Pretul CU TVA e 133.000 EUR, dat de Andy pe 21 aug 2026 verbatim: \"ba aparataemnmtul 18 e 133.000 tva inclus\". Cel fara TVA, 109.918, era deja in date si se potriveste: 109.918 x 1,21 = 133.000.",
       "tva": "21",
-      "pret_total": "133.000"
+      "pret_total": "133.000",
+      "href": "/apartamente/apartament-2-camere-etaj-4-ap-18/"
     },
     "19": {
       "stare": "disponibil",

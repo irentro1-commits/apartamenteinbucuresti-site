@@ -1,6 +1,8 @@
 {
  "12-en": "/planuri/fise/plan-ap-12-en-v5.webp",
  "12-ro": "/planuri/fise/plan-ap-12-ro-v5.webp",
+ "18-en": "/planuri/fise/plan-ap-18-en-v5.webp",
+ "18-ro": "/planuri/fise/plan-ap-18-ro-v5.webp",
  "19-en": "/planuri/fise/plan-ap-19-en-v5.webp",
  "19-ro": "/planuri/fise/plan-ap-19-ro-v5.webp",
  "25-en": "/planuri/fise/plan-ap-25-en-v5.webp",
@@ -28,6 +30,11 @@
    "terasa": "28,10",
    "total": "84,45",
    "utila": "56,35"
+  },
+  "18": {
+   "terasa": "7,25",
+   "total": "47,05",
+   "utila": "39,80"
   },
   "19": {
    "terasa": "21,10",
