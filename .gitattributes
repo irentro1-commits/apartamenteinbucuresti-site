@@ -1,0 +1,14 @@
+# TERMINATIILE DE LINIE NU SE MAI CONVERTESC.
+#
+# Nascut pe 21 aug 2026 dintr-o poarta care era rosie degeaba. `verifica_fidelitate.py`
+# raporta 65 de fisiere "cu continut diferit". Masurat octet cu octet: continutul era
+# IDENTIC, difereau doar sfarsiturile de linie. `core.autocrlf=true` scrie CRLF in copia de
+# lucru la checkout, iar motorul scrie LF, deci fiecare pagina regenerata parea schimbata.
+#
+# Ce se depune in git si ce se serveste au fost mereu LF, deci situl live n-a fost niciodata
+# afectat. Afectata era POARTA: statea rosie pe un defect care nu exista, iar o poarta care
+# nu poate fi trecuta nu mai e citita de nimeni. Aia e paguba reala.
+#
+# `-text` inseamna: nu converti nimic, nici la intrare nici la iesire. Copia de lucru ramane
+# exact ce a scris motorul.
+* -text
