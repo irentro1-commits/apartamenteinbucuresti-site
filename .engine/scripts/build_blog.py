@@ -266,7 +266,7 @@ def head_schema(p, lang):
             "mainEntity":[{"@type":"Question","name":f["q"],
                            "acceptedAnswer":{"@type":"Answer","text":f["a"]}} for f in p["faq"]]})
     out += j({"@context":"https://schema.org","@type":"WebPage","url":u,
-        "speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".lead",".faq-q"]}})
+        "speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable-summary","h1"]}})
     return out
 
 
@@ -278,6 +278,46 @@ def fmt_date(d, lang):
     if lang == "uk": return f"{dd} {mn} {y}"
     return f"{dd} {mn} {y}"
 
+
+
+# --- MAXIM (23 Aug 2026, etalonul omdetreaba; PLAN-MAXIM-BLOG-23aug2026.md) ---
+_TRANSLIT = str.maketrans("ăâîșşțţéáü", "aaisstteau")
+
+def h2_id(text):
+    t = re.sub(r"<[^>]+>", "", text).lower().translate(_TRANSLIT)
+    t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+    return t[:60] or "sectiune"
+
+CUPRINS_L = {"ro": "Cuprins", "en": "Contents", "he": "תוכן העניינים", "ar": "المحتويات", "uk": "Зміст"}
+RETINUT_L = {"ro": "Trei lucruri de reținut", "en": "Three things to remember",
+             "he": "שלושה דברים שכדאי לזכור", "ar": "ثلاثة أمور تستحق التذكر",
+             "uk": "Три речі, які варто запам'ятати"}
+ART_CSS = ("<style>"
+    ".art h2[id]{scroll-margin-top:110px}"
+    ".art .pescurt{border:2px solid rgba(var(--gold-rgb),.55);background:rgba(var(--gold-rgb),.06);"
+    "padding:16px 18px;margin:20px 0 6px}"
+    ".art .pescurt .pk{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);"
+    "font-weight:700;margin:0 0 8px}"
+    ".art .pescurt ul{margin:0;padding:0;list-style:none}"
+    ".art .pescurt li{padding-left:22px;position:relative;margin:8px 0}"
+    ".art .pescurt li::before{content:\"\";position:absolute;left:0;top:.62em;width:14px;height:3px;"
+    "background:var(--gold)}"
+    ".art .cuprins{border:1px solid rgba(var(--gold-rgb),.35);background:rgba(var(--gold-rgb),.04);"
+    "margin:16px 0 4px}"
+    ".art .cuprins summary{cursor:pointer;padding:11px 16px;font-weight:700;letter-spacing:.07em;"
+    "text-transform:uppercase;font-size:.76rem;color:var(--gold)}"
+    ".art .cuprins ol{margin:0;padding:2px 20px 14px 36px}"
+    ".art .cuprins li{margin:6px 0}"
+    ".art .cuprins a{color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(var(--gold-rgb),.35)}"
+    ".art .cuprins a:hover{color:var(--gold)}"
+    ".art .pblock ul{list-style:none;padding-left:18px;border-left:3px solid rgba(var(--gold-rgb),.6)}"
+    ".art .pblock ul li{margin:9px 0}"
+    ".art .retinut ol{list-style:none;padding:0;margin:0}"
+    ".art .retinut li{display:flex;gap:14px;margin:12px 0;align-items:flex-start}"
+    ".art .retinut .nr{font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums;"
+    "font-size:.95rem;margin-top:2px}"
+    ".art .retinut p{margin:0}"
+    "</style>")
 
 LOCAL_ROOTS = ("/apartamente/","/preturi/","/dotari/","/credit-ipotecar/","/zona/","/parcare/",
   "/proiecte-finalizate/","/pentru-cine-construim/","/echipa-ilioara-residence/","/informatii-legale/",
@@ -327,7 +367,7 @@ def article(p, lang, nepublicate=frozenset()):
     lg = L[lang]
     root = "/" if lang == "ro" else f"/{lang}/"
     blog = root + "blog/"
-    o = ['<main class="pw art">']
+    o = ['<main class="pw art">', ART_CSS, '<article>']
     o.append(f'<nav class="bc" aria-label="{lg["here"]}"><a href="{root}">{lg["home"]}</a> › '
              f'<a href="{blog}">{lg["blog"]}</a> › <span aria-current="page">{esc(p["title"])}</span></nav>')
     if p.get("hasByline", True):
@@ -335,10 +375,21 @@ def article(p, lang, nepublicate=frozenset()):
                  f'{p["readMinutes"]} {lg["readTime"]}</div>')
         o.append(f'<div class="byline rv" data-fx="rise"><a class="av" href="{root}echipa-ilioara-residence/" '
              f'aria-label="{esc(lg["author"])}">{LOGO_SVG}</a><span class="bi">'
-             f'<a class="bn" href="{root}echipa-ilioara-residence/"><b>{esc(lg["author"])}</b></a>'
+             f'<a class="bn" rel="author" href="{root}echipa-ilioara-residence/"><b>{esc(lg["author"])}</b></a>'
              f'<span class="br">{esc(lg["authorRole"])}</span></span></div>')
     o.append(f'<h1 class="rv" data-fx="rise">{esc(p["title"])}</h1>')
     o.append(localize(f'<p class="lead rv" data-fx="rise">{p["lead"]}</p>', lang, nepublicate))
+    sect = list(p["sections"])
+    if sect and len(sect[0].get("blocks", [])) == 1 and sect[0]["blocks"][0]["t"] == "ul":
+        aside = sect.pop(0)
+        o.append('<aside class="pescurt speakable-summary rv" data-fx="rise" aria-label="%s">'
+                 '<p class="pk">%s</p><ul>%s</ul></aside>'
+                 % (esc(aside["h2"]), esc(aside["h2"]),
+                    "".join("<li>%s</li>" % localize(x, lang, nepublicate) for x in aside["blocks"][0]["x"])))
+    if len(sect) >= 3:
+        o.append('<details class="cuprins rv" data-fx="rise"><summary>%s</summary><ol>%s</ol></details>'
+                 % (esc(CUPRINS_L[lang]),
+                    "".join('<li><a href="#%s">%s</a></li>' % (h2_id(s2["h2"]), esc(s2["h2"])) for s2 in sect)))
     if p.get("image", {}).get("src"):
         o.append(f'<figure class="ahero rv" data-fx="rise" style="margin:18px 0 6px">'
                  f'<img src="{p["image"]["src"]}" alt="{esc(p["image"].get("alt", ""))}" width="1200" height="630" '
@@ -347,16 +398,23 @@ def article(p, lang, nepublicate=frozenset()):
     if p.get("intro"):
         o.append('<div class="pblock rv" data-fx="rise">' + render_blocks(p["intro"], lang, nepublicate) + "</div>")
 
-    for i, s in enumerate(p["sections"]):
+    for i, s in enumerate(sect):
         fx = FX[i % len(FX)]                      # P-K-02: variem efectul de la o sectiune la alta
-        o.append(f'<h2 class="rv" data-fx="{fx}">{esc(s["h2"])}</h2>')
+        o.append(f'<h2 id="{h2_id(s["h2"])}" class="rv" data-fx="{fx}">{esc(s["h2"])}</h2>')
         o.append('<div class="pblock rv" data-fx="rise">' + render_blocks(s["blocks"], lang, nepublicate) + "</div>")
 
     if p["faq"]:
-     o.append(f'<h2 class="rv" data-fx="slide">{lg["faqH"]}</h2>')
-     o.append('<div class="faq rv" data-fx="rise">' + "".join(
-        f'<div class="faq-item"><div class="faq-q">{esc(f["q"])}</div>'
-        f'<div class="faq-a">{esc(f["a"])}</div></div>' for f in p["faq"]) + "</div>")
+     o.append(f'<section aria-label="{esc(lg["faqH"])}"><h2 class="rv" data-fx="slide">{lg["faqH"]}</h2>')
+     o.append('<dl class="faq rv" data-fx="rise">' + "".join(
+        f'<div class="faq-item"><dt class="faq-q">{esc(f["q"])}</dt>'
+        f'<dd class="faq-a">{esc(f["a"])}</dd></div>' for f in p["faq"]) + "</dl></section>")
+    if p.get("recap"):
+        o.append('<section class="retinut rv" data-fx="rise" aria-label="%s">'
+                 '<h2 class="rv" data-fx="slide">%s</h2><ol>%s</ol></section>'
+                 % (esc(RETINUT_L[lang]), esc(RETINUT_L[lang]),
+                    "".join('<li><span class="nr" aria-hidden="true">0%d</span><p><strong>%s</strong> %s</p></li>'
+                            % (i + 1, esc(r.get("verdict", "")), esc(r.get("sprijin", "")))
+                            for i, r in enumerate(p["recap"][:3]))))
 
     msg = quote(lg["waMsg"].format(t=p["title"]))
     o.append(f'<div class="pcta rv" data-fx="rise">\n  <a class="btn" href="https://wa.me/{WA}?text={msg}">'
@@ -369,10 +427,10 @@ def article(p, lang, nepublicate=frozenset()):
         (ra_amanate if _viitor(r["href"], nepublicate) else ra_ok).append(r)
     for r in ra_amanate:
         print(f"    [{lang}] {p['slug']}: legatura amanata catre {r['href']}")
-    if not ra_ok: return "\n".join(o) + "\n"
+    if not ra_ok: return "\n".join(o) + "\n</article>\n"
     ra = "".join(f'<a href="{loc(r["href"], lang)}">{esc(r["label"])}</a>' for r in ra_ok)
     o.append(f'<div class="read-also rv" data-fx="rise"><div class="rh">{lg["readAlso"]}</div>{ra}</div>')
-    return "\n".join(o) + "\n"
+    return "\n".join(o) + "\n</article>\n"
 
 
 def _viitor(href, nepublicate):
