@@ -4,28 +4,28 @@
   "_singular": "`corp_unu` se foloseste cand a mai ramas UNUL. Fara el, fraza se contrazice: 'a mai ramas un apartament, majoritatea la etajele 6 si 7'. Deocamdata exista doar pe romana; celelalte limbi cad pe `corp` si trebuie scrise inainte sa ajungem la ultimul apartament.",
   "texte": {
     "ro": {
-      "corp": "Bloc nou pe Aleea Eprubetei 7, la 5 minute de metroul Nicolae Grigorescu, fără comision. Au mai rămas <b>%(disp)s</b>, majoritatea la etajele 6 și 7, cu prețul final lângă fiecare.",
-      "corp_unu": "Bloc nou pe Aleea Eprubetei 7, la 5 minute de metroul Nicolae Grigorescu, fără comision. A mai rămas <b>%(disp)s</b>, cu prețul final lângă el.",
+      "corp": "Bloc nou pe Aleea Eprubetei 7-11, la 5 minute de metroul Nicolae Grigorescu, fără comision. Au mai rămas <b>%(disp)s</b>, majoritatea la etajele 6 și 7, cu prețul final lângă fiecare.",
+      "corp_unu": "Bloc nou pe Aleea Eprubetei 7-11, la 5 minute de metroul Nicolae Grigorescu, fără comision. A mai rămas <b>%(disp)s</b>, cu prețul final lângă el.",
       "unu": "un apartament",
       "multe": "%d apartamente"
     },
     "en": {
-      "corp": "New building on Aleea Eprubetei 7, a 5-minute walk from Nicolae Grigorescu metro station, no commission for the buyer. Still <b>%(disp)s</b> left, most on floors 6 and 7, final price next to each.",
+      "corp": "New building on Aleea Eprubetei 7-11, a 5-minute walk from Nicolae Grigorescu metro station, no commission for the buyer. Still <b>%(disp)s</b> left, most on floors 6 and 7, final price next to each.",
       "unu": "one apartment",
       "multe": "%d apartments"
     },
     "he": {
-      "corp": "בניין חדש ברחוב Aleea Eprubetei 7, במרחק 5 דקות הליכה ממטרו Nicolae Grigorescu, בלי עמלה לקונה. עדיין יש <b>%(disp)s</b>, בעיקר בקומות 6 ו-7, עם המחיר הסופי ליד כל אחת.",
+      "corp": "בניין חדש ברחוב Aleea Eprubetei 7-11, במרחק 5 דקות הליכה ממטרו Nicolae Grigorescu, בלי עמלה לקונה. עדיין יש <b>%(disp)s</b>, בעיקר בקומות 6 ו-7, עם המחיר הסופי ליד כל אחת.",
       "unu": "דירה אחת",
       "multe": "%d דירות"
     },
     "ar": {
-      "corp": "مبنى جديد في Aleea Eprubetei 7، على بُعد 5 دقائق سيرًا من مترو Nicolae Grigorescu، بدون عمولة على المشتري. بقيت <b>%(disp)s</b>، معظمها في الطابقين 6 و7، مع السعر النهائي بجانب كل واحدة.",
+      "corp": "مبنى جديد في Aleea Eprubetei 7-11، على بُعد 5 دقائق سيرًا من مترو Nicolae Grigorescu، بدون عمولة على المشتري. بقيت <b>%(disp)s</b>، معظمها في الطابقين 6 و7، مع السعر النهائي بجانب كل واحدة.",
       "unu": "شقة واحدة",
       "multe": "%d من الشقق"
     },
     "uk": {
-      "corp": "Новий будинок на Aleea Eprubetei 7, 5 хвилин пішки до метро Nicolae Grigorescu, без комісії. Ще <b>%(disp)s</b>, більшість на 6-му і 7-му поверхах, фінальна ціна біля кожної.",
+      "corp": "Новий будинок на Aleea Eprubetei 7-11, 5 хвилин пішки до метро Nicolae Grigorescu, без комісії. Ще <b>%(disp)s</b>, більшість на 6-му і 7-му поверхах, фінальна ціна біля кожної.",
       "unu": "%d квартира",
       "putine": "%d квартири",
       "multe": "%d квартир"
