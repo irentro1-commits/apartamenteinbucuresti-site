@@ -19,12 +19,17 @@ ORDINEA PASILOR NU E ARBITRARA:
   1. valideaza datele        gate pe JSON, INAINTE sa se scrie un octet de HTML
   2. build_blog              paginile de articol, doar cele cu publishAt trecut
   3. build_index             indexul blogului, in 5 limbi
-  4. pas_dif                 blocul de canale de vanzare (post-generare)
-  5. pas_formular            a doua usa de contact, langa butonul de WhatsApp (post-generare)
-  6. pas_asezare             legaturile nedespartitoare (post-generare, ULTIMUL pas pe text)
-  7. update_index_files      sitemap.xml, sitemap-index.xml, llms.txt
+  4. pas_noduri              nodurile de entitate referite prin @id (post-generare, pe SCHEMA)
+  5. pas_dif                 blocul de canale de vanzare (post-generare)
+  6. pas_formular            a doua usa de contact, langa butonul de WhatsApp (post-generare)
+  7. pas_asezare             legaturile nedespartitoare (post-generare, ULTIMUL pas pe text)
+  8. update_index_files      sitemap.xml, sitemap-index.xml, llms.txt
 
-Pasii 4 si 5 exista fiindca pe 4 aug 2026 au fost facuti cu scripturi one-shot din /tmp, iar
+pas_noduri lucreaza in <head>, pe JSON-LD, si nu atinge niciun cuvant vizibil, deci sta
+inaintea pasilor de text. Exista fiindca `build_blog` scrie `isPartOf` si `build_index`
+scrie `publisher` ca trimiteri goale {"@id": ...} catre noduri nedefinite pe pagina.
+
+Pasii 5 si 6 exista fiindca pe 4 aug 2026 au fost facuti cu scripturi one-shot din /tmp, iar
 sursa n-a stiut niciodata de ei. Rezultat: pe 10 aug, o regenerare din JSON stergea 91 de
 spatii nedespartitoare si tot blocul de canale, de pe fiecare pagina, in cinci limbi.
 **Un pas care atinge HTML-ul generat si NU e in pipeline e o bomba cu ceas.**
@@ -90,19 +95,23 @@ def main():
     print("\n3. indexul blogului")
     print(ruleaza(["python3", "build_index.py", azi], mediu))
 
-    print("\n4. blocul de canale de vanzare")
+    print("\n4. nodurile de entitate")
+    print(ruleaza(["python3", "pas_noduri.py", "--repo", a.repo,
+                   "--doar", BLOG_GLOB, "--apply"], mediu))
+
+    print("\n5. blocul de canale de vanzare")
     print(ruleaza(["python3", "pas_dif.py", "--repo", a.repo,
                    "--doar", BLOG_GLOB, "--apply"], mediu))
 
-    print("\n5. a doua usa de contact")
+    print("\n6. a doua usa de contact")
     print(ruleaza(["python3", "pas_formular.py", "--repo", a.repo,
                    "--doar", BLOG_GLOB, "--apply"], mediu))
 
-    print("\n6. asezarea textului")
+    print("\n7. asezarea textului")
     print(ruleaza(["python3", "pas_asezare.py", "--repo", a.repo,
                    "--doar", BLOG_GLOB, "--apply"], mediu))
 
-    print("\n7. sitemap + llms.txt")
+    print("\n8. sitemap + llms.txt")
     print(ruleaza(["python3", "update_index_files.py", azi], mediu))
 
     # raportul: ce e pe site si ce urmeaza. Serveste si workflow-ului, ca sa stie ce sa scrie

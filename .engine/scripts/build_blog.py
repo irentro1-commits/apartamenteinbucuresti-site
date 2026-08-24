@@ -258,7 +258,11 @@ def head_schema(p, lang):
                   "url":(url_for(lang).replace("blog/","")) + "echipa-ilioara-residence/"},
         "publisher":{"@id":f"{SITE}/#organization","@type":"Organization","name":"Ilioara Residence",
                      "logo":{"@type":"ImageObject","url":f"{SITE}/favicon-512.png","width":512,"height":512}},
-        "isPartOf":{"@id":f"{SITE}/#residence"},
+        # isPartOf cere un CreativeWork. Pana pe 24 aug 2026 arata catre #residence, adica
+        # spre CLADIRE: camp gresit, ascuns de faptul ca trimiterea era goala si nimeni nu
+        # putea sa-i vada tipul. Un articol e parte din BLOG. Nodul se scrie aici intreg,
+        # nu ca trimitere: acelasi @id ca in build_index, deci Google le uneste.
+        "isPartOf":{"@id":url_for(lang)+"#blog","@type":"Blog","name":lg["blog"],"url":url_for(lang)},
         "articleSection":p["articleSection"],"keywords":p["keywords"]})
     # FAQPage: acelasi text ca blocul vizibil, cuvant cu cuvant (regula anti schema-spam)
     if p["faq"]:

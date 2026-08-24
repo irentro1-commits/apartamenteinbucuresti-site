@@ -1,0 +1,39 @@
+{
+  "_de_ce": "Nodurile de ENTITATE ale sitului, intr-un singur loc. Un @id referit dintr-o pagina (Offer.seller, BlogPosting.isPartOf, Blog.publisher) trebuie sa fie DEFINIT pe acea pagina, altfel trimiterea nu duce nicaieri. Vezi pas_noduri.py.",
+  "_de_ce_fara_adresa": "streetAddress e afirmatie TARE la politica Google (nu marcam ce nu se vede). Pe paginile de blog adresa nu apare cu numar, deci nodul injectat nu o poarta. Adresa completa ramane pe pagina de acasa, unde e vizibila, si Google uneste dupa @id.",
+  "_de_ce_org_fara_geo": "geo si hasMap sunt proprietati de Place, nu de Organization. Pe 10 pagini erau puse pe Organization si gate_schema.py cadea. Coordonatele traiesc pe #residence, care chiar e Place.",
+  "noduri": {
+    "https://apartamenteinbucuresti.ro/#organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://apartamenteinbucuresti.ro/#organization",
+      "name": "Ilioara Residence",
+      "url": "https://apartamenteinbucuresti.ro/",
+      "logo": {"@type": "ImageObject", "url": "https://apartamenteinbucuresti.ro/favicon-512.png", "width": 512, "height": 512},
+      "image": "https://apartamenteinbucuresti.ro/og.jpg",
+      "areaServed": {"@type": "City", "name": "București"},
+      "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "url": "https://wa.me/40774096700", "availableLanguage": ["ro", "en", "he", "ar", "uk"]},
+      "sameAs": [
+        "https://www.tiktok.com/@ilioara.residence",
+        "https://www.instagram.com/ilioara.residence/",
+        "https://www.facebook.com/people/Ilioara-Residence/61573376259964/",
+        "https://www.youtube.com/@ilioara.residence.bucharest",
+        "https://www.linkedin.com/company/ilioara-residence/",
+        "https://www.google.com/maps?cid=8596399498612591025"
+      ]
+    },
+    "https://apartamenteinbucuresti.ro/#residence": {
+      "@context": "https://schema.org",
+      "@type": "ApartmentComplex",
+      "@id": "https://apartamenteinbucuresti.ro/#residence",
+      "name": "Ilioara Residence",
+      "url": "https://apartamenteinbucuresti.ro/",
+      "sameAs": ["https://www.google.com/maps?cid=8596399498612591025"],
+      "geo": {"@type": "GeoCoordinates", "latitude": 44.4128141, "longitude": 26.1558693},
+      "hasMap": "https://www.google.com/maps?cid=8596399498612591025"
+    }
+  },
+  "scoate": {
+    "https://apartamenteinbucuresti.ro/#organization": ["geo", "hasMap"]
+  }
+}
