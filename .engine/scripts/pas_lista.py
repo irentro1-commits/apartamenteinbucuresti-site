@@ -330,9 +330,25 @@ def bara_pret(rand_stari):
 
 def rescrie_preturi(html, A):
     """Aceleasi filtre pe /preturi/. Randurile de acolo nu se regenereaza, doar primesc
-    atributele dupa care stie filtrul sa lucreze, iar sectiunile se inchid intr-un container."""
+    atributele dupa care stie filtrul sa lucreze, iar sectiunile se inchid intr-un container.
+
+    CONTORUL SE REIMPROSPATEAZA SI CAND FILTRUL E DEJA ACOLO. Pana pe 27 aug 2026, functia
+    iesea din prima linie daca gasea `lista-pret`, deci cifrele scrise la prima inserare
+    ramaneau acolo pentru totdeauna. Pe 27 aug pagina inca spunea "7 disponibile, 5
+    rezervate, din 12 in tot" dupa ce blocul avea 9 libere, 7 rezervate si 16 randuri.
+    Nimeni nu scria cifra aia a doua oara, fiindca nimeni nu se intreba daca s-a schimbat.
+    """
     if "lista-pret" in html:
-        return html, False, 0
+        lib = sum(1 for v in A.values() if v["stare"] == "disponibil")
+        rez = sum(1 for v in A.values() if v["stare"] == "rezervat")
+        # "din N in tot" numara randurile de pe PAGINA, adica ce se poate cumpara,
+        # nu tot blocul: vandutele nu au rand aici.
+        pe_pagina = len(re.findall(r'<a class="prow', html))
+        nou_contor = ('<p class="f-num" role="status"><b>%d</b> disponibile · '
+                      '%d rezervate, din %d în%stot</p>' % (lib, rez, pe_pagina, NB))
+        html2 = re.sub(r'<p class="f-num"[^>]*>.*?</p>', nou_contor, html, count=1,
+                       flags=re.S)
+        return html2, False, 0
 
     stari = []
 
