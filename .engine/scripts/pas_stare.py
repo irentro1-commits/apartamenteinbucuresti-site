@@ -149,6 +149,18 @@ def scrie_numar(h):
                lambda m: "cele %s%d apartamente încă%sdisponibile%s"
                % (m.group(1) or "", numara(), NB, m.group(2) or ""), h)
 
+    # "toate cele N apartamente disponibile", CTA-ul de sub lista de pe fiecare pagina
+    # de apartament. NU are "inca", deci regula de deasupra nu-l atingea, iar spatiul
+    # dinaintea lui "disponibile" e scris ca ENTITATE, &#160;, nu ca octet, deci nu-l
+    # prindea nici tiparul de spatiu neintreruptor. A stat in 16 locuri cu cifra veche
+    # pana pe 27 aug 2026, cand Andy a vazut pe homepage o cifra care nu mai era
+    # adevarata nicaieri altundeva. Tiparul ia amandoua formele de spatiu si pastreaza
+    # neatins exact ce statea intre cifra si cuvant.
+    h = re.sub(r"cele (<b>)?\d+((?:[\s ]|&#160;|&nbsp;)+apartamente"
+               r"(?:[\s ]|&#160;|&nbsp;)+disponibile)(</b>)?",
+               lambda m: "cele %s%d%s%s" % (m.group(1) or "", numara(),
+                                            m.group(2), m.group(3) or ""), h)
+
     h = re.sub(r"(\d) camere ·[\s ]*\d+[\s ]*disponibil[e]?", pe_camere, h)
     h = re.sub(r"(Etajul \d|Parter) ·[\s ]*(?:toate cele )?\d+[\s ]*disponibil[e]?",
                pe_etaj, h)

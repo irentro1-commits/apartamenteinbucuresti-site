@@ -264,7 +264,8 @@
       "href": "/apartamente/apartament-2-camere-etaj-7-ap-30/",
       "pret": "135.000",
       "tva": "21",
-      "pret_total": "163.350"
+      "pret_total": "163.350",
+      "_nota": "Suprafata NU se schimba, contrar unei sugestii pe care am facut-o si pe care am retras-o pe 27 aug 2026. Defalcarea de pe pagina se aduna singura: utila 47,90 + terasa 10,25 = 58,15. Iar vecinii de acelasi colt NU au aceeasi suprafata: ap. 31, tot pe etajul 7, are 68,15 din 45,15 utila plus 23,00 terasa. Fisa de plan spune de ce: \"Etajul 7 este retras, deci conturul lui este mai mic\". Deci ap. 34, de la etajul 8, poate fi legitim mai mare decat geamanul lui de la 7."
     },
     "31": {
       "stare": "disponibil",
@@ -305,12 +306,12 @@
       "stare": "disponibil",
       "camere": 2,
       "etaj": "etaj 8",
-      "total": "58,15",
+      "total": "68,15",
       "pagina": true,
       "pret": "135.000",
       "tva": "21",
       "pret_total": "163.350",
-      "_nota": "Etajul 8, aflat pe 26 aug 2026 de la Teo Obrea si de la Dan. Pana atunci datele spuneau ca la etajul 8 sunt doua penthouse-uri vandute si ca blocul are 33 de apartamente; era gresit. Etajul 8 are patru apartamente de 2 camere, identice cu cele de pe etajul 7 pe acelasi colt, iar blocul are 35. Andy, 26 aug 2026, verbatim: \"o sa fie P+9 aparent- cu etajul 8 asta pe care o sa fie 3/4 apartamenete noi/apartamente diposibile practic de care nu stiam paana cum\". Etajul se construieste ACUM: e amorsa, urmeaza un rand de vopsea finala in cateva saptamani.",
+      "_nota": "Etajul 8, aflat pe 26 aug 2026 de la Teo Obrea si de la Dan. Pana atunci datele spuneau ca la etajul 8 sunt doua penthouse-uri vandute si ca blocul are 33 de apartamente; era gresit. Etajul 8 are patru apartamente de 2 camere, identice cu cele de pe etajul 7 pe acelasi colt, iar blocul are 35. Andy, 26 aug 2026, verbatim: \"o sa fie P+9 aparent- cu etajul 8 asta pe care o sa fie 3/4 apartamenete noi/apartamente diposibile practic de care nu stiam paana cum\". Etajul se construieste ACUM: e amorsa, urmeaza un rand de vopsea finala in cateva saptamani. Suprafata: 68,15 mp, data de Andy pe 27 aug 2026, verbatim: \"34 ARE 68 NU 58\". Lista lui Teo scria 58,15, care e suprafata lui ap. 30 de la etajul 7. DEFALCAREA (utila / terasa) NU e cunoscuta: pagina a fost clonata din ap. 30 si ar fi aratat 47,90 + 10,25, care se aduna la 58,15, nu la 68,15. Randul de defalcare a fost scos pana vine cifra de la dezvoltator.",
       "href": "/apartamente/apartament-2-camere-etaj-8-ap-34/"
     },
     "35": {
