@@ -1,95 +1,116 @@
 {
- "12-en": "/planuri/fise/plan-ap-12-en-v5.webp",
- "12-ro": "/planuri/fise/plan-ap-12-ro-v5.webp",
- "18-en": "/planuri/fise/plan-ap-18-en-v5.webp",
- "18-ro": "/planuri/fise/plan-ap-18-ro-v5.webp",
- "19-en": "/planuri/fise/plan-ap-19-en-v5.webp",
- "19-ro": "/planuri/fise/plan-ap-19-ro-v5.webp",
- "25-en": "/planuri/fise/plan-ap-25-en-v5.webp",
- "25-ro": "/planuri/fise/plan-ap-25-ro-v5.webp",
- "26-en": "/planuri/fise/plan-ap-26-en-v5.webp",
- "26-ro": "/planuri/fise/plan-ap-26-ro-v5.webp",
- "27-en": "/planuri/fise/plan-ap-27-en-v5.webp",
- "27-ro": "/planuri/fise/plan-ap-27-ro-v5.webp",
- "28-en": "/planuri/fise/plan-ap-28-en-v5.webp",
- "28-ro": "/planuri/fise/plan-ap-28-ro-v5.webp",
- "29-en": "/planuri/fise/plan-ap-29-en-v5.webp",
- "29-ro": "/planuri/fise/plan-ap-29-ro-v5.webp",
- "3-en": "/planuri/fise/plan-ap-3-en-v5.webp",
- "3-ro": "/planuri/fise/plan-ap-3-ro-v5.webp",
- "30-en": "/planuri/fise/plan-ap-30-en-v5.webp",
- "30-ro": "/planuri/fise/plan-ap-30-ro-v5.webp",
- "31-en": "/planuri/fise/plan-ap-31-en-v5.webp",
- "31-ro": "/planuri/fise/plan-ap-31-ro-v5.webp",
- "4-en": "/planuri/fise/plan-ap-4-en-v5.webp",
- "4-ro": "/planuri/fise/plan-ap-4-ro-v5.webp",
- "7-en": "/planuri/fise/plan-ap-7-en-v5.webp",
- "7-ro": "/planuri/fise/plan-ap-7-ro-v5.webp",
- "suprafete": {
-  "12": {
-   "terasa": "28,10",
-   "total": "84,45",
-   "utila": "56,35"
-  },
-  "18": {
-   "terasa": "7,25",
-   "total": "47,05",
-   "utila": "39,80"
-  },
-  "19": {
-   "terasa": "21,10",
-   "total": "60,75",
-   "utila": "39,65"
-  },
-  "25": {
-   "terasa": "22,65",
-   "total": "66,85",
-   "utila": "44,20"
-  },
-  "26": {
-   "terasa": "7,25",
-   "total": "47,35",
-   "utila": "40,10"
-  },
-  "27": {
-   "terasa": "21,10",
-   "total": "60,90",
-   "utila": "39,80"
-  },
-  "28": {
-   "terasa": "23,80",
-   "total": "69,85",
-   "utila": "46,05"
-  },
-  "29": {
-   "terasa": "22,65",
-   "total": "68,25",
-   "utila": "45,50"
-  },
-  "3": {
-   "terasa": "13,70",
-   "total": "71,00",
-   "utila": "57,30"
-  },
-  "30": {
-   "terasa": "10,25",
-   "total": "58,15",
-   "utila": "47,90"
-  },
-  "31": {
-   "terasa": "22,65",
-   "total": "68,15",
-   "utila": "45,50"
-  },
-  "4": {
-   "terasa": "28,10",
-   "total": "84,15",
-   "utila": "56,05"
-  },
-  "7": {
-   "terasa": "21,10",
-   "total": "60,60",
-   "utila": "39,50"
+  "3-en": "/planuri/fise/plan-ap-3-en-v5.webp",
+  "3-ro": "/planuri/fise/plan-ap-3-ro-v5.webp",
+  "4-en": "/planuri/fise/plan-ap-4-en-v5.webp",
+  "4-ro": "/planuri/fise/plan-ap-4-ro-v5.webp",
+  "7-en": "/planuri/fise/plan-ap-7-en-v5.webp",
+  "7-ro": "/planuri/fise/plan-ap-7-ro-v5.webp",
+  "12-en": "/planuri/fise/plan-ap-12-en-v5.webp",
+  "12-ro": "/planuri/fise/plan-ap-12-ro-v5.webp",
+  "18-en": "/planuri/fise/plan-ap-18-en-v5.webp",
+  "18-ro": "/planuri/fise/plan-ap-18-ro-v5.webp",
+  "19-en": "/planuri/fise/plan-ap-19-en-v5.webp",
+  "19-ro": "/planuri/fise/plan-ap-19-ro-v5.webp",
+  "25-en": "/planuri/fise/plan-ap-25-en-v5.webp",
+  "25-ro": "/planuri/fise/plan-ap-25-ro-v5.webp",
+  "26-en": "/planuri/fise/plan-ap-26-en-v5.webp",
+  "26-ro": "/planuri/fise/plan-ap-26-ro-v5.webp",
+  "27-en": "/planuri/fise/plan-ap-27-en-v5.webp",
+  "27-ro": "/planuri/fise/plan-ap-27-ro-v5.webp",
+  "28-en": "/planuri/fise/plan-ap-28-en-v5.webp",
+  "28-ro": "/planuri/fise/plan-ap-28-ro-v5.webp",
+  "29-en": "/planuri/fise/plan-ap-29-en-v5.webp",
+  "29-ro": "/planuri/fise/plan-ap-29-ro-v5.webp",
+  "30-en": "/planuri/fise/plan-ap-30-en-v5.webp",
+  "30-ro": "/planuri/fise/plan-ap-30-ro-v5.webp",
+  "31-en": "/planuri/fise/plan-ap-31-en-v5.webp",
+  "31-ro": "/planuri/fise/plan-ap-31-ro-v5.webp",
+  "32-en": "/planuri/fise/plan-ap-32-en-v5.webp",
+  "32-ro": "/planuri/fise/plan-ap-32-ro-v5.webp",
+  "33-en": "/planuri/fise/plan-ap-33-en-v5.webp",
+  "33-ro": "/planuri/fise/plan-ap-33-ro-v5.webp",
+  "34-en": "/planuri/fise/plan-ap-34-en-v5.webp",
+  "34-ro": "/planuri/fise/plan-ap-34-ro-v5.webp",
+  "suprafete": {
+    "3": {
+      "terasa": "13,70",
+      "total": "71,00",
+      "utila": "57,30"
+    },
+    "4": {
+      "terasa": "28,10",
+      "total": "84,15",
+      "utila": "56,05"
+    },
+    "7": {
+      "terasa": "21,10",
+      "total": "60,60",
+      "utila": "39,50"
+    },
+    "12": {
+      "terasa": "28,10",
+      "total": "84,45",
+      "utila": "56,35"
+    },
+    "18": {
+      "terasa": "7,25",
+      "total": "47,05",
+      "utila": "39,80"
+    },
+    "19": {
+      "terasa": "21,10",
+      "total": "60,75",
+      "utila": "39,65"
+    },
+    "25": {
+      "terasa": "22,65",
+      "total": "66,85",
+      "utila": "44,20"
+    },
+    "26": {
+      "terasa": "7,25",
+      "total": "47,35",
+      "utila": "40,10"
+    },
+    "27": {
+      "terasa": "21,10",
+      "total": "60,90",
+      "utila": "39,80"
+    },
+    "28": {
+      "terasa": "23,80",
+      "total": "69,85",
+      "utila": "46,05"
+    },
+    "29": {
+      "terasa": "22,65",
+      "total": "68,25",
+      "utila": "45,50"
+    },
+    "30": {
+      "utila": "47,90",
+      "terasa": "20,25",
+      "total": "68,15"
+    },
+    "31": {
+      "terasa": "22,65",
+      "total": "68,15",
+      "utila": "45,50"
+    },
+    "32": {
+      "utila": "46,05",
+      "terasa": "23,80",
+      "total": "69,85"
+    },
+    "33": {
+      "utila": "45,50",
+      "terasa": "22,65",
+      "total": "68,25"
+    },
+    "34": {
+      "utila": "47,90",
+      "terasa": "20,25",
+      "total": "68,15"
+    }
   }
- }
 }

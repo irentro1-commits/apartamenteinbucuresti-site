@@ -259,13 +259,13 @@
       "stare": "rezervat",
       "camere": 2,
       "etaj": "etaj 7",
-      "total": "58,15",
+      "total": "68,15",
       "pagina": true,
       "href": "/apartamente/apartament-2-camere-etaj-7-ap-30/",
       "pret": "135.000",
       "tva": "21",
       "pret_total": "163.350",
-      "_nota": "Suprafata NU se schimba, contrar unei sugestii pe care am facut-o si pe care am retras-o pe 27 aug 2026. Defalcarea de pe pagina se aduna singura: utila 47,90 + terasa 10,25 = 58,15. Iar vecinii de acelasi colt NU au aceeasi suprafata: ap. 31, tot pe etajul 7, are 68,15 din 45,15 utila plus 23,00 terasa. Fisa de plan spune de ce: \"Etajul 7 este retras, deci conturul lui este mai mic\". Deci ap. 34, de la etajul 8, poate fi legitim mai mare decat geamanul lui de la 7."
+      "_nota": "Suprafata 68,15 mp, data de Andy pe 27 aug 2026. Cifra veche, 58,15, era gresita. Am pus-o inapoi pe 58,15 o data, dupa ce Andy imi spusese deja 68,15, fiindca defalcarea veche (47,90 utila + 10,25 terasa) se aduna la 58,15 si am crezut ca ea are dreptate. Nu avea: defalcarea era construita pe totalul gresit. Andy, verbatim: \"coaie e 68,15\". Defalcarea corectata la 47,90 + 20,25 = 68,15, ca la geamanul lui de la etajul 8, ap. 34. NU se mai schimba fara cuvantul lui."
     },
     "31": {
       "stare": "disponibil",
