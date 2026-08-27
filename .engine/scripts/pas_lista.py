@@ -9,16 +9,16 @@ CERUT DE OBREA, prin Andy, 20 aug 2026:
   4. taburi pe numarul de camere
   5. un comutator "doar disponibilele"
 
-DE CE SE ARATA SI CELE VANDUTE, desi nu se mai pot cumpara. Un bloc din care s-au vandut 20 din
-33 spune singur ca merge bine. Lista scurta de 13 nu spune nimic; lista intreaga, cu 20 taiate,
+DE CE SE ARATA SI CELE VANDUTE, desi nu se mai pot cumpara. Un bloc din care s-au vandut 19 din
+35 spune singur ca merge bine. Lista scurta de 9 nu spune nimic; lista intreaga, cu 19 taiate,
 spune ca ai ramas cu ce a mai ramas si ca nu mai e mult. E acelasi fapt, citit altfel, si e
 argumentul cel mai onest pe care il avem: nu e o afirmatie despre noi, e o numaratoare.
 
 Cele vandute NU primesc pagina proprie si NU primesc pret: nu au ce sa vanda si nu au ce sa
 indexeze. Sunt `<div>`, nu `<a>`, deci nici nu se poate da click pe ele.
 
-SURSA e `.engine/date/apartamente.json`, toate cele 33: 31 de apartamente pe parter si
-pe etajele 1-7, plus cele doua penthouse-uri de la etajul 8, vandute de la inceput. Aici nu se scrie niciun pret si nicio
+SURSA e `.engine/date/apartamente.json`, toate cele 35: 3 la parter si cate 4 pe fiecare
+din cele 8 etaje. Penthouse-urile de la etajul 8 au fost scoase din plan (Andy, 26 aug 2026). Aici nu se scrie niciun pret si nicio
 stare: se citesc de acolo. Preturile care lipsesc din date se recupereaza o singura data din
 cardurile existente si se scriu inapoi in date, ca sa nu ramana niciodata in doua locuri.
 
@@ -63,8 +63,7 @@ NIVELE = [("etaj 8", "Etajul 8"), ("etaj 7", "Etajul 7"), ("etaj 6", "Etajul 6")
 # Cratima din "penthouse-uri" e NEDESPARTITOARE (U+2011): arata identic, dar browserul
 # nu mai poate rupe randul in ea. Cu cratima obisnuita, titlul se taia in "penthouse-"
 # si "uri" pe randul urmator, si asta se vedea din prima.
-COADA = {"etaj 7": " · priveliștea cea mai deschisă",
-         "etaj 8": " · două penthouse‑uri, vândute"}
+COADA = {"etaj 7": " · priveliștea cea mai deschisă"}
 
 
 def incarca():
@@ -223,11 +222,12 @@ def lista(A):
         lib = sum(1 for k in nr_et if A[k]["stare"] == "disponibil")
         et_scurt = titlu.replace("Etajul ", "Etaj ")
         out.append('<section class="etaj-ap" data-sectiune data-etaj="%s">' % cheie)
-        # Etajul penthouse-urilor nu primeste numaratoare: e mereu zero, iar "niciunul
-        # liber" langa "vandute de la inceput" spune acelasi lucru de doua ori.
-        if cheie == "etaj 8":
-            out.append('<h2 class="rv" data-fx="slide">%s%s</h2>'
-                       % (titlu, COADA.get(cheie, "")))
+        # Pana pe 26 aug 2026 etajul 8 sarea numaratoarea, fiindca era etajul celor doua
+        # penthouse-uri vandute si "niciunul liber" ar fi spus acelasi lucru de doua ori.
+        # Andy, 26 aug 2026: *"BLOCU LVA FI P+8 FARA PENTHOUSEURI- SUNT SOCASE IDN PLAN"*.
+        # Etajul 8 are patru apartamente ca oricare altul, deci se numara ca oricare altul.
+        if False:
+            pass
         else:
             out.append('<h2 class="rv" data-fx="slide">%s · %s%s</h2>'
                        % (titlu, cuvant(lib), COADA.get(cheie, "")))

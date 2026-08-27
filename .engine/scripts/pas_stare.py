@@ -131,12 +131,15 @@ def scrie_numar(h):
         return "%s · %d%s%s" % (m.group(1), n, NB, cuv)
 
     def pe_din(m):
-        """«12 din 33 disponibile», scris de mana in 39 de locuri. Se schimba doar CIFRA
-        LIBERELOR. Totalul ramane neatins, si nu din delicatete: situl scrie 33, iar
-        structura reconstituita din plansele dezvoltatorului da 31. Pana nu se lamureste
-        care e adevarul, nu ating totalul. O cifra corectata pe jumatate e mai buna decat
-        una schimbata pe ghicite."""
-        return "%d din %s disponibile" % (numara(), m.group(1))
+        """«12 din 33 disponibile», scris de mana in 39 de locuri.
+
+        Pana pe 26 aug 2026 se schimba DOAR cifra liberelor, iar totalul ramanea neatins:
+        situl scria 33, structura reconstituita din plansele dezvoltatorului dadea 31, si nu
+        se stia care e adevarul. Pe 26 aug l-a spus dezvoltatorul: etajul 8 nu are
+        penthouse-uri, are patru apartamente ca orice alt etaj, deci blocul are 35.
+        Ambiguitatea a disparut, si cu ea si motivul de a ingheta totalul: acum AMANDOUA
+        cifrele vin din date. Un total scris de mana e o minciuna care asteapta urmatorul etaj."""
+        return "%d din %d disponibile" % (numara(), len(APT))
 
     def pe_inca(m):
         return "cele %d apartamente încă%sdisponibile" % (numara(), NB)
@@ -149,6 +152,14 @@ def scrie_numar(h):
     h = re.sub(r"(\d) camere ·[\s ]*\d+[\s ]*disponibil[e]?", pe_camere, h)
     h = re.sub(r"(Etajul \d|Parter) ·[\s ]*(?:toate cele )?\d+[\s ]*disponibil[e]?",
                pe_etaj, h)
+
+    # ACELASI CONTOR, IN CELELALTE PATRU LIMBI. Adaugat pe 26 aug 2026, dupa ce s-a vazut ca
+    # en/he/ar/uk scriau de zile intregi «12 din 33» in timp ce romana scria 7: pasul stia sa
+    # numere numai romaneste, deci patru situri din cinci ramasesera cu cifra veche. Tiparul se
+    # ancoreaza pe cuvantul de legatura al limbii SI pe un total plauzibil, ca sa nu prinda din
+    # greseala vreun «4 din 5» care nu are treaba cu numaratoarea blocului.
+    h = re.sub(r"(\d+)(\s*(?:din|of|מתוך|من|із|з)\s*)(?:31|33|35)(?!\d)",
+               lambda m: "%d%s%d" % (numara(), m.group(2), len(APT)), h)
     return h
 
 

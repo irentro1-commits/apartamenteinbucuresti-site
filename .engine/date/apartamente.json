@@ -1,7 +1,7 @@
 {
-  "_": "STAREA fiecarui apartament din bloc, toate 31. SINGURA sursa de adevar pentru insigne, pentru numaratori si pentru filtrele de pe /apartamente/. Se schimba AICI, niciodata in HTML, si se aplica cu .engine/scripts/pas_stare.py. Stari valide: disponibil, rezervat, vandut.",
-  "_sursa": "Structura si suprafetele: artifactul 'Structura Ilioara Residence' (6e3c5f32), reconstituit din grila de preturi a dezvoltatorului si din plansa etajului 7, 19 august 2026. Rezervarile: captura trimisa de Andy pe 20 august 2026.",
-  "_actualizat": "2026-08-21",
+  "_": "STAREA fiecarui apartament din bloc, toate 35. SINGURA sursa de adevar pentru insigne, pentru numaratori si pentru filtrele de pe /apartamente/. Se schimba AICI, niciodata in HTML, si se aplica cu .engine/scripts/pas_stare.py. Stari valide: disponibil, rezervat, vandut.",
+  "_sursa": "Structura si suprafetele: artifactul 'Structura Ilioara Residence' (6e3c5f32), reconstituit din grila de preturi a dezvoltatorului si din plansa etajului 7, 19 august 2026. Rezervarile: captura trimisa de Andy pe 20 august 2026. ETAJUL 8 SI STARILE NOI: Teo Obrea, 26 august 2026 orele 17:13 si 17:21 (lista de disponibile plus grila de preturi cu si fara TVA), completat de Dan cu maparea pe colturi si cu ap. 35, care e vandut si nu apare in lista lui Teo. Amandoua trimise de Andy.",
+  "_actualizat": "2026-08-26",
   "_deconfirmat": [
     "PARTERUL: lista noua il numeste ap. 2 la 72,1 mp; site-ul si structura il tin pe nr. 3 la 71,00 mp, acelasi pret 151.000. Numarul a fost schimbat 3->2 pe 4 aug (comit e92c7b2) si intors 2->3 pe 10 aug (comit fdba622). A treia schimbare nu se face fara cuvantul lui Andy.",
     "SUPRAFETELE din lista noua a dezvoltatorului difera intre 0,5 si 5 mp fata de cele publicate, pe TOATE apartamentele. Nu se schimba pana nu se stabileste care grila e cea buna."
@@ -144,19 +144,19 @@
       "total": "66,70"
     },
     "18": {
-      "stare": "rezervat",
+      "stare": "disponibil",
       "camere": 2,
       "etaj": "etaj 4",
       "total": "47,05",
-      "pret": "109.918",
+      "pret": "111.570",
       "pagina": true,
-      "_nota": "Penthouse nu, apartament de 2 camere pe coltul 2 (stanga jos). Suprafata CORECTATA pe 21 aug 2026 dupa fisa trimisa de Andy, care e planul dezvoltatorului: utila 39,80 + terasa 7,25 = 47,05 mp. Cifra 49,20, luata din captura listei noi, era gresita si nu se potrivea cu coltul (47,05 la 47,35). Bine ca nu am propagat-o: umple_suprafete.py o sarise deliberat ca sursa, exact fiindca nu se potrivea. Pretul CU TVA e 133.000 EUR, dat de Andy pe 21 aug 2026 verbatim: \"ba aparataemnmtul 18 e 133.000 tva inclus\". Cel fara TVA, 109.918, era deja in date si se potriveste: 109.918 x 1,21 = 133.000.",
+      "_nota": "Apartament de 2 camere pe coltul 2 (stanga jos), NU penthouse. Suprafata utila 39,80 + terasa 7,25 = 47,05 mp, din fisa dezvoltatorului trimisa de Andy pe 21 aug 2026. REVENIT PE LIBER pe 26 aug 2026, la pret nou. Andy, intrebat daca 135.000 e cu sau fara TVA, a raspuns verbatim: \"135.000 cu tva inclus\". Deci pret_total 135.000, iar cel fara TVA e 111.570 (111.570 x 1,21 = 135.000). Pretul vechi, 133.000 cu TVA, dat tot de Andy pe 21 aug, e inlocuit. Cifra de 135.000 FARA TVA, care aparuse in dictarea initiala, ar fi facut cel mai mic apartament de 2 camere din bloc mai scump decat ap. 28, care are 69,85 mp: intrebat, Andy a lamurit ca e cu TVA inclus.",
       "tva": "21",
-      "pret_total": "133.000",
+      "pret_total": "135.000",
       "href": "/apartamente/apartament-2-camere-etaj-4-ap-18/"
     },
     "19": {
-      "stare": "disponibil",
+      "stare": "rezervat",
       "camere": 2,
       "etaj": "etaj 4",
       "total": "60,75",
@@ -201,7 +201,7 @@
       "total": "85,05"
     },
     "25": {
-      "stare": "disponibil",
+      "stare": "rezervat",
       "camere": 2,
       "etaj": "etaj 6",
       "total": "66,85",
@@ -278,20 +278,51 @@
       "pret_total": "165.165"
     },
     "32": {
-      "stare": "vandut",
-      "camere": null,
+      "stare": "disponibil",
+      "camere": 2,
       "etaj": "etaj 8",
-      "tip": "penthouse",
-      "pagina": false,
-      "_nota": "Penthouse la ultimul etaj, vandut inainte de a incepe site-ul. Numarul de camere si suprafata nu sunt in grila dezvoltatorului, deci nu se scriu. Andy, 21 aug 2026: 'pune peste tot clar 2 penthouse-uri deja vandute- in total 33'."
+      "total": "69,85",
+      "pagina": true,
+      "pret": "136.000",
+      "tva": "21",
+      "pret_total": "164.560",
+      "_nota": "Etajul 8, aflat pe 26 aug 2026 de la Teo Obrea si de la Dan. Pana atunci datele spuneau ca la etajul 8 sunt doua penthouse-uri vandute si ca blocul are 33 de apartamente; era gresit. Etajul 8 are patru apartamente de 2 camere, identice cu cele de pe etajul 7 pe acelasi colt, iar blocul are 35. Andy, 26 aug 2026, verbatim: \"o sa fie P+9 aparent- cu etajul 8 asta pe care o sa fie 3/4 apartamenete noi/apartamente diposibile practic de care nu stiam paana cum\". Etajul se construieste ACUM: e amorsa, urmeaza un rand de vopsea finala in cateva saptamani.",
+      "href": "/apartamente/apartament-2-camere-etaj-8-ap-32/"
     },
     "33": {
-      "stare": "vandut",
-      "camere": null,
+      "stare": "disponibil",
+      "camere": 2,
       "etaj": "etaj 8",
-      "tip": "penthouse",
+      "total": "68,25",
+      "pagina": true,
+      "pret": "135.000",
+      "tva": "21",
+      "pret_total": "163.350",
+      "_nota": "Etajul 8, aflat pe 26 aug 2026 de la Teo Obrea si de la Dan. Pana atunci datele spuneau ca la etajul 8 sunt doua penthouse-uri vandute si ca blocul are 33 de apartamente; era gresit. Etajul 8 are patru apartamente de 2 camere, identice cu cele de pe etajul 7 pe acelasi colt, iar blocul are 35. Andy, 26 aug 2026, verbatim: \"o sa fie P+9 aparent- cu etajul 8 asta pe care o sa fie 3/4 apartamenete noi/apartamente diposibile practic de care nu stiam paana cum\". Etajul se construieste ACUM: e amorsa, urmeaza un rand de vopsea finala in cateva saptamani.",
+      "href": "/apartamente/apartament-2-camere-etaj-8-ap-33/"
+    },
+    "34": {
+      "stare": "disponibil",
+      "camere": 2,
+      "etaj": "etaj 8",
+      "total": "58,15",
+      "pagina": true,
+      "pret": "135.000",
+      "tva": "21",
+      "pret_total": "163.350",
+      "_nota": "Etajul 8, aflat pe 26 aug 2026 de la Teo Obrea si de la Dan. Pana atunci datele spuneau ca la etajul 8 sunt doua penthouse-uri vandute si ca blocul are 33 de apartamente; era gresit. Etajul 8 are patru apartamente de 2 camere, identice cu cele de pe etajul 7 pe acelasi colt, iar blocul are 35. Andy, 26 aug 2026, verbatim: \"o sa fie P+9 aparent- cu etajul 8 asta pe care o sa fie 3/4 apartamenete noi/apartamente diposibile practic de care nu stiam paana cum\". Etajul se construieste ACUM: e amorsa, urmeaza un rand de vopsea finala in cateva saptamani.",
+      "href": "/apartamente/apartament-2-camere-etaj-8-ap-34/"
+    },
+    "35": {
+      "stare": "vandut",
+      "camere": 2,
+      "etaj": "etaj 8",
+      "total": "68,15",
       "pagina": false,
-      "_nota": "Penthouse la ultimul etaj, vandut inainte de a incepe site-ul. Numarul de camere si suprafata nu sunt in grila dezvoltatorului, deci nu se scriu. Andy, 21 aug 2026: 'pune peste tot clar 2 penthouse-uri deja vandute- in total 33'."
+      "pret": "136.500",
+      "tva": "21",
+      "pret_total": "165.165",
+      "_nota": "Etajul 8, aflat pe 26 aug 2026 de la Teo Obrea si de la Dan. Pana atunci datele spuneau ca la etajul 8 sunt doua penthouse-uri vandute si ca blocul are 33 de apartamente; era gresit. Etajul 8 are patru apartamente de 2 camere, identice cu cele de pe etajul 7 pe acelasi colt, iar blocul are 35. Andy, 26 aug 2026, verbatim: \"o sa fie P+9 aparent- cu etajul 8 asta pe care o sa fie 3/4 apartamenete noi/apartamente diposibile practic de care nu stiam paana cum\". Etajul se construieste ACUM: e amorsa, urmeaza un rand de vopsea finala in cateva saptamani."
     }
   },
   "etichete": {
@@ -326,10 +357,10 @@
       "penthouse": "Пентхаус"
     }
   },
-  "_lamurit": "31 CONTRA 33, inchis pe 21 aug 2026. Blocul are parter plus 8 etaje. Structura reconstituita din plansele etajelor tip dadea 31 (3 la parter plus 4 x 7 etaje), fiindca NU includea etajul 8, unde sunt doua penthouse-uri, vandute inainte de a incepe site-ul. 31 + 2 = 33, iar cifra scrisa pe site era corecta de la inceput. Andy: 'pune peste tot clar 2 penthouse-uri deja vandute- in total 33'.",
+  "_lamurit": "35, NU 33, inchis pe 26 aug 2026. Blocul are parter plus 8 etaje si structura e perfect regulata: 3 apartamente la parter plus 4 pe fiecare din cele 8 etaje = 35. CE ERA GRESIT INAINTE: pe 21 aug 2026 s-a inchis cifra la 33, cu explicatia ca etajul 8 ar avea doua penthouse-uri vandute inainte de a incepe site-ul (31 + 2). Explicatia venea din faptul ca plansele etajelor tip nu includeau etajul 8, deci nimeni nu stia ce e acolo. Pe 26 aug 2026 dezvoltatorul a spus ce e: patru apartamente de 2 camere, copii ale celor de pe etajul 7, din care trei de vanzare si unul deja dat. Nu exista niciun penthouse. Eticheta 'penthouse' ramane in `etichete` nefolosita; nu se sterge, ca sa nu se rupa o traducere daca reapare tipul.",
   "_verificat": {
-    "moment": "2026-08-21T06:29:04+03:00",
+    "moment": "2026-08-26T17:21:00+03:00",
     "_": "MOMENTUL IN CARE STAREA A FOST CONFIRMATA CU DEZVOLTATORUL. Insigna 'live' de pe /apartamente/ arata exact ce scrie aici. NU se atinge la fiecare publicare: daca s-ar rescrie automat, situl ar spune vesnic 'verificat acum cinci minute', ceea ce ar fi o minciuna care se reinnoieste singura. Se schimba cand cineva chiar intreaba dezvoltatorul. Insigna se stinge singura dupa 48 de ore, vezi pas_live.py.",
-    "de": "i-vory Studio, cu dezvoltatorul"
+    "de": "Andy, cu Teo Obrea si cu Dan"
   }
 }

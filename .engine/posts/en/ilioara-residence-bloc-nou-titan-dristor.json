@@ -5,8 +5,8 @@
   "updatedAt": "2026-08-04",
   "title": "Ilioara Residence Titan: the complete guide to the project",
   "seoTitle": "Ilioara Residence Titan | The Complete Project Guide",
-  "description": "Ilioara Residence, a new building on Aleea Eprubetei 7-11, Titan-Dristor. 33 apartments, 12 available, from 107,500 EUR + VAT, ready December 2026.",
-  "descriptionLlm": "Ilioara Residence is a new building (ground floor + 8 storeys, with 2 penthouses sold on the top floor; 31 apartments for sale, 4 per floor) on Aleea Eprubetei 7-11, the Titan-Dristor area, Sector 3, Bucharest. 12 apartments available, 2 room apartments from 107,500 EUR + VAT, 3 room apartments up to 168,000 EUR + VAT, completion December 2026, a direct sale from the developer.",
+  "description": "Ilioara Residence, a new building on Aleea Eprubetei 7-11, Titan-Dristor. 35 apartments, 9 available, from 107,500 EUR + VAT, ready December 2026.",
+  "descriptionLlm": "Ilioara Residence is a new building (ground floor + 8 storeys, 35 apartments for sale, 4 per floor) on Aleea Eprubetei 7-11, the Titan-Dristor area, Sector 3, Bucharest. 9 apartments available, 2 room apartments from 107,500 EUR + VAT, 3 room apartments up to 168,000 EUR + VAT, completion December 2026, a direct sale from the developer.",
   "articleSection": "New apartments",
   "keywords": "Ilioara Residence, Ilioara Residence Titan, new building Aleea Eprubetei, new apartments Titan, apartments Dristor Sector 3, 2 room apartments Titan, 3 room apartments Titan, new building Sector 3, apartments direct from the developer Bucharest",
   "readMinutes": 5,
@@ -19,7 +19,7 @@
       "blocks": [
         {
           "t": "p",
-          "x": "A new building on Aleea Eprubetei 7-11, in the Titan-Dristor area, Sector 3. Ground floor plus 8 storeys: at the top, 2 penthouses already sold, and the rest 31 apartments, 4 per floor: one with 3 rooms and three with 2 rooms. That is all. No anthill with ten doors on the landing and a lift always in use."
+          "x": "A new building on Aleea Eprubetei 7-11, in the Titan-Dristor area, Sector 3. Ground floor plus 8 storeys, with 35 apartments, 4 per floor and three on the ground floor: one with 3 rooms and three with 2 rooms. That is all. No anthill with ten doors on the landing and a lift always in use."
         },
         {
           "t": "p",
@@ -32,7 +32,7 @@
       "blocks": [
         {
           "t": "p",
-          "x": "Out of 33 apartments, 12 are still available. The lower floors have almost gone, the penthouses on the top floor have sold as well, so most of those left are up on 6 and 7. To some buyers that sounds like bad news. It is exactly the other way round."
+          "x": "Out of 35 apartments, 9 are still available. The lower floors have almost gone, so most of those left are up on 7 and 8. To some buyers that sounds like bad news. It is exactly the other way round."
         },
         {
           "t": "p",
@@ -121,7 +121,7 @@
     },
     {
       "q": "How many apartments are still available?",
-      "a": "12 out of 33. The lower floors have almost sold out, so most of those left are up on floors 6 and 7, the part with the best view."
+      "a": "9 out of 35. The lower floors have almost sold out, so most of those left are up on floors 6 and 7, the part with the best view."
     },
     {
       "q": "What is included in the price?",

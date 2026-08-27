@@ -5,8 +5,8 @@
   "updatedAt": "2026-08-04",
   "title": "Ilioara Residence Titan: ghidul complet al proiectului",
   "seoTitle": "Ilioara Residence Titan-Dristor | Ghidul proiectului",
-  "description": "Ilioara Residence, bloc nou pe Aleea Eprubetei 7-11, Titan-Dristor. 33 apartamente, 12 disponibile, de la 107.500 EUR + TVA, gata decembrie 2026.",
-  "descriptionLlm": "Ilioara Residence este un bloc nou (parter + 8 etaje, cu 2 penthouse-uri vandute la ultimul etaj; 31 de apartamente in vanzare, 4 pe etaj) pe Aleea Eprubetei 7-11, zona Titan-Dristor, Sector 3, Bucuresti. 12 apartamente disponibile, 2 camere de la 107.500 EUR + TVA, 3 camere pana la 168.000 EUR + TVA, finalizare decembrie 2026, vanzare directa de la dezvoltator.",
+  "description": "Ilioara Residence, bloc nou pe Aleea Eprubetei 7-11, Titan-Dristor. 35 apartamente, 9 disponibile, de la 107.500 EUR + TVA, gata decembrie 2026.",
+  "descriptionLlm": "Ilioara Residence este un bloc nou (parter + 8 etaje, 35 de apartamente in vanzare, 4 pe etaj) pe Aleea Eprubetei 7-11, zona Titan-Dristor, Sector 3, Bucuresti. 9 apartamente disponibile, 2 camere de la 107.500 EUR + TVA, 3 camere pana la 168.000 EUR + TVA, finalizare decembrie 2026, vanzare directa de la dezvoltator.",
   "articleSection": "Apartamente noi",
   "keywords": "Ilioara Residence, Ilioara Residence Titan, bloc nou Aleea Eprubetei, apartamente noi Titan, apartamente Dristor Sector 3, apartamente 2 camere Titan, apartamente 3 camere Titan, bloc nou Sector 3, apartamente direct de la dezvoltator Bucuresti",
   "readMinutes": 5,
@@ -19,7 +19,7 @@
       "blocks": [
         {
           "t": "p",
-          "x": "Un bloc nou pe Aleea Eprubetei 7-11, în zona Titan-Dristor, Sector 3. Parter plus 8 etaje: sus, 2 penthouse-uri deja vândute, iar în rest 31 de apartamente, câte 4 pe etaj: unul de 3 camere și trei de 2 camere. Atât. Niciun furnicar cu zece uși pe palier și lift mereu ocupat."
+          "x": "Un bloc nou pe Aleea Eprubetei 7-11, în zona Titan-Dristor, Sector 3. Parter plus 8 etaje, cu 35 de apartamente, câte 4 pe etaj și trei la parter: unul de 3 camere și trei de 2 camere. Atât. Niciun furnicar cu zece uși pe palier și lift mereu ocupat."
         },
         {
           "t": "p",
@@ -32,7 +32,7 @@
       "blocks": [
         {
           "t": "p",
-          "x": "Din 33 de apartamente mai sunt disponibile 12. Etajele de jos aproape s-au dus, penthouse-urile de la ultimul etaj s-au vândut și ele, așa că majoritatea celor rămase sunt sus, la 6 și 7. Pentru unii cumpărători acest lucru sună a veste proastă. E exact pe dos."
+          "x": "Din 35 de apartamente mai sunt disponibile 9. Etajele de jos aproape s-au dus, așa că majoritatea celor rămase stau sus, la 7 și 8. Pentru unii cumpărători acest lucru sună a veste proastă. E exact pe dos."
         },
         {
           "t": "p",
@@ -121,7 +121,7 @@
     },
     {
       "q": "Câte apartamente mai sunt disponibile?",
-      "a": "12 din 33. Etajele de jos aproape s-au vândut, așa că majoritatea celor rămase sunt sus, la etajele 6 și 7, partea cu priveliștea cea mai frumoasă."
+      "a": "9 din 35. Etajele de jos aproape s-au vândut, așa că majoritatea celor rămase sunt sus, la etajele 6 și 7, partea cu priveliștea cea mai frumoasă."
     },
     {
       "q": "Ce este inclus în preț?",
