@@ -3,7 +3,7 @@
 """CONTRASTUL DIN STILURILE SCRISE IN PAGINA.
 
 Cele mai multe reparatii de contrast s-au facut acolo unde trebuiau, in tokenurile temei
-deschise din `pagini-v34.css` si in `carduri-v5.css`. A ramas insa o regula care NU sta
+deschise din `pagini-v35.css` si in `carduri-v5.css`. A ramas insa o regula care NU sta
 intr-o foaie, ci intr-un `<style>` scris in capul fiecarei pagini, deci nu se poate atinge
 dintr-un fisier CSS fara sa te bazezi pe ordinea de incarcare.
 

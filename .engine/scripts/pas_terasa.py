@@ -36,7 +36,7 @@ import re
 
 MARCA = "tz-banda"
 CSS = '<link rel="stylesheet" href="/assets/terasa-v2.css">'
-ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v34.css">'
+ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v35.css">'
 WA = "https://wa.me/40774096700"
 
 

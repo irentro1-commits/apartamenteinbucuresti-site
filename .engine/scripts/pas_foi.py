@@ -27,7 +27,7 @@ import os
 
 # foaia de reparatii pentru telefon: se aplica pe tot situl, nu doar pe pagina de start
 FOI = ["/assets/landing-v2.css"]
-ANCORA = '<link rel="stylesheet" href="/assets/pagini-v34.css">'
+ANCORA = '<link rel="stylesheet" href="/assets/pagini-v35.css">'
 
 
 def main():

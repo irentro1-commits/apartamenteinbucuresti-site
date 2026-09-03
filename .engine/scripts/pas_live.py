@@ -41,7 +41,7 @@ import re
 
 MARCA = "lv-b"
 CSS = '<link rel="stylesheet" href="/assets/live-v1.css">'
-ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v34.css">'
+ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v35.css">'
 
 LUNI = {
     "ro": ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august",

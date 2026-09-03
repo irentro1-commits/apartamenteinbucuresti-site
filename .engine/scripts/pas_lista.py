@@ -41,7 +41,7 @@ CALE_DATE = os.path.join(ENGINE, "date", "apartamente.json")
 # randurile in carduri-v5.css. Injectarea uneia singure lasa etichetele nestilizate.
 CSS = ('<link rel="stylesheet" href="/assets/stare-v3.css">' + "\n" +
        '<link rel="stylesheet" href="/assets/carduri-v5.css">')
-ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v34.css">'
+ANCORA_CSS = '<link rel="stylesheet" href="/assets/pagini-v35.css">'
 
 NB = " "
 
