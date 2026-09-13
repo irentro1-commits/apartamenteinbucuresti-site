@@ -1,0 +1,138 @@
+{
+ "slug": "cumparare-apartament-in-rate-de-la-proprietar",
+ "publishAt": "2026-09-13",
+ "title": "Apartment in installments from the owner: how a correct purchase looks",
+ "seoTitle": "Apartment in installments from owner, at notary",
+ "description": "How to buy an apartment in installments directly from the owner: notarized contract, seller mortgage, and traps that consume advances.",
+ "descriptionLlm": "Want to buy an apartment in installments? Here is how to protect your money and avoid losing your home. Complete guide with examples and practical tips.",
+ "articleSection": "Buying guide",
+ "keywords": "apartament în rate, vânzare în rate de la proprietar, cumpărare apartament fără credit, contract vânzare în rate notar, ipoteca vânzătorului, cesiune de creanță",
+ "readMinutes": 6,
+ "lead": "On September 13, 2026, on OLX, a two-room apartment on Șerban Vodă in Bucharest, priced at 92,000 euros for 50 square meters, is listed with the formula \"in installments, no credit\". It is sold by a person, not a bank: no income certificate, no Credit Bureau. It is not a new formula, people have been buying this way for years, but it works differently than a bank loan: in the middle stands an owner who gives you the apartment and keeps a mortgage on it until everything is paid. The difference between a purchase that ends with the keys in your hand and one that ends up in court almost always depends on what the contract says on day one. Below you have the two legal options, the mortgage mechanism, what the deed must contain, how to pay so you have proof for every month, and the traps where entire advances have already been lost.",
+ "sections": [
+  {
+   "h2": "The notarized contract makes you the owner from day one",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "You have two legal paths, and the good one goes through the notary. You sign the authenticated sale-purchase contract, with the price paid in installments, you leave the deposit, and the apartment enters your property from the day of signing. A mortgage remains on the property in favor of the seller, registered in the land registry, covering the difference until the last installment. This is the option that specialists put first, because it gives you the apartment immediately and gives him a written guarantee."
+    },
+    {
+     "t": "p",
+     "x": "The second option is the promise to sell: a precontract signed at the beginning, transformed into a sale deed only after you have paid the full price. The money is the same, the months are the same, with one heavy distinction: until the end you are not the owner, you are the person who pays. The name in the land registry remains the seller's, and if in the meantime he accumulates debts or changes his mind, you start an armed lawsuit with a document that proves a promise."
+    }
+   ]
+  },
+  {
+   "h2": "The seller mortgage stays on the apartment until you pay it in full",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "The Civil Code gives the seller, for the unpaid price, a legal mortgage on the sold property. The clause sounds rigid and does the exact opposite: it keeps things standing. You stay in your apartment from day one, he knows that until the last installment the apartment is not sold further without his money, and the guarantee is registered in the land registry, visible to anyone."
+    },
+    {
+     "t": "p",
+     "x": "One single attention at the end: the last paid installment does not remove the mortgage from the registry on its own. You remove the mortgage at ANCPI, with the notarized declaration of the seller that he has collected the full price, and this is why you ask in the contract for his obligation to appear at the notary after the last installment. Without this clause, an owner gone abroad leaves you for years with a guarantee that is extinct in reality and alive on paper."
+    }
+   ]
+  },
+  {
+   "h2": "The contract tells you in advance what happens when you are late on an installment",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "A well-made contract clarifies from day one every month in the following years: the total price, the advance from the signing day, the number of installments, the value of each, and the month it falls due. Next comes the part people skip in a hurry: late penalties, usually between 0.1% and 0.5% per day, which you negotiate like any other clause, and termination conditions, meaning after how many unpaid installments the seller can ask for your apartment back. At the end stand two lines that look like a formality and are not: the mention of the legal mortgage and the seller's obligation to come to the notary, after the last installment, to remove the guarantee from the land registry."
+    }
+   ]
+  },
+  {
+   "h2": "Installments leave through the bank, with an account statement for every month",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "You wire each installment into the seller's account, the one written in the contract, and the account statement remains your proof: date, sum, beneficiary. Cash only goes with a written and signed receipt, which states what contract and what installment the money refers to. And money given \"on trust\", passed through the hands of a person who promises it reaches the owner, never counts in this matter: people who paid correctly for years found themselves facing an owner claiming they never saw a penny. Without a paper trail, five years of payments become word against word, and his word weighs more in court than yours."
+    }
+   ]
+  },
+  {
+   "h2": "When the owner has a bank loan, assignment of debt changes the rules",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "This scene appears often in listings: the owner still has a loan on the apartment and proposes that you pay the bank installments monthly. The move has a legal name, assignment of claim or, depending on the case, assumption of debt, and it comes with protection that the Civil Code gives you ready: you owe money to the bank only from the moment the assignment was communicated to you in writing or you accepted it. Until notification, the only money that frees you remains what you paid the owner."
+    },
+    {
+     "t": "p",
+     "x": "Through assignment, the guarantees of the debt pass, not just the claim, and you sign the change of the person collecting the installments at the notary, through a notarized act. A WhatsApp message means nothing in front of a land registry."
+    }
+   ]
+  },
+  {
+   "h2": "Traps appear in hastily concluded contracts and inflated prices",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "The first trap appears in far-fetched transactions: contract authenticated at the notary, but without a mortgage registered in favor of the seller. Without that mortgage, the contract remains fragile and can be attacked in court, so you cancel from the start the only mechanism protecting you during the installments."
+    },
+    {
+     "t": "p",
+     "x": "The second trap flows through price: the owner inflates the apartment by 15% to 25% above the market to cover their distant money. The specialized source gives a calculation threshold: over a three-year period, when the difference from the cash option exceeds 8% to 10%, buying in installments no longer beats the bank loan. So you start calculating before signing, comparing the listing with the <a href=\"/preturi/\">apartment prices</a> in the area."
+    },
+    {
+     "t": "p",
+     "x": "The third lies in the vague termination clause, the formula \"failure to respect obligations leads to termination\", through which a malicious owner can take your apartment back and keep the money you wired until then. You negotiate that clause on the open table: termination only after three consecutive unpaid installments, with written notification and 30 days during which you can regularize the sum."
+    }
+   ]
+  },
+  {
+   "h2": "Today's market counts hundreds of listings with installments to the owner",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "On September 13, 2026, the search \"apartment in installments no credit\" on OLX brings up 925 listings across Romania. Next to the apartment on Șerban Vodă, at 92,000 euros, appears a two-room apartment in Siret, 34,500 euros for 45 square meters, with the same formula in the title. The figure describes a single day and says nothing about the market direction; it shows enough to understand that sellers with installments are found in large and small cities."
+    },
+    {
+     "t": "p",
+     "x": "The reason people take this road relates to the bank that told them no: installments to the owner do not ask for an income certificate and do not go through the Credit Bureau, and the payment period stretches from a few months up to 3 to 5 years. The advance remains the rule: owners who accept to start without a single leu upfront can be found, but few. If your incomes still fit the bank requirements, you also calculate the <a href=\"/credit-ipotecar/\">mortgage loan</a>, because for long durations the bank often turns out cheaper; if you want a comparison term with new blocks, you start from the <a href=\"/apartamente/\">catalog apartments</a>."
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Can you buy an apartment in installments from the owner without an advance?",
+   "a": "You can, but owners who accept without a single leu upfront can be counted on one hand. The advance is the rule of this market, and if someone offers you the apartment for zero upfront, you look twice at the price and termination clauses before signing."
+  },
+  {
+   "q": "What happens to the mortgage after I pay the last installment?",
+   "a": "It does not disappear on its own and this is where people get confused. After you pay the installment, the seller comes to the notary and signs the declaration that they collected the full price; with that document you go to ANCPI and remove the mortgage from the land registry. This is why the clause regarding the seller's presence at the notary is not missing from an installment contract: without it, an owner gone abroad or simply hard to find leaves you for years with a mortgage that nobody radiated, and a future sale gets blocked every time someone checks the land registry."
+  },
+  {
+   "q": "How many years is an apartment in installments to the owner usually paid?",
+   "a": "Between a few months and 3 to 5 years, depending on what you negotiate in the contract."
+  }
+ ],
+ "ctaAfter": "Want to see verified listings? Access our list of available apartments and receive the details on WhatsApp.",
+ "readAlso": [
+  {
+   "href": "/blog/credit-ipotecar-apartament-in-constructie/",
+   "label": "How to get a mortgage loan for an apartment under construction in 2026"
+  },
+  {
+   "href": "/blog/apartamente-noi-bucuresti-sector-6/",
+   "label": "New apartments Bucharest sector 6: where supply gathers and how much the meter costs"
+  },
+  {
+   "href": "/blog/apartamente-sector-3-direct-proprietar/",
+   "label": "Apartments in Sector 3 directly from owner: how much you save and where you can get burned"
+  },
+  {
+   "href": "/blog/pret-apartament-2-camere-bucuresti/",
+   "label": "2 room apartment price Bucharest: what you pay in 2026"
+  }
+ ],
+ "image": {
+  "src": "/blog/img/cumparare-apartament-in-rate-de-la-proprietar.jpg",
+  "alt": "Buying an apartment in installments directly from the owner"
+ }
+}
