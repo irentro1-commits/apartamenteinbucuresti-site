@@ -1,7 +1,7 @@
 {
   "_": "STAREA fiecarui apartament din bloc, toate 35. SINGURA sursa de adevar pentru insigne, pentru numaratori si pentru filtrele de pe /apartamente/. Se schimba AICI, niciodata in HTML, si se aplica cu .engine/scripts/pas_stare.py. Stari valide: disponibil, rezervat, vandut.",
-  "_sursa": "Structura si suprafetele: artifactul 'Structura Ilioara Residence' (6e3c5f32), reconstituit din grila de preturi a dezvoltatorului si din plansa etajului 7, 19 august 2026. Rezervarile: captura trimisa de Andy pe 20 august 2026. ETAJUL 8 SI STARILE NOI: Teo Obrea, 26 august 2026 orele 17:13 si 17:21 (lista de disponibile plus grila de preturi cu si fara TVA), completat de Dan cu maparea pe colturi si cu ap. 35, care e vandut si nu apare in lista lui Teo. Amandoua trimise de Andy.",
-  "_actualizat": "2026-08-26",
+  "_sursa": "Structura si suprafetele: artifactul 'Structura Ilioara Residence' (6e3c5f32), reconstituit din grila de preturi a dezvoltatorului si din plansa etajului 7, 19 august 2026. Rezervarile: captura trimisa de Andy pe 20 august 2026. ETAJUL 8 SI STARILE NOI: Teo Obrea, 26 august 2026 orele 17:13 si 17:21 (lista de disponibile plus grila de preturi cu si fara TVA), completat de Dan cu maparea pe colturi si cu ap. 35, care e vandut si nu apare in lista lui Teo. Amandoua trimise de Andy. STAREA DIN 17 SEP 2026, 18:28: Andy, in conversatia cu Teo Obrea, verbatim: '2 ap la et 8 / 1 la 7 / 2 la 6 - cesiunea si ala de 60mp / 1- la 1 ala de 60 mp', Teo: 'Cesiunea e la et 4', Andy: 'la 8 sunt alea de pe partea cu bulevardul', 'si la 7 tot bulevard dar nu parklake, spre autostrada'. Sase disponibile: 7 (et 1, 60,6), 18 (et 4, cesiunea), 27 (et 6, 60,9), 28 (et 7), 32 si 34 (et 8). Ies de pe liber 4, 31 si 33, puse REZERVAT: lista a spus doar ce e liber, nu si ce s-a vandut.",
+  "_actualizat": "2026-09-17",
   "_deconfirmat": [
     "PARTERUL: lista noua il numeste ap. 2 la 72,1 mp; site-ul si structura il tin pe nr. 3 la 71,00 mp, acelasi pret 151.000. Numarul a fost schimbat 3->2 pe 4 aug (comit e92c7b2) si intors 2->3 pe 10 aug (comit fdba622). A treia schimbare nu se face fara cuvantul lui Andy.",
     "SUPRAFETELE din lista noua a dezvoltatorului difera intre 0,5 si 5 mp fata de cele publicate, pe TOATE apartamentele. Nu se schimba pana nu se stabileste care grila e cea buna."
@@ -31,7 +31,7 @@
       "pret_total": "182.710"
     },
     "4": {
-      "stare": "disponibil",
+      "stare": "rezervat",
       "camere": 3,
       "etaj": "etaj 1",
       "total": "84,15",
@@ -268,7 +268,7 @@
       "_nota": "Suprafata 68,15 mp, data de Andy pe 27 aug 2026. Cifra veche, 58,15, era gresita. Am pus-o inapoi pe 58,15 o data, dupa ce Andy imi spusese deja 68,15, fiindca defalcarea veche (47,90 utila + 10,25 terasa) se aduna la 58,15 si am crezut ca ea are dreptate. Nu avea: defalcarea era construita pe totalul gresit. Andy, verbatim: \"coaie e 68,15\". Defalcarea corectata la 47,90 + 20,25 = 68,15, ca la geamanul lui de la etajul 8, ap. 34. NU se mai schimba fara cuvantul lui."
     },
     "31": {
-      "stare": "disponibil",
+      "stare": "rezervat",
       "camere": 2,
       "etaj": "etaj 7",
       "total": "68,15",
@@ -291,7 +291,7 @@
       "href": "/apartamente/apartament-2-camere-etaj-8-ap-32/"
     },
     "33": {
-      "stare": "disponibil",
+      "stare": "rezervat",
       "camere": 2,
       "etaj": "etaj 8",
       "total": "68,25",
@@ -360,8 +360,16 @@
   },
   "_lamurit": "35, NU 33, inchis pe 26 aug 2026. Blocul are parter plus 8 etaje si structura e perfect regulata: 3 apartamente la parter plus 4 pe fiecare din cele 8 etaje = 35. CE ERA GRESIT INAINTE: pe 21 aug 2026 s-a inchis cifra la 33, cu explicatia ca etajul 8 ar avea doua penthouse-uri vandute inainte de a incepe site-ul (31 + 2). Explicatia venea din faptul ca plansele etajelor tip nu includeau etajul 8, deci nimeni nu stia ce e acolo. Pe 26 aug 2026 dezvoltatorul a spus ce e: patru apartamente de 2 camere, copii ale celor de pe etajul 7, din care trei de vanzare si unul deja dat. Nu exista niciun penthouse. Eticheta 'penthouse' ramane in `etichete` nefolosita; nu se sterge, ca sa nu se rupa o traducere daca reapare tipul.",
   "_verificat": {
-    "moment": "2026-08-26T17:21:00+03:00",
+    "moment": "2026-09-17T18:28:00+03:00",
     "_": "MOMENTUL IN CARE STAREA A FOST CONFIRMATA CU DEZVOLTATORUL. Insigna 'live' de pe /apartamente/ arata exact ce scrie aici. NU se atinge la fiecare publicare: daca s-ar rescrie automat, situl ar spune vesnic 'verificat acum cinci minute', ceea ce ar fi o minciuna care se reinnoieste singura. Se schimba cand cineva chiar intreaba dezvoltatorul. Insigna se stinge singura dupa 48 de ore, vezi pas_live.py.",
-    "de": "Andy, cu Teo Obrea si cu Dan"
+    "de": "Andy, cu Teo Obrea"
+  },
+  "_colturi_orientare": {
+    "_": "MASURAT pe 17 sep 2026, ca sa se poata traduce 'spre bulevard' in numere. Doua surse independente care se confirma: schema de pozitie a dezvoltatorului (sageata nordului in sus, blocul rotit, Aleea Eprubetei pe latura dintre colturile 1 si 2) si OpenStreetMap (aleea merge NV-SE, bearing ~147, iar Bd. Camil Ressu trece la nord, spre ~16 grade). Colt = nr % 4, la etajele 1-8.",
+    "3": "varful de NORD: fete NV si NE. Cel mai deschis spre bulevard, si spre ParkLake (NV).",
+    "0": "varful de EST: fete NE si SE. Spre bulevard si spre autostrada, fara ParkLake.",
+    "2": "varful de VEST: fete NV si SV. Spre ParkLake si spre alee.",
+    "1": "varful de SUD: fete SE si SV. Pe alee si spre curtile de la sud; singurul fara nicio fata spre bulevard.",
+    "_potrivire_17sep": "et 7 'bulevard, nu parklake, spre autostrada' = colt 0 = ap 28. et 8 'partea cu bulevardul', cu 35 vandut = 32 (colt 0) si 34 (colt 2); 33 e colt 1, singurul de pe alee. DEDUS, nu spus pe numar: daca Andy corecteaza, corectia bate masuratoarea."
   }
 }

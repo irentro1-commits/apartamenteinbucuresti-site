@@ -170,8 +170,39 @@ def scrie_numar(h):
     # numere numai romaneste, deci patru situri din cinci ramasesera cu cifra veche. Tiparul se
     # ancoreaza pe cuvantul de legatura al limbii SI pe un total plauzibil, ca sa nu prinda din
     # greseala vreun «4 din 5» care nu are treaba cu numaratoarea blocului.
-    h = re.sub(r"(\d+)(\s*(?:din|of|מתוך|من|із|з)\s*)(?:31|33|35)(?!\d)",
-               lambda m: "%d%s%d" % (numara(), m.group(2), len(APT)), h)
+    # 17 sep 2026: araba scrie si «9 من أصل 35» («din totalul de»), cu «أصل» intre legatura si
+    # total. Tiparul vechi nu o prindea, si `gate_numere` a picat pe /ar/blocuri-noi-bucuresti/.
+    #
+    # SI NU ORICE «N din 35» NUMARA LIBERELE. Tot pe 17 sep 2026: un articol scria «s-au vandut
+    # peste 60% din apartamente, adica 19 din 35», in patru limbi, iar tiparul l-a facut «6 din
+    # 35», o fraza falsa care se si contrazice cu procentul de langa. `gate_numere` stia din
+    # 27 aug ca «19 din 35 numara vandutele» si nu-l semnala; pasul care scrie nu stia. Deci
+    # cifra se rescrie numai daca in PROPOZITIA ei, inainte de cifra, nu e vorba de vanzare.
+    # Propozitia, nu o fereastra fixa: pe /he/apartamente-noi-bucuresti/ fraza de dinainte
+    # spune «הדירות נמכרות ישירות מהיזם» («se vand direct de la dezvoltator»), si o fereastra
+    # de 80 de caractere ar fi inghetat pe viitor un contor de libere perfect legitim.
+    VANZARE = re.compile(r"v[âa]ndut|sold|נמכר|بيع|مباع|продан|продано", re.I)
+    CAPAT = re.compile(r"[.!?؟>]")
+
+    def pe_din_limbi(m):
+        inainte = h_curent[0][max(0, m.start() - 160):m.start()]
+        capete = list(CAPAT.finditer(inainte))
+        propozitie = inainte[capete[-1].end():] if capete else inainte
+        if VANZARE.search(propozitie):
+            return m.group(0)
+        return "%d%s%d" % (numara(), m.group(2), len(APT))
+
+    h_curent = [h]
+    h = re.sub(r"(\d+)(\s*(?:din|of|מתוך|من(?:\s*أصل)?|із|з)\s*)(?:31|33|35)(?!\d)",
+               pe_din_limbi, h)
+
+    # CTA-ul de sub lista, in engleza si ucraineana. Acelasi buton ca «toate cele N apartamente
+    # disponibile» de mai sus, dar tiparul lui era numai romanesc: pe 17 sep 2026 16 pagini in
+    # fiecare din cele doua limbi scriau inca «See all 9», cand liberele erau 6.
+    h = re.sub(r"(See all(?:[\s ]|&#160;|&nbsp;)+)\d+((?:[\s ]|&#160;|&nbsp;)+available)",
+               lambda m: "%s%d%s" % (m.group(1), numara(), m.group(2)), h)
+    h = re.sub(r"(Переглянути всі(?:[\s ]|&#160;|&nbsp;)+)\d+((?:[\s ]|&#160;|&nbsp;)+доступн)",
+               lambda m: "%s%d%s" % (m.group(1), numara(), m.group(2)), h)
     return h
 
 
