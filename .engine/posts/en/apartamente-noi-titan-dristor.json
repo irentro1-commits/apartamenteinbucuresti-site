@@ -96,7 +96,7 @@
         },
         {
           "t": "p",
-          "x": "Out of the 35 apartments, 12 are still available. The lower floors have almost sold out, so most of those left are up on 6 and 7, exactly the part with the best view. Anyone who wants light and a view catches it now, in a month probably not."
+          "x": "Out of the 35 apartments, 6 are still available. The lower floors have almost sold out, so most of those left are up on 6, 7, and 8, exactly the part with the best view. Anyone who wants light and a view catches it now, in a month probably not."
         },
         {
           "t": "p",
@@ -116,7 +116,7 @@
     },
     {
       "q": "Which apartments are still available?",
-      "a": "Out of the 33, there are 12 still available. The lower floors have almost sold out, so most of those left are on floors 6 and 7, the part with the best view."
+      "a": "Out of the 35, there are 6 still available. The lower floors have almost sold out, so most of those left are on floors 6, 7, and 8, the part with the best view."
     },
     {
       "q": "What does an apartment at Ilioara Residence cost?",

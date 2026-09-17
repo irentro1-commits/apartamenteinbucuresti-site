@@ -66,6 +66,81 @@ NIVELE = [("etaj 8", "Etajul 8"), ("etaj 7", "Etajul 7"), ("etaj 6", "Etajul 6")
 COADA = {"etaj 7": " · priveliștea cea mai deschisă"}
 
 
+# ---------------------------------------------------------------------------------------------
+# CELELALTE PATRU LIMBI. Adaugat pe 17 sep 2026.
+#
+# DE CE. Pana azi pasul scria numai /apartamente/ romanesc. Paginile en/he/ar/uk au ramas pe
+# structura din iulie: 12 carduri, fara etajul 8, fara ap. 18, cu titluri scrise de mana
+# («Floor 7 · all 4 available»), pe care nu le mai rescria nimeni. Datoria era in log din 27 aug,
+# ca «cea mai mare bucata ramasa». Pe 17 sep, cand disponibilele au scazut la 6, romana a iesit
+# corecta din prima rulare, iar cine intra in engleza citea in continuare ca etajul 7 e liber
+# in intregime. Teo primise deja un telefon pe o lista veche.
+#
+# CUM. Aceeasi lista, aceleasi date, aceeasi foaie, aceleasi filtre: se traduc doar cuvintele.
+# Romana ramane identica la octet (verificat cu poarta de fidelitate). Gramatica numerelor e
+# scrisa pe limba, fiindca nu se poate lipi un cuvant dupa cifra: araba are dual si plural
+# diferit la 3-10, ucraineana are trei forme, ebraica acorda la feminin («דירה»).
+# In he/ar/uk contorul din bara e scris cu etichete («Вільні: 6»), nu in propozitie: o
+# singura forma pentru orice cifra, deci nicio cifra viitoare nu poate iesi agramata.
+LIMBI = ("ro", "en", "he", "ar", "uk")
+
+PARTER = {"ro": "Parter", "en": "Ground floor", "he": "קומת קרקע",
+          "ar": "الطابق الأرضي", "uk": "Партер"}
+
+COADA_LB = {
+    "ro": COADA,
+    "en": {"etaj 7": " · the best views"},
+    "he": {"etaj 7": " · הנוף הפתוח ביותר"},
+    "ar": {"etaj 7": " · أوسع إطلالة"},
+    "uk": {"etaj 7": " · найкращий краєвид"},
+}
+
+# titlul de etaj, asa cum il scriau deja paginile vechi, ca ancora sa le prinda si pe ele
+E_NIVEL_LB = {
+    "ro": re.compile(r"^(Etajul \d|Parter)\b"),
+    "en": re.compile(r"^(Floor \d|Ground floor)\b"),
+    "he": re.compile(r"^(קומה \d|קומת קרקע)"),
+    "ar": re.compile(r"^(الطابق \d|الطابق الأرضي)"),
+    "uk": re.compile(r"^(\d-й поверх|Партер)"),
+}
+
+TXT = {
+    "en": dict(aria="Filter by number of rooms", toate="All", doar="Available only",
+               num="<b>%(lib)d</b> available · %(rez)d reserved · %(vnd)d sold, %(tot)d%(nb)sin total",
+               gol="No apartment matches the filters you chose. Remove a filter and the list comes back.",
+               ap="apt.", mp="sqm", total="total", alt="Floor plan, apartment %s"),
+    "he": dict(aria="סינון לפי מספר חדרים", toate="הכול", doar="רק זמינות",
+               num="זמינות: <b>%(lib)d</b> · שמורות: %(rez)d · נמכרו: %(vnd)d · סך%(nb)sהכול: %(tot)d",
+               gol="אין דירה שמתאימה לסינון שבחרתם. הסירו סינון והרשימה תחזור.",
+               ap="דירה", mp="מ״ר", total="בסך הכול", alt="תוכנית דירה %s"),
+    "ar": dict(aria="التصفية حسب عدد الغرف", toate="الكل", doar="المتاحة فقط",
+               num="متاحة: <b>%(lib)d</b> · محجوزة: %(rez)d · مباعة: %(vnd)d · المجموع: %(tot)d",
+               gol="لا توجد شقة تطابق عوامل التصفية التي اخترتها. أزل أحدها وستعود القائمة.",
+               ap="شقة", mp="م²", total="إجمالي", alt="مخطط الشقة %s"),
+    "uk": dict(aria="Фільтр за кількістю кімнат", toate="Усі", doar="Лише вільні",
+               num="Вільні: <b>%(lib)d</b> · Зарезервовані: %(rez)d · Продані: %(vnd)d · Усього: %(tot)d",
+               gol="Жодна квартира не відповідає вибраним фільтрам. Приберіть фільтр, і список повернеться.",
+               ap="кв.", mp="м²", total="загалом", alt="План квартири %s"),
+}
+
+
+def nume_etaj(cheie, lb, scurt=False):
+    """«Etajul 7» in titlu, «Etaj 7» in rand; la fel in fiecare limba."""
+    if cheie == "parter":
+        return PARTER[lb]
+    n = int(cheie.split()[1])
+    return {"ro": ("Etaj %d" if scurt else "Etajul %d"),
+            "en": "Floor %d", "he": "קומה %d", "ar": "الطابق %d",
+            "uk": ("Поверх %d" if scurt else "%d-й поверх")}[lb] % n
+
+
+def camere(cam, lb):
+    if lb == "ar":
+        return {2: "غرفتان"}.get(cam, "%d غرف" % cam)
+    return {"ro": "%d camere", "en": "%d rooms", "he": "%d חדרים",
+            "uk": "%d кімнати"}[lb] % cam
+
+
 def incarca():
     return json.load(io.open(CALE_DATE, encoding="utf-8"))
 
@@ -114,13 +189,38 @@ def numara(A, **f):
     return n
 
 
-def cuvant(n):
+def cuvant(n, lb="ro"):
+    if lb == "ro":
+        if n == 0:
+            return "niciunul" + NB + "liber"
+        return "%d%s%s" % (n, NB, "disponibil" if n == 1 else "disponibile")
+    if lb == "en":
+        return ("none" + NB + "available") if n == 0 else "%d%savailable" % (n, NB)
+    if lb == "he":
+        if n == 0:
+            return "אין דירות" + NB + "זמינות"
+        return "%d%s%s" % (n, NB, "זמינה" if n == 1 else "זמינות")
+    if lb == "ar":
+        if n == 0:
+            return "لا توجد شقق" + NB + "متاحة"
+        if n == 1:
+            return "شقة واحدة" + NB + "متاحة"
+        if n == 2:
+            return "شقتان" + NB + "متاحتان"
+        return "%d %s%sمتاحة" % (n, "شقق" if n <= 10 else "شقة", NB)
+    # uk: 1, 21, 31... | 2-4, 22-24... | restul
     if n == 0:
-        return "niciunul" + NB + "liber"
-    return "%d%s%s" % (n, NB, "disponibil" if n == 1 else "disponibile")
+        return "немає" + NB + "вільних"
+    if n % 10 == 1 and n % 100 != 11:
+        forma = "доступна"
+    elif 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14:
+        forma = "доступні"
+    else:
+        forma = "доступних"
+    return "%d%s%s" % (n, NB, forma)
 
 
-def card(nr, a, et):
+def card(nr, a, et, lb="ro", etichete=None):
     """Un RAND, nu un card.
 
     Andy, 21 aug 2026: intai *"fa-le pe toate mici si pune-le 2x2"*, apoi, imediat,
@@ -136,8 +236,13 @@ def card(nr, a, et):
     """
     cam = a["camere"]
     stare = a["stare"]
-    eticheta = {"disponibil": "Disponibil", "rezervat": "Rezervat", "vandut": "Vândut"}[stare]
+    if lb == "ro":
+        eticheta = {"disponibil": "Disponibil", "rezervat": "Rezervat", "vandut": "Vândut"}[stare]
+    else:
+        # aceleasi cuvinte ca insignele puse de pas_stare pe restul sitului, dintr-un singur loc
+        eticheta = etichete[lb][stare]
     ins = '<span class="stare stare-%s">%s</span>' % (stare, eticheta)
+    X = TXT.get(lb)
 
     # Insigna sta INAUNTRUL celulei cu numarul. Lasata afara, devenea a cincea celula a
     # grilei si impingea toate coloanele cu una: pretul ajungea in coloana a treia, iar
@@ -154,25 +259,35 @@ def card(nr, a, et):
     # imparte atentia. Rezervatele si vandutele raman randuri scurte, fara celula de plansa.
     cale = PLANSE.get(nr)
     if stare == "disponibil" and cale:
-        foto = ('<span class="ap-foto"><img src="%s" alt="Plan apartament %s" '
+        alt = ("Plan apartament %s" % nr) if lb == "ro" else (X["alt"] % nr)
+        foto = ('<span class="ap-foto"><img src="%s" alt="%s" '
                 'width="864" height="640" loading="lazy" decoding="async"></span>'
-                % (cale, nr))
+                % (cale, alt))
     else:
         foto = ""     # fara celula deloc: randul are patru coloane, nu cinci
 
+    if lb == "ro":
+        eticheta_ap, mp = "ap.", ((a["total"] + NB + "mp") if a.get("total") else "&mdash;")
+        tip = ("Penthouse" if a.get("tip") == "penthouse"
+               else ("%d camere" % cam) if cam else "Apartament")
+        cuv_total = "total"
+    else:
+        # in celelalte limbi zecimala e punct, cum scriau deja toate paginile lor
+        eticheta_ap = X["ap"]
+        mp = ((a["total"].replace(",", ".") + NB + X["mp"]) if a.get("total") else "&mdash;")
+        tip = camere(cam, lb) if cam else etichete[lb].get("penthouse", "")
+        cuv_total = X["total"]
+
     celule = [
-        '<span class="ap-nr">ap.%s%s%s</span>' % (NB, nr, ins),
-        '<span class="ap-d">%s · %s</span>' % (
-            "Penthouse" if a.get("tip") == "penthouse"
-            else ("%d camere" % cam) if cam else "Apartament", et),
-        '<span class="ap-mp">%s</span>' % (
-            (a["total"] + NB + "mp") if a.get("total") else "&mdash;"),
+        '<span class="ap-nr">%s%s%s%s</span>' % (eticheta_ap, NB, nr, ins),
+        '<span class="ap-d">%s · %s</span>' % (tip, et),
+        '<span class="ap-mp">%s</span>' % mp,
     ]
 
     if stare != "vandut" and a.get("pret"):
         pret = '<b>%s</b><i>EUR + TVA %s%%</i>' % (a["pret"], a.get("tva", "21"))
         if a.get("pret_total"):
-            pret += '<em>%s EUR%stotal</em>' % (a["pret_total"], NB)
+            pret += '<em>%s EUR%s%s</em>' % (a["pret_total"], NB, cuv_total)
         celule.append('<span class="ap-p">%s</span>' % pret)
     else:
         celule.append('<span class="ap-p ap-p-gol" aria-hidden="true"></span>')
@@ -187,16 +302,32 @@ def card(nr, a, et):
         # treizeci si unu de randuri care apar unul cate unul e zgomot, nu miscare; si, cat
         # timp nu s-au revelat, au un `transform` pe ele, deci se masoara altfel decat arata.
         # Sectiunea etajului pastreaza revelarea, deci lista tot intra frumos in pagina.
+        href = a["href"] if lb == "ro" else "/%s%s" % (lb, a["href"])
         return ('<a class="aprow e-%s"%s href="%s">%s</a>'
-                % (stare, date, a["href"], corp))
+                % (stare, date, href, corp))
     clasa = "aprow aprow-mut" + ("" if stare == "vandut" else " e-" + stare)
     return '<div class="%s"%s>%s</div>' % (clasa, date, corp)
 
 
-def bara(A):
+def bara(A, lb="ro"):
     lib = numara(A, stare="disponibil")
     rez = numara(A, stare="rezervat")
     vnd = numara(A, stare="vandut")
+    if lb != "ro":
+        X = TXT[lb]
+        return (
+            '<div class="filtre rv" data-fx="rise" id="filtre" data-filtre-pentru="lista-ap">'
+            '<div class="f-tabs" role="group" aria-label="%s">'
+            '<button type="button" class="ft on" data-cam="toate" aria-pressed="true">%s</button>'
+            '<button type="button" class="ft" data-cam="2" aria-pressed="false">%s</button>'
+            '<button type="button" class="ft" data-cam="3" aria-pressed="false">%s</button>'
+            "</div>"
+            '<label class="f-sw"><input type="checkbox" id="f-libere">'
+            '<span class="f-sw-b" aria-hidden="true"></span>'
+            "<span>%s</span></label>"
+            '<p class="f-num" id="f-num" role="status">%s</p>'
+            "</div>" % (X["aria"], X["toate"], camere(2, lb), camere(3, lb), X["doar"],
+                        X["num"] % dict(lib=lib, rez=rez, vnd=vnd, tot=lib + rez + vnd, nb=NB)))
     return (
         '<div class="filtre rv" data-fx="rise" id="filtre" data-filtre-pentru="lista-ap">'
         '<div class="f-tabs" role="group" aria-label="Filtrează după numărul de camere">'
@@ -212,14 +343,23 @@ def bara(A):
         "</div>" % (lib, rez, vnd, lib + rez + vnd, NB))
 
 
-def lista(A):
-    out = [bara(A), '<div class="lista-ap" id="lista-ap" data-filtrabil>']
+def lista(A, lb="ro", etichete=None):
+    out = [bara(A, lb), '<div class="lista-ap" id="lista-ap" data-filtrabil>']
     for cheie, titlu in NIVELE:
         nr_et = [k for k, v in A.items() if v["etaj"] == cheie]
         if not nr_et:
             continue
         nr_et.sort(key=int)
         lib = sum(1 for k in nr_et if A[k]["stare"] == "disponibil")
+        if lb != "ro":
+            out.append('<section class="etaj-ap" data-sectiune data-etaj="%s">' % cheie)
+            out.append('<h2 class="rv" data-fx="slide">%s · %s%s</h2>'
+                       % (nume_etaj(cheie, lb), cuvant(lib, lb), COADA_LB[lb].get(cheie, "")))
+            out.append('<div class="aplist">')
+            out.extend(card(k, A[k], nume_etaj(cheie, lb, scurt=True), lb, etichete)
+                       for k in nr_et)
+            out.append("</div></section>")
+            continue
         et_scurt = titlu.replace("Etajul ", "Etaj ")
         out.append('<section class="etaj-ap" data-sectiune data-etaj="%s">' % cheie)
         # Pana pe 26 aug 2026 etajul 8 sarea numaratoarea, fiindca era etajul celor doua
@@ -267,30 +407,38 @@ def leaga_filtrul(h):
     return h
 
 
-def rescrie(html, A):
+def rescrie(html, A, lb="ro", etichete=None):
     """Inlocuieste zona de lista, si numai pe ea.
 
     Ancora de INCEPUT: primul titlu de nivel, sau bara de filtre daca pasul a mai rulat.
     Ancora de SFARSIT: primul titlu care NU mai e de nivel ("Direct de la dezvoltator").
     Nu se cauta ultimul `</div>`: pe pagina asta ultimul `</div>` e in subsol, iar o ancora
     gresita ar fi mancat jumatate de pagina fara sa dea nicio eroare."""
+    e_nivel = E_NIVEL_LB[lb]
     filtre = html.find('<div class="filtre')
     titluri = [(m.start(), m.group(1)) for m in H2.finditer(html)]
-    niveluri = [p for p, t in titluri if E_NIVEL.match(t.strip())]
+    niveluri = [p for p, t in titluri if e_nivel.match(t.strip())]
     if not niveluri:
         return html, False
     inceput = min(filtre, niveluri[0]) if filtre >= 0 else niveluri[0]
-    dupa = [p for p, t in titluri if p > niveluri[-1] and not E_NIVEL.match(t.strip())]
+    dupa = [p for p, t in titluri if p > niveluri[-1] and not e_nivel.match(t.strip())]
     if not dupa:
         return html, False
     sfarsit = dupa[0]
 
-    # paragraful "nu bifeaza filtrele" si sectiunile vechi raman in afara zonei taiate
+    # paragraful "nu bifeaza filtrele" si sectiunile vechi raman in afara zonei taiate.
+    # `grid` e containerul cardurilor din iulie, pe care inca il aveau en/he/ar/uk.
     zona = html[inceput:sfarsit]
-    if '<div class="aplist">' not in zona and '<div class="lista-ap"' not in zona:
+    if ('<div class="aplist">' not in zona and '<div class="lista-ap"' not in zona
+            and '<div class="grid">' not in zona):
         return html, False
 
-    nou = lista(A) + "\n" + GOL + "\n"
+    if lb == "ro":
+        nou = lista(A) + "\n" + GOL + "\n"
+    else:
+        # paragraful "nimic nu bifeaza filtrele" sta in zona taiata, deci se rescrie o data cu lista
+        gol = '<p class="f-gol" id="f-gol" hidden>%s</p>' % TXT[lb]["gol"]
+        nou = lista(A, lb, etichete) + "\n" + gol + "\n"
     return html[:inceput] + nou + html[sfarsit:], True
 
 
@@ -394,6 +542,27 @@ def rescrie_preturi(html, A):
     return html, True, len(stari)
 
 
+TITLU_CAMERE_LB = {
+    "en": re.compile(r'(<h2 class="rv" data-fx="slide">)(\d) rooms · [^<]*(</h2>)'),
+    "he": re.compile(r'(<h2 class="rv" data-fx="slide">)(\d) חדרים · [^<]*(</h2>)'),
+    "ar": re.compile(r'(<h2 class="rv" data-fx="slide">)(غرفتان|\d غرف) · [^<]*(</h2>)'),
+    "uk": re.compile(r'(<h2 class="rv" data-fx="slide">)(\d) кімнати · [^<]*(</h2>)'),
+}
+
+
+def titluri_preturi(html, A, lb):
+    """/preturi/ in en/he/ar/uk: titlurile de grupa pe camere, din date.
+
+    Randurile acestor pagini erau deja corecte (16, clonate pe 27 aug, cu insignele puse de
+    pas_stare), dar titlurile de deasupra lor le scria doar pas_stare, si doar romaneste.
+    Pe 17 sep scriau inca «3 rooms · 3 available» si «2 rooms · 9 available», cand erau 0 si 6."""
+    def pe_titlu(m):
+        cam = 2 if m.group(2) == "غرفتان" else int(m.group(2)[0])
+        n = numara(A, camere=cam, stare="disponibil")
+        return "%s%s · %s%s" % (m.group(1), camere(cam, lb), cuvant(n, lb), m.group(3))
+    return TITLU_CAMERE_LB[lb].subn(pe_titlu, html)
+
+
 NOTA_PH = "nota-penthouse"
 
 
@@ -473,7 +642,36 @@ def main():
             io.open(fp2, "w", encoding="utf-8", newline="\n").write(n2)
         print("            /preturi/: %s, %d randuri marcate"
               % ("filtre puse" if pus else "filtre deja acolo", cate))
-    return 0
+
+    # --- celelalte patru limbi: lista intreaga si titlurile de pe /preturi/ ---
+    rau = 0
+    for lb in LIMBI[1:]:
+        fp = os.path.join(a.repo, lb, "apartamente", "index.html")
+        if not os.path.exists(fp):
+            continue
+        html = io.open(fp, encoding="utf-8").read()
+        nou, ok = rescrie(html, A, lb, d["etichete"])
+        if not ok:
+            print("   /%s/apartamente/: NU am gasit ancora, neatinsa" % lb)
+            rau += 1
+            continue
+        for foaie in CSS.split("\n"):
+            if foaie and foaie not in nou:
+                nou = nou.replace(ANCORA_CSS, ANCORA_CSS + "\n" + foaie, 1)
+        nou = leaga_filtrul(nou)
+        if a.apply and nou != html:
+            io.open(fp, "w", encoding="utf-8", newline="\n").write(nou)
+
+        fp2 = os.path.join(a.repo, lb, "preturi", "index.html")
+        t = 0
+        if os.path.exists(fp2):
+            h2 = io.open(fp2, encoding="utf-8").read()
+            n2, t = titluri_preturi(h2, A, lb)
+            if a.apply and n2 != h2:
+                io.open(fp2, "w", encoding="utf-8", newline="\n").write(n2)
+        print("   /%s/apartamente/: %d randuri; /%s/preturi/: %d titluri de grupa"
+              % (lb, len(A), lb, t))
+    return 1 if rau else 0
 
 
 if __name__ == "__main__":
