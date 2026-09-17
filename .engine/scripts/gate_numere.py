@@ -108,6 +108,26 @@ def main():
             if gasit != asteptat:
                 rau(fp, "insigna ap. %s" % nr, gasit, asteptat)
 
+        # 5. /preturi/: CE RANDURI exista, nu doar ce scrie in ele. Adaugat pe 17 sep 2026:
+        # ap. 35 a iesit liber, titlul spunea «2 camere · 6 disponibile», si pe pagina erau
+        # cinci randuri libere, in toate cele cinci limbi. Poarta verifica insignele din
+        # randuri si titlurile, dar nu si daca randul exista, deci a dat PASS. Plus atributul
+        # `data-stare`, dupa care filtreaza JavaScriptul: pe romana ramasese «disponibil» la
+        # doua apartamente rezervate, iar insigna vizibila era buna.
+        if re.search(r"(?:^|/)preturi/index\.html$", rel):
+            randuri = re.findall(r'<a class="prow[^"]*"([^>]*)href="[^"]*-ap-(\d+)/"', s)
+            pe_pagina = {nr for _, nr in randuri}
+            asteptate = {k for k, v in A.items() if v["stare"] != "vandut" and v.get("href")}
+            if pe_pagina != asteptate:
+                rau(fp, "randuri /preturi/",
+                    "lipsesc %s, in plus %s" % (sorted(asteptate - pe_pagina, key=int) or "-",
+                                                sorted(pe_pagina - asteptate, key=int) or "-"),
+                    "cate un rand pentru fiecare nevandut cu pagina")
+            for atr, nr in randuri:
+                ds = re.search(r'data-stare="(\w+)"', atr)
+                if ds and nr in A and ds.group(1) != A[nr]["stare"]:
+                    rau(fp, "data-stare ap. %s" % nr, ds.group(1), A[nr]["stare"])
+
     print("=" * 78)
     print("CIFRELE SCRISE DE MASINA, CONTRA DATELOR")
     print("=" * 78)

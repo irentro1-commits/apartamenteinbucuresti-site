@@ -550,6 +550,91 @@ TITLU_CAMERE_LB = {
 }
 
 
+PROW_TOT = re.compile(r'<a class="prow[^"]*"[^>]*href="((?:/[a-z]{2})?/apartamente/[^"]+-ap-(\d+)/)"'
+                      r'[^>]*>.*?</a>', re.S)
+ETAJ_RAND = {"ro": "Etaj", "en": "Floor", "he": "קומה", "ar": "الطابق", "uk": "Поверх"}
+AP_RAND = {"ro": r"ap\.", "en": r"apt\.", "he": "דירה", "ar": "شقة رقم", "uk": r"кв\."}
+SP_R = r"(?:[\s ]|&#160;|&nbsp;)+"
+
+
+def sincronizeaza_preturi(html, A, lb):
+    """/preturi/ are un rand pentru fiecare apartament care se mai poate cumpara, adica tot ce nu
+    e vandut si are pagina. Pana pe 17 sep 2026 randurile se clonau de mana, o data, cand aparea
+    un apartament nou, iar atributul `data-stare` dupa care filtreaza JavaScriptul se scria o
+    singura data, la prima rulare.
+
+    CHITANTA, 17 sep 2026, 20:00. Ap. 35 a trecut din vandut in liber; lista l-a aratat din prima,
+    /preturi/ nu, in nicio limba: titlul spunea «2 camere · 6 disponibile» deasupra a cinci randuri
+    libere. Andy: «si modifica si la preturi sa fie la fel». Tot atunci, filtrul «doar disponibile»
+    de pe /preturi/ romanesc lasa sa treaca 28 si 34, rezervate de la 19:45, fiindca atributul lor
+    spunea inca «disponibil».
+
+    ACUM, la fiecare rulare: randul lipsa se CLONEAZA din randul fratelui de acelasi colt din
+    aceeasi limba (acelasi plan, aceeasi formulare, acelasi separator zecimal) si i se schimba
+    cifrele; randul unui apartament vandut iese; `data-stare` se rescrie din date peste tot."""
+    randuri = {m.group(2): m for m in PROW_TOT.finditer(html)}
+    dorite = {k for k, v in A.items() if v["stare"] != "vandut" and v.get("href")}
+    pref = "" if lb == "ro" else "/" + lb
+    zec = (lambda v: v) if lb == "ro" else (lambda v: v.replace(",", "."))
+    adaugate, scoase, ratate = [], [], []
+
+    # 1. vandutele ies
+    for nr in sorted(set(randuri) - dorite, key=int):
+        if A.get(nr, {}).get("stare") == "vandut":
+            html = html.replace(randuri[nr].group(0), "", 1)
+            scoase.append(nr)
+
+    # 2. lipsa se cloneaza din fratele de colt
+    for nr in sorted(dorite - set(randuri), key=int):
+        a = A[nr]
+        frati = sorted((k for k in randuri if int(k) % 4 == int(nr) % 4
+                        and A[k]["camere"] == a["camere"] and A[k]["etaj"] != "parter"
+                        and a["etaj"] != "parter"),
+                       key=lambda k: abs(int(k) - int(nr)))
+        if not frati:
+            ratate.append(nr)
+            continue
+        f = frati[0]
+        b = A[f]
+        rand = randuri[f].group(0)
+        nou = rand.replace(randuri[f].group(1), pref + a["href"])
+        et_b, et_a = b["etaj"].split()[1], a["etaj"].split()[1]
+        nou = re.sub(r"(%s%s)%s(?!\d)" % (ETAJ_RAND[lb], SP_R, et_b), lambda m: m.group(1) + et_a, nou)
+        nou = re.sub(r"(%s%s)%s(?!\d)" % (AP_RAND[lb], SP_R, f), lambda m: m.group(1) + nr, nou)
+        for cheie, fn in (("total", zec), ("pret", str), ("pret_total", str)):
+            if b.get(cheie) and a.get(cheie) and b[cheie] != a[cheie]:
+                nou = nou.replace(fn(b[cheie]), fn(a[cheie]))
+        # garda: nimic din frate nu are voie sa supravietuiasca in randul nou
+        if ("-ap-%s/" % f) in nou or re.search(r"%s%s%s(?!\d)" % (AP_RAND[lb], SP_R, f), nou):
+            ratate.append(nr)
+            continue
+        # locul: dupa cel mai mare numar mai mic din aceeasi grupa de camere
+        acum = {m.group(2): m for m in PROW_TOT.finditer(html)}
+        inainte = sorted((k for k in acum if A[k]["camere"] == a["camere"] and int(k) < int(nr)),
+                         key=int)
+        if inainte:
+            m = acum[inainte[-1]]
+            html = html[:m.end()] + nou + html[m.end():]
+        else:
+            dupa = sorted((k for k in acum if A[k]["camere"] == a["camere"]), key=int)
+            if not dupa:
+                ratate.append(nr)
+                continue
+            m = acum[dupa[0]]
+            html = html[:m.start()] + nou + html[m.start():]
+        randuri[nr] = next(m for m in PROW_TOT.finditer(html) if m.group(2) == nr)
+        adaugate.append("%s(din %s)" % (nr, f))
+
+    # 3. atributul dupa care filtreaza JavaScriptul, din date, pe fiecare rand care il are
+    def pe_atribut(m):
+        a = A.get(m.group(2))
+        if not a:
+            return m.group(0)
+        return re.sub(r'data-stare="[a-z]+"', 'data-stare="%s"' % a["stare"], m.group(0), count=1)
+    html = PROW_TOT.sub(pe_atribut, html)
+    return html, adaugate, scoase, ratate
+
+
 def titluri_preturi(html, A, lb):
     """/preturi/ in en/he/ar/uk: titlurile de grupa pe camere, din date.
 
@@ -631,8 +716,11 @@ def main():
     fp2 = os.path.join(a.repo, "preturi", "index.html")
     if os.path.exists(fp2):
         h2 = io.open(fp2, encoding="utf-8").read()
-        n2, pus, cate = h2, False, 0
-        n2, pus, cate = rescrie_preturi(h2, A)
+        # randurile intai, ca apoi contorul «din N in tot» sa numere randurile corecte
+        s2, adaug, scos, rat = sincronizeaza_preturi(h2, A, "ro")
+        print("            /preturi/: randuri adaugate %s, scoase %s%s"
+              % (adaug or "-", scos or "-", ("; NECLONATE: %s" % rat) if rat else ""))
+        n2, pus, cate = rescrie_preturi(s2, A)
         for foaie in CSS.split("\n"):
             if foaie and foaie not in n2:
                 n2 = n2.replace(ANCORA_CSS, ANCORA_CSS + "\n" + foaie, 1)
@@ -666,11 +754,15 @@ def main():
         t = 0
         if os.path.exists(fp2):
             h2 = io.open(fp2, encoding="utf-8").read()
-            n2, t = titluri_preturi(h2, A, lb)
+            s2, adaug, scos, rat = sincronizeaza_preturi(h2, A, lb)
+            n2, t = titluri_preturi(s2, A, lb)
             if a.apply and n2 != h2:
                 io.open(fp2, "w", encoding="utf-8", newline="\n").write(n2)
-        print("   /%s/apartamente/: %d randuri; /%s/preturi/: %d titluri de grupa"
-              % (lb, len(A), lb, t))
+            if rat:
+                rau += 1
+        print("   /%s/apartamente/: %d randuri; /%s/preturi/: %d titluri de grupa, randuri adaugate %s, "
+              "scoase %s%s" % (lb, len(A), lb, t, adaug or "-", scos or "-",
+                               ("; NECLONATE: %s" % rat) if rat else ""))
     return 1 if rau else 0
 
 
