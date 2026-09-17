@@ -31,6 +31,8 @@
   "33-ro": "/planuri/fise/plan-ap-33-ro-v5.webp",
   "34-en": "/planuri/fise/plan-ap-34-en-v5.webp",
   "34-ro": "/planuri/fise/plan-ap-34-ro-v5.webp",
+  "35-en": "/planuri/fise/plan-ap-35-en-v5.webp",
+  "35-ro": "/planuri/fise/plan-ap-35-ro-v5.webp",
   "suprafete": {
     "3": {
       "terasa": "13,70",
@@ -111,6 +113,11 @@
       "utila": "47,90",
       "terasa": "20,25",
       "total": "68,15"
+    },
+    "35": {
+      "terasa": "22,65",
+      "total": "68,15",
+      "utila": "45,50"
     }
   }
 }

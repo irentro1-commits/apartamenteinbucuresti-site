@@ -5,7 +5,7 @@
  "title": "Cumperi un apartament care nu e gata. Ce verifici la semnare",
  "seoTitle": "Apartament în construcție | Ce verifici la semnare",
  "description": "Blocul se predă în decembrie 2026, tu semnezi acum. Ce scrie în antecontract, cât plătești la rezervare și la avans, cum verifici prețul din grilă.",
- "descriptionLlm": "Ghid despre cumpărarea unui apartament aflat încă în construcție: ce trebuie să conțină antecontractul semnat la notar (preț final cu TVA, termen de predare, penalități, specificații), cum se eșalonează plățile (rezervare 2.000 EUR + TVA, avans minim 30%) și ce semne arată că un șantier ajunge la capăt. Exemplele folosesc situația reală de la Ilioara Residence, Sector 3 București, bloc cu predare în decembrie 2026, vândut peste 60% înainte de finalizare.",
+ "descriptionLlm": "Ghid despre cumpărarea unui apartament aflat încă în construcție: ce trebuie să conțină antecontractul semnat la notar (preț final cu TVA, termen de predare, penalități, specificații), cum se eșalonează plățile (rezervare 2.000 EUR + TVA, avans minim 30%) și ce semne arată că un șantier ajunge la capăt. Exemplele folosesc situația reală de la Ilioara Residence, Sector 3 București, bloc cu predare în decembrie 2026, vândut peste jumătate înainte de finalizare.",
  "articleSection": "Ghid de cumpărare",
  "keywords": "apartament în construcție, cumpărare apartament nefinalizat, antecontract dezvoltator, avans apartament nou, rezervare apartament nou, bloc nou Sector 3, Ilioara Residence",
  "readMinutes": 5,
@@ -42,7 +42,7 @@
    "blocks": [
     {
      "t": "p",
-     "x": "Aici lucrează ochii și întrebările, împreună. Mergeți pe șantier. Vizionarea la stadiul real al lucrărilor e un lucru normal, iar cine v-o refuză vă spune ceva chiar prin refuz. Uitați-vă apoi la cifrele care se pot proba. La Ilioara Residence s-au vândut peste 60% din apartamente, adică 19 din 35, înainte de finalizare. Un grad de vânzare ca ăsta vă spune două lucruri verificabile: proiectul nu atârnă de un singur cumpărător, iar prețurile au fost validate de oameni care au semnat, cu banii lor."
+     "x": "Aici lucrează ochii și întrebările, împreună. Mergeți pe șantier. Vizionarea la stadiul real al lucrărilor e un lucru normal, iar cine v-o refuză vă spune ceva chiar prin refuz. Uitați-vă apoi la cifrele care se pot proba. La Ilioara Residence s-au vândut peste jumătate din apartamente, adică 18 din 35, înainte de finalizare. Un grad de vânzare ca ăsta vă spune două lucruri verificabile: proiectul nu atârnă de un singur cumpărător, iar prețurile au fost validate de oameni care au semnat, cu banii lor."
     },
     {
      "t": "p",
